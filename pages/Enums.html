@@ -1,0 +1,825 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>열거형 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Type Inference.html" />
+    
+    
+    <link rel="prev" href="Generics.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tutorials</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="tutorials/TypeScript in 5 minutes.html">
+            
+                <a href="tutorials/TypeScript in 5 minutes.html">
+            
+                    
+                    5 분안에 보는 TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="tutorials/ASP.NET Core.html">
+            
+                <a href="tutorials/ASP.NET Core.html">
+            
+                    
+                    ASP.NET Core
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="tutorials/Gulp.html">
+            
+                <a href="tutorials/Gulp.html">
+            
+                    
+                    Gulp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="tutorials/Migrating from JavaScript.html">
+            
+                <a href="tutorials/Migrating from JavaScript.html">
+            
+                    
+                    Migrating from JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="tutorials/React & Webpack.html">
+            
+                <a href="tutorials/React & Webpack.html">
+            
+                    
+                    React & Webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Handbook</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="Basic Types.html">
+            
+                <a href="Basic Types.html">
+            
+                    
+                    기본 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="Variable Declarations.html">
+            
+                <a href="Variable Declarations.html">
+            
+                    
+                    변수 선언
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="Interfaces.html">
+            
+                <a href="Interfaces.html">
+            
+                    
+                    인터페이스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="Classes.html">
+            
+                <a href="Classes.html">
+            
+                    
+                    Classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="Functions.html">
+            
+                <a href="Functions.html">
+            
+                    
+                    Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="Generics.html">
+            
+                <a href="Generics.html">
+            
+                    
+                    제네릭
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.7" data-path="Enums.html">
+            
+                <a href="Enums.html">
+            
+                    
+                    열거형
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="Type Inference.html">
+            
+                <a href="Type Inference.html">
+            
+                    
+                    타입 추론
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="Type Compatibility.html">
+            
+                <a href="Type Compatibility.html">
+            
+                    
+                    Type Compatibility
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="Advanced Types.html">
+            
+                <a href="Advanced Types.html">
+            
+                    
+                    Advanced Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="Symbols.html">
+            
+                <a href="Symbols.html">
+            
+                    
+                    Symbols
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="Iterators and Generators.html">
+            
+                <a href="Iterators and Generators.html">
+            
+                    
+                    Iterators and Generators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="Modules.html">
+            
+                <a href="Modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="Namespaces.html">
+            
+                <a href="Namespaces.html">
+            
+                    
+                    Namespaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15" data-path="Namespaces and Modules.html">
+            
+                <a href="Namespaces and Modules.html">
+            
+                    
+                    Namespaces and Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.16" data-path="Module Resolution.html">
+            
+                <a href="Module Resolution.html">
+            
+                    
+                    Module Resolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.17" data-path="Declaration Merging.html">
+            
+                <a href="Declaration Merging.html">
+            
+                    
+                    Declaration Merging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.18" data-path="JSX.html">
+            
+                <a href="JSX.html">
+            
+                    
+                    JSX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.19" data-path="Decorators.html">
+            
+                <a href="Decorators.html">
+            
+                    
+                    Decorators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.20" data-path="Mixins.html">
+            
+                <a href="Mixins.html">
+            
+                    
+                    Mixins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.21" data-path="Triple-Slash Directives.html">
+            
+                <a href="Triple-Slash Directives.html">
+            
+                    
+                    Triple-Slash Directives
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.22" data-path="Type Checking JavaScript Files.html">
+            
+                <a href="Type Checking JavaScript Files.html">
+            
+                    
+                    Type Checking JavaScript Files
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >열거형</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#xC5F4;&#xAC70;&#xD615;-enums">&#xC5F4;&#xAC70;&#xD615; (Enums)</h1>
+<p>&#xC5F4;&#xAC70;&#xD615;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC774;&#xB984;&#xC774; &#xC788;&#xB294; &#xC0C1;&#xC218;&#xB4E4;&#xC744; &#xC815;&#xC758;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC5F4;&#xAC70;&#xD615;&#xC758; &#xC0AC;&#xC6A9;&#xC740; &#xBB38;&#xC11C;&#xC758; &#xC758;&#xB3C4;&#xB098; &#xBA85;&#xD655;&#xD55C; &#xC0AC;&#xB840;&#xB4E4;&#xC744; &#xC27D;&#xAC8C; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+TypeScript &#xB294; &#xC22B;&#xC790; &#xBC0F; &#xBB38;&#xC790;&#xC5F4; &#xAE30;&#xBC18; &#xC5F4;&#xAC70;&#xD615;&#xC744; &#xBAA8;&#xB450; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xC22B;&#xC790;-&#xC5F4;&#xAC70;&#xD615;-numeric-enums">&#xC22B;&#xC790; &#xC5F4;&#xAC70;&#xD615; (Numeric enums)</h2>
+<p>&#xBA3C;&#xC800; &#xC22B;&#xC790; &#xC5F4;&#xAC70;&#xD615;&#xC73C;&#xB85C; &#xC2DC;&#xC791;&#xD569;&#xB2C8;&#xB2E4;. &#xB2E4;&#xB978; &#xC5B8;&#xC5B4;&#xC5D0;&#xC11C; &#xC5F4;&#xAC70;&#xD615;&#xC744; &#xC811;&#xD574;&#xBD24;&#xB2E4;&#xBA74; &#xB354; &#xC775;&#xC219; &#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC5F4;&#xAC70;&#xD615;&#xC740; <code>enum</code> &#xD0A4;&#xC6CC;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC815;&#xC758;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">enum</span> Direction {
+    Up = <span class="hljs-number">1</span>,
+    Down,
+    Left,
+    Right,
+}
+</code></pre>
+<p>&#xC704;&#xC5D0;&#xC11C; <code>Up</code> &#xB294; <code>1</code> &#xB85C; &#xCD08;&#xAE30;&#xD654;&#xB41C; &#xC22B;&#xC790; &#xC5F4;&#xAC70;&#xD615;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC544;&#xB798;&#xC5D0; &#xC774;&#xC5B4;&#xC11C; &#xB4F1;&#xC7A5;&#xD558;&#xB294; &#xBA64;&#xBC84;&#xB4E4;&#xC740; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xC99D;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC989;, <code>Direction.Up</code> &#xC740; <code>1</code>, <code>Down</code> &#xC740; <code>2</code>, <code>Left</code> &#xB294; <code>3</code>, <code>Right</code> &#xB294; <code>4</code> &#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC6D0;&#xD55C;&#xB2E4;&#xBA74; &#xCD08;&#xAE30;&#xD654;&#xB97C; &#xC644;&#xC804;&#xD788; &#xC5C6;&#xC568; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">enum</span> Direction {
+    Up,
+    Down,
+    Left,
+    Right,
+}
+</code></pre>
+<p>&#xC5EC;&#xAE30;&#xC5D0;&#xC11C;&#xB294; <code>Up</code> &#xC740; <code>0</code> &#xC774;&#xBA70;, <code>Down</code> &#xC740; <code>1</code> &#xC774; &#xB429;&#xB2C8;&#xB2E4;.
+&#xC774; &#xC790;&#xB3D9; &#xC99D;&#xAC00; &#xB3D9;&#xC791;&#xC740; &#xBA64;&#xBC84;&#xC758; &#xAC12; &#xC790;&#xCCB4;&#xC5D0; &#xC2E0;&#xACBD; &#xC4F0;&#xC9C0; &#xC54A;&#xACE0; &#xAC01; &#xC5F4;&#xAC70;&#xD615;&#xC774; &#xB3D9;&#xC77C;&#xD55C; &#xC5F4;&#xAC70;&#xD615;&#xC758; &#xB2E4;&#xB978; &#xAC12;&#xACFC; &#xAD6C;&#xBCC4;&#xB418;&#xB294; &#xACBD;&#xC6B0;&#xC5D0; &#xC720;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC5F4;&#xAC70;&#xD615;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC740; &#xAC04;&#xB2E8;&#xD569;&#xB2C8;&#xB2E4;: &#xC5F4;&#xAC70;&#xD615; &#xC790;&#xCCB4;&#xC758; &#xC18D;&#xC131;&#xC73C;&#xB85C; &#xBAA8;&#xB4E0; &#xBA64;&#xBC84;&#xC5D0; &#xC5D1;&#xC139;&#xC2A4;&#xD558;&#xACE0;, &#xC5F4;&#xAC70;&#xD615;&#xC758; &#xC774;&#xB984;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD0C0;&#xC785;&#xC744; &#xC120;&#xC5B8;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">enum</span> Response {
+    No = <span class="hljs-number">0</span>,
+    Yes = <span class="hljs-number">1</span>,
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">respond</span>(<span class="hljs-params">recipient: <span class="hljs-built_in">string</span>, message: Response</span>): <span class="hljs-title">void</span> </span>{
+    <span class="hljs-comment">// ...</span>
+}
+
+respond(<span class="hljs-string">&quot;Princess Caroline&quot;</span>, Response.Yes)
+</code></pre>
+<p>&#xC22B;&#xC790; &#xC5F4;&#xAC70;&#xD615;&#xC740; <a href="#computed-and-constant-members">&#xACC4;&#xC0B0;&#xB41C;, &#xC0C1;&#xC218; &#xBA64;&#xBC84; (computed and constant members)</a>&#xC5D0; &#xD63C;&#xD569; &#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB2E8;&#xD3B8;&#xC801;&#xC73C;&#xB85C;, &#xCD08;&#xAE30;&#xD654;&#xAC00; &#xC5C6;&#xB294; &#xC5F4;&#xAC70;&#xD615;&#xC740; &#xC0C1;&#xC218; &#xB610;&#xB294; &#xB2E4;&#xB978; &#xC0C1;&#xC218; &#xC5F4;&#xAC70;&#xD615;&#xC758; &#xBA64;&#xBC84;&#xB85C; &#xCD08;&#xAE30;&#xD654;&#xB41C; &#xC22B;&#xC790; &#xC5F4;&#xAC70;&#xD615;&#xC744; &#xB530;&#xB77C;&#xC57C;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC989;, &#xB2E4;&#xC74C;&#xC740; &#xD5C8;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">enum</span> E {
+    A = getSomeValue(),
+    B, <span class="hljs-comment">// &#xC624;&#xB958; ! A &#xB294; &#xC0C1;&#xC218;&#xB85C; &#xCD08;&#xAE30;&#xD654;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xC73C;&#xBBC0;&#xB85C; B&#xC5D0;&#xB294; &#xCD08;&#xAE30;&#xD654;&#xAC00; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</span>
+}
+</code></pre>
+<h2 id="&#xBB38;&#xC790;-&#xC5F4;&#xAC70;&#xD615;-string-enums">&#xBB38;&#xC790; &#xC5F4;&#xAC70;&#xD615; (String enums)</h2>
+<p>&#xBB38;&#xC790; &#xC5F4;&#xAC70;&#xD615;&#xC740; &#xBE44;&#xC2B7;&#xD55C; &#xAC1C;&#xB150;&#xC774;&#xC9C0;&#xB9CC; &#xC544;&#xB798;&#xC5D0; &#xC124;&#xBA85; &#xB41C; &#xAC83;&#xACFC; &#xAC19;&#xC774; &#xC57D;&#xAC04;&#xC758; &#xBBF8;&#xBB18;&#xD55C; <a href="#enums-at-runtime">&#xC2E4;&#xD589;&#xC2DC; &#xCC28;&#xC774; (runtime differences)</a>&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xBB38;&#xC790; &#xC5F4;&#xAC70;&#xD615;&#xC5D0;&#xC11C; &#xAC01; &#xBA64;&#xBC84;&#xB294; &#xBB38;&#xC790;&#xC5F4; &#xB9AC;&#xD130;&#xB7F4; &#xB610;&#xB294; &#xB2E4;&#xB978; &#xBB38;&#xC790; &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84;&#xB85C; &#xC0C1;&#xC218;&#xCD08;&#xAE30;&#xD654;&#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">enum</span> Direction {
+    Up = <span class="hljs-string">&quot;UP&quot;</span>,
+    Down = <span class="hljs-string">&quot;DOWN&quot;</span>,
+    Left = <span class="hljs-string">&quot;LEFT&quot;</span>,
+    Right = <span class="hljs-string">&quot;RIGHT&quot;</span>,
+}
+</code></pre>
+<p>&#xBB38;&#xC790; &#xC5F4;&#xAC70;&#xD615;&#xC740; &#xC790;&#xB3D9; &#xC99D;&#xAC00; &#xB3D9;&#xC791;&#xC744; &#xD558;&#xC9C0; &#xC54A;&#xC9C0;&#xB9CC; &#xBB38;&#xC790; &#xC5F4;&#xAC70;&#xD615;&#xC740; &quot;&#xC9C1;&#xB82C;&#xD654;(serialize)&quot;&#xD558;&#xB294; &#xC774;&#xC810;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC989;, &#xB514;&#xBC84;&#xAE45; &#xC911;&#xC774;&#xBA70; &#xC22B;&#xC790; &#xC5F4;&#xAC70;&#xD615;&#xC758; &#xB7F0;&#xD0C0;&#xC784; &#xAC12;&#xC744; &#xC77D;&#xC5B4;&#xC57C;&#xD558;&#xB294; &#xACBD;&#xC6B0; &#xC774; &#xAC12;&#xC740; &#xC885;&#xC885; &#xBD88;&#xD22C;&#xBA85;&#xD569;&#xB2C8;&#xB2E4; - &#xC989;, &#xC790;&#xCCB4;&#xC801;&#xC73C;&#xB85C; &#xC720;&#xC6A9;&#xD55C; &#xC758;&#xBBF8;&#xB97C; &#xC804;&#xB2EC;&#xD558;&#xC9C0;&#xB294; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.(<a href="#enums-at-runtime">&#xC5ED; &#xB9E4;&#xD551; (enums-at-runtime)</a>&#xC774; &#xB3C4;&#xC6C0;&#xC774; &#xB420;&#xAC83;&#xC785;&#xB2C8;&#xB2E4;)
+&#xBB38;&#xC790; &#xC5F4;&#xAC70;&#xD615;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84; &#xC790;&#xCCB4;&#xC758; &#xC774;&#xB984;&#xACFC; &#xB3C5;&#xB9BD;&#xC801;&#xC73C;&#xB85C; &#xCF54;&#xB4DC;&#xAC00; &#xC2E4;&#xD589;&#xB420; &#xB54C; &#xC758;&#xBBF8;&#xC788;&#xACE0; &#xC77D;&#xAE30; &#xC26C;&#xC6B4; &#xAC12;&#xC744; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xBCC4;&#xC885;-&#xC5F4;&#xAC70;&#xD615;-heterogeneous-enums">&#xBCC4;&#xC885; &#xC5F4;&#xAC70;&#xD615; (Heterogeneous enums)</h2>
+<p>&#xC5C4;&#xBC00;&#xD788; &#xB9D0;&#xD558;&#xC790;&#xBA74; &#xC5F4;&#xAC70;&#xD615;&#xC740; &#xBB38;&#xC790;&#xC5F4;&#xACFC; &#xC22B;&#xC790; &#xBA64;&#xBC84;&#xC640; &#xC11E;&#xC77C; &#xC218;&#xB294; &#xC788;&#xC9C0;&#xB9CC; &#xADF8;&#xB807;&#xAC8C; &#xD560; &#xC774;&#xC720;&#xB294; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">enum</span> BooleanLikeHeterogeneousEnum {
+    No = <span class="hljs-number">0</span>,
+    Yes = <span class="hljs-string">&quot;YES&quot;</span>,
+}
+</code></pre>
+<p>JavaScript&#xC758; &#xB7F0;&#xD0C0;&#xC784; &#xB3D9;&#xC791;&#xC744; &#xC2E4;&#xC81C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xACE0; &#xD558;&#xC9C0; &#xC54A;&#xB294; &#xD55C;, &#xC774;&#xB807;&#xAC8C; &#xD558;&#xC9C0; &#xC54A;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
+<h2 id="&#xACC4;&#xC0B0;&#xB41C;-&#xC0C1;&#xC218;-&#xBA64;&#xBC84;-computed-and-constant-members">&#xACC4;&#xC0B0;&#xB41C; &#xC0C1;&#xC218; &#xBA64;&#xBC84; (Computed and constant members)</h2>
+<p>&#xAC01; &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84;&#xC5D0;&#xB294; <em>constant</em> &#xB610;&#xB294; <em>computed</em> &#xC911; &#xD558;&#xB098;&#xC77C; &#xC218; &#xC788;&#xB294; &#xAC12;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xACBD;&#xC6B0; &#xC0C1;&#xC218;&#xB85C; &#xAC04;&#xC8FC;&#xB429;&#xB2C8;&#xB2E4;:</p>
+<ul>
+<li><p>&#xC5F4;&#xAC70;&#xD615;&#xC758; &#xCCAB; &#xBC88;&#xC9F8; &#xBA64;&#xBC84;&#xC774;&#xBA70; &#xCD08;&#xAE30;&#xD654;&#xAC00; &#xC5C6;&#xC73C;&#xBA74; &#xAC12;&#xC774; <code>0</code> &#xC73C;&#xB85C; &#xC9C0;&#xC815;&#xB429;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="hljs-comment">// E.X &#xB294; &#xC0C1;&#xC218;&#xC785;&#xB2C8;&#xB2E4;:</span>
+<span class="hljs-keyword">enum</span> E { X }
+</code></pre>
+</li>
+<li><p>&#xCD08;&#xAE30;&#xD654;&#xAC00; &#xC5C6;&#xACE0; &#xC55E;&#xC758; &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84;&#xAC00; <em>&#xC22B;&#xC790;</em> &#xC778; &#xC0C1;&#xC218;&#xC785;&#xB2C8;&#xB2E4;. 
+&#xC774; &#xACBD;&#xC6B0; &#xC774;&#xD6C4; &#xB098;&#xC624;&#xB294; &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84;&#xC758; &#xAC12;&#xC740; &#xC774;&#xC804; &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84;&#xC758; &#xAC12;&#xC5D0; 1&#xC744; &#xB354;&#xD55C; &#xAC12;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="hljs-comment">// E1 &#xBC0F; E2&#xC758; &#xBAA8;&#xB4E0; &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84;&#xB294; &#xC0C1;&#xC218;&#xC785;&#xB2C8;&#xB2E4;.</span>
+
+<span class="hljs-keyword">enum</span> E1 { X, Y, Z }
+
+<span class="hljs-keyword">enum</span> E2 {
+    A = <span class="hljs-number">1</span>, B, C
+}
+</code></pre>
+</li>
+<li><p>&#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84;&#xB294; &#xC0C1;&#xC218; &#xC5F4;&#xAC70;&#xD615; &#xD45C;&#xD604;&#xC2DD;&#xC73C;&#xB85C; &#xCD08;&#xAE30;&#xD654;&#xB429;&#xB2C8;&#xB2E4;.
+&#xC0C1;&#xC218; &#xC5F4;&#xAC70;&#xD615; &#xD45C;&#xD604;&#xC2DD;&#xC740; &#xCEF4;&#xD30C;&#xC77C; &#xC2DC;&#xAC04;&#xC5D0; &#xC644;&#xC804;&#xD788; &#xD3C9;&#xAC00;&#xB420; &#xC218; &#xC788;&#xB294; TypeScript&#xC758; &#xD558;&#xC704; &#xC9D1;&#xD569;&#xC785;&#xB2C8;&#xB2E4;.
+&#xD45C;&#xD604;&#xC2DD;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xACBD;&#xC6B0; &#xC0C1;&#xC218; &#xC5F4;&#xAC70; &#xD45C;&#xD604;&#xC2DD;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<ol>
+<li>&#xB9AC;&#xD130;&#xB7F4; &#xC5F4;&#xAC70; &#xD45C;&#xD604;&#xC2DD; (&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xBB38;&#xC790; &#xB9AC;&#xD130;&#xB7F4; &#xB610;&#xB294; &#xC22B;&#xC790; &#xB9AC;&#xD130;&#xB7F4;)</li>
+<li>&#xC774;&#xC804;&#xC5D0; &#xC815;&#xC758;&#xB41C; &#xC0C1;&#xC218; &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84; (&#xB2E4;&#xB978; &#xC5F4;&#xAC70;&#xD615;&#xC5D0;&#xC11C; &#xC62C; &#xC218; &#xC788;&#xC74C;)&#xC5D0; &#xB300;&#xD55C; &#xCC38;&#xC870;</li>
+<li>&#xAD04;&#xD638;&#xB85C; &#xBB36;&#xC778; &#xC0C1;&#xC218; &#xC5F4;&#xAC70;&#xD615; &#xD45C;&#xD604;&#xC2DD;</li>
+<li>&#xC0C1;&#xC218; &#xC5F4;&#xAC70;&#xD615; &#xD45C;&#xD604;&#xC2DD;&#xC5D0; &#xC801;&#xC6A9;&#xB41C; <code>+</code>, <code>-</code>, <code>~</code> &#xB2E8;&#xD56D; &#xC5F0;&#xC0B0;&#xC790; &#xC911; &#xD558;&#xB098;</li>
+<li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>, <code>&lt;&lt;</code>, <code>&gt;&gt;</code>, <code>&gt;&gt;&gt;</code>, <code>&amp;</code>, <code>|</code>, <code>^</code> &#xBC14;&#xC774;&#xB108;&#xB9AC; &#xC5F0;&#xC0B0;&#xC790;&#xC5D0; &#xC0AC;&#xC6A9;&#xB41C; &#xC0C1;&#xC218; &#xC5F4;&#xAC70;&#xD615; &#xD45C;&#xD604;&#xC2DD;
+&#xC0C1;&#xC218; &#xC5F4;&#xAC70;&#xD615; &#xD45C;&#xD604;&#xC2DD;&#xC774; <code>NaN</code> &#xB610;&#xB294; <code>Infinity</code> &#xB85C; &#xD3C9;&#xAC00;&#xB418;&#xB294; &#xAC83;&#xC740; &#xCEF4;&#xD30C;&#xC77C; &#xD0C0;&#xC784; &#xC5D0;&#xB7EC;&#xC785;&#xB2C8;&#xB2E4;.</li>
+</ol>
+</li>
+</ul>
+<p>&#xB2E4;&#xB978; &#xBAA8;&#xB4E0; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84;&#xAC00; &#xACC4;&#xC0B0;&#xB41C;(computed) &#xAC83;&#xC73C;&#xB85C; &#xAC04;&#xC8FC;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">enum</span> FileAccess {
+    <span class="hljs-comment">// &#xC0C1;&#xC218; &#xBA64;&#xBC84;</span>
+    None,
+    Read    = <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">1</span>,
+    Write   = <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">2</span>,
+    ReadWrite  = Read | Write,
+    <span class="hljs-comment">// &#xACC4;&#xC0B0;&#xB41C; &#xBA64;&#xBC84;</span>
+    G = <span class="hljs-string">&quot;123&quot;</span>.length
+}
+</code></pre>
+<h2 id="&#xD1B5;&#xD569;-&#xC5F4;&#xAC70;&#xD615;-&#xBC0F;-&#xC5F4;&#xAC70;&#xD615;-&#xBA64;&#xBC84;-&#xD0C0;&#xC785;-union-enums-and-enum-member-types">&#xD1B5;&#xD569; &#xC5F4;&#xAC70;&#xD615; &#xBC0F; &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84; &#xD0C0;&#xC785; (Union enums and enum member types)</h2>
+<p>&#xACC4;&#xC0B0;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xC0C1;&#xC218; &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84;&#xC758; &#xD2B9;&#xC218; &#xD558;&#xC704; &#xC9D1;&#xD569;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;: &#xB9AC;&#xD130;&#xB7F4; &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84;&#xC785;&#xB2C8;&#xB2E4;.
+&#xB9AC;&#xD130;&#xB7F4; &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84;&#xB294; &#xCD08;&#xAE30;&#xD654;&#xB41C; &#xAC12;&#xC774; &#xC5C6;&#xAC70;&#xB098; &#xB2E4;&#xC74C; &#xAC12;&#xC73C;&#xB85C; &#xCD08;&#xAE30;&#xD654; &#xB41C; &#xAC12;&#xC774; &#xC788;&#xB294; &#xC0C1;&#xC218; &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li>&#xBB38;&#xC790;&#xC5F4; &#xB9AC;&#xD130;&#xB7F4; (&#xC608;: <code>&quot;foo&quot;</code>, <code>&quot;bar&quot;</code>, <code>&quot;baz&quot;</code>)</li>
+<li>&#xC22B;&#xC790; &#xB9AC;&#xD130;&#xB7F4; (&#xC608;: <code>1</code>, <code>100</code>)</li>
+<li>&#xC22B;&#xC790; &#xB9AC;&#xD130;&#xB7F4;&#xC5D0; &#xC801;&#xC6A9;&#xB418;&#xB294; &#xB2E8;&#xD56D; &#xB9C8;&#xC774;&#xB108;&#xC2A4; (&#xC608;: <code>-1</code>, <code>-100</code>)</li>
+</ul>
+<p>&#xC5F4;&#xAC70;&#xD615;&#xC758; &#xBAA8;&#xB4E0; &#xBA64;&#xBC84;&#xAC00; &#xB9AC;&#xD130;&#xB7F4; &#xC5F4;&#xAC70;&#xD615; &#xAC12;&#xC744; &#xAC00;&#xC9C8; &#xB54C; &#xC77C;&#xBD80; &#xD2B9;&#xC218;&#xD55C; &#xC758;&#xBBF8;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xCCAB;&#xBC88;&#xC9F8;&#xB294; &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84;&#xB3C4; &#xD0C0;&#xC785;&#xC774; &#xB41C;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4; &#xD2B9;&#xC815; &#xBA64;&#xBC84;&#xB294; &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84;&#xC758; &#xAC12;&#xB9CC; &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">enum</span> ShapeKind {
+    Circle,
+    Square,
+}
+
+<span class="hljs-keyword">interface</span> Circle {
+    kind: ShapeKind.Circle;
+    radius: <span class="hljs-built_in">number</span>;
+}
+
+<span class="hljs-keyword">interface</span> Square {
+    kind: ShapeKind.Square;
+    sideLength: <span class="hljs-built_in">number</span>;
+}
+
+<span class="hljs-keyword">let</span> c: Circle = {
+    kind: ShapeKind.Square,
+    <span class="hljs-comment">//    ~~~~~~~~~~~~~~~~ &#xC624;&#xB958;!</span>
+    radius: <span class="hljs-number">100</span>,
+}
+</code></pre>
+<p>&#xB610; &#xB2E4;&#xB978; &#xBCC0;&#xD654;&#xB294; &#xC5F4;&#xAC70; &#xD0C0;&#xC785; &#xC790;&#xCCB4;&#xAC00; &#xAC01; &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84;&#xC758; <em>&#xD569;&#xC9D1;&#xD569;(union)</em> &#xC774; &#xB41C;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
+<a href="Advanced%20Types.md#union-types">&#xACB0;&#xD569; &#xD0C0;&#xC785; (union types)</a>&#xC5D0; &#xB300;&#xD574; &#xC544;&#xC9C1; &#xBC30;&#xC6B0;&#xC9C0; &#xC54A;&#xC558;&#xC9C0;&#xB9CC;, &#xC54C;&#xC544; &#xB450;&#xC5B4;&#xC57C; &#xD560; &#xAC83;&#xC740; &#xC870;&#xD569; &#xC5F4;&#xAC70;&#xD615;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;&#xC774; &#xC5F4;&#xAC70;&#xD615; &#xC790;&#xCCB4;&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xC815;&#xD655;&#xD55C; &#xAC12;&#xB4E4;&#xC744; &#xC54C;&#xACE0;&#xC788;&#xB2E4;&#xB294; &#xC0AC;&#xC2E4;&#xC744; &#xD65C;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC774; &#xB54C;&#xBB38;&#xC5D0; TypeScript&#xB294; &#xAC12;&#xC744; &#xC798;&#xBABB; &#xBE44;&#xAD50;&#xD558;&#xB294; &#xBC14;&#xBCF4;&#xAC19;&#xC740; &#xBC84;&#xADF8;&#xB97C; &#xC7A1;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">enum</span> E {
+    Foo,
+    Bar,
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span>(<span class="hljs-params">x: E</span>) </span>{
+    <span class="hljs-keyword">if</span> (x !== E.Foo || x !== E.Bar) {
+        <span class="hljs-comment">//             ~~~~~~~~~~~</span>
+        <span class="hljs-comment">// &#xC624;&#xB958;! &#xC5F0;&#xC0B0;&#xC790; &apos;!==&apos; &#xB294; &apos;E.Foo&apos; &#xBC0F; &apos;E.Bar&apos; &#xD0C0;&#xC785;&#xC5D0; &#xC801;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+    }
+}
+</code></pre>
+<p>&#xC774; &#xC608;&#xC81C;&#xC5D0;&#xC11C;, &#xBA3C;&#xC800; <code>x</code> &#xAC00; <code>E.Foo</code> &#xAC00; &#xAC00; <em>&#xC544;&#xB2CC;&#xC9C0;</em> &#xAC80;&#xC0AC;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774; &#xAC80;&#xC0AC;&#xB97C; &#xC131;&#xACF5;&#xD558;&#xBA74; <code>||</code> &#xAC00; &#xC2E4;&#xD589;&#xB418;&#xC9C0; &#xC54A;&#xACE0; &apos;if&apos; &#xC758; &#xB0B4;&#xBD80;&#xAC00; &#xC2E4;&#xD589;&#xB429;&#xB2C8;&#xB2E4;.
+&#xD558;&#xC9C0;&#xB9CC; &#xAC80;&#xC0AC;&#xB97C; &#xC131;&#xACF5;&#xD558;&#xC9C0; &#xBABB;&#xD558;&#xBA74; <code>x</code> &#xB294; <em>&#xC624;&#xC9C1;</em> <code>E.Foo</code> &#xB9CC; &#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; <code>E.Bar</code> &#xC640; &#xB3D9;&#xC77C;&#xD55C; &#xC9C0; &#xD655;&#xC778;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC758;&#xBBF8;&#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xB7F0;&#xD0C0;&#xC784;&#xC2DC;&#xC758;-&#xC5F4;&#xAC70;&#xD615;-enums-at-runtime">&#xB7F0;&#xD0C0;&#xC784;&#xC2DC;&#xC758; &#xC5F4;&#xAC70;&#xD615; (Enums at runtime)</h2>
+<p>&#xC5F4;&#xAC70;&#xD615;&#xC740; &#xB7F0;&#xD0C0;&#xC784;&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xC2E4;&#xC81C; &#xAC1D;&#xCCB4;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4; &#xB2E4;&#xC74C; &#xC5F4;&#xAC70;&#xD615;&#xC744; &#xBCF4;&#xBA74;,</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">enum</span> E {
+    X, Y, Z
+}
+</code></pre>
+<p>&#xC2E4;&#xC81C;&#xB85C; &#xD568;&#xC218;&#xC5D0; &#xC804;&#xB2EC; &#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span>(<span class="hljs-params">obj: { X: <span class="hljs-built_in">number</span> }</span>) </span>{
+    <span class="hljs-keyword">return</span> obj.X;
+}
+
+<span class="hljs-comment">// &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;. &#xC65C;&#xB0D0;&#xD558;&#xBA74; `E` &#xB294; &#xC22B;&#xC790;&#xC778; `X` &#xB77C;&#xB294; &#xC18D;&#xC131;&#xC744; &#xAC00;&#xC9C0;&#xACE0;&#xC788;&#xAE30; &#xB584;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.</span>
+f(E);
+</code></pre>
+<h3 id="&#xC5ED;-&#xB9E4;&#xD551;-reverse-mappings">&#xC5ED; &#xB9E4;&#xD551; (Reverse mappings)</h3>
+<p>&#xBA64;&#xBC84;&#xC5D0; &#xB300;&#xD55C; &#xC18D;&#xC131; &#xC774;&#xB984;&#xC774; &#xC788;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; &#xB9CC;&#xB4DC;&#xB294; &#xAC83; &#xC678;&#xC5D0;&#xB3C4; &#xC22B;&#xC790; &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84;&#xB294; &#xC5F4;&#xAC70;&#xD615; &#xAC12;&#xC5D0;&#xC11C; &#xC5F4;&#xAC70;&#xD615;&#xC758; &#xC774;&#xB984;&#xC73C;&#xB85C; <em>&#xC5ED; &#xB9E4;&#xD551;(reverse mapping)</em> &#xC744; &#xBC1B;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, &#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xC5D0;&#xC11C;:</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">enum</span> Enum {
+    A
+}
+<span class="hljs-keyword">let</span> a = Enum.A;
+<span class="hljs-keyword">let</span> nameOfA = Enum[a]; <span class="hljs-comment">// &quot;A&quot;</span>
+</code></pre>
+<p>TypeScript&#xB294; &#xC774;&#xAC83;&#xC744; &#xB2E4;&#xC74C; JavaScript&#xB85C; &#xCEF4;&#xD30C;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> Enum;
+(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">Enum</span>) </span>{
+    Enum[Enum[<span class="hljs-string">&quot;A&quot;</span>] = <span class="hljs-number">0</span>] = <span class="hljs-string">&quot;A&quot;</span>;
+})(Enum || (Enum = {}));
+<span class="hljs-keyword">var</span> a = Enum.A;
+<span class="hljs-keyword">var</span> nameOfA = Enum[a]; <span class="hljs-comment">// &quot;A&quot;</span>
+</code></pre>
+<p>&#xC774; &#xC0DD;&#xC131;&#xB41C; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xC5F4;&#xAC70;&#xD615;&#xC740; &#xC804;&#xBC29;&#xD5A5;(forward) (<code>name</code> -&gt; <code>value</code>) &#xB9E4;&#xD551;&#xACFC; &#xC5ED;&#xBC29;&#xD5A5;(reverse) (<code>value</code> -&gt; <code>name</code>) &#xB9E4;&#xD551;&#xC744; &#xBAA8;&#xB450; &#xC800;&#xC7A5;&#xD558;&#xB294; &#xAC1D;&#xCCB4;&#xB85C; &#xCEF4;&#xD30C;&#xC77C;&#xB429;&#xB2C8;&#xB2E4;.
+&#xB2E4;&#xB978; &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84;&#xC5D0; &#xB300;&#xD55C; &#xCC38;&#xC870;&#xB294; &#xD56D;&#xC0C1; &#xC18D;&#xC131; &#xC811;&#xADFC;&#xC73C;&#xB85C; &#xBCF4;&#xB0B4;&#xC9C0;&#xBA70; &#xACB0;&#xACE0; &#xC778;&#xB77C;&#xC778;(inline)&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xBB38;&#xC790;&#xC5F4; &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84;&#xB294; &#xC5ED;&#xB9E4;&#xD551;&#xC744; &#xC0DD;&#xC131;&#xD558;&#xC9C0; <em>&#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;</em>.</p>
+<h3 id="const-&#xC5F4;&#xAC70;&#xD615;-const-enums"><code>const</code> &#xC5F4;&#xAC70;&#xD615; (<code>const</code> enums)</h3>
+<p>&#xB300;&#xBD80;&#xBD84;&#xC758; &#xACBD;&#xC6B0; &#xC5F4;&#xAC70;&#xD615;&#xC740; &#xC644;&#xBCBD;&#xD558;&#xAC8C; &#xC720;&#xD6A8;&#xD604; &#xBC29;&#xBC95;&#xC785;&#xB2C8;&#xB2E4;.
+&#xD558;&#xC9C0;&#xB9CC; &#xB54C;&#xB584;&#xB85C; &#xC694;&#xAD6C;&#xC0AC;&#xD56D;&#xC774; &#xB354; &#xC5C4;&#xACA9;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC5F4;&#xAC70;&#xD615;&#xC758; &#xAC12;&#xC5D0; &#xC811;&#xADFC;&#xD560; &#xB54C; &#xC5EC;&#xBD80;&#xB290;&#xC774; &#xC0DD;&#xC131;&#xB41C; &#xCF54;&#xB4DC;&#xC640; &#xCD94;&#xAC00;&#xC801;&#xC778; &#xC6B0;&#xD68C; &#xBE44;&#xC6A9;&#xC744; &#xD53C;&#xD558;&#xB824;&#xBA74; <code>const</code> &#xC5F4;&#xAC70;&#xD615;&#xC744; &#xC0AC;&#xC6A9; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+<code>const</code> &#xC5F4;&#xAC70;&#xD615;&#xC740; &#xC5F4;&#xAC70;&#xD615;&#xC5D0; <code>const</code> &#xC9C0;&#xC2DC;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC815;&#xC758;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> <span class="hljs-keyword">enum</span> Enum {
+    A = <span class="hljs-number">1</span>,
+    B = A * <span class="hljs-number">2</span>
+}
+</code></pre>
+<p><code>const</code> &#xC5F4;&#xAC70;&#xD615;&#xC740; &#xC0C1;&#xC218; &#xC5F4;&#xAC70;&#xD615; &#xD45C;&#xD604;&#xC2DD;&#xB9CC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBA70; &#xC77C;&#xBC18; &#xC5F4;&#xAC70;&#xD615;&#xACFC; &#xB2EC;&#xB9AC; &#xCEF4;&#xD30C;&#xC77C;&#xD558;&#xB294; &#xB3D9;&#xC548; &#xC624;&#xB098;&#xC804;&#xD788; &#xC81C;&#xAC70;&#xB429;&#xB2C8;&#xB2E4;.
+<code>const</code> &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84;&#xB294; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC0AC;&#xC774;&#xD2B8;&#xC5D0;&#xC11C; &#xC778;&#xB77C;&#xC778;(inline)&#xB429;&#xB2C8;&#xB2E4;.
+<code>const</code> &#xC5F4;&#xAC70;&#xD615;&#xC740; &#xACC4;&#xC0B0;&#xB41C; &#xBA64;&#xBC84;&#xB97C; &#xAC00;&#xC9C8;&#xC218; &#xC5C6;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> <span class="hljs-keyword">enum</span> Directions {
+    Up,
+    Down,
+    Left,
+    Right
+}
+
+<span class="hljs-keyword">let</span> directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Right]
+</code></pre>
+<p>&#xCF54;&#xB4DC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xCEF4;&#xD30C;&#xC77C; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> directions = [<span class="hljs-number">0</span> <span class="hljs-comment">/* Up */</span>, <span class="hljs-number">1</span> <span class="hljs-comment">/* Down */</span>, <span class="hljs-number">2</span> <span class="hljs-comment">/* Left */</span>, <span class="hljs-number">3</span> <span class="hljs-comment">/* Right */</span>];
+</code></pre>
+<h2 id="&#xC570;&#xBE44;&#xC5B8;&#xD2B8;-&#xC5F4;&#xAC70;&#xD615;-ambient-enums">&#xC570;&#xBE44;&#xC5B8;&#xD2B8; &#xC5F4;&#xAC70;&#xD615; (Ambient enums)</h2>
+<pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">enum</span> Enum {
+    A = <span class="hljs-number">1</span>,
+    B,
+    C = <span class="hljs-number">2</span>
+}
+</code></pre>
+<p>&#xC570;&#xBE44;&#xC5B8;&#xD2B8; &#xC5F4;&#xAC70;&#xD615;&#xACFC; &#xBE44;&#xC570;&#xBE44;&#xC5B8;&#xD2B8; &#xC5F4;&#xAC70;&#xD615;&#xC758; &#xC911;&#xC694;&#xD55C; &#xCC28;&#xC774;&#xC810; &#xC911; &#xD558;&#xB098;&#xB294; &#xC77C;&#xBC18; &#xC5F4;&#xAC70;&#xD615;&#xC5D0;&#xC11C; &#xCD08;&#xAE30;&#xD654;&#xAC00; &#xC5C6;&#xB294; &#xBA64;&#xBC84;&#xB294; &#xC774;&#xC804; &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84;&#xAC00; &#xC0C1;&#xC218;&#xB85C; &#xAC04;&#xC8FC;&#xB41C;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
+&#xBC18;&#xB300;&#xB85C;, &#xCD08;&#xAE30;&#xD654;&#xAC00; &#xC5C6;&#xB294; &#xC570;&#xBE44;&#xC5B8;&#xD2B8; (&#xADF8;&#xB9AC;&#xACE0; &#xBE44;&#xC0C1;&#xC218;(<code>non-const</code>)) &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84;&#xB294; <em>&#xD56D;&#xC0C1;</em> &#xACC4;&#xC0B0;&#xB41C; &#xAC83;&#xC73C;&#xB85C; &#xAC04;&#xC8FC;&#xB429;&#xB2C8;&#xB2E4;.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Generics.html" class="navigation navigation-prev " aria-label="Previous page: 제네릭">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Type Inference.html" class="navigation navigation-next " aria-label="Next page: 타입 추론">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"열거형","level":"3.7","depth":1,"next":{"title":"타입 추론","level":"3.8","depth":1,"path":"pages/Type Inference.md","ref":"pages/Type Inference.md","articles":[]},"previous":{"title":"제네릭","level":"3.6","depth":1,"path":"pages/Generics.md","ref":"pages/Generics.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Enums.md","mtime":"2018-02-05T16:09:39.241Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-05T16:16:42.550Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,777 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>React & Webpack · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../Basic Types.html" />
+    
+    
+    <link rel="prev" href="Migrating from JavaScript.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tutorials</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="TypeScript in 5 minutes.html">
+            
+                <a href="TypeScript in 5 minutes.html">
+            
+                    
+                    5 분안에 보는 TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="ASP.NET Core.html">
+            
+                <a href="ASP.NET Core.html">
+            
+                    
+                    ASP.NET Core
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="Gulp.html">
+            
+                <a href="Gulp.html">
+            
+                    
+                    Gulp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="Migrating from JavaScript.html">
+            
+                <a href="Migrating from JavaScript.html">
+            
+                    
+                    Migrating from JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.5" data-path="React & Webpack.html">
+            
+                <a href="React & Webpack.html">
+            
+                    
+                    React & Webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Handbook</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../Basic Types.html">
+            
+                <a href="../Basic Types.html">
+            
+                    
+                    기본 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../Variable Declarations.html">
+            
+                <a href="../Variable Declarations.html">
+            
+                    
+                    변수 선언
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../Interfaces.html">
+            
+                <a href="../Interfaces.html">
+            
+                    
+                    인터페이스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../Classes.html">
+            
+                <a href="../Classes.html">
+            
+                    
+                    Classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../Functions.html">
+            
+                <a href="../Functions.html">
+            
+                    
+                    Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../Generics.html">
+            
+                <a href="../Generics.html">
+            
+                    
+                    제네릭
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../Enums.html">
+            
+                <a href="../Enums.html">
+            
+                    
+                    열거형
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../Type Inference.html">
+            
+                <a href="../Type Inference.html">
+            
+                    
+                    타입 추론
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="../Type Compatibility.html">
+            
+                <a href="../Type Compatibility.html">
+            
+                    
+                    Type Compatibility
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="../Advanced Types.html">
+            
+                <a href="../Advanced Types.html">
+            
+                    
+                    Advanced Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="../Symbols.html">
+            
+                <a href="../Symbols.html">
+            
+                    
+                    Symbols
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="../Iterators and Generators.html">
+            
+                <a href="../Iterators and Generators.html">
+            
+                    
+                    Iterators and Generators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="../Modules.html">
+            
+                <a href="../Modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="../Namespaces.html">
+            
+                <a href="../Namespaces.html">
+            
+                    
+                    Namespaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15" data-path="../Namespaces and Modules.html">
+            
+                <a href="../Namespaces and Modules.html">
+            
+                    
+                    Namespaces and Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.16" data-path="../Module Resolution.html">
+            
+                <a href="../Module Resolution.html">
+            
+                    
+                    Module Resolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.17" data-path="../Declaration Merging.html">
+            
+                <a href="../Declaration Merging.html">
+            
+                    
+                    Declaration Merging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.18" data-path="../JSX.html">
+            
+                <a href="../JSX.html">
+            
+                    
+                    JSX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.19" data-path="../Decorators.html">
+            
+                <a href="../Decorators.html">
+            
+                    
+                    Decorators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.20" data-path="../Mixins.html">
+            
+                <a href="../Mixins.html">
+            
+                    
+                    Mixins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.21" data-path="../Triple-Slash Directives.html">
+            
+                <a href="../Triple-Slash Directives.html">
+            
+                    
+                    Triple-Slash Directives
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.22" data-path="../Type Checking JavaScript Files.html">
+            
+                <a href="../Type Checking JavaScript Files.html">
+            
+                    
+                    Type Checking JavaScript Files
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >React & Webpack</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>This guide will teach you how to wire up TypeScript with <a href="http://facebook.github.io/react/" target="_blank">React</a> and <a href="http://webpack.github.io/" target="_blank">webpack</a>.</p>
+<p>If you&apos;re starting a brand new project, take a look at the <a href="../../samples/index.html">React Quick Start guide</a> first.</p>
+<p>Otherwise, we assume that you&apos;re already using <a href="https://nodejs.org/" target="_blank">Node.js</a> with <a href="https://www.npmjs.com/" target="_blank">npm</a>.</p>
+<h1 id="lay-out-the-project">Lay out the project</h1>
+<p>Let&apos;s start out with a new directory.
+We&apos;ll name it <code>proj</code> for now, but you can change it to whatever you want.</p>
+<pre><code class="lang-shell">mkdir proj
+cd proj
+</code></pre>
+<p>To start, we&apos;re going to structure our project in the following way:</p>
+<pre><code class="lang-text">proj/
+&#x251C;&#x2500; dist/
+&#x2514;&#x2500; src/
+   &#x2514;&#x2500; components/
+</code></pre>
+<p>TypeScript files will start out in your <code>src</code> folder, run through the TypeScript compiler, then webpack, and end up in a <code>bundle.js</code> file in <code>dist</code>.
+Any components that we write will go in the <code>src/components</code> folder.</p>
+<p>Let&apos;s scaffold this out:</p>
+<pre><code class="lang-shell">mkdir src
+cd src
+mkdir components
+cd ..
+</code></pre>
+<p>Webpack will eventually generate the <code>dist</code> directory for us.</p>
+<h1 id="initialize-the-project">Initialize the project</h1>
+<p>Now we&apos;ll turn this folder into an npm package.</p>
+<pre><code class="lang-shell">npm init
+</code></pre>
+<p>You&apos;ll be given a series of prompts, but you can feel free to use the defaults.
+You can always go back and change these in the <code>package.json</code> file that&apos;s been generated for you.</p>
+<h1 id="install-our-dependencies">Install our dependencies</h1>
+<p>First ensure Webpack is installed globally.</p>
+<pre><code class="lang-shell">npm install -g webpack
+</code></pre>
+<p>Webpack is a tool that will bundle your code and optionally all of its dependencies into a single <code>.js</code> file.</p>
+<p>Let&apos;s now add React and React-DOM, along with their declaration files, as dependencies to your <code>package.json</code> file:</p>
+<pre><code class="lang-shell">npm install --save react react-dom @types/react @types/react-dom
+</code></pre>
+<p>That <code>@types/</code> prefix means that we also want to get the declaration files for React and React-DOM.
+Usually when you import a path like <code>&quot;react&quot;</code>, it will look inside of the <code>react</code> package itself;
+however, not all packages include declaration files, so TypeScript also looks in the <code>@types/react</code> package as well.
+You&apos;ll see that we won&apos;t even have to think about this later on.</p>
+<p>Next, we&apos;ll add development-time dependencies on <a href="https://www.npmjs.com/package/awesome-typescript-loader" target="_blank">awesome-typescript-loader</a> and <a href="https://www.npmjs.com/package/source-map-loader" target="_blank">source-map-loader</a>.</p>
+<pre><code class="lang-shell">npm install --save-dev typescript awesome-typescript-loader source-map-loader
+</code></pre>
+<p>Both of these dependencies will let TypeScript and webpack play well together.
+awesome-typescript-loader helps Webpack compile your TypeScript code using the TypeScript&apos;s standard configuration file named <code>tsconfig.json</code>.
+source-map-loader uses any sourcemap outputs from TypeScript to inform webpack when generating <em>its own</em> sourcemaps.
+This will allow you to debug your final output file as if you were debugging your original TypeScript source code.</p>
+<p>Please note that awesome-typescript-loader is not the only loader for typescript.
+You could instead use <a href="https://github.com/TypeStrong/ts-loader" target="_blank">ts-loader</a>.
+Read about the differences between them <a href="https://github.com/s-panferov/awesome-typescript-loader#differences-between-ts-loader" target="_blank">here</a></p>
+<p>Notice that we installed TypeScript as a development dependency.
+We could also have linked TypeScript to a global copy with <code>npm link typescript</code>, but this is a less common scenario.</p>
+<h1 id="add-a-typescript-configuration-file">Add a TypeScript configuration file</h1>
+<p>You&apos;ll want to bring your TypeScript files together - both the code you&apos;ll be writing as well as any necessary declaration files.</p>
+<p>To do this, you&apos;ll need to create a <code>tsconfig.json</code> which contains a list of your input files as well as all your compilation settings.
+Simply create a new file in your project root named <code>tsconfig.json</code> and fill it with the following contents:</p>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
+        <span class="hljs-string">&quot;outDir&quot;</span>: <span class="hljs-string">&quot;./dist/&quot;</span>,
+        <span class="hljs-string">&quot;sourceMap&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;noImplicitAny&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;module&quot;</span>: <span class="hljs-string">&quot;commonjs&quot;</span>,
+        <span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;es5&quot;</span>,
+        <span class="hljs-string">&quot;jsx&quot;</span>: <span class="hljs-string">&quot;react&quot;</span>
+    },
+    <span class="hljs-string">&quot;include&quot;</span>: [
+        <span class="hljs-string">&quot;./src/**/*&quot;</span>
+    ]
+}
+</code></pre>
+<p>You can learn more about <code>tsconfig.json</code> files <a href="../tsconfig.json.md">here</a>.</p>
+<h1 id="write-some-code">Write some code</h1>
+<p>Let&apos;s write our first TypeScript file using React.
+First, create a file named <code>Hello.tsx</code> in <code>src/components</code> and write the following:</p>
+<pre><code class="lang-ts">import * as React from &quot;react&quot;;
+
+export interface HelloProps { compiler: string; framework: string; }
+
+export const Hello = (props: HelloProps) =&gt; &lt;h1&gt;Hello from {props.compiler} and {props.framework}!&lt;/h1&gt;;
+</code></pre>
+<p>Note that while this example uses <a href="https://facebook.github.io/react/docs/reusable-components.html#stateless-functions" target="_blank">stateless functional components</a>, we could also make our example a little <em>classier</em> as well.</p>
+<pre><code class="lang-ts">import * as React from &quot;react&quot;;
+
+export interface HelloProps { compiler: string; framework: string; }
+
+// &apos;HelloProps&apos; describes the shape of props.
+// State is never set so we use the &apos;{}&apos; type.
+export class Hello extends React.Component&lt;HelloProps, {}&gt; {
+    render() {
+        return &lt;h1&gt;Hello from {this.props.compiler} and {this.props.framework}!&lt;/h1&gt;;
+    }
+}
+</code></pre>
+<p>Next, let&apos;s create an <code>index.tsx</code> in <code>src</code> with the following source:</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">import</span> * as React from <span class="hljs-string">&quot;react&quot;</span>;
+<span class="hljs-keyword">import</span> * as ReactDOM from <span class="hljs-string">&quot;react-dom&quot;</span>;
+
+<span class="hljs-keyword">import</span> { Hello } from <span class="hljs-string">&quot;./components/Hello&quot;</span>;
+
+ReactDOM.render(
+    &lt;Hello compiler=<span class="hljs-string">&quot;TypeScript&quot;</span> framework=<span class="hljs-string">&quot;React&quot;</span> /&gt;,
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;example&quot;</span>)
+);
+</code></pre>
+<p>We just imported our <code>Hello</code> component into <code>index.tsx</code>.
+Notice that unlike with <code>&quot;react&quot;</code> or <code>&quot;react-dom&quot;</code>, we used a <em>relative path</em> to <code>Hello.tsx</code> - this is important.
+If we hadn&apos;t, TypeScript would&apos;ve instead tried looking in our <code>node_modules</code> folder.</p>
+<p>We&apos;ll also need a page to display our <code>Hello</code> component.
+Create a file at the root of <code>proj</code> named <code>index.html</code> with the following contents:</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Hello React!<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+        <span class="hljs-comment">&lt;!-- Dependencies --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./node_modules/react/umd/react.development.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./node_modules/react-dom/umd/react-dom.development.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+        <span class="hljs-comment">&lt;!-- Main --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./dist/bundle.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>Notice that we&apos;re including files from within <code>node_modules</code>.
+React and React-DOM&apos;s npm packages include standalone <code>.js</code> files that you can include in a web page, and we&apos;re referencing them directly to get things moving faster.
+Feel free to copy these files to another directory, or alternatively, host them on a content delivery network (CDN).
+Facebook makes CDN-hosted versions of React available, and you can <a href="http://facebook.github.io/react/downloads.html#development-vs.-production-builds" target="_blank">read more about that here</a>.</p>
+<h1 id="create-a-webpack-configuration-file">Create a webpack configuration file</h1>
+<p>Create a <code>webpack.config.js</code> file at the root of the project directory.</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = {
+    entry: <span class="hljs-string">&quot;./src/index.tsx&quot;</span>,
+    output: {
+        filename: <span class="hljs-string">&quot;bundle.js&quot;</span>,
+        path: __dirname + <span class="hljs-string">&quot;/dist&quot;</span>
+    },
+
+    <span class="hljs-comment">// Enable sourcemaps for debugging webpack&apos;s output.</span>
+    devtool: <span class="hljs-string">&quot;source-map&quot;</span>,
+
+    resolve: {
+        <span class="hljs-comment">// Add &apos;.ts&apos; and &apos;.tsx&apos; as resolvable extensions.</span>
+        extensions: [<span class="hljs-string">&quot;.ts&quot;</span>, <span class="hljs-string">&quot;.tsx&quot;</span>, <span class="hljs-string">&quot;.js&quot;</span>, <span class="hljs-string">&quot;.json&quot;</span>]
+    },
+
+    <span class="hljs-built_in">module</span>: {
+        rules: [
+            <span class="hljs-comment">// All files with a &apos;.ts&apos; or &apos;.tsx&apos; extension will be handled by &apos;awesome-typescript-loader&apos;.</span>
+            { test: <span class="hljs-regexp">/\.tsx?$/</span>, loader: <span class="hljs-string">&quot;awesome-typescript-loader&quot;</span> },
+
+            <span class="hljs-comment">// All output &apos;.js&apos; files will have any sourcemaps re-processed by &apos;source-map-loader&apos;.</span>
+            { enforce: <span class="hljs-string">&quot;pre&quot;</span>, test: <span class="hljs-regexp">/\.js$/</span>, loader: <span class="hljs-string">&quot;source-map-loader&quot;</span> }
+        ]
+    },
+
+    <span class="hljs-comment">// When importing a module whose path matches one of the following, just</span>
+    <span class="hljs-comment">// assume a corresponding global variable exists and use that instead.</span>
+    <span class="hljs-comment">// This is important because it allows us to avoid bundling all of our</span>
+    <span class="hljs-comment">// dependencies, which allows browsers to cache those libraries between builds.</span>
+    externals: {
+        <span class="hljs-string">&quot;react&quot;</span>: <span class="hljs-string">&quot;React&quot;</span>,
+        <span class="hljs-string">&quot;react-dom&quot;</span>: <span class="hljs-string">&quot;ReactDOM&quot;</span>
+    },
+};
+</code></pre>
+<p>You might be wondering about that <code>externals</code> field.
+We want to avoid bundling all of React into the same file, since this increases compilation time and browsers will typically be able to cache a library if it doesn&apos;t change.</p>
+<p>Ideally, we&apos;d just import the React module from within the browser, but most browsers still don&apos;t quite support modules yet.
+Instead libraries have traditionally made themselves available using a single global variable like <code>jQuery</code> or <code>_</code>.
+This is called the &quot;namespace pattern&quot;, and webpack allows us to continue leveraging libraries written that way.
+With our entry for <code>&quot;react&quot;: &quot;React&quot;</code>, webpack will work its magic to make any import of <code>&quot;react&quot;</code> load from the <code>React</code> variable.</p>
+<p>You can learn more about configuring webpack <a href="https://webpack.js.org/concepts" target="_blank">here</a>.</p>
+<h1 id="putting-it-all-together">Putting it all together</h1>
+<p>Just run:</p>
+<pre><code class="lang-shell">webpack
+</code></pre>
+<p>Now open up <code>index.html</code> in your favorite browser and everything should be ready to use!
+You should see a page that says &quot;Hello from TypeScript and React!&quot;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Migrating from JavaScript.html" class="navigation navigation-prev " aria-label="Previous page: Migrating from JavaScript">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../Basic Types.html" class="navigation navigation-next " aria-label="Next page: 기본 타입">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"React & Webpack","level":"2.5","depth":1,"next":{"title":"기본 타입","level":"3.1","depth":1,"path":"pages/Basic Types.md","ref":"pages/Basic Types.md","articles":[]},"previous":{"title":"Migrating from JavaScript","level":"2.4","depth":1,"path":"pages/tutorials/Migrating from JavaScript.md","ref":"pages/tutorials/Migrating from JavaScript.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tutorials/React & Webpack.md","mtime":"2018-02-05T16:09:39.252Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-05T16:16:42.550Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

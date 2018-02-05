@@ -1,0 +1,898 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Migrating from JavaScript · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="React & Webpack.html" />
+    
+    
+    <link rel="prev" href="Gulp.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tutorials</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="TypeScript in 5 minutes.html">
+            
+                <a href="TypeScript in 5 minutes.html">
+            
+                    
+                    5 분안에 보는 TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="ASP.NET Core.html">
+            
+                <a href="ASP.NET Core.html">
+            
+                    
+                    ASP.NET Core
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="Gulp.html">
+            
+                <a href="Gulp.html">
+            
+                    
+                    Gulp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.4" data-path="Migrating from JavaScript.html">
+            
+                <a href="Migrating from JavaScript.html">
+            
+                    
+                    Migrating from JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="React & Webpack.html">
+            
+                <a href="React & Webpack.html">
+            
+                    
+                    React & Webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Handbook</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../Basic Types.html">
+            
+                <a href="../Basic Types.html">
+            
+                    
+                    기본 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../Variable Declarations.html">
+            
+                <a href="../Variable Declarations.html">
+            
+                    
+                    변수 선언
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../Interfaces.html">
+            
+                <a href="../Interfaces.html">
+            
+                    
+                    인터페이스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../Classes.html">
+            
+                <a href="../Classes.html">
+            
+                    
+                    Classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../Functions.html">
+            
+                <a href="../Functions.html">
+            
+                    
+                    Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../Generics.html">
+            
+                <a href="../Generics.html">
+            
+                    
+                    제네릭
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../Enums.html">
+            
+                <a href="../Enums.html">
+            
+                    
+                    열거형
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../Type Inference.html">
+            
+                <a href="../Type Inference.html">
+            
+                    
+                    타입 추론
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="../Type Compatibility.html">
+            
+                <a href="../Type Compatibility.html">
+            
+                    
+                    Type Compatibility
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="../Advanced Types.html">
+            
+                <a href="../Advanced Types.html">
+            
+                    
+                    Advanced Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="../Symbols.html">
+            
+                <a href="../Symbols.html">
+            
+                    
+                    Symbols
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="../Iterators and Generators.html">
+            
+                <a href="../Iterators and Generators.html">
+            
+                    
+                    Iterators and Generators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="../Modules.html">
+            
+                <a href="../Modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="../Namespaces.html">
+            
+                <a href="../Namespaces.html">
+            
+                    
+                    Namespaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15" data-path="../Namespaces and Modules.html">
+            
+                <a href="../Namespaces and Modules.html">
+            
+                    
+                    Namespaces and Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.16" data-path="../Module Resolution.html">
+            
+                <a href="../Module Resolution.html">
+            
+                    
+                    Module Resolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.17" data-path="../Declaration Merging.html">
+            
+                <a href="../Declaration Merging.html">
+            
+                    
+                    Declaration Merging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.18" data-path="../JSX.html">
+            
+                <a href="../JSX.html">
+            
+                    
+                    JSX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.19" data-path="../Decorators.html">
+            
+                <a href="../Decorators.html">
+            
+                    
+                    Decorators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.20" data-path="../Mixins.html">
+            
+                <a href="../Mixins.html">
+            
+                    
+                    Mixins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.21" data-path="../Triple-Slash Directives.html">
+            
+                <a href="../Triple-Slash Directives.html">
+            
+                    
+                    Triple-Slash Directives
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.22" data-path="../Type Checking JavaScript Files.html">
+            
+                <a href="../Type Checking JavaScript Files.html">
+            
+                    
+                    Type Checking JavaScript Files
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Migrating from JavaScript</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>TypeScript doesn&apos;t exist in a vacuum.
+It was built with the JavaScript ecosystem in mind, and a lot of JavaScript exists today.
+Converting a JavaScript codebase over to TypeScript is, while somewhat tedious, usually not challenging.
+In this tutorial, we&apos;re going to look at how you might start out.
+We assume you&apos;ve read enough of the handbook to write new TypeScript code.</p>
+<p>If you&apos;re looking to convert a React project, we recommend looking at the <a href="https://github.com/Microsoft/TypeScript-React-Conversion-Guide#typescript-react-conversion-guide" target="_blank">React Conversion Guide</a> first.</p>
+<h1 id="setting-up-your-directories">Setting up your Directories</h1>
+<p>If you&apos;re writing in plain JavaScript, it&apos;s likely that you&apos;re running your JavaScript directly,
+  where your <code>.js</code> files in a <code>src</code>, <code>lib</code>, or <code>dist</code> directory, and then ran as desired.</p>
+<p>If that&apos;s the case, the files that you&apos;ve written are going to be used as inputs to TypeScript, and you&apos;ll run the outputs it produces.
+During our JS to TS migration, we&apos;ll need to separate our input files to prevent TypeScript from overwriting them.
+If your output files need to reside in a specific directory, then that will be your output directory.</p>
+<p>You might also be running some intermediate steps on your JavaScript, such as bundling or using another transpiler like Babel.
+In this case, you might already have a folder structure like this set up.</p>
+<p>From this point on, we&apos;re going to assume that your directory is set up something like this:</p>
+<pre><code class="lang-text">projectRoot
+&#x251C;&#x2500;&#x2500; src
+&#x2502;   &#x251C;&#x2500;&#x2500; file1.js
+&#x2502;   &#x2514;&#x2500;&#x2500; file2.js
+&#x251C;&#x2500;&#x2500; built
+&#x2514;&#x2500;&#x2500; tsconfig.json
+</code></pre>
+<p>If you have a <code>tests</code> folder outside of your <code>src</code> directory, you might have one <code>tsconfig.json</code> in <code>src</code>, and one in <code>tests</code> as well.</p>
+<h1 id="writing-a-configuration-file">Writing a Configuration File</h1>
+<p>TypeScript uses a file called <code>tsconfig.json</code> for managing your project&apos;s options, such as which files you want to include, and what sorts of checking you want to perform.
+Let&apos;s create a bare-bones one for our project:</p>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
+        <span class="hljs-string">&quot;outDir&quot;</span>: <span class="hljs-string">&quot;./built&quot;</span>,
+        <span class="hljs-string">&quot;allowJs&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;es5&quot;</span>
+    },
+    <span class="hljs-string">&quot;include&quot;</span>: [
+        <span class="hljs-string">&quot;./src/**/*&quot;</span>
+    ]
+}
+</code></pre>
+<p>Here we&apos;re specifying a few things to TypeScript:</p>
+<ol>
+<li>Read in any files it understands in the <code>src</code> directory (with <code>include</code>).</li>
+<li>Accept JavaScript files as inputs (with <code>allowJs</code>).</li>
+<li>Emit all of the output files in <code>built</code> (with <code>outDir</code>).</li>
+<li>Translate newer JavaScript constructs down to an older version like ECMAScript 5 (using <code>target</code>).</li>
+</ol>
+<p>At this point, if you try running <code>tsc</code> at the root of your project, you should see output files in the <code>built</code> directory.
+The layout of files in <code>built</code> should look identical to the layout of <code>src</code>.
+You should now have TypeScript working with your project.</p>
+<h2 id="early-benefits">Early Benefits</h2>
+<p>Even at this point you can get some great benefits from TypeScript understanding your project.
+If you open up an editor like <a href="https://code.visualstudio.com" target="_blank">VS Code</a> or <a href="https://visualstudio.com" target="_blank">Visual Studio</a>, you&apos;ll see that you can often get some tooling support like completion.
+You can also catch certain bugs with options like:</p>
+<ul>
+<li><code>noImplicitReturns</code> which prevents you from forgetting to return at the end of a function.</li>
+<li><code>noFallthroughCasesInSwitch</code> which is helpful if you never want to forget a <code>break</code> statement between <code>case</code>s in a <code>switch</code> block.</li>
+</ul>
+<p>TypeScript will also warn about unreachable code and labels, which you can disable with <code>allowUnreachableCode</code> and <code>allowUnusedLabels</code> respectively.</p>
+<h1 id="integrating-with-build-tools">Integrating with Build Tools</h1>
+<p>You might have some more build steps in your pipeline.
+Perhaps you concatenate something to each of your files.
+Each build tool is different, but we&apos;ll do our best to cover the gist of things.</p>
+<h2 id="gulp">Gulp</h2>
+<p>If you&apos;re using Gulp in some fashion, we have a tutorial on <a href="Gulp.html">using Gulp</a> with TypeScript, and integrating with common build tools like Browserify, Babelify, and Uglify.
+You can read more there.</p>
+<h2 id="webpack">Webpack</h2>
+<p>Webpack integration is pretty simple.
+You can use <code>awesome-typescript-loader</code>, a TypeScript loader, combined with <code>source-map-loader</code> for easier debugging.
+Simply run</p>
+<pre><code class="lang-shell">npm install awesome-typescript-loader source-map-loader
+</code></pre>
+<p>and merge in options from the following into your <code>webpack.config.js</code> file:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = {
+    entry: <span class="hljs-string">&quot;./src/index.ts&quot;</span>,
+    output: {
+        filename: <span class="hljs-string">&quot;./dist/bundle.js&quot;</span>,
+    },
+
+    <span class="hljs-comment">// Enable sourcemaps for debugging webpack&apos;s output.</span>
+    devtool: <span class="hljs-string">&quot;source-map&quot;</span>,
+
+    resolve: {
+        <span class="hljs-comment">// Add &apos;.ts&apos; and &apos;.tsx&apos; as resolvable extensions.</span>
+        extensions: [<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;.webpack.js&quot;</span>, <span class="hljs-string">&quot;.web.js&quot;</span>, <span class="hljs-string">&quot;.ts&quot;</span>, <span class="hljs-string">&quot;.tsx&quot;</span>, <span class="hljs-string">&quot;.js&quot;</span>]
+    },
+
+    <span class="hljs-built_in">module</span>: {
+        loaders: [
+            <span class="hljs-comment">// All files with a &apos;.ts&apos; or &apos;.tsx&apos; extension will be handled by &apos;awesome-typescript-loader&apos;.</span>
+            { test: <span class="hljs-regexp">/\.tsx?$/</span>, loader: <span class="hljs-string">&quot;awesome-typescript-loader&quot;</span> }
+        ],
+
+        preLoaders: [
+            <span class="hljs-comment">// All output &apos;.js&apos; files will have any sourcemaps re-processed by &apos;source-map-loader&apos;.</span>
+            { test: <span class="hljs-regexp">/\.js$/</span>, loader: <span class="hljs-string">&quot;source-map-loader&quot;</span> }
+        ]
+    },
+
+    <span class="hljs-comment">// Other options...</span>
+};
+</code></pre>
+<p>It&apos;s important to note that awesome-typescript-loader will need to run before any other loader that deals with <code>.js</code> files.</p>
+<p>The same goes for <a href="https://github.com/TypeStrong/ts-loader" target="_blank">ts-loader</a>, another TypeScript loader for Webpack.
+You can read more about the differences between the two <a href="https://github.com/s-panferov/awesome-typescript-loader#differences-between-ts-loader" target="_blank">here</a>.</p>
+<p>You can see an example of using Webpack in our <a href="React%20&amp;%20Webpack.md">tutorial on React and Webpack</a>.</p>
+<h1 id="moving-to-typescript-files">Moving to TypeScript Files</h1>
+<p>At this point, you&apos;re probably ready to start using TypeScript files.
+The first step is to rename one of your <code>.js</code> files to <code>.ts</code>.
+If your file uses JSX, you&apos;ll need to rename it to <code>.tsx</code>.</p>
+<p>Finished with that step?
+Great!
+You&apos;ve successfully migrated a file from JavaScript to TypeScript!</p>
+<p>Of course, that might not feel right.
+If you open that file in an editor with TypeScript support (or if you run <code>tsc --pretty</code>), you might see red squiggles on certain lines.
+You should think of these the same way you&apos;d think of red squiggles in an editor like Microsoft Word.
+TypeScript will still translate your code, just like Word will still let you print your documents.</p>
+<p>If that sounds too lax for you, you can tighten that behavior up.
+If, for instance, you <em>don&apos;t</em> want TypeScript to compile to JavaScript in the face of errors, you can use the <code>noEmitOnError</code> option.
+In that sense, TypeScript has a dial on its strictness, and you can turn that knob up as high as you want.</p>
+<p>If you plan on using the stricter settings that are available, it&apos;s best to turn them on now (see <a href="#getting-stricter-checks">Getting Stricter Checks</a> below).
+For instance, if you never want TypeScript to silently infer <code>any</code> for a type without you explicitly saying so, you can use <code>noImplicitAny</code> before you start modifying your files.
+While it might feel somewhat overwhelming, the long-term gains become apparent much more quickly.</p>
+<h2 id="weeding-out-errors">Weeding out Errors</h2>
+<p>Like we mentioned, it&apos;s not unexpected to get error messages after conversion.
+The important thing is to actually go one by one through these and decide how to deal with the errors.
+Often these will be legitimate bugs, but sometimes you&apos;ll have to explain what you&apos;re trying to do a little better to TypeScript.</p>
+<h3 id="importing-from-modules">Importing from Modules</h3>
+<p>You might start out getting a bunch of errors like <code>Cannot find name &apos;require&apos;.</code>, and <code>Cannot find name &apos;define&apos;.</code>.
+In these cases, it&apos;s likely that you&apos;re using modules.
+While you can just convince TypeScript that these exist by writing out</p>
+<pre><code class="lang-ts"><span class="hljs-comment">// For Node/CommonJS</span>
+<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">require</span>(<span class="hljs-params">path: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">any</span></span>;
+</code></pre>
+<p>or</p>
+<pre><code class="lang-ts"><span class="hljs-comment">// For RequireJS/AMD</span>
+<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">define</span>(<span class="hljs-params">...args: <span class="hljs-built_in">any</span>[]</span>): <span class="hljs-title">any</span></span>;
+</code></pre>
+<p>it&apos;s better to get rid of those calls and use TypeScript syntax for imports.</p>
+<p>First, you&apos;ll need to enable some module system by setting TypeScript&apos;s <code>module</code> flag.
+Valid options are <code>commonjs</code>, <code>amd</code>, <code>system</code>, and <code>umd</code>.</p>
+<p>If you had the following Node/CommonJS code:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> foo = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;foo&quot;</span>);
+
+foo.doStuff();
+</code></pre>
+<p>or the following RequireJS/AMD code:</p>
+<pre><code class="lang-js">define([<span class="hljs-string">&quot;foo&quot;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">foo</span>) </span>{
+    foo.doStuff();
+})
+</code></pre>
+<p>then you would write the following TypeScript code:</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">import</span> foo = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;foo&quot;</span>);
+
+foo.doStuff();
+</code></pre>
+<h3 id="getting-declaration-files">Getting Declaration Files</h3>
+<p>If you started converting over to TypeScript imports, you&apos;ll probably run into errors like <code>Cannot find module &apos;foo&apos;.</code>.
+The issue here is that you likely don&apos;t have <em>declaration files</em> to describe your library.
+Luckily this is pretty easy.
+If TypeScript complains about a package like <code>lodash</code>, you can just write</p>
+<pre><code class="lang-shell">npm install -S @types/lodash
+</code></pre>
+<p>If you&apos;re using a module option other than <code>commonjs</code>, you&apos;ll need to set your <code>moduleResolution</code> option to <code>node</code>.</p>
+<p>After that, you&apos;ll be able to import lodash with no issues, and get accurate completions.</p>
+<h3 id="exporting-from-modules">Exporting from Modules</h3>
+<p>Typically, exporting from a module involves adding properties to a value like <code>exports</code> or <code>module.exports</code>.
+TypeScript allows you to use top-level export statements.
+For instance, if you exported a function like so:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports.feedPets = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">pets</span>) </span>{
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>you could write that out as the following:</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">feedPets</span>(<span class="hljs-params">pets</span>) </span>{
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>Sometimes you&apos;ll entirely overwrite the exports object.
+This is a common pattern people use to make their modules immediately callable like in this snippet:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;express&quot;</span>);
+<span class="hljs-keyword">var</span> app = express();
+</code></pre>
+<p>You might have previously written that like so:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// ...</span>
+}
+<span class="hljs-built_in">module</span>.exports = foo;
+</code></pre>
+<p>In TypeScript, you can model this with the <code>export =</code> construct.</p>
+<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// ...</span>
+}
+<span class="hljs-keyword">export</span> = foo;
+</code></pre>
+<h3 id="too-manytoo-few-arguments">Too many/too few arguments</h3>
+<p>You&apos;ll sometimes find yourself calling a function with too many/few arguments.
+Typically, this is a bug, but in some cases, you might have declared a function that uses the <code>arguments</code> object instead of writing out any parameters:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myCoolFunction</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">arguments</span>.length == <span class="hljs-number">2</span> &amp;&amp; !<span class="hljs-built_in">Array</span>.isArray(<span class="hljs-built_in">arguments</span>[<span class="hljs-number">1</span>])) {
+        <span class="hljs-keyword">var</span> f = <span class="hljs-built_in">arguments</span>[<span class="hljs-number">0</span>];
+        <span class="hljs-keyword">var</span> arr = <span class="hljs-built_in">arguments</span>[<span class="hljs-number">1</span>];
+        <span class="hljs-comment">// ...</span>
+    }
+    <span class="hljs-comment">// ...</span>
+}
+
+myCoolFunction(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x</span>) </span>{ <span class="hljs-built_in">console</span>.log(x) }, [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]);
+myCoolFunction(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x</span>) </span>{ <span class="hljs-built_in">console</span>.log(x) }, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+</code></pre>
+<p>In this case, we need to use TypeScript to tell any of our callers about the ways <code>myCoolFunction</code> can be called using function overloads.</p>
+<pre><code class="lang-ts">function myCoolFunction(f: (x: number) =&gt; void, nums: number[]): void;
+function myCoolFunction(f: (x: number) =&gt; void, ...nums: number[]): void;
+function myCoolFunction() {
+    if (arguments.length == 2 &amp;&amp; !Array.isArray(arguments[1])) {
+        var f = arguments[0];
+        var arr = arguments[1];
+        // ...
+    }
+    // ...
+}
+</code></pre>
+<p>We added two overload signatures to <code>myCoolFunction</code>.
+The first checks states that <code>myCoolFunction</code> takes a function (which takes a <code>number</code>), and then a list of <code>number</code>s.
+The second one says that it will take a function as well, and then uses a rest parameter (<code>...nums</code>) to state that any number of arguments after that need to be <code>number</code>s.</p>
+<h3 id="sequentially-added-properties">Sequentially Added Properties</h3>
+<p>Some people find it more aesthetically pleasing to create an object and add properties immediately after like so:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> options = {};
+options.color = <span class="hljs-string">&quot;red&quot;</span>;
+options.volume = <span class="hljs-number">11</span>;
+</code></pre>
+<p>TypeScript will say that you can&apos;t assign to <code>color</code> and <code>volume</code> because it first figured out the type of <code>options</code> as <code>{}</code> which doesn&apos;t have any properties.
+If you instead moved the declarations into the object literal themselves, you&apos;d get no errors:</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">let</span> options = {
+    color: <span class="hljs-string">&quot;red&quot;</span>,
+    volume: <span class="hljs-number">11</span>
+};
+</code></pre>
+<p>You could also define the type of <code>options</code> and add a type assertion on the object literal.</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Options { color: <span class="hljs-built_in">string</span>; volume: <span class="hljs-built_in">number</span> }
+
+<span class="hljs-keyword">let</span> options = {} as Options;
+options.color = <span class="hljs-string">&quot;red&quot;</span>;
+options.volume = <span class="hljs-number">11</span>;
+</code></pre>
+<p>Alternatively, you can just say <code>options</code> has the type <code>any</code> which is the easiest thing to do, but which will benefit you the least.</p>
+<h3 id="any-object-and-"><code>any</code>, <code>Object</code>, and <code>{}</code></h3>
+<p>You might be tempted to use <code>Object</code> or <code>{}</code> to say that a value can have any property on it because <code>Object</code> is, for most purposes, the most general type.
+However <strong><code>any</code> is actually the type you want to use</strong> in those situations, since it&apos;s the most <em>flexible</em> type.</p>
+<p>For instance, if you have something that&apos;s typed as <code>Object</code> you won&apos;t be able to call methods like <code>toLowerCase()</code> on it.
+Being more general usually means you can do less with a type, but <code>any</code> is special in that it is the most general type while still allowing you to do anything with it.
+That means you can call it, construct it, access properties on it, etc.
+Keep in mind though, whenever you use <code>any</code>, you lose out on most of the error checking and editor support that TypeScript gives you.</p>
+<p>If a decision ever comes down to <code>Object</code> and <code>{}</code>, you should prefer <code>{}</code>.
+While they are mostly the same, technically <code>{}</code> is a more general type than <code>Object</code> in certain esoteric cases.</p>
+<h2 id="getting-stricter-checks">Getting Stricter Checks</h2>
+<p>TypeScript comes with certain checks to give you more safety and analysis of your program.
+Once you&apos;ve converted your codebase to TypeScript, you can start enabling these checks for greater safety.</p>
+<h3 id="no-implicit-any">No Implicit <code>any</code></h3>
+<p>There are certain cases where TypeScript can&apos;t figure out what certain types should be.
+To be as lenient as possible, it will decide to use the type <code>any</code> in its place.
+While this is great for migration, using <code>any</code> means that you&apos;re not getting any type safety, and you won&apos;t get the same tooling support you&apos;d get elsewhere.
+You can tell TypeScript to flag these locations down and give an error with the <code>noImplicitAny</code> option.</p>
+<h3 id="strict-null--undefined-checks">Strict <code>null</code> &amp; <code>undefined</code> Checks</h3>
+<p>By default, TypeScript assumes that <code>null</code> and <code>undefined</code> are in the domain of every type.
+That means anything declared with the type <code>number</code> could be <code>null</code> or <code>undefined</code>.
+Since <code>null</code> and <code>undefined</code> are such a frequent source of bugs in JavaScript and TypeScript, TypeScript has the <code>strictNullChecks</code> option to spare you the stress of worrying about these issues.</p>
+<p>When <code>strictNullChecks</code> is enabled, <code>null</code> and <code>undefined</code> get their own types called <code>null</code> and <code>undefined</code> respectively.
+Whenever anything is <em>possibly</em> <code>null</code>, you can use a union type with the original type.
+So for instance, if something could be a <code>number</code> or <code>null</code>, you&apos;d write the type out as <code>number | null</code>.</p>
+<p>If you ever have a value that TypeScript thinks is possibly <code>null</code>/<code>undefined</code>, but you know better, you can use the postfix <code>!</code> operator to tell it otherwise.</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">var</span> foo: <span class="hljs-built_in">string</span>[] | <span class="hljs-literal">null</span>;
+
+foo.length;  <span class="hljs-comment">// error - &apos;foo&apos; is possibly &apos;null&apos;</span>
+
+foo!.length; <span class="hljs-comment">// okay - &apos;foo!&apos; just has type &apos;string[]&apos;</span>
+</code></pre>
+<p>As a heads up, when using <code>strictNullChecks</code>, your dependencies may need to be updated to use <code>strictNullChecks</code> as well.</p>
+<h3 id="no-implicit-any-for-this">No Implicit <code>any</code> for <code>this</code></h3>
+<p>When you use the <code>this</code> keyword outside of classes, it has the type <code>any</code> by default.
+For instance, imagine a <code>Point</code> class, and imagine a function that we wish to add as a method:</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">class</span> Point {
+    <span class="hljs-keyword">constructor</span>(public x, public y) {}
+    getDistance(p: Point) {
+        <span class="hljs-keyword">let</span> dx = p.x - <span class="hljs-keyword">this</span>.x;
+        <span class="hljs-keyword">let</span> dy = p.y - <span class="hljs-keyword">this</span>.y;
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.sqrt(dx ** <span class="hljs-number">2</span> + dy ** <span class="hljs-number">2</span>);
+    }
+}
+<span class="hljs-comment">// ...</span>
+
+<span class="hljs-comment">// Reopen the interface.</span>
+<span class="hljs-keyword">interface</span> Point {
+    distanceFromOrigin(point: Point): <span class="hljs-built_in">number</span>;
+}
+Point.prototype.distanceFromOrigin = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">point: Point</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.getDistance({ x: <span class="hljs-number">0</span>, y: <span class="hljs-number">0</span>});
+}
+</code></pre>
+<p>This has the same problems we mentioned above - we could easily have misspelled <code>getDistance</code> and not gotten an error.
+For this reason, TypeScript has the <code>noImplicitThis</code> option.
+When that option is set, TypeScript will issue an error when <code>this</code> is used without an explicit (or inferred) type.
+The fix is to use a <code>this</code>-parameter to give an explicit type in the interface or in the function itself:</p>
+<pre><code class="lang-ts">Point.prototype.distanceFromOrigin = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-keyword">this</span>: Point, point: Point</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.getDistance({ x: <span class="hljs-number">0</span>, y: <span class="hljs-number">0</span>});
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Gulp.html" class="navigation navigation-prev " aria-label="Previous page: Gulp">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="React & Webpack.html" class="navigation navigation-next " aria-label="Next page: React & Webpack">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Migrating from JavaScript","level":"2.4","depth":1,"next":{"title":"React & Webpack","level":"2.5","depth":1,"path":"pages/tutorials/React & Webpack.md","ref":"pages/tutorials/React & Webpack.md","articles":[]},"previous":{"title":"Gulp","level":"2.3","depth":1,"path":"pages/tutorials/Gulp.md","ref":"pages/tutorials/Gulp.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tutorials/Migrating from JavaScript.md","mtime":"2018-02-05T16:09:39.252Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-05T16:16:42.550Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

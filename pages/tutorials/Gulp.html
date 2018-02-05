@@ -1,0 +1,949 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Gulp · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Migrating from JavaScript.html" />
+    
+    
+    <link rel="prev" href="ASP.NET Core.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tutorials</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="TypeScript in 5 minutes.html">
+            
+                <a href="TypeScript in 5 minutes.html">
+            
+                    
+                    5 분안에 보는 TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="ASP.NET Core.html">
+            
+                <a href="ASP.NET Core.html">
+            
+                    
+                    ASP.NET Core
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.3" data-path="Gulp.html">
+            
+                <a href="Gulp.html">
+            
+                    
+                    Gulp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="Migrating from JavaScript.html">
+            
+                <a href="Migrating from JavaScript.html">
+            
+                    
+                    Migrating from JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="React & Webpack.html">
+            
+                <a href="React & Webpack.html">
+            
+                    
+                    React & Webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Handbook</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../Basic Types.html">
+            
+                <a href="../Basic Types.html">
+            
+                    
+                    기본 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../Variable Declarations.html">
+            
+                <a href="../Variable Declarations.html">
+            
+                    
+                    변수 선언
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../Interfaces.html">
+            
+                <a href="../Interfaces.html">
+            
+                    
+                    인터페이스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../Classes.html">
+            
+                <a href="../Classes.html">
+            
+                    
+                    Classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../Functions.html">
+            
+                <a href="../Functions.html">
+            
+                    
+                    Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../Generics.html">
+            
+                <a href="../Generics.html">
+            
+                    
+                    제네릭
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../Enums.html">
+            
+                <a href="../Enums.html">
+            
+                    
+                    열거형
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../Type Inference.html">
+            
+                <a href="../Type Inference.html">
+            
+                    
+                    타입 추론
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="../Type Compatibility.html">
+            
+                <a href="../Type Compatibility.html">
+            
+                    
+                    Type Compatibility
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="../Advanced Types.html">
+            
+                <a href="../Advanced Types.html">
+            
+                    
+                    Advanced Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="../Symbols.html">
+            
+                <a href="../Symbols.html">
+            
+                    
+                    Symbols
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="../Iterators and Generators.html">
+            
+                <a href="../Iterators and Generators.html">
+            
+                    
+                    Iterators and Generators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="../Modules.html">
+            
+                <a href="../Modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="../Namespaces.html">
+            
+                <a href="../Namespaces.html">
+            
+                    
+                    Namespaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15" data-path="../Namespaces and Modules.html">
+            
+                <a href="../Namespaces and Modules.html">
+            
+                    
+                    Namespaces and Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.16" data-path="../Module Resolution.html">
+            
+                <a href="../Module Resolution.html">
+            
+                    
+                    Module Resolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.17" data-path="../Declaration Merging.html">
+            
+                <a href="../Declaration Merging.html">
+            
+                    
+                    Declaration Merging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.18" data-path="../JSX.html">
+            
+                <a href="../JSX.html">
+            
+                    
+                    JSX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.19" data-path="../Decorators.html">
+            
+                <a href="../Decorators.html">
+            
+                    
+                    Decorators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.20" data-path="../Mixins.html">
+            
+                <a href="../Mixins.html">
+            
+                    
+                    Mixins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.21" data-path="../Triple-Slash Directives.html">
+            
+                <a href="../Triple-Slash Directives.html">
+            
+                    
+                    Triple-Slash Directives
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.22" data-path="../Type Checking JavaScript Files.html">
+            
+                <a href="../Type Checking JavaScript Files.html">
+            
+                    
+                    Type Checking JavaScript Files
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Gulp</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>This quick start guide will teach you how to build TypeScript with <a href="http://gulpjs.com" target="_blank">gulp</a> and then add <a href="http://browserify.org" target="_blank">Browserify</a>, <a href="http://lisperator.net/uglifyjs/" target="_blank">uglify</a>, or <a href="https://github.com/substack/watchify" target="_blank">Watchify</a> to the gulp pipeline.
+This guide also adds functionality for <a href="https://babeljs.io/" target="_blank">Babel</a> functionality using <a href="https://github.com/babel/babelify" target="_blank">Babelify</a>.</p>
+<p>We assume that you&apos;re already using <a href="https://nodejs.org/" target="_blank">Node.js</a> with <a href="https://www.npmjs.com/" target="_blank">npm</a>.</p>
+<h1 id="minimal-project">Minimal project</h1>
+<p>Let&apos;s start out with a new directory.
+We&apos;ll name it <code>proj</code> for now, but you can change it to whatever you want.</p>
+<pre><code class="lang-shell">mkdir proj
+cd proj
+</code></pre>
+<p>To start, we&apos;re going to structure our project in the following way:</p>
+<pre><code class="lang-text">proj/
+   &#x251C;&#x2500; src/
+   &#x2514;&#x2500; dist/
+</code></pre>
+<p>TypeScript files will start out in your <code>src</code> folder, run through the TypeScript compiler and end up in <code>dist</code>.</p>
+<p>Let&apos;s scaffold this out:</p>
+<pre><code class="lang-shell">mkdir src
+mkdir dist
+</code></pre>
+<h2 id="initialize-the-project">Initialize the project</h2>
+<p>Now we&apos;ll turn this folder into an npm package.</p>
+<pre><code class="lang-shell">npm init
+</code></pre>
+<p>You&apos;ll be given a series of prompts.
+You can use the defaults except for your entry point.
+For your entry point, use <code>./dist/main.js</code>.
+You can always go back and change these in the <code>package.json</code> file that&apos;s been generated for you.</p>
+<h2 id="install-our-dependencies">Install our dependencies</h2>
+<p>Now we can use <code>npm install</code> to install packages.
+First install <code>gulp-cli</code> globally (if you use a Unix system, you may need to prefix the <code>npm install</code> commands in this guide with <code>sudo</code>).</p>
+<pre><code class="lang-shell">npm install -g gulp-cli
+</code></pre>
+<p>Then install <code>typescript</code>, <code>gulp</code> and <code>gulp-typescript</code> in your project&apos;s dev dependencies.
+<a href="https://www.npmjs.com/package/gulp-typescript" target="_blank">Gulp-typescript</a> is a gulp plugin for Typescript.</p>
+<pre><code class="lang-shell">npm install --save-dev typescript gulp gulp-typescript
+</code></pre>
+<h2 id="write-a-simple-example">Write a simple example</h2>
+<p>Let&apos;s write a Hello World program.
+In <code>src</code>, create the file <code>main.ts</code>:</p>
+<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hello</span>(<span class="hljs-params">compiler: <span class="hljs-built_in">string</span></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Hello from <span class="hljs-subst">${compiler}</span>`</span>);
+}
+hello(<span class="hljs-string">&quot;TypeScript&quot;</span>);
+</code></pre>
+<p>In the project root, <code>proj</code>, create the file <code>tsconfig.json</code>:</p>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;files&quot;</span>: [
+        <span class="hljs-string">&quot;src/main.ts&quot;</span>
+    ],
+    <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
+        <span class="hljs-string">&quot;noImplicitAny&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;es5&quot;</span>
+    }
+}
+</code></pre>
+<h2 id="create-a-gulpfilejs">Create a <code>gulpfile.js</code></h2>
+<p>In the project root, create the file <code>gulpfile.js</code>:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp&quot;</span>);
+<span class="hljs-keyword">var</span> ts = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp-typescript&quot;</span>);
+<span class="hljs-keyword">var</span> tsProject = ts.createProject(<span class="hljs-string">&quot;tsconfig.json&quot;</span>);
+
+gulp.task(<span class="hljs-string">&quot;default&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> tsProject.src()
+        .pipe(tsProject())
+        .js.pipe(gulp.dest(<span class="hljs-string">&quot;dist&quot;</span>));
+});
+</code></pre>
+<h2 id="test-the-resulting-app">Test the resulting app</h2>
+<pre><code class="lang-shell">gulp
+node dist/main.js
+</code></pre>
+<p>The program should print &quot;Hello from TypeScript!&quot;.</p>
+<h1 id="add-modules-to-the-code">Add modules to the code</h1>
+<p>Before we get to Browserify, let&apos;s build our code out and add modules to the mix.
+This is the structure you&apos;re more likely to use for a real app.</p>
+<p>Create a file called <code>src/greet.ts</code>:</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span>(<span class="hljs-params">name: <span class="hljs-built_in">string</span></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">`Hello from <span class="hljs-subst">${name}</span>`</span>;
+}
+</code></pre>
+<p>Now change the code in <code>src/main.ts</code> to import <code>sayHello</code> from <code>greet.ts</code>:</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { sayHello } from <span class="hljs-string">&quot;./greet&quot;</span>;
+
+<span class="hljs-built_in">console</span>.log(sayHello(<span class="hljs-string">&quot;TypeScript&quot;</span>));
+</code></pre>
+<p>Finally, add <code>src/greet.ts</code> to <code>tsconfig.json</code>:</p>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;files&quot;</span>: [
+        <span class="hljs-string">&quot;src/main.ts&quot;</span>,
+        <span class="hljs-string">&quot;src/greet.ts&quot;</span>
+    ],
+    <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
+        <span class="hljs-string">&quot;noImplicitAny&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;es5&quot;</span>
+    }
+}
+</code></pre>
+<p>Make sure that the modules work by running <code>gulp</code> and then testing in Node:</p>
+<pre><code class="lang-shell">gulp
+node dist/main.js
+</code></pre>
+<p>Notice that even though we used ES2015 module syntax, TypeScript emitted CommonJS modules that Node uses.
+We&apos;ll stick with CommonJS for this tutorial, but you could set <code>module</code> in the options object to change this.</p>
+<h1 id="browserify">Browserify</h1>
+<p>Now let&apos;s move this project from Node to the browser.
+To do this, we&apos;d  like to bundle all our modules into one JavaScript file.
+Fortunately, that&apos;s exactly what Browserify does.
+Even better, it lets us use the CommonJS module system used by Node, which is the default TypeScript emit.
+That means our TypeScript and Node setup will transfer to the browser basically unchanged.</p>
+<p>First, install browserify, <a href="https://www.npmjs.com/package/tsify" target="_blank">tsify</a>, and vinyl-source-stream.
+tsify is a Browserify plugin that, like gulp-typescript, gives access to the TypeScript compiler.
+vinyl-source-stream lets us adapt the file output of Browserify back into a format that gulp understands called <a href="https://github.com/gulpjs/vinyl" target="_blank">vinyl</a>.</p>
+<pre><code class="lang-shell">npm install --save-dev browserify tsify vinyl-source-stream
+</code></pre>
+<h2 id="create-a-page">Create a page</h2>
+<p>Create a file in <code>src</code> named <code>index.html</code>:</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Hello World!<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;greeting&quot;</span>&gt;</span>Loading ...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;bundle.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>Now change <code>main.ts</code> to update the page:</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { sayHello } from <span class="hljs-string">&quot;./greet&quot;</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showHello</span>(<span class="hljs-params">divName: <span class="hljs-built_in">string</span>, name: <span class="hljs-built_in">string</span></span>) </span>{
+    <span class="hljs-keyword">const</span> elt = <span class="hljs-built_in">document</span>.getElementById(divName);
+    elt.innerText = sayHello(name);
+}
+
+showHello(<span class="hljs-string">&quot;greeting&quot;</span>, <span class="hljs-string">&quot;TypeScript&quot;</span>);
+</code></pre>
+<p>Calling <code>showHello</code> calls <code>sayHello</code> to change the paragraph&apos;s text.
+Now change your gulpfile to the following:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp&quot;</span>);
+<span class="hljs-keyword">var</span> browserify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;browserify&quot;</span>);
+<span class="hljs-keyword">var</span> source = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;vinyl-source-stream&apos;</span>);
+<span class="hljs-keyword">var</span> tsify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;tsify&quot;</span>);
+<span class="hljs-keyword">var</span> paths = {
+    pages: [<span class="hljs-string">&apos;src/*.html&apos;</span>]
+};
+
+gulp.task(<span class="hljs-string">&quot;copy-html&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> gulp.src(paths.pages)
+        .pipe(gulp.dest(<span class="hljs-string">&quot;dist&quot;</span>));
+});
+
+gulp.task(<span class="hljs-string">&quot;default&quot;</span>, [<span class="hljs-string">&quot;copy-html&quot;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> browserify({
+        basedir: <span class="hljs-string">&apos;.&apos;</span>,
+        debug: <span class="hljs-literal">true</span>,
+        entries: [<span class="hljs-string">&apos;src/main.ts&apos;</span>],
+        cache: {},
+        packageCache: {}
+    })
+    .plugin(tsify)
+    .bundle()
+    .pipe(source(<span class="hljs-string">&apos;bundle.js&apos;</span>))
+    .pipe(gulp.dest(<span class="hljs-string">&quot;dist&quot;</span>));
+});
+</code></pre>
+<p>This adds the <code>copy-html</code> task and adds it as a dependency of <code>default</code>.
+That means any time <code>default</code> is run, <code>copy-html</code> has to run first.
+We&apos;ve also changed <code>default</code> to call Browserify with the tsify plugin instead of gulp-typescript.
+Conveniently, they both allow us to pass the same options object to the TypeScript compiler.</p>
+<p>After calling <code>bundle</code> we use <code>source</code> (our alias for vinyl-source-stream) to name our output bundle <code>bundle.js</code>.</p>
+<p>Test the page by running gulp and then opening <code>dist/index.html</code> in a browser.
+You should see &quot;Hello from TypeScript&quot; on the page.</p>
+<p>Notice that we specified <code>debug: true</code> to Browserify.
+This causes tsify to emit source maps inside the bundled JavaScript file.
+Source maps let you debug your original TypeScript code in the browser instead of the bundled JavaScript.
+You can test that source maps are working by opening the debugger for your browser and putting a breakpoint inside <code>main.ts</code>.
+When you refresh the page the breakpoint should pause the page and let you debug <code>greet.ts</code>.</p>
+<h1 id="watchify-babel-and-uglify">Watchify, Babel, and Uglify</h1>
+<p>Now that we are bundling our code with Browserify and tsify, we can add various features to our build with browserify plugins.</p>
+<ul>
+<li><p>Watchify starts gulp and keeps it running, incrementally compiling whenever you save a file.
+This lets you keep an edit-save-refresh cycle going in the browser.</p>
+</li>
+<li><p>Babel is a hugely flexible compiler that converts ES2015 and beyond into ES5 and ES3.
+This lets you add extensive and customized transformations that TypeScript doesn&apos;t support.</p>
+</li>
+<li><p>Uglify compacts your code so that it takes less time to download.</p>
+</li>
+</ul>
+<h2 id="watchify">Watchify</h2>
+<p>We&apos;ll start with Watchify to provide background compilation:</p>
+<pre><code class="lang-shell">npm install --save-dev watchify gulp-util
+</code></pre>
+<p>Now change your gulpfile to the following:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp&quot;</span>);
+<span class="hljs-keyword">var</span> browserify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;browserify&quot;</span>);
+<span class="hljs-keyword">var</span> source = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;vinyl-source-stream&apos;</span>);
+<span class="hljs-keyword">var</span> watchify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;watchify&quot;</span>);
+<span class="hljs-keyword">var</span> tsify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;tsify&quot;</span>);
+<span class="hljs-keyword">var</span> gutil = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp-util&quot;</span>);
+<span class="hljs-keyword">var</span> paths = {
+    pages: [<span class="hljs-string">&apos;src/*.html&apos;</span>]
+};
+
+<span class="hljs-keyword">var</span> watchedBrowserify = watchify(browserify({
+    basedir: <span class="hljs-string">&apos;.&apos;</span>,
+    debug: <span class="hljs-literal">true</span>,
+    entries: [<span class="hljs-string">&apos;src/main.ts&apos;</span>],
+    cache: {},
+    packageCache: {}
+}).plugin(tsify));
+
+gulp.task(<span class="hljs-string">&quot;copy-html&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> gulp.src(paths.pages)
+        .pipe(gulp.dest(<span class="hljs-string">&quot;dist&quot;</span>));
+});
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bundle</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> watchedBrowserify
+        .bundle()
+        .pipe(source(<span class="hljs-string">&apos;bundle.js&apos;</span>))
+        .pipe(gulp.dest(<span class="hljs-string">&quot;dist&quot;</span>));
+}
+
+gulp.task(<span class="hljs-string">&quot;default&quot;</span>, [<span class="hljs-string">&quot;copy-html&quot;</span>], bundle);
+watchedBrowserify.on(<span class="hljs-string">&quot;update&quot;</span>, bundle);
+watchedBrowserify.on(<span class="hljs-string">&quot;log&quot;</span>, gutil.log);
+</code></pre>
+<p>There are basically three changes here, but they require you to refactor your code a bit.</p>
+<ol>
+<li>We wrapped our <code>browserify</code> instance in a call to <code>watchify</code>, and then held on to the result.</li>
+<li>We called <code>watchedBrowserify.on(&quot;update&quot;, bundle);</code> so that Browserify will run the <code>bundle</code> function every time one of your TypeScript files changes.</li>
+<li>We called <code>watchedBrowserify.on(&quot;log&quot;, gutil.log);</code> to log to the console.</li>
+</ol>
+<p>Together (1) and (2) mean that we have to move our call to <code>browserify</code> out of the <code>default</code> task.
+And we have to give the function for <code>default</code> a name since both Watchify and Gulp need to call it.
+Adding logging with (3) is optional but very useful for debugging your setup.</p>
+<p>Now when you run Gulp, it should start and stay running.
+Try changing the code for <code>showHello</code> in <code>main.ts</code> and saving it.
+You should see output that looks like this:</p>
+<pre><code class="lang-shell">proj$ gulp
+[10:34:20] Using gulpfile ~/src/proj/gulpfile.js
+[10:34:20] Starting &apos;copy-html&apos;...
+[10:34:20] Finished &apos;copy-html&apos; after 26 ms
+[10:34:20] Starting &apos;default&apos;...
+[10:34:21] 2824 bytes written (0.13 seconds)
+[10:34:21] Finished &apos;default&apos; after 1.36 s
+[10:35:22] 2261 bytes written (0.02 seconds)
+[10:35:24] 2808 bytes written (0.05 seconds)
+</code></pre>
+<h2 id="uglify">Uglify</h2>
+<p>First install Uglify.
+Since the point of Uglify is to mangle your code, we also need to install vinyl-buffer and gulp-sourcemaps to keep sourcemaps working.</p>
+<pre><code class="lang-shell">npm install --save-dev gulp-uglify vinyl-buffer gulp-sourcemaps
+</code></pre>
+<p>Now change your gulpfile to the following:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp&quot;</span>);
+<span class="hljs-keyword">var</span> browserify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;browserify&quot;</span>);
+<span class="hljs-keyword">var</span> source = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;vinyl-source-stream&apos;</span>);
+<span class="hljs-keyword">var</span> tsify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;tsify&quot;</span>);
+<span class="hljs-keyword">var</span> uglify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-uglify&apos;</span>);
+<span class="hljs-keyword">var</span> sourcemaps = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-sourcemaps&apos;</span>);
+<span class="hljs-keyword">var</span> buffer = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;vinyl-buffer&apos;</span>);
+<span class="hljs-keyword">var</span> paths = {
+    pages: [<span class="hljs-string">&apos;src/*.html&apos;</span>]
+};
+
+gulp.task(<span class="hljs-string">&quot;copy-html&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> gulp.src(paths.pages)
+        .pipe(gulp.dest(<span class="hljs-string">&quot;dist&quot;</span>));
+});
+
+gulp.task(<span class="hljs-string">&quot;default&quot;</span>, [<span class="hljs-string">&quot;copy-html&quot;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> browserify({
+        basedir: <span class="hljs-string">&apos;.&apos;</span>,
+        debug: <span class="hljs-literal">true</span>,
+        entries: [<span class="hljs-string">&apos;src/main.ts&apos;</span>],
+        cache: {},
+        packageCache: {}
+    })
+    .plugin(tsify)
+    .bundle()
+    .pipe(source(<span class="hljs-string">&apos;bundle.js&apos;</span>))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({loadMaps: <span class="hljs-literal">true</span>}))
+    .pipe(uglify())
+    .pipe(sourcemaps.write(<span class="hljs-string">&apos;./&apos;</span>))
+    .pipe(gulp.dest(<span class="hljs-string">&quot;dist&quot;</span>));
+});
+</code></pre>
+<p>Notice that <code>uglify</code> itself has just one call &#x2014; the calls to <code>buffer</code> and <code>sourcemaps</code> exist to make sure sourcemaps keep working.
+These calls give us a separate sourcemap file instead of using inline sourcemaps like before.
+Now you can run Gulp and check that <code>bundle.js</code> does get minified into an unreadable mess:</p>
+<pre><code class="lang-shell">gulp
+cat dist/bundle.js
+</code></pre>
+<h2 id="babel">Babel</h2>
+<p>First install Babelify and the Babel preset for ES2015.
+Like Uglify, Babelify mangles code, so we&apos;ll need vinyl-buffer and gulp-sourcemaps.
+By default Babelify will only process files with extensions of <code>.js</code>, <code>.es</code>, <code>.es6</code> and <code>.jsx</code> so we need to add the <code>.ts</code> extension as an option to Babelify.</p>
+<pre><code class="lang-shell">npm install --save-dev babelify babel-core babel-preset-es2015 vinyl-buffer gulp-sourcemaps
+</code></pre>
+<p>Now change your gulpfile to the following:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp&apos;</span>);
+<span class="hljs-keyword">var</span> browserify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;browserify&apos;</span>);
+<span class="hljs-keyword">var</span> source = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;vinyl-source-stream&apos;</span>);
+<span class="hljs-keyword">var</span> tsify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;tsify&apos;</span>);
+<span class="hljs-keyword">var</span> sourcemaps = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-sourcemaps&apos;</span>);
+<span class="hljs-keyword">var</span> buffer = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;vinyl-buffer&apos;</span>);
+<span class="hljs-keyword">var</span> paths = {
+    pages: [<span class="hljs-string">&apos;src/*.html&apos;</span>]
+};
+
+gulp.task(<span class="hljs-string">&apos;copyHtml&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> gulp.src(paths.pages)
+        .pipe(gulp.dest(<span class="hljs-string">&apos;dist&apos;</span>));
+});
+
+gulp.task(<span class="hljs-string">&apos;default&apos;</span>, [<span class="hljs-string">&apos;copyHtml&apos;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> browserify({
+        basedir: <span class="hljs-string">&apos;.&apos;</span>,
+        debug: <span class="hljs-literal">true</span>,
+        entries: [<span class="hljs-string">&apos;src/main.ts&apos;</span>],
+        cache: {},
+        packageCache: {}
+    })
+    .plugin(tsify)
+    .transform(<span class="hljs-string">&apos;babelify&apos;</span>, {
+        presets: [<span class="hljs-string">&apos;es2015&apos;</span>],
+        extensions: [<span class="hljs-string">&apos;.ts&apos;</span>]
+    })
+    .bundle()
+    .pipe(source(<span class="hljs-string">&apos;bundle.js&apos;</span>))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({loadMaps: <span class="hljs-literal">true</span>}))
+    .pipe(sourcemaps.write(<span class="hljs-string">&apos;./&apos;</span>))
+    .pipe(gulp.dest(<span class="hljs-string">&apos;dist&apos;</span>));
+});
+</code></pre>
+<p>We also need to have TypeScript target ES2015.
+Babel will then produce ES5 from the ES2015 code that TypeScript emits.
+Let&apos;s modify <code>tsconfig.json</code>:</p>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;files&quot;</span>: [
+        <span class="hljs-string">&quot;src/main.ts&quot;</span>
+    ],
+    <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
+        <span class="hljs-string">&quot;noImplicitAny&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;es2015&quot;</span>
+    }
+}
+</code></pre>
+<p>Babel&apos;s ES5 output should be very similar to TypeScript&apos;s output for such a simple script.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ASP.NET Core.html" class="navigation navigation-prev " aria-label="Previous page: ASP.NET Core">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Migrating from JavaScript.html" class="navigation navigation-next " aria-label="Next page: Migrating from JavaScript">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Gulp","level":"2.3","depth":1,"next":{"title":"Migrating from JavaScript","level":"2.4","depth":1,"path":"pages/tutorials/Migrating from JavaScript.md","ref":"pages/tutorials/Migrating from JavaScript.md","articles":[]},"previous":{"title":"ASP.NET Core","level":"2.2","depth":1,"path":"pages/tutorials/ASP.NET Core.md","ref":"pages/tutorials/ASP.NET Core.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tutorials/Gulp.md","mtime":"2018-02-05T16:09:39.252Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-05T16:16:42.550Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
