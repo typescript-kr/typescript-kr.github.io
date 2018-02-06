@@ -14,6 +14,5 @@
 * [정주영](https://github.com/jungjuyoung)
 * [양성민](https://github.com/ysm0622)
 * [권기웅](https://github.com/obeythecorgi)
-* [이자용](https://github.com/zadragon)
 * [이경주](https://github.com/rudwnok123)
 * [김예슬](https://github.com/kimyeaseul)
