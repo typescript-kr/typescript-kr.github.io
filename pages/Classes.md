@@ -61,11 +61,11 @@ dog.bark();
 
 이 예제는 가장 기본적인 상속 기능을 보여줍니다: 클래스는 기본 클래스에서 속성과 메서드를 상속받습니다.
 여기서 `Dog`는 `extends` 키워드를 사용하여 `Animal` *기본* 클래스에서 유래된 *파생* 클래스입니다.
-파생 클래스는 종종 *subclasses* 라고하며 기본 클래스는 *superclasses* 라고도 합니다.
+파생 클래스는 종종 *하위클래스(subclasses)* 라고하며 기본 클래스는 *슈퍼클래스(superclasses)* 라고도 합니다.
 
-Because `Dog` extends the functionality from `Animal`, we were able to create an instance of `Dog` that could both `bark()` and `move()`.
+`Dog`는 `Animal`로부터 기능을 확장시키기 때문에 `bark()`와 `move()` 둘다 할 수 있는 `Dog`의 인스턴스를 만들 수 있었습니다.
 
-Let's now look at a more complex example.
+이제 좀 더 복잡한 예제를 살펴 보겠습니다.
 
 ```ts
 class Animal {
@@ -99,16 +99,18 @@ sam.move();
 tom.move(34);
 ```
 
-This example covers a few other features we didn't previously mention.
-Again, we see the `extends` keywords used to create two new subclasses of `Animal`: `Horse` and `Snake`.
+이 예제는 앞서 언급하지 않은 몇 가지 다른 기능을 다룹니다.  
+이번에도 `Animal`의 새로운 하위클래스인 `Horse`과 `Snake`을 만드는 `extends` 키워드가 등장합니다.
 
-One difference from the prior example is that each derived class that contains a constructor function *must* call `super()` which will execute the constructor of the base class.
-What's more, before we *ever* access a property on `this` in a constructor body, we *have* to call `super()`.
-This is an important rule that TypeScript will enforce.
+이전 예제와의 한 가지 다른 점은 생성자 함수를 포함하는 각 파생 클래스가 기본 클래스의 생성자를 실행할 `super()`를 호출*해야한다는 것*입니다.  
+게다가 생성자내에서 `this`에 있는 프로퍼티에 접근하기 전에 *항상* `super()`를 *호출해야합니다*.  
+이것은 TypeScript가 적용할 중요한 규칙입니다.
 
-The example also shows how to override methods in the base class with methods that are specialized for the subclass.
-Here both `Snake` and `Horse` create a `move` method that overrides the `move` from `Animal`, giving it functionality specific to each class.
-Note that even though `tom` is declared as an `Animal`, since its value is a `Horse`, calling `tom.move(34)` will call the overriding method in `Horse`:
+또한 이 예제에서는 기본 클래스의 메서드를 하위 클래스에 특화된 메서드를 오버라이드하는 방법도 보여 줍니다.
+
+여기에서 `Snake`와 `Horse`는 `Animal`의 `move`를 오버라이드하고 각 클래스에 고유한 기능을 부여하는 `move` 메서드를 만듭니다.
+
+`tom`은 `Animal`로 선언되었지만 `Horse`의 값을 가지므로 `tom.move(34)`를 호출하면 `Horse`의 오버라이딩 메서드가 호출됩니다:
 
 ```Text
 Slithering...
@@ -117,16 +119,20 @@ Galloping...
 Tommy the Palomino moved 34m.
 ```
 
-# Public, private, and protected modifiers
+# Public, private, 그리고 protected 지정자 (Public, private, and protected modifiers)
 
-## Public by default
+## 기본적인 Public (Public by default)
 
-In our examples, we've been able to freely access the members that we declared throughout our programs.
-If you're familiar with classes in other languages, you may have noticed in the above examples we haven't had to use the word `public` to accomplish this; for instance, C# requires that each member be explicitly labeled `public` to be visible.
-In TypeScript, each member is `public` by default.
+예를 들어 프로그램을 통해 선언된 멤버들에 자유롭게 접근할 수 있었습니다.
 
-You may still mark a member `public` explicitly.
-We could have written the `Animal` class from the previous section in the following way:
+
+다른 언어의 클래스에 익숙하다면 위의 예제에서 `public`이라는 단어를 사용하지 않아도 된다는 사실을 알았을것입니다.  
+예를 들어 C#의 경우 각 멤버를 `public`으로 표시하도록 명시해야합니다.
+
+TypeScript에서는 기본적으로 각 멤버가 `public`입니다.
+
+그럼에도 불구하고 `public`를 멤버를 명시적으로 표시할 수 있습니다.
+이전 섹션의 `Animal` 클래스를 다음과 같이 작성할 수 있었습니다:
 
 ```ts
 class Animal {
@@ -138,9 +144,9 @@ class Animal {
 }
 ```
 
-## Understanding `private`
+## `private` 이해하기 (Understanding `private`)
 
-When a member is marked `private`, it cannot be accessed from outside of its containing class. For example:
+멤버가 `private`으로 표시되면 그 멤버를 포함하는 클래스의 외부에서는 접근할 수 없습니다. 예 :
 
 ```ts
 class Animal {
@@ -148,17 +154,17 @@ class Animal {
     constructor(theName: string) { this.name = theName; }
 }
 
-new Animal("Cat").name; // Error: 'name' is private;
+new Animal("Cat").name; // 오류: 'name'은 private이다;
 ```
 
-TypeScript is a structural type system.
-When we compare two different types, regardless of where they came from, if the types of all members are compatible, then we say the types themselves are compatible.
+TypeScript는 구조적인 타입의 시스템입니다.  
+두개의 다른 타입을 비교할 때 그것들이 어디서 왔는지에 관계없이 모든 멤버의 타입이 호환 가능하다면 그 타입 자체가 호환성(compatible)이 있다고 말합니다.
 
-However, when comparing types that have `private` and `protected` members, we treat these types differently.
-For two types to be considered compatible, if one of them has a `private` member, then the other must have a `private` member that originated in the same declaration.
-The same applies to `protected` members.
+그러나 `private` 및 `protected`멤버가 있는 타입을 비교할 때 이러한 타입들은 다르게 처리합니다.
 
-Let's look at an example to better see how this plays out in practice:
+호환성(compatible)이 있는 것으로 판단되는 두 가지 타입 중 `private`멤버가 있는 경우 다른 멤버는 동일한 선언에서 유래된 `private`멤버가 있어야합니다. 이것은 `protected`멤버에도 적용됩니다.
+
+실제로 이러한 기능이 어떻게 작동하는지를 더 잘 알아보기 위한 예를 살펴보겠습니다:
 
 ```ts
 class Animal {
@@ -180,19 +186,25 @@ let rhino = new Rhino();
 let employee = new Employee("Bob");
 
 animal = rhino;
-animal = employee; // Error: 'Animal' and 'Employee' are not compatible
+animal = employee; // 오류: 'Animal'과 'Employee'는 호환되지 않습니다.
 ```
 
-In this example, we have an `Animal` and a `Rhino`, with `Rhino` being a subclass of `Animal`.
-We also have a new class `Employee` that looks identical to `Animal` in terms of shape.
-We create some instances of these classes and then try to assign them to each other to see what will happen.
-Because `Animal` and `Rhino` share the `private` side of their shape from the same declaration of `private name: string` in `Animal`, they are compatible. However, this is not the case for `Employee`.
-When we try to assign from an `Employee` to `Animal` we get an error that these types are not compatible.
-Even though `Employee` also has a `private` member called `name`, it's not the one we declared in `Animal`.
+이 예제에서는 `Animal`과 `Rhino`가 있습니다. `Rhino`는 `Animal`의 하위 클래스입니다.  
+또한 구체적으로 `Animal`과 같아 보이는 `Employee`라는 새로운 클래스를 가지고 있습니다.  
+이러한 클래스들의 인스턴스들을 만들고 서로를 할당하여 어떠한 일이 발생하는지 봅시다.
 
-## Understanding `protected`
+`Animal`과 `Rhino`는 `Animal`의 `private name: string` 선언으로부터 `private`의 형태를 공유하기 때문에 호환됩니다.
+그러나 `Employee`의 경우는 그렇지 않습니다.
 
-The `protected` modifier acts much like the `private` modifier with the exception that members declared `protected` can also be accessed by instances of deriving classes. For example,
+`Employee`를 `Animal`에 할당하려고 할 때 이 타입들은 호환되지 않는다는 오류가 발생합니다.  
+`Employee`도 name이라는 `private` 멤버가 있지만 `Animal`에서 선언한 것이 아닙니다.
+
+## `protected` 이해하기 (Understanding `protected`)
+
+`protected` 지정자는 `private` 지정자와 매우 유사하게 동작합니다.  
+단 `protected` 멤버도 선언된 파생 클래스의 인스턴스에서 접근할 수 있습니다.  
+
+예를 들어
 
 ```ts
 class Person {
@@ -215,13 +227,15 @@ class Employee extends Person {
 
 let howard = new Employee("Howard", "Sales");
 console.log(howard.getElevatorPitch());
-console.log(howard.name); // error
+console.log(howard.name); // 오류
 ```
 
-Notice that while we can't use `name` from outside of `Person`, we can still use it from within an instance method of `Employee` because `Employee` derives from `Person`.
+`Person`의 외부에서 `name`을 사용할 수는 없지만 `Employee`는 `Person`으로부터 파생되기 때문에 `Employee`의 인스턴스 메서드 내에서 여전히 사용할 수 있습니다.
 
-A constructor may also be marked `protected`.
-This means that the class cannot be instantiated outside of its containing class, but can be extended. For example,
+생성자 또한 `protected`로 표시 될 수도 있습니다.  
+즉 클래스를 포함하는 클래스 외부에서 클래스를 인스턴스화 할 수는 없지만 확장될 수는 있습니다.
+
+예를 들어
 
 ```ts
 class Person {
@@ -229,7 +243,7 @@ class Person {
     protected constructor(theName: string) { this.name = theName; }
 }
 
-// Employee can extend Person
+// Employee는 Person을 확장할 수 있습니다
 class Employee extends Person {
     private department: string;
 
@@ -244,13 +258,13 @@ class Employee extends Person {
 }
 
 let howard = new Employee("Howard", "Sales");
-let john = new Person("John"); // Error: The 'Person' constructor is protected
+let john = new Person("John"); // 오류: 'Person'의 생성자는 protected입니다.
 ```
 
-# Readonly modifier
+# Readonly 지정자 (Readonly modifier)
 
-You can make properties readonly by using the `readonly` keyword.
-Readonly properties must be initialized at their declaration or in the constructor.
+`readonly` 키워드를 사용하여 프로퍼티들을 읽기 전용으로 만들 수 있습니다.
+읽기 전용 프로퍼티들은 선언 또는 생성자에서 초기화해야합니다.
 
 ```ts
 class Octopus {
@@ -261,15 +275,17 @@ class Octopus {
     }
 }
 let dad = new Octopus("Man with the 8 strong legs");
-dad.name = "Man with the 3-piece suit"; // error! name is readonly.
+dad.name = "Man with the 3-piece suit"; // 오류! name은 readonly입니다.
 ```
 
-## Parameter properties
+## 매개변수 프로퍼티 (Parameter properties)
 
-In our last example, we had to declare a readonly member `name` and a constructor parameter `theName` in the `Octopus` class, and we then immediately set `name` to `theName`.
-This turns out to be a very common practice.
-*Parameter properties* let you create and initialize a member in one place.
-Here's a further revision of the previous `Octopus` class using a parameter property:
+마지막 예제에서 `Octopus` 클래스에서 readonly 멤버 `name`과 생성자 매개변수 `theName`을 선언했습니다.  
+그 다음 바로 `name`을 `theName`으로 설정했습니다.
+
+이것은 매우 일반적인 방법입니다.  
+*매개변수 프로퍼티(Parameter properties)* 를 사용하면 한곳에서 멤버를 생성하고 초기화할 수 있습니다.  
+다음은 매개 변수 프로퍼티를 사용하여 이전에 `Octopus` 클래스를 추가적으로 수정합니다:
 
 ```ts
 class Octopus {
@@ -279,11 +295,13 @@ class Octopus {
 }
 ```
 
-Notice how we dropped `theName` altogether and just use the shortened `readonly name: string` parameter on the constructor to create and initialize the `name` member.
-We've consolidated the declarations and assignment into one location.
+`theName`을 어떻게 삭제했는지 확인하고 생성자에서 `readonly name : string` 매개 변수를 사용해 멤버 `name`을 생성하고 초기화할 수 있습니다.
 
-Parameter properties are declared by prefixing a constructor parameter with an accessibility modifier or `readonly`, or both.
-Using `private` for a parameter property declares and initializes a private member; likewise, the same is done for `public`, `protected`, and `readonly`.
+선언과 할당을 하나의 장소로 통합했습니다.
+
+매개변수 프로퍼티는 접근 지정자(accessibility modifier) 또는 `readonly` 또는 둘 모두로 생성자 매개변수를 접두어로 붙여 선언합니다.  
+매개 변수 프로퍼티에 `private`을 사용하면 private 멤버가 선언되고 초기화됩니다.  
+마찬가지로 `public`, `protected` 그리고 `readonly`도 마찬가지입니다.
 
 # Accessors
 
