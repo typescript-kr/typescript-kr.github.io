@@ -1,12 +1,13 @@
 # 소개 (Introduction)
 
-전통적인 JavaScript는 재사용 가능한 컴포넌트를 만들기 위해 함수와 프로토 타입 기반의 상속을 사용하지만 클래스가 함수을 상속하고 객체가 이러한 클래스에서 구축되는 객체 지향 접근 방식에 익숙하지 않은 개발자들에게는 다소 어색함을 느낄 수 있습니다.
-ECMAScript6로도 알려진 ECMAScript 2015년을 시작으로 JavaScript 개발자는 이 객체 지향 클래스 기반 접근 방식을 사용하여 응용 프로그램을 구축 할 수 있습니다.
+전통적인 JavaScript는 재사용 가능한 컴포넌트를 만들기 위해 함수와 프로토 타입 기반의 상속을 사용하지만  
+ 클래스가 함수을 상속하고 객체가 이러한 클래스에서 구축되는 객체 지향 접근 방식에 익숙하지 않은 개발자들에게는 다소 어색함을 느낄 수 있습니다.  
+ECMAScript6로도 알려진 ECMAScript 2015년을 시작으로 JavaScript 개발자는 이 객체 지향 클래스 기반 접근 방식을 사용하여 응용 프로그램을 구축 할 수 있습니다.  
 TypeScript에서는 개발자가 이 기술을 사용하고 다음 JavaScript 버전을 기다리지 않고도 모든 메이저 브라우저와 플랫폼에서 작동하는 JavaScript로 컴파일 할 수 있습니다.
 
-# Classes
+# 클래스 (Classes)
 
-Let's take a look at a simple class-based example:
+간단한 클래스 기반 예제를 살펴 보겠습니다:
 
 ```ts
 class Greeter {
@@ -22,21 +23,22 @@ class Greeter {
 let greeter = new Greeter("world");
 ```
 
-The syntax should look familiar if you've used C# or Java before.
-We declare a new class `Greeter`. This class has three members: a property called `greeting`, a constructor, and a method `greet`.
+이전에 C# 또는 Java를 사용한 적이 있는 경우 구문이 익숙하게 보여야 합니다.  
+새로운 클래스인 `Greeter`을 선언합니다.
+이 클래스에는 3개의 멤버가 있습니다: `greeting` 프로퍼티와 생성자 그리고 `greet` 메서드가 있습니다.
 
-You'll notice that in the class when we refer to one of the members of the class we prepend `this.`.
-This denotes that it's a member access.
+클래스의 멤버 중 하나를 참조 할 때 클래스에서 `this`를 앞에 접두어로 붙입니다.
+이것은 멤버에 접근하는 것을 뜻합니다.
 
-In the last line we construct an instance of the `Greeter` class using `new`.
-This calls into the constructor we defined earlier, creating a new object with the `Greeter` shape, and running the constructor to initialize it.
+마지막 줄에서는 `new`를 사용하여 `Greeter` 클래스의 인스턴스를 만듭니다.  
+이것은 이전에 정의한 생성자를 호출하여 `Greeter` 형태의 새 객체를 만들고 생성자를 실행하여 이를 초기화합니다.
 
-# Inheritance
+# 상속 (Inheritance)
 
-In TypeScript, we can use common object-oriented patterns.
-One of the most fundamental patterns in class-based programming is being able to extend existing classes to create new ones using inheritance.
+TypeScript에서는 일반적인 객체 지향 패턴을 사용할 수 있습니다.
+클래스 기반 프로그래밍에서 가장 기본적인 패턴 중 하나는 상속을 사용하여 기존 클래스를 확장하여 새로운 클래스를 생성할 수 있다는 것입니다.
 
-Let's take a look at an example:
+예제를 살펴 보겠습니다:
 
 ```ts
 class Animal {
@@ -57,9 +59,9 @@ dog.move(10);
 dog.bark();
 ```
 
-This example show the most basic inheritance feature: classes inherit properties and methods from base classes.
-Here, `Dog` is a *derived* class that derives from the `Animal` *base* class using the `extends` keyword.
-Derived classes are often called *subclasses*, and base classes are often called *superclasses*.
+이 예제는 가장 기본적인 상속 기능을 보여줍니다: 클래스는 기본 클래스에서 속성과 메서드를 상속받습니다.
+여기서 `Dog`는 `extends` 키워드를 사용하여 `Animal` *기본* 클래스에서 유래된 *파생* 클래스입니다.
+파생 클래스는 종종 *subclasses* 라고하며 기본 클래스는 *superclasses* 라고도 합니다.
 
 Because `Dog` extends the functionality from `Animal`, we were able to create an instance of `Dog` that could both `bark()` and `move()`.
 
