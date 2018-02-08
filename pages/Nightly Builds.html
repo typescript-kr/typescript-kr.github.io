@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Type Checking JavaScript Files · GitBook</title>
+        <title>Nightly Builds · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="declaration files/Introduction.html" />
     
-    
-    <link rel="prev" href="Triple-Slash Directives.html" />
+    <link rel="prev" href="Iterators and Generators.html" />
     
 
     </head>
@@ -454,7 +452,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.22" data-path="Type Checking JavaScript Files.html">
+        <li class="chapter " data-level="3.22" data-path="Type Checking JavaScript Files.html">
             
                 <a href="Type Checking JavaScript Files.html">
             
@@ -637,7 +635,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.5" data-path="Nightly Builds.html">
+        <li class="chapter active" data-level="5.5" data-path="Nightly Builds.html">
             
                 <a href="Nightly Builds.html">
             
@@ -680,7 +678,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Type Checking JavaScript Files</a>
+        <a href=".." >Nightly Builds</a>
     </h1>
 </div>
 
@@ -695,133 +693,62 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>TypeScript 2.3 and later support a mode of type-checking and reporting errors in <code>.js</code> files with <code>--checkJs</code>.</p>
-<p>You can skip checking some files by adding <code>// @ts-nocheck</code> comment to them; conversely you can choose to check only a few <code>.js</code> files by adding <code>// @ts-check</code> comment to them without setting <code>--checkJs</code>.
-You can also ignore errors on specific lines by adding <code>// @ts-ignore</code> on the preceding line.</p>
-<p>Here are some notable differences on how checking work in <code>.js</code> file from <code>.ts</code> file:</p>
-<h2 id="using-types-in-jsdoc">Using types in JSDoc</h2>
-<p>In a <code>.js</code> file, types can often be inferred just like in <code>.ts</code> files.
-Likewise, when types can&apos;t be inferred, they can be specified using JSDoc the same way that type annotations do in a <code>.ts</code> file. </p>
-<p>JSDoc annotations adorning a declaration will be used to set the type of that declaration. For example:</p>
-<pre><code class="lang-js"><span class="hljs-comment">/** @type {number} */</span>
-<span class="hljs-keyword">var</span> x;
-
-x = <span class="hljs-number">0</span>;      <span class="hljs-comment">// OK</span>
-x = <span class="hljs-literal">false</span>;  <span class="hljs-comment">// Error: boolean is not assignable to number</span>
+                                <p>A nightly build from the <a href="https://github.com/Microsoft/TypeScript/tree/master" target="_blank">TypeScript&apos;s <code>master</code></a> branch is published by midnight PST to NPM and NuGet.
+Here is how you can get it and use it with your tools.</p>
+<h2 id="using-npm">Using npm</h2>
+<pre><code class="lang-shell">npm install -g typescript@next
 </code></pre>
-<p>You can find the full list of supported JSDoc patterns in the <a href="https://github.com/Microsoft/TypeScript/wiki/JSDoc-support-in-JavaScript" target="_blank">JSDoc support in JavaScript documentation</a>.</p>
-<h2 id="property-declaration-inferred-from-assignments-in-class-bodies">Property declaration inferred from assignments in class bodies</h2>
-<p>ES2015/ES6 does not have a means for declaring properties on classes. Properties are dynamically assigned, just like in the case of object literals. </p>
-<p>In a <code>.js</code> file property declarations are inferred from assignments to the properties inside the class body. The type of properties is the union of the types of all the right-hand values in these assignments. Properties defined in the constructor are always assumed to exist, where as ones defined in methods, getters, or setters are considered optional.</p>
-<p>Adorn property assignments with JSDoc to specify the type of the property as needed. For instance:</p>
-<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">C</span> </span>{
-    <span class="hljs-keyword">constructor</span>() {
-        <span class="hljs-comment">/** @type {number | undefined} */</span>
-    <span class="hljs-keyword">this</span>.prop = <span class="hljs-literal">undefined</span>;
-    }
-}
-
-
-<span class="hljs-keyword">let</span> c = <span class="hljs-keyword">new</span> C();
-c.prop = <span class="hljs-number">0</span>;         <span class="hljs-comment">// OK</span>
-c.prop = <span class="hljs-string">&quot;string&quot;</span>;  <span class="hljs-comment">// Error: string is not assignable to number|undefined</span>
+<h2 id="using-nuget-with-msbuild">Using NuGet with MSBuild</h2>
+<blockquote>
+<p>Note: You&apos;ll need to configure your project to use the NuGet packages.
+Please see <a href="https://github.com/Microsoft/TypeScript/wiki/Configuring-MSBuild-projects-to-use-NuGet" target="_blank">Configuring MSBuild projects to use NuGet</a> for more information.</p>
+</blockquote>
+<p>The nightlies are available on <a href="https://www.myget.org/gallery/typescript-preview" target="_blank">www.myget.org</a>.</p>
+<p>There are two packages:</p>
+<ul>
+<li><code>Microsoft.TypeScript.Compiler</code>: Tools only (<code>tsc.exe</code>, <code>lib.d.ts</code>, etc.) .</li>
+<li><code>Microsoft.TypeScript.MSBuild</code>: Tools as above, as well as MSBuild tasks and targets (<code>Microsoft.TypeScript.targets</code>, <code>Microsoft.TypeScript.Default.props</code>, etc.)</li>
+</ul>
+<h2 id="updating-your-ide-to-use-the-nightly-builds">Updating your IDE to use the nightly builds</h2>
+<p>You can also update your IDE to use the nightly drop.
+First you will need to install the package through npm.
+You can either install the npm package globally or to a local <code>node_modules</code> folder.</p>
+<p>The rest of this section assumes <code>typescript@next</code> is already installed.</p>
+<h3 id="visual-studio-code">Visual Studio Code</h3>
+<p>Update <code>.vscode/settings.json</code> with the following:</p>
+<pre><code class="lang-json"><span class="hljs-string">&quot;typescript.tsdk&quot;</span>: <span class="hljs-string">&quot;&lt;path to your folder&gt;/node_modules/typescript/lib&quot;</span>
 </code></pre>
-<p>If properties are never set in the class body, they are considered unknown. If your class has properties that are only read from, consider adding an initialization in the constructor to undefined, e.g. <code>this.prop = undefined;</code>.</p>
-<h2 id="commonjs-module-input-support">CommonJS module input support</h2>
-<p>In a <code>.js</code> files CommonJS module format is allowed as an input module format. Assignments to <code>exports</code>, and <code>module.exports</code> are recognized as export declarations. Similarly, <code>require</code> function calls are recognized as module imports. For example:</p>
-<pre><code class="lang-ts"><span class="hljs-comment">// import module &quot;fs&quot;</span>
-<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
-
-
-<span class="hljs-comment">// export function readFile</span>
-<span class="hljs-keyword">module</span>.exports.readFile = function(f) {
-    <span class="hljs-keyword">return</span> fs.readFileSync(f);    
-}
+<p>More information is available at <a href="https://code.visualstudio.com/Docs/languages/typescript#_using-newer-typescript-versions" target="_blank">VSCode documentation</a>.</p>
+<h3 id="sublime-text">Sublime Text</h3>
+<p>Update the <code>Settings - User</code> file with the following:</p>
+<pre><code class="lang-json"><span class="hljs-string">&quot;typescript_tsdk&quot;</span>: <span class="hljs-string">&quot;&lt;path to your folder&gt;/node_modules/typescript/lib&quot;</span>
 </code></pre>
-<h2 id="object-literals-are-open-ended">Object literals are open-ended</h2>
-<p>By default object literals in variable declarations provide the type of a declaration. No new members can be added that were not specified in the original initialization. This rule is relaxed in a <code>.js</code> file; object literals have an open-ended type, allowing adding and looking up properties that were not defined originally. For instance:</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> obj = { a: <span class="hljs-number">1</span> };
-obj.b = <span class="hljs-number">2</span>;  <span class="hljs-comment">// Allowed</span>
+<p>More information is available at the <a href="https://github.com/Microsoft/TypeScript-Sublime-Plugin#installation" target="_blank">TypeScript Plugin for Sublime Text installation documentation</a>.</p>
+<h3 id="visual-studio-2013-and-2015">Visual Studio 2013 and 2015</h3>
+<blockquote>
+<p>Note: Most changes do not require you to install a new version of the VS TypeScript plugin.</p>
+</blockquote>
+<p>The nightly build currently does not include the full plugin setup, but we are working on publishing an installer on a nightly basis as well.</p>
+<ol>
+<li><p>Download the <a href="https://github.com/Microsoft/TypeScript/blob/master/scripts/VSDevMode.ps1" target="_blank">VSDevMode.ps1</a> script.</p>
+<blockquote>
+<p>Also see our wiki page on <a href="https://github.com/Microsoft/TypeScript/wiki/Dev-Mode-in-Visual-Studio#using-a-custom-language-service-file" target="_blank">using a custom language service file</a>.</p>
+</blockquote>
+</li>
+<li><p>From a PowerShell command window, run:</p>
+<p>For VS 2015:</p>
+<pre><code class="lang-posh">VSDevMode.ps1 14 -tsScript &lt;path to your folder&gt;/node_modules/typescript/lib
 </code></pre>
-<p>Object literals get a default index signature <code>[x:string]: any</code> that allows them to be treated as open maps instead of closed objects.</p>
-<p>Similar to other special JS checking behaviors, this behavior can be changed by specifying a JSDoc type for the variable. For example:</p>
-<pre><code class="lang-js"><span class="hljs-comment">/** @type {{a: number}} */</span>
-<span class="hljs-keyword">var</span> obj = { a: <span class="hljs-number">1</span> };
-obj.b = <span class="hljs-number">2</span>;  <span class="hljs-comment">// Error, type {a: number} does not have property b</span>
+<p>For VS 2013:</p>
+<pre><code class="lang-posh">VSDevMode.ps1 12 -tsScript &lt;path to your folder&gt;/node_modules/typescript/lib
 </code></pre>
-<h2 id="function-parameters-are-optional-by-default">Function parameters are optional by default</h2>
-<p>Since there is no way to specify optionality on parameters in JS (without specifying a default value), all function parameters in <code>.js</code> file are considered optional. Calls with fewer arguments are allowed. </p>
-<p>It is important to note that it is an error to call a function with too many arguments.</p>
-<p>For instance:</p>
-<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span>(<span class="hljs-params">a, b</span>)</span>{
-    <span class="hljs-built_in">console</span>.log(a + <span class="hljs-string">&quot; &quot;</span> + b);
-}
-
-bar(<span class="hljs-number">1</span>);       <span class="hljs-comment">// OK, second argument considered optional</span>
-bar(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);
-bar(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>); <span class="hljs-comment">// Error, too many arguments</span>
-</code></pre>
-<p>JSDoc annotated functions are excluded from this rule. Use JSDoc optional parameter syntax to express optionality. e.g.:</p>
-<pre><code class="lang-js"><span class="hljs-comment">/**
- * @param {string} [somebody] - Somebody&apos;s name.
- */</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span>(<span class="hljs-params">somebody</span>) </span>{
-    <span class="hljs-keyword">if</span> (!somebody) {
-        somebody = <span class="hljs-string">&apos;John Doe&apos;</span>;
-    }
-    alert(<span class="hljs-string">&apos;Hello &apos;</span> + somebody);
-}
-
-sayHello();
-</code></pre>
-<h2 id="var-args-parameter-declaration-inferred-from-use-of-arguments">Var-args parameter declaration inferred from use of <code>arguments</code></h2>
-<p>A function whose body has a reference to the <code>arguments</code> reference is implicitly considered to have a var-arg parameter (i.e. <code>(...arg: any[]) =&gt; any</code>). Use JSDoc var-arg syntax to specify the type of the arguments.</p>
-<h2 id="unspecified-type-parameters-default-to-any">Unspecified type parameters default to <code>any</code></h2>
-<p>An unspecified generic type parameter defaults to <code>any</code>. There are few places where this happens:</p>
-<h4 id="in-extends-clause">In extends clause:</h4>
-<p>For instance, <code>React.Component</code> is defined to have two generic type parameters, <code>Props</code> and <code>State</code>. 
-In a <code>.js</code> file, there is no legal way to specify these in the extends clause. By default the type arguments will be <code>any</code>:</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react&quot;</span>;
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
-    render() {
-       <span class="hljs-keyword">this</span>.props.b; <span class="hljs-comment">// Allowed, since this.props is of type any</span>
-    }
-}
-</code></pre>
-<p>Use JSDoc <code>@augments</code> to specify the types explicitly. for instance:</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react&quot;</span>;
-
-<span class="hljs-comment">/**
- * @augments {Component&lt;{a: number}, State&gt;}
- */</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
-    render() {
-        <span class="hljs-keyword">this</span>.props.b; <span class="hljs-comment">// Error: b does not exist on {a:number}</span>
-    }
-}
-</code></pre>
-<h4 id="in-jsdoc-references">In JSDoc references</h4>
-<p>An unspecified generic type argument in JSDoc defaults to any:</p>
-<pre><code class="lang-js"><span class="hljs-comment">/** @type{Array} */</span>
-<span class="hljs-keyword">var</span> x = [];
-
-x.push(<span class="hljs-number">1</span>);        <span class="hljs-comment">// OK</span>
-x.push(<span class="hljs-string">&quot;string&quot;</span>); <span class="hljs-comment">// OK, x is of type Array&lt;any&gt;</span>
-
-
-<span class="hljs-comment">/** @type{Array.&lt;number&gt;} */</span>
-<span class="hljs-keyword">var</span> y = [];
-
-y.push(<span class="hljs-number">1</span>);        <span class="hljs-comment">// OK</span>
-y.push(<span class="hljs-string">&quot;string&quot;</span>); <span class="hljs-comment">// Error, string is not assignable to number</span>
-</code></pre>
-<h4 id="in-function-calls">In function calls</h4>
-<p>A call to generic functions uses arguments to infer the generic type parameters. Sometimes this process fails to infer any types, mainly because of lack on inference sources; in these cases, the generic type parameters will default to <code>any</code>. For example:</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> p = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; { reject() });
-
-p; <span class="hljs-comment">// Promise&lt;any&gt;;</span>
-</code></pre>
+</li>
+</ol>
+<h3 id="intellij-idea-mac">IntelliJ IDEA (Mac)</h3>
+<p>Go to <code>Preferences</code> &gt; <code>Languages &amp; Frameworks</code> &gt; <code>TypeScript</code>:</p>
+<blockquote>
+<p>TypeScript Version: If you installed with npm: <code>/usr/local/lib/node_modules/typescript/lib</code></p>
+</blockquote>
 
                                 
                                 </section>
@@ -849,14 +776,10 @@ p; <span class="hljs-comment">// Promise&lt;any&gt;;</span>
 
             
                 
-                <a href="Triple-Slash Directives.html" class="navigation navigation-prev " aria-label="Previous page: Triple-Slash Directives">
+                <a href="Iterators and Generators.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Integrating with Build Tools">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="declaration files/Introduction.html" class="navigation navigation-next " aria-label="Next page: Introduction">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -865,7 +788,7 @@ p; <span class="hljs-comment">// Promise&lt;any&gt;;</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Type Checking JavaScript Files","level":"3.22","depth":1,"next":{"title":"Introduction","level":"4.1","depth":1,"path":"pages/declaration files/Introduction.md","ref":"pages/declaration files/Introduction.md","articles":[]},"previous":{"title":"Triple-Slash Directives","level":"3.21","depth":1,"path":"pages/Triple-Slash Directives.md","ref":"pages/Triple-Slash Directives.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Type Checking JavaScript Files.md","mtime":"2018-02-06T13:12:52.659Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-08T12:40:33.595Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Nightly Builds","level":"5.5","depth":1,"previous":{"title":"Integrating with Build Tools","level":"5.4","depth":1,"path":"pages/Iterators and Generators.md","ref":"pages/Iterators and Generators.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Nightly Builds.md","mtime":"2018-02-08T11:52:59.035Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-08T12:40:33.595Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
