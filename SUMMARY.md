@@ -16,7 +16,7 @@
 * [변수 선언](pages/Variable Declarations.md)
 * [인터페이스](pages/Interfaces.md)
 * [클래스](pages/Classes.md)
-* [Functions](pages/Functions.md)
+* [함수](pages/Functions.md)
 * [제네릭](pages/Generics.md)
 * [열거형](pages/Enums.md)
 * [타입 추론](pages/Type Inference.md)
