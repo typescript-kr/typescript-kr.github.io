@@ -4,7 +4,7 @@
 
 ## Tutorials
 
-* [5 분안에 보는 TypeScript](pages/tutorials/TypeScript in 5 minutes.md)
+* [5분 안에 보는 TypeScript](pages/tutorials/TypeScript in 5 minutes.md)
 * [ASP.NET Core](pages/tutorials/ASP.NET Core.md)
 * [Gulp](pages/tutorials/Gulp.md)
 * [Migrating from JavaScript](pages/tutorials/Migrating from JavaScript.md)
