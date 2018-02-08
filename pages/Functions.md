@@ -23,9 +23,9 @@ let myAdd = function(x, y) { return x + y; };
 ```
 
 JavaScript에서와 마찬가지로 함수는 함수 본문 외부의 변수를 참조할 수 있습니다.  
-그렇게할 때 이러한 변수들을 `capture`라고 말합니다.  
+그렇게 할 때 이러한 변수들을 `capture`라고 말합니다.  
 이 기법의 사용 방법과 사용할 때의 절충 사항을 이해하는 것은 이번 장의 범위를 벗어나지만  
-이 메커니즘이 JavaScript와 TypeScript에 얼마나 중요한 부분인지 확실히 이해해야합니다.
+캡처의 메커니즘이 JavaScript와 TypeScript에 얼마나 중요한 부분인지 확실히 이해해야 합니다.
 
 ```ts
 let z = 100;
@@ -49,8 +49,8 @@ function add(x: number, y: number): number {
 let myAdd = function(x: number, y: number): number { return x + y; };
 ```
 
-각 매개변수에 타입을 추가 한 다음 함수 자체에 타입을 추가하여 리턴 타입을 추가할 수 있습니다.  
-TypeScript는 리턴문를 보고 리턴 타입을 파악할 수 있기때문에 대부분 선택적으로 리턴 타입을 생략할 수 있습니다.
+각 매개변수에 타입을 추가 한 다음 함수 자체에 타입을 추가하여 반환 타입을 추가할 수 있습니다.  
+TypeScript는 리턴문를 보고 반환 타입을 파악할 수 있기 때문에 대부분 선택적으로 반환 타입을 생략할 수 있습니다.
 
 ## 함수 타입 작성하기 (Writing the function type)
 
@@ -61,10 +61,10 @@ let myAdd: (x: number, y: number) => number =
     function(x: number, y: number): number { return x + y; };
 ```
 
-함수의 타입은 두개의 파트로 나뉩니다: 인수의 타입과 리턴 타입.  
+함수의 타입은 두개의 파트로 나뉩니다: 인수의 타입과 반환 타입.  
 전체 함수 타입을 작성할 때 두 파트가 모두 필요합니다.  
 매개변수 타입과 같이 매개변수 목록을 기록하여 각 매개변수에 이름과 타입을 지정합니다.  
-이 이름은 가독성을 돕기위한 것입니다.
+이 이름은 가독성을 돕기 위한 것입니다.
 
 위의 코드를 다음과 같이 작성할 수 있습니다:
 
@@ -75,11 +75,11 @@ let myAdd: (baseValue: number, increment: number) => number =
 
 매개변수 타입이 정렬되어 있는 한 함수의 타입에 매개변수를 제공하는 이름에 관계 없이 매개변수 타입이 유효한 타입으로 간주됩니다.
 
-두 번째 파트는 리턴 타입입니다.  
-매개변수와 리턴 타입 사이에 굵은 화살표(=>)를 사용하여 리턴 타입을 명확하게 합니다.  
-앞서 언급한 것처럼 이것은 함수 타입의 필수적인 부분이므로 함수가 값을 리턴하지 않는 경우에는 리턴 값을 남겨 두지 않고 `void`를 사용합니다.
+두 번째 파트는 반환 타입입니다.  
+매개변수와 반환 타입 사이에 굵은 화살표(=>)를 사용하여 반환 타입을 명확하게 합니다.  
+앞서 언급한 것처럼 이것은 함수 타입의 필수적인 부분이므로 함수가 값을 반환하지 않는 경우에는 반환 값을 남겨 두지 않고 `void`를 사용합니다.
 
-주의사항, 매개변수와 리턴 타입만 함수 타입을 구성합니다.  
+주의사항, 매개변수와 반환 타입만 함수 타입을 구성합니다.  
 캡처된 변수는 타입에 반영되지 않습니다.  
 실제로 캡처된 변수는 함수의 "숨겨진 상태"의 일부이며 해당 API를 구성하지 않습니다.
 
@@ -102,7 +102,7 @@ let myAdd: (baseValue: number, increment: number) => number =
 # 선택적 매개변수와 기본 매개변수 (Optional and Default Parameters)
 
 TypeScript에서는 모든 매개변수가 함수에 필요하다고 가정합니다.  
-`null` 또는 `undefined`가 주어질 수 없다는 것을 의미하는 것이 아니라 함수가 호출될 때 컴파일러가 각 매개변수에 값을 제공했는지 확인한다는 것 입니다.  
+`null` 또는 `undefined`가 주어질 수 없다는 것을 의미하는 것이 아니라 함수가 호출될 때 컴파일러가 각 매개변수에 값을 제공했는지 확인한다는 것입니다.  
 또한 컴파일러는 이러한 매개변수들이 함수로 전달되는 유일한 매개변수라고 가정합니다.  
 간단히 말해서 함수에 주어진 인수의 수는 그 함수에서 기대하는 매개변수의 수와 일치해야 합니다.
 
@@ -120,7 +120,7 @@ JavaScript에서 모든 매개변수는 선택 사항이며 매개변수를 원�
 그렇게 되면 그 매개변수들의 값은 `undefined`입니다.
 TypeScript에서 선택적인 매개변수를 사용하려면 선택적으로 사용하려는 매개변수의 끝에 `?`를 추가하세요.
 
-예를 들어 위에서 사용한 last name 매개변수를 선택적으로 사용할 수 있도록 합니다:
+예를 들어 위에서 사용한 lastName 매개변수를 선택적으로 사용할 수 있도록 합니다:
 
 ```ts
 function buildName(firstName: string, lastName?: string) {
@@ -136,7 +136,7 @@ let result3 = buildName("Bob", "Adams");         // 아, 딱 맞습니다
 ```
 
 모든 선택적 매개변수는 필수 매개변수를 따라와야 합니다.  
-last name 대신 first name을 선택적 매개변수로 만들고 싶다면 함수의 매개변수 순서를 변경해야합니다.  
+last name 대신 first name을 선택적 매개변수로 만들고 싶다면 함수의 매개변수 순서를 변경해야 합니다.  
 즉 목록의 first name을 마지막에 넣어야합니다.
 
 TypeScript에서 사용자가 매개변수를 제공하지 않거나 사용자가 대신 `undefined`를 전달하더라도 매개변수가에 할당되는 값을 설정할 수 있습니다.  
@@ -178,9 +178,9 @@ function buildName(firstName: string, lastName = "Smith") {
 `lastName`의 기본 값은 타입에서 사라지고 매개변수가 선택 사항이라는 사실만 남겨졌습니다.
 
 일반 선택적 매개변수와 달리 기본 매개변수는 필수 매개변수 뒤에 나올 *필요*가 없습니다.  
-기본 매개변수가 필수 매개변수 앞에 오는 경우 사용자는 명시적으로 `undefined`를 전달하여 기본 초기화 된 값을 가져와야합니다.
+기본 매개변수가 필수 매개변수 앞에 오는 경우 사용자는 명시적으로 `undefined`를 전달하여 기본 초기화된 값을 가져와야 합니다.
 
-예를 들어 `firstName`에 기본 초기화만있는 마지막 예제를 작성할 수 있습니다:
+예를 들어 `firstName`에 기본 초기화만 있는 마지막 예제를 작성할 수 있습니다:
 
 ```ts
 function buildName(firstName = "Will", lastName: string) {
@@ -227,15 +227,15 @@ let buildNameFun: (fname: string, ...rest: string[]) => string = buildName;
 JavaScript에서 `this`를 사용법을 배우는 것은 일종의 통과 의례입니다.  
 TypeScript는 JavaScript의 상위 집합이기 때문에 TypeScript 개발자들도 `this`을 사용하는 방법과 올바르게 사용되고 있지 않을 때를 찾아내는 방법을 배워야 합니다.  
 JavaScript에서 `this`가 어떻게 작동하는지 알아야 한다면 Yehuda Katz의 [Understanding JavaScript Function Invocation and "this"](http://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/)를 먼저 읽어보세요.  
-Yehuda의 글에는 `this`의 내부 동작을 잘 설명하기때문에 여기서는 기본적인 내용만 다룰 것입니다.
+Yehuda의 글에는 `this`의 내부 동작을 잘 설명하기 때문에 여기서는 기본적인 내용만 다룰 것입니다.
 
 ## `this`와 화살표 함수 (`this` and arrow functions)
 
 JavaScript에서 `this`는 함수가 호출될 때 설정되는 변수입니다.  
 매우 강력하고 유연한 기능이지만 함수가 실행되는 상황에 대해 항상 알고 있어야 하는 시간이 듭니다.  
-특히 함수를 반환하거나 함수를 인수로 전달할 때 악명 높을정도로 혼란스럽습니다.
+특히 함수를 반환하거나 함수를 인수로 전달할 때 악명 높을 정도로 혼란스럽습니다.
 
-예제를 살펴 보겠습니다:
+예제를 살펴보겠습니다:
 
 ```ts
 let deck = {
@@ -258,14 +258,14 @@ alert("card: " + pickedCard.card + " of " + pickedCard.suit);
 ```
 
 `createCardPicker`는 자체적으로 함수를 반환하는 함수입니다.  
-예제를 실행하려고하면 alert 대신 오류가 발생합니다.  
+예제를 실행하려고 하면 alert 대신 오류가 발생합니다.  
 `createCardPicker`에 의해 생성된 함수에서 사용되는 `this`가 `deck` 객체 대신에 `window`로 설정되어 있기 때문입니다.  
 왜냐하면 `cardPicker()`는 자기 자신을 호출하기 때문입니다.  
 이와 같이 최상위 비-메서드 구문 호출은 `this`에 `window`를 사용합니다.  
 (주의사항 : 엄격모드(strict mode)에서 `this`는 `window`보다는 `undefined`가 될 것입니다).
 
 나중에 사용할 함수를 반환하기 전에 함수에 올바른 `this`가 연결되도록하여 이를 해결할 수 있습니다.
-이렇게하면 나중에 어떻게 사용되든 상관 없이 원래의 `deck`객체를 볼 수 있습니다.  
+이렇게하면 나중에 어떻게 사용되든 상관없이 원래의 `deck`객체를 볼 수 있습니다.  
 이를 위해 함수 표현식을 ECMAScript 6의 화살표 구문으로 변경하여 사용합니다.  
 화살표 함수는 호출된 곳이 아닌 함수가 생성 된 곳에서 `this`를 캡처합니다:
 
@@ -347,7 +347,7 @@ alert("card: " + pickedCard.card + " of " + pickedCard.suit);
 왜냐하면 콜백을 호출하는 라이브러리가 표준 함수처럼 호출하기 때문에 `this`는 `undefined`가 될 것입니다.
 
 때때로 `this` 매개변수를 사용하여 콜백 오류를 방지할 수도 있습니다.
-첫번째, 라이브러리 작성자는 콜백 타입에 `this`를 사용하여 주석을 달아야합니다:
+첫 번째, 라이브러리 작성자는 콜백 타입에 `this`를 사용하여 annotate를 달아야 합니다:
 
 ```ts
 interface UIElement {
@@ -357,7 +357,7 @@ interface UIElement {
 
 `this : void`는 `addClickListener`가 `onclick`이 `this` 타입을 필요로 하지 않는 함수라는 것을 의미합니다.
 
-둘째, `this`를 사용하여 호출 코드와 함께 annotate를 달아야합니다:
+두 번째, `this`를 사용하여 호출 코드와 함께 annotate를 달아야 합니다:
 
 ```ts
 class Handler {
@@ -371,7 +371,7 @@ let h = new Handler();
 uiElement.addClickListener(h.onClickBad); // 오류!
 ```
 
-`this`가 annotated되어 있으면 `onClickBad`는 반드시 `Handler`의 인스턴스에서 호출되어야한다는 것을 명시해야합니다.  
+`this`가 annotated되어 있으면 `onClickBad`는 반드시 `Handler`의 인스턴스에서 호출되어야한다는 것을 명시해야 합니다.  
 그런 다음 TypeScript는 `addClickListener`에 `this : void`가 있는 함수가 필요하다는 것을 발견합니다.  
 오류를 해결하려면 `this`의 타입을 수정하세요:
 
@@ -435,14 +435,14 @@ let pickedCard2 = pickCard(15);
 alert("card: " + pickedCard2.card + " of " + pickedCard2.suit);
 ```
 
-여기서 `pickCard` 함수는 사용자가 무엇을 전달했는지에 따라 두개의 서로 다른 내용을 반환합니다.  
+여기서 `pickCard` 함수는 사용자가 무엇을 전달했는지에 따라 두 개의 서로 다른 내용을 반환합니다.  
 사용자가 deck를 나타내는 객체를 전달하면 함수가 card를 선택합니다.  
 사용자가 card를 선택하면 그들이 선택한 card를 알려줍니다.  
 하지만 이것을 어떻게 타입 시스템에 설명할까요?
 
 이에 대한 대답은 오버로드 목록과 동일한 함수에 대한 여러 함수 타입을 제공하는 것이다.  
 이 목록은 컴파일러가 함수 호출을 해결하는 데 사용할 것입니다.  
-`pickCard`가 받아 들일 수 있는 것과 그것이 반환하는 것을 기술한 오버로드 목록을 작성해 보세요.
+`pickCard`가 받아들일 수 있는 것과 그것이 반환하는 것을 기술한 오버로드 목록을 작성해 보세요.
 
 ```ts
 let suits = ["hearts", "spades", "clubs", "diamonds"];
@@ -474,7 +474,7 @@ alert("card: " + pickedCard2.card + " of " + pickedCard2.suit);
 이런 변화로 인해 오버로드가 `pickCard` 함수에 대한 타입-체크 호출을 제공합니다.
 
 컴파일러가 올바른 타입 검사를 선택하기 위해 기본 JavaScript와 비슷한 프로세스를 수행합니다.  
-오버로드 목록을 살펴보고 제공된 매개변수를 사용하여 함수를 호출하는 첫번째 오버로드 시도를 계속합니다.  
+오버로드 목록을 살펴보고 제공된 매개변수를 사용하여 함수를 호출하는 첫 번째 오버로드 시도를 계속합니다.  
 일치하는 것을 찾으면 이 오버로드를 올바른 오버로드로 선택합니다.  
 이러한 이유 때문에 주문이 많아지면 가장 구체적인 것에서 가장 덜 구체적인 것으로 오버로드합니다.
 
