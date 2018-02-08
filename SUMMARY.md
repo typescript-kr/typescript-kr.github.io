@@ -34,3 +34,22 @@
 * [Mixins](pages/Mixins.md)
 * [Triple-Slash Directives](pages/Triple-Slash Directives.md)
 * [Type Checking JavaScript Files](pages/Type Checking JavaScript Files.md)
+
+## Declaration Files
+
+* [Introduction](pages/declaration files/Introduction.md)
+* [Library Structures](pages/declaration files/Library Structures.md)
+* [By Example](pages/declaration files/By Example.md)
+* [Do's and Don'ts](pages/declaration files/Do's and Don'ts.md)
+* [Deep Dive](pages/declaration files/Deep Dive.md)
+* [Templates](pages/declaration files/Templates.md)
+* [Publishing](pages/declaration files/Publishing.md)
+* [Consumption](pages/declaration files/Consumption.md)
+
+## Project Configuration
+
+* [tsconfig.json](pages/tsconfig.json.md)
+* [Compiler Options](pages/Compiler Options.md)
+* [Compiler Options in MSBuild](pages/Compiler Options in MSBuild.md)
+* [Integrating with Build Tools](pages/Iterators and Generators.md)
+* [Nightly Builds](pages/Nightly Builds.md)
