@@ -7,7 +7,7 @@
 * [5분 안에 보는 TypeScript](pages/tutorials/TypeScript in 5 minutes.md)
 * [ASP.NET Core](pages/tutorials/ASP.NET Core.md)
 * [Gulp](pages/tutorials/Gulp.md)
-* [Migrating from JavaScript](pages/tutorials/Migrating from JavaScript.md)
+* [JavaScript에서 마이그레이션](pages/tutorials/Migrating from JavaScript.md)
 * [리액트 & 웹팩](pages/tutorials/React & Webpack.md)
 
 ## Handbook
