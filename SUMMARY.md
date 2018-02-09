@@ -8,7 +8,7 @@
 * [ASP.NET Core](pages/tutorials/ASP.NET Core.md)
 * [Gulp](pages/tutorials/Gulp.md)
 * [Migrating from JavaScript](pages/tutorials/Migrating from JavaScript.md)
-* [React & Webpack](pages/tutorials/React & Webpack.md)
+* [리액트 & 웹팩](pages/tutorials/React & Webpack.md)
 
 ## Handbook
 
