@@ -1,9 +1,10 @@
-# Introduction
+# 소개 (Introduction)
 
-Type compatibility in TypeScript is based on structural subtyping.
-Structural typing is a way of relating types based solely on their members.
-This is in contrast with nominal typing.
-Consider the following code:
+TypeScript의 타입 호환성은 구조적 하위 타입을 기반으로합니다.  
+구조적 타이핑은 멤버에 따라 타입을 관계시키는 방법입니다.  
+이것은 명사뿐인 타이핑과 대조적입니다.
+
+다음 코드를 살펴보세요 :
 
 ```ts
 interface Named {
@@ -15,22 +16,28 @@ class Person {
 }
 
 let p: Named;
-// OK, because of structural typing
+// 좋아요 구조적 타이핑이니까
 p = new Person();
 ```
 
-In nominally-typed languages like C# or Java, the equivalent code would be an error because the `Person` class does not explicitly describe itself as being an implementor of the `Named` interface.
+C# 또는 Java 같은 명사적인 언어에서는 `person` 클래스가 자신을 `Named` 인터페이스의 구현체로 명시적으로 기술하지 않기 때문에 동일한 코드가 오류가 될 수 있습니다.
 
-TypeScript's structural type system was designed based on how JavaScript code is typically written.
-Because JavaScript widely uses anonymous objects like function expressions and object literals, it's much more natural to represent the kinds of relationships found in JavaScript libraries with a structural type system instead of a nominal one.
+TypeScript의 구조적인 타입 시스템은 일반적으로 JavaScript 코드가 작성된 방식에 따라 설계되었습니다.
 
-## A Note on Soundness
+JavaScript는 함수 표현식이나 객체 리터럴과 같은 익명의 객체를 광범위하게 사용하기 때문에 이름뿐인 구조적 타입 시스템 대신 JavaScript 라이브러리에서 발견되는 관계의 타입을 표현하는 것이 훨씬 자연스럽습니다.
 
-TypeScript's type system allows certain operations that can't be known at compile-time to be safe. When a type system has this property, it is said to not be "sound". The places where TypeScript allows unsound behavior were carefully considered, and throughout this document we'll explain where these happen and the motivating scenarios behind them.
+## 안전성에 대한 노트 (A Note on Soundness)
 
-# Starting out
+TypeScript의 타입 시스템을 사용하면 완료시 알 수 없는 특정 작업을 안전하게 수행할 수 있습니다.  
+타입 시스템에 이 프로퍼티가 있으면 그것은 "타당"한 것이 아니라고 합니다.
 
-The basic rule for TypeScript's structural type system is that `x` is compatible with `y` if `y` has at least the same members as `x`. For example:
+TypeScript에서 부적절한 동작을 허용하는 곳을 신중하게 고려했으며 이 문서 전체에서 이러한 상황이 발생하는 곳과 그 뒤에있는 숨겨진 동기 부여 시나리오에 대해 설명합니다.
+
+# 시작하기 (Starting out)
+
+TypeScript의 구조 타입 시스템에 대한 기본적인 규칙은 `y`가 적어도`x`와 같은 멤버를 가지고 있다면 `x`는 `y`와 호환된다는 것입니다.
+
+예를 들어:
 
 ```ts
 interface Named {
@@ -38,29 +45,31 @@ interface Named {
 }
 
 let x: Named;
-// y's inferred type is { name: string; location: string; }
+// y의 추론된 타입은 { name: string; location: string; } 입니다
 let y = { name: "Alice", location: "Seattle" };
 x = y;
 ```
 
-To check whether `y` can be assigned to `x`, the compiler checks each property of `x` to find a corresponding compatible property in `y`.
-In this case, `y` must have a member called `name` that is a string. It does, so the assignment is allowed.
+`y`가 `x`에 할당될 수 있는지를 검사하기 위해 컴파일러는 `x`의 각 프로퍼티를 검사하여 `y`에서 상응하는 호환되는 프로퍼티를 찾습니다.
 
-The same rule for assignment is used when checking function call arguments:
+이 경우 `y`는 문자열인 `name` 멤버를 가져야합니다. 그렇기 때문에 할당이 허용됩니다.
+
+함수 호출 인수를 검사할 때 다음과 같은 할당 규칙이 사용됩니다 :
 
 ```ts
 function greet(n: Named) {
     alert("Hello, " + n.name);
 }
-greet(y); // OK
+greet(y); // 좋아요
 ```
 
-Note that `y` has an extra `location` property, but this does not create an error.
-Only members of the target type (`Named` in this case) are considered when checking for compatibility.
+`y`는 별도의 `location` 프로퍼티를 가지고 있지만  이로 인해 오류가 생기는 것은 아니라는 점에 유의한다.  
 
-This comparison process proceeds recursively, exploring the type of each member and sub-member.
+호환성을 검사할 때 대상의 타입 (이 경우 `Named`) 멤버만 고려됩니다.
 
-# Comparing two functions
+이 비교 프로세스는 재귀적으로 진행되어 각 구성원 및 하위 멤버의 유형을 탐색합니다.
+
+# 두 함수 비교 (Comparing two functions)
 
 While comparing primitive types and object types is relatively straightforward, the question of what kinds of functions should be considered compatible is a bit more involved.
 Let's start with a basic example of two functions that differ only in their parameter lists:
