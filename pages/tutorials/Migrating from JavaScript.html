@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Migrating from JavaScript · GitBook</title>
+        <title>JavaScript에서 마이그레이션 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -153,7 +153,7 @@
                 <a href="Migrating from JavaScript.html">
             
                     
-                    Migrating from JavaScript
+                    JavaScript에서 마이그레이션
             
                 </a>
             
@@ -680,7 +680,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Migrating from JavaScript</a>
+        <a href="../.." >JavaScript에서 마이그레이션</a>
     </h1>
 </div>
 
@@ -695,21 +695,13 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>TypeScript doesn&apos;t exist in a vacuum.
-It was built with the JavaScript ecosystem in mind, and a lot of JavaScript exists today.
-Converting a JavaScript codebase over to TypeScript is, while somewhat tedious, usually not challenging.
-In this tutorial, we&apos;re going to look at how you might start out.
-We assume you&apos;ve read enough of the handbook to write new TypeScript code.</p>
-<p>If you&apos;re looking to convert a React project, we recommend looking at the <a href="https://github.com/Microsoft/TypeScript-React-Conversion-Guide#typescript-react-conversion-guide" target="_blank">React Conversion Guide</a> first.</p>
-<h1 id="setting-up-your-directories">Setting up your Directories</h1>
-<p>If you&apos;re writing in plain JavaScript, it&apos;s likely that you&apos;re running your JavaScript directly,
-  where your <code>.js</code> files in a <code>src</code>, <code>lib</code>, or <code>dist</code> directory, and then ran as desired.</p>
-<p>If that&apos;s the case, the files that you&apos;ve written are going to be used as inputs to TypeScript, and you&apos;ll run the outputs it produces.
-During our JS to TS migration, we&apos;ll need to separate our input files to prevent TypeScript from overwriting them.
-If your output files need to reside in a specific directory, then that will be your output directory.</p>
-<p>You might also be running some intermediate steps on your JavaScript, such as bundling or using another transpiler like Babel.
-In this case, you might already have a folder structure like this set up.</p>
-<p>From this point on, we&apos;re going to assume that your directory is set up something like this:</p>
+                                <p>TypeScript&#xB294; &#xACF5;&#xBC31; &#xC0C1;&#xD0DC;&#xB85C; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.<br>JavaScript &#xC0DD;&#xD0DC;&#xACC4;&#xB97C; &#xC5FC;&#xB450;&#xC5D0; &#xB450;&#xACE0; &#xB9CC;&#xB4E4;&#xC5B4;&#xC84C;&#xC73C;&#xBA70; &#xC624;&#xB298;&#xB0A0;&#xC5D0;&#xB294; &#xB9CE;&#xC740; JavaScript&#xAC00; &#xC874;&#xC7AC;&#xD569;&#xB2C8;&#xB2E4;.<br>JavaScript &#xCF54;&#xB4DC; &#xBCA0;&#xC774;&#xC2A4;&#xB97C; TypeScript&#xB85C; &#xBCC0;&#xD658;&#xD558;&#xB294; &#xAC83;&#xC740; &#xB2E4;&#xC18C; &#xC9C0;&#xB8E8;&#xD558;&#xC9C0;&#xB9CC; &#xBCF4;&#xD1B5; &#xC5B4;&#xB835;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC5D0;&#xC11C;&#xB294; &#xC2DC;&#xC791;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC0B4;&#xD3B4;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC0C8;&#xB85C;&#xC6B4; TypeScript &#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD558;&#xAE30;&#xC5D0; &#xCDA9;&#xBD84;&#xD55C; &#xD578;&#xB4DC;&#xBD81;&#xC744; &#xC77D;&#xC740; &#xAC83;&#xC73C;&#xB85C; &#xAC00;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>React &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xBCC0;&#xD658;&#xD558;&#xB824;&#xB294; &#xACBD;&#xC6B0; <a href="https://github.com/Microsoft/TypeScript-React-Conversion-Guide#typescript-react-conversion-guide" target="_blank">React Conversion Guide</a>&#xB97C; &#xBA3C;&#xC800; &#xCC38;&#xC870;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xB514;&#xB809;&#xD130;&#xB9AC;-&#xC124;&#xC815;&#xD558;&#xAE30;-setting-up-your-directories">&#xB514;&#xB809;&#xD130;&#xB9AC; &#xC124;&#xC815;&#xD558;&#xAE30; (Setting up your Directories)</h1>
+<p>&#xD3C9;&#xBC94;&#xD55C; JavaScript&#xB85C; &#xC791;&#xC131;&#xD558;&#xB294; &#xACBD;&#xC6B0; JavaScript&#xAC00; <code>src</code>&#xC640; <code>lib</code> &#xB610;&#xB294; <code>dist</code> &#xB514;&#xB809;&#xD130;&#xB9AC;&#xC5D0;&#xC788;&#xB294; <code>.js</code> &#xD30C;&#xC77C;&#xC744; &#xC9C1;&#xC811; &#xC2E4;&#xD589;&#xD558;&#xACE0; &#xC6D0;&#xD558;&#xB294; &#xB300;&#xB85C; &#xC2E4;&#xD589;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774;&#xB7F0; &#xACBD;&#xC6B0; &#xC791;&#xC131;&#xD55C; &#xD30C;&#xC77C;&#xC740; TypeScript&#xC758; &#xC785;&#xB825;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xBA70; &#xC0DD;&#xC131;&#xB41C; &#xCD9C;&#xB825;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.<br>JS&#xC5D0;&#xC11C; TS&#xB85C; &#xB9C8;&#xC774;&#xADF8;&#xB808;&#xC774;&#xC158; &#xD558;&#xB294; &#xB3D9;&#xC548; TypeScript&#xAC00; &#xC785;&#xB825; &#xD30C;&#xC77C;&#xC744; &#xB36E;&#xC5B4;&#xC4F0;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D; &#xC785;&#xB825; &#xD30C;&#xC77C;&#xC744; &#xBD84;&#xB9AC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xCD9C;&#xB825; &#xD30C;&#xC77C;&#xC774; &#xD2B9;&#xC815; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xC5D0; &#xC788;&#xC5B4;&#xC57C; &#xD558;&#xB294; &#xACBD;&#xC6B0; &#xD574;&#xB2F9; &#xD30C;&#xC77C;&#xC774; &#xCD9C;&#xB825; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xBC88;&#xB4E4;&#xB9C1;&#xC774;&#xB098; Babel&#xACFC; &#xAC19;&#xC740; &#xB2E4;&#xB978; &#xD2B8;&#xB79C;&#xC2A4;&#xD30C;&#xC77C;&#xB7EC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xACFC; &#xAC19;&#xC774; JavaScript&#xC5D0;&#xC11C; &#xC911;&#xAC04; &#xB2E8;&#xACC4;&#xB97C; &#xC218;&#xD589;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xC774;&#xC640; &#xAC19;&#xC740; &#xD3F4;&#xB354; &#xAD6C;&#xC870;&#xAC00; &#xC774;&#xBBF8; &#xC124;&#xC815;&#xB418;&#xC5B4; &#xC788;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC9C0;&#xAE08;&#xBD80;&#xD130; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xAC00; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC124;&#xC815;&#xB418;&#xC5C8;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-text">projectRoot
 &#x251C;&#x2500;&#x2500; src
 &#x2502;   &#x251C;&#x2500;&#x2500; file1.js
@@ -717,10 +709,9 @@ In this case, you might already have a folder structure like this set up.</p>
 &#x251C;&#x2500;&#x2500; built
 &#x2514;&#x2500;&#x2500; tsconfig.json
 </code></pre>
-<p>If you have a <code>tests</code> folder outside of your <code>src</code> directory, you might have one <code>tsconfig.json</code> in <code>src</code>, and one in <code>tests</code> as well.</p>
-<h1 id="writing-a-configuration-file">Writing a Configuration File</h1>
-<p>TypeScript uses a file called <code>tsconfig.json</code> for managing your project&apos;s options, such as which files you want to include, and what sorts of checking you want to perform.
-Let&apos;s create a bare-bones one for our project:</p>
+<p><code>src</code> &#xB514;&#xB809;&#xD130;&#xB9AC; &#xBC16;&#xC5D0; <code>tests</code> &#xD3F4;&#xB354;&#xAC00; &#xC788;&#xB2E4;&#xBA74; <code>src</code>&#xC5D0; <code>tsconfig.json</code>&#xC640; <code>tests</code>&#xC5D0; &#xD558;&#xB098;&#xC529; &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xC124;&#xC815;-&#xD30C;&#xC77C;-&#xC791;&#xC131;&#xD558;&#xAE30;-writing-a-configuration-file">&#xC124;&#xC815; &#xD30C;&#xC77C; &#xC791;&#xC131;&#xD558;&#xAE30; (Writing a Configuration File)</h1>
+<p>TypeScript&#xB294; <code>tsconfig.json</code>&#xC774;&#xB77C;&#xB294; &#xD30C;&#xC77C;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD3EC;&#xD568;&#xC2DC;&#xD0AC; &#xD30C;&#xC77C;&#xACFC; &#xAC80;&#xC0AC;&#xC758; &#xC885;&#xB958;&#xC640; &#xAC19;&#xC740; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC758; &#xC635;&#xC158;&#xC744; &#xAD00;&#xB9AC;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0; &#xC0AC;&#xC6A9;&#xD560; &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xBF08;&#xB300;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
         <span class="hljs-string">&quot;outDir&quot;</span>: <span class="hljs-string">&quot;./built&quot;</span>,
@@ -732,164 +723,137 @@ Let&apos;s create a bare-bones one for our project:</p>
     ]
 }
 </code></pre>
-<p>Here we&apos;re specifying a few things to TypeScript:</p>
+<p>&#xC5EC;&#xAE30;&#xC11C; TypeScript&#xC5D0; &#xBA87; &#xAC00;&#xC9C0;&#xB97C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <ol>
-<li>Read in any files it understands in the <code>src</code> directory (with <code>include</code>).</li>
-<li>Accept JavaScript files as inputs (with <code>allowJs</code>).</li>
-<li>Emit all of the output files in <code>built</code> (with <code>outDir</code>).</li>
-<li>Translate newer JavaScript constructs down to an older version like ECMAScript 5 (using <code>target</code>).</li>
+<li><code>src</code> &#xB514;&#xB809;&#xD130;&#xB9AC;&#xC5D0;&#xC758; &#xBAA8;&#xB4E0; &#xD30C;&#xC77C;&#xC744; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4; (<code>include</code> &#xD3EC;&#xD568;)</li>
+<li>JavaScript &#xD30C;&#xC77C;&#xC758; &#xC785;&#xB825;&#xC73C;&#xB85C; &#xD5C8;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4; (<code>allowJs</code> &#xD3EC;&#xD568;)</li>
+<li><code>builtd</code>&#xC5D0; &#xBAA8;&#xB4E0; &#xCD9C;&#xB825; &#xD30C;&#xC77C;&#xC744; &#xB0B4; &#xBCF4;&#xB0C5;&#xB2C8;&#xB2E4; (<code>outDir</code>&#xC640; &#xD568;&#xAED8;)</li>
+<li>&#xCD5C;&#xC2E0; JavaScript &#xAD6C;&#xBB38;&#xC744; ECMAScript 5 &#xAC19;&#xC740; &#xC774;&#xC804; &#xBC84;&#xC804;&#xC73C;&#xB85C; &#xBCC0;&#xD658;&#xD569;&#xB2C8;&#xB2E4; (<code>target</code> &#xC0AC;&#xC6A9;)</li>
 </ol>
-<p>At this point, if you try running <code>tsc</code> at the root of your project, you should see output files in the <code>built</code> directory.
-The layout of files in <code>built</code> should look identical to the layout of <code>src</code>.
-You should now have TypeScript working with your project.</p>
-<h2 id="early-benefits">Early Benefits</h2>
-<p>Even at this point you can get some great benefits from TypeScript understanding your project.
-If you open up an editor like <a href="https://code.visualstudio.com" target="_blank">VS Code</a> or <a href="https://visualstudio.com" target="_blank">Visual Studio</a>, you&apos;ll see that you can often get some tooling support like completion.
-You can also catch certain bugs with options like:</p>
+<p>&#xC774;&#xB54C; &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xB8E8;&#xD2B8;&#xC5D0; <code>tsc</code>&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xB824;&#xACE0; &#xD558;&#xBA74; <code>built</code> &#xB514;&#xB809;&#xD130;&#xB9AC;&#xC5D0; &#xCD9C;&#xB825; &#xD30C;&#xC77C;&#xC774; &#xD45C;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.<br><code>built</code>&#xC5D0; &#xC788;&#xB294; &#xD30C;&#xC77C;&#xC758; &#xB808;&#xC774;&#xC544;&#xC6C3;&#xC740; <code>src</code>&#xC758; &#xB808;&#xC774;&#xC544;&#xC6C3;&#xACFC; &#xB3D9;&#xC77C;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xC81C; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0;&#xC11C; TypeScript&#xB85C; &#xC791;&#xC5C5;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xCD08;&#xAE30;&#xC758;-&#xD61C;&#xD0DD;-early-benefits">&#xCD08;&#xAE30;&#xC758; &#xD61C;&#xD0DD; (Early Benefits)</h2>
+<p>&#xC774; &#xC2DC;&#xC810;&#xC5D0;&#xC11C;&#xB3C4; TypeScript&#xC5D0;&#xC11C; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xC774;&#xD574;&#xD568;&#xC73C;&#xB85C;&#xC368; &#xBA87; &#xAC00;&#xC9C0; &#xB6F0;&#xC5B4;&#xB09C; &#xC774;&#xC810;&#xC744; &#xB204;&#xB9B4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br><a href="https://code.visualstudio.com" target="_blank">VS Code</a>&#xB098; <a href="https://visualstudio.com" target="_blank">Visual Studio</a> &#xAC19;&#xC740; &#xD3B8;&#xC9D1;&#xAE30;&#xB85C; &#xC2DC;&#xC791;&#xD558;&#xBA74; &#xC790;&#xB3D9; &#xC644;&#xC131;&#xACFC; &#xAC19;&#xC740; &#xB3C4;&#xAD6C; &#xC9C0;&#xC6D0;&#xC744; &#xC790;&#xC8FC; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xB610;&#xD55C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD2B9;&#xC815; &#xBC84;&#xADF8;&#xB97C; &#xBC1C;&#xACAC;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <ul>
-<li><code>noImplicitReturns</code> which prevents you from forgetting to return at the end of a function.</li>
-<li><code>noFallthroughCasesInSwitch</code> which is helpful if you never want to forget a <code>break</code> statement between <code>case</code>s in a <code>switch</code> block.</li>
+<li><code>noImplicitReturns</code>&#xB294; &#xD568;&#xC218;&#xC758; &#xB05D;&#xC5D0; &#xBC18;&#xD658;&#xBB38;&#xC744; &#xBE7C;&#xBA39;&#xB294; &#xAC83;&#xC744; &#xBC29;&#xC9C0;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li><code>noFallthroughCasesInSwitch</code>&#xB294; <code>switch</code>&#xBE14;&#xB85D; <code>case</code> &#xC0AC;&#xC774;&#xC5D0; <code>break</code>&#xBB38;&#xC744; &#xBEEC;&#xBA39;&#xC9C0; &#xC54A;&#xAE30; &#xC704;&#xD574; &#xC720;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</li>
 </ul>
-<p>TypeScript will also warn about unreachable code and labels, which you can disable with <code>allowUnreachableCode</code> and <code>allowUnusedLabels</code> respectively.</p>
-<h1 id="integrating-with-build-tools">Integrating with Build Tools</h1>
-<p>You might have some more build steps in your pipeline.
-Perhaps you concatenate something to each of your files.
-Each build tool is different, but we&apos;ll do our best to cover the gist of things.</p>
+<p>TypeScript&#xB294; &#xB3C4;&#xB2EC; &#xD560; &#xC218;&#xC5C6;&#xB294; &#xCF54;&#xB4DC;&#xC640; &#xB77C;&#xBCA8;&#xC5D0; &#xB300;&#xD574;&#xC11C;&#xB3C4; &#xACBD;&#xACE0;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xCF54;&#xB4DC;&#xC640; &#xB77C;&#xBCA8;&#xC740; &#xAC01;&#xAC01;&#xC758; <code>allowUnreachableCode</code>&#xC640; <code>allowUnusedLabels</code>&#xB85C; &#xD574;&#xC81C;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xBE4C;&#xB4DC;-&#xB3C4;&#xAD6C;&#xC640;-&#xD1B5;&#xD569;-integrating-with-build-tools">&#xBE4C;&#xB4DC; &#xB3C4;&#xAD6C;&#xC640; &#xD1B5;&#xD569; (Integrating with Build Tools)</h1>
+<p>&#xD30C;&#xC774;&#xD504; &#xB77C;&#xC778;&#xC5D0; &#xBE4C;&#xB4DC; &#xB2E8;&#xACC4;&#xAC00; &#xB354; &#xC788;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC544;&#xB9C8;&#xB3C4; &#xAC01; &#xD30C;&#xC77C;&#xC5D0; &#xBB34;&#xC5B8;&#xAC00;&#xB97C; &#xC5F0;&#xACB0;&#xD588;&#xC744; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xAC01; &#xBE4C;&#xB4DC; &#xB3C4;&#xAD6C;&#xB294; &#xB2E4;&#xB974;&#xC9C0;&#xB9CC; &#xAC01; &#xBE4C;&#xB4DC; &#xB3C4;&#xAD6C;&#xC758; &#xC694;&#xC810;&#xC744; &#xB2E4;&#xB8E8;&#xAE30; &#xC704;&#xD574; &#xCD5C;&#xC120;&#xC744; &#xB2E4;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h2 id="gulp">Gulp</h2>
-<p>If you&apos;re using Gulp in some fashion, we have a tutorial on <a href="Gulp.html">using Gulp</a> with TypeScript, and integrating with common build tools like Browserify, Babelify, and Uglify.
-You can read more there.</p>
+<p>Gulp&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0; TypeScript&#xB85C; <a href="Gulp.html">Gulp &#xC0AC;&#xC6A9;&#xD558;&#xAE30;</a> &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC774; &#xC788;&#xACE0; Browserify&#xC640; Babelify &#xADF8;&#xB9AC;&#xACE0; Uglify&#xC640; &#xAC19;&#xC740; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xBE4C;&#xB4DC; &#xB3C4;&#xAD6C;&#xC640; &#xD1B5;&#xD569;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xAC70;&#xAE30;&#xC11C; &#xB354; &#xC77D;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h2 id="webpack">Webpack</h2>
-<p>Webpack integration is pretty simple.
-You can use <code>awesome-typescript-loader</code>, a TypeScript loader, combined with <code>source-map-loader</code> for easier debugging.
-Simply run</p>
+<p>Webpack &#xD1B5;&#xD569;&#xC740; &#xB9E4;&#xC6B0; &#xAC04;&#xB2E8;&#xD569;&#xB2C8;&#xB2E4;.
+TypeScript &#xB85C;&#xB354;&#xC778; <code>awesome-typescript-loader</code>&#xB97C; <code>source-map-loader</code>&#xC640; &#xACB0;&#xD569;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xB514;&#xBC84;&#xAE45;&#xC774; &#xC26C;&#xC6CC; &#xC9D1;&#xB2C8;&#xB2E4;.  </p>
+<p>&#xAC04;&#xB2E8;&#xD55C; &#xC2E4;&#xD589;</p>
 <pre><code class="lang-shell">npm install awesome-typescript-loader source-map-loader
 </code></pre>
-<p>and merge in options from the following into your <code>webpack.config.js</code> file:</p>
+<p>&#xADF8;&#xB9AC;&#xACE0; &#xB2E4;&#xC74C;&#xC758; &#xC635;&#xC158;&#xC744; <code>webpack.config.js</code> &#xD30C;&#xC77C;&#xC5D0; &#xBCD1;&#xD569;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
 <pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = {
     entry: <span class="hljs-string">&quot;./src/index.ts&quot;</span>,
     output: {
         filename: <span class="hljs-string">&quot;./dist/bundle.js&quot;</span>,
     },
 
-    <span class="hljs-comment">// Enable sourcemaps for debugging webpack&apos;s output.</span>
+    <span class="hljs-comment">// webpack&#xC758; &#xCD9C;&#xB825;&#xC744; &#xB514;&#xBC84;&#xAE45; &#xD560; &#xC18C;&#xC2A4; &#xB9F5;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</span>
     devtool: <span class="hljs-string">&quot;source-map&quot;</span>,
 
     resolve: {
-        <span class="hljs-comment">// Add &apos;.ts&apos; and &apos;.tsx&apos; as resolvable extensions.</span>
+        <span class="hljs-comment">// &#xD655;&#xC778; &#xAC00;&#xB2A5;&#xD55C; &#xD655;&#xC7A5;&#xC790;&#xB85C; &apos;.ts&apos; &#xBC0F; &apos;.tsx&apos;&#xB97C; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</span>
         extensions: [<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;.webpack.js&quot;</span>, <span class="hljs-string">&quot;.web.js&quot;</span>, <span class="hljs-string">&quot;.ts&quot;</span>, <span class="hljs-string">&quot;.tsx&quot;</span>, <span class="hljs-string">&quot;.js&quot;</span>]
     },
 
     <span class="hljs-built_in">module</span>: {
         loaders: [
-            <span class="hljs-comment">// All files with a &apos;.ts&apos; or &apos;.tsx&apos; extension will be handled by &apos;awesome-typescript-loader&apos;.</span>
+            <span class="hljs-comment">// &apos;.ts&apos; &#xB610;&#xB294; &apos;.tsx&apos; &#xD655;&#xC7A5;&#xC790;&#xB97C; &#xAC00;&#xC9C4; &#xBAA8;&#xB4E0; &#xD30C;&#xC77C;&#xC740; &apos;awesome-typescript-loader&apos;&#xC5D0; &#xC758;&#xD574; &#xCC98;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;.</span>
             { test: <span class="hljs-regexp">/\.tsx?$/</span>, loader: <span class="hljs-string">&quot;awesome-typescript-loader&quot;</span> }
         ],
 
         preLoaders: [
-            <span class="hljs-comment">// All output &apos;.js&apos; files will have any sourcemaps re-processed by &apos;source-map-loader&apos;.</span>
+            <span class="hljs-comment">// &apos;.js&apos; &#xD30C;&#xC77C;&#xC758; &#xBAA8;&#xB4E0; &#xCD9C;&#xB825;&#xC5D0;&#xB294; &apos;source-maps-loader&apos;&#xB85C; &#xB2E4;&#xC2DC; &#xCC98;&#xB9AC;&#xB41C; &#xC18C;&#xC2A4; &#xB9F5;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
             { test: <span class="hljs-regexp">/\.js$/</span>, loader: <span class="hljs-string">&quot;source-map-loader&quot;</span> }
         ]
     },
 
-    <span class="hljs-comment">// Other options...</span>
+    <span class="hljs-comment">// &#xB2E4;&#xB978; &#xC635;&#xC158;&#xB4E4;...</span>
 };
 </code></pre>
-<p>It&apos;s important to note that awesome-typescript-loader will need to run before any other loader that deals with <code>.js</code> files.</p>
-<p>The same goes for <a href="https://github.com/TypeStrong/ts-loader" target="_blank">ts-loader</a>, another TypeScript loader for Webpack.
-You can read more about the differences between the two <a href="https://github.com/s-panferov/awesome-typescript-loader#differences-between-ts-loader" target="_blank">here</a>.</p>
-<p>You can see an example of using Webpack in our <a href="React%20&amp;%20Webpack.md">tutorial on React and Webpack</a>.</p>
-<h1 id="moving-to-typescript-files">Moving to TypeScript Files</h1>
-<p>At this point, you&apos;re probably ready to start using TypeScript files.
-The first step is to rename one of your <code>.js</code> files to <code>.ts</code>.
-If your file uses JSX, you&apos;ll need to rename it to <code>.tsx</code>.</p>
-<p>Finished with that step?
-Great!
-You&apos;ve successfully migrated a file from JavaScript to TypeScript!</p>
-<p>Of course, that might not feel right.
-If you open that file in an editor with TypeScript support (or if you run <code>tsc --pretty</code>), you might see red squiggles on certain lines.
-You should think of these the same way you&apos;d think of red squiggles in an editor like Microsoft Word.
-TypeScript will still translate your code, just like Word will still let you print your documents.</p>
-<p>If that sounds too lax for you, you can tighten that behavior up.
-If, for instance, you <em>don&apos;t</em> want TypeScript to compile to JavaScript in the face of errors, you can use the <code>noEmitOnError</code> option.
-In that sense, TypeScript has a dial on its strictness, and you can turn that knob up as high as you want.</p>
-<p>If you plan on using the stricter settings that are available, it&apos;s best to turn them on now (see <a href="#getting-stricter-checks">Getting Stricter Checks</a> below).
-For instance, if you never want TypeScript to silently infer <code>any</code> for a type without you explicitly saying so, you can use <code>noImplicitAny</code> before you start modifying your files.
-While it might feel somewhat overwhelming, the long-term gains become apparent much more quickly.</p>
-<h2 id="weeding-out-errors">Weeding out Errors</h2>
-<p>Like we mentioned, it&apos;s not unexpected to get error messages after conversion.
-The important thing is to actually go one by one through these and decide how to deal with the errors.
-Often these will be legitimate bugs, but sometimes you&apos;ll have to explain what you&apos;re trying to do a little better to TypeScript.</p>
-<h3 id="importing-from-modules">Importing from Modules</h3>
-<p>You might start out getting a bunch of errors like <code>Cannot find name &apos;require&apos;.</code>, and <code>Cannot find name &apos;define&apos;.</code>.
-In these cases, it&apos;s likely that you&apos;re using modules.
-While you can just convince TypeScript that these exist by writing out</p>
-<pre><code class="lang-ts"><span class="hljs-comment">// For Node/CommonJS</span>
+<p><code>.js</code> &#xD30C;&#xC77C;&#xC744; &#xB2E4;&#xB8E8;&#xB294; &#xB2E4;&#xB978; &#xB85C;&#xB354;&#xBCF4;&#xB2E4; awesome-typescript-loader&#xB97C; &#xBA3C;&#xC800; &#xC2E4;&#xD589;&#xD574;&#xC57C; &#xD55C;&#xB2E4;&#xB294; &#xC810;&#xC5D0; &#xC8FC;&#xC758;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>Webpack&#xC744; &#xC704;&#xD55C; TypeScript &#xB85C;&#xB354;&#xC778; <a href="https://github.com/TypeStrong/ts-loader" target="_blank">ts-loader</a>&#xB3C4; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xC785;&#xB2C8;&#xB2E4;.<br><a href="https://github.com/s-panferov/awesome-typescript-loader#differences-between-ts-loader" target="_blank">&#xC5EC;&#xAE30;&#xC5D0;&#xC11C;</a>. &#xADF8; &#xB458;&#xC758; &#xCC28;&#xC774;&#xC810;&#xC5D0; &#xB300;&#xD574; &#xB354; &#xC77D;&#xC5B4;&#xBCFC; &#xC218; &#xC788;&#xB2E4;. </p>
+<p><a href="React%20&amp;%20Webpack.md">React and Webpack&#xC5D0; &#xAD00;&#xD55C; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;</a>&#xC5D0;&#xC11C; Webpack&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC608;&#xB97C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h1 id="typescript-&#xD30C;&#xC77C;&#xB85C;-&#xC774;&#xB3D9;-moving-to-typescript-files">TypeScript &#xD30C;&#xC77C;&#xB85C; &#xC774;&#xB3D9; (Moving to TypeScript Files)</h1>
+<p>&#xC774;&#xB54C; TypeScript &#xD30C;&#xC77C;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC900;&#xBE44;&#xAC00; &#xB41C; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xCCAB; &#xBC88;&#xC9F8; &#xB2E8;&#xACC4;&#xB294; <code>.js</code> &#xD30C;&#xC77C; &#xC911; &#xD558;&#xB098;&#xC758; &#xC774;&#xB984;&#xC744; <code>.ts</code>&#xB85C; &#xBC14;&#xAFB8;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xD30C;&#xC77C;&#xC774; JSX&#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xBA74; &#xC774;&#xB984;&#xC744; <code>.tsx</code>&#xB85C; &#xBC14;&#xAFD4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xADF8; &#xB2E8;&#xACC4;&#xB97C; &#xB05D;&#xB0C8;&#xB098;&#xC694;?
+&#xC88B;&#xC558;&#xC5B4;!<br>JavaScript&#xC5D0;&#xC11C; TypeScript&#xB85C; &#xD30C;&#xC77C;&#xC744; &#xC131;&#xACF5;&#xC801;&#xC73C;&#xB85C; &#xB9C8;&#xC774;&#xADF8;&#xB808;&#xC774;&#xC158; &#xD588;&#xC2B5;&#xB2C8;&#xB2E4;!</p>
+<p>&#xBB3C;&#xB860; &#xC633;&#xB2E4;&#xACE0; &#xC0DD;&#xAC01;&#xD558;&#xC9C0; &#xC54A;&#xC744; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>TypeScript&#xB97C; &#xC9C0;&#xC6D0;&#xD558;&#xB294; &#xD3B8;&#xC9D1;&#xAE30;&#xC5D0;&#xC11C; &#xD574;&#xB2F9; &#xD30C;&#xC77C;&#xC744; &#xC5F4;&#xBA74; (&#xB610;&#xB294; tsc --pretty&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xBA74;) &#xD2B9;&#xC815; &#xB77C;&#xC778;&#xC5D0; &#xBE68;&#xAC04; &#xC904;&#xC774; &#xB098;&#xD0C0;&#xB0A0; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>Microsoft Word&#xC640; &#xAC19;&#xC740; &#xD3B8;&#xC9D1;&#xAE30;&#xC5D0;&#xC11C; &#xBE68;&#xAC04; &#xC904;&#xC744; &#xC0DD;&#xAC01;&#xD558;&#xB294; &#xAC83;&#xACFC; &#xAC19;&#xC740; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xC0DD;&#xAC01;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.<br>Word&#xC5D0;&#xC11C; &#xC5EC;&#xC804;&#xD788; &#xBB38;&#xC11C;&#xB97C; &#xC778;&#xC1C4;&#xD560; &#xC218; &#xC788;&#xB294; &#xAC83;&#xCC98;&#xB7FC; TypeScript&#xB294; &#xCF54;&#xB4DC;&#xB97C; &#xBCC0;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xADF8; &#xACBD;&#xACE0;&#xAC00; &#xB108;&#xBB34; &#xB290;&#xC2A8;&#xD558;&#xBA74; &#xADF8; &#xACBD;&#xACE0;&#xB97C; &#xC5C4;&#xACA9;&#xD558;&#xAC8C; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; &#xC624;&#xB958; &#xBC1C;&#xC0DD;&#xC73C;&#xB85C; &#xC778;&#xD574; TypeScript&#xC5D0;&#xC11C; JavaScript&#xB85C; &#xCEF4;&#xD30C;&#xC77C;&#xD558;&#xB294; &#xAC83;&#xC744; <em>&#xC6D0;&#xCE58; &#xC54A;&#xB294;</em> &#xACBD;&#xC6B0; <code>noEmitOnError</code> &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB7F0; &#xC758;&#xBBF8;&#xC5D0;&#xC11C; TypeScript&#xB294; &#xC5C4;&#xACA9;&#xD568;&#xC744; &#xC870;&#xC808;&#xD560; &#xC218; &#xC788;&#xB294; &#xB3C4;&#xAD6C;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC73C;&#xBA70; &#xC6D0;&#xD558;&#xB294; &#xB9CC;&#xD07C; &#xC870;&#xC808;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB9CC;&#xC57D; &#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;&#xD55C; &#xB354; &#xC5C4;&#xACA9;&#xD55C; &#xC124;&#xC815;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xACC4;&#xD68D;&#xC774;&#xB77C;&#xBA74; &#xC9C0;&#xAE08; &#xBC14;&#xB85C; &#xC124;&#xC815;&#xD558;&#xB294; &#xAC83;&#xC774; &#xAC00;&#xC7A5; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.<br>(&#xC544;&#xB798;&#xC758; <a href="#getting-stricter-checks">Getting Stricter Checks</a> &#xCC38;&#xC870;).</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; TypeScript&#xAC00; &#xD0C0;&#xC785;&#xC5D0; &#xB300;&#xD574; <code>any</code>&#xB97C; &#xCD94;&#xB860;&#xD558;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D; &#xBA85;&#xC2DC;&#xD558;&#xB824;&#xBA74; &#xD30C;&#xC77C;&#xC744; &#xC218;&#xC815;&#xD558;&#xAE30; &#xC804;&#xC5D0; <code>noImplicitAny</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xC18C; &#xBC85;&#xCC28;&#xB2E4;&#xACE0; &#xB290;&#xAEF4;&#xC9C8; &#xC218;&#xB3C4; &#xC788;&#xC9C0;&#xB9CC; &#xC7A5;&#xAE30;&#xC801; &#xC774;&#xB4DD;&#xC740; &#xD6E8;&#xC52C; &#xB354; &#xBE68;&#xB9AC; &#xB098;&#xD0C0;&#xB0A9;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xC624;&#xB958;-&#xC7A1;&#xAE30;-weeding-out-errors">&#xC624;&#xB958; &#xC7A1;&#xAE30; (Weeding out Errors)</h2>
+<p>&#xC55E;&#xC11C; &#xC5B8;&#xAE09; &#xD55C; &#xAC83;&#xCC98;&#xB7FC; &#xBCC0;&#xD658; &#xD6C4;&#xC5D0; &#xC624;&#xB958; &#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xD45C;&#xC2DC;&#xB418;&#xB294; &#xAC83;&#xC740; &#xC608;&#xC0C1;&#xCE58; &#xBABB;&#xD55C; &#xC77C;&#xC774; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;.<br>&#xC911;&#xC694;&#xD55C; &#xAC83;&#xC740; &#xC774;&#xB7F0; &#xAC83;&#xB4E4;&#xC744; &#xD558;&#xB098;&#xC529; &#xC0B4;&#xD3B4;&#xBCF4;&#xACE0; &#xC5B4;&#xB5BB;&#xAC8C; &#xC624;&#xB958;&#xB97C; &#xCC98;&#xB9AC;&#xD560; &#xAC83;&#xC778;&#xC9C0;&#xB97C; &#xACB0;&#xC815;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC885;&#xC885; &#xC774;&#xAC83;&#xB4E4;&#xC740; &#xBB38;&#xC81C;&#xC5C6;&#xB294; &#xBC84;&#xADF8;&#xAC00; &#xB420; &#xC218;&#xB3C4; &#xC788;&#xC9C0;&#xB9CC; &#xB54C;&#xB85C;&#xB294; TypeScript&#xB97C; &#xC704;&#xD574; &#xC870;&#xAE08; &#xB354; &#xB098;&#xC740; &#xAC83;&#xC744; &#xC124;&#xBA85;&#xD574;&#xC57C; &#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xBAA8;&#xB4C8;-&#xAC00;&#xC838;&#xC624;&#xAE30;-importing-from-modules">&#xBAA8;&#xB4C8; &#xAC00;&#xC838;&#xC624;&#xAE30; (Importing from Modules)</h3>
+<p><code>Cannot find name &apos;require&apos;.</code>&#xC640; <code>Cannot find name &apos;define&apos;.</code> &#xAC19;&#xC740; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xAE30; &#xC2DC;&#xC791;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB7EC;&#xD55C; &#xACBD;&#xC6B0; &#xBAA8;&#xB4C8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC788;&#xC744; &#xAC00;&#xB2A5;&#xC131;&#xC774; &#xB192;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>TypeScript&#xB85C; &#xC791;&#xC131;&#xD558;&#xB294; &#xB3D9;&#xC548; &#xD655;&#xC2E4;&#xD560; &#xC218; &#xC788;&#xC9C0;&#xB9CC;</p>
+<pre><code class="lang-ts"><span class="hljs-comment">// Node/CommonJS&#xB97C; &#xC704;&#xD55C;</span>
 <span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">require</span>(<span class="hljs-params">path: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">any</span></span>;
 </code></pre>
-<p>or</p>
-<pre><code class="lang-ts"><span class="hljs-comment">// For RequireJS/AMD</span>
+<p>&#xB610;&#xB294;</p>
+<pre><code class="lang-ts"><span class="hljs-comment">// RequireJS/AMD&#xB97C; &#xC704;&#xD55C;</span>
 <span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">define</span>(<span class="hljs-params">...args: <span class="hljs-built_in">any</span>[]</span>): <span class="hljs-title">any</span></span>;
 </code></pre>
-<p>it&apos;s better to get rid of those calls and use TypeScript syntax for imports.</p>
-<p>First, you&apos;ll need to enable some module system by setting TypeScript&apos;s <code>module</code> flag.
-Valid options are <code>commonjs</code>, <code>amd</code>, <code>system</code>, and <code>umd</code>.</p>
-<p>If you had the following Node/CommonJS code:</p>
+<p>&#xC774;&#xB7EC;&#xD55C; &#xD638;&#xCD9C;&#xB4E4;&#xC740; &#xC81C;&#xAC70;&#xD558;&#xACE0; import&#xC5D0; TypeScript &#xAD6C;&#xBB38;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xBA3C;&#xC800; TypeScript&#xC758; <code>module</code> &#xD50C;&#xB798;&#xADF8;&#xB97C; &#xC124;&#xC815;&#xD558;&#xC5EC; &#xC77C;&#xBD80; &#xBAA8;&#xB4C8; &#xC2DC;&#xC2A4;&#xD15C;&#xC744; &#xD65C;&#xC131;&#xD654;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xC720;&#xD6A8;&#xD55C; &#xC635;&#xC158;&#xC740;<code>commonjs</code>,<code>amd</code>,<code>system</code> &#xADF8;&#xB9AC;&#xACE0; <code>umd</code>&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C; Node/CommonJS &#xCF54;&#xB4DC;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294; &#xACBD;&#xC6B0;:</p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> foo = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;foo&quot;</span>);
 
 foo.doStuff();
 </code></pre>
-<p>or the following RequireJS/AMD code:</p>
+<p>&#xB610;&#xB294; &#xB2E4;&#xC74C; RequireJS / AMD &#xCF54;&#xB4DC;:</p>
 <pre><code class="lang-js">define([<span class="hljs-string">&quot;foo&quot;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">foo</span>) </span>{
     foo.doStuff();
 })
 </code></pre>
-<p>then you would write the following TypeScript code:</p>
+<p>&#xADF8;&#xB7EC;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; TypeScript &#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">import</span> foo = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;foo&quot;</span>);
 
 foo.doStuff();
 </code></pre>
-<h3 id="getting-declaration-files">Getting Declaration Files</h3>
-<p>If you started converting over to TypeScript imports, you&apos;ll probably run into errors like <code>Cannot find module &apos;foo&apos;.</code>.
-The issue here is that you likely don&apos;t have <em>declaration files</em> to describe your library.
-Luckily this is pretty easy.
-If TypeScript complains about a package like <code>lodash</code>, you can just write</p>
+<h3 id="&#xC120;&#xC5B8;-&#xD30C;&#xC77C;-&#xAC00;&#xC838;-&#xC624;&#xAE30;-getting-declaration-files">&#xC120;&#xC5B8; &#xD30C;&#xC77C; &#xAC00;&#xC838; &#xC624;&#xAE30; (Getting Declaration Files)</h3>
+<p>TypeScript&#xB85C; &#xC804;&#xD658;&#xD558;&#xAE30; &#xC2DC;&#xC791;&#xD558;&#xBA74; <code>Cannot find module &apos;foo&apos;.</code>&#xACFC; &#xAC19;&#xC740; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC5EC;&#xAE30;&#xC11C; &#xBB38;&#xC81C;&#xB294; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xC124;&#xBA85;&#xD560; &#xC218; &#xC788;&#xB294; <em>&#xC120;&#xC5B8; &#xD30C;&#xC77C;(declaration files)</em> &#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC9C0; &#xC54A;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xD589;&#xD788;&#xB3C4; &#xC774;&#xAC83;&#xC740; &#xAF64; &#xC27D;&#xC2B5;&#xB2C8;&#xB2E4;.<br>TypeScript&#xC5D0;&#xC11C; <code>lodash</code>&#xC640; &#xAC19;&#xC740; &#xD328;&#xD0A4;&#xC9C0;&#xC5D0; &#xB300;&#xD574; &#xBD88;&#xD3C9;&#xD558;&#xB294; &#xACBD;&#xC6B0; &#xADF8;&#xB0E5; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-shell">npm install -S @types/lodash
 </code></pre>
-<p>If you&apos;re using a module option other than <code>commonjs</code>, you&apos;ll need to set your <code>moduleResolution</code> option to <code>node</code>.</p>
-<p>After that, you&apos;ll be able to import lodash with no issues, and get accurate completions.</p>
-<h3 id="exporting-from-modules">Exporting from Modules</h3>
-<p>Typically, exporting from a module involves adding properties to a value like <code>exports</code> or <code>module.exports</code>.
-TypeScript allows you to use top-level export statements.
-For instance, if you exported a function like so:</p>
+<p><code>commonjs</code>&#xAC00; &#xC544;&#xB2CC; &#xB2E4;&#xB978; &#xBAA8;&#xB4C8; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xBA74; <code>moduleResolution</code> &#xC635;&#xC158;&#xC744; <code>node</code>&#xB85C; &#xC124;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xADF8;&#xB7F0; &#xB2E4;&#xC74C; &#xBB38;&#xC81C;&#xC5C6;&#xC774; Lodash&#xB97C; &#xAC00;&#xC838;&#xC62C; &#xC218; &#xC788;&#xC73C;&#xBA70; &#xC790;&#xB3D9; &#xC644;&#xC131;&#xC744; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xBAA8;&#xB4C8;-&#xB0B4;&#xBCF4;&#xB0B4;&#xAE30;-exporting-from-modules">&#xBAA8;&#xB4C8; &#xB0B4;&#xBCF4;&#xB0B4;&#xAE30; (Exporting from Modules)</h3>
+<p>&#xC804;&#xD615;&#xC801;&#xC73C;&#xB85C; &#xBAA8;&#xB4C8;&#xC5D0;&#xC11C; &#xB0B4;&#xBCF4;&#xB0B4;&#xAE30;&#xB294; <code>exports</code> &#xB098; <code>module.exports</code>&#xC640; &#xAC19;&#xC740; &#xAC12;&#xC5D0; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xB294; &#xAC83;&#xC744; &#xD3EC;&#xD568;&#xD569;&#xB2C8;&#xB2E4;.<br>TypeScript&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xCD5C;&#xC0C1;&#xC704; &#xB808;&#xBCA8; &#xB0B4;&#xBCF4;&#xB0B4;&#xAE30; &#xBA85;&#xB839;&#xBB38;&#xC744; &#xD5C8;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; &#xC774;&#xC640; &#xAC19;&#xC740; &#xD568;&#xC218;&#xB97C; &#xB0B4;&#xBCF4;&#xB0B8; &#xACBD;&#xC6B0;:</p>
 <pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports.feedPets = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">pets</span>) </span>{
     <span class="hljs-comment">// ...</span>
 }
 </code></pre>
-<p>you could write that out as the following:</p>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">feedPets</span>(<span class="hljs-params">pets</span>) </span>{
     <span class="hljs-comment">// ...</span>
 }
 </code></pre>
-<p>Sometimes you&apos;ll entirely overwrite the exports object.
-This is a common pattern people use to make their modules immediately callable like in this snippet:</p>
+<p>&#xB54C;&#xB85C;&#xB294; exports &#xAC1D;&#xCCB4;&#xB97C; &#xC644;&#xC804;&#xD788; &#xB36E;&#xC5B4;&#xC4F0;&#xAE30;&#xB3C4; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774;&#xAC83;&#xC740; &#xBAA8;&#xB4C8;&#xC744; &#xC774; &#xCF54;&#xB4DC;&#xCC98;&#xB7FC; &#xC989;&#xC2DC; &#xD638;&#xCD9C; &#xAC00;&#xB2A5;&#xD55C; &#xBAA8;&#xB4C8;&#xB85C; &#xB9CC;&#xB4E4;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD328;&#xD134;&#xC785;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;express&quot;</span>);
 <span class="hljs-keyword">var</span> app = express();
 </code></pre>
-<p>You might have previously written that like so:</p>
+<p>&#xC774;&#xC804;&#xC5D0;&#xB294; &#xC774;&#xB807;&#xAC8C; &#xC791;&#xC131;&#xD588;&#xC744; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; :</p>
 <pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-comment">// ...</span>
 }
 <span class="hljs-built_in">module</span>.exports = foo;
 </code></pre>
-<p>In TypeScript, you can model this with the <code>export =</code> construct.</p>
+<p>TypeScript&#xC5D0;&#xC11C;&#xB294; &#xC774;&#xAC83;&#xC744; <code>export =</code> &#xAD6C;&#xC870;&#xB85C; &#xBAA8;&#xB378;&#xB9C1;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-comment">// ...</span>
 }
 <span class="hljs-keyword">export</span> = foo;
 </code></pre>
-<h3 id="too-manytoo-few-arguments">Too many/too few arguments</h3>
-<p>You&apos;ll sometimes find yourself calling a function with too many/few arguments.
-Typically, this is a bug, but in some cases, you might have declared a function that uses the <code>arguments</code> object instead of writing out any parameters:</p>
+<h3 id="&#xB108;&#xBB34;-&#xB9CE;&#xAC70;&#xB098;-&#xC801;&#xC740;-&#xC778;&#xC218;-too-manytoo-few-arguments">&#xB108;&#xBB34; &#xB9CE;&#xAC70;&#xB098; &#xC801;&#xC740; &#xC778;&#xC218; (Too many/too few arguments)</h3>
+<p>&#xB54C;&#xB54C;&#xB85C; &#xB108;&#xBB34;&#xB098; &#xB9CE;&#xAC70;&#xB098; &#xC801;&#xC740; &#xC778;&#xC218;&#xB97C; &#xAC00;&#xC9C4; &#xD568;&#xC218;&#xB97C; &#xD638;&#xCD9C;&#xD560; &#xB54C;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC804;&#xD615;&#xC801;&#xC73C;&#xB85C; &#xC774;&#xAC83;&#xC740; &#xBC84;&#xADF8;&#xC774;&#xC9C0;&#xB9CC; &#xC5B4;&#xB5A4; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xB97C; &#xC4F0;&#xB294; &#xB300;&#xC2E0; <code>arguments</code> &#xAC1D;&#xCCB4;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xD568;&#xC218;&#xB97C; &#xC120;&#xC5B8;&#xD588;&#xC744; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myCoolFunction</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">if</span> (<span class="hljs-built_in">arguments</span>.length == <span class="hljs-number">2</span> &amp;&amp; !<span class="hljs-built_in">Array</span>.isArray(<span class="hljs-built_in">arguments</span>[<span class="hljs-number">1</span>])) {
         <span class="hljs-keyword">var</span> f = <span class="hljs-built_in">arguments</span>[<span class="hljs-number">0</span>];
@@ -902,7 +866,7 @@ Typically, this is a bug, but in some cases, you might have declared a function 
 myCoolFunction(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x</span>) </span>{ <span class="hljs-built_in">console</span>.log(x) }, [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]);
 myCoolFunction(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x</span>) </span>{ <span class="hljs-built_in">console</span>.log(x) }, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
 </code></pre>
-<p>In this case, we need to use TypeScript to tell any of our callers about the ways <code>myCoolFunction</code> can be called using function overloads.</p>
+<p>&#xC774;&#xB7F0; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; TypeScript&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; <code>myCoolfunction</code>&#xC774; &#xD568;&#xC218; &#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xB97C; &#xD1B5;&#xD574; &#xD638;&#xCD9C;&#xB420; &#xC218; &#xC788;&#xB294; &#xBC29;&#xBC95;&#xC5D0; &#xB300;&#xD574; &#xC54C;&#xB824;&#xC8FC;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts">function myCoolFunction(f: (x: number) =&gt; void, nums: number[]): void;
 function myCoolFunction(f: (x: number) =&gt; void, ...nums: number[]): void;
 function myCoolFunction() {
@@ -914,65 +878,54 @@ function myCoolFunction() {
     // ...
 }
 </code></pre>
-<p>We added two overload signatures to <code>myCoolFunction</code>.
-The first checks states that <code>myCoolFunction</code> takes a function (which takes a <code>number</code>), and then a list of <code>number</code>s.
-The second one says that it will take a function as well, and then uses a rest parameter (<code>...nums</code>) to state that any number of arguments after that need to be <code>number</code>s.</p>
-<h3 id="sequentially-added-properties">Sequentially Added Properties</h3>
-<p>Some people find it more aesthetically pleasing to create an object and add properties immediately after like so:</p>
+<p><code>myCoolFunction</code>&#xC5D0; &#xB450; &#xAC1C;&#xC758; &#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xB97C; &#xCD94;&#xAC00;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xCCAB; &#xBC88;&#xC9F8; &#xAC80;&#xC0AC;&#xB294; <code>myCoolFunction</code>&#xAC00; (<code>number</code>&#xB97C; &#xAC16;&#xB294;) &#xD568;&#xC218;&#xC5D0; <code>number</code>&#xC758; &#xBAA9;&#xB85D;&#xC744; &#xAC00;&#xC9D1;&#xB2C8;&#xB2E4;.
+&#xB450;&#xBC88;&#xC9F8;&#xB294; &#xD568;&#xC218;&#xB3C4; &#xAC16;&#xCDB0;&#xC57C; &#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC774;&#xACE0; &#xADF8; &#xB4A4;&#xC5D0; &#xC624;&#xB294; &#xC778;&#xC218;&#xAC00; &#xC22B;&#xC790;&#xC5EC;&#xC57C; &#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC54C;&#xB9AC;&#xAE30; &#xC704;&#xD574; &#xB098;&#xBA38;&#xC9C0; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;(<code>...nums</code>)&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xC21C;&#xCC28;&#xC801;&#xC73C;&#xB85C;-&#xCD94;&#xAC00;&#xB418;&#xB294;-&#xD504;&#xB85C;&#xD37C;&#xD2F0;-sequentially-added-properties">&#xC21C;&#xCC28;&#xC801;&#xC73C;&#xB85C; &#xCD94;&#xAC00;&#xB418;&#xB294; &#xD504;&#xB85C;&#xD37C;&#xD2F0; (Sequentially Added Properties)</h3>
+<p>&#xC5B4;&#xB5A4; &#xC0AC;&#xB78C;&#xB4E4;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC989;&#xC2DC; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xACE0; &#xC18D;&#xC131;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xB294; &#xAC83;&#xC774; &#xB354; &#xC608;&#xC220;&#xC801;&#xC73C;&#xB85C; &#xC990;&#xAC81;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC54C;&#xAC8C;&#xB429;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> options = {};
 options.color = <span class="hljs-string">&quot;red&quot;</span>;
 options.volume = <span class="hljs-number">11</span>;
 </code></pre>
-<p>TypeScript will say that you can&apos;t assign to <code>color</code> and <code>volume</code> because it first figured out the type of <code>options</code> as <code>{}</code> which doesn&apos;t have any properties.
-If you instead moved the declarations into the object literal themselves, you&apos;d get no errors:</p>
+<p>TypeScript&#xB294; <code>options</code>&#xC758; &#xD0C0;&#xC785;&#xC744; &#xC5B4;&#xB5A0;&#xD55C; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB3C4; &#xAC16;&#xC9C0; &#xC54A;&#xB294; <code>{}</code>&#xB85C; &#xBA3C;&#xC800; &#xCC3E;&#xC544;&#xB0C8;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; <code>volume</code>&#xACFC; <code>color</code>&#xC5D0; &#xD560;&#xB2F9;&#xD560; &#xC218; &#xC5C6;&#xB2E4;&#xACE0; &#xB9D0;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xB300;&#xC2E0; &#xC120;&#xC5B8;&#xC744; &#xAC1D;&#xCCB4; &#xB9AC;&#xD130;&#xB7F4; &#xC790;&#xCCB4;&#xB85C; &#xC62E;&#xAE30;&#xBA74; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">let</span> options = {
     color: <span class="hljs-string">&quot;red&quot;</span>,
     volume: <span class="hljs-number">11</span>
 };
 </code></pre>
-<p>You could also define the type of <code>options</code> and add a type assertion on the object literal.</p>
+<p><code>options</code>&#xC758; &#xD0C0;&#xC785;&#xC744; &#xC815;&#xC758;&#xD558;&#xACE0; &#xAC1D;&#xCCB4; &#xB9AC;&#xD130;&#xB7F4;&#xC5D0; &#xD0C0;&#xC785; &#xD45C;&#xBA85;(type assertion)&#xC744; &#xCD94;&#xAC00; &#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Options { color: <span class="hljs-built_in">string</span>; volume: <span class="hljs-built_in">number</span> }
 
 <span class="hljs-keyword">let</span> options = {} as Options;
 options.color = <span class="hljs-string">&quot;red&quot;</span>;
 options.volume = <span class="hljs-number">11</span>;
 </code></pre>
-<p>Alternatively, you can just say <code>options</code> has the type <code>any</code> which is the easiest thing to do, but which will benefit you the least.</p>
-<h3 id="any-object-and-"><code>any</code>, <code>Object</code>, and <code>{}</code></h3>
-<p>You might be tempted to use <code>Object</code> or <code>{}</code> to say that a value can have any property on it because <code>Object</code> is, for most purposes, the most general type.
-However <strong><code>any</code> is actually the type you want to use</strong> in those situations, since it&apos;s the most <em>flexible</em> type.</p>
-<p>For instance, if you have something that&apos;s typed as <code>Object</code> you won&apos;t be able to call methods like <code>toLowerCase()</code> on it.
-Being more general usually means you can do less with a type, but <code>any</code> is special in that it is the most general type while still allowing you to do anything with it.
-That means you can call it, construct it, access properties on it, etc.
-Keep in mind though, whenever you use <code>any</code>, you lose out on most of the error checking and editor support that TypeScript gives you.</p>
-<p>If a decision ever comes down to <code>Object</code> and <code>{}</code>, you should prefer <code>{}</code>.
-While they are mostly the same, technically <code>{}</code> is a more general type than <code>Object</code> in certain esoteric cases.</p>
-<h2 id="getting-stricter-checks">Getting Stricter Checks</h2>
-<p>TypeScript comes with certain checks to give you more safety and analysis of your program.
-Once you&apos;ve converted your codebase to TypeScript, you can start enabling these checks for greater safety.</p>
-<h3 id="no-implicit-any">No Implicit <code>any</code></h3>
-<p>There are certain cases where TypeScript can&apos;t figure out what certain types should be.
-To be as lenient as possible, it will decide to use the type <code>any</code> in its place.
-While this is great for migration, using <code>any</code> means that you&apos;re not getting any type safety, and you won&apos;t get the same tooling support you&apos;d get elsewhere.
-You can tell TypeScript to flag these locations down and give an error with the <code>noImplicitAny</code> option.</p>
-<h3 id="strict-null--undefined-checks">Strict <code>null</code> &amp; <code>undefined</code> Checks</h3>
-<p>By default, TypeScript assumes that <code>null</code> and <code>undefined</code> are in the domain of every type.
-That means anything declared with the type <code>number</code> could be <code>null</code> or <code>undefined</code>.
-Since <code>null</code> and <code>undefined</code> are such a frequent source of bugs in JavaScript and TypeScript, TypeScript has the <code>strictNullChecks</code> option to spare you the stress of worrying about these issues.</p>
-<p>When <code>strictNullChecks</code> is enabled, <code>null</code> and <code>undefined</code> get their own types called <code>null</code> and <code>undefined</code> respectively.
-Whenever anything is <em>possibly</em> <code>null</code>, you can use a union type with the original type.
-So for instance, if something could be a <code>number</code> or <code>null</code>, you&apos;d write the type out as <code>number | null</code>.</p>
-<p>If you ever have a value that TypeScript thinks is possibly <code>null</code>/<code>undefined</code>, but you know better, you can use the postfix <code>!</code> operator to tell it otherwise.</p>
+<p>&#xB610;&#xB294; <code>options</code>&#xC5D0; <code>any</code> &#xD0C0;&#xC785;&#xC774;&#xB77C;&#xACE0; &#xD558;&#xB294; &#xAC83;&#xC774; &#xAC00;&#xC7A5; &#xC26C;&#xC6B4; &#xBC29;&#xBC95;&#xC774;&#xC9C0;&#xB9CC; &#xAC00;&#xC7A5; &#xC774;&#xB4DD;&#xC774; &#xC801;&#xC740; &#xC77C;&#xC774; &#xB420; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h3 id="any&#xC640;-object-&#xADF8;&#xB9AC;&#xACE0;--any-object-and-"><code>any</code>&#xC640; <code>Object</code> &#xADF8;&#xB9AC;&#xACE0; <code>{}</code> (<code>any</code>, <code>Object</code>, and <code>{}</code>)</h3>
+<p>&#xB300;&#xBD80;&#xBD84;&#xC758; &#xACBD;&#xC6B0; <code>Object</code>&#xAC00; &#xAC00;&#xC7A5; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD0C0;&#xC785;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; <code>Object</code> &#xB610;&#xB294; <code>{}</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xAC12;&#xC5D0; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xD3EC;&#xD568;&#xD560; &#xC218; &#xC788;&#xB2E4;&#xACE0; &#xB9D0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xD558;&#xC9C0;&#xB9CC; any&#xAC00; &#xAC00;&#xC7A5; <em>&#xC720;&#xC5F0;&#xD55C;</em> &#xD0C0;&#xC785;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC774;&#xB7EC;&#xD55C; &#xC0C1;&#xD669;&#xC5D0;&#xC11C; <strong>&#xC2E4;&#xC81C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xB294;</strong> &#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; <code>Object</code> &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;&#xBA74; <code>toLowerCase()</code>&#xC640; &#xAC19;&#xC740; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.  </p>
+<p>&#xC880; &#xB354; &#xC77C;&#xBC18;&#xC801;&#xC774;&#xB77C;&#xB294; &#xAC83;&#xC740; &#xBCF4;&#xD1B5; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC801;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xC9C0;&#xB9CC; &#xAC00;&#xC7A5; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD0C0;&#xC785;&#xC778; <code>any</code>&#xB294; &#xC5EC;&#xC804;&#xD788; &#xC5B4;&#xB5A4; &#xAC83;&#xC774;&#xB4E0; &#xD560; &#xC218; &#xC788;&#xAC8C; &#xD5C8;&#xC6A9;&#xD574;&#xC900;&#xB2E4;&#xB294; &#xC810;&#xC5D0;&#xC11C; &#xD2B9;&#xBCC4;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC989; &#xD638;&#xCD9C;&#xD558;&#xC5EC; &#xAD6C;&#xC131;&#xD558;&#xACE0; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xC870;&#xC791;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xD558;&#xC9C0;&#xB9CC; <code>any</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; TypeScript&#xAC00; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xB300;&#xBD80;&#xBD84;&#xC758; &#xC624;&#xB958; &#xAC80;&#xC0AC; &#xBC0F; &#xD3B8;&#xC9D1;&#xAE30; &#xC9C0;&#xC6D0;&#xC744; &#xC783;&#xC5B4; &#xBC84;&#xB9AC;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p><code>Object</code>&#xC640; <code>{}</code>&#xB85C; &#xD310;&#xACB0;&#xB0AC;&#xB2E4;&#xBA74; <code>{}</code>&#xC744; &#xC120;&#xD638;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xAC83;&#xB4E4;&#xC740; &#xB300;&#xCCB4;&#xB85C; &#xAC19;&#xC9C0;&#xB9CC; &#xBE44;&#xBC00;&#xC2A4;&#xB7EC;&#xC6B4; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xAE30;&#xC220;&#xC801;&#xC73C;&#xB85C; <code>{}</code>&#xAC00; <code>Object</code>&#xBCF4;&#xB2E4; &#xB354; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xC5C4;&#xACA9;&#xD55C;-&#xAC80;&#xC0AC;-&#xBC1B;&#xAE30;-getting-stricter-checks">&#xC5C4;&#xACA9;&#xD55C; &#xAC80;&#xC0AC; &#xBC1B;&#xAE30; (Getting Stricter Checks)</h2>
+<p>TypeScript&#xB294; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC758; &#xC548;&#xC804;&#xC131;&#xACFC; &#xBD84;&#xC11D;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xAE30; &#xC704;&#xD574; &#xD2B9;&#xC815; &#xAC80;&#xC0AC;&#xB97C; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC77C;&#xB2E8; &#xCF54;&#xB4DC; &#xBCA0;&#xC774;&#xC2A4;&#xB97C; TypeScript&#xB85C; &#xBCC0;&#xD658;&#xD55C; &#xD6C4;&#xC5D0;&#xB294; &#xC774;&#xB7EC;&#xD55C; &#xAC80;&#xC0AC;&#xB97C; &#xD65C;&#xC131;&#xD654;&#xD558;&#xC5EC; &#xC548;&#xC804;&#xC131;&#xC744; &#xB192;&#xC77C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xC554;&#xC2DC;&#xC801;&#xC778;-any&#xB294;-no-no-implicit-any">&#xC554;&#xC2DC;&#xC801;&#xC778; <code>any</code>&#xB294; No (No Implicit <code>any</code>)</h3>
+<p>&#xD0C0;&#xC774;&#xD504; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xAC00; &#xC5B4;&#xB5A4; &#xD0C0;&#xC785;&#xC774;&#xC5B4;&#xC57C; &#xD560;&#xC9C0; &#xBAA8;&#xB974;&#xB294; &#xD2B9;&#xC815;&#xD55C; &#xACBD;&#xC6B0;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xAC00;&#xB2A5;&#xD558;&#xBA74; &#xAD00;&#xB300;&#xD558;&#xAE30; &#xC704;&#xD574; &#xADF8; &#xC790;&#xB9AC;&#xC5D0; <code>any</code> &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;&#xB85C; &#xACB0;&#xC815;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB294; &#xB9C8;&#xC774; &#xADF8;&#xB808;&#xC774;&#xC158;&#xC5D0;&#xB294; &#xB9E4;&#xC6B0; &#xC720;&#xC6A9;&#xD558;&#xC9C0;&#xB9CC; <code>any</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC5B4;&#xB5A0;&#xD55C; &#xC720;&#xD615;&#xC758; &#xC548;&#xC804;&#xB3C4; &#xD655;&#xBCF4;&#xD560; &#xC218; &#xC5C6;&#xC73C;&#xBA70; &#xB2E4;&#xB978; &#xACF3;&#xC5D0;&#xC11C; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xB294; &#xAC83;&#xACFC; &#xB3C4;&#xAD6C;&#xC758; &#xC9C0;&#xC6D0;&#xC744; &#xBC1B;&#xC744; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.<br>TypeScript&#xC5D0;&#xC11C; &#xC774;&#xB7EC;&#xD55C; &#xC704;&#xCE58;&#xB97C; &#xAE30;&#xB85D;&#xD558;&#xB3C4;&#xB85D; &#xC9C0;&#xC2DC;&#xD558;&#xACE0; <code>noImplicitAny</code> &#xC635;&#xC158;&#xC73C;&#xB85C; &#xC624;&#xB958;&#xB97C; &#xD45C;&#xC2DC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xC5C4;&#xACA9;&#xD55C;-null&#xACFC;-undefined-&#xCCB4;&#xD06C;-strict-null--undefined-checks">&#xC5C4;&#xACA9;&#xD55C; <code>null</code>&#xACFC; <code>undefined</code> &#xCCB4;&#xD06C; (Strict <code>null</code> &amp; <code>undefined</code> Checks)</h3>
+<p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; TypeScript&#xB294; <code>null</code>&#xACFC; <code>undefined</code>&#xC774; &#xBAA8;&#xB4E0; &#xD0C0;&#xC785;&#xC758; &#xBC94;&#xC704;&#xC5D0; &#xC788;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC989; <code>number</code> &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xC120;&#xC5B8;&#xB41C; &#xBAA8;&#xB4E0; &#xAC83;&#xC774; <code>null</code> &#xB610;&#xB294; <code>undefined</code> &#xC77C; &#xC218; &#xC788;&#xC74C;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.  </p>
+<p><code>null</code>&#xACFC; <code>undefined</code>&#xB294; JavaScript&#xC640; TypeScript&#xC5D0;&#xC11C; &#xC790;&#xC8FC; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xBC84;&#xADF8;&#xC758; &#xC6D0;&#xCC9C;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; TypeScript&#xB294; &#xC774;&#xC5D0; &#xB300;&#xD55C; &#xAC71;&#xC815;&#xC744; &#xB35C;&#xC5B4;&#xC8FC;&#xAE30; &#xC704;&#xD574; <code>strictNullChecks</code> &#xC635;&#xC158;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  </p>
+<p><code>strictNullChecks</code>&#xAC00; &#xD65C;&#xC131;&#xD654;&#xB418;&#xBA74; <code>null</code>&#xACFC; <code>undefined</code>&#xB294; <code>null</code>&#xACFC; <code>undefined</code> &#xAC01;&#xAC01;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xAC16;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><em>&#xD639;&#xC2DC;</em> <code>null</code> &#xC77C; &#xC218; &#xC788;&#xB294; &#xD56D;&#xBAA9;&#xC774; &#xC788;&#xC744; &#xB54C; &#xC6D0;&#xB798; &#xD0C0;&#xC785;&#xC744; union &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB807;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xD0C0;&#xC785;&#xC774; <code>number</code>(&#xC774;)&#xAC70;&#xB098; <code>null</code> &#xC77C; &#xC218; &#xC788;&#xB294; &#xACBD;&#xC6B0; &#xD574;&#xB2F9; &#xD0C0;&#xC785;&#xC744; <code>number | null</code>&#xB85C; &#xC4F0;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>TypeScript&#xAC00; <code>null</code> /<code>undefined</code>&#xB77C;&#xACE0; &#xC0DD;&#xAC01;&#xD558;&#xB294; &#xAC12;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC9C0;&#xB9CC; &#xB354; &#xC798; &#xC54C;&#xACE0; &#xC788;&#xB2E4;&#xBA74; &#xD6C4;&#xC704; &#xC5F0;&#xC0B0;&#xC790; <code>!</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xB2E4;&#xB974;&#xAC8C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">var</span> foo: <span class="hljs-built_in">string</span>[] | <span class="hljs-literal">null</span>;
 
-foo.length;  <span class="hljs-comment">// error - &apos;foo&apos; is possibly &apos;null&apos;</span>
+foo.length;  <span class="hljs-comment">// &#xC624;&#xB958; - &apos;foo&apos;&#xB294; &apos;null&apos;&#xC77C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
 
-foo!.length; <span class="hljs-comment">// okay - &apos;foo!&apos; just has type &apos;string[]&apos;</span>
+foo!.length; <span class="hljs-comment">// &#xC88B;&#xC544;&#xC694; - &apos;foo!&apos;&#xC5D0; &apos;string[]&apos;&#xD0C0;&#xC785;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
 </code></pre>
-<p>As a heads up, when using <code>strictNullChecks</code>, your dependencies may need to be updated to use <code>strictNullChecks</code> as well.</p>
-<h3 id="no-implicit-any-for-this">No Implicit <code>any</code> for <code>this</code></h3>
-<p>When you use the <code>this</code> keyword outside of classes, it has the type <code>any</code> by default.
-For instance, imagine a <code>Point</code> class, and imagine a function that we wish to add as a method:</p>
+<p>&#xCC38;&#xACE0;&#xB85C; <code>strictNullChecks</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xB294; <code>strictNullChecks</code>&#xB3C4; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC758;&#xC874;&#xC131;&#xC744; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD574;&#xC57C; &#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xBB35;&#xC2DC;&#xC801;&#xC778;-this&#xC758;-any-no-no-implicit-any-for-this">&#xBB35;&#xC2DC;&#xC801;&#xC778; <code>this</code>&#xC758; <code>any</code> No! (No Implicit <code>any</code> for <code>this</code>)</h3>
+<p>&#xD074;&#xB798;&#xC2A4; &#xBC16;&#xC5D0;&#xC11C; <code>this</code> &#xD0A4;&#xC6CC;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; <code>any</code> &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9D1;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; <code>Point</code> &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC0DD;&#xAC01;&#xD558;&#xC5EC; &#xBA54;&#xC11C;&#xB4DC;&#xB85C; &#xCD94;&#xAC00;&#xD558;&#xACE0;&#xC790; &#xD558;&#xB294; &#xD568;&#xC218;&#xB97C; &#xC791;&#xC131;&#xD574;&#xBCF4;&#xC138;&#xC694; :</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">class</span> Point {
     <span class="hljs-keyword">constructor</span>(public x, public y) {}
     getDistance(p: Point) {
@@ -983,7 +936,7 @@ For instance, imagine a <code>Point</code> class, and imagine a function that we
 }
 <span class="hljs-comment">// ...</span>
 
-<span class="hljs-comment">// Reopen the interface.</span>
+<span class="hljs-comment">// &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xB2E4;&#xC2DC; &#xC5F4;&#xC5B4;&#xBCF4;&#xC138;&#xC694;</span>
 <span class="hljs-keyword">interface</span> Point {
     distanceFromOrigin(point: Point): <span class="hljs-built_in">number</span>;
 }
@@ -991,10 +944,8 @@ Point.prototype.distanceFromOrigin = <span class="hljs-function"><span class="hl
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.getDistance({ x: <span class="hljs-number">0</span>, y: <span class="hljs-number">0</span>});
 }
 </code></pre>
-<p>This has the same problems we mentioned above - we could easily have misspelled <code>getDistance</code> and not gotten an error.
-For this reason, TypeScript has the <code>noImplicitThis</code> option.
-When that option is set, TypeScript will issue an error when <code>this</code> is used without an explicit (or inferred) type.
-The fix is to use a <code>this</code>-parameter to give an explicit type in the interface or in the function itself:</p>
+<p>&#xC774;&#xAC83;&#xC740; &#xC704;&#xC5D0;&#xC11C; &#xC5B8;&#xAE09;&#xD55C; &#xAC83;&#xACFC; &#xB3D9;&#xC77C;&#xD55C; &#xBB38;&#xC81C;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; - <code>getDistance</code>&#xC758; &#xCCA0;&#xC790;&#xAC00; &#xD2C0;&#xB9AC;&#xAC70;&#xB098; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xC9C0; &#xC54A;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB7EC;&#xD55C; &#xC774;&#xC720;&#xB85C; TypeScript&#xB294; <code>noImplicitThis</code> &#xC635;&#xC158;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xC635;&#xC158;&#xC744; &#xC124;&#xC815;&#xD558;&#xBA74; TypeScript&#xC5D0;&#xC11C; &#xBA85;&#xC2DC;&#xC801;(&#xB610;&#xB294; &#xCD94;&#xB860;&#xB41C;) &#xD0C0;&#xC785; &#xC5C6;&#xC774; <code>this</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xACBD;&#xC6B0; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD574;&#xACB0;&#xCC45;&#xC740; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB098; &#xD568;&#xC218; &#xC790;&#xCCB4;&#xC5D0; <code>this</code>-&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBA85;&#xD655;&#xD55C; &#xD0C0;&#xC785;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts">Point.prototype.distanceFromOrigin = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-keyword">this</span>: Point, point: Point</span>) </span>{
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.getDistance({ x: <span class="hljs-number">0</span>, y: <span class="hljs-number">0</span>});
 }
@@ -1042,7 +993,7 @@ The fix is to use a <code>this</code>-parameter to give an explicit type in the 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Migrating from JavaScript","level":"2.4","depth":1,"next":{"title":"리액트 & 웹팩","level":"2.5","depth":1,"path":"pages/tutorials/React & Webpack.md","ref":"pages/tutorials/React & Webpack.md","articles":[]},"previous":{"title":"Gulp","level":"2.3","depth":1,"path":"pages/tutorials/Gulp.md","ref":"pages/tutorials/Gulp.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tutorials/Migrating from JavaScript.md","mtime":"2018-02-06T01:16:55.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-09T04:33:36.852Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"JavaScript에서 마이그레이션","level":"2.4","depth":1,"next":{"title":"리액트 & 웹팩","level":"2.5","depth":1,"path":"pages/tutorials/React & Webpack.md","ref":"pages/tutorials/React & Webpack.md","articles":[]},"previous":{"title":"Gulp","level":"2.3","depth":1,"path":"pages/tutorials/Gulp.md","ref":"pages/tutorials/Gulp.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tutorials/Migrating from JavaScript.md","mtime":"2018-02-11T15:21:57.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-11T15:23:17.407Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
