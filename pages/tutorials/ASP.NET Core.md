@@ -1,37 +1,38 @@
-# Setup
+# 설정
 
-## Install ASP.NET Core and TypeScript
+## ASP.NET 코어 및 TypeScript 설치 (Install ASP.NET Core and TypeScript)
 
-First, [install ASP.NET Core](https://get.asp.net) if you need it. This quick-start guide requires Visual Studio 2015 or 2017.
+먼저 필요한 경우에는 ASP.NET Core를 설치합니다.  
+이 퀵 스타트 가이드를 위해서는 VisualStudio2015 또는 2017이 필요합니다.
 
-Next, if your version of Visual Studio does not already have the latest TypeScript, you can [install it](http://www.microsoft.com/en-us/download/details.aspx?id=48593).
+다음으로 사용 중인 VisualStudio에 최신 TypeScript가 아직 없는 경우 이를 [설치](http://www.microsoft.com/en-us/download/details.aspx?id=48593)할 수 있습니다.
 
-## Create a new project
+## 새 프로젝트 만들기 (Create a new project)
 
-1. Choose **File**
-2. Choose **New Project** (Ctrl + Shift + N)
-3. Choose **Visual C#**
-4. For VS2015, choose **ASP.NET Web Application** > **ASP.NET 5 Empty**, and let's uncheck "Host in the cloud" since we're going to run this locally.
+1. **파일** 선택
+2. **새로운 프로젝트** 선택 (Ctrl + Shift + N)
+3. **Visual C#** 선택
+4. VS2015의 경우 **ASP.NET Web Application** > **ASP.NET 5 Empty**를 선택하고 로컬에서 실행하기 때문에 "Host in the cloud" 선택을 취소합니다.
 
     ![Use empty template](../../assets/images/tutorials/aspnet/new-asp-project-empty.png)
 
-    For VS2017, choose **ASP.NET Core Web Application (.NET Core)** > **ASP.NET Core 1.1 Empty** instead.
+    VS2017의 경우 **ASP.NET Core Web Application (.NET Core)** 대신 **ASP.NET Core 1.1 Empty** 를 선택하세요.
 
     ![Use empty template VS2017](../../assets/images/tutorials/aspnet/new-asp-project-empty-17.PNG)
 
-Run the application and make sure that it works.
+애플리케이션을 실행하고 작동하는지 확인합니다.
 
-## Set up the server
+## 서버 설정 (Set up the server)
 
 ### VS2015
 
-In `project.json` add another entry in `"dependencies"`:
+`project.json`에서 `"dependencies"`에 다음 항목을 추가합니다 :
 
 ```json
 "Microsoft.AspNet.StaticFiles": "1.0.0-rc1-final"
 ```
 
-The resulting dependencies should look like this:
+의존성은 다음과 같아야 합니다 :
 
 ```json
   "dependencies": {
@@ -41,7 +42,7 @@ The resulting dependencies should look like this:
   },
 ```
 
-Replace the body of `Configure` in `Startup.cs` with
+`Startup.cs`에서 `Configure`를 다음으로 교체합니다.
 
 ```cs
 public void Configure(IApplicationBuilder app)
@@ -54,11 +55,11 @@ public void Configure(IApplicationBuilder app)
 
 ### VS2017
 
-Open **Dependencies** > **Manage NuGet Packages** > **Browse**. Search and install `Microsoft.AspNetCore.StaticFiles` 1.1.2:
+Open **Dependencies** > **Manage NuGet Packages** > **Browse**. 검색 및 설치  `Microsoft.AspNetCore.StaticFiles` 1.1.2:
 
 ![Install Microsoft.AspNetCore.StaticFiles](../../assets/images/tutorials/aspnet/install-nuget-packages.png)
 
-Replace the body of `Configure` in `Startup.cs` with
+`Startup.cs`에서 `Configure`를 다음으로 교체합니다.
 
 ```cs
 public void Configure(IApplicationBuilder app)
@@ -68,28 +69,28 @@ public void Configure(IApplicationBuilder app)
 }
 ```
 
-You may need to restart VS for the red squiggly lines below `UseDefaultFiles` and `UseStaticFiles` to disappear.
+`UseDefaultFiles`와 `UseStaticFiles` 아래의 빨간선이 사라지려면 VS를 다시 시작해야 할 수 있습니다.
 
-# Add TypeScript
+# 타입스크립트 추가 (Add TypeScript)
 
-The next step is to add a folder for TypeScript.
+다음 단계는 TypeScript를 위한 폴더를 추가하는 것입니다.
 
 ![Create new folder](../../assets/images/tutorials/aspnet/new-folder.png)
 
-We'll just call it `scripts`.
+그냥 `scripts`라고 부르겠습니다.
 
 ![scripts folder](../../assets/images/tutorials/aspnet/scripts-folder.png)
 
-## Add TypeScript code
+## 타입스크립트 코드 추가 (Add TypeScript code)
 
-Right click on `scripts` and click **New Item**.
-Then choose **TypeScript File** (it may be in the .NET Core section) and name the file `app.ts`.
+`scripts`를 마우스 오른쪽 버튼으로 클릭하고 **New Item**을 클릭합니다.  
+그런 다음 **TypeScript File** (. NETCore섹션에 있을 수도 있음)을 선택하고 `app.ts`의 이름을 지정합니다.
 
 ![New item](../../assets/images/tutorials/aspnet/new-item.png)
 
-## Add example code
+## 예제 코드 추가 (Add example code)
 
-Type the following code into app.ts.
+app.ts에 다음 코드를 입력하십시오
 
 ```ts
 function sayHello() {
@@ -99,17 +100,17 @@ function sayHello() {
 }
 ```
 
-## Set up the build
+## 빌드 설정 (Set up the build)
 
-### Configure the TypeScript compiler
+### TypeScript 컴파일러 설정 (Configure the TypeScript compiler)
 
-First we need to tell TypeScript how to build.
-Right click on the scripts folder and click **New Item**.
-Then choose **TypeScript Configuration File** and use the default name `tsconfig.json`.
+먼저 TypeScript에 빌드 방법을 알려줘야합니다.  
+scripts 폴더를 마우스 오른쪽 버튼으로 클릭하고 **New Item**을 클릭합니다.  
+그런 다음 **TypeScript ConfigurationFile**을 선택하고 기본 이름인 `tsconfig.json`을 사용하십시오.
 
 ![Create tsconfig.json](../../assets/images/tutorials/aspnet/new-tsconfig.png)
 
-Replace the default `tsconfig.json` with the following:
+기본 `tsconfig.json`를 다음으로 대체하세요:
 
 ```json
 {
@@ -126,21 +127,22 @@ Replace the default `tsconfig.json` with the following:
 }
 ```
 
-This is similar to the default, with the following differences:
+다음과 같은 차이점을 제외하고 기본값과 유사합니다.
 
-1. It sets `"noImplicitAny": true`.
-2. It explicitly lists `"files"` instead of relying on `"excludes"`.
-3. It sets `"compileOnSave": true`.
+1. `"noImplicitAny": true` 설정합니다.
+2. `"excludes"`에 의존하지 않고 명시적으로 `"files"` 리스트를 나열합니다.
+3. `"compileOnSave": true` 설정합니다.
 
-`"noImplicitAny"` is good idea whenever you're writing new code &mdash; you can make sure that you don't write any untyped code by mistake.
-`"compileOnSave"` makes it easy to update your code in a running web app.
+새로운 코드를 작성할 때마다 `"nomaplicitany"`가 좋습니다 - &mdash; 실수로 타입이 지정되지 않은 코드를 쓰지 않도록 할 수 있습니다.  
+`"compileOnSave"`는 실행중인 웹 앱에서 코드를 손쉽게 업데이트할 수 있도록 해 준다.
 
-### Set up NPM
+### NPM 설정 (Set up NPM)
 
-Now we need to set up NPM so we can download JavaScript packages.
-Right click on the project and click **New Item**.
-Then choose **NPM Configuration File** and use the default name `package.json`.
-Inside `"devDependencies"` add "gulp" and "del":
+이제 JavaScript패키지를 다운로드할 수 있도록 NPM을 설정해야 합니다.  
+프로젝트를 마우스 오른쪽 버튼으로 누르고 **New Item**을 클릭하십시오.  
+그런 다음 **NPM Configuration File**을 선택하고 기본 이름 `package.json`을 사용하십시오.  
+
+``devDependencies '``안에 "gulp"와 "del"을 추가하십시오 :
 
 ```json
 "devDependencies": {
@@ -148,20 +150,20 @@ Inside `"devDependencies"` add "gulp" and "del":
     "del": "2.2.0"
 }
 ```
+Visual Studio는 파일을 저장하는 즉시 gulp 및 del 설치를 시작해야합니다.
+그렇지 않은 경우 패키지를 마우스 오른쪽 버튼으로 누르고 **Restore Packages**를 하십시오.
 
-Visual Studio should start installing gulp and del as soon as you save the file.
-If not, right-click package.json and then **Restore Packages**.
+### gulp 설정 (Set up gulp)
 
-### Set up gulp
+마지막으로 `gulpfile.js`라는 새로운 JavaScript파일을 추가하십시오.
 
-Finally, add a new JavaScript file named `gulpfile.js`.
-Put the following code inside:
+다음 코드를 입력합니다.
 
 ```js
 /// <binding AfterBuild='default' Clean='clean' />
 /*
-This file is the main entry point for defining Gulp tasks and using Gulp plugins.
-Click here to learn more. http://go.microsoft.com/fwlink/?LinkId=518007
+이 파일은 Gulp의 작업을 정의하고 플러그인을 사용하기 위한 entry point입니다.
+자세한 내용을 보려면 여기를 클릭하십시오. http://go.microsoft.com/fwlink/?LinkId=518007
 */
 
 var gulp = require('gulp');
@@ -180,18 +182,19 @@ gulp.task('default', function () {
 });
 ```
 
-The first line tells Visual Studio to run the task 'default' after the build finishes.
-It will also run the 'clean' task when you ask Visual Studio to clean the build.
+첫번째 줄은 Visual Studio에게 빌드가 끝난 후에 작업을 'default'로 실행하도록 지시합니다.  
+또한 Visual Studio에 빌드를 정리하도록 요청하면 'clean'작업도 실행됩니다.
 
-Now right-click on `gulpfile.js` and click **Task Runner Explorer**.
-If 'default' and 'clean' tasks don't show up, refresh the explorer:
+이제 `gulpfile.js`를 마우스 오른쪽 버튼으로 클릭하고 **Task Runner Explorer**를 클릭하십시오.  
+'default' 및 'clean'작업이 표시되지 않으면 탐색기를 새로고침 합니다 :
 
 ![Refresh Task Runner Explorer](../../assets/images/tutorials/aspnet/task-runner-explorer.png)
 
-## Write an HTML page
+## HTML 페이지 작성 (Write an HTML page)
 
-Add a New Item named `index.html` inside `wwwroot`.
-Use the following code for `index.html`:
+`wwwroot` 안에 `index.html`이라는 새 항목을 추가합니다.
+
+다음 코드를 `index.html`에 사용합니다 :
 
 ```html
 <!DOCTYPE html>
@@ -211,32 +214,32 @@ Use the following code for `index.html`:
 </html>
 ```
 
-## Test
+## 테스트 (Test)
 
-1. Run the project.
-2. You should see a message when you type in the input boxes:
+1. 프로젝트를 실행하십시오.
+2. 입력 상자에 입력할 때 메시지가 표시됩니다 :
 
 ![Picture of running demo](../../assets/images/tutorials/aspnet/running-demo.png)
 
-## Debug
+## 디버그 (Debug)
 
-1. In Edge, press F12 and click the **Debugger** tab.
-2. Look in the first localhost folder, then scripts/app.ts
-3. Put a breakpoint on the line with `return`.
-4. Type in the boxes and confirm that the breakpoint hits in TypeScript code and that inspection works correctly.
+1. Edge에서 F12 키를 누르고 **Debugger** 탭을 클릭하십시오.
+2. 첫 번째 localhost 폴더를 찾은 다음 scripts/app.ts를 찾습니다.
+3. `return` 라인이 있는 라인에 breakpoint를 설정합니다
+4. Type 상자에 내용을 입력하고 breakpoint가 TypeScript 코드에 들어가고 검사가 올바르게 작동하는지 확인합니다.
 
 ![Demo paused on breakpoint](../../assets/images/tutorials/aspnet/paused-demo.png)
 
-That's all you need to know to include basic TypeScript in your ASP.NET project.
-Next we'll include Angular and write a simple Angular app.
+ASP.NET 프로젝트에 기본적인 TypeScript를 포함시키기 위해 알아야 할 것은 이것뿐입니다.  
+다음으로 간단한 Angular 앱을 작성합니다.
 
-# Add Angular 2
+# 앵귤러 2 추가 (Add Angular 2)
 
-## Add NPM dependencies
+## NPM 의존성 추가 (Add NPM dependencies)
 
-Add Angular 2 and SystemJS to `dependencies` in `package.json`.
+`package.json`의 `dependencies`에 Angular 2와 SystemJS를 추가하십시오.
 
-For VS2015, the new `dependencies` list:
+VS2015의 경우는 새로운 `dependencies`리스트 :
 
 ```json
   "dependencies": {
@@ -247,7 +250,7 @@ For VS2015, the new `dependencies` list:
   },
 ```
 
-For VS2017, due to the deprecation of peer dependencies in NPM3, we need to list Angular 2's peer dependencies directly as dependencies as well:
+VS2017의 경우 NPM3에서 peer 의존성이 사용되지 않으므로 Angular 2의 peer 의존성을 의존성으로 직접 나열해야합니다 :
 
 ```json
   "dependencies": {
@@ -261,16 +264,17 @@ For VS2017, due to the deprecation of peer dependencies in NPM3, we need to list
   },
 ```
 
-## Update tsconfig.json
+## tsconfig.json 업데이트 (Update tsconfig.json)
 
-Now that Angular 2 and its dependencies are installed, we need to enable TypeScript's experimental support for decorators.
-We also need to add declarations for ES2015, since Angular uses core-js for things like `Promise`.
-In the future decorators will be the default and these settings will not be needed.
+이제 Angular 2와 그 의존성이 설치되었으므로 TypeScript의 데코레이터에 대한 실험적 지원이 필요합니다.  
+또한 `Promise`과 같은 것들에는 Angular가 core-js를 사용하기 때문에 ES2015에 선언을 추가해야 합니다.  
+향후에는 데코레이터가 기본이 될 것이므로 이러한 설정은 필요하지 않을 것입니다.
 
-Add `"experimentalDecorators": true, "emitDecoratorMetadata": true` to the `"compilerOptions"` section.
-Next, add `"lib": ["es2015", "es5", "dom"]` to `"compilerOptions"` as well to bring in declarations from ES2015.
-Finally, we'll need to add a new entry in `"files"` for another file, `"./model.ts"`, which we'll create.
-Our tsconfig should now look like this:
+`"experimentalDecorators": true, "emitDecoratorMetadata": true`를 `"compilerOptions"`에 추가하십시오.  
+그런 다음 ES2015에서 선언을 가져오려면 `"lib": ["es2015", "es5", "dom"]`을 `"compilerOptions"` 에 추가하십시오.  
+
+마지막으로 만들 `"./model.ts"`를 `"files"`에 새 항목을 추가해야 합니다.  
+tsconfig는 다음과 같이 보일 것입니다 :
 
 ```json
 {
@@ -294,22 +298,22 @@ Our tsconfig should now look like this:
 }
 ```
 
-## Add Angular to the gulp build
+## gulp 빌드에 Angular 추가 (Add Angular to the gulp build)
 
-Finally, we need to make sure that the Angular files are copied as part of the build.
-We need to add:
+마지막으로 Angular 파일을 빌드의 일부로 복사해야합니다.
+추가할 사항은 다음과 같습니다:
 
-1. The paths to the library files.
-2. Add a `lib` task to pipe the files to `wwwroot`.
-3. Add a dependendency on `lib` to the `default` task.
+1. 라이브러리 파일에 대한 경로.
+2. `lib` 태스크를 추가하여 파일을 `wwwroot`에 연결(pipe)합니다.
+3. `default` 태스크에 `lib`에 대한 의존성을 추가하십시오.
 
-The updated `gulpfile.js` should look like this:
+업데이트된 `gulpfile.js`은 다음과 같이 표시됩니다 :
 
 ```xml
 /// <binding AfterBuild='default' Clean='clean' />
 /*
-This file is the main entry point for defining Gulp tasks and using Gulp plugins.
-Click here to learn more. http://go.microsoft.com/fwlink/?LinkId=518007
+이 파일은 Gulp의 작업을 정의하고 플러그인을 사용하기 위한 entry point입니다.
+자세한 내용을 보려면 여기를 클릭하십시오. http://go.microsoft.com/fwlink/?LinkId=518007
 */
 
 var gulp = require('gulp');
@@ -336,11 +340,11 @@ gulp.task('default', ['lib'], function () {
 });
 ```
 
-Again, make sure that Task Runner Explorer sees the new `lib` task after you save the gulpfile.
+다시 한번 gulpfile을 저장한 후에는 Task Runner Explorer가 새로운 `lib` 작업을 보게해야 합니다.
 
-## Write a simple Angular app in TypeScript
+## TypeScript에 간단한 Angular 애플리케이션 작성 (Write a simple Angular app in TypeScript)
 
-First, change the code in `app.ts` to:
+먼저 `app.ts`의 코드를 다음과 같이 변경하십시오 :
 
 {% raw %}
 
@@ -362,7 +366,7 @@ export class MyApp {
 
 {% endraw %}
 
-Then add another TypeScript file in `scripts` named `model.ts`:
+그런 다음 `Model.ts`라는 이름의 `scripts`에 다른 TypeScript 파일을 추가하십시오 :
 
 ```ts
 export class MyModel {
@@ -370,7 +374,7 @@ export class MyModel {
 }
 ```
 
-And then another TypeScript file in `scripts` named `main.ts`:
+그리고 `scripts`에 `main.ts`라는 또 다른 TypeScript 파일이 있습니다 :
 
 ```ts
 import {bootstrap} from "angular2/platform/browser";
@@ -378,7 +382,7 @@ import {MyApp} from "./app";
 bootstrap(MyApp);
 ```
 
-Finally, change the code in `index.html` to the following:
+마지막으로 `index.html`의 코드를 다음과 같이 변경하십시오 :
 
 ```html
 <!DOCTYPE html>
@@ -408,5 +412,5 @@ Finally, change the code in `index.html` to the following:
 </html>
 ```
 
-This loads the app.
-When you run the ASP.NET application you should see a div that says "Loading..." and then updates to say "Hello from TypeScript".
+그러면 앱이 로드됩니다.  
+ASP.NET 애플리케이션을 실행하면 "loading..." 이라고 표시된 다음 "Hello from TypeScript" div가 표시됩니다.
