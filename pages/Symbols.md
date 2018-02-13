@@ -1,8 +1,8 @@
-# 소개
+# 소개 (Introduction)
 
-ECMAScript 2015에서 시작된, `symbol`은 `number`와 `string`같은 primitive 데이터 유형입니다.
+ECMAScript 2015에서 시작된 `symbol`은 `number`와 `string`같은 primitive 데이터 타입입니다.
 
-`symbol` 값은`Symbol` 생성자를 호출하여 생성됩니다.
+`symbol` 값은 `Symbol` 생성자를 호출하여 생성됩니다.
 
 ```ts
 let sym1 = Symbol();
@@ -10,16 +10,16 @@ let sym1 = Symbol();
 let sym2 = Symbol("key"); // 선택적 문자열 키
 ```
 
-Symbol은 불변이고, 독특합니다.
+심볼은 불변이고 고유합니다.
 
 ```ts
 let sym2 = Symbol("key");
 let sym3 = Symbol("key");
 
-sym2 === sym3; // false, symbols은 고유합니다.
+sym2 === sym3; // false, 심볼은 고유합니다.
 ```
 
-문자열과 마찬가지로 심볼을 객체 속성의 키로 사용할 수 있습니다.
+문자열과 마찬가지로 심볼을 객체 프로퍼티의 키로 사용할 수 있습니다.
 
 ```ts
 let sym = Symbol();
@@ -30,7 +30,7 @@ let obj = {
 
 console.log(obj[sym]); // "value"
 ```
-Symbol을 계산된 프로퍼티 선언과 결합하여 객체 프로퍼티와 클래스 멤버를 선언할 수도 있습니다.
+심볼을 계산된 프로퍼티 선언과 결합하여 객체 프로퍼티와 클래스 멤버를 선언할 수도 있습니다.
 
 ```ts
 const getClassNameSymbol = Symbol();
@@ -45,16 +45,16 @@ let c = new C();
 let className = c[getClassNameSymbol](); // "C"
 ```
 
-# 잘 알려진 Symbol
+# 잘 알려진 심볼 (Well-known Symbols)
 
-사용자 정의 Symbol 외에도 잘 알려진 내장 Symbol이 있습니다.
-내장 symbol은 내부 언어 동작을 나타내는 데 사용됩니다.
+사용자 정의 심볼 외에도 잘 알려진 내장 심볼이 있습니다.
+내장 심볼은 내부 언어 동작을 나타내는 데 사용됩니다.
 
-다음은 잘 알려진 Symbol 목록입니다.
+다음은 잘 알려진 심볼 목록입니다.
 
 ## `Symbol.hasInstance`
 
-constructor 객체가 constructor의 인스턴스 중 하나로서 객체를 인식하는지 여부를 결정하는 메서드입니다.`instanceof` 연산자의 의미로 호출됩니다.
+생성자 객체를 생성자의 인스턴스 중 하나로서 객체를 인식하는지 여부를 판단하는 메서드입니다. `instanceof` 연산자의 의미로 호출됩니다.
 
 ## `Symbol.isConcatSpreadable`
 
@@ -62,7 +62,7 @@ constructor 객체가 constructor의 인스턴스 중 하나로서 객체를 인
 
 ## `Symbol.iterator`
 
-객체의 기본 반복자를 반환하는 메서드입니다. for-of 구문의 의미에 의해 호출됩니다.
+객체의 기본 반복자를 반환하는 메서드입니다. for-of 구문에 의해 호출됩니다.
 
 ## `Symbol.match`
 
@@ -78,7 +78,7 @@ constructor 객체가 constructor의 인스턴스 중 하나로서 객체를 인
 
 ## `Symbol.species`
 
-파생 된 객체를 만드는 데 사용되는 constructor 함수의 프로퍼티 값을 갖는 프로퍼티입니다.
+파생된 객체를 만드는 데 사용되는 생성자 함수의 프로퍼티 값을 갖는 프로퍼티입니다.
 
 ## `Symbol.split`
 
@@ -97,4 +97,4 @@ constructor 객체가 constructor의 인스턴스 중 하나로서 객체를 인
 
 ## `Symbol.unscopables`
 
-자신의 프로퍼티 명을 가지는 객체는 관련된 객체의 ‘with’ 환경 바인딩에서 제외되는 속성 이름입니다.
+자신의 프로퍼티 이름"을" 가지는 객체는 연관된 객체의 환경 바인딩에서 제외되는 프로퍼티 이름입니다.

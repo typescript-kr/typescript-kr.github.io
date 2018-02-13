@@ -22,7 +22,7 @@
 * [타입 추론](pages/Type Inference.md)
 * [타입 호환성](pages/Type Compatibility.md)
 * [고급 타입](pages/Advanced Types.md)
-* [Symbols](pages/Symbols.md)
+* [심볼](pages/Symbols.md)
 * [Iterators and Generators](pages/Iterators and Generators.md)
 * [Modules](pages/Modules.md)
 * [Namespaces](pages/Namespaces.md)
