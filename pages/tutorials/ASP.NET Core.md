@@ -84,7 +84,7 @@ public void Configure(IApplicationBuilder app)
 ## 타입스크립트 코드 추가 (Add TypeScript code)
 
 `scripts`를 마우스 오른쪽 버튼으로 클릭하고 **New Item**을 클릭합니다.  
-그런 다음 **TypeScript File** (. NETCore섹션에 있을 수도 있음)을 선택하고 `app.ts`의 이름을 지정합니다.
+그런 다음 **TypeScript File** (.NET Core 섹션에 있을 수도 있음)을 선택하고 `app.ts`의 이름을 지정합니다.
 
 ![New item](../../assets/images/tutorials/aspnet/new-item.png)
 
@@ -104,7 +104,7 @@ function sayHello() {
 
 ### TypeScript 컴파일러 설정 (Configure the TypeScript compiler)
 
-먼저 TypeScript에 빌드 방법을 알려줘야합니다.  
+먼저 TypeScript에 빌드 방법을 알려줘야 합니다.  
 scripts 폴더를 마우스 오른쪽 버튼으로 클릭하고 **New Item**을 클릭합니다.  
 그런 다음 **TypeScript ConfigurationFile**을 선택하고 기본 이름인 `tsconfig.json`을 사용하십시오.
 
@@ -134,11 +134,11 @@ scripts 폴더를 마우스 오른쪽 버튼으로 클릭하고 **New Item**을 
 3. `"compileOnSave": true` 설정합니다.
 
 새로운 코드를 작성할 때마다 `"nomaplicitany"`가 좋습니다 - &mdash; 실수로 타입이 지정되지 않은 코드를 쓰지 않도록 할 수 있습니다.  
-`"compileOnSave"`는 실행중인 웹 앱에서 코드를 손쉽게 업데이트할 수 있도록 해 준다.
+`"compileOnSave"`는 실행 중인 웹 앱에서 코드를 손쉽게 업데이트할 수 있도록 해 준다.
 
 ### NPM 설정 (Set up NPM)
 
-이제 JavaScript패키지를 다운로드할 수 있도록 NPM을 설정해야 합니다.  
+이제 JavaScript 패키지를 다운로드할 수 있도록 NPM을 설정해야 합니다.  
 프로젝트를 마우스 오른쪽 버튼으로 누르고 **New Item**을 클릭하십시오.  
 그런 다음 **NPM Configuration File**을 선택하고 기본 이름 `package.json`을 사용하십시오.  
 
@@ -150,7 +150,7 @@ scripts 폴더를 마우스 오른쪽 버튼으로 클릭하고 **New Item**을 
     "del": "2.2.0"
 }
 ```
-Visual Studio는 파일을 저장하는 즉시 gulp 및 del 설치를 시작해야합니다.
+Visual Studio는 파일을 저장하는 즉시 gulp 및 del 설치를 시작해야 합니다.  
 그렇지 않은 경우 패키지를 마우스 오른쪽 버튼으로 누르고 **Restore Packages**를 하십시오.
 
 ### gulp 설정 (Set up gulp)
@@ -182,7 +182,7 @@ gulp.task('default', function () {
 });
 ```
 
-첫번째 줄은 Visual Studio에게 빌드가 끝난 후에 작업을 'default'로 실행하도록 지시합니다.  
+첫 번째 줄은 Visual Studio에게 빌드가 끝난 후에 작업을 'default'로 실행하도록 지시합니다.  
 또한 Visual Studio에 빌드를 정리하도록 요청하면 'clean'작업도 실행됩니다.
 
 이제 `gulpfile.js`를 마우스 오른쪽 버튼으로 클릭하고 **Task Runner Explorer**를 클릭하십시오.  
@@ -239,7 +239,7 @@ ASP.NET 프로젝트에 기본적인 TypeScript를 포함시키기 위해 알아
 
 `package.json`의 `dependencies`에 Angular 2와 SystemJS를 추가하십시오.
 
-VS2015의 경우는 새로운 `dependencies`리스트 :
+VS2015의 경우는 새로운 `dependencies` 리스트 :
 
 ```json
   "dependencies": {
@@ -250,7 +250,7 @@ VS2015의 경우는 새로운 `dependencies`리스트 :
   },
 ```
 
-VS2017의 경우 NPM3에서 peer 의존성이 사용되지 않으므로 Angular 2의 peer 의존성을 의존성으로 직접 나열해야합니다 :
+VS2017의 경우 NPM3에서 peer 의존성이 사용되지 않으므로 Angular 2의 peer 의존성을 의존성으로 직접 나열해야 합니다 :
 
 ```json
   "dependencies": {
@@ -300,11 +300,11 @@ tsconfig는 다음과 같이 보일 것입니다 :
 
 ## gulp 빌드에 Angular 추가 (Add Angular to the gulp build)
 
-마지막으로 Angular 파일을 빌드의 일부로 복사해야합니다.
+마지막으로 Angular 파일을 빌드의 일부로 복사해야 합니다.
 추가할 사항은 다음과 같습니다:
 
 1. 라이브러리 파일에 대한 경로.
-2. `lib` 태스크를 추가하여 파일을 `wwwroot`에 연결(pipe)합니다.
+2. `lib` 태스크를 추가하여 파일을 `wwwroot`에 연결(pipe) 합니다.
 3. `default` 태스크에 `lib`에 대한 의존성을 추가하십시오.
 
 업데이트된 `gulpfile.js`은 다음과 같이 표시됩니다 :
