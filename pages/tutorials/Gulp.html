@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Gulp · GitBook</title>
+        <title>걸프 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -140,7 +140,7 @@
                 <a href="Gulp.html">
             
                     
-                    Gulp
+                    걸프
             
                 </a>
             
@@ -680,7 +680,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Gulp</a>
+        <a href="../.." >걸프</a>
     </h1>
 </div>
 
@@ -695,51 +695,45 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>This quick start guide will teach you how to build TypeScript with <a href="http://gulpjs.com" target="_blank">gulp</a> and then add <a href="http://browserify.org" target="_blank">Browserify</a>, <a href="http://lisperator.net/uglifyjs/" target="_blank">uglify</a>, or <a href="https://github.com/substack/watchify" target="_blank">Watchify</a> to the gulp pipeline.
-This guide also adds functionality for <a href="https://babeljs.io/" target="_blank">Babel</a> functionality using <a href="https://github.com/babel/babelify" target="_blank">Babelify</a>.</p>
-<p>We assume that you&apos;re already using <a href="https://nodejs.org/" target="_blank">Node.js</a> with <a href="https://www.npmjs.com/" target="_blank">npm</a>.</p>
-<h1 id="minimal-project">Minimal project</h1>
-<p>Let&apos;s start out with a new directory.
-We&apos;ll name it <code>proj</code> for now, but you can change it to whatever you want.</p>
+                                <p>&#xC774; &#xD035; &#xC2A4;&#xD0C0;&#xD2B8; &#xAC00;&#xC774;&#xB4DC;&#xB294; <a href="http://gulpjs.com" target="_blank">gulp</a>&#xB85C; TypeScript&#xB97C; &#xBE4C;&#xB4DC;&#xD55C; &#xB2E4;&#xC74C; <a href="http://browserify.org" target="_blank">Browserify</a>, <a href="http://lisperator.net/uglifyjs" target="_blank">uglify</a> &#xB610;&#xB294; <a href="https://github.com/substack/watchify" target="_blank">Watchify</a>&#xB97C; gulp &#xD30C;&#xC774;&#xD504; &#xB77C;&#xC778;&#xC5D0; &#xCD94;&#xAC00;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC54C;&#xB824;&#xC90D;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB610;&#xD55C; <a href="https://github.com/babel/babelify" target="_blank">Babelify</a>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; <a href="https://babeljs.io" target="_blank">Babel</a> &#xAE30;&#xB2A5;&#xC5D0; &#xB300;&#xD55C; &#xAE30;&#xB2A5;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.<br><a href="https://www.npmjs.com" target="_blank">npm</a>&#xACFC; &#xD568;&#xAED8; <a href="https://nodejs.org" target="_blank">Node.js</a>&#xB294; &#xC774;&#xBBF8; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC788;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xC791;&#xC740;-&#xD504;&#xB85C;&#xC81D;&#xD2B8;-minimal-project">&#xC791;&#xC740; &#xD504;&#xB85C;&#xC81D;&#xD2B8; (Minimal project)</h1>
+<p>&#xC0C8;&#xB85C;&#xC6B4; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xBD80;&#xD130; &#xC2DC;&#xC791;&#xD569;&#xC2DC;&#xB2E4;.
+&#xB2F9;&#xC7A5;&#xC740; <code>proj</code>&#xB77C;&#xACE0; &#xC774;&#xB984;&#xC744; &#xBD99;&#xC774;&#xACA0;&#xC9C0;&#xB9CC; &#xC6D0;&#xD558;&#xB294; &#xB300;&#xB85C; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-shell">mkdir proj
 cd proj
 </code></pre>
-<p>To start, we&apos;re going to structure our project in the following way:</p>
+<p>&#xC2DC;&#xC791;&#xD558;&#xB824;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xAD6C;&#xC870;&#xD654;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-text">proj/
    &#x251C;&#x2500; src/
    &#x2514;&#x2500; dist/
 </code></pre>
-<p>TypeScript files will start out in your <code>src</code> folder, run through the TypeScript compiler and end up in <code>dist</code>.</p>
-<p>Let&apos;s scaffold this out:</p>
+<p>TypeScript &#xD30C;&#xC77C;&#xC740; <code>src</code> &#xD3F4;&#xB354;&#xC5D0;&#xC11C; &#xC2DC;&#xC791;&#xD558;&#xC5EC; TypeScript &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB97C; &#xD1B5;&#xD574; &#xC2E4;&#xD589;&#xB418;&#xACE0; <code>dist</code>&#xC5D0;&#xC11C; &#xB05D;&#xB0A9;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774;&#xAC83;&#xC744; &#xACE8;&#xACA9;&#xC73C;&#xB85C; &#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-shell">mkdir src
 mkdir dist
 </code></pre>
-<h2 id="initialize-the-project">Initialize the project</h2>
-<p>Now we&apos;ll turn this folder into an npm package.</p>
+<h2 id="&#xD504;&#xB85C;&#xC81D;&#xD2B8;-&#xCD08;&#xAE30;&#xD654;-initialize-the-project">&#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xCD08;&#xAE30;&#xD654; (Initialize the project)</h2>
+<p>&#xC774;&#xC81C; &#xC774; &#xD3F4;&#xB354;&#xB97C; npm &#xD328;&#xD0A4;&#xC9C0;&#xB85C; &#xBC14;&#xAFC0; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-shell">npm init
 </code></pre>
-<p>You&apos;ll be given a series of prompts.
-You can use the defaults except for your entry point.
-For your entry point, use <code>./dist/main.js</code>.
-You can always go back and change these in the <code>package.json</code> file that&apos;s been generated for you.</p>
-<h2 id="install-our-dependencies">Install our dependencies</h2>
-<p>Now we can use <code>npm install</code> to install packages.
-First install <code>gulp-cli</code> globally (if you use a Unix system, you may need to prefix the <code>npm install</code> commands in this guide with <code>sudo</code>).</p>
+<p>&#xC77C;&#xB828;&#xC758; &#xC54C;&#xB9BC;&#xC744; &#xBC1B;&#xAC8C; &#xB420; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>entry point&#xB97C; &#xC81C;&#xC678;&#xD558;&#xACE0;&#xB294; &#xAE30;&#xBCF8;&#xAC12;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBA70; <code>./dist/main.js</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.<br><code>package.json</code> &#xD30C;&#xC77C;&#xB85C; &#xB3CC;&#xC544;&#xAC00;&#xC11C; &#xC5B8;&#xC81C;&#xB4E0; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xC758;&#xC874;&#xC131;-&#xC124;&#xCE58;-install-our-dependencies">&#xC758;&#xC874;&#xC131; &#xC124;&#xCE58; (Install our dependencies)</h2>
+<p>&#xC774;&#xC81C;&#xB294; <code>npm install</code>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xC124;&#xCE58;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xBA3C;&#xC800; <code>gulp-cli</code>&#xB97C; &#xAE00;&#xB85C;&#xBC8C; &#xC124;&#xCE58;&#xD558;&#xC2ED;&#xC2DC;&#xC624; (Unix &#xC2DC;&#xC2A4;&#xD15C;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0; <code>npm install</code> &#xBA85;&#xB839; &#xC55E;&#xC5D0; <code>sudo</code>&#xB97C; &#xBD99;&#xC5EC;&#xC57C; &#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;).</p>
 <pre><code class="lang-shell">npm install -g gulp-cli
 </code></pre>
-<p>Then install <code>typescript</code>, <code>gulp</code> and <code>gulp-typescript</code> in your project&apos;s dev dependencies.
-<a href="https://www.npmjs.com/package/gulp-typescript" target="_blank">Gulp-typescript</a> is a gulp plugin for Typescript.</p>
+<p>&#xADF8;&#xB7F0; &#xB2E4;&#xC74C; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC758; &#xAC1C;&#xBC1C;&#xC790; &#xC758;&#xC874;&#xC131;&#xC5D0; <code>typescript</code>, <code>gulp</code> &#xBC0F; <code>gulp-typescript</code>&#xB97C; &#xC124;&#xCE58;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.<br><a href="https://www.npmjs.com/package/gulp-typescript" target="_blank">Gulp-typescript</a>&#xB294; Typescript&#xC758; gulp &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-shell">npm install --save-dev typescript gulp gulp-typescript
 </code></pre>
-<h2 id="write-a-simple-example">Write a simple example</h2>
-<p>Let&apos;s write a Hello World program.
-In <code>src</code>, create the file <code>main.ts</code>:</p>
+<h2 id="&#xAC04;&#xB2E8;&#xD55C;-&#xC608;&#xC81C;-&#xC791;&#xC131;-write-a-simple-example">&#xAC04;&#xB2E8;&#xD55C; &#xC608;&#xC81C; &#xC791;&#xC131; (Write a simple example)</h2>
+<p>Hello World &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC744; &#xC791;&#xC131;&#xD574; &#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>src</code>&#xC5D0; <code>main.ts</code> &#xD30C;&#xC77C;&#xC744; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4; :</p>
 <pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hello</span>(<span class="hljs-params">compiler: <span class="hljs-built_in">string</span></span>) </span>{
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Hello from <span class="hljs-subst">${compiler}</span>`</span>);
 }
 hello(<span class="hljs-string">&quot;TypeScript&quot;</span>);
 </code></pre>
-<p>In the project root, <code>proj</code>, create the file <code>tsconfig.json</code>:</p>
+<p><code>proj</code>&#xC774;&#xB77C;&#xB294; &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xB8E8;&#xD2B8;&#xC5D0; <code>tsconfig.json</code> &#xD30C;&#xC77C;&#xC744; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4; :</p>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;files&quot;</span>: [
         <span class="hljs-string">&quot;src/main.ts&quot;</span>
@@ -750,8 +744,8 @@ hello(<span class="hljs-string">&quot;TypeScript&quot;</span>);
     }
 }
 </code></pre>
-<h2 id="create-a-gulpfilejs">Create a <code>gulpfile.js</code></h2>
-<p>In the project root, create the file <code>gulpfile.js</code>:</p>
+<h2 id="gulpfilejs-&#xC0DD;&#xC131;-create-a-gulpfilejs"><code>gulpfile.js</code> &#xC0DD;&#xC131; (Create a <code>gulpfile.js</code>)</h2>
+<p>&#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xB8E8;&#xD2B8;&#xC5D0; <code>gulpfile.js</code> &#xD30C;&#xC77C;&#xC744; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4; :</p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp&quot;</span>);
 <span class="hljs-keyword">var</span> ts = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp-typescript&quot;</span>);
 <span class="hljs-keyword">var</span> tsProject = ts.createProject(<span class="hljs-string">&quot;tsconfig.json&quot;</span>);
@@ -762,25 +756,24 @@ gulp.task(<span class="hljs-string">&quot;default&quot;</span>, <span class="hlj
         .js.pipe(gulp.dest(<span class="hljs-string">&quot;dist&quot;</span>));
 });
 </code></pre>
-<h2 id="test-the-resulting-app">Test the resulting app</h2>
+<h2 id="resulting-&#xC571;-&#xD14C;&#xC2A4;&#xD2B8;-test-the-resulting-app">resulting &#xC571; &#xD14C;&#xC2A4;&#xD2B8; (Test the resulting app)</h2>
 <pre><code class="lang-shell">gulp
 node dist/main.js
 </code></pre>
-<p>The program should print &quot;Hello from TypeScript!&quot;.</p>
-<h1 id="add-modules-to-the-code">Add modules to the code</h1>
-<p>Before we get to Browserify, let&apos;s build our code out and add modules to the mix.
-This is the structure you&apos;re more likely to use for a real app.</p>
-<p>Create a file called <code>src/greet.ts</code>:</p>
+<p>&#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC5D0;&#xC11C; &quot;Hello from TypeScript!&quot;&#xB97C; &#xC778;&#xC1C4;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xCF54;&#xB4DC;&#xC5D0;-&#xBAA8;&#xB4C8;-&#xCD94;&#xAC00;-add-modules-to-the-code">&#xCF54;&#xB4DC;&#xC5D0; &#xBAA8;&#xB4C8; &#xCD94;&#xAC00; (Add modules to the code)</h1>
+<p>Browserify&#xB97C; &#xC2DC;&#xC791;&#xD558;&#xAE30; &#xC804;&#xC5D0; &#xCF54;&#xB4DC;&#xB97C; &#xB9CC;&#xB4E4;&#xACE0; &#xBBF9;&#xC2A4;&#xC5D0; &#xBAA8;&#xB4C8;&#xC744; &#xCD94;&#xAC00;&#xD574; &#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xAC83;&#xC740; &#xC2E4;&#xC81C; &#xC571;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC26C;&#xC6B4; &#xAD6C;&#xC870;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p><code>src/greet.ts</code> &#xD30C;&#xC77C;&#xC744; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4; :</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span>(<span class="hljs-params">name: <span class="hljs-built_in">string</span></span>) </span>{
     <span class="hljs-keyword">return</span> <span class="hljs-string">`Hello from <span class="hljs-subst">${name}</span>`</span>;
 }
 </code></pre>
-<p>Now change the code in <code>src/main.ts</code> to import <code>sayHello</code> from <code>greet.ts</code>:</p>
+<p>&#xC774;&#xC81C; <code>src/main.ts</code>&#xC758; <code>sayHello</code>&#xB97C; <code>greet.ts</code>&#xC5D0;&#xC11C; &#xAC00;&#xC838;&#xC624;&#xB3C4;&#xB85D; &#xBCC0;&#xACBD;&#xD569;&#xB2C8;&#xB2E4; :</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">import</span> { sayHello } from <span class="hljs-string">&quot;./greet&quot;</span>;
 
 <span class="hljs-built_in">console</span>.log(sayHello(<span class="hljs-string">&quot;TypeScript&quot;</span>));
 </code></pre>
-<p>Finally, add <code>src/greet.ts</code> to <code>tsconfig.json</code>:</p>
+<p>&#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; <code>src/greet.ts</code>&#xB97C; <code>tsconfig.json</code>&#xC5D0; &#xCD94;&#xAC00;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;files&quot;</span>: [
         <span class="hljs-string">&quot;src/main.ts&quot;</span>,
@@ -792,25 +785,18 @@ This is the structure you&apos;re more likely to use for a real app.</p>
     }
 }
 </code></pre>
-<p>Make sure that the modules work by running <code>gulp</code> and then testing in Node:</p>
+<p><code>gulp</code>&#xC744; &#xC2E4;&#xD589;&#xD558;&#xACE0; &#xB178;&#xB4DC;&#xC5D0;&#xC11C; &#xD14C;&#xC2A4;&#xD2B8;&#xD558;&#xC5EC; &#xBAA8;&#xB4C8;&#xC774; &#xC791;&#xB3D9;&#xD558;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
 <pre><code class="lang-shell">gulp
 node dist/main.js
 </code></pre>
-<p>Notice that even though we used ES2015 module syntax, TypeScript emitted CommonJS modules that Node uses.
-We&apos;ll stick with CommonJS for this tutorial, but you could set <code>module</code> in the options object to change this.</p>
+<p>ES2015 &#xBAA8;&#xB4C8; &#xAD6C;&#xBB38;&#xC744; &#xC0AC;&#xC6A9;&#xD588;&#xC9C0;&#xB9CC; TypeScript&#xB294; Node&#xAC00; &#xC0AC;&#xC6A9;&#xD558;&#xB294; CommonJS &#xBAA8;&#xB4C8;&#xC744; &#xBC29;&#xCD9C;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC5D0;&#xC11C;&#xB294; CommonJS&#xB97C; &#xACC4;&#xC18D; &#xC0AC;&#xC6A9;&#xD558;&#xACA0;&#xC9C0;&#xB9CC; options &#xAC1D;&#xCCB4;&#xC5D0; <code>module</code>&#xC744; &#xC124;&#xC815;&#xD558;&#xC5EC; &#xC774;&#xB97C; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  </p>
 <h1 id="browserify">Browserify</h1>
-<p>Now let&apos;s move this project from Node to the browser.
-To do this, we&apos;d  like to bundle all our modules into one JavaScript file.
-Fortunately, that&apos;s exactly what Browserify does.
-Even better, it lets us use the CommonJS module system used by Node, which is the default TypeScript emit.
-That means our TypeScript and Node setup will transfer to the browser basically unchanged.</p>
-<p>First, install browserify, <a href="https://www.npmjs.com/package/tsify" target="_blank">tsify</a>, and vinyl-source-stream.
-tsify is a Browserify plugin that, like gulp-typescript, gives access to the TypeScript compiler.
-vinyl-source-stream lets us adapt the file output of Browserify back into a format that gulp understands called <a href="https://github.com/gulpjs/vinyl" target="_blank">vinyl</a>.</p>
+<p>&#xC774;&#xC81C; &#xC774; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xB178;&#xB4DC;&#xC5D0;&#xC11C; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB85C; &#xC774;&#xB3D9;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB97C; &#xC704;&#xD574; &#xBAA8;&#xB4E0; &#xBAA8;&#xB4C8;&#xC744; &#xD558;&#xB098;&#xC758; JavaScript &#xD30C;&#xC77C;&#xB85C; &#xBC88;&#xB4E4;&#xB9C1; &#xD558;&#xACE0;&#xC790; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xD589;&#xD788;&#xB3C4; &#xC815;&#xD655;&#xD788; Browserify&#xAC00; &#xD558;&#xB294; &#xC77C;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xB354; &#xC88B;&#xC740; &#xAC83;&#xC740; &#xB178;&#xB4DC;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; CommonJS &#xBAA8;&#xB4C8; &#xC2DC;&#xC2A4;&#xD15C;&#xC744; TypeScript&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC989; TypeScript&#xC640; Node &#xC124;&#xC815;&#xC774; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB85C; &#xC804;&#xC1A1;&#xB418;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xBA3C;&#xC800; browserify, <a href="https://www.npmjs.com/package/tsify" target="_blank">tsify</a> &#xBC0F; vinyl-source-stream&#xC744; &#xC124;&#xCE58;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.<br>tsify&#xB294; gulp-typescript&#xCC98;&#xB7FC; Typeify &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xC5D0; &#xC811;&#xADFC;&#xD560; &#xC218; &#xC788;&#xB294; Browserify &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC785;&#xB2C8;&#xB2E4;.<br>vinyl-source-stream&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; Browserify&#xC758; &#xD30C;&#xC77C; &#xCD9C;&#xB825;&#xC744; gulp&#xC5D0;&#xC11C; <a href="https://github.com/gulpjs/vinyl" target="_blank">vinyl</a>&#xC73C;&#xB85C; &#xC778;&#xC2DD;&#xD558;&#xB294; &#xD615;&#xC2DD;&#xC73C;&#xB85C; &#xB2E4;&#xC2DC; &#xBCC0;&#xD658;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-shell">npm install --save-dev browserify tsify vinyl-source-stream
 </code></pre>
-<h2 id="create-a-page">Create a page</h2>
-<p>Create a file in <code>src</code> named <code>index.html</code>:</p>
+<h2 id="&#xD398;&#xC774;&#xC9C0;-&#xB9CC;&#xB4E4;&#xAE30;-create-a-page">&#xD398;&#xC774;&#xC9C0; &#xB9CC;&#xB4E4;&#xAE30; (Create a page)</h2>
+<p><code>src</code>&#xC5D0; <code>index.html</code> &#xD30C;&#xC77C;&#xC744; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4; :</p>
 <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
@@ -823,7 +809,7 @@ vinyl-source-stream lets us adapt the file output of Browserify back into a form
     <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
-<p>Now change <code>main.ts</code> to update the page:</p>
+<p>&#xC774;&#xC81C; <code>main.ts</code>&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xC5EC; &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">import</span> { sayHello } from <span class="hljs-string">&quot;./greet&quot;</span>;
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showHello</span>(<span class="hljs-params">divName: <span class="hljs-built_in">string</span>, name: <span class="hljs-built_in">string</span></span>) </span>{
@@ -833,8 +819,7 @@ vinyl-source-stream lets us adapt the file output of Browserify back into a form
 
 showHello(<span class="hljs-string">&quot;greeting&quot;</span>, <span class="hljs-string">&quot;TypeScript&quot;</span>);
 </code></pre>
-<p>Calling <code>showHello</code> calls <code>sayHello</code> to change the paragraph&apos;s text.
-Now change your gulpfile to the following:</p>
+<p><code>showHello</code> &#xD638;&#xCD9C;&#xC740; <code>sayHello</code>&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xC5EC; paragraph &#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xBCC0;&#xACBD;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xC81C; gulpfile&#xC744; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xBCC0;&#xACBD;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp&quot;</span>);
 <span class="hljs-keyword">var</span> browserify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;browserify&quot;</span>);
 <span class="hljs-keyword">var</span> source = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;vinyl-source-stream&apos;</span>);
@@ -862,35 +847,25 @@ gulp.task(<span class="hljs-string">&quot;default&quot;</span>, [<span class="hl
     .pipe(gulp.dest(<span class="hljs-string">&quot;dist&quot;</span>));
 });
 </code></pre>
-<p>This adds the <code>copy-html</code> task and adds it as a dependency of <code>default</code>.
-That means any time <code>default</code> is run, <code>copy-html</code> has to run first.
-We&apos;ve also changed <code>default</code> to call Browserify with the tsify plugin instead of gulp-typescript.
-Conveniently, they both allow us to pass the same options object to the TypeScript compiler.</p>
-<p>After calling <code>bundle</code> we use <code>source</code> (our alias for vinyl-source-stream) to name our output bundle <code>bundle.js</code>.</p>
-<p>Test the page by running gulp and then opening <code>dist/index.html</code> in a browser.
-You should see &quot;Hello from TypeScript&quot; on the page.</p>
-<p>Notice that we specified <code>debug: true</code> to Browserify.
-This causes tsify to emit source maps inside the bundled JavaScript file.
-Source maps let you debug your original TypeScript code in the browser instead of the bundled JavaScript.
-You can test that source maps are working by opening the debugger for your browser and putting a breakpoint inside <code>main.ts</code>.
-When you refresh the page the breakpoint should pause the page and let you debug <code>greet.ts</code>.</p>
+<p><code>copy-html</code> &#xD0DC;&#xC2A4;&#xD06C;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xACE0; <code>default</code>&#xC758; &#xC758;&#xC874;&#xC131;&#xC73C;&#xB85C; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.<br><code>default</code>&#xAC00; &#xC2E4;&#xD589;&#xB420; &#xB54C;&#xB9C8;&#xB2E4; <code>copy-html</code>&#xC774; &#xBA3C;&#xC800; &#xC2E4;&#xD589;&#xB418;&#xC5B4;&#xC57C; &#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB610;&#xD55C; <code>default</code>&#xB97C; gulp-typescript &#xB300;&#xC2E0; tsify &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC73C;&#xB85C; Browserify&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xB3C4;&#xB85D; &#xBCC0;&#xACBD;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xD3B8;&#xB9AC;&#xD558;&#xAC8C;&#xB3C4; &#xB458; &#xBAA8;&#xB450; TypeScript &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xC5D0; &#xB3D9;&#xC77C;&#xD55C; options &#xAC1D;&#xCCB4;&#xB97C; &#xC804;&#xB2EC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>bundle</code>&#xC744; &#xD638;&#xCD9C;&#xD55C; &#xD6C4; <code>source</code>(vinil-source-stream&#xC5D0; &#xB300;&#xD55C; &#xBCC4;&#xCE6D;)&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xCD9C;&#xB825; &#xBC88;&#xB4E4; <code>bundle.js</code>&#xC758; &#xC774;&#xB984;&#xC744; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>gulp&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xACE0; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xC11C; <code>dist/index.html</code>&#xC744; &#xC5F4;&#xC5B4; &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xD14C;&#xC2A4;&#xD2B8;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.<br>&#xD398;&#xC774;&#xC9C0;&#xC5D0; &quot;Hello from TypeScript&quot;&#xAC00; &#xD45C;&#xC2DC;&#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>Browserify&#xC5D0; <code>debug : true</code>&#xB97C; &#xC9C0;&#xC815;&#xD55C; &#xAC83;&#xC5D0; &#xC8FC;&#xBAA9;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.<br>&#xC774;&#xB85C; &#xC778;&#xD574; tsify&#xB294; &#xBC88;&#xB4E4; JavaScript &#xD30C;&#xC77C; &#xB0B4;&#xC5D0;&#xC11C; &#xC18C;&#xC2A4;&#xB9F5;&#xC744; &#xB0B4;&#xBCF4;&#xB0C5;&#xB2C8;&#xB2E4;.<br>&#xC18C;&#xC2A4; &#xB9F5;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xBC88;&#xB4E4;&#xB85C; &#xC81C;&#xACF5;&#xB41C; JavaScript &#xB300;&#xC2E0; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xC11C; &#xC6D0;&#xBCF8; TypeScript &#xCF54;&#xB4DC;&#xB97C; &#xB514;&#xBC84;&#xAE45;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC758; &#xB514;&#xBC84;&#xAC70;&#xB97C; &#xC5F4;&#xACE0; <code>main.ts</code> &#xC548;&#xC5D0; &#xBE0C;&#xB808;&#xC774;&#xD06C;&#xD3EC;&#xC778;&#xD2B8;&#xC744; &#xB123;&#xC73C;&#xBA74; &#xC18C;&#xC2A4; &#xB9F5;&#xC774; &#xC791;&#xB3D9;&#xD558;&#xB294;&#xC9C0; &#xD14C;&#xC2A4;&#xD2B8;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xD398;&#xC774;&#xC9C0;&#xB97C; &#xC0C8;&#xB85C; &#xACE0;&#xCE68; &#xD560; &#xB54C; &#xBE0C;&#xB808;&#xC774;&#xD06C;&#xD3EC;&#xC778;&#xD2B8;&#xAC00; &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xC77C;&#xC2DC; &#xC911;&#xC9C0;&#xD558;&#xACE0; <code>greet.ts</code>&#xB97C; &#xB514;&#xBC84;&#xAE45; &#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <h1 id="watchify-babel-and-uglify">Watchify, Babel, and Uglify</h1>
-<p>Now that we are bundling our code with Browserify and tsify, we can add various features to our build with browserify plugins.</p>
+<p>&#xC774;&#xC81C; &#xCF54;&#xB4DC;&#xB97C; Browserify&#xC5D0; &#xBB36;&#xC5B4;&#xC11C; tsify &#xD588;&#xC73C;&#xBBC0;&#xB85C; browserify &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBE4C;&#xB4DC;&#xC5D0; &#xB2E4;&#xC591;&#xD55C; &#xAE30;&#xB2A5;&#xC744; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <ul>
-<li><p>Watchify starts gulp and keeps it running, incrementally compiling whenever you save a file.
-This lets you keep an edit-save-refresh cycle going in the browser.</p>
+<li><p>Watchify&#xAC00; gulp&#xB97C; &#xACC4;&#xC18D; &#xC2E4;&#xD589;&#xD558;&#xBA70; &#xD30C;&#xC77C;&#xC744; &#xC800;&#xC7A5;&#xD560; &#xB54C;&#xB9C8;&#xB2E4; &#xC810;&#xCC28;&#xC801;&#xC73C;&#xB85C; &#xCEF4;&#xD30C;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB97C; &#xD1B5;&#xD574; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xC11C; &#xD3B8;&#xC9D1;-&#xC800;&#xC7A5;-&#xC0C8;&#xB85C;&#xACE0;&#xCE68; &#xC0AC;&#xC774;&#xD074;&#xC744; &#xACC4;&#xC18D; &#xC9C4;&#xD589;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </li>
-<li><p>Babel is a hugely flexible compiler that converts ES2015 and beyond into ES5 and ES3.
-This lets you add extensive and customized transformations that TypeScript doesn&apos;t support.</p>
+<li><p>Babel&#xC740; ES2015 &#xC774;&#xC0C1;&#xC744; ES5 &#xBC0F; ES3&#xC73C;&#xB85C; &#xBCC0;&#xD658;&#xD558;&#xB294; &#xB9E4;&#xC6B0; &#xC720;&#xC5F0;&#xD55C; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xB530;&#xB77C;&#xC11C; TypeScript&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xAD11;&#xBC94;&#xC704;&#xD55C; &#xB9DE;&#xCDA4;&#xD615; &#xBCC0;&#xD658;&#xC744; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </li>
-<li><p>Uglify compacts your code so that it takes less time to download.</p>
+<li><p>Uglify&#xB294; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC; &#xC2DC;&#xAC04;&#xC744; &#xC904;&#xC774;&#xB3C4;&#xB85D; &#xCF54;&#xB4DC;&#xB97C; &#xC555;&#xCD95;&#xD569;&#xB2C8;&#xB2E4;.</p>
 </li>
 </ul>
 <h2 id="watchify">Watchify</h2>
-<p>We&apos;ll start with Watchify to provide background compilation:</p>
+<p>Watchify&#xB85C; &#xBC31;&#xADF8;&#xB77C;&#xC6B4;&#xB4DC; &#xCEF4;&#xD30C;&#xC77C;&#xC744; &#xC2DC;&#xC791;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4; :</p>
 <pre><code class="lang-shell">npm install --save-dev watchify gulp-util
 </code></pre>
-<p>Now change your gulpfile to the following:</p>
+<p>&#xC774;&#xC81C; gulpfile&#xC744; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xBCC0;&#xACBD;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp&quot;</span>);
 <span class="hljs-keyword">var</span> browserify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;browserify&quot;</span>);
 <span class="hljs-keyword">var</span> source = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;vinyl-source-stream&apos;</span>);
@@ -925,18 +900,15 @@ gulp.task(<span class="hljs-string">&quot;default&quot;</span>, [<span class="hl
 watchedBrowserify.on(<span class="hljs-string">&quot;update&quot;</span>, bundle);
 watchedBrowserify.on(<span class="hljs-string">&quot;log&quot;</span>, gutil.log);
 </code></pre>
-<p>There are basically three changes here, but they require you to refactor your code a bit.</p>
+<p>&#xC5EC;&#xAE30;&#xC5D0;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC138; &#xAC00;&#xC9C0; &#xBCC0;&#xACBD; &#xC0AC;&#xD56D;&#xC774; &#xC788;&#xC9C0;&#xB9CC; &#xCF54;&#xB4DC;&#xB97C; &#xC57D;&#xAC04; &#xB9AC;&#xD329;&#xD1A0;&#xB9C1;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <ol>
-<li>We wrapped our <code>browserify</code> instance in a call to <code>watchify</code>, and then held on to the result.</li>
-<li>We called <code>watchedBrowserify.on(&quot;update&quot;, bundle);</code> so that Browserify will run the <code>bundle</code> function every time one of your TypeScript files changes.</li>
-<li>We called <code>watchedBrowserify.on(&quot;log&quot;, gutil.log);</code> to log to the console.</li>
+<li><code>watchify</code>&#xC5D0; &#xB300;&#xD55C; &#xD638;&#xCD9C;&#xC5D0;&#xC11C; <code>browserify</code> &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xAC10;&#xC2F8;&#xACE0; &#xADF8; &#xACB0;&#xACFC;&#xB97C; &#xC720;&#xC9C0;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li><code>watchedBrowserify.on(&quot;update&quot;, bundle);</code>&#xC744; &#xD638;&#xCD9C;&#xD558;&#xC5EC; Browserify &#xAC00; TypeScript &#xD30C;&#xC77C; &#xC911; &#xD558;&#xB098;&#xAC00; &#xBCC0;&#xACBD;&#xB420; &#xB54C;&#xB9C8;&#xB2E4; <code>bundle</code> &#xD568;&#xC218;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xB3C4;&#xB85D; &#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li><code>watchedBrowserify.on(&quot;log&quot;, gutil.log);</code>&#xC744; &#xD638;&#xCD9C;&#xD558;&#xC5EC; &#xCF58;&#xC194;&#xC5D0; &#xB85C;&#xADF8;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
 </ol>
-<p>Together (1) and (2) mean that we have to move our call to <code>browserify</code> out of the <code>default</code> task.
-And we have to give the function for <code>default</code> a name since both Watchify and Gulp need to call it.
-Adding logging with (3) is optional but very useful for debugging your setup.</p>
-<p>Now when you run Gulp, it should start and stay running.
-Try changing the code for <code>showHello</code> in <code>main.ts</code> and saving it.
-You should see output that looks like this:</p>
+<p>(1)&#xACFC; (2)&#xB294; <code>default</code> &#xC791;&#xC5C5;&#xC5D0;&#xC11C; <code>browserify</code>&#xB97C; &#xD638;&#xCD9C;&#xD574;&#xC57C; &#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.<br>Watchify&#xC640; Gulp &#xBAA8;&#xB450; &#xD638;&#xCD9C;&#xD574;&#xC57C; &#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; <code>default</code> &#xD568;&#xC218;&#xC5D0; &#xC774;&#xB984;&#xC744; &#xC8FC;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>(3)&#xC744; &#xC0AC;&#xC6A9;&#xD55C; &#xB85C;&#xAE45;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC120;&#xD0DD; &#xC0AC;&#xD56D;&#xC774;&#xC9C0;&#xB9CC; &#xC124;&#xC815;&#xC744; &#xB514;&#xBC84;&#xAE45;&#xD558;&#xB294; &#xB370; &#xB9E4;&#xC6B0; &#xC720;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774;&#xC81C; Gulp&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xBA74; &#xC2DC;&#xC791;&#xD574;&#xC57C; &#xD558;&#xACE0; &#xACC4;&#xC18D; &#xC2E4;&#xD589;&#xB429;&#xB2C8;&#xB2E4;.<br><code>main.ts</code>&#xC5D0;&#xC11C; <code>showHello</code>&#xC5D0; &#xB300;&#xD55C; &#xCF54;&#xB4DC;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xACE0; &#xC800;&#xC7A5;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.  </p>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xCD9C;&#xB825;&#xC774; &#xD45C;&#xC2DC;&#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4; :</p>
 <pre><code class="lang-shell">proj$ gulp
 [10:34:20] Using gulpfile ~/src/proj/gulpfile.js
 [10:34:20] Starting &apos;copy-html&apos;...
@@ -948,11 +920,10 @@ You should see output that looks like this:</p>
 [10:35:24] 2808 bytes written (0.05 seconds)
 </code></pre>
 <h2 id="uglify">Uglify</h2>
-<p>First install Uglify.
-Since the point of Uglify is to mangle your code, we also need to install vinyl-buffer and gulp-sourcemaps to keep sourcemaps working.</p>
+<p>&#xBA3C;&#xC800; Uglify&#xB97C; &#xC124;&#xCE58;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.<br>Uglify&#xC758; &#xC694;&#xC810;&#xC740; &#xCF54;&#xB4DC;&#xB97C; &#xC555;&#xCD95;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xAC83;&#xC774;&#xBBC0;&#xB85C; &#xC18C;&#xC2A4; &#xB9F5;&#xC744; &#xC720;&#xC9C0;&#xD558;&#xB824;&#xBA74; vinyl-buffer&#xC640; gulp-sourcemaps&#xB3C4; &#xC124;&#xCE58;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-shell">npm install --save-dev gulp-uglify vinyl-buffer gulp-sourcemaps
 </code></pre>
-<p>Now change your gulpfile to the following:</p>
+<p>&#xC774;&#xC81C; gulpfile&#xC744; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xBCC0;&#xACBD;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp&quot;</span>);
 <span class="hljs-keyword">var</span> browserify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;browserify&quot;</span>);
 <span class="hljs-keyword">var</span> source = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;vinyl-source-stream&apos;</span>);
@@ -987,19 +958,15 @@ gulp.task(<span class="hljs-string">&quot;default&quot;</span>, [<span class="hl
     .pipe(gulp.dest(<span class="hljs-string">&quot;dist&quot;</span>));
 });
 </code></pre>
-<p>Notice that <code>uglify</code> itself has just one call &#x2014; the calls to <code>buffer</code> and <code>sourcemaps</code> exist to make sure sourcemaps keep working.
-These calls give us a separate sourcemap file instead of using inline sourcemaps like before.
-Now you can run Gulp and check that <code>bundle.js</code> does get minified into an unreadable mess:</p>
+<p><code>uglify</code> &#xC790;&#xCCB4;&#xC5D0;&#xB294; &#xD558;&#xB098;&#xC758; &#xD638;&#xCD9C;&#xB9CC; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; &#x2014; <code>buffer</code>&#xC640; <code>sourcemaps</code>&#xC5D0; &#xB300;&#xD55C; &#xD638;&#xCD9C;&#xC740; sourcemaps&#xC774; &#xACC4;&#xC18D; &#xC791;&#xB3D9;&#xD558;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC874;&#xC7AC;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB7EC;&#xD55C; &#xD638;&#xCD9C;&#xC744; &#xD1B5;&#xD574; &#xC774;&#xC804;&#xACFC; &#xAC19;&#xC774; &#xC778;&#xB77C;&#xC778; &#xC18C;&#xC2A4; &#xB9F5;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xB300;&#xC2E0; &#xBCC4;&#xB3C4;&#xC758; &#xC18C;&#xC2A4; &#xB9F5; &#xD30C;&#xC77C;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xC81C; Gulp&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xACE0; <code>bundle.js</code>&#xAC00; &#xB09C;&#xB3C5;&#xD654;&#xB85C; &#xC555;&#xCD95;&#xB418;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
 <pre><code class="lang-shell">gulp
 cat dist/bundle.js
 </code></pre>
 <h2 id="babel">Babel</h2>
-<p>First install Babelify and the Babel preset for ES2015.
-Like Uglify, Babelify mangles code, so we&apos;ll need vinyl-buffer and gulp-sourcemaps.
-By default Babelify will only process files with extensions of <code>.js</code>, <code>.es</code>, <code>.es6</code> and <code>.jsx</code> so we need to add the <code>.ts</code> extension as an option to Babelify.</p>
+<p>&#xBA3C;&#xC800; ES2015 &#xC804;&#xC6A9; Babelify &#xBC0F; Babel preset&#xC744; &#xC124;&#xCE58;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.<br>Uglify&#xCC98;&#xB7FC; Babelify&#xB3C4; &#xCF54;&#xB4DC;&#xB97C; &#xC5C9;&#xB9DD;&#xC73C;&#xB85C; &#xB9CC;&#xB4E4;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; vinyl-buffer&#xC640; gulp-sourcemaps&#xC774; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; Babelify&#xB294; &#xD655;&#xC7A5;&#xC790;&#xAC00; <code>.js</code>, <code>.es</code>, <code>.es6</code> &#xBC0F; <code>.jsx</code> &#xC778; &#xD30C;&#xC77C;&#xB9CC; &#xCC98;&#xB9AC;&#xD558;&#xBBC0;&#xB85C; Babelify&#xC5D0; &#xC635;&#xC158;&#xC73C;&#xB85C; <code>.ts</code> &#xD655;&#xC7A5;&#xC790;&#xB97C; &#xCD94;&#xAC00;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-shell">npm install --save-dev babelify babel-core babel-preset-es2015 vinyl-buffer gulp-sourcemaps
 </code></pre>
-<p>Now change your gulpfile to the following:</p>
+<p>&#xC774;&#xC81C; gulpfile&#xC744; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xBCC0;&#xACBD;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp&apos;</span>);
 <span class="hljs-keyword">var</span> browserify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;browserify&apos;</span>);
 <span class="hljs-keyword">var</span> source = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;vinyl-source-stream&apos;</span>);
@@ -1036,9 +1003,8 @@ gulp.task(<span class="hljs-string">&apos;default&apos;</span>, [<span class="hl
     .pipe(gulp.dest(<span class="hljs-string">&apos;dist&apos;</span>));
 });
 </code></pre>
-<p>We also need to have TypeScript target ES2015.
-Babel will then produce ES5 from the ES2015 code that TypeScript emits.
-Let&apos;s modify <code>tsconfig.json</code>:</p>
+<p>TypeScript &#xB300;&#xC0C1; ES2015&#xB3C4; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.<br>Babel&#xC740; TypeScript&#xC5D0;&#xC11C; &#xB0B4;&#xBCF4;&#xB0B4;&#xB294; ES2015 &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; ES5&#xB97C; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><code>tsconfig.json</code>&#xC744; &#xC218;&#xC815;&#xD569;&#xC2DC;&#xB2E4; :</p>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;files&quot;</span>: [
         <span class="hljs-string">&quot;src/main.ts&quot;</span>
@@ -1049,7 +1015,7 @@ Let&apos;s modify <code>tsconfig.json</code>:</p>
     }
 }
 </code></pre>
-<p>Babel&apos;s ES5 output should be very similar to TypeScript&apos;s output for such a simple script.</p>
+<p>Babel&#xC758; ES5 &#xCD9C;&#xB825;&#xC740; &#xAC04;&#xB2E8;&#xD55C; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC5D0; &#xB300;&#xD55C; TypeScript&#xC758; &#xCD9C;&#xB825;&#xACFC; &#xB9E4;&#xC6B0; &#xC720;&#xC0AC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 
                                 
                                 </section>
@@ -1093,7 +1059,7 @@ Let&apos;s modify <code>tsconfig.json</code>:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Gulp","level":"2.3","depth":1,"next":{"title":"JavaScript에서 마이그레이션","level":"2.4","depth":1,"path":"pages/tutorials/Migrating from JavaScript.md","ref":"pages/tutorials/Migrating from JavaScript.md","articles":[]},"previous":{"title":"ASP.NET Core","level":"2.2","depth":1,"path":"pages/tutorials/ASP.NET Core.md","ref":"pages/tutorials/ASP.NET Core.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tutorials/Gulp.md","mtime":"2018-02-06T13:12:52.676Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-11T15:23:17.407Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"걸프","level":"2.3","depth":1,"next":{"title":"JavaScript에서 마이그레이션","level":"2.4","depth":1,"path":"pages/tutorials/Migrating from JavaScript.md","ref":"pages/tutorials/Migrating from JavaScript.md","articles":[]},"previous":{"title":"ASP.NET Core","level":"2.2","depth":1,"path":"pages/tutorials/ASP.NET Core.md","ref":"pages/tutorials/ASP.NET Core.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tutorials/Gulp.md","mtime":"2018-02-13T02:09:04.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T02:09:33.148Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -140,7 +140,7 @@
                 <a href="Gulp.html">
             
                     
-                    Gulp
+                    걸프
             
                 </a>
             
@@ -695,35 +695,35 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="setup">Setup</h1>
-<h2 id="install-aspnet-core-and-typescript">Install ASP.NET Core and TypeScript</h2>
-<p>First, <a href="https://get.asp.net" target="_blank">install ASP.NET Core</a> if you need it. This quick-start guide requires Visual Studio 2015 or 2017.</p>
-<p>Next, if your version of Visual Studio does not already have the latest TypeScript, you can <a href="http://www.microsoft.com/en-us/download/details.aspx?id=48593" target="_blank">install it</a>.</p>
-<h2 id="create-a-new-project">Create a new project</h2>
+                                <h1 id="&#xC124;&#xC815;">&#xC124;&#xC815;</h1>
+<h2 id="aspnet-&#xCF54;&#xC5B4;-&#xBC0F;-typescript-&#xC124;&#xCE58;-install-aspnet-core-and-typescript">ASP.NET &#xCF54;&#xC5B4; &#xBC0F; TypeScript &#xC124;&#xCE58; (Install ASP.NET Core and TypeScript)</h2>
+<p>&#xBA3C;&#xC800; &#xD544;&#xC694;&#xD55C; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; ASP.NET Core&#xB97C; &#xC124;&#xCE58;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xD035; &#xC2A4;&#xD0C0;&#xD2B8; &#xAC00;&#xC774;&#xB4DC;&#xB97C; &#xC704;&#xD574;&#xC11C;&#xB294; VisualStudio2015 &#xB610;&#xB294; 2017&#xC774; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9; &#xC911;&#xC778; VisualStudio&#xC5D0; &#xCD5C;&#xC2E0; TypeScript&#xAC00; &#xC544;&#xC9C1; &#xC5C6;&#xB294; &#xACBD;&#xC6B0; &#xC774;&#xB97C; <a href="http://www.microsoft.com/en-us/download/details.aspx?id=48593" target="_blank">&#xC124;&#xCE58;</a>&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xC0C8;-&#xD504;&#xB85C;&#xC81D;&#xD2B8;-&#xB9CC;&#xB4E4;&#xAE30;-create-a-new-project">&#xC0C8; &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xB9CC;&#xB4E4;&#xAE30; (Create a new project)</h2>
 <ol>
-<li>Choose <strong>File</strong></li>
-<li>Choose <strong>New Project</strong> (Ctrl + Shift + N)</li>
-<li>Choose <strong>Visual C#</strong></li>
-<li><p>For VS2015, choose <strong>ASP.NET Web Application</strong> &gt; <strong>ASP.NET 5 Empty</strong>, and let&apos;s uncheck &quot;Host in the cloud&quot; since we&apos;re going to run this locally.</p>
+<li><strong>&#xD30C;&#xC77C;</strong> &#xC120;&#xD0DD;</li>
+<li><strong>&#xC0C8;&#xB85C;&#xC6B4; &#xD504;&#xB85C;&#xC81D;&#xD2B8;</strong> &#xC120;&#xD0DD; (Ctrl + Shift + N)</li>
+<li><strong>Visual C#</strong> &#xC120;&#xD0DD;</li>
+<li><p>VS2015&#xC758; &#xACBD;&#xC6B0; <strong>ASP.NET Web Application</strong> &gt; <strong>ASP.NET 5 Empty</strong>&#xB97C; &#xC120;&#xD0DD;&#xD558;&#xACE0; &#xB85C;&#xCEEC;&#xC5D0;&#xC11C; &#xC2E4;&#xD589;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &quot;Host in the cloud&quot; &#xC120;&#xD0DD;&#xC744; &#xCDE8;&#xC18C;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p> <img src="../../assets/images/tutorials/aspnet/new-asp-project-empty.png" alt="Use empty template"></p>
-<p> For VS2017, choose <strong>ASP.NET Core Web Application (.NET Core)</strong> &gt; <strong>ASP.NET Core 1.1 Empty</strong> instead.</p>
+<p> VS2017&#xC758; &#xACBD;&#xC6B0; <strong>ASP.NET Core Web Application (.NET Core)</strong> &#xB300;&#xC2E0; <strong>ASP.NET Core 1.1 Empty</strong> &#xB97C; &#xC120;&#xD0DD;&#xD558;&#xC138;&#xC694;.</p>
 <p> <img src="../../assets/images/tutorials/aspnet/new-asp-project-empty-17.PNG" alt="Use empty template VS2017"></p>
 </li>
 </ol>
-<p>Run the application and make sure that it works.</p>
-<h2 id="set-up-the-server">Set up the server</h2>
+<p>&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xACE0; &#xC791;&#xB3D9;&#xD558;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xC11C;&#xBC84;-&#xC124;&#xC815;-set-up-the-server">&#xC11C;&#xBC84; &#xC124;&#xC815; (Set up the server)</h2>
 <h3 id="vs2015">VS2015</h3>
-<p>In <code>project.json</code> add another entry in <code>&quot;dependencies&quot;</code>:</p>
+<p><code>project.json</code>&#xC5D0;&#xC11C; <code>&quot;dependencies&quot;</code>&#xC5D0; &#xB2E4;&#xC74C; &#xD56D;&#xBAA9;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4; :</p>
 <pre><code class="lang-json"><span class="hljs-string">&quot;Microsoft.AspNet.StaticFiles&quot;</span>: <span class="hljs-string">&quot;1.0.0-rc1-final&quot;</span>
 </code></pre>
-<p>The resulting dependencies should look like this:</p>
+<p>&#xC758;&#xC874;&#xC131;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC544;&#xC57C; &#xD569;&#xB2C8;&#xB2E4; :</p>
 <pre><code class="lang-json">  <span class="hljs-string">&quot;dependencies&quot;</span>: {
     <span class="hljs-string">&quot;Microsoft.AspNet.IISPlatformHandler&quot;</span>: <span class="hljs-string">&quot;1.0.0-rc1-final&quot;</span>,
     <span class="hljs-string">&quot;Microsoft.AspNet.Server.Kestrel&quot;</span>: <span class="hljs-string">&quot;1.0.0-rc1-final&quot;</span>,
     <span class="hljs-string">&quot;Microsoft.AspNet.StaticFiles&quot;</span>: <span class="hljs-string">&quot;1.0.0-rc1-final&quot;</span>
   },
 </code></pre>
-<p>Replace the body of <code>Configure</code> in <code>Startup.cs</code> with</p>
+<p><code>Startup.cs</code>&#xC5D0;&#xC11C; <code>Configure</code>&#xB97C; &#xB2E4;&#xC74C;&#xC73C;&#xB85C; &#xAD50;&#xCCB4;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-cs"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Configure</span>(<span class="hljs-params">IApplicationBuilder app</span>)
 </span>{
     app.UseIISPlatformHandler();
@@ -732,40 +732,37 @@
 }
 </code></pre>
 <h3 id="vs2017">VS2017</h3>
-<p>Open <strong>Dependencies</strong> &gt; <strong>Manage NuGet Packages</strong> &gt; <strong>Browse</strong>. Search and install <code>Microsoft.AspNetCore.StaticFiles</code> 1.1.2:</p>
+<p>Open <strong>Dependencies</strong> &gt; <strong>Manage NuGet Packages</strong> &gt; <strong>Browse</strong>. &#xAC80;&#xC0C9; &#xBC0F; &#xC124;&#xCE58;  <code>Microsoft.AspNetCore.StaticFiles</code> 1.1.2:</p>
 <p><img src="../../assets/images/tutorials/aspnet/install-nuget-packages.png" alt="Install Microsoft.AspNetCore.StaticFiles"></p>
-<p>Replace the body of <code>Configure</code> in <code>Startup.cs</code> with</p>
+<p><code>Startup.cs</code>&#xC5D0;&#xC11C; <code>Configure</code>&#xB97C; &#xB2E4;&#xC74C;&#xC73C;&#xB85C; &#xAD50;&#xCCB4;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-cs"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Configure</span>(<span class="hljs-params">IApplicationBuilder app</span>)
 </span>{
     app.UseDefaultFiles();
     app.UseStaticFiles();
 }
 </code></pre>
-<p>You may need to restart VS for the red squiggly lines below <code>UseDefaultFiles</code> and <code>UseStaticFiles</code> to disappear.</p>
-<h1 id="add-typescript">Add TypeScript</h1>
-<p>The next step is to add a folder for TypeScript.</p>
+<p><code>UseDefaultFiles</code>&#xC640; <code>UseStaticFiles</code> &#xC544;&#xB798;&#xC758; &#xBE68;&#xAC04;&#xC120;&#xC774; &#xC0AC;&#xB77C;&#xC9C0;&#xB824;&#xBA74; VS&#xB97C; &#xB2E4;&#xC2DC; &#xC2DC;&#xC791;&#xD574;&#xC57C; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xD0C0;&#xC785;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;-&#xCD94;&#xAC00;-add-typescript">&#xD0C0;&#xC785;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xCD94;&#xAC00; (Add TypeScript)</h1>
+<p>&#xB2E4;&#xC74C; &#xB2E8;&#xACC4;&#xB294; TypeScript&#xB97C; &#xC704;&#xD55C; &#xD3F4;&#xB354;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <p><img src="../../assets/images/tutorials/aspnet/new-folder.png" alt="Create new folder"></p>
-<p>We&apos;ll just call it <code>scripts</code>.</p>
+<p>&#xADF8;&#xB0E5; <code>scripts</code>&#xB77C;&#xACE0; &#xBD80;&#xB974;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p><img src="../../assets/images/tutorials/aspnet/scripts-folder.png" alt="scripts folder"></p>
-<h2 id="add-typescript-code">Add TypeScript code</h2>
-<p>Right click on <code>scripts</code> and click <strong>New Item</strong>.
-Then choose <strong>TypeScript File</strong> (it may be in the .NET Core section) and name the file <code>app.ts</code>.</p>
+<h2 id="&#xD0C0;&#xC785;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;-&#xCF54;&#xB4DC;-&#xCD94;&#xAC00;-add-typescript-code">&#xD0C0;&#xC785;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xCF54;&#xB4DC; &#xCD94;&#xAC00; (Add TypeScript code)</h2>
+<p><code>scripts</code>&#xB97C; &#xB9C8;&#xC6B0;&#xC2A4; &#xC624;&#xB978;&#xCABD; &#xBC84;&#xD2BC;&#xC73C;&#xB85C; &#xD074;&#xB9AD;&#xD558;&#xACE0; <strong>New Item</strong>&#xC744; &#xD074;&#xB9AD;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB7F0; &#xB2E4;&#xC74C; <strong>TypeScript File</strong> (.NET Core &#xC139;&#xC158;&#xC5D0; &#xC788;&#xC744; &#xC218;&#xB3C4; &#xC788;&#xC74C;)&#xC744; &#xC120;&#xD0DD;&#xD558;&#xACE0; <code>app.ts</code>&#xC758; &#xC774;&#xB984;&#xC744; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p><img src="../../assets/images/tutorials/aspnet/new-item.png" alt="New item"></p>
-<h2 id="add-example-code">Add example code</h2>
-<p>Type the following code into app.ts.</p>
+<h2 id="&#xC608;&#xC81C;-&#xCF54;&#xB4DC;-&#xCD94;&#xAC00;-add-example-code">&#xC608;&#xC81C; &#xCF54;&#xB4DC; &#xCD94;&#xAC00; (Add example code)</h2>
+<p>app.ts&#xC5D0; &#xB2E4;&#xC74C; &#xCF54;&#xB4DC;&#xB97C; &#xC785;&#xB825;&#xD558;&#xC2ED;&#xC2DC;&#xC624;</p>
 <pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">const</span> compiler = (<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;compiler&quot;</span>) as HTMLInputElement).value;
     <span class="hljs-keyword">const</span> framework = (<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;framework&quot;</span>) as HTMLInputElement).value;
     <span class="hljs-keyword">return</span> <span class="hljs-string">`Hello from <span class="hljs-subst">${compiler}</span> and <span class="hljs-subst">${framework}</span>!`</span>;
 }
 </code></pre>
-<h2 id="set-up-the-build">Set up the build</h2>
-<h3 id="configure-the-typescript-compiler">Configure the TypeScript compiler</h3>
-<p>First we need to tell TypeScript how to build.
-Right click on the scripts folder and click <strong>New Item</strong>.
-Then choose <strong>TypeScript Configuration File</strong> and use the default name <code>tsconfig.json</code>.</p>
+<h2 id="&#xBE4C;&#xB4DC;-&#xC124;&#xC815;-set-up-the-build">&#xBE4C;&#xB4DC; &#xC124;&#xC815; (Set up the build)</h2>
+<h3 id="typescript-&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;-&#xC124;&#xC815;-configure-the-typescript-compiler">TypeScript &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC124;&#xC815; (Configure the TypeScript compiler)</h3>
+<p>&#xBA3C;&#xC800; TypeScript&#xC5D0; &#xBE4C;&#xB4DC; &#xBC29;&#xBC95;&#xC744; &#xC54C;&#xB824;&#xC918;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>scripts &#xD3F4;&#xB354;&#xB97C; &#xB9C8;&#xC6B0;&#xC2A4; &#xC624;&#xB978;&#xCABD; &#xBC84;&#xD2BC;&#xC73C;&#xB85C; &#xD074;&#xB9AD;&#xD558;&#xACE0; <strong>New Item</strong>&#xC744; &#xD074;&#xB9AD;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB7F0; &#xB2E4;&#xC74C; <strong>TypeScript ConfigurationFile</strong>&#xC744; &#xC120;&#xD0DD;&#xD558;&#xACE0; &#xAE30;&#xBCF8; &#xC774;&#xB984;&#xC778; <code>tsconfig.json</code>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.</p>
 <p><img src="../../assets/images/tutorials/aspnet/new-tsconfig.png" alt="Create tsconfig.json"></p>
-<p>Replace the default <code>tsconfig.json</code> with the following:</p>
+<p>&#xAE30;&#xBCF8; <code>tsconfig.json</code>&#xB97C; &#xB2E4;&#xC74C;&#xC73C;&#xB85C; &#xB300;&#xCCB4;&#xD558;&#xC138;&#xC694;:</p>
 <pre><code class="lang-json">{
   <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
       <span class="hljs-string">&quot;noImplicitAny&quot;</span>: <span class="hljs-literal">true</span>,
@@ -779,33 +776,29 @@ Then choose <strong>TypeScript Configuration File</strong> and use the default n
   <span class="hljs-string">&quot;compileOnSave&quot;</span>: <span class="hljs-literal">true</span>
 }
 </code></pre>
-<p>This is similar to the default, with the following differences:</p>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xCC28;&#xC774;&#xC810;&#xC744; &#xC81C;&#xC678;&#xD558;&#xACE0; &#xAE30;&#xBCF8;&#xAC12;&#xACFC; &#xC720;&#xC0AC;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <ol>
-<li>It sets <code>&quot;noImplicitAny&quot;: true</code>.</li>
-<li>It explicitly lists <code>&quot;files&quot;</code> instead of relying on <code>&quot;excludes&quot;</code>.</li>
-<li>It sets <code>&quot;compileOnSave&quot;: true</code>.</li>
+<li><code>&quot;noImplicitAny&quot;: true</code> &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li><code>&quot;excludes&quot;</code>&#xC5D0; &#xC758;&#xC874;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; <code>&quot;files&quot;</code> &#xB9AC;&#xC2A4;&#xD2B8;&#xB97C; &#xB098;&#xC5F4;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li><code>&quot;compileOnSave&quot;: true</code> &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</li>
 </ol>
-<p><code>&quot;noImplicitAny&quot;</code> is good idea whenever you&apos;re writing new code &#x2014; you can make sure that you don&apos;t write any untyped code by mistake.
-<code>&quot;compileOnSave&quot;</code> makes it easy to update your code in a running web app.</p>
-<h3 id="set-up-npm">Set up NPM</h3>
-<p>Now we need to set up NPM so we can download JavaScript packages.
-Right click on the project and click <strong>New Item</strong>.
-Then choose <strong>NPM Configuration File</strong> and use the default name <code>package.json</code>.
-Inside <code>&quot;devDependencies&quot;</code> add &quot;gulp&quot; and &quot;del&quot;:</p>
+<p>&#xC0C8;&#xB85C;&#xC6B4; &#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD560; &#xB54C;&#xB9C8;&#xB2E4; <code>&quot;nomaplicitany&quot;</code>&#xAC00; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4; - &#x2014; &#xC2E4;&#xC218;&#xB85C; &#xD0C0;&#xC785;&#xC774; &#xC9C0;&#xC815;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xCF54;&#xB4DC;&#xB97C; &#xC4F0;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br><code>&quot;compileOnSave&quot;</code>&#xB294; &#xC2E4;&#xD589; &#xC911;&#xC778; &#xC6F9; &#xC571;&#xC5D0;&#xC11C; &#xCF54;&#xB4DC;&#xB97C; &#xC190;&#xC27D;&#xAC8C; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD574; &#xC900;&#xB2E4;.</p>
+<h3 id="npm-&#xC124;&#xC815;-set-up-npm">NPM &#xC124;&#xC815; (Set up NPM)</h3>
+<p>&#xC774;&#xC81C; JavaScript &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; NPM&#xC744; &#xC124;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xB9C8;&#xC6B0;&#xC2A4; &#xC624;&#xB978;&#xCABD; &#xBC84;&#xD2BC;&#xC73C;&#xB85C; &#xB204;&#xB974;&#xACE0; <strong>New Item</strong>&#xC744; &#xD074;&#xB9AD;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.<br>&#xADF8;&#xB7F0; &#xB2E4;&#xC74C; <strong>NPM Configuration File</strong>&#xC744; &#xC120;&#xD0DD;&#xD558;&#xACE0; &#xAE30;&#xBCF8; &#xC774;&#xB984; <code>package.json</code>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.  </p>
+<p><code>devDependencies &apos;</code>&#xC548;&#xC5D0; &quot;gulp&quot;&#xC640; &quot;del&quot;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
 <pre><code class="lang-json"><span class="hljs-string">&quot;devDependencies&quot;</span>: {
     <span class="hljs-string">&quot;gulp&quot;</span>: <span class="hljs-string">&quot;3.9.0&quot;</span>,
     <span class="hljs-string">&quot;del&quot;</span>: <span class="hljs-string">&quot;2.2.0&quot;</span>
 }
 </code></pre>
-<p>Visual Studio should start installing gulp and del as soon as you save the file.
-If not, right-click package.json and then <strong>Restore Packages</strong>.</p>
-<h3 id="set-up-gulp">Set up gulp</h3>
-<p>Finally, add a new JavaScript file named <code>gulpfile.js</code>.
-Put the following code inside:</p>
+<p>Visual Studio&#xB294; &#xD30C;&#xC77C;&#xC744; &#xC800;&#xC7A5;&#xD558;&#xB294; &#xC989;&#xC2DC; gulp &#xBC0F; del &#xC124;&#xCE58;&#xB97C; &#xC2DC;&#xC791;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xC740; &#xACBD;&#xC6B0; &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xB9C8;&#xC6B0;&#xC2A4; &#xC624;&#xB978;&#xCABD; &#xBC84;&#xD2BC;&#xC73C;&#xB85C; &#xB204;&#xB974;&#xACE0; <strong>Restore Packages</strong>&#xB97C; &#xD558;&#xC2ED;&#xC2DC;&#xC624;.</p>
+<h3 id="gulp-&#xC124;&#xC815;-set-up-gulp">gulp &#xC124;&#xC815; (Set up gulp)</h3>
+<p>&#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; <code>gulpfile.js</code>&#xB77C;&#xB294; &#xC0C8;&#xB85C;&#xC6B4; JavaScript&#xD30C;&#xC77C;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.</p>
+<p>&#xB2E4;&#xC74C; &#xCF54;&#xB4DC;&#xB97C; &#xC785;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-js"><span class="hljs-comment">/// &lt;binding AfterBuild=&apos;default&apos; Clean=&apos;clean&apos; /&gt;</span>
 <span class="hljs-comment">/*
-This file is the main entry point for defining Gulp tasks and using Gulp plugins.
-Click here to learn more. http://go.microsoft.com/fwlink/?LinkId=518007
+&#xC774; &#xD30C;&#xC77C;&#xC740; Gulp&#xC758; &#xC791;&#xC5C5;&#xC744; &#xC815;&#xC758;&#xD558;&#xACE0; &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC704;&#xD55C; entry point&#xC785;&#xB2C8;&#xB2E4;.
+&#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC744; &#xBCF4;&#xB824;&#xBA74; &#xC5EC;&#xAE30;&#xB97C; &#xD074;&#xB9AD;&#xD558;&#xC2ED;&#xC2DC;&#xC624;. http://go.microsoft.com/fwlink/?LinkId=518007
 */</span>
 
 <span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp&apos;</span>);
@@ -823,14 +816,12 @@ gulp.task(<span class="hljs-string">&apos;default&apos;</span>, <span class="hlj
     gulp.src(paths.scripts).pipe(gulp.dest(<span class="hljs-string">&apos;wwwroot/scripts&apos;</span>))
 });
 </code></pre>
-<p>The first line tells Visual Studio to run the task &apos;default&apos; after the build finishes.
-It will also run the &apos;clean&apos; task when you ask Visual Studio to clean the build.</p>
-<p>Now right-click on <code>gulpfile.js</code> and click <strong>Task Runner Explorer</strong>.
-If &apos;default&apos; and &apos;clean&apos; tasks don&apos;t show up, refresh the explorer:</p>
+<p>&#xCCAB; &#xBC88;&#xC9F8; &#xC904;&#xC740; Visual Studio&#xC5D0;&#xAC8C; &#xBE4C;&#xB4DC;&#xAC00; &#xB05D;&#xB09C; &#xD6C4;&#xC5D0; &#xC791;&#xC5C5;&#xC744; &apos;default&apos;&#xB85C; &#xC2E4;&#xD589;&#xD558;&#xB3C4;&#xB85D; &#xC9C0;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB610;&#xD55C; Visual Studio&#xC5D0; &#xBE4C;&#xB4DC;&#xB97C; &#xC815;&#xB9AC;&#xD558;&#xB3C4;&#xB85D; &#xC694;&#xCCAD;&#xD558;&#xBA74; &apos;clean&apos;&#xC791;&#xC5C5;&#xB3C4; &#xC2E4;&#xD589;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774;&#xC81C; <code>gulpfile.js</code>&#xB97C; &#xB9C8;&#xC6B0;&#xC2A4; &#xC624;&#xB978;&#xCABD; &#xBC84;&#xD2BC;&#xC73C;&#xB85C; &#xD074;&#xB9AD;&#xD558;&#xACE0; <strong>Task Runner Explorer</strong>&#xB97C; &#xD074;&#xB9AD;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.<br>&apos;default&apos; &#xBC0F; &apos;clean&apos;&#xC791;&#xC5C5;&#xC774; &#xD45C;&#xC2DC;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xD0D0;&#xC0C9;&#xAE30;&#xB97C; &#xC0C8;&#xB85C;&#xACE0;&#xCE68; &#xD569;&#xB2C8;&#xB2E4; :</p>
 <p><img src="../../assets/images/tutorials/aspnet/task-runner-explorer.png" alt="Refresh Task Runner Explorer"></p>
-<h2 id="write-an-html-page">Write an HTML page</h2>
-<p>Add a New Item named <code>index.html</code> inside <code>wwwroot</code>.
-Use the following code for <code>index.html</code>:</p>
+<h2 id="html-&#xD398;&#xC774;&#xC9C0;-&#xC791;&#xC131;-write-an-html-page">HTML &#xD398;&#xC774;&#xC9C0; &#xC791;&#xC131; (Write an HTML page)</h2>
+<p><code>wwwroot</code> &#xC548;&#xC5D0; <code>index.html</code>&#xC774;&#xB77C;&#xB294; &#xC0C8; &#xD56D;&#xBAA9;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C; &#xCF54;&#xB4DC;&#xB97C; <code>index.html</code>&#xC5D0; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4; :</p>
 <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
@@ -847,26 +838,25 @@ Use the following code for <code>index.html</code>:</p>
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
-<h2 id="test">Test</h2>
+<h2 id="&#xD14C;&#xC2A4;&#xD2B8;-test">&#xD14C;&#xC2A4;&#xD2B8; (Test)</h2>
 <ol>
-<li>Run the project.</li>
-<li>You should see a message when you type in the input boxes:</li>
+<li>&#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.</li>
+<li>&#xC785;&#xB825; &#xC0C1;&#xC790;&#xC5D0; &#xC785;&#xB825;&#xD560; &#xB54C; &#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xD45C;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4; :</li>
 </ol>
 <p><img src="../../assets/images/tutorials/aspnet/running-demo.png" alt="Picture of running demo"></p>
-<h2 id="debug">Debug</h2>
+<h2 id="&#xB514;&#xBC84;&#xADF8;-debug">&#xB514;&#xBC84;&#xADF8; (Debug)</h2>
 <ol>
-<li>In Edge, press F12 and click the <strong>Debugger</strong> tab.</li>
-<li>Look in the first localhost folder, then scripts/app.ts</li>
-<li>Put a breakpoint on the line with <code>return</code>.</li>
-<li>Type in the boxes and confirm that the breakpoint hits in TypeScript code and that inspection works correctly.</li>
+<li>Edge&#xC5D0;&#xC11C; F12 &#xD0A4;&#xB97C; &#xB204;&#xB974;&#xACE0; <strong>Debugger</strong> &#xD0ED;&#xC744; &#xD074;&#xB9AD;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.</li>
+<li>&#xCCAB; &#xBC88;&#xC9F8; localhost &#xD3F4;&#xB354;&#xB97C; &#xCC3E;&#xC740; &#xB2E4;&#xC74C; scripts/app.ts&#xB97C; &#xCC3E;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li><code>return</code> &#xB77C;&#xC778;&#xC774; &#xC788;&#xB294; &#xB77C;&#xC778;&#xC5D0; breakpoint&#xB97C; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;</li>
+<li>Type &#xC0C1;&#xC790;&#xC5D0; &#xB0B4;&#xC6A9;&#xC744; &#xC785;&#xB825;&#xD558;&#xACE0; breakpoint&#xAC00; TypeScript &#xCF54;&#xB4DC;&#xC5D0; &#xB4E4;&#xC5B4;&#xAC00;&#xACE0; &#xAC80;&#xC0AC;&#xAC00; &#xC62C;&#xBC14;&#xB974;&#xAC8C; &#xC791;&#xB3D9;&#xD558;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD569;&#xB2C8;&#xB2E4;.</li>
 </ol>
 <p><img src="../../assets/images/tutorials/aspnet/paused-demo.png" alt="Demo paused on breakpoint"></p>
-<p>That&apos;s all you need to know to include basic TypeScript in your ASP.NET project.
-Next we&apos;ll include Angular and write a simple Angular app.</p>
-<h1 id="add-angular-2">Add Angular 2</h1>
-<h2 id="add-npm-dependencies">Add NPM dependencies</h2>
-<p>Add Angular 2 and SystemJS to <code>dependencies</code> in <code>package.json</code>.</p>
-<p>For VS2015, the new <code>dependencies</code> list:</p>
+<p>ASP.NET &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0; &#xAE30;&#xBCF8;&#xC801;&#xC778; TypeScript&#xB97C; &#xD3EC;&#xD568;&#xC2DC;&#xD0A4;&#xAE30; &#xC704;&#xD574; &#xC54C;&#xC544;&#xC57C; &#xD560; &#xAC83;&#xC740; &#xC774;&#xAC83;&#xBFD0;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xC74C;&#xC73C;&#xB85C; &#xAC04;&#xB2E8;&#xD55C; Angular &#xC571;&#xC744; &#xC791;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xC575;&#xADE4;&#xB7EC;-2-&#xCD94;&#xAC00;-add-angular-2">&#xC575;&#xADE4;&#xB7EC; 2 &#xCD94;&#xAC00; (Add Angular 2)</h1>
+<h2 id="npm-&#xC758;&#xC874;&#xC131;-&#xCD94;&#xAC00;-add-npm-dependencies">NPM &#xC758;&#xC874;&#xC131; &#xCD94;&#xAC00; (Add NPM dependencies)</h2>
+<p><code>package.json</code>&#xC758; <code>dependencies</code>&#xC5D0; Angular 2&#xC640; SystemJS&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.</p>
+<p>VS2015&#xC758; &#xACBD;&#xC6B0;&#xB294; &#xC0C8;&#xB85C;&#xC6B4; <code>dependencies</code> &#xB9AC;&#xC2A4;&#xD2B8; :</p>
 <pre><code class="lang-json">  <span class="hljs-string">&quot;dependencies&quot;</span>: {
     <span class="hljs-string">&quot;angular2&quot;</span>: <span class="hljs-string">&quot;2.0.0-beta.11&quot;</span>,
     <span class="hljs-string">&quot;systemjs&quot;</span>: <span class="hljs-string">&quot;0.19.24&quot;</span>,
@@ -874,7 +864,7 @@ Next we&apos;ll include Angular and write a simple Angular app.</p>
     <span class="hljs-string">&quot;del&quot;</span>: <span class="hljs-string">&quot;2.2.0&quot;</span>
   },
 </code></pre>
-<p>For VS2017, due to the deprecation of peer dependencies in NPM3, we need to list Angular 2&apos;s peer dependencies directly as dependencies as well:</p>
+<p>VS2017&#xC758; &#xACBD;&#xC6B0; NPM3&#xC5D0;&#xC11C; peer &#xC758;&#xC874;&#xC131;&#xC774; &#xC0AC;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBBC0;&#xB85C; Angular 2&#xC758; peer &#xC758;&#xC874;&#xC131;&#xC744; &#xC758;&#xC874;&#xC131;&#xC73C;&#xB85C; &#xC9C1;&#xC811; &#xB098;&#xC5F4;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4; :</p>
 <pre><code class="lang-json">  <span class="hljs-string">&quot;dependencies&quot;</span>: {
     <span class="hljs-string">&quot;angular2&quot;</span>: <span class="hljs-string">&quot;2.0.0-beta.11&quot;</span>,
     <span class="hljs-string">&quot;reflect-metadata&quot;</span>: <span class="hljs-string">&quot;0.1.2&quot;</span>,
@@ -885,14 +875,10 @@ Next we&apos;ll include Angular and write a simple Angular app.</p>
     <span class="hljs-string">&quot;del&quot;</span>: <span class="hljs-string">&quot;2.2.0&quot;</span>
   },
 </code></pre>
-<h2 id="update-tsconfigjson">Update tsconfig.json</h2>
-<p>Now that Angular 2 and its dependencies are installed, we need to enable TypeScript&apos;s experimental support for decorators.
-We also need to add declarations for ES2015, since Angular uses core-js for things like <code>Promise</code>.
-In the future decorators will be the default and these settings will not be needed.</p>
-<p>Add <code>&quot;experimentalDecorators&quot;: true, &quot;emitDecoratorMetadata&quot;: true</code> to the <code>&quot;compilerOptions&quot;</code> section.
-Next, add <code>&quot;lib&quot;: [&quot;es2015&quot;, &quot;es5&quot;, &quot;dom&quot;]</code> to <code>&quot;compilerOptions&quot;</code> as well to bring in declarations from ES2015.
-Finally, we&apos;ll need to add a new entry in <code>&quot;files&quot;</code> for another file, <code>&quot;./model.ts&quot;</code>, which we&apos;ll create.
-Our tsconfig should now look like this:</p>
+<h2 id="tsconfigjson-&#xC5C5;&#xB370;&#xC774;&#xD2B8;-update-tsconfigjson">tsconfig.json &#xC5C5;&#xB370;&#xC774;&#xD2B8; (Update tsconfig.json)</h2>
+<p>&#xC774;&#xC81C; Angular 2&#xC640; &#xADF8; &#xC758;&#xC874;&#xC131;&#xC774; &#xC124;&#xCE58;&#xB418;&#xC5C8;&#xC73C;&#xBBC0;&#xB85C; TypeScript&#xC758; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xC5D0; &#xB300;&#xD55C; &#xC2E4;&#xD5D8;&#xC801; &#xC9C0;&#xC6D0;&#xC774; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB610;&#xD55C; <code>Promise</code>&#xACFC; &#xAC19;&#xC740; &#xAC83;&#xB4E4;&#xC5D0;&#xB294; Angular&#xAC00; core-js&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; ES2015&#xC5D0; &#xC120;&#xC5B8;&#xC744; &#xCD94;&#xAC00;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xD5A5;&#xD6C4;&#xC5D0;&#xB294; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xAC00; &#xAE30;&#xBCF8;&#xC774; &#xB420; &#xAC83;&#xC774;&#xBBC0;&#xB85C; &#xC774;&#xB7EC;&#xD55C; &#xC124;&#xC815;&#xC740; &#xD544;&#xC694;&#xD558;&#xC9C0; &#xC54A;&#xC744; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p><code>&quot;experimentalDecorators&quot;: true, &quot;emitDecoratorMetadata&quot;: true</code>&#xB97C; <code>&quot;compilerOptions&quot;</code>&#xC5D0; &#xCD94;&#xAC00;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.<br>&#xADF8;&#xB7F0; &#xB2E4;&#xC74C; ES2015&#xC5D0;&#xC11C; &#xC120;&#xC5B8;&#xC744; &#xAC00;&#xC838;&#xC624;&#xB824;&#xBA74; <code>&quot;lib&quot;: [&quot;es2015&quot;, &quot;es5&quot;, &quot;dom&quot;]</code>&#xC744; <code>&quot;compilerOptions&quot;</code> &#xC5D0; &#xCD94;&#xAC00;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.  </p>
+<p>&#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; &#xB9CC;&#xB4E4; <code>&quot;./model.ts&quot;</code>&#xB97C; <code>&quot;files&quot;</code>&#xC5D0; &#xC0C8; &#xD56D;&#xBAA9;&#xC744; &#xCD94;&#xAC00;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>tsconfig&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xBCF4;&#xC77C; &#xAC83;&#xC785;&#xB2C8;&#xB2E4; :</p>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
         <span class="hljs-string">&quot;noImplicitAny&quot;</span>: <span class="hljs-literal">true</span>,
@@ -913,19 +899,19 @@ Our tsconfig should now look like this:</p>
     <span class="hljs-string">&quot;compileOnSave&quot;</span>: <span class="hljs-literal">true</span>
 }
 </code></pre>
-<h2 id="add-angular-to-the-gulp-build">Add Angular to the gulp build</h2>
-<p>Finally, we need to make sure that the Angular files are copied as part of the build.
-We need to add:</p>
+<h2 id="gulp-&#xBE4C;&#xB4DC;&#xC5D0;-angular-&#xCD94;&#xAC00;-add-angular-to-the-gulp-build">gulp &#xBE4C;&#xB4DC;&#xC5D0; Angular &#xCD94;&#xAC00; (Add Angular to the gulp build)</h2>
+<p>&#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; Angular &#xD30C;&#xC77C;&#xC744; &#xBE4C;&#xB4DC;&#xC758; &#xC77C;&#xBD80;&#xB85C; &#xBCF5;&#xC0AC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.
+&#xCD94;&#xAC00;&#xD560; &#xC0AC;&#xD56D;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <ol>
-<li>The paths to the library files.</li>
-<li>Add a <code>lib</code> task to pipe the files to <code>wwwroot</code>.</li>
-<li>Add a dependendency on <code>lib</code> to the <code>default</code> task.</li>
+<li>&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xD30C;&#xC77C;&#xC5D0; &#xB300;&#xD55C; &#xACBD;&#xB85C;.</li>
+<li><code>lib</code> &#xD0DC;&#xC2A4;&#xD06C;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xD30C;&#xC77C;&#xC744; <code>wwwroot</code>&#xC5D0; &#xC5F0;&#xACB0;(pipe) &#xD569;&#xB2C8;&#xB2E4;.</li>
+<li><code>default</code> &#xD0DC;&#xC2A4;&#xD06C;&#xC5D0; <code>lib</code>&#xC5D0; &#xB300;&#xD55C; &#xC758;&#xC874;&#xC131;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.</li>
 </ol>
-<p>The updated <code>gulpfile.js</code> should look like this:</p>
+<p>&#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xB41C; <code>gulpfile.js</code>&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD45C;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4; :</p>
 <pre><code class="lang-xml">/// <span class="hljs-tag">&lt;<span class="hljs-name">binding</span> <span class="hljs-attr">AfterBuild</span>=<span class="hljs-string">&apos;default&apos;</span> <span class="hljs-attr">Clean</span>=<span class="hljs-string">&apos;clean&apos;</span> /&gt;</span>
 /*
-This file is the main entry point for defining Gulp tasks and using Gulp plugins.
-Click here to learn more. http://go.microsoft.com/fwlink/?LinkId=518007
+&#xC774; &#xD30C;&#xC77C;&#xC740; Gulp&#xC758; &#xC791;&#xC5C5;&#xC744; &#xC815;&#xC758;&#xD558;&#xACE0; &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC704;&#xD55C; entry point&#xC785;&#xB2C8;&#xB2E4;.
+&#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC744; &#xBCF4;&#xB824;&#xBA74; &#xC5EC;&#xAE30;&#xB97C; &#xD074;&#xB9AD;&#xD558;&#xC2ED;&#xC2DC;&#xC624;. http://go.microsoft.com/fwlink/?LinkId=518007
 */
 
 var gulp = require(&apos;gulp&apos;);
@@ -951,9 +937,9 @@ gulp.task(&apos;default&apos;, [&apos;lib&apos;], function () {
     gulp.src(paths.scripts).pipe(gulp.dest(&apos;wwwroot/scripts&apos;));
 });
 </code></pre>
-<p>Again, make sure that Task Runner Explorer sees the new <code>lib</code> task after you save the gulpfile.</p>
-<h2 id="write-a-simple-angular-app-in-typescript">Write a simple Angular app in TypeScript</h2>
-<p>First, change the code in <code>app.ts</code> to:</p>
+<p>&#xB2E4;&#xC2DC; &#xD55C;&#xBC88; gulpfile&#xC744; &#xC800;&#xC7A5;&#xD55C; &#xD6C4;&#xC5D0;&#xB294; Task Runner Explorer&#xAC00; &#xC0C8;&#xB85C;&#xC6B4; <code>lib</code> &#xC791;&#xC5C5;&#xC744; &#xBCF4;&#xAC8C;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="typescript&#xC5D0;-&#xAC04;&#xB2E8;&#xD55C;-angular-&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;-&#xC791;&#xC131;-write-a-simple-angular-app-in-typescript">TypeScript&#xC5D0; &#xAC04;&#xB2E8;&#xD55C; Angular &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC791;&#xC131; (Write a simple Angular app in TypeScript)</h2>
+<p>&#xBA3C;&#xC800; <code>app.ts</code>&#xC758; &#xCF54;&#xB4DC;&#xB97C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xBCC0;&#xACBD;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">import</span> {Component} from <span class="hljs-string">&quot;angular2/core&quot;</span>
 <span class="hljs-keyword">import</span> {MyModel} from <span class="hljs-string">&quot;./model&quot;</span>
 
@@ -968,17 +954,17 @@ gulp.task(&apos;default&apos;, [&apos;lib&apos;], function () {
     }
 }
 </code></pre>
-<p>Then add another TypeScript file in <code>scripts</code> named <code>model.ts</code>:</p>
+<p>&#xADF8;&#xB7F0; &#xB2E4;&#xC74C; <code>Model.ts</code>&#xB77C;&#xB294; &#xC774;&#xB984;&#xC758; <code>scripts</code>&#xC5D0; &#xB2E4;&#xB978; TypeScript &#xD30C;&#xC77C;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> MyModel {
     compiler = <span class="hljs-string">&quot;TypeScript&quot;</span>;
 }
 </code></pre>
-<p>And then another TypeScript file in <code>scripts</code> named <code>main.ts</code>:</p>
+<p>&#xADF8;&#xB9AC;&#xACE0; <code>scripts</code>&#xC5D0; <code>main.ts</code>&#xB77C;&#xB294; &#xB610; &#xB2E4;&#xB978; TypeScript &#xD30C;&#xC77C;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; :</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">import</span> {bootstrap} from <span class="hljs-string">&quot;angular2/platform/browser&quot;</span>;
 <span class="hljs-keyword">import</span> {MyApp} from <span class="hljs-string">&quot;./app&quot;</span>;
 bootstrap(MyApp);
 </code></pre>
-<p>Finally, change the code in <code>index.html</code> to the following:</p>
+<p>&#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; <code>index.html</code>&#xC758; &#xCF54;&#xB4DC;&#xB97C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xBCC0;&#xACBD;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
 <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
@@ -1005,8 +991,7 @@ bootstrap(MyApp);
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
-<p>This loads the app.
-When you run the ASP.NET application you should see a div that says &quot;Loading...&quot; and then updates to say &quot;Hello from TypeScript&quot;.</p>
+<p>&#xADF8;&#xB7EC;&#xBA74; &#xC571;&#xC774; &#xB85C;&#xB4DC;&#xB429;&#xB2C8;&#xB2E4;.<br>ASP.NET &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xBA74; &quot;loading...&quot; &#xC774;&#xB77C;&#xACE0; &#xD45C;&#xC2DC;&#xB41C; &#xB2E4;&#xC74C; &quot;Hello from TypeScript&quot; div&#xAC00; &#xD45C;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.</p>
 
                                 
                                 </section>
@@ -1039,7 +1024,7 @@ When you run the ASP.NET application you should see a div that says &quot;Loadin
                 </a>
                 
                 
-                <a href="Gulp.html" class="navigation navigation-next " aria-label="Next page: Gulp">
+                <a href="Gulp.html" class="navigation navigation-next " aria-label="Next page: 걸프">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1050,7 +1035,7 @@ When you run the ASP.NET application you should see a div that says &quot;Loadin
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ASP.NET Core","level":"2.2","depth":1,"next":{"title":"Gulp","level":"2.3","depth":1,"path":"pages/tutorials/Gulp.md","ref":"pages/tutorials/Gulp.md","articles":[]},"previous":{"title":"5분 안에 보는 TypeScript","level":"2.1","depth":1,"path":"pages/tutorials/TypeScript in 5 minutes.md","ref":"pages/tutorials/TypeScript in 5 minutes.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tutorials/ASP.NET Core.md","mtime":"2018-02-06T13:12:52.675Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-11T15:23:17.407Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ASP.NET Core","level":"2.2","depth":1,"next":{"title":"걸프","level":"2.3","depth":1,"path":"pages/tutorials/Gulp.md","ref":"pages/tutorials/Gulp.md","articles":[]},"previous":{"title":"5분 안에 보는 TypeScript","level":"2.1","depth":1,"path":"pages/tutorials/TypeScript in 5 minutes.md","ref":"pages/tutorials/TypeScript in 5 minutes.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tutorials/ASP.NET Core.md","mtime":"2018-02-13T02:01:31.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T02:09:33.148Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
