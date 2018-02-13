@@ -1,25 +1,25 @@
-# Introduction
+# 소개
 
-Starting with ECMAScript 2015, `symbol` is a primitive data type, just like `number` and `string`.
+ECMAScript 2015에서 시작된, `symbol`은 `number`와 `string`같은 primitive 데이터 유형입니다.
 
-`symbol` values are created by calling the `Symbol` constructor.
+`symbol` 값은`Symbol` 생성자를 호출하여 생성됩니다.
 
 ```ts
 let sym1 = Symbol();
 
-let sym2 = Symbol("key"); // optional string key
+let sym2 = Symbol("key"); // 선택적 문자열 키
 ```
 
-Symbols are immutable, and unique.
+Symbol은 불변이고, 독특합니다.
 
 ```ts
 let sym2 = Symbol("key");
 let sym3 = Symbol("key");
 
-sym2 === sym3; // false, symbols are unique
+sym2 === sym3; // false, symbols은 고유합니다.
 ```
 
-Just like strings, symbols can be used as keys for object properties.
+문자열과 마찬가지로 심볼을 객체 속성의 키로 사용할 수 있습니다.
 
 ```ts
 let sym = Symbol();
@@ -30,8 +30,7 @@ let obj = {
 
 console.log(obj[sym]); // "value"
 ```
-
-Symbols can also be combined with computed property declarations to declare object properties and class members.
+Symbol을 계산된 프로퍼티 선언과 결합하여 객체 프로퍼티와 클래스 멤버를 선언할 수도 있습니다.
 
 ```ts
 const getClassNameSymbol = Symbol();
@@ -46,56 +45,56 @@ let c = new C();
 let className = c[getClassNameSymbol](); // "C"
 ```
 
-# Well-known Symbols
+# 잘 알려진 Symbol
 
-In addition to user-defined symbols, there are well-known built-in symbols.
-Built-in symbols are used to represent internal language behaviors.
+사용자 정의 Symbol 외에도 잘 알려진 내장 Symbol이 있습니다.
+내장 symbol은 내부 언어 동작을 나타내는 데 사용됩니다.
 
-Here is a list of well-known symbols:
+다음은 잘 알려진 Symbol 목록입니다.
 
 ## `Symbol.hasInstance`
 
-A method that determines if a constructor object recognizes an object as one of the constructor’s instances. Called by the semantics of the instanceof operator.
+constructor 객체가 constructor의 인스턴스 중 하나로서 객체를 인식하는지 여부를 결정하는 메서드입니다.`instanceof` 연산자의 의미로 호출됩니다.
 
 ## `Symbol.isConcatSpreadable`
 
-A Boolean value indicating that an object should be flatten to its array elements by Array.prototype.concat.
+객체가 `Array.prototype.concat`에 의해 배열 요소로 병합되어야 함을 나타내는 boolean 값입니다.
 
 ## `Symbol.iterator`
 
-A method that returns the default iterator for an object. Called by the semantics of the for-of statement.
+객체의 기본 반복자를 반환하는 메서드입니다. for-of 구문의 의미에 의해 호출됩니다.
 
 ## `Symbol.match`
 
-A regular expression method that matches the regular expression against a string. Called by the `String.prototype.match` method.
+정규 표현식을 문자열과 비교하는 정규 표현식 메소드입니다. `String.prototype.match` 메서드로 호출 됩니다.
 
 ## `Symbol.replace`
 
-A regular expression method that replaces matched substrings of a string. Called by the `String.prototype.replace` method.
+일치하는 문자열의 부분 문자열을 대체하는 정규 표현식 메서드입니다. `String.prototype.replace` 메서드로 호출 됩니다.
 
 ## `Symbol.search`
 
-A regular expression method that returns the index within a string that matches the regular expression. Called by the `String.prototype.search` method.
+정규식과 일치하는 문자열에서 인덱스를 반환하는 정규식 메서드입니다. `String.prototype.search` 메서드로 호출 됩니다.
 
 ## `Symbol.species`
 
-A function valued property that is the constructor function that is used to create derived objects.
+파생 된 객체를 만드는 데 사용되는 constructor 함수의 프로퍼티 값을 갖는 프로퍼티입니다.
 
 ## `Symbol.split`
 
-A regular expression method that splits a string at the indices that match the regular expression.
-Called by the `String.prototype.split` method.
+정규 표현식과 일치하는 인덱스에서 문자열을 분할하는 정규 표현식 메서드입니다.
+ `String.prototype.split` 메서드에 의해 호출 됩니다.
 
 ## `Symbol.toPrimitive`
 
-A method that converts an object to a corresponding primitive value.
-Called by the `ToPrimitive` abstract operation.
+객체를 해당하는 primitive 값으로 변환하는 방법입니다.
+`ToPrimitive` 추상 동작에 의해 호출됩니다.
 
 ## `Symbol.toStringTag`
 
-A String value that is used in the creation of the default string description of an object.
-Called by the built-in method `Object.prototype.toString`.
+객체의 기본 문자열 설명을 만드는 데 사용되는 String 값입니다.
+내장 메소드`Object.prototype.toString`로 호출 합니다.
 
 ## `Symbol.unscopables`
 
-An Object whose own property names are property names that are excluded from the 'with' environment bindings of the associated objects.
+자신의 프로퍼티 명을 가지는 객체는 관련된 객체의 ‘with’ 환경 바인딩에서 제외되는 속성 이름입니다.
