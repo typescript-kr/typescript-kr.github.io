@@ -8,7 +8,7 @@ git checkout master
 git pull origin master --rebase
 
 # copy the static site files into the current directory.
-copy -R _book/* .
+cp -R _book/* .
 
 # remove 'node_modules' and '_book' directory
 # git clean -fx node_modules

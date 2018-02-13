@@ -695,20 +695,20 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="introduction">Introduction</h1>
-<p>Starting with ECMAScript 2015, <code>symbol</code> is a primitive data type, just like <code>number</code> and <code>string</code>.</p>
-<p><code>symbol</code> values are created by calling the <code>Symbol</code> constructor.</p>
+                                <h1 id="&#xC18C;&#xAC1C;">&#xC18C;&#xAC1C;</h1>
+<p>ECMAScript 2015&#xC5D0;&#xC11C; &#xC2DC;&#xC791;&#xB41C;, <code>symbol</code>&#xC740; <code>number</code>&#xC640; <code>string</code>&#xAC19;&#xC740; primitive &#xB370;&#xC774;&#xD130; &#xC720;&#xD615;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p><code>symbol</code> &#xAC12;&#xC740;<code>Symbol</code> &#xC0DD;&#xC131;&#xC790;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xC5EC; &#xC0DD;&#xC131;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">let</span> sym1 = Symbol();
 
-<span class="hljs-keyword">let</span> sym2 = Symbol(<span class="hljs-string">&quot;key&quot;</span>); <span class="hljs-comment">// optional string key</span>
+<span class="hljs-keyword">let</span> sym2 = Symbol(<span class="hljs-string">&quot;key&quot;</span>); <span class="hljs-comment">// &#xC120;&#xD0DD;&#xC801; &#xBB38;&#xC790;&#xC5F4; &#xD0A4;</span>
 </code></pre>
-<p>Symbols are immutable, and unique.</p>
+<p>Symbol&#xC740; &#xBD88;&#xBCC0;&#xC774;&#xACE0;, &#xB3C5;&#xD2B9;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">let</span> sym2 = Symbol(<span class="hljs-string">&quot;key&quot;</span>);
 <span class="hljs-keyword">let</span> sym3 = Symbol(<span class="hljs-string">&quot;key&quot;</span>);
 
-sym2 === sym3; <span class="hljs-comment">// false, symbols are unique</span>
+sym2 === sym3; <span class="hljs-comment">// false, symbols&#xC740; &#xACE0;&#xC720;&#xD569;&#xB2C8;&#xB2E4;.</span>
 </code></pre>
-<p>Just like strings, symbols can be used as keys for object properties.</p>
+<p>&#xBB38;&#xC790;&#xC5F4;&#xACFC; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xC2EC;&#xBCFC;&#xC744; &#xAC1D;&#xCCB4; &#xC18D;&#xC131;&#xC758; &#xD0A4;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">let</span> sym = Symbol();
 
 <span class="hljs-keyword">let</span> obj = {
@@ -717,7 +717,7 @@ sym2 === sym3; <span class="hljs-comment">// false, symbols are unique</span>
 
 <span class="hljs-built_in">console</span>.log(obj[sym]); <span class="hljs-comment">// &quot;value&quot;</span>
 </code></pre>
-<p>Symbols can also be combined with computed property declarations to declare object properties and class members.</p>
+<p>Symbol&#xC744; &#xACC4;&#xC0B0;&#xB41C; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xC120;&#xC5B8;&#xACFC; &#xACB0;&#xD569;&#xD558;&#xC5EC; &#xAC1D;&#xCCB4; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC640; &#xD074;&#xB798;&#xC2A4; &#xBA64;&#xBC84;&#xB97C; &#xC120;&#xC5B8;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">const</span> getClassNameSymbol = Symbol();
 
 <span class="hljs-keyword">class</span> C {
@@ -729,35 +729,35 @@ sym2 === sym3; <span class="hljs-comment">// false, symbols are unique</span>
 <span class="hljs-keyword">let</span> c = <span class="hljs-keyword">new</span> C();
 <span class="hljs-keyword">let</span> className = c[getClassNameSymbol](); <span class="hljs-comment">// &quot;C&quot;</span>
 </code></pre>
-<h1 id="well-known-symbols">Well-known Symbols</h1>
-<p>In addition to user-defined symbols, there are well-known built-in symbols.
-Built-in symbols are used to represent internal language behaviors.</p>
-<p>Here is a list of well-known symbols:</p>
+<h1 id="&#xC798;-&#xC54C;&#xB824;&#xC9C4;-symbol">&#xC798; &#xC54C;&#xB824;&#xC9C4; Symbol</h1>
+<p>&#xC0AC;&#xC6A9;&#xC790; &#xC815;&#xC758; Symbol &#xC678;&#xC5D0;&#xB3C4; &#xC798; &#xC54C;&#xB824;&#xC9C4; &#xB0B4;&#xC7A5; Symbol&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB0B4;&#xC7A5; symbol&#xC740; &#xB0B4;&#xBD80; &#xC5B8;&#xC5B4; &#xB3D9;&#xC791;&#xC744; &#xB098;&#xD0C0;&#xB0B4;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C;&#xC740; &#xC798; &#xC54C;&#xB824;&#xC9C4; Symbol &#xBAA9;&#xB85D;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h2 id="symbolhasinstance"><code>Symbol.hasInstance</code></h2>
-<p>A method that determines if a constructor object recognizes an object as one of the constructor&#x2019;s instances. Called by the semantics of the instanceof operator.</p>
+<p>constructor &#xAC1D;&#xCCB4;&#xAC00; constructor&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xC911; &#xD558;&#xB098;&#xB85C;&#xC11C; &#xAC1D;&#xCCB4;&#xB97C; &#xC778;&#xC2DD;&#xD558;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;&#xB97C; &#xACB0;&#xC815;&#xD558;&#xB294; &#xBA54;&#xC11C;&#xB4DC;&#xC785;&#xB2C8;&#xB2E4;.<code>instanceof</code> &#xC5F0;&#xC0B0;&#xC790;&#xC758; &#xC758;&#xBBF8;&#xB85C; &#xD638;&#xCD9C;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <h2 id="symbolisconcatspreadable"><code>Symbol.isConcatSpreadable</code></h2>
-<p>A Boolean value indicating that an object should be flatten to its array elements by Array.prototype.concat.</p>
+<p>&#xAC1D;&#xCCB4;&#xAC00; <code>Array.prototype.concat</code>&#xC5D0; &#xC758;&#xD574; &#xBC30;&#xC5F4; &#xC694;&#xC18C;&#xB85C; &#xBCD1;&#xD569;&#xB418;&#xC5B4;&#xC57C; &#xD568;&#xC744; &#xB098;&#xD0C0;&#xB0B4;&#xB294; boolean &#xAC12;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h2 id="symboliterator"><code>Symbol.iterator</code></h2>
-<p>A method that returns the default iterator for an object. Called by the semantics of the for-of statement.</p>
+<p>&#xAC1D;&#xCCB4;&#xC758; &#xAE30;&#xBCF8; &#xBC18;&#xBCF5;&#xC790;&#xB97C; &#xBC18;&#xD658;&#xD558;&#xB294; &#xBA54;&#xC11C;&#xB4DC;&#xC785;&#xB2C8;&#xB2E4;. for-of &#xAD6C;&#xBB38;&#xC758; &#xC758;&#xBBF8;&#xC5D0; &#xC758;&#xD574; &#xD638;&#xCD9C;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <h2 id="symbolmatch"><code>Symbol.match</code></h2>
-<p>A regular expression method that matches the regular expression against a string. Called by the <code>String.prototype.match</code> method.</p>
+<p>&#xC815;&#xADDC; &#xD45C;&#xD604;&#xC2DD;&#xC744; &#xBB38;&#xC790;&#xC5F4;&#xACFC; &#xBE44;&#xAD50;&#xD558;&#xB294; &#xC815;&#xADDC; &#xD45C;&#xD604;&#xC2DD; &#xBA54;&#xC18C;&#xB4DC;&#xC785;&#xB2C8;&#xB2E4;. <code>String.prototype.match</code> &#xBA54;&#xC11C;&#xB4DC;&#xB85C; &#xD638;&#xCD9C; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <h2 id="symbolreplace"><code>Symbol.replace</code></h2>
-<p>A regular expression method that replaces matched substrings of a string. Called by the <code>String.prototype.replace</code> method.</p>
+<p>&#xC77C;&#xCE58;&#xD558;&#xB294; &#xBB38;&#xC790;&#xC5F4;&#xC758; &#xBD80;&#xBD84; &#xBB38;&#xC790;&#xC5F4;&#xC744; &#xB300;&#xCCB4;&#xD558;&#xB294; &#xC815;&#xADDC; &#xD45C;&#xD604;&#xC2DD; &#xBA54;&#xC11C;&#xB4DC;&#xC785;&#xB2C8;&#xB2E4;. <code>String.prototype.replace</code> &#xBA54;&#xC11C;&#xB4DC;&#xB85C; &#xD638;&#xCD9C; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <h2 id="symbolsearch"><code>Symbol.search</code></h2>
-<p>A regular expression method that returns the index within a string that matches the regular expression. Called by the <code>String.prototype.search</code> method.</p>
+<p>&#xC815;&#xADDC;&#xC2DD;&#xACFC; &#xC77C;&#xCE58;&#xD558;&#xB294; &#xBB38;&#xC790;&#xC5F4;&#xC5D0;&#xC11C; &#xC778;&#xB371;&#xC2A4;&#xB97C; &#xBC18;&#xD658;&#xD558;&#xB294; &#xC815;&#xADDC;&#xC2DD; &#xBA54;&#xC11C;&#xB4DC;&#xC785;&#xB2C8;&#xB2E4;. <code>String.prototype.search</code> &#xBA54;&#xC11C;&#xB4DC;&#xB85C; &#xD638;&#xCD9C; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <h2 id="symbolspecies"><code>Symbol.species</code></h2>
-<p>A function valued property that is the constructor function that is used to create derived objects.</p>
+<p>&#xD30C;&#xC0DD; &#xB41C; &#xAC1D;&#xCCB4;&#xB97C; &#xB9CC;&#xB4DC;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xB418;&#xB294; constructor &#xD568;&#xC218;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xAC12;&#xC744; &#xAC16;&#xB294; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h2 id="symbolsplit"><code>Symbol.split</code></h2>
-<p>A regular expression method that splits a string at the indices that match the regular expression.
-Called by the <code>String.prototype.split</code> method.</p>
+<p>&#xC815;&#xADDC; &#xD45C;&#xD604;&#xC2DD;&#xACFC; &#xC77C;&#xCE58;&#xD558;&#xB294; &#xC778;&#xB371;&#xC2A4;&#xC5D0;&#xC11C; &#xBB38;&#xC790;&#xC5F4;&#xC744; &#xBD84;&#xD560;&#xD558;&#xB294; &#xC815;&#xADDC; &#xD45C;&#xD604;&#xC2DD; &#xBA54;&#xC11C;&#xB4DC;&#xC785;&#xB2C8;&#xB2E4;.
+ <code>String.prototype.split</code> &#xBA54;&#xC11C;&#xB4DC;&#xC5D0; &#xC758;&#xD574; &#xD638;&#xCD9C; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <h2 id="symboltoprimitive"><code>Symbol.toPrimitive</code></h2>
-<p>A method that converts an object to a corresponding primitive value.
-Called by the <code>ToPrimitive</code> abstract operation.</p>
+<p>&#xAC1D;&#xCCB4;&#xB97C; &#xD574;&#xB2F9;&#xD558;&#xB294; primitive &#xAC12;&#xC73C;&#xB85C; &#xBCC0;&#xD658;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC785;&#xB2C8;&#xB2E4;.
+<code>ToPrimitive</code> &#xCD94;&#xC0C1; &#xB3D9;&#xC791;&#xC5D0; &#xC758;&#xD574; &#xD638;&#xCD9C;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <h2 id="symboltostringtag"><code>Symbol.toStringTag</code></h2>
-<p>A String value that is used in the creation of the default string description of an object.
-Called by the built-in method <code>Object.prototype.toString</code>.</p>
+<p>&#xAC1D;&#xCCB4;&#xC758; &#xAE30;&#xBCF8; &#xBB38;&#xC790;&#xC5F4; &#xC124;&#xBA85;&#xC744; &#xB9CC;&#xB4DC;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xB418;&#xB294; String &#xAC12;&#xC785;&#xB2C8;&#xB2E4;.
+&#xB0B4;&#xC7A5; &#xBA54;&#xC18C;&#xB4DC;<code>Object.prototype.toString</code>&#xB85C; &#xD638;&#xCD9C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <h2 id="symbolunscopables"><code>Symbol.unscopables</code></h2>
-<p>An Object whose own property names are property names that are excluded from the &apos;with&apos; environment bindings of the associated objects.</p>
+<p>&#xC790;&#xC2E0;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xBA85;&#xC744; &#xAC00;&#xC9C0;&#xB294; &#xAC1D;&#xCCB4;&#xB294; &#xAD00;&#xB828;&#xB41C; &#xAC1D;&#xCCB4;&#xC758; &#x2018;with&#x2019; &#xD658;&#xACBD; &#xBC14;&#xC778;&#xB529;&#xC5D0;&#xC11C; &#xC81C;&#xC678;&#xB418;&#xB294; &#xC18D;&#xC131; &#xC774;&#xB984;&#xC785;&#xB2C8;&#xB2E4;.</p>
 
                                 
                                 </section>
@@ -801,7 +801,7 @@ Called by the built-in method <code>Object.prototype.toString</code>.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Symbols","level":"3.11","depth":1,"next":{"title":"Iterators and Generators","level":"3.12","depth":1,"path":"pages/Iterators and Generators.md","ref":"pages/Iterators and Generators.md","articles":[]},"previous":{"title":"고급 타입","level":"3.10","depth":1,"path":"pages/Advanced Types.md","ref":"pages/Advanced Types.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Symbols.md","mtime":"2018-02-06T01:16:55.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T04:39:28.370Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Symbols","level":"3.11","depth":1,"next":{"title":"Iterators and Generators","level":"3.12","depth":1,"path":"pages/Iterators and Generators.md","ref":"pages/Iterators and Generators.md","articles":[]},"previous":{"title":"고급 타입","level":"3.10","depth":1,"path":"pages/Advanced Types.md","ref":"pages/Advanced Types.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Symbols.md","mtime":"2018-02-13T13:34:16.195Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T13:35:26.532Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
