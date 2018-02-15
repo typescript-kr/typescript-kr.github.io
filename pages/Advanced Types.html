@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Advanced Types · GitBook</title>
+        <title>고급 타입 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -114,7 +114,7 @@
                 <a href="tutorials/TypeScript in 5 minutes.html">
             
                     
-                    5 분안에 보는 TypeScript
+                    5분 안에 보는 TypeScript
             
                 </a>
             
@@ -140,7 +140,7 @@
                 <a href="tutorials/Gulp.html">
             
                     
-                    Gulp
+                    걸프
             
                 </a>
             
@@ -153,7 +153,7 @@
                 <a href="tutorials/Migrating from JavaScript.html">
             
                     
-                    Migrating from JavaScript
+                    JavaScript에서 마이그레이션
             
                 </a>
             
@@ -166,7 +166,7 @@
                 <a href="tutorials/React & Webpack.html">
             
                     
-                    React & Webpack
+                    리액트 & 웹팩
             
                 </a>
             
@@ -238,7 +238,7 @@
                 <a href="Functions.html">
             
                     
-                    Functions
+                    함수
             
                 </a>
             
@@ -290,7 +290,7 @@
                 <a href="Type Compatibility.html">
             
                     
-                    Type Compatibility
+                    타입 호환성
             
                 </a>
             
@@ -303,7 +303,7 @@
                 <a href="Advanced Types.html">
             
                     
-                    Advanced Types
+                    고급 타입
             
                 </a>
             
@@ -316,7 +316,7 @@
                 <a href="Symbols.html">
             
                     
-                    Symbols
+                    심볼
             
                 </a>
             
@@ -469,6 +469,189 @@
     
 
     
+        
+        <li class="header">Declaration Files</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="declaration files/Introduction.html">
+            
+                <a href="declaration files/Introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="declaration files/Library Structures.html">
+            
+                <a href="declaration files/Library Structures.html">
+            
+                    
+                    Library Structures
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="declaration files/By Example.html">
+            
+                <a href="declaration files/By Example.html">
+            
+                    
+                    By Example
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="declaration files/Do's and Don'ts.html">
+            
+                <a href="declaration files/Do's and Don'ts.html">
+            
+                    
+                    Do's and Don'ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="declaration files/Deep Dive.html">
+            
+                <a href="declaration files/Deep Dive.html">
+            
+                    
+                    Deep Dive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="declaration files/Templates.html">
+            
+                <a href="declaration files/Templates.html">
+            
+                    
+                    Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="declaration files/Publishing.html">
+            
+                <a href="declaration files/Publishing.html">
+            
+                    
+                    Publishing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="declaration files/Consumption.html">
+            
+                <a href="declaration files/Consumption.html">
+            
+                    
+                    Consumption
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Project Configuration</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="tsconfig.json.html">
+            
+                <a href="tsconfig.json.html">
+            
+                    
+                    tsconfig.json
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="Compiler Options.html">
+            
+                <a href="Compiler Options.html">
+            
+                    
+                    Compiler Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="Compiler Options in MSBuild.html">
+            
+                <a href="Compiler Options in MSBuild.html">
+            
+                    
+                    Compiler Options in MSBuild
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="Iterators and Generators.html">
+            
+                <a href="Iterators and Generators.html">
+            
+                    
+                    Integrating with Build Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="Nightly Builds.html">
+            
+                <a href="Nightly Builds.html">
+            
+                    
+                    Nightly Builds
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
 
     <li class="divider"></li>
 
@@ -497,7 +680,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Advanced Types</a>
+        <a href=".." >고급 타입</a>
     </h1>
 </div>
 
@@ -512,14 +695,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="intersection-types">Intersection Types</h1>
-<p>An intersection type combines multiple types into one.
-This allows you to add together existing types to get a single type that has all the features you need.
-For example, <code>Person &amp; Serializable &amp; Loggable</code> is a <code>Person</code> <em>and</em> <code>Serializable</code> <em>and</em> <code>Loggable</code>.
-That means an object of this type will have all members of all three types.</p>
-<p>You will mostly see intersection types used for mixins and other concepts that don&apos;t fit in the classic object-oriented mold.
-(There are a lot of these in JavaScript!)
-Here&apos;s a simple example that shows how to create a mixin:</p>
+                                <h1 id="&#xAD50;&#xCC28;-&#xD0C0;&#xC785;-intersection-types">&#xAD50;&#xCC28; &#xD0C0;&#xC785; (Intersection Types)</h1>
+<p>&#xAD50;&#xCC28; &#xD0C0;&#xC785;&#xC740; &#xB2E4;&#xC591;&#xD55C; &#xD0C0;&#xC785;&#xC744; &#xD558;&#xB098;&#xB85C; &#xACB0;&#xD569;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB530;&#xB77C;&#xC11C; &#xAE30;&#xC874; &#xD0C0;&#xC785;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xD544;&#xC694;&#xD55C; &#xBAA8;&#xB4E0; &#xAE30;&#xB2A5;&#xC744; &#xAC16;&#xCD98; &#xB2E8;&#xC77C; &#xD0C0;&#xC785;&#xC744; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; <code>Person &amp; Serializable &amp; Loggable</code>&#xC740; <code>Person</code> <em>&#xACFC;</em> <code>Serializable</code> <em>&#xC774;&#xBA70;</em> <code>Loggable</code> &#xC785;&#xB2C8;&#xB2E4;.<br>&#xC989; &#xC774; &#xD0C0;&#xC785;&#xC758; &#xAC1D;&#xCCB4;&#xB294; &#xC138; &#xAC00;&#xC9C0; &#xD0C0;&#xC785;&#xC758; &#xBAA8;&#xB4E0; &#xBA64;&#xBC84;&#xB97C; &#xAC16;&#xAC8C;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xBBF9;&#xC2A4;&#xC778;&#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xAD50;&#xCC28; &#xD0C0;&#xC785;&#xACFC; &#xACE0;&#xC804;&#xC801;&#xC778; &#xAC1D;&#xCCB4; &#xC9C0;&#xD5A5; &#xD615;&#xC2DD;&#xC5D0; &#xB9DE;&#xC9C0; &#xC54A;&#xB294; &#xB2E4;&#xB978; &#xAC1C;&#xB150;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>(JavaScript&#xC5D0; &#xC774;&#xB7EC;&#xD55C; &#xAC83;&#xB4E4;&#xC774; &#xB9CE;&#xC2B5;&#xB2C8;&#xB2E4;!)</p>
+<p>&#xC5EC;&#xAE30;&#xC5D0; Mixin&#xC744; &#xB9CC;&#xB4DC;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xBCF4;&#xC5EC; &#xC8FC;&#xB294; &#xAC04;&#xB2E8;&#xD55C; &#xC608;&#xC81C;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; :</p>
 <pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">extend</span>&lt;<span class="hljs-title">T</span>, <span class="hljs-title">U</span>&gt;(<span class="hljs-params">first: T, second: U</span>): <span class="hljs-title">T</span> &amp; <span class="hljs-title">U</span> </span>{
     <span class="hljs-keyword">let</span> result = &lt;T &amp; U&gt;{};
     <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> id <span class="hljs-keyword">in</span> first) {
@@ -548,14 +728,13 @@ Here&apos;s a simple example that shows how to create a mixin:</p>
 <span class="hljs-keyword">var</span> n = jim.name;
 jim.log();
 </code></pre>
-<h1 id="union-types">Union Types</h1>
-<p>Union types are closely related to intersection types, but they are used very differently.
-Occasionally, you&apos;ll run into a library that expects a parameter to be either a <code>number</code> or a <code>string</code>.
-For instance, take the following function:</p>
+<h1 id="&#xC720;&#xB2C8;&#xC628;-&#xD0C0;&#xC785;-union-types">&#xC720;&#xB2C8;&#xC628; &#xD0C0;&#xC785; (Union Types)</h1>
+<p>&#xC720;&#xB2C8;&#xC628; &#xD0C0;&#xC785;&#xC740; &#xAD50;&#xCC28; &#xD0C0;&#xC785;&#xACFC; &#xBC00;&#xC811;&#xD55C; &#xAD00;&#xB828;&#xC774; &#xC788;&#xC9C0;&#xB9CC; &#xB9E4;&#xC6B0; &#xB2E4;&#xB974;&#xAC8C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xB54C;&#xB85C;&#xB294; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xAC00;<code>number</code> &#xB610;&#xB294;<code>string</code>&#xC774; &#xB420; &#xAC83;&#xC73C;&#xB85C; &#xAE30;&#xB300;&#xD558;&#xB294; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xAC8C;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xD568;&#xC218;&#xC744; &#xC218;&#xD589;&#xD558;&#xC2ED;&#xC2DC;&#xC624;:</p>
 <pre><code class="lang-ts"><span class="hljs-comment">/**
- * Takes a string and adds &quot;padding&quot; to the left.
- * If &apos;padding&apos; is a string, then &apos;padding&apos; is appended to the left side.
- * If &apos;padding&apos; is a number, then that number of spaces is added to the left side.
+ * string &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC838;&#xC640;&#xC11C; &#xC67C;&#xCABD;&#xC5D0; &quot;padding&quot;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.
+ * &apos;padding&apos;&#xC774; string&#xC778; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &apos;padding&apos;&#xC774; &#xC67C;&#xCABD;&#xC5D0; &#xCD94;&#xAC00;&#xB429;&#xB2C8;&#xB2E4;.
+ * &apos;padding&apos;&#xC774; number&#xC778; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xD574;&#xB2F9; &#xAC1C;&#xC218;&#xC758; &#xACF5;&#xBC31;&#xC774; &#xC67C;&#xCABD;&#xC5D0; &#xCD94;&#xAC00;&#xB429;&#xB2C8;&#xB2E4;.
  */</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">padLeft</span>(<span class="hljs-params">value: <span class="hljs-built_in">string</span>, padding: <span class="hljs-built_in">any</span></span>) </span>{
     <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> padding === <span class="hljs-string">&quot;number&quot;</span>) {
@@ -567,32 +746,26 @@ For instance, take the following function:</p>
     <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`Expected string or number, got &apos;<span class="hljs-subst">${padding}</span>&apos;.`</span>);
 }
 
-padLeft(<span class="hljs-string">&quot;Hello world&quot;</span>, <span class="hljs-number">4</span>); <span class="hljs-comment">// returns &quot;    Hello world&quot;</span>
+padLeft(<span class="hljs-string">&quot;Hello world&quot;</span>, <span class="hljs-number">4</span>); <span class="hljs-comment">// &quot;    Hello world&quot; &#xBC18;&#xD658;</span>
 </code></pre>
-<p>The problem with <code>padLeft</code> is that its <code>padding</code> parameter is typed as <code>any</code>.
-That means that we can call it with an argument that&apos;s neither a <code>number</code> nor a <code>string</code>, but TypeScript will be okay with it.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">let</span> indentedString = padLeft(<span class="hljs-string">&quot;Hello world&quot;</span>, <span class="hljs-literal">true</span>); <span class="hljs-comment">// passes at compile time, fails at runtime.</span>
+<p><code>padLeft</code>&#xC758; &#xBB38;&#xC81C;&#xC810;&#xC740; <code>padding</code> &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xAC00; <code>any</code>&#xB85C; &#xBD84;&#xB958;&#xB41C;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC989; <code>number</code>&#xC774;&#xAC70;&#xB098; <code>string</code>&#xC774; &#xC544;&#xB2CC; &#xC778;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD638;&#xCD9C;&#xD560; &#xC218; &#xC788;&#xC9C0;&#xB9CC; TypeScript&#xB294; &#xD574;&#xB2F9; &#xC778;&#xC218;&#xC640; &#xD568;&#xAED8; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">let</span> indentedString = padLeft(<span class="hljs-string">&quot;Hello world&quot;</span>, <span class="hljs-literal">true</span>); <span class="hljs-comment">// &#xCEF4;&#xD30C;&#xC77C; &#xD0C0;&#xC784;&#xC5D0;&#xB294; &#xD1B5;&#xACFC;&#xB418;&#xC9C0;&#xB9CC; &#xB7F0;&#xD0C0;&#xC784;&#xC5D0;&#xB294; &#xC2E4;&#xD328;&#xD569;&#xB2C8;&#xB2E4;.</span>
 </code></pre>
-<p>In traditional object-oriented code, we might abstract over the two types by creating a hierarchy of types.
-While this is much more explicit, it&apos;s also a little bit overkill.
-One of the nice things about the original version of <code>padLeft</code> was that we were able to just pass in primitives.
-That meant that usage was simple and concise.
-This new approach also wouldn&apos;t help if we were just trying to use a function that already exists elsewhere.</p>
-<p>Instead of <code>any</code>, we can use a <em>union type</em> for the <code>padding</code> parameter:</p>
+<p>&#xC804;&#xD1B5;&#xC801;&#xC778; &#xAC1D;&#xCCB4; &#xC9C0;&#xD5A5; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C;&#xB294; &#xC720;&#xD615;&#xC758; &#xACC4;&#xCE35;&#xC744; &#xB9CC;&#xB4E4;&#xC5B4; &#xB450; &#xAC00;&#xC9C0; &#xC720;&#xD615;&#xC744; &#xCD94;&#xC0C1;&#xD654; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xAC83;&#xC774; &#xD6E8;&#xC52C; &#xB354; &#xBA85;&#xBC31;&#xD558;&#xAE30;&#xB294; &#xD558;&#xC9C0;&#xB9CC; &#xB610; &#xC57D;&#xAC04; &#xC9C0;&#xB098;&#xCE58;&#xAE30;&#xB3C4; &#xD569;&#xB2C8;&#xB2E4;.<br><code>padLeft</code>&#xC758; &#xC6D0;&#xB798; &#xBC84;&#xC804;&#xC5D0; &#xB300;&#xD55C; &#xC88B;&#xC740; &#xC810; &#xC911; &#xD558;&#xB098;&#xB294; &#xC6D0;&#xC2DC; &#xAC12;&#xC744; &#xC804;&#xB2EC;&#xD560; &#xC218; &#xC788;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB294; &#xC0AC;&#xC6A9;&#xBC95;&#xC774; &#xAC04;&#xB2E8;&#xD558;&#xACE0; &#xAC04;&#xACB0;&#xD558;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xC0C8;&#xB85C;&#xC6B4; &#xC811;&#xADFC;&#xBC95;&#xC740; &#xC774;&#xBBF8; &#xB2E4;&#xB978; &#xACF3;&#xC5D0;&#xC788;&#xB294; &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;&#xB3C4; &#xB3C4;&#xC6C0;&#xC774;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>any</code> &#xB300;&#xC2E0; <code>padding</code> &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC5D0; <em>union type</em> &#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; :</p>
 <pre><code class="lang-ts"><span class="hljs-comment">/**
- * Takes a string and adds &quot;padding&quot; to the left.
- * If &apos;padding&apos; is a string, then &apos;padding&apos; is appended to the left side.
- * If &apos;padding&apos; is a number, then that number of spaces is added to the left side.
+ * string &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC838;&#xC640;&#xC11C; &#xC67C;&#xCABD;&#xC5D0; &quot;padding&quot;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.
+ * &apos;padding&apos;&#xC774; string&#xC778; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &apos;padding&apos;&#xC774; &#xC67C;&#xCABD;&#xC5D0; &#xCD94;&#xAC00;&#xB429;&#xB2C8;&#xB2E4;.
+ * &apos;padding&apos;&#xC774; number&#xC778; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xD574;&#xB2F9; &#xAC1C;&#xC218;&#xC758; &#xACF5;&#xBC31;&#xC774; &#xC67C;&#xCABD;&#xC5D0; &#xCD94;&#xAC00;&#xB429;&#xB2C8;&#xB2E4;.
  */</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">padLeft</span>(<span class="hljs-params">value: <span class="hljs-built_in">string</span>, padding: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span></span>) </span>{
     <span class="hljs-comment">// ...</span>
 }
 
-<span class="hljs-keyword">let</span> indentedString = padLeft(<span class="hljs-string">&quot;Hello world&quot;</span>, <span class="hljs-literal">true</span>); <span class="hljs-comment">// errors during compilation</span>
+<span class="hljs-keyword">let</span> indentedString = padLeft(<span class="hljs-string">&quot;Hello world&quot;</span>, <span class="hljs-literal">true</span>); <span class="hljs-comment">// &#xCEF4;&#xD30C;&#xC77C; &#xC2DC; &#xC624;&#xB958;</span>
 </code></pre>
-<p>A union type describes a value that can be one of several types.
-We use the vertical bar (<code>|</code>) to separate each type, so <code>number | string | boolean</code> is the type of a value that can be a <code>number</code>, a <code>string</code>, or a <code>boolean</code>.</p>
-<p>If we have a value that has a union type, we can only access members that are common to all types in the union.</p>
+<p>&#xC720;&#xB2C8;&#xC628; &#xD0C0;&#xC785;&#xC740; &#xC5EC;&#xB7EC; &#xD0C0;&#xC785; &#xC911; &#xD558;&#xB098;&#xC77C; &#xC218; &#xC788;&#xB294; &#xAC12;&#xC744; &#xC124;&#xBA85;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xAC01; &#xD0C0;&#xC785;&#xC744; &#xAD6C;&#xBD84;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC218;&#xC9C1; &#xB9C9;&#xB300;(<code>|</code>)&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBBC0;&#xB85C; <code>number | string | boolean</code>&#xC740; <code>number</code>, <code>string</code> &#xB610;&#xB294; <code>boolean</code> &#xB420; &#xC218; &#xC788;&#xB294; &#xAC12;&#xC758; &#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC720;&#xB2C8;&#xC628; &#xD0C0;&#xC785;&#xC774; &#xC788;&#xB294; &#xAC12;&#xC774; &#xC788;&#xC73C;&#xBA74; &#xC720;&#xB2C8;&#xC628;&#xC758; &#xBAA8;&#xB4E0; &#xD0C0;&#xC785;&#xC5D0; &#xACF5;&#xD1B5;&#xC801;&#xC778; &#xBA64;&#xBC84;&#xC5D0;&#xB9CC; &#xC811;&#xADFC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Bird {
     fly();
     layEggs();
@@ -608,22 +781,16 @@ We use the vertical bar (<code>|</code>) to separate each type, so <code>number 
 }
 
 <span class="hljs-keyword">let</span> pet = getSmallPet();
-pet.layEggs(); <span class="hljs-comment">// okay</span>
-pet.swim();    <span class="hljs-comment">// errors</span>
+pet.layEggs(); <span class="hljs-comment">// &#xC88B;&#xC544;&#xC694;</span>
+pet.swim();    <span class="hljs-comment">// &#xC624;&#xB958;</span>
 </code></pre>
-<p>Union types can be a bit tricky here, but it just takes a bit of intuition to get used to.
-If a value has the type <code>A | B</code>, we only know for <em>certain</em> that it has members that both <code>A</code> <em>and</em> <code>B</code> have.
-In this example, <code>Bird</code> has a member named <code>fly</code>.
-We can&apos;t be sure whether a variable typed as <code>Bird | Fish</code> has a <code>fly</code> method.
-If the variable is really a <code>Fish</code> at runtime, then calling <code>pet.fly()</code> will fail.</p>
-<h1 id="type-guards-and-differentiating-types">Type Guards and Differentiating Types</h1>
-<p>Union types are useful for modeling situations when values can overlap in the types they can take on.
-What happens when we need to know specifically whether we have a <code>Fish</code>?
-A common idiom in JavaScript to differentiate between two possible values is to check for the presence of a member.
-As we mentioned, you can only access members that are guaranteed to be in all the constituents of a union type.</p>
+<p>&#xC720;&#xB2C8;&#xC628; &#xD0C0;&#xC785;&#xC774; &#xC880; &#xAE4C;&#xB2E4;&#xB85C;&#xC6B8; &#xC218;&#xB3C4; &#xC788;&#xC9C0;&#xB9CC; &#xC775;&#xC219;&#xD574;&#xC9C0;&#xB294; &#xB370;&#xB294; &#xC57D;&#xAC04;&#xC758; &#xC9C1;&#xAD00;&#xC774; &#xD544;&#xC694;&#xD560; &#xBFD0;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC5B4;&#xB5A4; &#xAC12;&#xC5D0; <code>A | B</code> &#xD0C0;&#xC785;&#xC774; &#xC788;&#xB2E4;&#xBA74; <code>A</code> <em>&#xC640;</em> <code>B</code> &#xBAA8;&#xB450; &#xAC00;&#xC9C0;&#xACE0;&#xC788;&#xB294; &#xBA64;&#xBC84;&#xAC00; &#xC788;&#xC74C;&#xC744; <em>&#xD655;&#xC2E4;&#xD788;</em> &#xC54C;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xC608;&#xC81C;&#xC5D0;&#xC11C; <code>Bird</code>&#xB294; <code>fly</code>&#xB77C;&#xB294; &#xBA64;&#xBC84;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xD558;&#xC9C0;&#xB9CC; <code>Bird | Fish</code>&#xC758; &#xBCC0;&#xC218; &#xD0C0;&#xC785;&#xC774; <code>fly</code> &#xBA54;&#xC11C;&#xB4DC;&#xB85C; &#xC791;&#xC6A9;&#xD558;&#xACE0; &#xC788;&#xB294;&#xC9C0;&#xB294; &#xC54C; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xB7F0;&#xD0C0;&#xC784;&#xC5D0; &#xBCC0;&#xC218;&#xAC00; <code>Fish</code> &#xC778;&#xACBD;&#xC6B0; <code>pet.fly()</code> &#xD638;&#xCD9C;&#xC740; &#xC2E4;&#xD328;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xD0C0;&#xC785;-&#xAC00;&#xB4DC;&#xC640;-&#xCC28;&#xBCC4;-&#xD0C0;&#xC785;-type-guards-and-differentiating-types">&#xD0C0;&#xC785; &#xAC00;&#xB4DC;&#xC640; &#xCC28;&#xBCC4; &#xD0C0;&#xC785; (Type Guards and Differentiating Types)</h1>
+<p>&#xC720;&#xB2C8;&#xC628; &#xD0C0;&#xC785;&#xC740; &#xAC12;&#xC744; &#xCDE8;&#xD560; &#xC218;&#xC788;&#xB294; &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xACB9;&#xCE60; &#xC218;&#xC788;&#xB294; &#xC0C1;&#xD669;&#xC744; &#xBAA8;&#xB378;&#xB9C1; &#xD560; &#xB54C; &#xC720;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.<br><code>Fish</code>&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294;&#xC9C0;&#xC5D0; &#xB300;&#xD574; &#xAD6C;&#xCCB4;&#xC801;&#xC73C;&#xB85C; &#xC54C;&#xC544;&#xC57C; &#xD560; &#xD544;&#xC694;&#xAC00; &#xC788;&#xC744; &#xB54C; &#xBB34;&#xC2A8; &#xC77C;&#xC774; &#xC77C;&#xC5B4;&#xB0A0;&#xAE4C;&#xC694;?<br>JavaScript&#xC5D0;&#xC11C; &#xB450; &#xAC00;&#xC9C0; &#xAC00;&#xB2A5;&#xD55C; &#xAC12;&#xC744; &#xAD6C;&#xBCC4;&#xD558;&#xB294; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xC6A9;&#xC5B4;&#xB294; &#xBA64;&#xBC84;&#xC758; &#xC874;&#xC7AC;&#xB97C; &#xD655;&#xC778;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC5B8;&#xAE09;&#xD588;&#xB4EF;&#xC774; &#xC720;&#xB2C8;&#xC628; &#xD0C0;&#xC785;&#xC758; &#xBAA8;&#xB4E0; &#xAD6C;&#xC131; &#xC694;&#xC18C;&#xC5D0; &#xD3EC;&#xD568;&#xB420; &#xC218; &#xC788;&#xB294; &#xBCF4;&#xC7A5;&#xB41C; &#xBA64;&#xBC84;&#xC5D0;&#xB9CC; &#xC811;&#xADFC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">let</span> pet = getSmallPet();
 
-<span class="hljs-comment">// Each of these property accesses will cause an error</span>
+<span class="hljs-comment">// &#xC774;&#xB7EC;&#xD55C; &#xAC01; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xC811;&#xADFC;&#xC740; &#xC624;&#xB958;&#xB97C; &#xBC1C;&#xC0DD;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;.</span>
 <span class="hljs-keyword">if</span> (pet.swim) {
     pet.swim();
 }
@@ -631,7 +798,7 @@ As we mentioned, you can only access members that are guaranteed to be in all th
     pet.fly();
 }
 </code></pre>
-<p>To get the same code working, we&apos;ll need to use a type assertion:</p>
+<p>&#xB3D9;&#xC77C;&#xD55C; &#xCF54;&#xB4DC;&#xAC00; &#xC791;&#xB3D9;&#xD558;&#xB3C4;&#xB85D;&#xD558;&#xB824;&#xBA74; &#xD0C0;&#xC785; &#xD45C;&#xBA85;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4; :</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">let</span> pet = getSmallPet();
 
 <span class="hljs-keyword">if</span> ((&lt;Fish&gt;pet).swim) {
@@ -1253,12 +1420,12 @@ If the mapped type is not homomorphic you&apos;ll have to give an explicit type 
 
             
                 
-                <a href="Type Compatibility.html" class="navigation navigation-prev " aria-label="Previous page: Type Compatibility">
+                <a href="Type Compatibility.html" class="navigation navigation-prev " aria-label="Previous page: 타입 호환성">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="Symbols.html" class="navigation navigation-next " aria-label="Next page: Symbols">
+                <a href="Symbols.html" class="navigation navigation-next " aria-label="Next page: 심볼">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1269,7 +1436,7 @@ If the mapped type is not homomorphic you&apos;ll have to give an explicit type 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Advanced Types","level":"3.10","depth":1,"next":{"title":"Symbols","level":"3.11","depth":1,"path":"pages/Symbols.md","ref":"pages/Symbols.md","articles":[]},"previous":{"title":"Type Compatibility","level":"3.9","depth":1,"path":"pages/Type Compatibility.md","ref":"pages/Type Compatibility.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Advanced Types.md","mtime":"2018-02-06T01:16:55.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-06T10:01:00.993Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"고급 타입","level":"3.10","depth":1,"next":{"title":"심볼","level":"3.11","depth":1,"path":"pages/Symbols.md","ref":"pages/Symbols.md","articles":[]},"previous":{"title":"타입 호환성","level":"3.9","depth":1,"path":"pages/Type Compatibility.md","ref":"pages/Type Compatibility.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Advanced Types.md","mtime":"2018-02-13T14:10:14.661Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T14:21:41.019Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
