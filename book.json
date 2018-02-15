@@ -1,0 +1,9 @@
+{
+	"plugins": ["theme-darkblue", "addcssjs", "highlight", "custom-favicon"],
+	"pluginsConfig": {
+		"addcssjs": {
+			"css": ["assets/css/atom-one-dark.css"]
+		},
+		"favicon": "assets/images/favicon.ico"
+	}
+}
