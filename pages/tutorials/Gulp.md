@@ -1,19 +1,19 @@
-This quick start guide will teach you how to build TypeScript with [gulp](http://gulpjs.com) and then add [Browserify](http://browserify.org), [uglify](http://lisperator.net/uglifyjs/), or [Watchify](https://github.com/substack/watchify) to the gulp pipeline.
-This guide also adds functionality for [Babel](https://babeljs.io/) functionality using [Babelify](https://github.com/babel/babelify).
+이 퀵 스타트 가이드는 [gulp](http://gulpjs.com)로 TypeScript를 빌드한 다음 [Browserify](http://browserify.org), [uglify](http://lisperator.net/uglifyjs) 또는 [Watchify](https://github.com/substack/watchify)를 gulp 파이프 라인에 추가하는 방법을 알려줍니다.
 
-We assume that you're already using [Node.js](https://nodejs.org/) with [npm](https://www.npmjs.com/).
+또한 [Babelify](https://github.com/babel/babelify)를 사용하여 [Babel](https://babeljs.io) 기능에 대한 기능을 추가합니다.  
+[npm](https://www.npmjs.com)과 함께 [Node.js](https://nodejs.org)는 이미 사용하고 있다고 가정합니다.
 
-# Minimal project
+# 작은 프로젝트 (Minimal project)
 
-Let's start out with a new directory.
-We'll name it `proj` for now, but you can change it to whatever you want.
+새로운 디렉터리부터 시작합시다.
+당장은 `proj`라고 이름을 붙이겠지만 원하는 대로 변경할 수 있습니다.
 
 ```shell
 mkdir proj
 cd proj
 ```
 
-To start, we're going to structure our project in the following way:
+시작하려면 다음과 같은 방식으로 프로젝트를 구조화해야 합니다:
 
 ```text
 proj/
@@ -21,48 +21,48 @@ proj/
    └─ dist/
 ```
 
-TypeScript files will start out in your `src` folder, run through the TypeScript compiler and end up in `dist`.
+TypeScript 파일은 `src` 폴더에서 시작하여 TypeScript 컴파일러를 통해 실행되고 `dist`에서 끝납니다.
 
-Let's scaffold this out:
+이것을 골격으로 합니다:
 
 ```shell
 mkdir src
 mkdir dist
 ```
 
-## Initialize the project
+## 프로젝트 초기화 (Initialize the project)
 
-Now we'll turn this folder into an npm package.
+이제 이 폴더를 npm 패키지로 바꿀 것입니다.
 
 ```shell
 npm init
 ```
 
-You'll be given a series of prompts.
-You can use the defaults except for your entry point.
-For your entry point, use `./dist/main.js`.
-You can always go back and change these in the `package.json` file that's been generated for you.
+일련의 알림을 받게 될 것입니다.  
+entry point를 제외하고는 기본값을 사용할 수 있으며 `./dist/main.js`를 사용합니다.  
+`package.json` 파일로 돌아가서 언제든 변경할 수 있습니다.
 
-## Install our dependencies
+## 의존성 설치 (Install our dependencies)
 
-Now we can use `npm install` to install packages.
-First install `gulp-cli` globally (if you use a Unix system, you may need to prefix the `npm install` commands in this guide with `sudo`).
+이제는 `npm install`을 사용하여 패키지를 설치할 수 있습니다.  
+먼저 `gulp-cli`를 글로벌 설치하십시오 (Unix 시스템을 사용하는 경우 `npm install` 명령 앞에 `sudo`를 붙여야 할 수도 있습니다).
 
 ```shell
 npm install -g gulp-cli
 ```
 
-Then install `typescript`, `gulp` and `gulp-typescript` in your project's dev dependencies.
-[Gulp-typescript](https://www.npmjs.com/package/gulp-typescript) is a gulp plugin for Typescript.
+그런 다음 프로젝트의 개발자 의존성에 `typescript`, `gulp` 및 `gulp-typescript`를 설치하십시오.  
+[Gulp-typescript](https://www.npmjs.com/package/gulp-typescript)는 Typescript의 gulp 플러그인입니다.
 
 ```shell
 npm install --save-dev typescript gulp gulp-typescript
 ```
 
-## Write a simple example
+## 간단한 예제 작성 (Write a simple example)
 
-Let's write a Hello World program.
-In `src`, create the file `main.ts`:
+Hello World 프로그램을 작성해 보겠습니다.
+
+`src`에 `main.ts` 파일을 만듭니다 :
 
 ```ts
 function hello(compiler: string) {
@@ -71,7 +71,7 @@ function hello(compiler: string) {
 hello("TypeScript");
 ```
 
-In the project root, `proj`, create the file `tsconfig.json`:
+`proj`이라는 프로젝트 루트에 `tsconfig.json` 파일을 생성합니다 :
 
 ```json
 {
@@ -85,9 +85,9 @@ In the project root, `proj`, create the file `tsconfig.json`:
 }
 ```
 
-## Create a `gulpfile.js`
+## `gulpfile.js` 생성 (Create a `gulpfile.js`)
 
-In the project root, create the file `gulpfile.js`:
+프로젝트 루트에 `gulpfile.js` 파일을 만듭니다 :
 
 ```js
 var gulp = require("gulp");
@@ -101,21 +101,21 @@ gulp.task("default", function () {
 });
 ```
 
-## Test the resulting app
+## resulting 앱 테스트 (Test the resulting app)
 
 ```shell
 gulp
 node dist/main.js
 ```
 
-The program should print "Hello from TypeScript!".
+프로그램에서 "Hello from TypeScript!"를 인쇄해야합니다.
 
-# Add modules to the code
+# 코드에 모듈 추가 (Add modules to the code)
 
-Before we get to Browserify, let's build our code out and add modules to the mix.
-This is the structure you're more likely to use for a real app.
+Browserify를 시작하기 전에 코드를 만들고 믹스에 모듈을 추가해 보겠습니다.  
+이것은 실제 앱에서 사용하기 쉬운 구조입니다.
 
-Create a file called `src/greet.ts`:
+`src/greet.ts` 파일을 만듭니다 :
 
 ```ts
 export function sayHello(name: string) {
@@ -123,7 +123,7 @@ export function sayHello(name: string) {
 }
 ```
 
-Now change the code in `src/main.ts` to import `sayHello` from `greet.ts`:
+이제 `src/main.ts`의 `sayHello`를 `greet.ts`에서 가져오도록 변경합니다 :
 
 ```ts
 import { sayHello } from "./greet";
@@ -131,7 +131,7 @@ import { sayHello } from "./greet";
 console.log(sayHello("TypeScript"));
 ```
 
-Finally, add `src/greet.ts` to `tsconfig.json`:
+마지막으로 `src/greet.ts`를 `tsconfig.json`에 추가하십시오 :
 
 ```json
 {
@@ -146,35 +146,35 @@ Finally, add `src/greet.ts` to `tsconfig.json`:
 }
 ```
 
-Make sure that the modules work by running `gulp` and then testing in Node:
+`gulp`을 실행하고 노드에서 테스트하여 모듈이 작동하는지 확인하십시오 :
 
 ```shell
 gulp
 node dist/main.js
 ```
 
-Notice that even though we used ES2015 module syntax, TypeScript emitted CommonJS modules that Node uses.
-We'll stick with CommonJS for this tutorial, but you could set `module` in the options object to change this.
+ES2015 모듈 구문을 사용했지만 TypeScript는 Node가 사용하는 CommonJS 모듈을 방출했습니다.  
+이 튜토리얼에서는 CommonJS를 계속 사용하겠지만 options 객체에 `module`을 설정하여 이를 변경할 수 있습니다.  
 
 # Browserify
 
-Now let's move this project from Node to the browser.
-To do this, we'd  like to bundle all our modules into one JavaScript file.
-Fortunately, that's exactly what Browserify does.
-Even better, it lets us use the CommonJS module system used by Node, which is the default TypeScript emit.
-That means our TypeScript and Node setup will transfer to the browser basically unchanged.
+이제 이 프로젝트를 노드에서 브라우저로 이동하겠습니다.  
+이를 위해 모든 모듈을 하나의 JavaScript 파일로 번들링 하고자 합니다.  
+다행히도 정확히 Browserify가 하는 일입니다.  
+더 좋은 것은 노드에서 사용하는 CommonJS 모듈 시스템을 TypeScript에서 사용할 수 있다는 것입니다.  
+즉 TypeScript와 Node 설정이 기본적으로 변경되지 않은 브라우저로 전송되는 것을 의미합니다.
 
-First, install browserify, [tsify](https://www.npmjs.com/package/tsify), and vinyl-source-stream.
-tsify is a Browserify plugin that, like gulp-typescript, gives access to the TypeScript compiler.
-vinyl-source-stream lets us adapt the file output of Browserify back into a format that gulp understands called [vinyl](https://github.com/gulpjs/vinyl).
+먼저 browserify, [tsify](https://www.npmjs.com/package/tsify) 및 vinyl-source-stream을 설치하십시오.  
+tsify는 gulp-typescript처럼 Typeify 컴파일러에 접근할 수 있는 Browserify 플러그인입니다.  
+vinyl-source-stream을 사용하면 Browserify의 파일 출력을 gulp에서 [vinyl](https://github.com/gulpjs/vinyl)으로 인식하는 형식으로 다시 변환할 수 있습니다.
 
 ```shell
 npm install --save-dev browserify tsify vinyl-source-stream
 ```
 
-## Create a page
+## 페이지 만들기 (Create a page)
 
-Create a file in `src` named `index.html`:
+`src`에 `index.html` 파일을 생성합니다 :
 
 ```html
 <!DOCTYPE html>
@@ -190,7 +190,7 @@ Create a file in `src` named `index.html`:
 </html>
 ```
 
-Now change `main.ts` to update the page:
+이제 `main.ts`를 변경하여 페이지를 업데이트하십시오 :
 
 ```ts
 import { sayHello } from "./greet";
@@ -203,8 +203,8 @@ function showHello(divName: string, name: string) {
 showHello("greeting", "TypeScript");
 ```
 
-Calling `showHello` calls `sayHello` to change the paragraph's text.
-Now change your gulpfile to the following:
+`showHello` 호출은 `sayHello`를 호출하여 paragraph 텍스트를 변경합니다.  
+이제 gulpfile을 다음과 같이 변경하십시오 :
 
 ```js
 var gulp = require("gulp");
@@ -235,43 +235,43 @@ gulp.task("default", ["copy-html"], function () {
 });
 ```
 
-This adds the `copy-html` task and adds it as a dependency of `default`.
-That means any time `default` is run, `copy-html` has to run first.
-We've also changed `default` to call Browserify with the tsify plugin instead of gulp-typescript.
-Conveniently, they both allow us to pass the same options object to the TypeScript compiler.
+`copy-html` 태스크를 추가하고 `default`의 의존성으로 추가합니다.  
+`default`가 실행될 때마다 `copy-html`이 먼저 실행되어야 한다는 것을 의미합니다.  
+또한 `default`를 gulp-typescript 대신 tsify 플러그인으로 Browserify를 호출하도록 변경했습니다.  
+편리하게도 둘 모두 TypeScript 컴파일러에 동일한 options 객체를 전달할 수 있습니다.
 
-After calling `bundle` we use `source` (our alias for vinyl-source-stream) to name our output bundle `bundle.js`.
+`bundle`을 호출한 후 `source`(vinil-source-stream에 대한 별칭)를 사용하여 출력 번들 `bundle.js`의 이름을 지정합니다.
 
-Test the page by running gulp and then opening `dist/index.html` in a browser.
-You should see "Hello from TypeScript" on the page.
+gulp를 실행하고 브라우저에서 `dist/index.html`을 열어 페이지를 테스트하십시오.  
+페이지에 "Hello from TypeScript"가 표시되어야 합니다.
 
-Notice that we specified `debug: true` to Browserify.
-This causes tsify to emit source maps inside the bundled JavaScript file.
-Source maps let you debug your original TypeScript code in the browser instead of the bundled JavaScript.
-You can test that source maps are working by opening the debugger for your browser and putting a breakpoint inside `main.ts`.
-When you refresh the page the breakpoint should pause the page and let you debug `greet.ts`.
+Browserify에 `debug : true`를 지정한 것에 주목하십시오.  
+이로 인해 tsify는 번들 JavaScript 파일 내에서 소스맵을 내보냅니다.  
+소스 맵을 사용하면 번들로 제공된 JavaScript 대신 브라우저에서 원본 TypeScript 코드를 디버깅할 수 있습니다.  
+브라우저의 디버거를 열고 `main.ts` 안에 브레이크포인트을 넣으면 소스 맵이 작동하는지 테스트할 수 있습니다.  
+페이지를 새로 고침 할 때 브레이크포인트가 페이지를 일시 중지하고 `greet.ts`를 디버깅 할 수 있도록 해야 합니다.
 
 # Watchify, Babel, and Uglify
 
-Now that we are bundling our code with Browserify and tsify, we can add various features to our build with browserify plugins.
+이제 코드를 Browserify에 묶어서 tsify 했으므로 browserify 플러그인을 사용하여 빌드에 다양한 기능을 추가할 수 있습니다.
 
-* Watchify starts gulp and keeps it running, incrementally compiling whenever you save a file.
-  This lets you keep an edit-save-refresh cycle going in the browser.
+* Watchify가 gulp를 계속 실행하며 파일을 저장할 때마다 점차적으로 컴파일합니다.  
+  이를 통해 브라우저에서 편집-저장-새로고침 사이클을 계속 진행할 수 있습니다.
 
-* Babel is a hugely flexible compiler that converts ES2015 and beyond into ES5 and ES3.
-  This lets you add extensive and customized transformations that TypeScript doesn't support.
+* Babel은 ES2015 이상을 ES5 및 ES3으로 변환하는 매우 유연한 컴파일러입니다.  
+  따라서 TypeScript에서 지원하지 않는 광범위한 맞춤형 변환을 추가할 수 있습니다.
 
-* Uglify compacts your code so that it takes less time to download.
+* Uglify는 다운로드 시간을 줄이도록 코드를 압축합니다.
 
 ## Watchify
 
-We'll start with Watchify to provide background compilation:
+Watchify로 백그라운드 컴파일을 시작하겠습니다 :
 
 ```shell
 npm install --save-dev watchify gulp-util
 ```
 
-Now change your gulpfile to the following:
+이제 gulpfile을 다음과 같이 변경하십시오 :
 
 ```js
 var gulp = require("gulp");
@@ -309,19 +309,20 @@ watchedBrowserify.on("update", bundle);
 watchedBrowserify.on("log", gutil.log);
 ```
 
-There are basically three changes here, but they require you to refactor your code a bit.
+여기에는 기본적으로 세 가지 변경 사항이 있지만 코드를 약간 리팩토링해야합니다.
 
-1. We wrapped our `browserify` instance in a call to `watchify`, and then held on to the result.
-2. We called `watchedBrowserify.on("update", bundle);` so that Browserify will run the `bundle` function every time one of your TypeScript files changes.
-3. We called `watchedBrowserify.on("log", gutil.log);` to log to the console.
+1. `watchify`에 대한 호출에서 `browserify` 인스턴스를 감싸고 그 결과를 유지했습니다.
+2. `watchedBrowserify.on("update", bundle);`을 호출하여 Browserify 가 TypeScript 파일 중 하나가 변경될 때마다 `bundle` 함수를 실행하도록 했습니다.
+3. `watchedBrowserify.on("log", gutil.log);`을 호출하여 콘솔에 로그했습니다.
 
-Together (1) and (2) mean that we have to move our call to `browserify` out of the `default` task.
-And we have to give the function for `default` a name since both Watchify and Gulp need to call it.
-Adding logging with (3) is optional but very useful for debugging your setup.
+(1)과 (2)는 `default` 작업에서 `browserify`를 호출해야 한다는 것을 의미합니다.  
+Watchify와 Gulp 모두 호출해야 하기 때문에 `default` 함수에 이름을 주어야 합니다.  
+(3)을 사용한 로깅을 추가하는 것은 선택 사항이지만 설정을 디버깅하는 데 매우 유용합니다.
 
-Now when you run Gulp, it should start and stay running.
-Try changing the code for `showHello` in `main.ts` and saving it.
-You should see output that looks like this:
+이제 Gulp를 실행하면 시작해야 하고 계속 실행됩니다.  
+`main.ts`에서 `showHello`에 대한 코드를 변경하고 저장하십시오.  
+
+다음과 같은 출력이 표시되어야 합니다 :
 
 ```shell
 proj$ gulp
@@ -337,14 +338,14 @@ proj$ gulp
 
 ## Uglify
 
-First install Uglify.
-Since the point of Uglify is to mangle your code, we also need to install vinyl-buffer and gulp-sourcemaps to keep sourcemaps working.
+먼저 Uglify를 설치하십시오.  
+Uglify의 요점은 코드를 압축하기 위한 것이므로 소스 맵을 유지하려면 vinyl-buffer와 gulp-sourcemaps도 설치해야 합니다.
 
 ```shell
 npm install --save-dev gulp-uglify vinyl-buffer gulp-sourcemaps
 ```
 
-Now change your gulpfile to the following:
+이제 gulpfile을 다음과 같이 변경하십시오 :
 
 ```js
 var gulp = require("gulp");
@@ -382,9 +383,9 @@ gulp.task("default", ["copy-html"], function () {
 });
 ```
 
-Notice that `uglify` itself has just one call &mdash; the calls to `buffer` and `sourcemaps` exist to make sure sourcemaps keep working.
-These calls give us a separate sourcemap file instead of using inline sourcemaps like before.
-Now you can run Gulp and check that `bundle.js` does get minified into an unreadable mess:
+`uglify` 자체에는 하나의 호출만 있습니다 &mdash; `buffer`와 `sourcemaps`에 대한 호출은 sourcemaps이 계속 작동하는지 확인하기 위해 존재합니다.  
+이러한 호출을 통해 이전과 같이 인라인 소스 맵을 사용하는 대신 별도의 소스 맵 파일을 사용할 수 있습니다.  
+이제 Gulp를 실행하고 `bundle.js`가 난독화로 압축되는지 확인하십시오 :
 
 ```shell
 gulp
@@ -393,15 +394,15 @@ cat dist/bundle.js
 
 ## Babel
 
-First install Babelify and the Babel preset for ES2015.
-Like Uglify, Babelify mangles code, so we'll need vinyl-buffer and gulp-sourcemaps.
-By default Babelify will only process files with extensions of `.js`, `.es`, `.es6` and `.jsx` so we need to add the `.ts` extension as an option to Babelify.
+먼저 ES2015 전용 Babelify 및 Babel preset을 설치하십시오.  
+Uglify처럼 Babelify도 코드를 엉망으로 만들기 때문에 vinyl-buffer와 gulp-sourcemaps이 필요합니다.  
+기본적으로 Babelify는 확장자가 `.js`, `.es`, `.es6` 및 `.jsx` 인 파일만 처리하므로 Babelify에 옵션으로 `.ts` 확장자를 추가해야 합니다.
 
 ```shell
 npm install --save-dev babelify babel-core babel-preset-es2015 vinyl-buffer gulp-sourcemaps
 ```
 
-Now change your gulpfile to the following:
+이제 gulpfile을 다음과 같이 변경하십시오 :
 
 ```js
 var gulp = require('gulp');
@@ -441,9 +442,10 @@ gulp.task('default', ['copyHtml'], function () {
 });
 ```
 
-We also need to have TypeScript target ES2015.
-Babel will then produce ES5 from the ES2015 code that TypeScript emits.
-Let's modify `tsconfig.json`:
+TypeScript 대상 ES2015도 필요합니다.  
+Babel은 TypeScript에서 내보내는 ES2015 코드에서 ES5를 생성합니다.
+
+`tsconfig.json`을 수정합시다 :
 
 ```json
 {
@@ -457,4 +459,4 @@ Let's modify `tsconfig.json`:
 }
 ```
 
-Babel's ES5 output should be very similar to TypeScript's output for such a simple script.
+Babel의 ES5 출력은 간단한 스크립트에 대한 TypeScript의 출력과 매우 유사해야 합니다.

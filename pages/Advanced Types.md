@@ -1,13 +1,15 @@
-# Intersection Types
+# 교차 타입 (Intersection Types)
 
-An intersection type combines multiple types into one.
-This allows you to add together existing types to get a single type that has all the features you need.
-For example, `Person & Serializable & Loggable` is a `Person` *and* `Serializable` *and* `Loggable`.
-That means an object of this type will have all members of all three types.
+교차 타입은 다양한 타입을 하나로 결합합니다.  
+따라서 기존 타입을 추가하여 필요한 모든 기능을 갖춘 단일 타입을 얻을 수 있습니다.
 
-You will mostly see intersection types used for mixins and other concepts that don't fit in the classic object-oriented mold.
-(There are a lot of these in JavaScript!)
-Here's a simple example that shows how to create a mixin:
+예를 들어 `Person & Serializable & Loggable`은 `Person` *과* `Serializable` *이며* `Loggable` 입니다.  
+즉 이 타입의 객체는 세 가지 타입의 모든 멤버를 갖게됩니다.
+
+믹스인에 사용되는 교차 타입과 고전적인 객체 지향 형식에 맞지 않는 다른 개념을 볼 수 있습니다.  
+(JavaScript에 이러한 것들이 많습니다!)
+
+여기에 Mixin을 만드는 방법을 보여 주는 간단한 예제가 있습니다 :
 
 ```ts
 function extend<T, U>(first: T, second: U): T & U {
@@ -39,17 +41,18 @@ var n = jim.name;
 jim.log();
 ```
 
-# Union Types
+# 유니온 타입 (Union Types)
 
-Union types are closely related to intersection types, but they are used very differently.
-Occasionally, you'll run into a library that expects a parameter to be either a `number` or a `string`.
-For instance, take the following function:
+유니온 타입은 교차 타입과 밀접한 관련이 있지만 매우 다르게 사용됩니다.  
+때로는 매개 변수가`number` 또는`string`이 될 것으로 기대하는 라이브러리를 실행하게됩니다.
+
+예를 들어 다음과 같은 함수을 수행하십시오:
 
 ```ts
 /**
- * Takes a string and adds "padding" to the left.
- * If 'padding' is a string, then 'padding' is appended to the left side.
- * If 'padding' is a number, then that number of spaces is added to the left side.
+ * string 타입을 가져와서 왼쪽에 "padding"을 추가합니다.
+ * 'padding'이 string인 경우에는 'padding'이 왼쪽에 추가됩니다.
+ * 'padding'이 number인 경우에는 해당 개수의 공백이 왼쪽에 추가됩니다.
  */
 function padLeft(value: string, padding: any) {
     if (typeof padding === "number") {
@@ -61,41 +64,41 @@ function padLeft(value: string, padding: any) {
     throw new Error(`Expected string or number, got '${padding}'.`);
 }
 
-padLeft("Hello world", 4); // returns "    Hello world"
+padLeft("Hello world", 4); // "    Hello world" 반환
 ```
 
-The problem with `padLeft` is that its `padding` parameter is typed as `any`.
-That means that we can call it with an argument that's neither a `number` nor a `string`, but TypeScript will be okay with it.
+`padLeft`의 문제점은 `padding` 매개 변수가 `any`로 분류된다는 것입니다.  
+즉 `number`이거나 `string`이 아닌 인수를 사용하여 호출할 수 있지만 TypeScript는 해당 인수와 함께 사용할 수 있습니다.
 
 ```ts
-let indentedString = padLeft("Hello world", true); // passes at compile time, fails at runtime.
+let indentedString = padLeft("Hello world", true); // 컴파일 타임에는 통과되지만 런타임에는 실패합니다.
 ```
 
-In traditional object-oriented code, we might abstract over the two types by creating a hierarchy of types.
-While this is much more explicit, it's also a little bit overkill.
-One of the nice things about the original version of `padLeft` was that we were able to just pass in primitives.
-That meant that usage was simple and concise.
-This new approach also wouldn't help if we were just trying to use a function that already exists elsewhere.
+전통적인 객체 지향 코드에서는 유형의 계층을 만들어 두 가지 유형을 추상화 할 수 있습니다.  
+이것이 훨씬 더 명백하기는 하지만 또 약간 지나치기도 합니다.  
+`padLeft`의 원래 버전에 대한 좋은 점 중 하나는 원시 값을 전달할 수 있다는 것입니다.  
+이는 사용법이 간단하고 간결하다는 것을 의미했습니다.  
+이 새로운 접근법은 이미 다른 곳에있는 함수를 사용하려는 경우에도 도움이되지 않습니다.
 
-Instead of `any`, we can use a *union type* for the `padding` parameter:
+`any` 대신 `padding` 매개변수에 *union type* 을 사용할 수 있습니다 :
 
 ```ts
 /**
- * Takes a string and adds "padding" to the left.
- * If 'padding' is a string, then 'padding' is appended to the left side.
- * If 'padding' is a number, then that number of spaces is added to the left side.
+ * string 타입을 가져와서 왼쪽에 "padding"을 추가합니다.
+ * 'padding'이 string인 경우에는 'padding'이 왼쪽에 추가됩니다.
+ * 'padding'이 number인 경우에는 해당 개수의 공백이 왼쪽에 추가됩니다.
  */
 function padLeft(value: string, padding: string | number) {
     // ...
 }
 
-let indentedString = padLeft("Hello world", true); // errors during compilation
+let indentedString = padLeft("Hello world", true); // 컴파일 시 오류
 ```
 
-A union type describes a value that can be one of several types.
-We use the vertical bar (`|`) to separate each type, so `number | string | boolean` is the type of a value that can be a `number`, a `string`, or a `boolean`.
+유니온 타입은 여러 타입 중 하나일 수 있는 값을 설명합니다.  
+각 타입을 구분하기 위해 수직 막대(`|`)를 사용하므로 `number | string | boolean`은 `number`, `string` 또는 `boolean` 될 수 있는 값의 타입입니다.
 
-If we have a value that has a union type, we can only access members that are common to all types in the union.
+유니온 타입이 있는 값이 있으면 유니온의 모든 타입에 공통적인 멤버에만 접근할 수 있습니다.
 
 ```ts
 interface Bird {
@@ -113,27 +116,27 @@ function getSmallPet(): Fish | Bird {
 }
 
 let pet = getSmallPet();
-pet.layEggs(); // okay
-pet.swim();    // errors
+pet.layEggs(); // 좋아요
+pet.swim();    // 오류
 ```
 
-Union types can be a bit tricky here, but it just takes a bit of intuition to get used to.
-If a value has the type `A | B`, we only know for *certain* that it has members that both `A` *and* `B` have.
-In this example, `Bird` has a member named `fly`.
-We can't be sure whether a variable typed as `Bird | Fish` has a `fly` method.
-If the variable is really a `Fish` at runtime, then calling `pet.fly()` will fail.
+유니온 타입이 좀 까다로울 수도 있지만 익숙해지는 데는 약간의 직관이 필요할 뿐입니다.  
+어떤 값에 `A | B` 타입이 있다면 `A` *와* `B` 모두 가지고있는 멤버가 있음을 *확실히* 알고 있습니다.  
+이 예제에서 `Bird`는 `fly`라는 멤버를 가지고 있습니다.  
+하지만 `Bird | Fish`의 변수 타입이 `fly` 메서드로 작용하고 있는지는 알 수 없습니다.  
+런타임에 변수가 `Fish` 인경우 `pet.fly()` 호출은 실패합니다.
 
-# Type Guards and Differentiating Types
+# 타입 가드와 차별 타입 (Type Guards and Differentiating Types)
 
-Union types are useful for modeling situations when values can overlap in the types they can take on.
-What happens when we need to know specifically whether we have a `Fish`?
-A common idiom in JavaScript to differentiate between two possible values is to check for the presence of a member.
-As we mentioned, you can only access members that are guaranteed to be in all the constituents of a union type.
+유니온 타입은 값을 취할 수있는 타입으로 겹칠 수있는 상황을 모델링 할 때 유용합니다.  
+`Fish`를 가지고 있는지에 대해 구체적으로 알아야 할 필요가 있을 때 무슨 일이 일어날까요?  
+JavaScript에서 두 가지 가능한 값을 구별하는 일반적인 용어는 멤버의 존재를 확인하는 것입니다.
+언급했듯이 유니온 타입의 모든 구성 요소에 포함될 수 있는 보장된 멤버에만 접근할 수 있습니다.
 
 ```ts
 let pet = getSmallPet();
 
-// Each of these property accesses will cause an error
+// 이러한 각 프로퍼티 접근은 오류를 발생시킵니다.
 if (pet.swim) {
     pet.swim();
 }
@@ -142,7 +145,7 @@ else if (pet.fly) {
 }
 ```
 
-To get the same code working, we'll need to use a type assertion:
+동일한 코드가 작동하도록하려면 타입 표명을 사용해야합니다 :
 
 ```ts
 let pet = getSmallPet();
