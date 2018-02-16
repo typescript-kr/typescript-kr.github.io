@@ -15,79 +15,40 @@ hue-6:   #d19a66
 hue-6-2: #e6c07b
 */
 
-code {
-	display: block;
-	overflow-x: auto;
-	padding: 0.5em;
-	color: #abb2bf;
-	background: #282c34;
+pre {
+	background-color: #282a36 !important;
+  color: #f8f8f2 !important;
+  border: none;
 }
+/*
+    Name:       dracula
+    Author:     Michael Kaminsky (http://github.com/mkaminsky11)
+    Original dracula color scheme by Zeno Rocha (https://github.com/zenorocha/dracula-theme)
+*/
 
-.hljs-comment,
-.hljs-quote {
-	color: #5c6370;
-	font-style: italic;
-}
 
-.hljs-doctag,
-.hljs-keyword,
-.hljs-formula {
-	color: #c678dd;
-}
+.CodeMirror-gutters { color: #282a36; }
+.CodeMirror-cursor { border-left: solid thin #f8f8f0; }
+.CodeMirror-linenumber { color: #6D8A88; }
+.CodeMirror-selected { background: rgba(255, 255, 255, 0.10); }
+.CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection { background: rgba(255, 255, 255, 0.10); }
+.CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection { background: rgba(255, 255, 255, 0.10); }
+span.cm-comment { color: #6272a4; }
+span.cm-string, span.cm-string-2 { color: #f1fa8c; }
+span.cm-number { color: #bd93f9; }
+span.cm-variable { color: #50fa7b; }
+span.cm-variable-2 { color: white; }
+span.cm-def { color: #50fa7b; }
+span.cm-operator { color: #ff79c6; }
+span.cm-keyword { color: #ff79c6; }
+span.cm-atom { color: #bd93f9; }
+span.cm-meta { color: #f8f8f2; }
+span.cm-tag { color: #ff79c6; }
+span.cm-attribute { color: #50fa7b; }
+span.cm-qualifier { color: #50fa7b; }
+span.cm-property { color: #66d9ef; }
+span.cm-builtin { color: #50fa7b; }
+span.cm-variable-3, span.cm-type { color: #ffb86c; }
 
-.hljs-section,
-.hljs-name,
-.hljs-selector-tag,
-.hljs-deletion,
-.hljs-subst {
-	color: #e06c75;
-}
-
-.hljs-literal {
-	color: #56b6c2;
-}
-
-.hljs-string,
-.hljs-regexp,
-.hljs-addition,
-.hljs-attribute,
-.hljs-meta-string {
-	color: #98c379;
-}
-
-.hljs-built_in,
-.hljs-class .hljs-title {
-	color: #e6c07b;
-}
-
-.hljs-attr,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-type,
-.hljs-selector-class,
-.hljs-selector-attr,
-.hljs-selector-pseudo,
-.hljs-number {
-	color: #d19a66;
-}
-
-.hljs-symbol,
-.hljs-bullet,
-.hljs-link,
-.hljs-meta,
-.hljs-selector-id,
-.hljs-title {
-	color: #61aeee;
-}
-
-.hljs-emphasis {
-	font-style: italic;
-}
-
-.hljs-strong {
-	font-weight: bold;
-}
-
-.hljs-link {
-	text-decoration: underline;
-}
+.CodeMirror-activeline-background { background: rgba(255,255,255,0.1); }
+.CodeMirror-matchingbracket { text-decoration: underline; color: white !important; }

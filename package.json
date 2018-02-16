@@ -1,0 +1,27 @@
+{
+  "name": "typescript-study.github.io",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/Microsoft/TypeScript-Handbook.svg)](https://travis-ci.org/Microsoft/TypeScript-Handbook)",
+  "main": "index.js",
+  "dependencies": {
+    "gitbook-plugin-addcssjs": "^1.0.2",
+    "gitbook-plugin-custom-favicon": "^0.0.4",
+    "gitbook-plugin-favicon": "^0.0.2",
+    "gitbook-plugin-highlight": "^2.0.3",
+    "gitbook-plugin-theme-darkblue": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/typescript-study/typescript-study.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/typescript-study/typescript-study.github.io/issues"
+  },
+  "homepage": "https://github.com/typescript-study/typescript-study.github.io#readme"
+}

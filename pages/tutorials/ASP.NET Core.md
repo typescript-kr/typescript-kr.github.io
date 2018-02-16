@@ -309,7 +309,7 @@ tsconfig는 다음과 같이 보일 것입니다 :
 
 업데이트된 `gulpfile.js`은 다음과 같이 표시됩니다 :
 
-```xml
+```js
 /// <binding AfterBuild='default' Clean='clean' />
 /*
 이 파일은 Gulp의 작업을 정의하고 플러그인을 사용하기 위한 entry point입니다.
