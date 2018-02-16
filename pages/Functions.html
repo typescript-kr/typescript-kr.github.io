@@ -12,9 +12,14 @@
         
         
     
+    
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight-1/website.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
@@ -44,6 +49,10 @@
         
     
         
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/atom-one-dark.css" />
     
 
         
@@ -700,304 +709,304 @@
 <h1 id="&#xD568;&#xC218;-functions">&#xD568;&#xC218; (Functions)</h1>
 <p>JavaScript&#xC640; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; TypeScript &#xD568;&#xC218;&#xB294; &#xAE30;&#xBA85; &#xD568;&#xC218; &#xB610;&#xB294; &#xC775;&#xBA85; &#xD568;&#xC218;&#xB85C; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB97C; &#xD1B5;&#xD574; API&#xC758; &#xD568;&#xC218; &#xBAA9;&#xB85D;&#xC744; &#xC791;&#xC131;&#xD558;&#xB4E0; &#xB2E4;&#xB978; &#xD568;&#xC218;&#xC5D0; &#xC804;&#xB2EC;&#xD560; &#xC77C;&#xD68C;&#xC131; &#xD568;&#xC218;&#xC774;&#xB4E0; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC5D0; &#xAC00;&#xC7A5; &#xC801;&#xD569;&#xD55C; &#xC811;&#xADFC; &#xBC29;&#xBC95;&#xC744; &#xC120;&#xD0DD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC774; &#xB450;&#xAC00;&#xC9C0; &#xC811;&#xADFC; &#xBC29;&#xC2DD;&#xC774; JavaScript&#xC5D0;&#xC11C; &#xC5B4;&#xB5BB;&#xAC8C; &#xBCF4;&#xC774;&#xB294;&#xC9C0; &#xBE60;&#xB974;&#xAC8C; &#xC694;&#xC57D;&#xD558;&#xBA74;:</p>
-<pre><code class="lang-ts"><span class="hljs-comment">// &#xAE30;&#xBA85; &#xD568;&#xC218;</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x, y</span>) </span>{
-    <span class="hljs-keyword">return</span> x + y;
+<pre><code class="lang-ts"><span class="cm-comment">// &#xAE30;&#xBA85; &#xD568;&#xC218;</span>
+<span class="cm-keyword">function</span> <span class="cm-variable">add</span>(<span class="cm-def">x</span>, <span class="cm-def">y</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-variable-2">x</span> <span class="cm-operator">+</span> <span class="cm-variable-2">y</span>;
 }
 
-<span class="hljs-comment">// &#xC775;&#xBA85; &#xD568;&#xC218;</span>
-<span class="hljs-keyword">let</span> myAdd = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x, y</span>) </span>{ <span class="hljs-keyword">return</span> x + y; };
+<span class="cm-comment">// &#xC775;&#xBA85; &#xD568;&#xC218;</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">myAdd</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">x</span>, <span class="cm-def">y</span>) { <span class="cm-keyword">return</span> <span class="cm-variable-2">x</span> <span class="cm-operator">+</span> <span class="cm-variable-2">y</span>; };
 </code></pre>
 <p>JavaScript&#xC5D0;&#xC11C;&#xC640; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xD568;&#xC218;&#xB294; &#xD568;&#xC218; &#xBCF8;&#xBB38; &#xC678;&#xBD80;&#xC758; &#xBCC0;&#xC218;&#xB97C; &#xCC38;&#xC870;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB807;&#xAC8C; &#xD560; &#xB54C; &#xC774;&#xB7EC;&#xD55C; &#xBCC0;&#xC218;&#xB4E4;&#xC744; <code>capture</code>&#xB77C;&#xACE0; &#xB9D0;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xAE30;&#xBC95;&#xC758; &#xC0AC;&#xC6A9; &#xBC29;&#xBC95;&#xACFC; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xC758; &#xC808;&#xCDA9; &#xC0AC;&#xD56D;&#xC744; &#xC774;&#xD574;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC774;&#xBC88; &#xC7A5;&#xC758; &#xBC94;&#xC704;&#xB97C; &#xBC97;&#xC5B4;&#xB098;&#xC9C0;&#xB9CC;<br>&#xCEA1;&#xCC98;&#xC758; &#xBA54;&#xCEE4;&#xB2C8;&#xC998;&#xC774; JavaScript&#xC640; TypeScript&#xC5D0; &#xC5BC;&#xB9C8;&#xB098; &#xC911;&#xC694;&#xD55C; &#xBD80;&#xBD84;&#xC778;&#xC9C0; &#xD655;&#xC2E4;&#xD788; &#xC774;&#xD574;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">let</span> z = <span class="hljs-number">100</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">z</span> <span class="cm-operator">=</span> <span class="cm-number">100</span>;
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addToZ</span>(<span class="hljs-params">x, y</span>) </span>{
-    <span class="hljs-keyword">return</span> x + y + z;
+<span class="cm-keyword">function</span> <span class="cm-variable">addToZ</span>(<span class="cm-def">x</span>, <span class="cm-def">y</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-variable-2">x</span> <span class="cm-operator">+</span> <span class="cm-variable-2">y</span> <span class="cm-operator">+</span> <span class="cm-variable">z</span>;
 }
 </code></pre>
 <h1 id="&#xD568;&#xC218;&#xC758;-&#xD0C0;&#xC785;-function-types">&#xD568;&#xC218;&#xC758; &#xD0C0;&#xC785; (Function Types)</h1>
 <h2 id="&#xD568;&#xC218;-&#xC791;&#xC131;&#xD558;&#xAE30;-typing-the-function">&#xD568;&#xC218; &#xC791;&#xC131;&#xD558;&#xAE30; (Typing the function)</h2>
 <p>&#xC55E;&#xC5D0;&#xC11C; &#xC0B4;&#xD3B4;&#xBCF8; &#xAC04;&#xB2E8;&#xD55C; &#xC608;&#xC81C;&#xC5D0; &#xD0C0;&#xC785;&#xC744; &#xCD94;&#xAC00;&#xD574;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">number</span> </span>{
-    <span class="hljs-keyword">return</span> x + y;
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">add</span>(<span class="cm-def">x</span>: <span class="cm-variable-3">number</span>, <span class="cm-def">y</span>: <span class="cm-variable-3">number</span>): <span class="cm-variable-3">number</span> {
+    <span class="cm-keyword">return</span> <span class="cm-variable">x</span> <span class="cm-operator">+</span> <span class="cm-variable">y</span>;
 }
 
-<span class="hljs-keyword">let</span> myAdd = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">number</span> </span>{ <span class="hljs-keyword">return</span> x + y; };
+<span class="cm-keyword">let</span> <span class="cm-variable">myAdd</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">x</span>: <span class="cm-variable-3">number</span>, <span class="cm-def">y</span>: <span class="cm-variable-3">number</span>): <span class="cm-variable-3">number</span> { <span class="cm-keyword">return</span> <span class="cm-variable">x</span> <span class="cm-operator">+</span> <span class="cm-variable">y</span>; };
 </code></pre>
 <p>&#xAC01; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC5D0; &#xD0C0;&#xC785;&#xC744; &#xCD94;&#xAC00; &#xD55C; &#xB2E4;&#xC74C; &#xD568;&#xC218; &#xC790;&#xCCB4;&#xC5D0; &#xD0C0;&#xC785;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xBC18;&#xD658; &#xD0C0;&#xC785;&#xC744; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>TypeScript&#xB294; &#xB9AC;&#xD134;&#xBB38;&#xB97C; &#xBCF4;&#xACE0; &#xBC18;&#xD658; &#xD0C0;&#xC785;&#xC744; &#xD30C;&#xC545;&#xD560; &#xC218; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xB300;&#xBD80;&#xBD84; &#xC120;&#xD0DD;&#xC801;&#xC73C;&#xB85C; &#xBC18;&#xD658; &#xD0C0;&#xC785;&#xC744; &#xC0DD;&#xB7B5;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h2 id="&#xD568;&#xC218;-&#xD0C0;&#xC785;-&#xC791;&#xC131;&#xD558;&#xAE30;-writing-the-function-type">&#xD568;&#xC218; &#xD0C0;&#xC785; &#xC791;&#xC131;&#xD558;&#xAE30; (Writing the function type)</h2>
 <p>&#xC774;&#xC81C; &#xD568;&#xC218;&#xB97C; &#xC791;&#xC131;&#xD588;&#xC73C;&#xBBC0;&#xB85C; &#xD568;&#xC218; &#xD0C0;&#xC785;&#xC758; &#xAC01; &#xBD80;&#xBD84;&#xC744; &#xC0B4;&#xD3B4;&#xBCF4;&#xBA74;&#xC11C; &#xD568;&#xC218;&#xC758; &#xC804;&#xCCB4; &#xD0C0;&#xC785;&#xC744; &#xC791;&#xC131;&#xD574;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">let</span> myAdd: (x: <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">number</span>) =&gt; <span class="hljs-built_in">number</span> =
-    <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">number</span> </span>{ <span class="hljs-keyword">return</span> x + y; };
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">myAdd</span>: (<span class="cm-def">x</span>: <span class="cm-variable-3">number</span>, <span class="cm-variable">y</span>: <span class="cm-variable-3">number</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable-3">number</span> <span class="cm-operator">=</span>
+    <span class="cm-keyword">function</span>(<span class="cm-def">x</span>: <span class="cm-variable-3">number</span>, <span class="cm-def">y</span>: <span class="cm-variable-3">number</span>): <span class="cm-variable-3">number</span> { <span class="cm-keyword">return</span> <span class="cm-variable">x</span> <span class="cm-operator">+</span> <span class="cm-variable">y</span>; };
 </code></pre>
 <p>&#xD568;&#xC218;&#xC758; &#xD0C0;&#xC785;&#xC740; &#xB450;&#xAC1C;&#xC758; &#xD30C;&#xD2B8;&#xB85C; &#xB098;&#xB269;&#xB2C8;&#xB2E4;: &#xC778;&#xC218;&#xC758; &#xD0C0;&#xC785;&#xACFC; &#xBC18;&#xD658; &#xD0C0;&#xC785;.<br>&#xC804;&#xCCB4; &#xD568;&#xC218; &#xD0C0;&#xC785;&#xC744; &#xC791;&#xC131;&#xD560; &#xB54C; &#xB450; &#xD30C;&#xD2B8;&#xAC00; &#xBAA8;&#xB450; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xD0C0;&#xC785;&#xACFC; &#xAC19;&#xC774; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xBAA9;&#xB85D;&#xC744; &#xAE30;&#xB85D;&#xD558;&#xC5EC; &#xAC01; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC5D0; &#xC774;&#xB984;&#xACFC; &#xD0C0;&#xC785;&#xC744; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xC774;&#xB984;&#xC740; &#xAC00;&#xB3C5;&#xC131;&#xC744; &#xB3D5;&#xAE30; &#xC704;&#xD55C; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC704;&#xC758; &#xCF54;&#xB4DC;&#xB97C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">let</span> myAdd: (baseValue: <span class="hljs-built_in">number</span>, increment: <span class="hljs-built_in">number</span>) =&gt; <span class="hljs-built_in">number</span> =
-    <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">number</span> </span>{ <span class="hljs-keyword">return</span> x + y; };
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">myAdd</span>: (<span class="cm-def">baseValue</span>: <span class="cm-variable-3">number</span>, <span class="cm-variable">increment</span>: <span class="cm-variable-3">number</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable-3">number</span> <span class="cm-operator">=</span>
+    <span class="cm-keyword">function</span>(<span class="cm-def">x</span>: <span class="cm-variable-3">number</span>, <span class="cm-def">y</span>: <span class="cm-variable-3">number</span>): <span class="cm-variable-3">number</span> { <span class="cm-keyword">return</span> <span class="cm-variable">x</span> <span class="cm-operator">+</span> <span class="cm-variable">y</span>; };
 </code></pre>
 <p>&#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xD0C0;&#xC785;&#xC774; &#xC815;&#xB82C;&#xB418;&#xC5B4; &#xC788;&#xB294; &#xD55C; &#xD568;&#xC218;&#xC758; &#xD0C0;&#xC785;&#xC5D0; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xC774;&#xB984;&#xC5D0; &#xAD00;&#xACC4; &#xC5C6;&#xC774; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xD0C0;&#xC785;&#xC774; &#xC720;&#xD6A8;&#xD55C; &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xAC04;&#xC8FC;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <p>&#xB450; &#xBC88;&#xC9F8; &#xD30C;&#xD2B8;&#xB294; &#xBC18;&#xD658; &#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC640; &#xBC18;&#xD658; &#xD0C0;&#xC785; &#xC0AC;&#xC774;&#xC5D0; &#xAD75;&#xC740; &#xD654;&#xC0B4;&#xD45C;(=&gt;)&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBC18;&#xD658; &#xD0C0;&#xC785;&#xC744; &#xBA85;&#xD655;&#xD558;&#xAC8C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xC55E;&#xC11C; &#xC5B8;&#xAE09;&#xD55C; &#xAC83;&#xCC98;&#xB7FC; &#xC774;&#xAC83;&#xC740; &#xD568;&#xC218; &#xD0C0;&#xC785;&#xC758; &#xD544;&#xC218;&#xC801;&#xC778; &#xBD80;&#xBD84;&#xC774;&#xBBC0;&#xB85C; &#xD568;&#xC218;&#xAC00; &#xAC12;&#xC744; &#xBC18;&#xD658;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xBC18;&#xD658; &#xAC12;&#xC744; &#xB0A8;&#xACA8; &#xB450;&#xC9C0; &#xC54A;&#xACE0; <code>void</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC8FC;&#xC758;&#xC0AC;&#xD56D;, &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC640; &#xBC18;&#xD658; &#xD0C0;&#xC785;&#xB9CC; &#xD568;&#xC218; &#xD0C0;&#xC785;&#xC744; &#xAD6C;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xCEA1;&#xCC98;&#xB41C; &#xBCC0;&#xC218;&#xB294; &#xD0C0;&#xC785;&#xC5D0; &#xBC18;&#xC601;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC2E4;&#xC81C;&#xB85C; &#xCEA1;&#xCC98;&#xB41C; &#xBCC0;&#xC218;&#xB294; &#xD568;&#xC218;&#xC758; &quot;&#xC228;&#xACA8;&#xC9C4; &#xC0C1;&#xD0DC;&quot;&#xC758; &#xC77C;&#xBD80;&#xC774;&#xBA70; &#xD574;&#xB2F9; API&#xB97C; &#xAD6C;&#xC131;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h2 id="&#xD0C0;&#xC785;-&#xCD94;&#xB860;-inferring-the-types">&#xD0C0;&#xC785; &#xCD94;&#xB860; (Inferring the types)</h2>
 <p>&#xC608;&#xB97C; &#xB4E4;&#xBA74; TypeScript &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; &#xD55C;&#xCABD;&#xC5D0;&#xB294; &#xD0C0;&#xC785;&#xC774; &#xC788;&#xC9C0;&#xB9CC; &#xB2E4;&#xB978; &#xD55C;&#xCABD;&#xC5D0; &#xD0C0;&#xC785;&#xC774; &#xC5C6;&#xB294; &#xACBD;&#xC6B0; &#xADF8; &#xD0C0;&#xC785;&#xC744; &#xC774;&#xD574;&#xD560; &#xC218; &#xC5C6;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC54C;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-ts"><span class="hljs-comment">// myAdd&#xB294; &#xC644;&#xBCBD;&#xD558;&#xAC8C; &#xD568;&#xC218; &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
-<span class="hljs-keyword">let</span> myAdd = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">number</span> </span>{ <span class="hljs-keyword">return</span>  x + y; };
+<pre><code class="lang-ts"><span class="cm-comment">// myAdd&#xB294; &#xC644;&#xBCBD;&#xD558;&#xAC8C; &#xD568;&#xC218; &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">myAdd</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">x</span>: <span class="cm-variable-3">number</span>, <span class="cm-def">y</span>: <span class="cm-variable-3">number</span>): <span class="cm-variable-3">number</span> { <span class="cm-keyword">return</span>  <span class="cm-variable">x</span> <span class="cm-operator">+</span> <span class="cm-variable">y</span>; };
 
-<span class="hljs-comment">// &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &apos;x&apos;&#xC640; &apos;y&apos;&#xC5D0;&#xB294; number &#xD0C0;&#xC785;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
-<span class="hljs-keyword">let</span> myAdd: (baseValue: <span class="hljs-built_in">number</span>, increment: <span class="hljs-built_in">number</span>) =&gt; <span class="hljs-built_in">number</span> =
-    <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x, y</span>) </span>{ <span class="hljs-keyword">return</span> x + y; };
+<span class="cm-comment">// &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &apos;x&apos;&#xC640; &apos;y&apos;&#xC5D0;&#xB294; number &#xD0C0;&#xC785;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">myAdd</span>: (<span class="cm-def">baseValue</span>: <span class="cm-variable-3">number</span>, <span class="cm-variable">increment</span>: <span class="cm-variable-3">number</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable-3">number</span> <span class="cm-operator">=</span>
+    <span class="cm-keyword">function</span>(<span class="cm-def">x</span>, <span class="cm-def">y</span>) { <span class="cm-keyword">return</span> <span class="cm-variable-2">x</span> <span class="cm-operator">+</span> <span class="cm-variable-2">y</span>; };
 </code></pre>
 <p>&#xC774;&#xAC83;&#xC744; &#xD0C0;&#xC785; &#xCD94;&#xB860;&#xC758; &#xD55C; &#xC885;&#xB958;&#xC778; &quot;&#xC0C1;&#xD669;&#xC801; &#xD0C0;&#xC774;&#xD551;(Contextual Typing)&quot;&#xC774;&#xB77C;&#xACE0; &#xD569;&#xB2C8;&#xB2E4;.
 &#xC774;&#xB97C; &#xD1B5;&#xD574; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC744; &#xACC4;&#xC18D; &#xC720;&#xC9C0;&#xD558;&#xB294; &#xB370; &#xB4DC;&#xB294; &#xB178;&#xB825;&#xC744; &#xC904;&#xC77C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h1 id="&#xC120;&#xD0DD;&#xC801;-&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC640;-&#xAE30;&#xBCF8;-&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;-optional-and-default-parameters">&#xC120;&#xD0DD;&#xC801; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC640; &#xAE30;&#xBCF8; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; (Optional and Default Parameters)</h1>
 <p>TypeScript&#xC5D0;&#xC11C;&#xB294; &#xBAA8;&#xB4E0; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xAC00; &#xD568;&#xC218;&#xC5D0; &#xD544;&#xC694;&#xD558;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.<br><code>null</code> &#xB610;&#xB294; <code>undefined</code>&#xAC00; &#xC8FC;&#xC5B4;&#xC9C8; &#xC218; &#xC5C6;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC544;&#xB2C8;&#xB77C; &#xD568;&#xC218;&#xAC00; &#xD638;&#xCD9C;&#xB420; &#xB54C; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xAC00; &#xAC01; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC5D0; &#xAC12;&#xC744; &#xC81C;&#xACF5;&#xD588;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xB610;&#xD55C; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; &#xC774;&#xB7EC;&#xD55C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB4E4;&#xC774; &#xD568;&#xC218;&#xB85C; &#xC804;&#xB2EC;&#xB418;&#xB294; &#xC720;&#xC77C;&#xD55C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB77C;&#xACE0; &#xAC00;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xAC04;&#xB2E8;&#xD788; &#xB9D0;&#xD574;&#xC11C; &#xD568;&#xC218;&#xC5D0; &#xC8FC;&#xC5B4;&#xC9C4; &#xC778;&#xC218;&#xC758; &#xC218;&#xB294; &#xADF8; &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xAE30;&#xB300;&#xD558;&#xB294; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC758; &#xC218;&#xC640; &#xC77C;&#xCE58;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">buildName</span>(<span class="hljs-params">firstName: <span class="hljs-built_in">string</span>, lastName: <span class="hljs-built_in">string</span></span>) </span>{
-    <span class="hljs-keyword">return</span> firstName + <span class="hljs-string">&quot; &quot;</span> + lastName;
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">buildName</span>(<span class="cm-def">firstName</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">lastName</span>: <span class="cm-variable-3">string</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-variable-2">firstName</span> <span class="cm-operator">+</span> <span class="cm-string">&quot; &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable-2">lastName</span>;
 }
 
-<span class="hljs-keyword">let</span> result1 = buildName(<span class="hljs-string">&quot;Bob&quot;</span>);                  <span class="hljs-comment">// &#xC624;&#xB958;, &#xB108;&#xBB34; &#xC801;&#xC740; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;</span>
-<span class="hljs-keyword">let</span> result2 = buildName(<span class="hljs-string">&quot;Bob&quot;</span>, <span class="hljs-string">&quot;Adams&quot;</span>, <span class="hljs-string">&quot;Sr.&quot;</span>);  <span class="hljs-comment">// &#xC624;&#xB958;, &#xB108;&#xBB34; &#xB9CE;&#xC740; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;</span>
-<span class="hljs-keyword">let</span> result3 = buildName(<span class="hljs-string">&quot;Bob&quot;</span>, <span class="hljs-string">&quot;Adams&quot;</span>);         <span class="hljs-comment">// &#xC544;, &#xB531; &#xB9DE;&#xC2B5;&#xB2C8;&#xB2E4;</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">result1</span> <span class="cm-operator">=</span> <span class="cm-variable">buildName</span>(<span class="cm-string">&quot;Bob&quot;</span>);                  <span class="cm-comment">// &#xC624;&#xB958;, &#xB108;&#xBB34; &#xC801;&#xC740; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">result2</span> <span class="cm-operator">=</span> <span class="cm-variable">buildName</span>(<span class="cm-string">&quot;Bob&quot;</span>, <span class="cm-string">&quot;Adams&quot;</span>, <span class="cm-string">&quot;Sr.&quot;</span>);  <span class="cm-comment">// &#xC624;&#xB958;, &#xB108;&#xBB34; &#xB9CE;&#xC740; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">result3</span> <span class="cm-operator">=</span> <span class="cm-variable">buildName</span>(<span class="cm-string">&quot;Bob&quot;</span>, <span class="cm-string">&quot;Adams&quot;</span>);         <span class="cm-comment">// &#xC544;, &#xB531; &#xB9DE;&#xC2B5;&#xB2C8;&#xB2E4;</span>
 </code></pre>
 <p>JavaScript&#xC5D0;&#xC11C; &#xBAA8;&#xB4E0; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB294; &#xC120;&#xD0DD; &#xC0AC;&#xD56D;&#xC774;&#xBA70; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC6D0;&#xD558;&#xB294; &#xB300;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB807;&#xAC8C; &#xB418;&#xBA74; &#xADF8; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB4E4;&#xC758; &#xAC12;&#xC740; <code>undefined</code>&#xC785;&#xB2C8;&#xB2E4;.
 TypeScript&#xC5D0;&#xC11C; &#xC120;&#xD0DD;&#xC801;&#xC778; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; &#xC120;&#xD0DD;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xB294; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC758; &#xB05D;&#xC5D0; <code>?</code>&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xC138;&#xC694;.</p>
 <p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; &#xC704;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD55C; lastName &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC120;&#xD0DD;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD569;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">buildName</span>(<span class="hljs-params">firstName: <span class="hljs-built_in">string</span>, lastName?: <span class="hljs-built_in">string</span></span>) </span>{
-    <span class="hljs-keyword">if</span> (lastName)
-        <span class="hljs-keyword">return</span> firstName + <span class="hljs-string">&quot; &quot;</span> + lastName;
-    <span class="hljs-keyword">else</span>
-        <span class="hljs-keyword">return</span> firstName;
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">buildName</span>(<span class="cm-def">firstName</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">lastName</span><span class="cm-operator">?</span>: <span class="cm-variable-3">string</span>) {
+    <span class="cm-keyword">if</span> (<span class="cm-variable-2">lastName</span>)
+        <span class="cm-keyword">return</span> <span class="cm-variable-2">firstName</span> <span class="cm-operator">+</span> <span class="cm-string">&quot; &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable-2">lastName</span>;
+    <span class="cm-keyword">else</span>
+        <span class="cm-keyword">return</span> <span class="cm-variable-2">firstName</span>;
 }
 
-<span class="hljs-keyword">let</span> result1 = buildName(<span class="hljs-string">&quot;Bob&quot;</span>);                  <span class="hljs-comment">// &#xC62C;&#xBC14;&#xB974;&#xAC8C; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;</span>
-<span class="hljs-keyword">let</span> result2 = buildName(<span class="hljs-string">&quot;Bob&quot;</span>, <span class="hljs-string">&quot;Adams&quot;</span>, <span class="hljs-string">&quot;Sr.&quot;</span>);  <span class="hljs-comment">// &#xC624;&#xB958;, &#xB108;&#xBB34; &#xB9CE;&#xC740; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;</span>
-<span class="hljs-keyword">let</span> result3 = buildName(<span class="hljs-string">&quot;Bob&quot;</span>, <span class="hljs-string">&quot;Adams&quot;</span>);         <span class="hljs-comment">// &#xC544;, &#xB531; &#xB9DE;&#xC2B5;&#xB2C8;&#xB2E4;</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">result1</span> <span class="cm-operator">=</span> <span class="cm-variable">buildName</span>(<span class="cm-string">&quot;Bob&quot;</span>);                  <span class="cm-comment">// &#xC62C;&#xBC14;&#xB974;&#xAC8C; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">result2</span> <span class="cm-operator">=</span> <span class="cm-variable">buildName</span>(<span class="cm-string">&quot;Bob&quot;</span>, <span class="cm-string">&quot;Adams&quot;</span>, <span class="cm-string">&quot;Sr.&quot;</span>);  <span class="cm-comment">// &#xC624;&#xB958;, &#xB108;&#xBB34; &#xB9CE;&#xC740; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">result3</span> <span class="cm-operator">=</span> <span class="cm-variable">buildName</span>(<span class="cm-string">&quot;Bob&quot;</span>, <span class="cm-string">&quot;Adams&quot;</span>);         <span class="cm-comment">// &#xC544;, &#xB531; &#xB9DE;&#xC2B5;&#xB2C8;&#xB2E4;</span>
 </code></pre>
 <p>&#xBAA8;&#xB4E0; &#xC120;&#xD0DD;&#xC801; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB294; &#xD544;&#xC218; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xB530;&#xB77C;&#xC640;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>last name &#xB300;&#xC2E0; first name&#xC744; &#xC120;&#xD0DD;&#xC801; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB85C; &#xB9CC;&#xB4E4;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74; &#xD568;&#xC218;&#xC758; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xC21C;&#xC11C;&#xB97C; &#xBCC0;&#xACBD;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xC989; &#xBAA9;&#xB85D;&#xC758; first name&#xC744; &#xB9C8;&#xC9C0;&#xB9C9;&#xC5D0; &#xB123;&#xC5B4;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>TypeScript&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xC9C0; &#xC54A;&#xAC70;&#xB098; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xB300;&#xC2E0; <code>undefined</code>&#xB97C; &#xC804;&#xB2EC;&#xD558;&#xB354;&#xB77C;&#xB3C4; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xAC00;&#xC5D0; &#xD560;&#xB2F9;&#xB418;&#xB294; &#xAC12;&#xC744; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xAC83;&#xC744; &#xAE30;&#xBCF8; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;(default-initialized parameters)&#xB77C;&#xACE0; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC55E;&#xC758; &#xC608;&#xC81C;&#xB97C; &#xB530;&#xB77C; last name&#xC758; &#xAE30;&#xBCF8;&#xAC12;&#xC744; <code>&quot;Smith&quot;</code>&#xB85C; &#xC124;&#xC815;&#xD574; &#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-ts">function buildName(firstName: string, lastName = &quot;Smith&quot;) {
-    return firstName + &quot; &quot; + lastName;
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">buildName</span>(<span class="cm-def">firstName</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">lastName</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;Smith&quot;</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-variable-2">firstName</span> <span class="cm-operator">+</span> <span class="cm-string">&quot; &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable-2">lastName</span>;
 }
 
-let result1 = buildName(&quot;Bob&quot;);                  // &#xC62C;&#xBC14;&#xB974;&#xAC8C; &#xC791;&#xB3D9;&#xD558;&#xBA70; &quot;Bob Smith&quot;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;
-let result2 = buildName(&quot;Bob&quot;, undefined);       // &#xC5EC;&#xC804;&#xD788; &#xC791;&#xB3D9;&#xD558;&#xBA70; &quot;Bob Smith&quot;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.
-let result3 = buildName(&quot;Bob&quot;, &quot;Adams&quot;, &quot;Sr.&quot;);  // &#xC624;&#xB958;, &#xB108;&#xBB34; &#xB9CE;&#xC740; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;
-let result4 = buildName(&quot;Bob&quot;, &quot;Adams&quot;);         // &#xC544;, &#xB531; &#xB9DE;&#xC2B5;&#xB2C8;&#xB2E4;
+<span class="cm-keyword">let</span> <span class="cm-variable">result1</span> <span class="cm-operator">=</span> <span class="cm-variable">buildName</span>(<span class="cm-string">&quot;Bob&quot;</span>);                  <span class="cm-comment">// &#xC62C;&#xBC14;&#xB974;&#xAC8C; &#xC791;&#xB3D9;&#xD558;&#xBA70; &quot;Bob Smith&quot;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">result2</span> <span class="cm-operator">=</span> <span class="cm-variable">buildName</span>(<span class="cm-string">&quot;Bob&quot;</span>, <span class="cm-atom">undefined</span>);       <span class="cm-comment">// &#xC5EC;&#xC804;&#xD788; &#xC791;&#xB3D9;&#xD558;&#xBA70; &quot;Bob Smith&quot;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">result3</span> <span class="cm-operator">=</span> <span class="cm-variable">buildName</span>(<span class="cm-string">&quot;Bob&quot;</span>, <span class="cm-string">&quot;Adams&quot;</span>, <span class="cm-string">&quot;Sr.&quot;</span>);  <span class="cm-comment">// &#xC624;&#xB958;, &#xB108;&#xBB34; &#xB9CE;&#xC740; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">result4</span> <span class="cm-operator">=</span> <span class="cm-variable">buildName</span>(<span class="cm-string">&quot;Bob&quot;</span>, <span class="cm-string">&quot;Adams&quot;</span>);         <span class="cm-comment">// &#xC544;, &#xB531; &#xB9DE;&#xC2B5;&#xB2C8;&#xB2E4;</span>
 </code></pre>
 <p>&#xD544;&#xC218; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC758; &#xB4A4;&#xC5D0; &#xC624;&#xB294; &#xAE30;&#xBCF8; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB294; &#xC120;&#xD0DD;&#xC801; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB85C; &#xCDE8;&#xAE09;&#xB418;&#xC5B4; &#xD568;&#xC218;&#xB97C; &#xD638;&#xCD9C;&#xD560; &#xB54C; &#xC120;&#xD0DD;&#xC801; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xCC98;&#xB7FC; &#xC0DD;&#xB7B5;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xAC83;&#xC740; &#xC120;&#xD0DD;&#xC801; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC640; &#xD6C4;&#xD589; &#xAE30;&#xBCF8; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xAC00; &#xD574;&#xB2F9; &#xD0C0;&#xC785;&#xC758; &#xACF5;&#xD1B5;&#xC810;&#xC744; &#xACF5;&#xC720;&#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBBC0;&#xB85C;  </p>
 <p>&#xB458; &#xB2E4;</p>
-<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">buildName</span>(<span class="hljs-params">firstName: <span class="hljs-built_in">string</span>, lastName?: <span class="hljs-built_in">string</span></span>) </span>{
-    <span class="hljs-comment">// ...</span>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">buildName</span>(<span class="cm-def">firstName</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">lastName</span><span class="cm-operator">?</span>: <span class="cm-variable-3">string</span>) {
+    <span class="cm-comment">// ...</span>
 }
 </code></pre>
 <p>&#xADF8;&#xB9AC;&#xACE0;</p>
-<pre><code class="lang-ts">function buildName(firstName: string, lastName = &quot;Smith&quot;) {
-    // ...
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">buildName</span>(<span class="cm-def">firstName</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">lastName</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;Smith&quot;</span>) {
+    <span class="cm-comment">// ...</span>
 }
 </code></pre>
 <p><code>(firstName: string, lastName?: string) =&gt; string</code> &#xB3D9;&#xC77C;&#xD55C; &#xD0C0;&#xC785;&#xC744; &#xACF5;&#xC720;&#xD569;&#xB2C8;&#xB2E4;.<br><code>lastName</code>&#xC758; &#xAE30;&#xBCF8; &#xAC12;&#xC740; &#xD0C0;&#xC785;&#xC5D0;&#xC11C; &#xC0AC;&#xB77C;&#xC9C0;&#xACE0; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xAC00; &#xC120;&#xD0DD; &#xC0AC;&#xD56D;&#xC774;&#xB77C;&#xB294; &#xC0AC;&#xC2E4;&#xB9CC; &#xB0A8;&#xACA8;&#xC84C;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC77C;&#xBC18; &#xC120;&#xD0DD;&#xC801; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC640; &#xB2EC;&#xB9AC; &#xAE30;&#xBCF8; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB294; &#xD544;&#xC218; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xB4A4;&#xC5D0; &#xB098;&#xC62C; <em>&#xD544;&#xC694;</em>&#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xAE30;&#xBCF8; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xAC00; &#xD544;&#xC218; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xC55E;&#xC5D0; &#xC624;&#xB294; &#xACBD;&#xC6B0; &#xC0AC;&#xC6A9;&#xC790;&#xB294; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; <code>undefined</code>&#xB97C; &#xC804;&#xB2EC;&#xD558;&#xC5EC; &#xAE30;&#xBCF8; &#xCD08;&#xAE30;&#xD654;&#xB41C; &#xAC12;&#xC744; &#xAC00;&#xC838;&#xC640;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; <code>firstName</code>&#xC5D0; &#xAE30;&#xBCF8; &#xCD08;&#xAE30;&#xD654;&#xB9CC; &#xC788;&#xB294; &#xB9C8;&#xC9C0;&#xB9C9; &#xC608;&#xC81C;&#xB97C; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-ts">function buildName(firstName = &quot;Will&quot;, lastName: string) {
-    return firstName + &quot; &quot; + lastName;
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">buildName</span>(<span class="cm-def">firstName</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;Will&quot;</span>, <span class="cm-variable">lastName</span>: <span class="cm-variable-3">string</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-variable-2">firstName</span> <span class="cm-operator">+</span> <span class="cm-string">&quot; &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable">lastName</span>;
 }
 
-let result1 = buildName(&quot;Bob&quot;);                  // &#xC624;&#xB958;, &#xB108;&#xBB34; &#xC801;&#xC740; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;
-let result2 = buildName(&quot;Bob&quot;, &quot;Adams&quot;, &quot;Sr.&quot;);  // &#xC624;&#xB958;, &#xB108;&#xBB34; &#xB9CE;&#xC740; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;
-let result3 = buildName(&quot;Bob&quot;, &quot;Adams&quot;);         // &#xC88B;&#xC544;&#xC694; &quot;Bob Adams&quot;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;
-let result4 = buildName(undefined, &quot;Adams&quot;);     // &#xC88B;&#xC544;&#xC694; &quot;Will Adams&quot;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;
+<span class="cm-keyword">let</span> <span class="cm-variable">result1</span> <span class="cm-operator">=</span> <span class="cm-variable">buildName</span>(<span class="cm-string">&quot;Bob&quot;</span>);                  <span class="cm-comment">// &#xC624;&#xB958;, &#xB108;&#xBB34; &#xC801;&#xC740; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">result2</span> <span class="cm-operator">=</span> <span class="cm-variable">buildName</span>(<span class="cm-string">&quot;Bob&quot;</span>, <span class="cm-string">&quot;Adams&quot;</span>, <span class="cm-string">&quot;Sr.&quot;</span>);  <span class="cm-comment">// &#xC624;&#xB958;, &#xB108;&#xBB34; &#xB9CE;&#xC740; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">result3</span> <span class="cm-operator">=</span> <span class="cm-variable">buildName</span>(<span class="cm-string">&quot;Bob&quot;</span>, <span class="cm-string">&quot;Adams&quot;</span>);         <span class="cm-comment">// &#xC88B;&#xC544;&#xC694; &quot;Bob Adams&quot;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">result4</span> <span class="cm-operator">=</span> <span class="cm-variable">buildName</span>(<span class="cm-atom">undefined</span>, <span class="cm-string">&quot;Adams&quot;</span>);     <span class="cm-comment">// &#xC88B;&#xC544;&#xC694; &quot;Will Adams&quot;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;</span>
 </code></pre>
 <h1 id="&#xB098;&#xBA38;&#xC9C0;-&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;-rest-parameters">&#xB098;&#xBA38;&#xC9C0; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; (Rest Parameters)</h1>
 <p>&#xD544;&#xC218; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC640; &#xC120;&#xD0DD;&#xC801; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xADF8;&#xB9AC;&#xACE0; &#xAE30;&#xBCF8; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xBAA8;&#xB450; &#xACF5;&#xD1B5;&#xC810;&#xC774; &#xD558;&#xB098; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;: &#xD55C; &#xBC88;&#xC5D0; &#xD558;&#xB098;&#xC758; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC5D0; &#xB300;&#xD574; &#xC774;&#xC57C;&#xAE30;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB54C;&#xB85C;&#xB294; &#xC5EC;&#xB7EC; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xADF8;&#xB8F9;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xAC70;&#xB098; &#xD568;&#xC218;&#xAC00; &#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; &#xAC00;&#xC838;&#xC62C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC758; &#xC218;&#xB97C; &#xBAA8;&#xB97C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>JavaScript&#xC5D0;&#xC11C;&#xB294; &#xBAA8;&#xB4E0; &#xD568;&#xC218; &#xBCF8;&#xBB38;&#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xB294; <code>arguments</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC778;&#xC218;&#xB97C; &#xC9C1;&#xC811; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>TypeScript&#xC5D0;&#xC11C;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC778;&#xC218;&#xB97C; &#xBCC0;&#xC218;&#xB85C; &#xD568;&#xAED8; &#xBAA8;&#xC744;&#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">buildName</span>(<span class="hljs-params">firstName: <span class="hljs-built_in">string</span>, ...restOfName: <span class="hljs-built_in">string</span>[]</span>) </span>{
-    <span class="hljs-keyword">return</span> firstName + <span class="hljs-string">&quot; &quot;</span> + restOfName.join(<span class="hljs-string">&quot; &quot;</span>);
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">buildName</span>(<span class="cm-def">firstName</span>: <span class="cm-variable-3">string</span>, <span class="cm-meta">...</span><span class="cm-def">restOfName</span>: <span class="cm-variable-3">string</span>[]) {
+    <span class="cm-keyword">return</span> <span class="cm-variable-2">firstName</span> <span class="cm-operator">+</span> <span class="cm-string">&quot; &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable-2">restOfName</span>.<span class="cm-property">join</span>(<span class="cm-string">&quot; &quot;</span>);
 }
 
-<span class="hljs-keyword">let</span> employeeName = buildName(<span class="hljs-string">&quot;Joseph&quot;</span>, <span class="hljs-string">&quot;Samuel&quot;</span>, <span class="hljs-string">&quot;Lucas&quot;</span>, <span class="hljs-string">&quot;MacKinzie&quot;</span>);
+<span class="cm-keyword">let</span> <span class="cm-variable">employeeName</span> <span class="cm-operator">=</span> <span class="cm-variable">buildName</span>(<span class="cm-string">&quot;Joseph&quot;</span>, <span class="cm-string">&quot;Samuel&quot;</span>, <span class="cm-string">&quot;Lucas&quot;</span>, <span class="cm-string">&quot;MacKinzie&quot;</span>);
 </code></pre>
 <p><em>&#xB098;&#xBA38;&#xC9C0; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;</em>&#xB294; &#xBB34;&#xD55C;&#xC801;&#xC778; &#xC218;&#xC758; &#xC120;&#xD0DD;&#xC801; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB85C; &#xCC98;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;.<br>Rest &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC5D0; &#xC778;&#xC218;&#xB97C; &#xC804;&#xB2EC;&#xD560; &#xB54C;&#xB294; &#xC6D0;&#xD558;&#xB294; &#xB9CC;&#xD07C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBA70; &#xC2EC;&#xC9C0;&#xC5B4; &#xD1B5;&#xACFC;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; &#xC904;&#xC784;&#xD45C; (<code>...</code>) &#xB2E4;&#xC74C;&#xC5D0; &#xC804;&#xB2EC;&#xB41C; &#xC778;&#xC218;&#xB4E4;&#xC744; &#xBC30;&#xC5F4;&#xC744; &#xC791;&#xC131;&#xD558;&#xC5EC; &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC904;&#xC784;&#xD45C;(<code>...</code>)&#xB294; &#xB098;&#xBA38;&#xC9C0; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xAC00; &#xC788;&#xB294; &#xD568;&#xC218;&#xC758; &#xD0C0;&#xC785;&#xC5D0;&#xB3C4; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">buildName</span>(<span class="hljs-params">firstName: <span class="hljs-built_in">string</span>, ...restOfName: <span class="hljs-built_in">string</span>[]</span>) </span>{
-    <span class="hljs-keyword">return</span> firstName + <span class="hljs-string">&quot; &quot;</span> + restOfName.join(<span class="hljs-string">&quot; &quot;</span>);
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">buildName</span>(<span class="cm-def">firstName</span>: <span class="cm-variable-3">string</span>, <span class="cm-meta">...</span><span class="cm-def">restOfName</span>: <span class="cm-variable-3">string</span>[]) {
+    <span class="cm-keyword">return</span> <span class="cm-variable-2">firstName</span> <span class="cm-operator">+</span> <span class="cm-string">&quot; &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable-2">restOfName</span>.<span class="cm-property">join</span>(<span class="cm-string">&quot; &quot;</span>);
 }
 
-<span class="hljs-keyword">let</span> buildNameFun: (fname: <span class="hljs-built_in">string</span>, ...rest: <span class="hljs-built_in">string</span>[]) =&gt; <span class="hljs-built_in">string</span> = buildName;
+<span class="cm-keyword">let</span> <span class="cm-variable">buildNameFun</span>: (<span class="cm-def">fname</span>: <span class="cm-variable-3">string</span>, <span class="cm-meta">...</span><span class="cm-variable">rest</span>: <span class="cm-variable-3">string</span>[]) <span class="cm-operator">=&gt;</span> <span class="cm-variable-3">string</span> <span class="cm-operator">=</span> <span class="cm-variable">buildName</span>;
 </code></pre>
 <h1 id="this"><code>this</code></h1>
 <p>JavaScript&#xC5D0;&#xC11C; <code>this</code>&#xB97C; &#xC0AC;&#xC6A9;&#xBC95;&#xC744; &#xBC30;&#xC6B0;&#xB294; &#xAC83;&#xC740; &#xC77C;&#xC885;&#xC758; &#xD1B5;&#xACFC; &#xC758;&#xB840;&#xC785;&#xB2C8;&#xB2E4;.<br>TypeScript&#xB294; JavaScript&#xC758; &#xC0C1;&#xC704; &#xC9D1;&#xD569;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; TypeScript &#xAC1C;&#xBC1C;&#xC790;&#xB4E4;&#xB3C4; <code>this</code>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xACFC; &#xC62C;&#xBC14;&#xB974;&#xAC8C; &#xC0AC;&#xC6A9;&#xB418;&#xACE0; &#xC788;&#xC9C0; &#xC54A;&#xC744; &#xB54C;&#xB97C; &#xCC3E;&#xC544;&#xB0B4;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xBC30;&#xC6CC;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>JavaScript&#xC5D0;&#xC11C; <code>this</code>&#xAC00; &#xC5B4;&#xB5BB;&#xAC8C; &#xC791;&#xB3D9;&#xD558;&#xB294;&#xC9C0; &#xC54C;&#xC544;&#xC57C; &#xD55C;&#xB2E4;&#xBA74; Yehuda Katz&#xC758; <a href="http://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/" target="_blank">Understanding JavaScript Function Invocation and &quot;this&quot;</a>&#xB97C; &#xBA3C;&#xC800; &#xC77D;&#xC5B4;&#xBCF4;&#xC138;&#xC694;.<br>Yehuda&#xC758; &#xAE00;&#xC5D0;&#xB294; <code>this</code>&#xC758; &#xB0B4;&#xBD80; &#xB3D9;&#xC791;&#xC744; &#xC798; &#xC124;&#xBA85;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC5EC;&#xAE30;&#xC11C;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xB0B4;&#xC6A9;&#xB9CC; &#xB2E4;&#xB8F0; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h2 id="this&#xC640;-&#xD654;&#xC0B4;&#xD45C;-&#xD568;&#xC218;-this-and-arrow-functions"><code>this</code>&#xC640; &#xD654;&#xC0B4;&#xD45C; &#xD568;&#xC218; (<code>this</code> and arrow functions)</h2>
 <p>JavaScript&#xC5D0;&#xC11C; <code>this</code>&#xB294; &#xD568;&#xC218;&#xAC00; &#xD638;&#xCD9C;&#xB420; &#xB54C; &#xC124;&#xC815;&#xB418;&#xB294; &#xBCC0;&#xC218;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xB9E4;&#xC6B0; &#xAC15;&#xB825;&#xD558;&#xACE0; &#xC720;&#xC5F0;&#xD55C; &#xAE30;&#xB2A5;&#xC774;&#xC9C0;&#xB9CC; &#xD568;&#xC218;&#xAC00; &#xC2E4;&#xD589;&#xB418;&#xB294; &#xC0C1;&#xD669;&#xC5D0; &#xB300;&#xD574; &#xD56D;&#xC0C1; &#xC54C;&#xACE0; &#xC788;&#xC5B4;&#xC57C; &#xD558;&#xB294; &#xC2DC;&#xAC04;&#xC774; &#xB4ED;&#xB2C8;&#xB2E4;.<br>&#xD2B9;&#xD788; &#xD568;&#xC218;&#xB97C; &#xBC18;&#xD658;&#xD558;&#xAC70;&#xB098; &#xD568;&#xC218;&#xB97C; &#xC778;&#xC218;&#xB85C; &#xC804;&#xB2EC;&#xD560; &#xB54C; &#xC545;&#xBA85; &#xB192;&#xC744; &#xC815;&#xB3C4;&#xB85C; &#xD63C;&#xB780;&#xC2A4;&#xB7FD;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC608;&#xC81C;&#xB97C; &#xC0B4;&#xD3B4;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">let</span> deck = {
-    suits: [<span class="hljs-string">&quot;hearts&quot;</span>, <span class="hljs-string">&quot;spades&quot;</span>, <span class="hljs-string">&quot;clubs&quot;</span>, <span class="hljs-string">&quot;diamonds&quot;</span>],
-    cards: <span class="hljs-built_in">Array</span>(<span class="hljs-number">52</span>),
-    createCardPicker: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-        <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-            <span class="hljs-keyword">let</span> pickedCard = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">52</span>);
-            <span class="hljs-keyword">let</span> pickedSuit = <span class="hljs-built_in">Math</span>.floor(pickedCard / <span class="hljs-number">13</span>);
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">deck</span> <span class="cm-operator">=</span> {
+    <span class="cm-property">suits</span>: [<span class="cm-string">&quot;hearts&quot;</span>, <span class="cm-string">&quot;spades&quot;</span>, <span class="cm-string">&quot;clubs&quot;</span>, <span class="cm-string">&quot;diamonds&quot;</span>],
+    <span class="cm-property">cards</span>: <span class="cm-variable">Array</span>(<span class="cm-number">52</span>),
+    <span class="cm-property">createCardPicker</span>: <span class="cm-keyword">function</span>() {
+        <span class="cm-keyword">return</span> <span class="cm-keyword">function</span>() {
+            <span class="cm-keyword">let</span> <span class="cm-def">pickedCard</span> <span class="cm-operator">=</span> <span class="cm-variable">Math</span>.<span class="cm-property">floor</span>(<span class="cm-variable">Math</span>.<span class="cm-property">random</span>() <span class="cm-operator">*</span> <span class="cm-number">52</span>);
+            <span class="cm-keyword">let</span> <span class="cm-def">pickedSuit</span> <span class="cm-operator">=</span> <span class="cm-variable">Math</span>.<span class="cm-property">floor</span>(<span class="cm-variable-2">pickedCard</span> <span class="cm-operator">/</span> <span class="cm-number">13</span>);
 
-            <span class="hljs-keyword">return</span> {suit: <span class="hljs-keyword">this</span>.suits[pickedSuit], card: pickedCard % <span class="hljs-number">13</span>};
+            <span class="cm-keyword">return</span> {<span class="cm-property">suit</span>: <span class="cm-keyword">this</span>.<span class="cm-property">suits</span>[<span class="cm-variable-2">pickedSuit</span>], <span class="cm-property">card</span>: <span class="cm-variable-2">pickedCard</span> <span class="cm-operator">%</span> <span class="cm-number">13</span>};
         }
     }
 }
 
-<span class="hljs-keyword">let</span> cardPicker = deck.createCardPicker();
-<span class="hljs-keyword">let</span> pickedCard = cardPicker();
+<span class="cm-keyword">let</span> <span class="cm-variable">cardPicker</span> <span class="cm-operator">=</span> <span class="cm-variable">deck</span>.<span class="cm-property">createCardPicker</span>();
+<span class="cm-keyword">let</span> <span class="cm-variable">pickedCard</span> <span class="cm-operator">=</span> <span class="cm-variable">cardPicker</span>();
 
-alert(<span class="hljs-string">&quot;card: &quot;</span> + pickedCard.card + <span class="hljs-string">&quot; of &quot;</span> + pickedCard.suit);
+<span class="cm-variable">alert</span>(<span class="cm-string">&quot;card: &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable">pickedCard</span>.<span class="cm-property">card</span> <span class="cm-operator">+</span> <span class="cm-string">&quot; of &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable">pickedCard</span>.<span class="cm-property">suit</span>);
 </code></pre>
 <p><code>createCardPicker</code>&#xB294; &#xC790;&#xCCB4;&#xC801;&#xC73C;&#xB85C; &#xD568;&#xC218;&#xB97C; &#xBC18;&#xD658;&#xD558;&#xB294; &#xD568;&#xC218;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC608;&#xC81C;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xB824;&#xACE0; &#xD558;&#xBA74; alert &#xB300;&#xC2E0; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.<br><code>createCardPicker</code>&#xC5D0; &#xC758;&#xD574; &#xC0DD;&#xC131;&#xB41C; &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; <code>this</code>&#xAC00; <code>deck</code> &#xAC1D;&#xCCB4; &#xB300;&#xC2E0;&#xC5D0; <code>window</code>&#xB85C; &#xC124;&#xC815;&#xB418;&#xC5B4; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC65C;&#xB0D0;&#xD558;&#xBA74; <code>cardPicker()</code>&#xB294; &#xC790;&#xAE30; &#xC790;&#xC2E0;&#xC744; &#xD638;&#xCD9C;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xC640; &#xAC19;&#xC774; &#xCD5C;&#xC0C1;&#xC704; &#xBE44;-&#xBA54;&#xC11C;&#xB4DC; &#xAD6C;&#xBB38; &#xD638;&#xCD9C;&#xC740; <code>this</code>&#xC5D0; <code>window</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.<br>(&#xC8FC;&#xC758;&#xC0AC;&#xD56D; : &#xC5C4;&#xACA9;&#xBAA8;&#xB4DC;(strict mode)&#xC5D0;&#xC11C; <code>this</code>&#xB294; <code>window</code>&#xBCF4;&#xB2E4;&#xB294; <code>undefined</code>&#xAC00; &#xB420; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;).</p>
 <p>&#xB098;&#xC911;&#xC5D0; &#xC0AC;&#xC6A9;&#xD560; &#xD568;&#xC218;&#xB97C; &#xBC18;&#xD658;&#xD558;&#xAE30; &#xC804;&#xC5D0; &#xD568;&#xC218;&#xC5D0; &#xC62C;&#xBC14;&#xB978; <code>this</code>&#xAC00; &#xC5F0;&#xACB0;&#xB418;&#xB3C4;&#xB85D;&#xD558;&#xC5EC; &#xC774;&#xB97C; &#xD574;&#xACB0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xC774;&#xB807;&#xAC8C;&#xD558;&#xBA74; &#xB098;&#xC911;&#xC5D0; &#xC5B4;&#xB5BB;&#xAC8C; &#xC0AC;&#xC6A9;&#xB418;&#xB4E0; &#xC0C1;&#xAD00;&#xC5C6;&#xC774; &#xC6D0;&#xB798;&#xC758; <code>deck</code>&#xAC1D;&#xCCB4;&#xB97C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB97C; &#xC704;&#xD574; &#xD568;&#xC218; &#xD45C;&#xD604;&#xC2DD;&#xC744; ECMAScript 6&#xC758; &#xD654;&#xC0B4;&#xD45C; &#xAD6C;&#xBB38;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xD654;&#xC0B4;&#xD45C; &#xD568;&#xC218;&#xB294; &#xD638;&#xCD9C;&#xB41C; &#xACF3;&#xC774; &#xC544;&#xB2CC; &#xD568;&#xC218;&#xAC00; &#xC0DD;&#xC131; &#xB41C; &#xACF3;&#xC5D0;&#xC11C; <code>this</code>&#xB97C; &#xCEA1;&#xCC98;&#xD569;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">let</span> deck = {
-    suits: [<span class="hljs-string">&quot;hearts&quot;</span>, <span class="hljs-string">&quot;spades&quot;</span>, <span class="hljs-string">&quot;clubs&quot;</span>, <span class="hljs-string">&quot;diamonds&quot;</span>],
-    cards: <span class="hljs-built_in">Array</span>(<span class="hljs-number">52</span>),
-    createCardPicker: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-        <span class="hljs-comment">// &#xC8FC;&#xC758;: &#xC544;&#xB798; &#xC904;&#xC740; &#xC774;&#xC81C; &#xD654;&#xC0B4;&#xD45C; &#xD568;&#xC218;&#xC785;&#xB2C8;&#xB2E4;. &#xC5EC;&#xAE30;&#xC5D0;&#xC11C; &apos;this&apos;&#xB97C; &#xCEA1;&#xCC98;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
-        <span class="hljs-keyword">return</span> () =&gt; {
-            <span class="hljs-keyword">let</span> pickedCard = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">52</span>);
-            <span class="hljs-keyword">let</span> pickedSuit = <span class="hljs-built_in">Math</span>.floor(pickedCard / <span class="hljs-number">13</span>);
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">deck</span> <span class="cm-operator">=</span> {
+    <span class="cm-property">suits</span>: [<span class="cm-string">&quot;hearts&quot;</span>, <span class="cm-string">&quot;spades&quot;</span>, <span class="cm-string">&quot;clubs&quot;</span>, <span class="cm-string">&quot;diamonds&quot;</span>],
+    <span class="cm-property">cards</span>: <span class="cm-variable">Array</span>(<span class="cm-number">52</span>),
+    <span class="cm-property">createCardPicker</span>: <span class="cm-keyword">function</span>() {
+        <span class="cm-comment">// &#xC8FC;&#xC758;: &#xC544;&#xB798; &#xC904;&#xC740; &#xC774;&#xC81C; &#xD654;&#xC0B4;&#xD45C; &#xD568;&#xC218;&#xC785;&#xB2C8;&#xB2E4;. &#xC5EC;&#xAE30;&#xC5D0;&#xC11C; &apos;this&apos;&#xB97C; &#xCEA1;&#xCC98;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+        <span class="cm-keyword">return</span> () <span class="cm-operator">=&gt;</span> {
+            <span class="cm-keyword">let</span> <span class="cm-def">pickedCard</span> <span class="cm-operator">=</span> <span class="cm-variable">Math</span>.<span class="cm-property">floor</span>(<span class="cm-variable">Math</span>.<span class="cm-property">random</span>() <span class="cm-operator">*</span> <span class="cm-number">52</span>);
+            <span class="cm-keyword">let</span> <span class="cm-def">pickedSuit</span> <span class="cm-operator">=</span> <span class="cm-variable">Math</span>.<span class="cm-property">floor</span>(<span class="cm-variable-2">pickedCard</span> <span class="cm-operator">/</span> <span class="cm-number">13</span>);
 
-            <span class="hljs-keyword">return</span> {suit: <span class="hljs-keyword">this</span>.suits[pickedSuit], card: pickedCard % <span class="hljs-number">13</span>};
+            <span class="cm-keyword">return</span> {<span class="cm-property">suit</span>: <span class="cm-keyword">this</span>.<span class="cm-property">suits</span>[<span class="cm-variable-2">pickedSuit</span>], <span class="cm-property">card</span>: <span class="cm-variable-2">pickedCard</span> <span class="cm-operator">%</span> <span class="cm-number">13</span>};
         }
     }
 }
 
-<span class="hljs-keyword">let</span> cardPicker = deck.createCardPicker();
-<span class="hljs-keyword">let</span> pickedCard = cardPicker();
+<span class="cm-keyword">let</span> <span class="cm-variable">cardPicker</span> <span class="cm-operator">=</span> <span class="cm-variable">deck</span>.<span class="cm-property">createCardPicker</span>();
+<span class="cm-keyword">let</span> <span class="cm-variable">pickedCard</span> <span class="cm-operator">=</span> <span class="cm-variable">cardPicker</span>();
 
-alert(<span class="hljs-string">&quot;card: &quot;</span> + pickedCard.card + <span class="hljs-string">&quot; of &quot;</span> + pickedCard.suit);
+<span class="cm-variable">alert</span>(<span class="cm-string">&quot;card: &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable">pickedCard</span>.<span class="cm-property">card</span> <span class="cm-operator">+</span> <span class="cm-string">&quot; of &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable">pickedCard</span>.<span class="cm-property">suit</span>);
 </code></pre>
 <p>&#xB354; &#xC88B;&#xC740; &#xC810;&#xC740; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xC5D0; <code>--noImplicitThis</code> &#xC2E0;&#xD638;&#xB97C; &#xB118;&#xACA8;&#xC8FC;&#xBA74; TypeScript&#xAC00; &#xC2E4;&#xC218;&#xB97C; &#xD588;&#xC744; &#xB54C; &#xACBD;&#xACE0;&#xB97C; &#xD569;&#xB2C8;&#xB2E4;.<br><code>this.suits[pickedSuit]</code>&#xC5D0;&#xC11C; <code>this</code>&#xB294; <code>any</code> &#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h2 id="this-parameters"><code>this</code> parameters</h2>
 <p>&#xBD88;&#xD589;&#xD788;&#xB3C4; <code>this.suits [pickedSuit]</code>&#xC758; &#xD0C0;&#xC785;&#xC740; &#xC5EC;&#xC804;&#xD788;<code>any</code>&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC65C;&#xB0D0;&#xD558;&#xBA74; <code>this</code>&#xB294; &#xAC1D;&#xCCB4; &#xB9AC;&#xD130;&#xB7F4; &#xB0B4;&#xBD80;&#xC758; &#xD568;&#xC218; &#xD45C;&#xD604;&#xC2DD;&#xC5D0;&#xC11C; &#xC654;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xBB38;&#xC81C;&#xB97C; &#xD574;&#xACB0;&#xD558;&#xAE30; &#xC704;&#xD574; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; <code>this</code> &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC81C;&#xACF5;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  </p>
 <p><code>this</code> &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB294; &#xD568;&#xC218;&#xC758; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xBAA9;&#xB85D;&#xC5D0;&#xC11C; &#xCC98;&#xC74C; &#xB098;&#xC624;&#xB294; &#xAC00;&#xC9DC; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC785;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span>(<span class="hljs-params"><span class="hljs-keyword">this</span>: <span class="hljs-built_in">void</span></span>) </span>{
-    <span class="hljs-comment">// &#xC774; &#xBD84;&#xB9AC;&#xB41C; &#xD568;&#xC218;&#xC5D0;&#xC11C; &apos;this&apos;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD574;&#xBCF4;&#xC138;&#xC694;.</span>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">f</span>(<span class="cm-keyword">this</span>: <span class="cm-variable">void</span>) {
+    <span class="cm-comment">// &#xC774; &#xBD84;&#xB9AC;&#xB41C; &#xD568;&#xC218;&#xC5D0;&#xC11C; &apos;this&apos;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD574;&#xBCF4;&#xC138;&#xC694;.</span>
 }
 </code></pre>
 <p>&#xC704;&#xC758; &#xC608;&#xC81C;&#xC5D0;&#xC11C; <code>Card</code>&#xC640; <code>Deck</code>&#xC5D0; &#xBA87; &#xAC00;&#xC9C0; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xD0C0;&#xC785;&#xC744; &#xB354; &#xBA85;&#xD655;&#xD558;&#xACE0; &#xC27D;&#xAC8C; &#xC7AC;&#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC27D;&#xAC8C; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Card {
-    suit: <span class="hljs-built_in">string</span>;
-    card: <span class="hljs-built_in">number</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">Card</span> {
+    <span class="cm-variable">suit</span>: <span class="cm-variable-3">string</span>;
+    <span class="cm-variable">card</span>: <span class="cm-variable-3">number</span>;
 }
-<span class="hljs-keyword">interface</span> Deck {
-    suits: <span class="hljs-built_in">string</span>[];
-    cards: <span class="hljs-built_in">number</span>[];
-    createCardPicker(<span class="hljs-keyword">this</span>: Deck): () =&gt; Card;
+<span class="cm-keyword">interface</span> <span class="cm-variable">Deck</span> {
+    <span class="cm-variable">suits</span>: <span class="cm-variable-3">string</span>[];
+    <span class="cm-variable">cards</span>: <span class="cm-variable-3">number</span>[];
+    <span class="cm-variable">createCardPicker</span>(<span class="cm-keyword">this</span>: <span class="cm-variable">Deck</span>): () <span class="cm-operator">=&gt;</span> <span class="cm-variable">Card</span>;
 }
-<span class="hljs-keyword">let</span> deck: Deck = {
-    suits: [<span class="hljs-string">&quot;hearts&quot;</span>, <span class="hljs-string">&quot;spades&quot;</span>, <span class="hljs-string">&quot;clubs&quot;</span>, <span class="hljs-string">&quot;diamonds&quot;</span>],
-    cards: <span class="hljs-built_in">Array</span>(<span class="hljs-number">52</span>),
-    <span class="hljs-comment">// &#xC8FC;&#xC758;&#xC0AC;&#xD56D; : &#xC774; &#xD568;&#xC218;&#xB294; &#xC774;&#xC81C; &#xBC18;&#xB4DC;&#xC2DC; Deck &#xD0C0;&#xC785;&#xC774;&#xC5B4;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;</span>
-    createCardPicker: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-keyword">this</span>: Deck</span>) </span>{
-        <span class="hljs-keyword">return</span> () =&gt; {
-            <span class="hljs-keyword">let</span> pickedCard = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">52</span>);
-            <span class="hljs-keyword">let</span> pickedSuit = <span class="hljs-built_in">Math</span>.floor(pickedCard / <span class="hljs-number">13</span>);
+<span class="cm-keyword">let</span> <span class="cm-variable">deck</span>: <span class="cm-variable-3">Deck</span> <span class="cm-operator">=</span> {
+    <span class="cm-property">suits</span>: [<span class="cm-string">&quot;hearts&quot;</span>, <span class="cm-string">&quot;spades&quot;</span>, <span class="cm-string">&quot;clubs&quot;</span>, <span class="cm-string">&quot;diamonds&quot;</span>],
+    <span class="cm-property">cards</span>: <span class="cm-variable">Array</span>(<span class="cm-number">52</span>),
+    <span class="cm-comment">// &#xC8FC;&#xC758;&#xC0AC;&#xD56D; : &#xC774; &#xD568;&#xC218;&#xB294; &#xC774;&#xC81C; &#xBC18;&#xB4DC;&#xC2DC; Deck &#xD0C0;&#xC785;&#xC774;&#xC5B4;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;</span>
+    <span class="cm-property">createCardPicker</span>: <span class="cm-keyword">function</span>(<span class="cm-keyword">this</span>: <span class="cm-variable">Deck</span>) {
+        <span class="cm-keyword">return</span> () <span class="cm-operator">=&gt;</span> {
+            <span class="cm-keyword">let</span> <span class="cm-def">pickedCard</span> <span class="cm-operator">=</span> <span class="cm-variable">Math</span>.<span class="cm-property">floor</span>(<span class="cm-variable">Math</span>.<span class="cm-property">random</span>() <span class="cm-operator">*</span> <span class="cm-number">52</span>);
+            <span class="cm-keyword">let</span> <span class="cm-def">pickedSuit</span> <span class="cm-operator">=</span> <span class="cm-variable">Math</span>.<span class="cm-property">floor</span>(<span class="cm-variable-2">pickedCard</span> <span class="cm-operator">/</span> <span class="cm-number">13</span>);
 
-            <span class="hljs-keyword">return</span> {suit: <span class="hljs-keyword">this</span>.suits[pickedSuit], card: pickedCard % <span class="hljs-number">13</span>};
+            <span class="cm-keyword">return</span> {<span class="cm-property">suit</span>: <span class="cm-keyword">this</span>.<span class="cm-property">suits</span>[<span class="cm-variable-2">pickedSuit</span>], <span class="cm-property">card</span>: <span class="cm-variable-2">pickedCard</span> <span class="cm-operator">%</span> <span class="cm-number">13</span>};
         }
     }
 }
 
-<span class="hljs-keyword">let</span> cardPicker = deck.createCardPicker();
-<span class="hljs-keyword">let</span> pickedCard = cardPicker();
+<span class="cm-keyword">let</span> <span class="cm-variable">cardPicker</span> <span class="cm-operator">=</span> <span class="cm-variable">deck</span>.<span class="cm-property">createCardPicker</span>();
+<span class="cm-keyword">let</span> <span class="cm-variable">pickedCard</span> <span class="cm-operator">=</span> <span class="cm-variable">cardPicker</span>();
 
-alert(<span class="hljs-string">&quot;card: &quot;</span> + pickedCard.card + <span class="hljs-string">&quot; of &quot;</span> + pickedCard.suit);
+<span class="cm-variable">alert</span>(<span class="cm-string">&quot;card: &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable">pickedCard</span>.<span class="cm-property">card</span> <span class="cm-operator">+</span> <span class="cm-string">&quot; of &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable">pickedCard</span>.<span class="cm-property">suit</span>);
 </code></pre>
 <p>&#xC774;&#xC81C; TypeScript&#xB294;<code>createCardPicker</code>&#xAC00; <code>Deck</code> &#xAC1D;&#xCCB4;&#xC5D0;&#xC11C; &#xD638;&#xCD9C;&#xB420; &#xAC83;&#xC73C;&#xB85C; &#xC608;&#xC0C1;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC989; <code>this</code>&#xB294; <code>any</code>&#xAC00; &#xC544;&#xB2CC; <code>Deck</code> &#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; <code>--noImplicitThis</code>&#xB294; &#xC624;&#xB958;&#xB97C; &#xBC1C;&#xC0DD;&#xC2DC;&#xD0A4;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h3 id="&#xCF5C;&#xBC31;&#xC5D0;&#xC11C;&#xC758;-this-&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;-this-parameters-in-callbacks">&#xCF5C;&#xBC31;&#xC5D0;&#xC11C;&#xC758; <code>this</code> &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; (<code>this</code> parameters in callbacks)</h3>
 <p>&#xD568;&#xC218;&#xB97C; &#xB098;&#xC911;&#xC5D0; &#xD638;&#xCD9C;&#xD560; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC5D0; &#xC804;&#xB2EC;&#xD560; &#xB54C; &#xCF5C;&#xBC31;&#xC5D0;&#xC11C; <code>this</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC65C;&#xB0D0;&#xD558;&#xBA74; &#xCF5C;&#xBC31;&#xC744; &#xD638;&#xCD9C;&#xD558;&#xB294; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xAC00; &#xD45C;&#xC900; &#xD568;&#xC218;&#xCC98;&#xB7FC; &#xD638;&#xCD9C;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; <code>this</code>&#xB294; <code>undefined</code>&#xAC00; &#xB420; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <p>&#xB54C;&#xB54C;&#xB85C; <code>this</code> &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xCF5C;&#xBC31; &#xC624;&#xB958;&#xB97C; &#xBC29;&#xC9C0;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xCCAB; &#xBC88;&#xC9F8;, &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xC791;&#xC131;&#xC790;&#xB294; &#xCF5C;&#xBC31; &#xD0C0;&#xC785;&#xC5D0; <code>this</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; annotate&#xB97C; &#xB2EC;&#xC544;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> UIElement {
-    addClickListener(onclick: (<span class="hljs-keyword">this</span>: <span class="hljs-built_in">void</span>, e: Event) =&gt; <span class="hljs-built_in">void</span>): <span class="hljs-built_in">void</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">UIElement</span> {
+    <span class="cm-variable">addClickListener</span>(<span class="cm-variable">onclick</span>: (<span class="cm-keyword">this</span>: <span class="cm-variable">void</span>, <span class="cm-variable">e</span>: <span class="cm-variable">Event</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span>): <span class="cm-variable">void</span>;
 }
 </code></pre>
 <p><code>this : void</code>&#xB294; <code>addClickListener</code>&#xAC00; <code>onclick</code>&#xC774; <code>this</code> &#xD0C0;&#xC785;&#xC744; &#xD544;&#xC694;&#xB85C; &#xD558;&#xC9C0; &#xC54A;&#xB294; &#xD568;&#xC218;&#xB77C;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>&#xB450; &#xBC88;&#xC9F8;, <code>this</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD638;&#xCD9C; &#xCF54;&#xB4DC;&#xC640; &#xD568;&#xAED8; annotate&#xB97C; &#xB2EC;&#xC544;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">class</span> Handler {
-    info: <span class="hljs-built_in">string</span>;
-    onClickBad(<span class="hljs-keyword">this</span>: Handler, e: Event) {
-        <span class="hljs-comment">// &#xC774;&#xB7F0;, &#xC5EC;&#xAE30;&#xC11C; this&#xB97C; &#xC0AC;&#xC6A9;&#xD588;&#xC5B4;&#xC694;. &#xC774; &#xCF5C;&#xBC31;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xCDA9;&#xB3CC;&#xC73C;&#xB85C; &#xB7F0;&#xD0C0;&#xC784; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</span>
-        <span class="hljs-keyword">this</span>.info = e.message;
+<pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">Handler</span> {
+    <span class="cm-property">info</span>: <span class="cm-variable-3">string</span>;
+    <span class="cm-variable">onClickBad</span>(<span class="cm-keyword">this</span>: <span class="cm-variable">Handler</span>, <span class="cm-variable">e</span>: <span class="cm-variable">Event</span>) {
+        <span class="cm-comment">// &#xC774;&#xB7F0;, &#xC5EC;&#xAE30;&#xC11C; this&#xB97C; &#xC0AC;&#xC6A9;&#xD588;&#xC5B4;&#xC694;. &#xC774; &#xCF5C;&#xBC31;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xCDA9;&#xB3CC;&#xC73C;&#xB85C; &#xB7F0;&#xD0C0;&#xC784; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</span>
+        <span class="cm-keyword">this</span>.<span class="cm-variable">info</span> <span class="cm-operator">=</span> <span class="cm-variable">e</span>.<span class="cm-variable">message</span>;
     }
 }
-<span class="hljs-keyword">let</span> h = <span class="hljs-keyword">new</span> Handler();
-uiElement.addClickListener(h.onClickBad); <span class="hljs-comment">// &#xC624;&#xB958;!</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">h</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Handler</span>();
+<span class="cm-variable">uiElement</span>.<span class="cm-property">addClickListener</span>(<span class="cm-variable">h</span>.<span class="cm-property">onClickBad</span>); <span class="cm-comment">// &#xC624;&#xB958;!</span>
 </code></pre>
 <p><code>this</code>&#xAC00; annotated&#xB418;&#xC5B4; &#xC788;&#xC73C;&#xBA74; <code>onClickBad</code>&#xB294; &#xBC18;&#xB4DC;&#xC2DC; <code>Handler</code>&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xC5D0;&#xC11C; &#xD638;&#xCD9C;&#xB418;&#xC5B4;&#xC57C;&#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xBA85;&#xC2DC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB7F0; &#xB2E4;&#xC74C; TypeScript&#xB294; <code>addClickListener</code>&#xC5D0; <code>this : void</code>&#xAC00; &#xC788;&#xB294; &#xD568;&#xC218;&#xAC00; &#xD544;&#xC694;&#xD558;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xBC1C;&#xACAC;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC624;&#xB958;&#xB97C; &#xD574;&#xACB0;&#xD558;&#xB824;&#xBA74; <code>this</code>&#xC758; &#xD0C0;&#xC785;&#xC744; &#xC218;&#xC815;&#xD558;&#xC138;&#xC694;:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">class</span> Handler {
-    info: <span class="hljs-built_in">string</span>;
-    onClickGood(<span class="hljs-keyword">this</span>: <span class="hljs-built_in">void</span>, e: Event) {
-        <span class="hljs-comment">// this&#xC758; &#xD0C0;&#xC785;&#xC774; void&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC5EC;&#xAE30;&#xC11C;&#xB294; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;!</span>
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;clicked!&apos;</span>);
+<pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">Handler</span> {
+    <span class="cm-property">info</span>: <span class="cm-variable-3">string</span>;
+    <span class="cm-variable">onClickGood</span>(<span class="cm-keyword">this</span>: <span class="cm-variable">void</span>, <span class="cm-variable">e</span>: <span class="cm-variable">Event</span>) {
+        <span class="cm-comment">// this&#xC758; &#xD0C0;&#xC785;&#xC774; void&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC5EC;&#xAE30;&#xC11C;&#xB294; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;!</span>
+        <span class="cm-variable">console</span>.<span class="cm-variable">log</span>(<span class="cm-string">&apos;clicked!&apos;</span>);
     }
 }
-<span class="hljs-keyword">let</span> h = <span class="hljs-keyword">new</span> Handler();
-uiElement.addClickListener(h.onClickGood);
+<span class="cm-keyword">let</span> <span class="cm-variable">h</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Handler</span>();
+<span class="cm-variable">uiElement</span>.<span class="cm-property">addClickListener</span>(<span class="cm-variable">h</span>.<span class="cm-property">onClickGood</span>);
 </code></pre>
 <p><code>onClickGood</code>&#xB294; <code>this</code>&#xC758; &#xD0C0;&#xC785;&#xC744; <code>void</code>&#xB85C; &#xC9C0;&#xC815;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; <code>addClickListener</code>&#xC5D0; &#xC804;&#xB2EC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xBB3C;&#xB860; this&#xB294; &#xB610;&#xD55C; <code>this.info</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB450; &#xAC00;&#xC9C0; &#xBAA8;&#xB450;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; &#xD654;&#xC0B4;&#xD45C; &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">class</span> Handler {
-    info: <span class="hljs-built_in">string</span>;
-    onClickGood = (e: Event) =&gt; { <span class="hljs-keyword">this</span>.info = e.message }
+<pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">Handler</span> {
+    <span class="cm-property">info</span>: <span class="cm-variable-3">string</span>;
+    <span class="cm-variable">onClickGood</span> <span class="cm-operator">=</span> (<span class="cm-variable">e</span>: <span class="cm-variable">Event</span>) <span class="cm-operator">=&gt;</span> { <span class="cm-keyword">this</span>.<span class="cm-variable">info</span> <span class="cm-operator">=</span> <span class="cm-variable">e</span>.<span class="cm-variable">message</span> }
 }
 </code></pre>
 <p>&#xC774;&#xAC83;&#xC740; &#xD654;&#xC0B4;&#xD45C; &#xD568;&#xC218;&#xAC00; <code>this</code>&#xB97C; &#xCEA1;&#xCC98;&#xD558;&#xC9C0; &#xC54A;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xD6A8;&#xACFC;&#xC801;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xB54C;&#xBB38;&#xC5D0; &#xAE30;&#xB300;&#xD558;&#xB294; &#xAC83; &#xAC19;&#xC774; &#xD56D;&#xC0C1; <code>this : void</code>&#xB97C; &#xB118;&#xACA8;&#xC904; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>&#xB2E8;&#xC810;&#xC740; Handler &#xD0C0;&#xC785;&#xC758; &#xAC1D;&#xCCB4;&#xB9C8;&#xB2E4; &#xD558;&#xB098;&#xC758; &#xD654;&#xC0B4;&#xD45C; &#xD568;&#xC218;&#xAC00; &#xC0DD;&#xC131;&#xB41C;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xBC18;&#xBA74;&#xC5D0; &#xBA54;&#xC11C;&#xB4DC;&#xB294; &#xD55C; &#xBC88;&#xB9CC; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9C0;&#xACE0; &#xD578;&#xB4E4;&#xB7EC;&#xC758; &#xD504;&#xB85C;&#xD1A0; &#xD0C0;&#xC785;&#xC5D0; &#xC18C;&#xC18D;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB7EC;&#xD55C; &#xAC1D;&#xCCB4;&#xB294; &#xD578;&#xB4E4;&#xB7EC; &#xD0C0;&#xC785;&#xC758; &#xBAA8;&#xB4E0; &#xAC1D;&#xCCB4; &#xC0AC;&#xC774;&#xC5D0; &#xACF5;&#xC720;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <h1 id="&#xC624;&#xBC84;&#xB85C;&#xB4DC;-overloads">&#xC624;&#xBC84;&#xB85C;&#xB4DC; (Overloads)</h1>
 <p>JavaScript&#xB294; &#xBCF8;&#xC9C8;&#xC801;&#xC73C;&#xB85C; &#xB9E4;&#xC6B0; &#xB3D9;&#xC801;&#xC778; &#xC5B8;&#xC5B4;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xB2E8;&#xC77C; JavaScript &#xD568;&#xC218;&#xAC00; &#xC804;&#xB2EC;&#xB41C; &#xC778;&#xC218;&#xC758; &#xD615;&#xD0DC;&#xB97C; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC11C;&#xB85C; &#xB2E4;&#xB978; &#xD0C0;&#xC785;&#xC758; &#xAC1D;&#xCCB4;&#xB97C; &#xBC18;&#xD658;&#xD558;&#xB294; &#xAC83;&#xC740; &#xB4DC;&#xBB38; &#xC77C;&#xC774; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">let</span> suits = [<span class="hljs-string">&quot;hearts&quot;</span>, <span class="hljs-string">&quot;spades&quot;</span>, <span class="hljs-string">&quot;clubs&quot;</span>, <span class="hljs-string">&quot;diamonds&quot;</span>];
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">suits</span> <span class="cm-operator">=</span> [<span class="cm-string">&quot;hearts&quot;</span>, <span class="cm-string">&quot;spades&quot;</span>, <span class="cm-string">&quot;clubs&quot;</span>, <span class="cm-string">&quot;diamonds&quot;</span>];
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pickCard</span>(<span class="hljs-params">x</span>): <span class="hljs-title">any</span> </span>{
-    <span class="hljs-comment">// &#xAC1D;&#xCCB4; / &#xBC30;&#xC5F4;&#xB85C; &#xC791;&#xC5C5;&#xD558;&#xACE0; &#xC788;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD574;&#xBCF4;&#xC138;&#xC694;</span>
-    <span class="hljs-comment">// &#xADF8;&#xB807;&#xB2E4;&#xBA74; &#xADF8;&#xAC83;&#xB4E4;&#xC740; &#xB371;&#xC744; &#xC8FC;&#xACE0; &#xC0AC;&#xC6A9;&#xC790;&#xB294; &#xCE74;&#xB4DC;&#xB97C; &#xC120;&#xD0DD;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</span>
-    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> x == <span class="hljs-string">&quot;object&quot;</span>) {
-        <span class="hljs-keyword">let</span> pickedCard = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * x.length);
-        <span class="hljs-keyword">return</span> pickedCard;
+<span class="cm-keyword">function</span> <span class="cm-variable">pickCard</span>(<span class="cm-def">x</span>): <span class="cm-variable-3">any</span> {
+    <span class="cm-comment">// &#xAC1D;&#xCCB4; / &#xBC30;&#xC5F4;&#xB85C; &#xC791;&#xC5C5;&#xD558;&#xACE0; &#xC788;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD574;&#xBCF4;&#xC138;&#xC694;</span>
+    <span class="cm-comment">// &#xADF8;&#xB807;&#xB2E4;&#xBA74; &#xADF8;&#xAC83;&#xB4E4;&#xC740; &#xB371;&#xC744; &#xC8FC;&#xACE0; &#xC0AC;&#xC6A9;&#xC790;&#xB294; &#xCE74;&#xB4DC;&#xB97C; &#xC120;&#xD0DD;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</span>
+    <span class="cm-keyword">if</span> (<span class="cm-keyword">typeof</span> <span class="cm-variable">x</span> <span class="cm-operator">==</span> <span class="cm-string">&quot;object&quot;</span>) {
+        <span class="cm-keyword">let</span> <span class="cm-variable">pickedCard</span> <span class="cm-operator">=</span> <span class="cm-variable">Math</span>.<span class="cm-property">floor</span>(<span class="cm-variable">Math</span>.<span class="cm-property">random</span>() <span class="cm-operator">*</span> <span class="cm-variable">x</span>.<span class="cm-property">length</span>);
+        <span class="cm-keyword">return</span> <span class="cm-variable">pickedCard</span>;
     }
-    <span class="hljs-comment">// &#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xCE74;&#xB4DC;&#xB97C; &#xC120;&#xD0DD;&#xD558;&#xAC8C;&#xD558;&#xC138;&#xC694;.</span>
-    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> x == <span class="hljs-string">&quot;number&quot;</span>) {
-        <span class="hljs-keyword">let</span> pickedSuit = <span class="hljs-built_in">Math</span>.floor(x / <span class="hljs-number">13</span>);
-        <span class="hljs-keyword">return</span> { suit: suits[pickedSuit], card: x % <span class="hljs-number">13</span> };
+    <span class="cm-comment">// &#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xCE74;&#xB4DC;&#xB97C; &#xC120;&#xD0DD;&#xD558;&#xAC8C;&#xD558;&#xC138;&#xC694;.</span>
+    <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-keyword">typeof</span> <span class="cm-variable">x</span> <span class="cm-operator">==</span> <span class="cm-string">&quot;number&quot;</span>) {
+        <span class="cm-keyword">let</span> <span class="cm-variable">pickedSuit</span> <span class="cm-operator">=</span> <span class="cm-variable">Math</span>.<span class="cm-property">floor</span>(<span class="cm-variable">x</span> <span class="cm-operator">/</span> <span class="cm-number">13</span>);
+        <span class="cm-keyword">return</span> { <span class="cm-property">suit</span>: <span class="cm-variable">suits</span>[<span class="cm-variable">pickedSuit</span>], <span class="cm-property">card</span>: <span class="cm-variable">x</span> <span class="cm-operator">%</span> <span class="cm-number">13</span> };
     }
 }
 
-<span class="hljs-keyword">let</span> myDeck = [{ suit: <span class="hljs-string">&quot;diamonds&quot;</span>, card: <span class="hljs-number">2</span> }, { suit: <span class="hljs-string">&quot;spades&quot;</span>, card: <span class="hljs-number">10</span> }, { suit: <span class="hljs-string">&quot;hearts&quot;</span>, card: <span class="hljs-number">4</span> }];
-<span class="hljs-keyword">let</span> pickedCard1 = myDeck[pickCard(myDeck)];
-alert(<span class="hljs-string">&quot;card: &quot;</span> + pickedCard1.card + <span class="hljs-string">&quot; of &quot;</span> + pickedCard1.suit);
+<span class="cm-keyword">let</span> <span class="cm-variable">myDeck</span> <span class="cm-operator">=</span> [{ <span class="cm-property">suit</span>: <span class="cm-string">&quot;diamonds&quot;</span>, <span class="cm-property">card</span>: <span class="cm-number">2</span> }, { <span class="cm-property">suit</span>: <span class="cm-string">&quot;spades&quot;</span>, <span class="cm-property">card</span>: <span class="cm-number">10</span> }, { <span class="cm-property">suit</span>: <span class="cm-string">&quot;hearts&quot;</span>, <span class="cm-property">card</span>: <span class="cm-number">4</span> }];
+<span class="cm-keyword">let</span> <span class="cm-variable">pickedCard1</span> <span class="cm-operator">=</span> <span class="cm-variable">myDeck</span>[<span class="cm-variable">pickCard</span>(<span class="cm-variable">myDeck</span>)];
+<span class="cm-variable">alert</span>(<span class="cm-string">&quot;card: &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable">pickedCard1</span>.<span class="cm-property">card</span> <span class="cm-operator">+</span> <span class="cm-string">&quot; of &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable">pickedCard1</span>.<span class="cm-property">suit</span>);
 
-<span class="hljs-keyword">let</span> pickedCard2 = pickCard(<span class="hljs-number">15</span>);
-alert(<span class="hljs-string">&quot;card: &quot;</span> + pickedCard2.card + <span class="hljs-string">&quot; of &quot;</span> + pickedCard2.suit);
+<span class="cm-keyword">let</span> <span class="cm-variable">pickedCard2</span> <span class="cm-operator">=</span> <span class="cm-variable">pickCard</span>(<span class="cm-number">15</span>);
+<span class="cm-variable">alert</span>(<span class="cm-string">&quot;card: &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable">pickedCard2</span>.<span class="cm-property">card</span> <span class="cm-operator">+</span> <span class="cm-string">&quot; of &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable">pickedCard2</span>.<span class="cm-property">suit</span>);
 </code></pre>
 <p>&#xC5EC;&#xAE30;&#xC11C; <code>pickCard</code> &#xD568;&#xC218;&#xB294; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xBB34;&#xC5C7;&#xC744; &#xC804;&#xB2EC;&#xD588;&#xB294;&#xC9C0;&#xC5D0; &#xB530;&#xB77C; &#xB450; &#xAC1C;&#xC758; &#xC11C;&#xB85C; &#xB2E4;&#xB978; &#xB0B4;&#xC6A9;&#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC0AC;&#xC6A9;&#xC790;&#xAC00; deck&#xB97C; &#xB098;&#xD0C0;&#xB0B4;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; &#xC804;&#xB2EC;&#xD558;&#xBA74; &#xD568;&#xC218;&#xAC00; card&#xB97C; &#xC120;&#xD0DD;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC0AC;&#xC6A9;&#xC790;&#xAC00; card&#xB97C; &#xC120;&#xD0DD;&#xD558;&#xBA74; &#xADF8;&#xB4E4;&#xC774; &#xC120;&#xD0DD;&#xD55C; card&#xB97C; &#xC54C;&#xB824;&#xC90D;&#xB2C8;&#xB2E4;.<br>&#xD558;&#xC9C0;&#xB9CC; &#xC774;&#xAC83;&#xC744; &#xC5B4;&#xB5BB;&#xAC8C; &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;&#xC5D0; &#xC124;&#xBA85;&#xD560;&#xAE4C;&#xC694;?</p>
 <p>&#xC774;&#xC5D0; &#xB300;&#xD55C; &#xB300;&#xB2F5;&#xC740; &#xC624;&#xBC84;&#xB85C;&#xB4DC; &#xBAA9;&#xB85D;&#xACFC; &#xB3D9;&#xC77C;&#xD55C; &#xD568;&#xC218;&#xC5D0; &#xB300;&#xD55C; &#xC5EC;&#xB7EC; &#xD568;&#xC218; &#xD0C0;&#xC785;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xAC83;&#xC774;&#xB2E4;.<br>&#xC774; &#xBAA9;&#xB85D;&#xC740; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xAC00; &#xD568;&#xC218; &#xD638;&#xCD9C;&#xC744; &#xD574;&#xACB0;&#xD558;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br><code>pickCard</code>&#xAC00; &#xBC1B;&#xC544;&#xB4E4;&#xC77C; &#xC218; &#xC788;&#xB294; &#xAC83;&#xACFC; &#xADF8;&#xAC83;&#xC774; &#xBC18;&#xD658;&#xD558;&#xB294; &#xAC83;&#xC744; &#xAE30;&#xC220;&#xD55C; &#xC624;&#xBC84;&#xB85C;&#xB4DC; &#xBAA9;&#xB85D;&#xC744; &#xC791;&#xC131;&#xD574; &#xBCF4;&#xC138;&#xC694;.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">let</span> suits = [<span class="hljs-string">&quot;hearts&quot;</span>, <span class="hljs-string">&quot;spades&quot;</span>, <span class="hljs-string">&quot;clubs&quot;</span>, <span class="hljs-string">&quot;diamonds&quot;</span>];
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">suits</span> <span class="cm-operator">=</span> [<span class="cm-string">&quot;hearts&quot;</span>, <span class="cm-string">&quot;spades&quot;</span>, <span class="cm-string">&quot;clubs&quot;</span>, <span class="cm-string">&quot;diamonds&quot;</span>];
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pickCard</span>(<span class="hljs-params">x: {suit: <span class="hljs-built_in">string</span>; card: <span class="hljs-built_in">number</span>; }[]</span>): <span class="hljs-title">number</span></span>;
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pickCard</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span></span>): </span>{suit: <span class="hljs-built_in">string</span>; card: <span class="hljs-built_in">number</span>; };
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pickCard</span>(<span class="hljs-params">x</span>): <span class="hljs-title">any</span> </span>{
-    <span class="hljs-comment">// &#xAC1D;&#xCCB4; / &#xBC30;&#xC5F4;&#xB85C; &#xC791;&#xC5C5;&#xD558;&#xACE0; &#xC788;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD574;&#xBCF4;&#xC138;&#xC694;</span>
-    <span class="hljs-comment">// &#xADF8;&#xB807;&#xB2E4;&#xBA74; &#xADF8;&#xAC83;&#xB4E4;&#xC740; &#xB371;&#xC744; &#xC8FC;&#xACE0; &#xC0AC;&#xC6A9;&#xC790;&#xB294; &#xCE74;&#xB4DC;&#xB97C; &#xC120;&#xD0DD;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</span>
-    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> x == <span class="hljs-string">&quot;object&quot;</span>) {
-        <span class="hljs-keyword">let</span> pickedCard = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * x.length);
-        <span class="hljs-keyword">return</span> pickedCard;
+<span class="cm-keyword">function</span> <span class="cm-variable">pickCard</span>(<span class="cm-def">x</span>: {<span class="cm-variable">suit</span>: <span class="cm-variable-3">string</span>; <span class="cm-variable">card</span>: <span class="cm-variable-3">number</span>; }[]): <span class="cm-variable-3">number</span>;
+<span class="cm-keyword">function</span> <span class="cm-variable">pickCard</span>(<span class="cm-def">x</span>: <span class="cm-variable-3">number</span>): {<span class="cm-variable">suit</span>: <span class="cm-variable-3">string</span>; <span class="cm-variable">card</span>: <span class="cm-variable-3">number</span>; };
+<span class="cm-keyword">function</span> <span class="cm-variable">pickCard</span>(<span class="cm-def">x</span>): <span class="cm-variable-3">any</span> {
+    <span class="cm-comment">// &#xAC1D;&#xCCB4; / &#xBC30;&#xC5F4;&#xB85C; &#xC791;&#xC5C5;&#xD558;&#xACE0; &#xC788;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD574;&#xBCF4;&#xC138;&#xC694;</span>
+    <span class="cm-comment">// &#xADF8;&#xB807;&#xB2E4;&#xBA74; &#xADF8;&#xAC83;&#xB4E4;&#xC740; &#xB371;&#xC744; &#xC8FC;&#xACE0; &#xC0AC;&#xC6A9;&#xC790;&#xB294; &#xCE74;&#xB4DC;&#xB97C; &#xC120;&#xD0DD;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</span>
+    <span class="cm-keyword">if</span> (<span class="cm-keyword">typeof</span> <span class="cm-variable">x</span> <span class="cm-operator">==</span> <span class="cm-string">&quot;object&quot;</span>) {
+        <span class="cm-keyword">let</span> <span class="cm-variable">pickedCard</span> <span class="cm-operator">=</span> <span class="cm-variable">Math</span>.<span class="cm-property">floor</span>(<span class="cm-variable">Math</span>.<span class="cm-property">random</span>() <span class="cm-operator">*</span> <span class="cm-variable">x</span>.<span class="cm-property">length</span>);
+        <span class="cm-keyword">return</span> <span class="cm-variable">pickedCard</span>;
     }
-    <span class="hljs-comment">// &#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xCE74;&#xB4DC;&#xB97C; &#xC120;&#xD0DD;&#xD558;&#xAC8C;&#xD558;&#xC138;&#xC694;.</span>
-    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> x == <span class="hljs-string">&quot;number&quot;</span>) {
-        <span class="hljs-keyword">let</span> pickedSuit = <span class="hljs-built_in">Math</span>.floor(x / <span class="hljs-number">13</span>);
-        <span class="hljs-keyword">return</span> { suit: suits[pickedSuit], card: x % <span class="hljs-number">13</span> };
+    <span class="cm-comment">// &#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xCE74;&#xB4DC;&#xB97C; &#xC120;&#xD0DD;&#xD558;&#xAC8C;&#xD558;&#xC138;&#xC694;.</span>
+    <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-keyword">typeof</span> <span class="cm-variable">x</span> <span class="cm-operator">==</span> <span class="cm-string">&quot;number&quot;</span>) {
+        <span class="cm-keyword">let</span> <span class="cm-variable">pickedSuit</span> <span class="cm-operator">=</span> <span class="cm-variable">Math</span>.<span class="cm-property">floor</span>(<span class="cm-variable">x</span> <span class="cm-operator">/</span> <span class="cm-number">13</span>);
+        <span class="cm-keyword">return</span> { <span class="cm-property">suit</span>: <span class="cm-variable">suits</span>[<span class="cm-variable">pickedSuit</span>], <span class="cm-property">card</span>: <span class="cm-variable">x</span> <span class="cm-operator">%</span> <span class="cm-number">13</span> };
     }
 }
 
-<span class="hljs-keyword">let</span> myDeck = [{ suit: <span class="hljs-string">&quot;diamonds&quot;</span>, card: <span class="hljs-number">2</span> }, { suit: <span class="hljs-string">&quot;spades&quot;</span>, card: <span class="hljs-number">10</span> }, { suit: <span class="hljs-string">&quot;hearts&quot;</span>, card: <span class="hljs-number">4</span> }];
-<span class="hljs-keyword">let</span> pickedCard1 = myDeck[pickCard(myDeck)];
-alert(<span class="hljs-string">&quot;card: &quot;</span> + pickedCard1.card + <span class="hljs-string">&quot; of &quot;</span> + pickedCard1.suit);
+<span class="cm-keyword">let</span> <span class="cm-variable">myDeck</span> <span class="cm-operator">=</span> [{ <span class="cm-property">suit</span>: <span class="cm-string">&quot;diamonds&quot;</span>, <span class="cm-property">card</span>: <span class="cm-number">2</span> }, { <span class="cm-property">suit</span>: <span class="cm-string">&quot;spades&quot;</span>, <span class="cm-property">card</span>: <span class="cm-number">10</span> }, { <span class="cm-property">suit</span>: <span class="cm-string">&quot;hearts&quot;</span>, <span class="cm-property">card</span>: <span class="cm-number">4</span> }];
+<span class="cm-keyword">let</span> <span class="cm-variable">pickedCard1</span> <span class="cm-operator">=</span> <span class="cm-variable">myDeck</span>[<span class="cm-variable">pickCard</span>(<span class="cm-variable">myDeck</span>)];
+<span class="cm-variable">alert</span>(<span class="cm-string">&quot;card: &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable">pickedCard1</span>.<span class="cm-property">card</span> <span class="cm-operator">+</span> <span class="cm-string">&quot; of &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable">pickedCard1</span>.<span class="cm-property">suit</span>);
 
-<span class="hljs-keyword">let</span> pickedCard2 = pickCard(<span class="hljs-number">15</span>);
-alert(<span class="hljs-string">&quot;card: &quot;</span> + pickedCard2.card + <span class="hljs-string">&quot; of &quot;</span> + pickedCard2.suit);
+<span class="cm-keyword">let</span> <span class="cm-variable">pickedCard2</span> <span class="cm-operator">=</span> <span class="cm-variable">pickCard</span>(<span class="cm-number">15</span>);
+<span class="cm-variable">alert</span>(<span class="cm-string">&quot;card: &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable">pickedCard2</span>.<span class="cm-property">card</span> <span class="cm-operator">+</span> <span class="cm-string">&quot; of &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable">pickedCard2</span>.<span class="cm-property">suit</span>);
 </code></pre>
 <p>&#xC774;&#xB7F0; &#xBCC0;&#xD654;&#xB85C; &#xC778;&#xD574; &#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xAC00; <code>pickCard</code> &#xD568;&#xC218;&#xC5D0; &#xB300;&#xD55C; &#xD0C0;&#xC785;-&#xCCB4;&#xD06C; &#xD638;&#xCD9C;&#xC744; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xAC00; &#xC62C;&#xBC14;&#xB978; &#xD0C0;&#xC785; &#xAC80;&#xC0AC;&#xB97C; &#xC120;&#xD0DD;&#xD558;&#xAE30; &#xC704;&#xD574; &#xAE30;&#xBCF8; JavaScript&#xC640; &#xBE44;&#xC2B7;&#xD55C; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB97C; &#xC218;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC624;&#xBC84;&#xB85C;&#xB4DC; &#xBAA9;&#xB85D;&#xC744; &#xC0B4;&#xD3B4;&#xBCF4;&#xACE0; &#xC81C;&#xACF5;&#xB41C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD568;&#xC218;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xB294; &#xCCAB; &#xBC88;&#xC9F8; &#xC624;&#xBC84;&#xB85C;&#xB4DC; &#xC2DC;&#xB3C4;&#xB97C; &#xACC4;&#xC18D;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC77C;&#xCE58;&#xD558;&#xB294; &#xAC83;&#xC744; &#xCC3E;&#xC73C;&#xBA74; &#xC774; &#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xB97C; &#xC62C;&#xBC14;&#xB978; &#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xB85C; &#xC120;&#xD0DD;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB7EC;&#xD55C; &#xC774;&#xC720; &#xB54C;&#xBB38;&#xC5D0; &#xC8FC;&#xBB38;&#xC774; &#xB9CE;&#xC544;&#xC9C0;&#xBA74; &#xAC00;&#xC7A5; &#xAD6C;&#xCCB4;&#xC801;&#xC778; &#xAC83;&#xC5D0;&#xC11C; &#xAC00;&#xC7A5; &#xB35C; &#xAD6C;&#xCCB4;&#xC801;&#xC778; &#xAC83;&#xC73C;&#xB85C; &#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
@@ -1045,12 +1054,13 @@ alert(<span class="hljs-string">&quot;card: &quot;</span> + pickedCard2.card + <
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"함수","level":"3.5","depth":1,"next":{"title":"제네릭","level":"3.6","depth":1,"path":"pages/Generics.md","ref":"pages/Generics.md","articles":[]},"previous":{"title":"클래스","level":"3.4","depth":1,"path":"pages/Classes.md","ref":"pages/Classes.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Functions.md","mtime":"2018-02-11T15:23:37.720Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T14:21:41.019Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"함수","level":"3.5","depth":1,"next":{"title":"제네릭","level":"3.6","depth":1,"path":"pages/Generics.md","ref":"pages/Generics.md","articles":[]},"previous":{"title":"클래스","level":"3.4","depth":1,"path":"pages/Classes.md","ref":"pages/Classes.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Functions.md","mtime":"2018-02-15T11:46:40.501Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:22:50.132Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
     
@@ -1077,6 +1087,8 @@ alert(<span class="hljs-string">&quot;card: &quot;</span> + pickedCard2.card + <
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
+    
+
     
 
     </body>

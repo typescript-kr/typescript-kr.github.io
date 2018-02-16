@@ -12,9 +12,14 @@
         
         
     
+    
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight-1/website.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
@@ -44,6 +49,10 @@
         
     
         
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../../assets/css/atom-one-dark.css" />
     
 
         
@@ -714,31 +723,31 @@
 <h2 id="&#xC11C;&#xBC84;-&#xC124;&#xC815;-set-up-the-server">&#xC11C;&#xBC84; &#xC124;&#xC815; (Set up the server)</h2>
 <h3 id="vs2015">VS2015</h3>
 <p><code>project.json</code>&#xC5D0;&#xC11C; <code>&quot;dependencies&quot;</code>&#xC5D0; &#xB2E4;&#xC74C; &#xD56D;&#xBAA9;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4; :</p>
-<pre><code class="lang-json"><span class="hljs-string">&quot;Microsoft.AspNet.StaticFiles&quot;</span>: <span class="hljs-string">&quot;1.0.0-rc1-final&quot;</span>
+<pre><code class="lang-json"><span class="cm-string">&quot;Microsoft.AspNet.StaticFiles&quot;</span>: <span class="cm-string">&quot;1.0.0-rc1-final&quot;</span>
 </code></pre>
 <p>&#xC758;&#xC874;&#xC131;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC544;&#xC57C; &#xD569;&#xB2C8;&#xB2E4; :</p>
-<pre><code class="lang-json">  <span class="hljs-string">&quot;dependencies&quot;</span>: {
-    <span class="hljs-string">&quot;Microsoft.AspNet.IISPlatformHandler&quot;</span>: <span class="hljs-string">&quot;1.0.0-rc1-final&quot;</span>,
-    <span class="hljs-string">&quot;Microsoft.AspNet.Server.Kestrel&quot;</span>: <span class="hljs-string">&quot;1.0.0-rc1-final&quot;</span>,
-    <span class="hljs-string">&quot;Microsoft.AspNet.StaticFiles&quot;</span>: <span class="hljs-string">&quot;1.0.0-rc1-final&quot;</span>
+<pre><code class="lang-json">  <span class="cm-string">&quot;dependencies&quot;</span>: {
+    <span class="cm-property">&quot;Microsoft.AspNet.IISPlatformHandler&quot;</span>: <span class="cm-string">&quot;1.0.0-rc1-final&quot;</span>,
+    <span class="cm-property">&quot;Microsoft.AspNet.Server.Kestrel&quot;</span>: <span class="cm-string">&quot;1.0.0-rc1-final&quot;</span>,
+    <span class="cm-property">&quot;Microsoft.AspNet.StaticFiles&quot;</span>: <span class="cm-string">&quot;1.0.0-rc1-final&quot;</span>
   },
 </code></pre>
 <p><code>Startup.cs</code>&#xC5D0;&#xC11C; <code>Configure</code>&#xB97C; &#xB2E4;&#xC74C;&#xC73C;&#xB85C; &#xAD50;&#xCCB4;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-cs"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Configure</span>(<span class="hljs-params">IApplicationBuilder app</span>)
-</span>{
-    app.UseIISPlatformHandler();
-    app.UseDefaultFiles();
-    app.UseStaticFiles();
+<pre><code class="lang-cs"><span class="cm-keyword">public</span> <span class="cm-keyword">void</span> <span class="cm-variable">Configure</span>(<span class="cm-variable">IApplicationBuilder</span> <span class="cm-variable">app</span>)
+{
+    <span class="cm-variable">app</span>.<span class="cm-variable">UseIISPlatformHandler</span>();
+    <span class="cm-variable">app</span>.<span class="cm-variable">UseDefaultFiles</span>();
+    <span class="cm-variable">app</span>.<span class="cm-variable">UseStaticFiles</span>();
 }
 </code></pre>
 <h3 id="vs2017">VS2017</h3>
 <p>Open <strong>Dependencies</strong> &gt; <strong>Manage NuGet Packages</strong> &gt; <strong>Browse</strong>. &#xAC80;&#xC0C9; &#xBC0F; &#xC124;&#xCE58;  <code>Microsoft.AspNetCore.StaticFiles</code> 1.1.2:</p>
 <p><img src="../../assets/images/tutorials/aspnet/install-nuget-packages.png" alt="Install Microsoft.AspNetCore.StaticFiles"></p>
 <p><code>Startup.cs</code>&#xC5D0;&#xC11C; <code>Configure</code>&#xB97C; &#xB2E4;&#xC74C;&#xC73C;&#xB85C; &#xAD50;&#xCCB4;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-cs"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Configure</span>(<span class="hljs-params">IApplicationBuilder app</span>)
-</span>{
-    app.UseDefaultFiles();
-    app.UseStaticFiles();
+<pre><code class="lang-cs"><span class="cm-keyword">public</span> <span class="cm-keyword">void</span> <span class="cm-variable">Configure</span>(<span class="cm-variable">IApplicationBuilder</span> <span class="cm-variable">app</span>)
+{
+    <span class="cm-variable">app</span>.<span class="cm-variable">UseDefaultFiles</span>();
+    <span class="cm-variable">app</span>.<span class="cm-variable">UseStaticFiles</span>();
 }
 </code></pre>
 <p><code>UseDefaultFiles</code>&#xC640; <code>UseStaticFiles</code> &#xC544;&#xB798;&#xC758; &#xBE68;&#xAC04;&#xC120;&#xC774; &#xC0AC;&#xB77C;&#xC9C0;&#xB824;&#xBA74; VS&#xB97C; &#xB2E4;&#xC2DC; &#xC2DC;&#xC791;&#xD574;&#xC57C; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
@@ -752,10 +761,10 @@
 <p><img src="../../assets/images/tutorials/aspnet/new-item.png" alt="New item"></p>
 <h2 id="&#xC608;&#xC81C;-&#xCF54;&#xB4DC;-&#xCD94;&#xAC00;-add-example-code">&#xC608;&#xC81C; &#xCF54;&#xB4DC; &#xCD94;&#xAC00; (Add example code)</h2>
 <p>app.ts&#xC5D0; &#xB2E4;&#xC74C; &#xCF54;&#xB4DC;&#xB97C; &#xC785;&#xB825;&#xD558;&#xC2ED;&#xC2DC;&#xC624;</p>
-<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> compiler = (<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;compiler&quot;</span>) as HTMLInputElement).value;
-    <span class="hljs-keyword">const</span> framework = (<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;framework&quot;</span>) as HTMLInputElement).value;
-    <span class="hljs-keyword">return</span> <span class="hljs-string">`Hello from <span class="hljs-subst">${compiler}</span> and <span class="hljs-subst">${framework}</span>!`</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">sayHello</span>() {
+    <span class="cm-keyword">const</span> <span class="cm-def">compiler</span> <span class="cm-operator">=</span> (<span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">&quot;compiler&quot;</span>) <span class="cm-variable">as</span> <span class="cm-variable">HTMLInputElement</span>).<span class="cm-property">value</span>;
+    <span class="cm-keyword">const</span> <span class="cm-def">framework</span> <span class="cm-operator">=</span> (<span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">&quot;framework&quot;</span>) <span class="cm-variable">as</span> <span class="cm-variable">HTMLInputElement</span>).<span class="cm-property">value</span>;
+    <span class="cm-keyword">return</span> <span class="cm-string-2">`Hello from ${</span><span class="cm-variable-2">compiler</span><span class="cm-string-2">}</span> <span class="cm-string-2">and ${</span><span class="cm-variable-2">framework</span><span class="cm-string-2">}</span><span class="cm-string-2">!`</span>;
 }
 </code></pre>
 <h2 id="&#xBE4C;&#xB4DC;-&#xC124;&#xC815;-set-up-the-build">&#xBE4C;&#xB4DC; &#xC124;&#xC815; (Set up the build)</h2>
@@ -764,16 +773,16 @@
 <p><img src="../../assets/images/tutorials/aspnet/new-tsconfig.png" alt="Create tsconfig.json"></p>
 <p>&#xAE30;&#xBCF8; <code>tsconfig.json</code>&#xB97C; &#xB2E4;&#xC74C;&#xC73C;&#xB85C; &#xB300;&#xCCB4;&#xD558;&#xC138;&#xC694;:</p>
 <pre><code class="lang-json">{
-  <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
-      <span class="hljs-string">&quot;noImplicitAny&quot;</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-string">&quot;noEmitOnError&quot;</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-string">&quot;sourceMap&quot;</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;es5&quot;</span>
+  <span class="cm-property">&quot;compilerOptions&quot;</span>: {
+      <span class="cm-property">&quot;noImplicitAny&quot;</span>: <span class="cm-atom">true</span>,
+      <span class="cm-property">&quot;noEmitOnError&quot;</span>: <span class="cm-atom">true</span>,
+      <span class="cm-property">&quot;sourceMap&quot;</span>: <span class="cm-atom">true</span>,
+      <span class="cm-property">&quot;target&quot;</span>: <span class="cm-string">&quot;es5&quot;</span>
   },
-  <span class="hljs-string">&quot;files&quot;</span>: [
-      <span class="hljs-string">&quot;./app.ts&quot;</span>
+  <span class="cm-property">&quot;files&quot;</span>: [
+      <span class="cm-string">&quot;./app.ts&quot;</span>
   ],
-  <span class="hljs-string">&quot;compileOnSave&quot;</span>: <span class="hljs-literal">true</span>
+  <span class="cm-property">&quot;compileOnSave&quot;</span>: <span class="cm-atom">true</span>
 }
 </code></pre>
 <p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xCC28;&#xC774;&#xC810;&#xC744; &#xC81C;&#xC678;&#xD558;&#xACE0; &#xAE30;&#xBCF8;&#xAC12;&#xACFC; &#xC720;&#xC0AC;&#xD569;&#xB2C8;&#xB2E4;.</p>
@@ -786,34 +795,34 @@
 <h3 id="npm-&#xC124;&#xC815;-set-up-npm">NPM &#xC124;&#xC815; (Set up NPM)</h3>
 <p>&#xC774;&#xC81C; JavaScript &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; NPM&#xC744; &#xC124;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xB9C8;&#xC6B0;&#xC2A4; &#xC624;&#xB978;&#xCABD; &#xBC84;&#xD2BC;&#xC73C;&#xB85C; &#xB204;&#xB974;&#xACE0; <strong>New Item</strong>&#xC744; &#xD074;&#xB9AD;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.<br>&#xADF8;&#xB7F0; &#xB2E4;&#xC74C; <strong>NPM Configuration File</strong>&#xC744; &#xC120;&#xD0DD;&#xD558;&#xACE0; &#xAE30;&#xBCF8; &#xC774;&#xB984; <code>package.json</code>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.  </p>
 <p><code>devDependencies &apos;</code>&#xC548;&#xC5D0; &quot;gulp&quot;&#xC640; &quot;del&quot;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
-<pre><code class="lang-json"><span class="hljs-string">&quot;devDependencies&quot;</span>: {
-    <span class="hljs-string">&quot;gulp&quot;</span>: <span class="hljs-string">&quot;3.9.0&quot;</span>,
-    <span class="hljs-string">&quot;del&quot;</span>: <span class="hljs-string">&quot;2.2.0&quot;</span>
+<pre><code class="lang-json"><span class="cm-string">&quot;devDependencies&quot;</span>: {
+    <span class="cm-property">&quot;gulp&quot;</span>: <span class="cm-string">&quot;3.9.0&quot;</span>,
+    <span class="cm-property">&quot;del&quot;</span>: <span class="cm-string">&quot;2.2.0&quot;</span>
 }
 </code></pre>
 <p>Visual Studio&#xB294; &#xD30C;&#xC77C;&#xC744; &#xC800;&#xC7A5;&#xD558;&#xB294; &#xC989;&#xC2DC; gulp &#xBC0F; del &#xC124;&#xCE58;&#xB97C; &#xC2DC;&#xC791;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xC740; &#xACBD;&#xC6B0; &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xB9C8;&#xC6B0;&#xC2A4; &#xC624;&#xB978;&#xCABD; &#xBC84;&#xD2BC;&#xC73C;&#xB85C; &#xB204;&#xB974;&#xACE0; <strong>Restore Packages</strong>&#xB97C; &#xD558;&#xC2ED;&#xC2DC;&#xC624;.</p>
 <h3 id="gulp-&#xC124;&#xC815;-set-up-gulp">gulp &#xC124;&#xC815; (Set up gulp)</h3>
 <p>&#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; <code>gulpfile.js</code>&#xB77C;&#xB294; &#xC0C8;&#xB85C;&#xC6B4; JavaScript&#xD30C;&#xC77C;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.</p>
 <p>&#xB2E4;&#xC74C; &#xCF54;&#xB4DC;&#xB97C; &#xC785;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-js"><span class="hljs-comment">/// &lt;binding AfterBuild=&apos;default&apos; Clean=&apos;clean&apos; /&gt;</span>
-<span class="hljs-comment">/*
-&#xC774; &#xD30C;&#xC77C;&#xC740; Gulp&#xC758; &#xC791;&#xC5C5;&#xC744; &#xC815;&#xC758;&#xD558;&#xACE0; &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC704;&#xD55C; entry point&#xC785;&#xB2C8;&#xB2E4;.
-&#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC744; &#xBCF4;&#xB824;&#xBA74; &#xC5EC;&#xAE30;&#xB97C; &#xD074;&#xB9AD;&#xD558;&#xC2ED;&#xC2DC;&#xC624;. http://go.microsoft.com/fwlink/?LinkId=518007
-*/</span>
+<pre><code class="lang-js"><span class="cm-comment">/// &lt;binding AfterBuild=&apos;default&apos; Clean=&apos;clean&apos; /&gt;</span>
+<span class="cm-comment">/*</span>
+<span class="cm-comment">&#xC774; &#xD30C;&#xC77C;&#xC740; Gulp&#xC758; &#xC791;&#xC5C5;&#xC744; &#xC815;&#xC758;&#xD558;&#xACE0; &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC704;&#xD55C; entry point&#xC785;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-comment">&#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC744; &#xBCF4;&#xB824;&#xBA74; &#xC5EC;&#xAE30;&#xB97C; &#xD074;&#xB9AD;&#xD558;&#xC2ED;&#xC2DC;&#xC624;. http://go.microsoft.com/fwlink/?LinkId=518007</span>
+<span class="cm-comment">*/</span>
 
-<span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp&apos;</span>);
-<span class="hljs-keyword">var</span> del = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;del&apos;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">gulp</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&apos;gulp&apos;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">del</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&apos;del&apos;</span>);
 
-<span class="hljs-keyword">var</span> paths = {
-    scripts: [<span class="hljs-string">&apos;scripts/**/*.js&apos;</span>, <span class="hljs-string">&apos;scripts/**/*.ts&apos;</span>, <span class="hljs-string">&apos;scripts/**/*.map&apos;</span>],
+<span class="cm-keyword">var</span> <span class="cm-variable">paths</span> <span class="cm-operator">=</span> {
+    <span class="cm-property">scripts</span>: [<span class="cm-string">&apos;scripts/**/*.js&apos;</span>, <span class="cm-string">&apos;scripts/**/*.ts&apos;</span>, <span class="cm-string">&apos;scripts/**/*.map&apos;</span>],
 };
 
-gulp.task(<span class="hljs-string">&apos;clean&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">return</span> del([<span class="hljs-string">&apos;wwwroot/scripts/**/*&apos;</span>]);
+<span class="cm-variable">gulp</span>.<span class="cm-property">task</span>(<span class="cm-string">&apos;clean&apos;</span>, <span class="cm-keyword">function</span> () {
+    <span class="cm-keyword">return</span> <span class="cm-variable">del</span>([<span class="cm-string">&apos;wwwroot/scripts/**/*&apos;</span>]);
 });
 
-gulp.task(<span class="hljs-string">&apos;default&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-    gulp.src(paths.scripts).pipe(gulp.dest(<span class="hljs-string">&apos;wwwroot/scripts&apos;</span>))
+<span class="cm-variable">gulp</span>.<span class="cm-property">task</span>(<span class="cm-string">&apos;default&apos;</span>, <span class="cm-keyword">function</span> () {
+    <span class="cm-variable">gulp</span>.<span class="cm-property">src</span>(<span class="cm-variable">paths</span>.<span class="cm-property">scripts</span>).<span class="cm-property">pipe</span>(<span class="cm-variable">gulp</span>.<span class="cm-property">dest</span>(<span class="cm-string">&apos;wwwroot/scripts&apos;</span>))
 });
 </code></pre>
 <p>&#xCCAB; &#xBC88;&#xC9F8; &#xC904;&#xC740; Visual Studio&#xC5D0;&#xAC8C; &#xBE4C;&#xB4DC;&#xAC00; &#xB05D;&#xB09C; &#xD6C4;&#xC5D0; &#xC791;&#xC5C5;&#xC744; &apos;default&apos;&#xB85C; &#xC2E4;&#xD589;&#xD558;&#xB3C4;&#xB85D; &#xC9C0;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB610;&#xD55C; Visual Studio&#xC5D0; &#xBE4C;&#xB4DC;&#xB97C; &#xC815;&#xB9AC;&#xD558;&#xB3C4;&#xB85D; &#xC694;&#xCCAD;&#xD558;&#xBA74; &apos;clean&apos;&#xC791;&#xC5C5;&#xB3C4; &#xC2E4;&#xD589;&#xB429;&#xB2C8;&#xB2E4;.</p>
@@ -822,21 +831,21 @@ gulp.task(<span class="hljs-string">&apos;default&apos;</span>, <span class="hlj
 <h2 id="html-&#xD398;&#xC774;&#xC9C0;-&#xC791;&#xC131;-write-an-html-page">HTML &#xD398;&#xC774;&#xC9C0; &#xC791;&#xC131; (Write an HTML page)</h2>
 <p><code>wwwroot</code> &#xC548;&#xC5D0; <code>index.html</code>&#xC774;&#xB77C;&#xB294; &#xC0C8; &#xD56D;&#xBAA9;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>&#xB2E4;&#xC74C; &#xCF54;&#xB4DC;&#xB97C; <code>index.html</code>&#xC5D0; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4; :</p>
-<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;scripts/app.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;message&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-        Compiler: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;compiler&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;TypeScript&quot;</span> <span class="hljs-attr">onkeyup</span>=<span class="hljs-string">&quot;document.getElementById(&apos;message&apos;).innerText = sayHello()&quot;</span> /&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
-        Framework: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;framework&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;ASP.NET&quot;</span> <span class="hljs-attr">onkeyup</span>=<span class="hljs-string">&quot;document.getElementById(&apos;message&apos;).innerText = sayHello()&quot;</span> /&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+<pre><code class="lang-html"><span class="cm-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">html</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">head</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">meta</span> <span class="cm-attribute">charset</span>=<span class="cm-string">&quot;utf-8&quot;</span> <span class="cm-tagcm-bracket">/&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">script</span> <span class="cm-attribute">src</span>=<span class="cm-string">&quot;scripts/app.js&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">script</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">title</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">title</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">head</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">body</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">id</span>=<span class="cm-string">&quot;message&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
+        Compiler: <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">input</span> <span class="cm-attribute">id</span>=<span class="cm-string">&quot;compiler&quot;</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;TypeScript&quot;</span> <span class="cm-attribute">onkeyup</span>=<span class="cm-string">&quot;document.getElementById(&apos;message&apos;).innerText = sayHello()&quot;</span> <span class="cm-tagcm-bracket">/&gt;</span><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">br</span> <span class="cm-tagcm-bracket">/&gt;</span>
+        Framework: <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">input</span> <span class="cm-attribute">id</span>=<span class="cm-string">&quot;framework&quot;</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;ASP.NET&quot;</span> <span class="cm-attribute">onkeyup</span>=<span class="cm-string">&quot;document.getElementById(&apos;message&apos;).innerText = sayHello()&quot;</span> <span class="cm-tagcm-bracket">/&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">body</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">html</span><span class="cm-tagcm-bracket">&gt;</span>
 </code></pre>
 <h2 id="&#xD14C;&#xC2A4;&#xD2B8;-test">&#xD14C;&#xC2A4;&#xD2B8; (Test)</h2>
 <ol>
@@ -857,22 +866,22 @@ gulp.task(<span class="hljs-string">&apos;default&apos;</span>, <span class="hlj
 <h2 id="npm-&#xC758;&#xC874;&#xC131;-&#xCD94;&#xAC00;-add-npm-dependencies">NPM &#xC758;&#xC874;&#xC131; &#xCD94;&#xAC00; (Add NPM dependencies)</h2>
 <p><code>package.json</code>&#xC758; <code>dependencies</code>&#xC5D0; Angular 2&#xC640; SystemJS&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.</p>
 <p>VS2015&#xC758; &#xACBD;&#xC6B0;&#xB294; &#xC0C8;&#xB85C;&#xC6B4; <code>dependencies</code> &#xB9AC;&#xC2A4;&#xD2B8; :</p>
-<pre><code class="lang-json">  <span class="hljs-string">&quot;dependencies&quot;</span>: {
-    <span class="hljs-string">&quot;angular2&quot;</span>: <span class="hljs-string">&quot;2.0.0-beta.11&quot;</span>,
-    <span class="hljs-string">&quot;systemjs&quot;</span>: <span class="hljs-string">&quot;0.19.24&quot;</span>,
-    <span class="hljs-string">&quot;gulp&quot;</span>: <span class="hljs-string">&quot;3.9.0&quot;</span>,
-    <span class="hljs-string">&quot;del&quot;</span>: <span class="hljs-string">&quot;2.2.0&quot;</span>
+<pre><code class="lang-json">  <span class="cm-string">&quot;dependencies&quot;</span>: {
+    <span class="cm-property">&quot;angular2&quot;</span>: <span class="cm-string">&quot;2.0.0-beta.11&quot;</span>,
+    <span class="cm-property">&quot;systemjs&quot;</span>: <span class="cm-string">&quot;0.19.24&quot;</span>,
+    <span class="cm-property">&quot;gulp&quot;</span>: <span class="cm-string">&quot;3.9.0&quot;</span>,
+    <span class="cm-property">&quot;del&quot;</span>: <span class="cm-string">&quot;2.2.0&quot;</span>
   },
 </code></pre>
 <p>VS2017&#xC758; &#xACBD;&#xC6B0; NPM3&#xC5D0;&#xC11C; peer &#xC758;&#xC874;&#xC131;&#xC774; &#xC0AC;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBBC0;&#xB85C; Angular 2&#xC758; peer &#xC758;&#xC874;&#xC131;&#xC744; &#xC758;&#xC874;&#xC131;&#xC73C;&#xB85C; &#xC9C1;&#xC811; &#xB098;&#xC5F4;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4; :</p>
-<pre><code class="lang-json">  <span class="hljs-string">&quot;dependencies&quot;</span>: {
-    <span class="hljs-string">&quot;angular2&quot;</span>: <span class="hljs-string">&quot;2.0.0-beta.11&quot;</span>,
-    <span class="hljs-string">&quot;reflect-metadata&quot;</span>: <span class="hljs-string">&quot;0.1.2&quot;</span>,
-    <span class="hljs-string">&quot;rxjs&quot;</span>: <span class="hljs-string">&quot;5.0.0-beta.2&quot;</span>,
-    <span class="hljs-string">&quot;zone.js&quot;</span>: <span class="hljs-string">&quot;^0.6.4&quot;</span>,
-    <span class="hljs-string">&quot;systemjs&quot;</span>: <span class="hljs-string">&quot;0.19.24&quot;</span>,
-    <span class="hljs-string">&quot;gulp&quot;</span>: <span class="hljs-string">&quot;3.9.0&quot;</span>,
-    <span class="hljs-string">&quot;del&quot;</span>: <span class="hljs-string">&quot;2.2.0&quot;</span>
+<pre><code class="lang-json">  <span class="cm-string">&quot;dependencies&quot;</span>: {
+    <span class="cm-property">&quot;angular2&quot;</span>: <span class="cm-string">&quot;2.0.0-beta.11&quot;</span>,
+    <span class="cm-property">&quot;reflect-metadata&quot;</span>: <span class="cm-string">&quot;0.1.2&quot;</span>,
+    <span class="cm-property">&quot;rxjs&quot;</span>: <span class="cm-string">&quot;5.0.0-beta.2&quot;</span>,
+    <span class="cm-property">&quot;zone.js&quot;</span>: <span class="cm-string">&quot;^0.6.4&quot;</span>,
+    <span class="cm-property">&quot;systemjs&quot;</span>: <span class="cm-string">&quot;0.19.24&quot;</span>,
+    <span class="cm-property">&quot;gulp&quot;</span>: <span class="cm-string">&quot;3.9.0&quot;</span>,
+    <span class="cm-property">&quot;del&quot;</span>: <span class="cm-string">&quot;2.2.0&quot;</span>
   },
 </code></pre>
 <h2 id="tsconfigjson-&#xC5C5;&#xB370;&#xC774;&#xD2B8;-update-tsconfigjson">tsconfig.json &#xC5C5;&#xB370;&#xC774;&#xD2B8; (Update tsconfig.json)</h2>
@@ -880,23 +889,23 @@ gulp.task(<span class="hljs-string">&apos;default&apos;</span>, <span class="hlj
 <p><code>&quot;experimentalDecorators&quot;: true, &quot;emitDecoratorMetadata&quot;: true</code>&#xB97C; <code>&quot;compilerOptions&quot;</code>&#xC5D0; &#xCD94;&#xAC00;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.<br>&#xADF8;&#xB7F0; &#xB2E4;&#xC74C; ES2015&#xC5D0;&#xC11C; &#xC120;&#xC5B8;&#xC744; &#xAC00;&#xC838;&#xC624;&#xB824;&#xBA74; <code>&quot;lib&quot;: [&quot;es2015&quot;, &quot;es5&quot;, &quot;dom&quot;]</code>&#xC744; <code>&quot;compilerOptions&quot;</code> &#xC5D0; &#xCD94;&#xAC00;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.  </p>
 <p>&#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; &#xB9CC;&#xB4E4; <code>&quot;./model.ts&quot;</code>&#xB97C; <code>&quot;files&quot;</code>&#xC5D0; &#xC0C8; &#xD56D;&#xBAA9;&#xC744; &#xCD94;&#xAC00;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>tsconfig&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xBCF4;&#xC77C; &#xAC83;&#xC785;&#xB2C8;&#xB2E4; :</p>
 <pre><code class="lang-json">{
-    <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
-        <span class="hljs-string">&quot;noImplicitAny&quot;</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">&quot;noEmitOnError&quot;</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">&quot;sourceMap&quot;</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">&quot;experimentalDecorators&quot;</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">&quot;emitDecoratorMetadata&quot;</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;es5&quot;</span>,
-        <span class="hljs-string">&quot;lib&quot;</span>: [
-            <span class="hljs-string">&quot;es2015&quot;</span>, <span class="hljs-string">&quot;es5&quot;</span>, <span class="hljs-string">&quot;dom&quot;</span>
+    <span class="cm-property">&quot;compilerOptions&quot;</span>: {
+        <span class="cm-property">&quot;noImplicitAny&quot;</span>: <span class="cm-atom">true</span>,
+        <span class="cm-property">&quot;noEmitOnError&quot;</span>: <span class="cm-atom">true</span>,
+        <span class="cm-property">&quot;sourceMap&quot;</span>: <span class="cm-atom">true</span>,
+        <span class="cm-property">&quot;experimentalDecorators&quot;</span>: <span class="cm-atom">true</span>,
+        <span class="cm-property">&quot;emitDecoratorMetadata&quot;</span>: <span class="cm-atom">true</span>,
+        <span class="cm-property">&quot;target&quot;</span>: <span class="cm-string">&quot;es5&quot;</span>,
+        <span class="cm-property">&quot;lib&quot;</span>: [
+            <span class="cm-string">&quot;es2015&quot;</span>, <span class="cm-string">&quot;es5&quot;</span>, <span class="cm-string">&quot;dom&quot;</span>
         ]
     },
-    <span class="hljs-string">&quot;files&quot;</span>: [
-        <span class="hljs-string">&quot;./app.ts&quot;</span>,
-        <span class="hljs-string">&quot;./model.ts&quot;</span>,
-        <span class="hljs-string">&quot;./main.ts&quot;</span>
+    <span class="cm-property">&quot;files&quot;</span>: [
+        <span class="cm-string">&quot;./app.ts&quot;</span>,
+        <span class="cm-string">&quot;./model.ts&quot;</span>,
+        <span class="cm-string">&quot;./main.ts&quot;</span>
     ],
-    <span class="hljs-string">&quot;compileOnSave&quot;</span>: <span class="hljs-literal">true</span>
+    <span class="cm-property">&quot;compileOnSave&quot;</span>: <span class="cm-atom">true</span>
 }
 </code></pre>
 <h2 id="gulp-&#xBE4C;&#xB4DC;&#xC5D0;-angular-&#xCD94;&#xAC00;-add-angular-to-the-gulp-build">gulp &#xBE4C;&#xB4DC;&#xC5D0; Angular &#xCD94;&#xAC00; (Add Angular to the gulp build)</h2>
@@ -908,88 +917,88 @@ gulp.task(<span class="hljs-string">&apos;default&apos;</span>, <span class="hlj
 <li><code>default</code> &#xD0DC;&#xC2A4;&#xD06C;&#xC5D0; <code>lib</code>&#xC5D0; &#xB300;&#xD55C; &#xC758;&#xC874;&#xC131;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.</li>
 </ol>
 <p>&#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xB41C; <code>gulpfile.js</code>&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD45C;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4; :</p>
-<pre><code class="lang-xml">/// <span class="hljs-tag">&lt;<span class="hljs-name">binding</span> <span class="hljs-attr">AfterBuild</span>=<span class="hljs-string">&apos;default&apos;</span> <span class="hljs-attr">Clean</span>=<span class="hljs-string">&apos;clean&apos;</span> /&gt;</span>
-/*
-&#xC774; &#xD30C;&#xC77C;&#xC740; Gulp&#xC758; &#xC791;&#xC5C5;&#xC744; &#xC815;&#xC758;&#xD558;&#xACE0; &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC704;&#xD55C; entry point&#xC785;&#xB2C8;&#xB2E4;.
-&#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC744; &#xBCF4;&#xB824;&#xBA74; &#xC5EC;&#xAE30;&#xB97C; &#xD074;&#xB9AD;&#xD558;&#xC2ED;&#xC2DC;&#xC624;. http://go.microsoft.com/fwlink/?LinkId=518007
-*/
+<pre><code class="lang-js"><span class="cm-comment">/// &lt;binding AfterBuild=&apos;default&apos; Clean=&apos;clean&apos; /&gt;</span>
+<span class="cm-comment">/*</span>
+<span class="cm-comment">&#xC774; &#xD30C;&#xC77C;&#xC740; Gulp&#xC758; &#xC791;&#xC5C5;&#xC744; &#xC815;&#xC758;&#xD558;&#xACE0; &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC704;&#xD55C; entry point&#xC785;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-comment">&#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC744; &#xBCF4;&#xB824;&#xBA74; &#xC5EC;&#xAE30;&#xB97C; &#xD074;&#xB9AD;&#xD558;&#xC2ED;&#xC2DC;&#xC624;. http://go.microsoft.com/fwlink/?LinkId=518007</span>
+<span class="cm-comment">*/</span>
 
-var gulp = require(&apos;gulp&apos;);
-var del = require(&apos;del&apos;);
+<span class="cm-keyword">var</span> <span class="cm-variable">gulp</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&apos;gulp&apos;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">del</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&apos;del&apos;</span>);
 
-var paths = {
-    scripts: [&apos;scripts/**/*.js&apos;, &apos;scripts/**/*.ts&apos;, &apos;scripts/**/*.map&apos;],
-    libs: [&apos;node_modules/angular2/bundles/angular2.js&apos;,
-           &apos;node_modules/angular2/bundles/angular2-polyfills.js&apos;,
-           &apos;node_modules/systemjs/dist/system.src.js&apos;,
-           &apos;node_modules/rxjs/bundles/Rx.js&apos;]
+<span class="cm-keyword">var</span> <span class="cm-variable">paths</span> <span class="cm-operator">=</span> {
+    <span class="cm-property">scripts</span>: [<span class="cm-string">&apos;scripts/**/*.js&apos;</span>, <span class="cm-string">&apos;scripts/**/*.ts&apos;</span>, <span class="cm-string">&apos;scripts/**/*.map&apos;</span>],
+    <span class="cm-property">libs</span>: [<span class="cm-string">&apos;node_modules/angular2/bundles/angular2.js&apos;</span>,
+           <span class="cm-string">&apos;node_modules/angular2/bundles/angular2-polyfills.js&apos;</span>,
+           <span class="cm-string">&apos;node_modules/systemjs/dist/system.src.js&apos;</span>,
+           <span class="cm-string">&apos;node_modules/rxjs/bundles/Rx.js&apos;</span>]
 };
 
-gulp.task(&apos;lib&apos;, function () {
-    gulp.src(paths.libs).pipe(gulp.dest(&apos;wwwroot/scripts/lib&apos;));
+<span class="cm-variable">gulp</span>.<span class="cm-property">task</span>(<span class="cm-string">&apos;lib&apos;</span>, <span class="cm-keyword">function</span> () {
+    <span class="cm-variable">gulp</span>.<span class="cm-property">src</span>(<span class="cm-variable">paths</span>.<span class="cm-property">libs</span>).<span class="cm-property">pipe</span>(<span class="cm-variable">gulp</span>.<span class="cm-property">dest</span>(<span class="cm-string">&apos;wwwroot/scripts/lib&apos;</span>));
 });
 
-gulp.task(&apos;clean&apos;, function () {
-    return del([&apos;wwwroot/scripts/**/*&apos;]);
+<span class="cm-variable">gulp</span>.<span class="cm-property">task</span>(<span class="cm-string">&apos;clean&apos;</span>, <span class="cm-keyword">function</span> () {
+    <span class="cm-keyword">return</span> <span class="cm-variable">del</span>([<span class="cm-string">&apos;wwwroot/scripts/**/*&apos;</span>]);
 });
 
-gulp.task(&apos;default&apos;, [&apos;lib&apos;], function () {
-    gulp.src(paths.scripts).pipe(gulp.dest(&apos;wwwroot/scripts&apos;));
+<span class="cm-variable">gulp</span>.<span class="cm-property">task</span>(<span class="cm-string">&apos;default&apos;</span>, [<span class="cm-string">&apos;lib&apos;</span>], <span class="cm-keyword">function</span> () {
+    <span class="cm-variable">gulp</span>.<span class="cm-property">src</span>(<span class="cm-variable">paths</span>.<span class="cm-property">scripts</span>).<span class="cm-property">pipe</span>(<span class="cm-variable">gulp</span>.<span class="cm-property">dest</span>(<span class="cm-string">&apos;wwwroot/scripts&apos;</span>));
 });
 </code></pre>
 <p>&#xB2E4;&#xC2DC; &#xD55C;&#xBC88; gulpfile&#xC744; &#xC800;&#xC7A5;&#xD55C; &#xD6C4;&#xC5D0;&#xB294; Task Runner Explorer&#xAC00; &#xC0C8;&#xB85C;&#xC6B4; <code>lib</code> &#xC791;&#xC5C5;&#xC744; &#xBCF4;&#xAC8C;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <h2 id="typescript&#xC5D0;-&#xAC04;&#xB2E8;&#xD55C;-angular-&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;-&#xC791;&#xC131;-write-a-simple-angular-app-in-typescript">TypeScript&#xC5D0; &#xAC04;&#xB2E8;&#xD55C; Angular &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC791;&#xC131; (Write a simple Angular app in TypeScript)</h2>
 <p>&#xBA3C;&#xC800; <code>app.ts</code>&#xC758; &#xCF54;&#xB4DC;&#xB97C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xBCC0;&#xACBD;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> {Component} from <span class="hljs-string">&quot;angular2/core&quot;</span>
-<span class="hljs-keyword">import</span> {MyModel} from <span class="hljs-string">&quot;./model&quot;</span>
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> {<span class="cm-variable">Component</span>} <span class="cm-keyword">from</span> <span class="cm-string">&quot;angular2/core&quot;</span>
+<span class="cm-keyword">import</span> {<span class="cm-variable">MyModel</span>} <span class="cm-keyword">from</span> <span class="cm-string">&quot;./model&quot;</span>
 
-@Component({
-    selector: <span class="hljs-string">`my-app`</span>,
-    template: <span class="hljs-string">`&lt;div&gt;Hello from {{getCompiler()}}&lt;/div&gt;`</span>
+<span class="cm-variable">@Component</span>({
+    <span class="cm-property">selector</span>: <span class="cm-string-2">`my-app`</span>,
+    <span class="cm-property">template</span>: <span class="cm-string-2">`&lt;div&gt;Hello from {{getCompiler()}}&lt;/div&gt;`</span>
 })
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> MyApp {
-    model = <span class="hljs-keyword">new</span> MyModel();
-    getCompiler() {
-        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.model.compiler;
+<span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">MyApp</span> {
+    <span class="cm-property">model</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">MyModel</span>();
+    <span class="cm-variable">getCompiler</span>() {
+        <span class="cm-keyword">return</span> <span class="cm-keyword">this</span>.<span class="cm-variable">model</span>.<span class="cm-variable">compiler</span>;
     }
 }
 </code></pre>
 <p>&#xADF8;&#xB7F0; &#xB2E4;&#xC74C; <code>Model.ts</code>&#xB77C;&#xB294; &#xC774;&#xB984;&#xC758; <code>scripts</code>&#xC5D0; &#xB2E4;&#xB978; TypeScript &#xD30C;&#xC77C;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> MyModel {
-    compiler = <span class="hljs-string">&quot;TypeScript&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">MyModel</span> {
+    <span class="cm-property">compiler</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;TypeScript&quot;</span>;
 }
 </code></pre>
 <p>&#xADF8;&#xB9AC;&#xACE0; <code>scripts</code>&#xC5D0; <code>main.ts</code>&#xB77C;&#xB294; &#xB610; &#xB2E4;&#xB978; TypeScript &#xD30C;&#xC77C;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; :</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> {bootstrap} from <span class="hljs-string">&quot;angular2/platform/browser&quot;</span>;
-<span class="hljs-keyword">import</span> {MyApp} from <span class="hljs-string">&quot;./app&quot;</span>;
-bootstrap(MyApp);
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> {<span class="cm-variable">bootstrap</span>} <span class="cm-keyword">from</span> <span class="cm-string">&quot;angular2/platform/browser&quot;</span>;
+<span class="cm-keyword">import</span> {<span class="cm-variable">MyApp</span>} <span class="cm-keyword">from</span> <span class="cm-string">&quot;./app&quot;</span>;
+<span class="cm-variable">bootstrap</span>(<span class="cm-variable">MyApp</span>);
 </code></pre>
 <p>&#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; <code>index.html</code>&#xC758; &#xCF54;&#xB4DC;&#xB97C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xBCC0;&#xACBD;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
-<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;scripts/lib/angular2-polyfills.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;scripts/lib/system.src.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;scripts/lib/rx.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;scripts/lib/angular2.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<pre><code class="lang-html"><span class="cm-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">html</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">head</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">meta</span> <span class="cm-attribute">charset</span>=<span class="cm-string">&quot;utf-8&quot;</span> <span class="cm-tagcm-bracket">/&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">script</span> <span class="cm-attribute">src</span>=<span class="cm-string">&quot;scripts/lib/angular2-polyfills.js&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">script</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">script</span> <span class="cm-attribute">src</span>=<span class="cm-string">&quot;scripts/lib/system.src.js&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">script</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">script</span> <span class="cm-attribute">src</span>=<span class="cm-string">&quot;scripts/lib/rx.js&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">script</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">script</span> <span class="cm-attribute">src</span>=<span class="cm-string">&quot;scripts/lib/angular2.js&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">script</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">script</span><span class="cm-tagcm-bracket">&gt;</span>
     System.config({
         packages: {
-            <span class="hljs-string">&apos;scripts&apos;</span>: {
-                format: <span class="hljs-string">&apos;cjs&apos;</span>,
-                defaultExtension: <span class="hljs-string">&apos;js&apos;</span>
+            &apos;scripts&apos;: {
+                format: &apos;cjs&apos;,
+                defaultExtension: &apos;js&apos;
             }
         }
     });
-    System.import(<span class="hljs-string">&apos;scripts/main&apos;</span>).then(<span class="hljs-literal">null</span>, <span class="hljs-built_in">console</span>.error.bind(<span class="hljs-built_in">console</span>));
-    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">my-app</span>&gt;</span>Loading...<span class="hljs-tag">&lt;/<span class="hljs-name">my-app</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+    System.import(&apos;scripts/main&apos;).then(null, console.error.bind(console));
+    <span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">script</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">title</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">title</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">head</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">body</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">my-app</span><span class="cm-tagcm-bracket">&gt;</span>Loading...<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">my-app</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">body</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">html</span><span class="cm-tagcm-bracket">&gt;</span>
 </code></pre>
 <p>&#xADF8;&#xB7EC;&#xBA74; &#xC571;&#xC774; &#xB85C;&#xB4DC;&#xB429;&#xB2C8;&#xB2E4;.<br>ASP.NET &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xBA74; &quot;loading...&quot; &#xC774;&#xB77C;&#xACE0; &#xD45C;&#xC2DC;&#xB41C; &#xB2E4;&#xC74C; &quot;Hello from TypeScript&quot; div&#xAC00; &#xD45C;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.</p>
 
@@ -1035,12 +1044,13 @@ bootstrap(MyApp);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ASP.NET Core","level":"2.2","depth":1,"next":{"title":"걸프","level":"2.3","depth":1,"path":"pages/tutorials/Gulp.md","ref":"pages/tutorials/Gulp.md","articles":[]},"previous":{"title":"5분 안에 보는 TypeScript","level":"2.1","depth":1,"path":"pages/tutorials/TypeScript in 5 minutes.md","ref":"pages/tutorials/TypeScript in 5 minutes.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tutorials/ASP.NET Core.md","mtime":"2018-02-13T14:10:14.665Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T14:21:41.019Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ASP.NET Core","level":"2.2","depth":1,"next":{"title":"걸프","level":"2.3","depth":1,"path":"pages/tutorials/Gulp.md","ref":"pages/tutorials/Gulp.md","articles":[]},"previous":{"title":"5분 안에 보는 TypeScript","level":"2.1","depth":1,"path":"pages/tutorials/TypeScript in 5 minutes.md","ref":"pages/tutorials/TypeScript in 5 minutes.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tutorials/ASP.NET Core.md","mtime":"2018-02-16T04:52:47.007Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:22:50.132Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
     
@@ -1067,6 +1077,8 @@ bootstrap(MyApp);
         
         <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
+    
+
     
 
     </body>

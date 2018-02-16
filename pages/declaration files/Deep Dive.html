@@ -12,9 +12,14 @@
         
         
     
+    
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight-1/website.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
@@ -44,6 +49,10 @@
         
     
         
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../../assets/css/atom-one-dark.css" />
     
 
         
@@ -750,28 +759,28 @@ The declaration <code>class C { }</code> creates two things:
 Enum declarations behave similarly.</p>
 <h3 id="user-combinations">User Combinations</h3>
 <p>Let&apos;s say we wrote a module file <code>foo.d.ts</code>:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">var</span> SomeVar: { a: SomeType };
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> SomeType {
-  count: <span class="hljs-built_in">number</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">var</span> <span class="cm-variable">SomeVar</span>: { <span class="cm-variable">a</span>: <span class="cm-variable">SomeType</span> };
+<span class="cm-keyword">export</span> <span class="cm-keyword">interface</span> <span class="cm-variable">SomeType</span> {
+  <span class="cm-variable">count</span>: <span class="cm-variable-3">number</span>;
 }
 </code></pre>
 <p>Then consumed it:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> * as foo from <span class="hljs-string">&apos;./foo&apos;</span>;
-<span class="hljs-keyword">let</span> x: foo.SomeType = foo.SomeVar.a;
-<span class="hljs-built_in">console</span>.log(x.count);
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">foo</span> <span class="cm-variable">from</span> <span class="cm-string">&apos;./foo&apos;</span>;
+<span class="cm-keyword">let</span> <span class="cm-variable">x</span>: <span class="cm-variable-3">foo</span>.<span class="cm-variable">SomeType</span> <span class="cm-operator">=</span> <span class="cm-variable">foo</span>.<span class="cm-property">SomeVar</span>.<span class="cm-property">a</span>;
+<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">x</span>.<span class="cm-property">count</span>);
 </code></pre>
 <p>This works well enough, but we might imagine that <code>SomeType</code> and <code>SomeVar</code> were very closely related
   such that you&apos;d like them to have the same name.
 We can use combining to present these two different objects (the value and the type) under the same name <code>Bar</code>:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">var</span> Bar: { a: Bar };
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> Bar {
-  count: <span class="hljs-built_in">number</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">var</span> <span class="cm-variable">Bar</span>: { <span class="cm-variable">a</span>: <span class="cm-variable">Bar</span> };
+<span class="cm-keyword">export</span> <span class="cm-keyword">interface</span> <span class="cm-variable">Bar</span> {
+  <span class="cm-variable">count</span>: <span class="cm-variable-3">number</span>;
 }
 </code></pre>
 <p>This presents a very good opportunity for destructuring in the consuming code:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { Bar } from <span class="hljs-string">&apos;./foo&apos;</span>;
-<span class="hljs-keyword">let</span> x: Bar = Bar.a;
-<span class="hljs-built_in">console</span>.log(x.count);
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> { <span class="cm-variable">Bar</span> } <span class="cm-keyword">from</span> <span class="cm-string">&apos;./foo&apos;</span>;
+<span class="cm-keyword">let</span> <span class="cm-variable">x</span>: <span class="cm-variable-3">Bar</span> <span class="cm-operator">=</span> <span class="cm-variable">Bar</span>.<span class="cm-property">a</span>;
+<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">x</span>.<span class="cm-property">count</span>);
 </code></pre>
 <p>Again, we&apos;ve used <code>Bar</code> as both a type and a value here.
 Note that we didn&apos;t have to declare the <code>Bar</code> value as being of the <code>Bar</code> type -- they&apos;re independent.</p>
@@ -785,68 +794,68 @@ A general rule of thumb is that values always conflict with other values of the 
 <p>Let&apos;s see how this can be used.</p>
 <h3 id="adding-using-an-interface">Adding using an <code>interface</code></h3>
 <p>We can add additional members to an <code>interface</code> with another <code>interface</code> declaration:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Foo {
-  x: <span class="hljs-built_in">number</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">Foo</span> {
+  <span class="cm-variable">x</span>: <span class="cm-variable-3">number</span>;
 }
-<span class="hljs-comment">// ... elsewhere ...</span>
-<span class="hljs-keyword">interface</span> Foo {
-  y: <span class="hljs-built_in">number</span>;
+<span class="cm-comment">// ... elsewhere ...</span>
+<span class="cm-keyword">interface</span> <span class="cm-variable">Foo</span> {
+  <span class="cm-variable">y</span>: <span class="cm-variable-3">number</span>;
 }
-<span class="hljs-keyword">let</span> a: Foo = ...;
-<span class="hljs-built_in">console</span>.log(a.x + a.y); <span class="hljs-comment">// OK</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">a</span>: <span class="cm-variable-3">Foo</span> <span class="cm-operator">=</span> <span class="cm-meta">...</span>;
+<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">a</span>.<span class="cm-property">x</span> <span class="cm-operator">+</span> <span class="cm-variable">a</span>.<span class="cm-property">y</span>); <span class="cm-comment">// OK</span>
 </code></pre>
 <p>This also works with classes:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">class</span> Foo {
-  x: <span class="hljs-built_in">number</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">Foo</span> {
+  <span class="cm-property">x</span>: <span class="cm-variable-3">number</span>;
 }
-<span class="hljs-comment">// ... elsewhere ...</span>
-<span class="hljs-keyword">interface</span> Foo {
-  y: <span class="hljs-built_in">number</span>;
+<span class="cm-comment">// ... elsewhere ...</span>
+<span class="cm-keyword">interface</span> <span class="cm-variable">Foo</span> {
+  <span class="cm-variable">y</span>: <span class="cm-variable-3">number</span>;
 }
-<span class="hljs-keyword">let</span> a: Foo = ...;
-<span class="hljs-built_in">console</span>.log(a.x + a.y); <span class="hljs-comment">// OK</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">a</span>: <span class="cm-variable-3">Foo</span> <span class="cm-operator">=</span> <span class="cm-meta">...</span>;
+<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">a</span>.<span class="cm-property">x</span> <span class="cm-operator">+</span> <span class="cm-variable">a</span>.<span class="cm-property">y</span>); <span class="cm-comment">// OK</span>
 </code></pre>
 <p>Note that we cannot add to type aliases (<code>type s = string;</code>) using an interface.</p>
 <h3 id="adding-using-a-namespace">Adding using a <code>namespace</code></h3>
 <p>A <code>namespace</code> declaration can be used to add new types, values, and namespaces in any way which does not create a conflict.</p>
 <p>For example, we can add a static member to a class:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">class</span> C {
+<pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">C</span> {
 }
-<span class="hljs-comment">// ... elsewhere ...</span>
-<span class="hljs-keyword">namespace</span> C {
-  <span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> x: <span class="hljs-built_in">number</span>;
+<span class="cm-comment">// ... elsewhere ...</span>
+<span class="cm-variable">namespace</span> <span class="cm-variable">C</span> {
+  <span class="cm-keyword">export</span> <span class="cm-keyword">let</span> <span class="cm-variable">x</span>: <span class="cm-variable-3">number</span>;
 }
-<span class="hljs-keyword">let</span> y = C.x; <span class="hljs-comment">// OK</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">y</span> <span class="cm-operator">=</span> <span class="cm-variable">C</span>.<span class="cm-property">x</span>; <span class="cm-comment">// OK</span>
 </code></pre>
 <p>Note that in this example, we added a value to the <em>static</em> side of <code>C</code> (its constructor function).
 This is because we added a <em>value</em>, and the container for all values is another value
   (types are contained by namespaces, and namespaces are contained by other namespaces).</p>
 <p>We could also add a namespaced type to a class:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">class</span> C {
+<pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">C</span> {
 }
-<span class="hljs-comment">// ... elsewhere ...</span>
-<span class="hljs-keyword">namespace</span> C {
-  <span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> D { }
+<span class="cm-comment">// ... elsewhere ...</span>
+<span class="cm-variable">namespace</span> <span class="cm-variable">C</span> {
+  <span class="cm-keyword">export</span> <span class="cm-keyword">interface</span> <span class="cm-variable">D</span> { }
 }
-<span class="hljs-keyword">let</span> y: C.D; <span class="hljs-comment">// OK</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">y</span>: <span class="cm-variable-3">C</span>.<span class="cm-variable">D</span>; <span class="cm-comment">// OK</span>
 </code></pre>
 <p>In this example, there wasn&apos;t a namespace <code>C</code> until we wrote the <code>namespace</code> declaration for it.
 The meaning <code>C</code> as a namespace doesn&apos;t conflict with the value or type meanings of <code>C</code> created by the class.</p>
 <p>Finally, we could perform many different merges using <code>namespace</code> declarations.
 This isn&apos;t a particularly realistic example, but shows all sorts of interesting behavior:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">namespace</span> X {
-  <span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> Y { }
-  <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> Z { }
+<pre><code class="lang-ts"><span class="cm-variable">namespace</span> <span class="cm-variable">X</span> {
+  <span class="cm-keyword">export</span> <span class="cm-keyword">interface</span> <span class="cm-variable">Y</span> { }
+  <span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">Z</span> { }
 }
 
-<span class="hljs-comment">// ... elsewhere ...</span>
-<span class="hljs-keyword">namespace</span> X {
-  <span class="hljs-keyword">export</span> <span class="hljs-keyword">var</span> Y: <span class="hljs-built_in">number</span>;
-  <span class="hljs-keyword">export</span> <span class="hljs-keyword">namespace</span> Z {
-    <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> C { }
+<span class="cm-comment">// ... elsewhere ...</span>
+<span class="cm-variable">namespace</span> <span class="cm-variable">X</span> {
+  <span class="cm-keyword">export</span> <span class="cm-keyword">var</span> <span class="cm-variable">Y</span>: <span class="cm-variable-3">number</span>;
+  <span class="cm-keyword">export</span> <span class="cm-variable">namespace</span> <span class="cm-variable">Z</span> {
+    <span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">C</span> { }
   }
 }
-<span class="hljs-keyword">type</span> X = <span class="hljs-built_in">string</span>;
+<span class="cm-variable">type</span> <span class="cm-variable">X</span> <span class="cm-operator">=</span> <span class="cm-variable-3">string</span>;
 </code></pre>
 <p>In this example, the first block creates the following name meanings:</p>
 <ul>
@@ -911,12 +920,13 @@ This isn&apos;t a particularly realistic example, but shows all sorts of interes
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Deep Dive","level":"4.5","depth":1,"next":{"title":"Templates","level":"4.6","depth":1,"path":"pages/declaration files/Templates.md","ref":"pages/declaration files/Templates.md","articles":[]},"previous":{"title":"Do's and Don'ts","level":"4.4","depth":1,"path":"pages/declaration files/Do's and Don'ts.md","ref":"pages/declaration files/Do's and Don'ts.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/declaration files/Deep Dive.md","mtime":"2018-02-08T11:52:59.026Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T14:21:41.019Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Deep Dive","level":"4.5","depth":1,"next":{"title":"Templates","level":"4.6","depth":1,"path":"pages/declaration files/Templates.md","ref":"pages/declaration files/Templates.md","articles":[]},"previous":{"title":"Do's and Don'ts","level":"4.4","depth":1,"path":"pages/declaration files/Do's and Don'ts.md","ref":"pages/declaration files/Do's and Don'ts.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/declaration files/Deep Dive.md","mtime":"2018-02-05T16:16:48.205Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:22:50.132Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
     
@@ -943,6 +953,8 @@ This isn&apos;t a particularly realistic example, but shows all sorts of interes
         
         <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
+    
+
     
 
     </body>

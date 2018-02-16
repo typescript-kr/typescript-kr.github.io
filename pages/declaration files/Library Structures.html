@@ -12,9 +12,14 @@
         
         
     
+    
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight-1/website.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
@@ -44,6 +49,10 @@
         
     
         
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../../assets/css/atom-one-dark.css" />
     
 
         
@@ -712,10 +721,10 @@ We recommend using whichever is more comfortable to you.</p>
 <p>A <em>global</em> library is one that can be accessed from the global scope (i.e. without using any form of <code>import</code>).
 Many libraries simply expose one or more global variables for use.
 For example, if you were using <a href="https://jquery.com/" target="_blank">jQuery</a>, the <code>$</code> variable can be used by simply referring to it:</p>
-<pre><code class="lang-ts">$(() =&gt; { <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;hello!&apos;</span>); } );
+<pre><code class="lang-ts"><span class="cm-variable">$</span>(() <span class="cm-operator">=&gt;</span> { <span class="cm-variable">console</span>.<span class="cm-variable">log</span>(<span class="cm-string">&apos;hello!&apos;</span>); } );
 </code></pre>
 <p>You&apos;ll usually see guidance in the documentation of a global library of how to use the library in an HTML script tag:</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://a.great.cdn.for/someLib.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<pre><code class="lang-html"><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">script</span> <span class="cm-attribute">src</span>=<span class="cm-string">&quot;http://a.great.cdn.for/someLib.js&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">script</span><span class="cm-tagcm-bracket">&gt;</span>
 </code></pre>
 <p>Today, most popular globally-accessible libraries are actually written as UMD libraries (see below).
 UMD library documentation is hard to distinguish from global library documentation.
@@ -723,13 +732,13 @@ Before writing a global declaration file, make sure the library isn&apos;t actua
 <h3 id="identifying-a-global-library-from-code">Identifying a Global Library from Code</h3>
 <p>Global library code is usually extremely simple.
 A global &quot;Hello, world&quot; library might look like this:</p>
-<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createGreeting</span>(<span class="hljs-params">s</span>) </span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Hello, &quot;</span> + s;
+<pre><code class="lang-js"><span class="cm-keyword">function</span> <span class="cm-variable">createGreeting</span>(<span class="cm-def">s</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-string">&quot;Hello, &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable-2">s</span>;
 }
 </code></pre>
 <p>or like this:</p>
-<pre><code class="lang-js"><span class="hljs-built_in">window</span>.createGreeting = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s</span>) </span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Hello, &quot;</span> + s;
+<pre><code class="lang-js"><span class="cm-variable">window</span>.<span class="cm-property">createGreeting</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">s</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-string">&quot;Hello, &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable-2">s</span>;
 }
 </code></pre>
 <p>When looking at the code of a global library, you&apos;ll usually see:</p>
@@ -756,16 +765,16 @@ Be sure to read the <a href="#preventing-name-conflicts">&quot;Preventing Name C
 For example, because <code>express</code> only works in Node.js and must be loaded using the CommonJS <code>require</code> function.</p>
 <p>ECMAScript 2015 (also known as ES2015, ECMAScript 6, and ES6), CommonJS, and RequireJS have similar notions of <em>importing</em> a <em>module</em>.
 In JavaScript CommonJS (Node.js), for example, you would write</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+<pre><code class="lang-ts"><span class="cm-keyword">var</span> <span class="cm-variable">fs</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;fs&quot;</span>);
 </code></pre>
 <p>In TypeScript or ES6, the <code>import</code> keyword serves the same purpose:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-variable">fs</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;fs&quot;</span>);
 </code></pre>
 <p>You&apos;ll typically see modular libraries include one of these lines in their documentation:</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> someLib = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;someLib&apos;</span>);
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">someLib</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&apos;someLib&apos;</span>);
 </code></pre>
 <p>or</p>
-<pre><code class="lang-ts">define(..., [<span class="hljs-string">&apos;someLib&apos;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">someLib</span>) </span>{
+<pre><code class="lang-ts"><span class="cm-variable">define</span>(<span class="cm-meta">...</span>, [<span class="cm-string">&apos;someLib&apos;</span>], <span class="cm-keyword">function</span>(<span class="cm-variable">someLib</span>) {
 
 });
 </code></pre>
@@ -787,24 +796,24 @@ In JavaScript CommonJS (Node.js), for example, you would write</p>
 <p>A <em>UMD</em> module is one that can <em>either</em> be used as module (through an import), or as a global (when run in an environment without a module loader).
 Many popular libraries, such as <a href="http://momentjs.com/" target="_blank">Moment.js</a>, are written this way.
 For example, in Node.js or using RequireJS, you would write:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> moment = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;moment&quot;</span>);
-<span class="hljs-built_in">console</span>.log(moment.format());
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-variable">moment</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;moment&quot;</span>);
+<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">moment</span>.<span class="cm-property">format</span>());
 </code></pre>
 <p>whereas in a vanilla browser environment you would write:</p>
-<pre><code class="lang-ts"><span class="hljs-built_in">console</span>.log(moment.format());
+<pre><code class="lang-ts"><span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">moment</span>.<span class="cm-property">format</span>());
 </code></pre>
 <h3 id="identifying-a-umd-library">Identifying a UMD library</h3>
 <p><a href="https://github.com/umdjs/umd" target="_blank">UMD modules</a> check for the existence of a module loader environment.
 This is an easy-to-spot pattern that looks something like this:</p>
-<pre><code class="lang-js">(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">root, factory</span>) </span>{
-    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> define === <span class="hljs-string">&quot;function&quot;</span> &amp;&amp; define.amd) {
-        define([<span class="hljs-string">&quot;libName&quot;</span>], factory);
-    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span> === <span class="hljs-string">&quot;object&quot;</span> &amp;&amp; <span class="hljs-built_in">module</span>.exports) {
-        <span class="hljs-built_in">module</span>.exports = factory(<span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;libName&quot;</span>));
-    } <span class="hljs-keyword">else</span> {
-        root.returnExports = factory(root.libName);
+<pre><code class="lang-js">(<span class="cm-keyword">function</span> (<span class="cm-def">root</span>, <span class="cm-def">factory</span>) {
+    <span class="cm-keyword">if</span> (<span class="cm-keyword">typeof</span> <span class="cm-variable">define</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;function&quot;</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable">define</span>.<span class="cm-property">amd</span>) {
+        <span class="cm-variable">define</span>([<span class="cm-string">&quot;libName&quot;</span>], <span class="cm-variable-2">factory</span>);
+    } <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-keyword">typeof</span> <span class="cm-keyword">module</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;object&quot;</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-keyword">module</span>.<span class="cm-variable">exports</span>) {
+        <span class="cm-keyword">module</span>.<span class="cm-variable">exports</span> <span class="cm-operator">=</span> <span class="cm-variable-2">factory</span>(<span class="cm-variable">require</span>(<span class="cm-string">&quot;libName&quot;</span>));
+    } <span class="cm-keyword">else</span> {
+        <span class="cm-variable-2">root</span>.<span class="cm-property">returnExports</span> <span class="cm-operator">=</span> <span class="cm-variable-2">factory</span>(<span class="cm-variable-2">root</span>.<span class="cm-property">libName</span>);
     }
-}(<span class="hljs-keyword">this</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">b</span>) </span>{
+}(<span class="cm-keyword">this</span>, <span class="cm-keyword">function</span> (<span class="cm-def">b</span>) {
 </code></pre>
 <p>If you see tests for <code>typeof define</code>, <code>typeof window</code>, or <code>typeof module</code> in the code of a library, especially at the top of the file, it&apos;s almost always a UMD library.</p>
 <p>Documentation for UMD libraries will also often demonstrate a &quot;Using in Node.js&quot; example showing <code>require</code>,
@@ -816,15 +825,15 @@ Examples include <a href="https://jquery.com/" target="_blank">jQuery</a>, <a hr
 <p>There are three templates available for modules,
   <a href="templates/module.d.ts.md"><code>module.d.ts</code></a>, <a href="templates/module-class.d.ts.md"><code>module-class.d.ts</code></a> and <a href="templates/module-function.d.ts.md"><code>module-function.d.ts</code></a>.</p>
 <p>Use <a href="templates/module-function.d.ts.md"><code>module-function.d.ts</code></a> if your module can be <em>called</em> like a function:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">var</span> x = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;foo&quot;</span>);
-<span class="hljs-comment">// Note: calling &apos;x&apos; as a function</span>
-<span class="hljs-keyword">var</span> y = x(<span class="hljs-number">42</span>);
+<pre><code class="lang-ts"><span class="cm-keyword">var</span> <span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;foo&quot;</span>);
+<span class="cm-comment">// Note: calling &apos;x&apos; as a function</span>
+<span class="cm-keyword">var</span> <span class="cm-variable">y</span> <span class="cm-operator">=</span> <span class="cm-variable">x</span>(<span class="cm-number">42</span>);
 </code></pre>
 <p>Be sure to read the <a href="#the-impact-of-es6-on-module-plugins">footnote &quot;The Impact of ES6 on Module Call Signatures&quot;</a></p>
 <p>Use <a href="templates/module-class.d.ts.md"><code>module-class.d.ts</code></a> if your module can be <em>constructed</em> using <code>new</code>:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">var</span> x = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;bar&quot;</span>);
-<span class="hljs-comment">// Note: using &apos;new&apos; operator on the imported variable</span>
-<span class="hljs-keyword">var</span> y = <span class="hljs-keyword">new</span> x(<span class="hljs-string">&quot;hello&quot;</span>);
+<pre><code class="lang-ts"><span class="cm-keyword">var</span> <span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;bar&quot;</span>);
+<span class="cm-comment">// Note: using &apos;new&apos; operator on the imported variable</span>
+<span class="cm-keyword">var</span> <span class="cm-variable">y</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">x</span>(<span class="cm-string">&quot;hello&quot;</span>);
 </code></pre>
 <p>The same <a href="#the-impact-of-es6-on-module-plugins">footnote</a> applies to these modules.</p>
 <p>If your module is not callable or constructable, use the <a href="templates/module.d.ts.md"><code>module.d.ts</code></a> file.</p>
@@ -841,13 +850,13 @@ As with <em>global-modifying modules</em>, these raise the possibility of runtim
 <h3 id="identifying-global-plugins">Identifying global plugins</h3>
 <p>Global plugins are generally easy to identify from their documentation.</p>
 <p>You&apos;ll see examples that look like this:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">var</span> x = <span class="hljs-string">&quot;hello, world&quot;</span>;
-<span class="hljs-comment">// Creates new methods on built-in types</span>
-<span class="hljs-built_in">console</span>.log(x.startsWithHello());
+<pre><code class="lang-ts"><span class="cm-keyword">var</span> <span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;hello, world&quot;</span>;
+<span class="cm-comment">// Creates new methods on built-in types</span>
+<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">x</span>.<span class="cm-property">startsWithHello</span>());
 
-<span class="hljs-keyword">var</span> y = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
-<span class="hljs-comment">// Creates new methods on built-in types</span>
-<span class="hljs-built_in">console</span>.log(y.reverseAndSort());
+<span class="cm-keyword">var</span> <span class="cm-variable">y</span> <span class="cm-operator">=</span> [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>];
+<span class="cm-comment">// Creates new methods on built-in types</span>
+<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">y</span>.<span class="cm-property">reverseAndSort</span>());
 </code></pre>
 <h3 id="template">Template</h3>
 <p>Use the <a href="templates/global-plugin.d.ts.md"><code>global-plugin.d.ts</code></a> template.</p>
@@ -860,18 +869,18 @@ This pattern is somewhat dangerous due to the possibility of runtime conflicts,
 <p>Global-modifying modules are generally easy to identify from their documentation.
 In general, they&apos;re similar to global plugins, but need a <code>require</code> call to activate their effects.</p>
 <p>You might see documentation like this:</p>
-<pre><code class="lang-ts"><span class="hljs-comment">// &apos;require&apos; call that doesn&apos;t use its return value</span>
-<span class="hljs-keyword">var</span> unused = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;magic-string-time&quot;</span>);
-<span class="hljs-comment">/* or */</span>
-<span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;magic-string-time&quot;</span>);
+<pre><code class="lang-ts"><span class="cm-comment">// &apos;require&apos; call that doesn&apos;t use its return value</span>
+<span class="cm-keyword">var</span> <span class="cm-variable">unused</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;magic-string-time&quot;</span>);
+<span class="cm-comment">/* or */</span>
+<span class="cm-variable">require</span>(<span class="cm-string">&quot;magic-string-time&quot;</span>);
 
-<span class="hljs-keyword">var</span> x = <span class="hljs-string">&quot;hello, world&quot;</span>;
-<span class="hljs-comment">// Creates new methods on built-in types</span>
-<span class="hljs-built_in">console</span>.log(x.startsWithHello());
+<span class="cm-keyword">var</span> <span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;hello, world&quot;</span>;
+<span class="cm-comment">// Creates new methods on built-in types</span>
+<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">x</span>.<span class="cm-property">startsWithHello</span>());
 
-<span class="hljs-keyword">var</span> y = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
-<span class="hljs-comment">// Creates new methods on built-in types</span>
-<span class="hljs-built_in">console</span>.log(y.reverseAndSort());
+<span class="cm-keyword">var</span> <span class="cm-variable">y</span> <span class="cm-operator">=</span> [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>];
+<span class="cm-comment">// Creates new methods on built-in types</span>
+<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">y</span>.<span class="cm-property">reverseAndSort</span>());
 </code></pre>
 <h3 id="template">Template</h3>
 <p>Use the <a href="templates/global-modifying-module.d.ts.md"><code>global-modifying-module.d.ts</code></a> template.</p>
@@ -879,26 +888,26 @@ In general, they&apos;re similar to global plugins, but need a <code>require</co
 <p>There are several kinds of dependencies you might have.</p>
 <h2 id="dependencies-on-global-libraries">Dependencies on Global Libraries</h2>
 <p>If your library depends on a global library, use a <code>/// &lt;reference types=&quot;...&quot; /&gt;</code> directive:</p>
-<pre><code class="lang-ts"><span class="hljs-comment">/// &lt;reference types=&quot;someLib&quot; /&gt;</span>
+<pre><code class="lang-ts"><span class="cm-comment">/// &lt;reference types=&quot;someLib&quot; /&gt;</span>
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getThing</span>(<span class="hljs-params"></span>): <span class="hljs-title">someLib</span>.<span class="hljs-title">thing</span></span>;
+<span class="cm-keyword">function</span> <span class="cm-variable">getThing</span>(): <span class="cm-variable">someLib</span>.<span class="cm-property">thing</span>;
 </code></pre>
 <h2 id="dependencies-on-modules">Dependencies on Modules</h2>
 <p>If your library depends on a module, use an <code>import</code> statement:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> * as moment from <span class="hljs-string">&quot;moment&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">moment</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;moment&quot;</span>;
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getThing</span>(<span class="hljs-params"></span>): <span class="hljs-title">moment</span></span>;
+<span class="cm-keyword">function</span> <span class="cm-variable">getThing</span>(): <span class="cm-variable">moment</span>;
 </code></pre>
 <h2 id="dependencies-on-umd-libraries">Dependencies on UMD libraries</h2>
 <h3 id="from-a-global-library">From a Global Library</h3>
 <p>If your global library depends on a UMD module, use a <code>/// &lt;reference types</code> directive:</p>
-<pre><code class="lang-ts"><span class="hljs-comment">/// &lt;reference types=&quot;moment&quot; /&gt;</span>
+<pre><code class="lang-ts"><span class="cm-comment">/// &lt;reference types=&quot;moment&quot; /&gt;</span>
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getThing</span>(<span class="hljs-params"></span>): <span class="hljs-title">moment</span></span>;
+<span class="cm-keyword">function</span> <span class="cm-variable">getThing</span>(): <span class="cm-variable">moment</span>;
 </code></pre>
 <h3 id="from-a-module-or-umd-library">From a Module or UMD Library</h3>
 <p>If your module or UMD library depends on a UMD library, use an <code>import</code> statement:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> * as someLib from <span class="hljs-string">&apos;someLib&apos;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">someLib</span> <span class="cm-variable">from</span> <span class="cm-string">&apos;someLib&apos;</span>;
 </code></pre>
 <p>Do <em>not</em> use a <code>/// &lt;reference</code> directive to declare a dependency to a UMD library!</p>
 <h1 id="footnotes">Footnotes</h1>
@@ -907,13 +916,13 @@ In general, they&apos;re similar to global plugins, but need a <code>require</co
 We strongly discourage this as it leads to possible unresolvable name conflicts when many declaration files are in a project.</p>
 <p>A simple rule to follow is to only declare types <em>namespaced</em> by whatever global variable the library defines.
 For example, if the library defines the global value &apos;cats&apos;, you should write</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">namespace</span> cats {
-    <span class="hljs-keyword">interface</span> KittySettings { }
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-variable">namespace</span> <span class="cm-variable">cats</span> {
+    <span class="cm-keyword">interface</span> <span class="cm-variable">KittySettings</span> { }
 }
 </code></pre>
 <p>But <em>not</em></p>
-<pre><code class="lang-ts"><span class="hljs-comment">// at top-level</span>
-<span class="hljs-keyword">interface</span> CatsKittySettings { }
+<pre><code class="lang-ts"><span class="cm-comment">// at top-level</span>
+<span class="cm-keyword">interface</span> <span class="cm-variable">CatsKittySettings</span> { }
 </code></pre>
 <p>This guidance also ensures that the library can be transitioned to UMD without breaking declaration file users.</p>
 <h2 id="the-impact-of-es6-on-module-plugins">The Impact of ES6 on Module Plugins</h2>
@@ -923,8 +932,8 @@ Because TypeScript is loader-agnostic, there is no compile-time enforcement of t
 <h2 id="the-impact-of-es6-on-module-call-signatures">The Impact of ES6 on Module Call Signatures</h2>
 <p>Many popular libraries, such as Express, expose themselves as a callable function when imported.
 For example, the typical Express usage looks like this:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> exp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;express&quot;</span>);
-<span class="hljs-keyword">var</span> app = exp();
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-variable">exp</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;express&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">app</span> <span class="cm-operator">=</span> <span class="cm-variable">exp</span>();
 </code></pre>
 <p>In ES6 module loaders, the top-level object (here imported as <code>exp</code>) can only have properties;
   the top-level module object is <em>never</em> callable.
@@ -973,12 +982,13 @@ The most common solution here is to define a <code>default</code> export for a c
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Library Structures","level":"4.2","depth":1,"next":{"title":"By Example","level":"4.3","depth":1,"path":"pages/declaration files/By Example.md","ref":"pages/declaration files/By Example.md","articles":[]},"previous":{"title":"Introduction","level":"4.1","depth":1,"path":"pages/declaration files/Introduction.md","ref":"pages/declaration files/Introduction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/declaration files/Library Structures.md","mtime":"2018-02-08T11:52:59.026Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T14:21:41.019Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Library Structures","level":"4.2","depth":1,"next":{"title":"By Example","level":"4.3","depth":1,"path":"pages/declaration files/By Example.md","ref":"pages/declaration files/By Example.md","articles":[]},"previous":{"title":"Introduction","level":"4.1","depth":1,"path":"pages/declaration files/Introduction.md","ref":"pages/declaration files/Introduction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/declaration files/Library Structures.md","mtime":"2018-02-05T16:16:48.204Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:22:50.132Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
     
@@ -1005,6 +1015,8 @@ The most common solution here is to define a <code>default</code> export for a c
         
         <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
+    
+
     
 
     </body>

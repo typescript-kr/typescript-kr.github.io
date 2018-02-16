@@ -12,9 +12,14 @@
         
         
     
+    
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight-1/website.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
@@ -44,6 +49,10 @@
         
     
         
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/atom-one-dark.css" />
     
 
         
@@ -708,9 +717,9 @@ Decorators are a <a href="https://github.com/tc39/proposal-decorators" target="_
 </code></pre>
 <p><strong>tsconfig.json</strong>:</p>
 <pre><code class="lang-json">{
-    <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
-        <span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;ES5&quot;</span>,
-        <span class="hljs-string">&quot;experimentalDecorators&quot;</span>: <span class="hljs-literal">true</span>
+    <span class="cm-property">&quot;compilerOptions&quot;</span>: {
+        <span class="cm-property">&quot;target&quot;</span>: <span class="cm-string">&quot;ES5&quot;</span>,
+        <span class="cm-property">&quot;experimentalDecorators&quot;</span>: <span class="cm-atom">true</span>
     }
 }
 </code></pre>
@@ -718,8 +727,8 @@ Decorators are a <a href="https://github.com/tc39/proposal-decorators" target="_
 <p>A <em>Decorator</em> is a special kind of declaration that can be attached to a <a href="#class-decorators">class declaration</a>, <a href="#method-decorators">method</a>, <a href="#accessor-decorators">accessor</a>, <a href="#property-decorators">property</a>, or <a href="#parameter-decorators">parameter</a>.
 Decorators use the form <code>@expression</code>, where <code>expression</code> must evaluate to a function that will be called at runtime with information about the decorated declaration.</p>
 <p>For example, given the decorator <code>@sealed</code> we might write the <code>sealed</code> function as follows:</p>
-<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sealed</span>(<span class="hljs-params">target</span>) </span>{
-    <span class="hljs-comment">// do something with &apos;target&apos; ...</span>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">sealed</span>(<span class="cm-def">target</span>) {
+    <span class="cm-comment">// do something with &apos;target&apos; ...</span>
 }
 </code></pre>
 <blockquote>
@@ -729,9 +738,9 @@ Decorators use the form <code>@expression</code>, where <code>expression</code> 
 <p>If we want to customize how a decorator is applied to a declaration, we can write a decorator factory.
 A <em>Decorator Factory</em> is simply a function that returns the expression that will be called by the decorator at runtime.</p>
 <p>We can write a decorator factory in the following fashion:</p>
-<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">color</span>(<span class="hljs-params">value: <span class="hljs-built_in">string</span></span>) </span>{ <span class="hljs-comment">// this is the decorator factory</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">target</span>) </span>{ <span class="hljs-comment">// this is the decorator</span>
-        <span class="hljs-comment">// do something with &apos;target&apos; and &apos;value&apos;...</span>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">color</span>(<span class="cm-def">value</span>: <span class="cm-variable-3">string</span>) { <span class="cm-comment">// this is the decorator factory</span>
+    <span class="cm-keyword">return</span> <span class="cm-keyword">function</span> (<span class="cm-def">target</span>) { <span class="cm-comment">// this is the decorator</span>
+        <span class="cm-comment">// do something with &apos;target&apos; and &apos;value&apos;...</span>
     }
 }
 </code></pre>
@@ -742,13 +751,13 @@ A <em>Decorator Factory</em> is simply a function that returns the expression th
 <p>Multiple decorators can be applied to a declaration, as in the following examples:</p>
 <ul>
 <li><p>On a single line:</p>
-<pre><code class="lang-ts">@f @g x
+<pre><code class="lang-ts"><span class="cm-variable">@f</span> <span class="cm-variable">@g</span> <span class="cm-variable">x</span>
 </code></pre>
 </li>
 <li><p>On multiple lines:</p>
-<pre><code class="lang-ts">@f
-@g
-x
+<pre><code class="lang-ts"><span class="cm-variable">@f</span>
+<span class="cm-variable">@g</span>
+<span class="cm-variable">x</span>
 </code></pre>
 </li>
 </ul>
@@ -759,24 +768,24 @@ x
 <li>The results are then called as functions from bottom-to-top.</li>
 </ol>
 <p>If we were to use <a href="#decorator-factories">decorator factories</a>, we can observe this evaluation order with the following example:</p>
-<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;f(): evaluated&quot;</span>);
-    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">target, propertyKey: <span class="hljs-built_in">string</span>, descriptor: PropertyDescriptor</span>) </span>{
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;f(): called&quot;</span>);
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">f</span>() {
+    <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">&quot;f(): evaluated&quot;</span>);
+    <span class="cm-keyword">return</span> <span class="cm-keyword">function</span> (<span class="cm-def">target</span>, <span class="cm-def">propertyKey</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">descriptor</span>: <span class="cm-variable-3">PropertyDescriptor</span>) {
+        <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">&quot;f(): called&quot;</span>);
     }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">g</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;g(): evaluated&quot;</span>);
-    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">target, propertyKey: <span class="hljs-built_in">string</span>, descriptor: PropertyDescriptor</span>) </span>{
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;g(): called&quot;</span>);
+<span class="cm-keyword">function</span> <span class="cm-variable">g</span>() {
+    <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">&quot;g(): evaluated&quot;</span>);
+    <span class="cm-keyword">return</span> <span class="cm-keyword">function</span> (<span class="cm-def">target</span>, <span class="cm-def">propertyKey</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">descriptor</span>: <span class="cm-variable-3">PropertyDescriptor</span>) {
+        <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">&quot;g(): called&quot;</span>);
     }
 }
 
-<span class="hljs-keyword">class</span> C {
-    @f()
-    @g()
-    method() {}
+<span class="cm-keyword">class</span> <span class="cm-variable">C</span> {
+    <span class="cm-property">@f</span>()
+    <span class="cm-variable">@g</span>()
+    <span class="cm-variable">method</span>() {}
 }
 </code></pre>
 <p>Which would print this output to the console:</p>
@@ -804,42 +813,42 @@ A class decorator cannot be used in a declaration file, or in any other ambient 
 The logic that applies decorators at runtime will <strong>not</strong> do this for you.</p>
 </blockquote>
 <p>The following is an example of a class decorator (<code>@sealed</code>) applied to the <code>Greeter</code> class:</p>
-<pre><code class="lang-ts">@sealed
-<span class="hljs-keyword">class</span> Greeter {
-    greeting: <span class="hljs-built_in">string</span>;
-    <span class="hljs-keyword">constructor</span>(message: string) {
-        <span class="hljs-keyword">this</span>.greeting = message;
+<pre><code class="lang-ts"><span class="cm-variable">@sealed</span>
+<span class="cm-keyword">class</span> <span class="cm-variable">Greeter</span> {
+    <span class="cm-property">greeting</span>: <span class="cm-variable-3">string</span>;
+    <span class="cm-keyword">constructor</span>(<span class="cm-variable">message</span>: <span class="cm-variable-3">string</span>) {
+        <span class="cm-keyword">this</span>.<span class="cm-variable">greeting</span> <span class="cm-operator">=</span> <span class="cm-variable">message</span>;
     }
-    greet() {
-        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Hello, &quot;</span> + <span class="hljs-keyword">this</span>.greeting;
+    <span class="cm-variable">greet</span>() {
+        <span class="cm-keyword">return</span> <span class="cm-string">&quot;Hello, &quot;</span> <span class="cm-operator">+</span> <span class="cm-keyword">this</span>.<span class="cm-property">greeting</span>;
     }
 }
 </code></pre>
 <p>We can define the <code>@sealed</code> decorator using the following function declaration:</p>
-<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sealed</span>(<span class="hljs-params">constructor: <span class="hljs-built_in">Function</span></span>) </span>{
-    <span class="hljs-built_in">Object</span>.seal(<span class="hljs-keyword">constructor</span>);
-    Object.seal(<span class="hljs-keyword">constructor</span>.prototype);
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">sealed</span>(<span class="cm-keyword">constructor</span>: <span class="cm-variable">Function</span>) {
+    <span class="cm-variable">Object</span>.<span class="cm-property">seal</span>(<span class="cm-keyword">constructor</span>);
+    <span class="cm-variable">Object</span>.<span class="cm-property">seal</span>(<span class="cm-keyword">constructor</span>.<span class="cm-variable">prototype</span>);
 }
 </code></pre>
 <p>When <code>@sealed</code> is executed, it will seal both the constructor and its prototype.</p>
 <p>Next we have an example of how to override the constructor.</p>
-<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">classDecorator</span>&lt;<span class="hljs-title">T</span> <span class="hljs-title">extends</span> </span>{<span class="hljs-keyword">new</span>(...args:<span class="hljs-built_in">any</span>[]):{}}&gt;(<span class="hljs-keyword">constructor</span>:T) {
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">class</span> extends <span class="hljs-keyword">constructor</span> {
-        newProperty = <span class="hljs-string">&quot;new property&quot;</span>;
-        hello = <span class="hljs-string">&quot;override&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">classDecorator</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span> <span class="cm-keyword">extends</span> {<span class="cm-keyword">new</span>(<span class="cm-meta">...</span><span class="cm-variable">args</span>:<span class="cm-variable-3">any</span>[]):{}}<span class="cm-operator">&gt;</span>(<span class="cm-keyword">constructor</span>:<span class="cm-variable">T</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-keyword">class</span> <span class="cm-keyword">extends</span> <span class="cm-keyword">constructor</span> {
+        <span class="cm-variable">newProperty</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;new property&quot;</span>;
+        <span class="cm-variable">hello</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;override&quot;</span>;
     }
 }
 
-@classDecorator
-<span class="hljs-keyword">class</span> Greeter {
-    property = <span class="hljs-string">&quot;property&quot;</span>;
-    hello: <span class="hljs-built_in">string</span>;
-    <span class="hljs-keyword">constructor</span>(m: string) {
-        <span class="hljs-keyword">this</span>.hello = m;
+<span class="cm-variable">@classDecorator</span>
+<span class="cm-keyword">class</span> <span class="cm-variable">Greeter</span> {
+    <span class="cm-property">property</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;property&quot;</span>;
+    <span class="cm-variable">hello</span>: <span class="cm-variable-3">string</span>;
+    <span class="cm-keyword">constructor</span>(<span class="cm-variable">m</span>: <span class="cm-variable-3">string</span>) {
+        <span class="cm-keyword">this</span>.<span class="cm-variable">hello</span> <span class="cm-operator">=</span> <span class="cm-variable">m</span>;
     }
 }
 
-<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">new</span> Greeter(<span class="hljs-string">&quot;world&quot;</span>));
+<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-keyword">new</span> <span class="cm-variable">Greeter</span>(<span class="cm-string">&quot;world&quot;</span>));
 </code></pre>
 <h2 id="method-decorators">Method Decorators</h2>
 <p>A <em>Method Decorator</em> is declared just before a method declaration.
@@ -859,22 +868,22 @@ A method decorator cannot be used in a declaration file, on an overload, or in a
 <p>NOTE&#x2003; The return value is ignored if your script target is less than <code>ES5</code>.</p>
 </blockquote>
 <p>The following is an example of a method decorator (<code>@enumerable</code>) applied to a method on the <code>Greeter</code> class:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">class</span> Greeter {
-    greeting: <span class="hljs-built_in">string</span>;
-    <span class="hljs-keyword">constructor</span>(message: string) {
-        <span class="hljs-keyword">this</span>.greeting = message;
+<pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">Greeter</span> {
+    <span class="cm-property">greeting</span>: <span class="cm-variable-3">string</span>;
+    <span class="cm-keyword">constructor</span>(<span class="cm-variable">message</span>: <span class="cm-variable-3">string</span>) {
+        <span class="cm-keyword">this</span>.<span class="cm-variable">greeting</span> <span class="cm-operator">=</span> <span class="cm-variable">message</span>;
     }
 
-    @enumerable(<span class="hljs-literal">false</span>)
-    greet() {
-        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Hello, &quot;</span> + <span class="hljs-keyword">this</span>.greeting;
+    <span class="cm-variable">@enumerable</span>(<span class="cm-atom">false</span>)
+    <span class="cm-variable">greet</span>() {
+        <span class="cm-keyword">return</span> <span class="cm-string">&quot;Hello, &quot;</span> <span class="cm-operator">+</span> <span class="cm-keyword">this</span>.<span class="cm-property">greeting</span>;
     }
 }
 </code></pre>
 <p>We can define the <code>@enumerable</code> decorator using the following function declaration:</p>
-<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">enumerable</span>(<span class="hljs-params">value: <span class="hljs-built_in">boolean</span></span>) </span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">target: <span class="hljs-built_in">any</span>, propertyKey: <span class="hljs-built_in">string</span>, descriptor: PropertyDescriptor</span>) </span>{
-        descriptor.enumerable = value;
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">enumerable</span>(<span class="cm-def">value</span>: <span class="cm-variable-3">boolean</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-keyword">function</span> (<span class="cm-def">target</span>: <span class="cm-variable-3">any</span>, <span class="cm-def">propertyKey</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">descriptor</span>: <span class="cm-variable-3">PropertyDescriptor</span>) {
+        <span class="cm-variable-2">descriptor</span>.<span class="cm-property">enumerable</span> <span class="cm-operator">=</span> <span class="cm-variable-2">value</span>;
     };
 }
 </code></pre>
@@ -903,25 +912,25 @@ This is because decorators apply to a <em>Property Descriptor</em>, which combin
 <p>NOTE&#x2003; The return value is ignored if your script target is less than <code>ES5</code>.</p>
 </blockquote>
 <p>The following is an example of an accessor decorator (<code>@configurable</code>) applied to a member of the <code>Point</code> class:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">class</span> Point {
-    <span class="hljs-keyword">private</span> _x: <span class="hljs-built_in">number</span>;
-    <span class="hljs-keyword">private</span> _y: <span class="hljs-built_in">number</span>;
-    <span class="hljs-keyword">constructor</span>(x: number, y: number) {
-        <span class="hljs-keyword">this</span>._x = x;
-        <span class="hljs-keyword">this</span>._y = y;
+<pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">Point</span> {
+    <span class="cm-keyword">private</span> <span class="cm-variable">_x</span>: <span class="cm-variable-3">number</span>;
+    <span class="cm-keyword">private</span> <span class="cm-variable">_y</span>: <span class="cm-variable-3">number</span>;
+    <span class="cm-keyword">constructor</span>(<span class="cm-variable">x</span>: <span class="cm-variable-3">number</span>, <span class="cm-variable">y</span>: <span class="cm-variable-3">number</span>) {
+        <span class="cm-keyword">this</span>.<span class="cm-variable">_x</span> <span class="cm-operator">=</span> <span class="cm-variable">x</span>;
+        <span class="cm-keyword">this</span>.<span class="cm-variable">_y</span> <span class="cm-operator">=</span> <span class="cm-variable">y</span>;
     }
 
-    @configurable(<span class="hljs-literal">false</span>)
-    <span class="hljs-keyword">get</span> x() { <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._x; }
+    <span class="cm-variable">@configurable</span>(<span class="cm-atom">false</span>)
+    <span class="cm-variable">get</span> <span class="cm-variable">x</span>() { <span class="cm-keyword">return</span> <span class="cm-keyword">this</span>.<span class="cm-property">_x</span>; }
 
-    @configurable(<span class="hljs-literal">false</span>)
-    <span class="hljs-keyword">get</span> y() { <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._y; }
+    <span class="cm-variable">@configurable</span>(<span class="cm-atom">false</span>)
+    <span class="cm-variable">get</span> <span class="cm-variable">y</span>() { <span class="cm-keyword">return</span> <span class="cm-keyword">this</span>.<span class="cm-property">_y</span>; }
 }
 </code></pre>
 <p>We can define the <code>@configurable</code> decorator using the following function declaration:</p>
-<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">configurable</span>(<span class="hljs-params">value: <span class="hljs-built_in">boolean</span></span>) </span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">target: <span class="hljs-built_in">any</span>, propertyKey: <span class="hljs-built_in">string</span>, descriptor: PropertyDescriptor</span>) </span>{
-        descriptor.configurable = value;
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">configurable</span>(<span class="cm-def">value</span>: <span class="cm-variable-3">boolean</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-keyword">function</span> (<span class="cm-def">target</span>: <span class="cm-variable-3">any</span>, <span class="cm-def">propertyKey</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">descriptor</span>: <span class="cm-variable-3">PropertyDescriptor</span>) {
+        <span class="cm-variable-2">descriptor</span>.<span class="cm-property">configurable</span> <span class="cm-operator">=</span> <span class="cm-variable-2">value</span>;
     };
 }
 </code></pre>
@@ -939,30 +948,30 @@ This is because there is currently no mechanism to describe an instance property
 As such, a property decorator can only be used to observe that a property of a specific name has been declared for a class.</p>
 </blockquote>
 <p>We can use this information to record metadata about the property, as in the following example:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">class</span> Greeter {
-    @format(<span class="hljs-string">&quot;Hello, %s&quot;</span>)
-    greeting: <span class="hljs-built_in">string</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">Greeter</span> {
+    <span class="cm-property">@format</span>(<span class="cm-string">&quot;Hello, %s&quot;</span>)
+    <span class="cm-variable">greeting</span>: <span class="cm-variable-3">string</span>;
 
-    <span class="hljs-keyword">constructor</span>(message: string) {
-        <span class="hljs-keyword">this</span>.greeting = message;
+    <span class="cm-keyword">constructor</span>(<span class="cm-variable">message</span>: <span class="cm-variable-3">string</span>) {
+        <span class="cm-keyword">this</span>.<span class="cm-variable">greeting</span> <span class="cm-operator">=</span> <span class="cm-variable">message</span>;
     }
-    greet() {
-        <span class="hljs-keyword">let</span> formatString = getFormat(<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;greeting&quot;</span>);
-        <span class="hljs-keyword">return</span> formatString.replace(<span class="hljs-string">&quot;%s&quot;</span>, <span class="hljs-keyword">this</span>.greeting);
+    <span class="cm-variable">greet</span>() {
+        <span class="cm-keyword">let</span> <span class="cm-variable">formatString</span> <span class="cm-operator">=</span> <span class="cm-variable">getFormat</span>(<span class="cm-keyword">this</span>, <span class="cm-string">&quot;greeting&quot;</span>);
+        <span class="cm-keyword">return</span> <span class="cm-variable">formatString</span>.<span class="cm-property">replace</span>(<span class="cm-string">&quot;%s&quot;</span>, <span class="cm-keyword">this</span>.<span class="cm-property">greeting</span>);
     }
 }
 </code></pre>
 <p>We can then define the <code>@format</code> decorator and <code>getFormat</code> functions using the following function declarations:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;reflect-metadata&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-string">&quot;reflect-metadata&quot;</span>;
 
-<span class="hljs-keyword">const</span> formatMetadataKey = Symbol(<span class="hljs-string">&quot;format&quot;</span>);
+<span class="cm-keyword">const</span> <span class="cm-variable">formatMetadataKey</span> <span class="cm-operator">=</span> <span class="cm-variable">Symbol</span>(<span class="cm-string">&quot;format&quot;</span>);
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">format</span>(<span class="hljs-params">formatString: <span class="hljs-built_in">string</span></span>) </span>{
-    <span class="hljs-keyword">return</span> Reflect.metadata(formatMetadataKey, formatString);
+<span class="cm-keyword">function</span> <span class="cm-variable">format</span>(<span class="cm-def">formatString</span>: <span class="cm-variable-3">string</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-variable">Reflect</span>.<span class="cm-property">metadata</span>(<span class="cm-variable">formatMetadataKey</span>, <span class="cm-variable-2">formatString</span>);
 }
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getFormat</span>(<span class="hljs-params">target: <span class="hljs-built_in">any</span>, propertyKey: <span class="hljs-built_in">string</span></span>) </span>{
-    <span class="hljs-keyword">return</span> Reflect.getMetadata(formatMetadataKey, target, propertyKey);
+<span class="cm-keyword">function</span> <span class="cm-variable">getFormat</span>(<span class="cm-def">target</span>: <span class="cm-variable-3">any</span>, <span class="cm-def">propertyKey</span>: <span class="cm-variable-3">string</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-variable">Reflect</span>.<span class="cm-property">getMetadata</span>(<span class="cm-variable">formatMetadataKey</span>, <span class="cm-variable-2">target</span>, <span class="cm-variable-2">propertyKey</span>);
 }
 </code></pre>
 <p>The <code>@format(&quot;Hello, %s&quot;)</code> decorator here is a <a href="#decorator-factories">decorator factory</a>.
@@ -987,43 +996,43 @@ A parameter decorator cannot be used in a declaration file, an overload, or in a
 </blockquote>
 <p>The return value of the parameter decorator is ignored.</p>
 <p>The following is an example of a parameter decorator (<code>@required</code>) applied to parameter of a member of the <code>Greeter</code> class:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">class</span> Greeter {
-    greeting: <span class="hljs-built_in">string</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">Greeter</span> {
+    <span class="cm-property">greeting</span>: <span class="cm-variable-3">string</span>;
 
-    <span class="hljs-keyword">constructor</span>(message: string) {
-        <span class="hljs-keyword">this</span>.greeting = message;
+    <span class="cm-keyword">constructor</span>(<span class="cm-variable">message</span>: <span class="cm-variable-3">string</span>) {
+        <span class="cm-keyword">this</span>.<span class="cm-variable">greeting</span> <span class="cm-operator">=</span> <span class="cm-variable">message</span>;
     }
 
-    @validate
-    greet(@required name: <span class="hljs-built_in">string</span>) {
-        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Hello &quot;</span> + name + <span class="hljs-string">&quot;, &quot;</span> + <span class="hljs-keyword">this</span>.greeting;
+    <span class="cm-variable">@validate</span>
+    <span class="cm-variable">greet</span>(<span class="cm-variable">@required</span> <span class="cm-variable">name</span>: <span class="cm-variable-3">string</span>) {
+        <span class="cm-keyword">return</span> <span class="cm-string">&quot;Hello &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable">name</span> <span class="cm-operator">+</span> <span class="cm-string">&quot;, &quot;</span> <span class="cm-operator">+</span> <span class="cm-keyword">this</span>.<span class="cm-property">greeting</span>;
     }
 }
 </code></pre>
 <p>We can then define the <code>@required</code> and <code>@validate</code> decorators using the following function declarations:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;reflect-metadata&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-string">&quot;reflect-metadata&quot;</span>;
 
-<span class="hljs-keyword">const</span> requiredMetadataKey = Symbol(<span class="hljs-string">&quot;required&quot;</span>);
+<span class="cm-keyword">const</span> <span class="cm-variable">requiredMetadataKey</span> <span class="cm-operator">=</span> <span class="cm-variable">Symbol</span>(<span class="cm-string">&quot;required&quot;</span>);
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">required</span>(<span class="hljs-params">target: <span class="hljs-built_in">Object</span>, propertyKey: <span class="hljs-built_in">string</span> | symbol, parameterIndex: <span class="hljs-built_in">number</span></span>) </span>{
-    <span class="hljs-keyword">let</span> existingRequiredParameters: <span class="hljs-built_in">number</span>[] = Reflect.getOwnMetadata(requiredMetadataKey, target, propertyKey) || [];
-    existingRequiredParameters.push(parameterIndex);
-    Reflect.defineMetadata(requiredMetadataKey, existingRequiredParameters, target, propertyKey);
+<span class="cm-keyword">function</span> <span class="cm-variable">required</span>(<span class="cm-def">target</span>: <span class="cm-variable-3">Object</span>, <span class="cm-def">propertyKey</span>: <span class="cm-variable-3">string</span> <span class="cm-operator">|</span> <span class="cm-variable">symbol</span>, <span class="cm-variable">parameterIndex</span>: <span class="cm-variable-3">number</span>) {
+    <span class="cm-keyword">let</span> <span class="cm-def">existingRequiredParameters</span>: <span class="cm-variable-3">number</span>[] <span class="cm-operator">=</span> <span class="cm-variable">Reflect</span>.<span class="cm-property">getOwnMetadata</span>(<span class="cm-variable">requiredMetadataKey</span>, <span class="cm-variable-2">target</span>, <span class="cm-variable-2">propertyKey</span>) <span class="cm-operator">||</span> [];
+    <span class="cm-variable-2">existingRequiredParameters</span>.<span class="cm-property">push</span>(<span class="cm-variable">parameterIndex</span>);
+    <span class="cm-variable">Reflect</span>.<span class="cm-property">defineMetadata</span>(<span class="cm-variable">requiredMetadataKey</span>, <span class="cm-variable-2">existingRequiredParameters</span>, <span class="cm-variable-2">target</span>, <span class="cm-variable-2">propertyKey</span>);
 }
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validate</span>(<span class="hljs-params">target: <span class="hljs-built_in">any</span>, propertyName: <span class="hljs-built_in">string</span>, descriptor: TypedPropertyDescriptor&lt;<span class="hljs-built_in">Function</span>&gt;</span>) </span>{
-    <span class="hljs-keyword">let</span> method = descriptor.value;
-    descriptor.value = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-        <span class="hljs-keyword">let</span> requiredParameters: <span class="hljs-built_in">number</span>[] = Reflect.getOwnMetadata(requiredMetadataKey, target, propertyName);
-        <span class="hljs-keyword">if</span> (requiredParameters) {
-            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> parameterIndex of requiredParameters) {
-                <span class="hljs-keyword">if</span> (parameterIndex &gt;= <span class="hljs-built_in">arguments</span>.length || <span class="hljs-built_in">arguments</span>[parameterIndex] === <span class="hljs-literal">undefined</span>) {
-                    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;Missing required argument.&quot;</span>);
+<span class="cm-keyword">function</span> <span class="cm-variable">validate</span>(<span class="cm-def">target</span>: <span class="cm-variable-3">any</span>, <span class="cm-def">propertyName</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">descriptor</span>: <span class="cm-variable-3">TypedPropertyDescriptor</span><span class="cm-operator">&lt;</span><span class="cm-variable">Function</span><span class="cm-operator">&gt;</span>) {
+    <span class="cm-keyword">let</span> <span class="cm-def">method</span> <span class="cm-operator">=</span> <span class="cm-variable-2">descriptor</span>.<span class="cm-property">value</span>;
+    <span class="cm-variable-2">descriptor</span>.<span class="cm-property">value</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span> () {
+        <span class="cm-keyword">let</span> <span class="cm-def">requiredParameters</span>: <span class="cm-variable-3">number</span>[] <span class="cm-operator">=</span> <span class="cm-variable">Reflect</span>.<span class="cm-property">getOwnMetadata</span>(<span class="cm-variable">requiredMetadataKey</span>, <span class="cm-variable-2">target</span>, <span class="cm-variable-2">propertyName</span>);
+        <span class="cm-keyword">if</span> (<span class="cm-variable-2">requiredParameters</span>) {
+            <span class="cm-keyword">for</span> (<span class="cm-keyword">let</span> <span class="cm-def">parameterIndex</span> <span class="cm-keyword">of</span> <span class="cm-variable-2">requiredParameters</span>) {
+                <span class="cm-keyword">if</span> (<span class="cm-variable-2">parameterIndex</span> <span class="cm-operator">&gt;=</span> <span class="cm-variable-2">arguments</span>.<span class="cm-property">length</span> <span class="cm-operator">||</span> <span class="cm-variable-2">arguments</span>[<span class="cm-variable-2">parameterIndex</span>] <span class="cm-operator">===</span> <span class="cm-atom">undefined</span>) {
+                    <span class="cm-keyword">throw</span> <span class="cm-keyword">new</span> <span class="cm-variable">Error</span>(<span class="cm-string">&quot;Missing required argument.&quot;</span>);
                 }
             }
         }
 
-        <span class="hljs-keyword">return</span> method.apply(<span class="hljs-keyword">this</span>, <span class="hljs-built_in">arguments</span>);
+        <span class="cm-keyword">return</span> <span class="cm-variable-2">method</span>.<span class="cm-property">apply</span>(<span class="cm-keyword">this</span>, <span class="cm-variable-2">arguments</span>);
     }
 }
 </code></pre>
@@ -1047,61 +1056,61 @@ To enable this experimental support, you must set the <code>emitDecoratorMetadat
 </code></pre>
 <p><strong>tsconfig.json</strong>:</p>
 <pre><code class="lang-json">{
-    <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
-        <span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;ES5&quot;</span>,
-        <span class="hljs-string">&quot;experimentalDecorators&quot;</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">&quot;emitDecoratorMetadata&quot;</span>: <span class="hljs-literal">true</span>
+    <span class="cm-property">&quot;compilerOptions&quot;</span>: {
+        <span class="cm-property">&quot;target&quot;</span>: <span class="cm-string">&quot;ES5&quot;</span>,
+        <span class="cm-property">&quot;experimentalDecorators&quot;</span>: <span class="cm-atom">true</span>,
+        <span class="cm-property">&quot;emitDecoratorMetadata&quot;</span>: <span class="cm-atom">true</span>
     }
 }
 </code></pre>
 <p>When enabled, as long as the <code>reflect-metadata</code> library has been imported, additional design-time type information will be exposed at runtime.</p>
 <p>We can see this in action in the following example:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;reflect-metadata&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-string">&quot;reflect-metadata&quot;</span>;
 
-<span class="hljs-keyword">class</span> Point {
-    x: <span class="hljs-built_in">number</span>;
-    y: <span class="hljs-built_in">number</span>;
+<span class="cm-keyword">class</span> <span class="cm-variable">Point</span> {
+    <span class="cm-property">x</span>: <span class="cm-variable-3">number</span>;
+    <span class="cm-variable">y</span>: <span class="cm-variable-3">number</span>;
 }
 
-<span class="hljs-keyword">class</span> Line {
-    <span class="hljs-keyword">private</span> _p0: Point;
-    <span class="hljs-keyword">private</span> _p1: Point;
+<span class="cm-keyword">class</span> <span class="cm-variable">Line</span> {
+    <span class="cm-keyword">private</span> <span class="cm-variable">_p0</span>: <span class="cm-variable">Point</span>;
+    <span class="cm-keyword">private</span> <span class="cm-variable">_p1</span>: <span class="cm-variable">Point</span>;
 
-    @validate
-    <span class="hljs-keyword">set</span> p0(value: Point) { <span class="hljs-keyword">this</span>._p0 = value; }
-    <span class="hljs-keyword">get</span> p0() { <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._p0; }
+    <span class="cm-variable">@validate</span>
+    <span class="cm-variable">set</span> <span class="cm-variable">p0</span>(<span class="cm-variable">value</span>: <span class="cm-variable">Point</span>) { <span class="cm-keyword">this</span>.<span class="cm-variable">_p0</span> <span class="cm-operator">=</span> <span class="cm-variable">value</span>; }
+    <span class="cm-variable">get</span> <span class="cm-variable">p0</span>() { <span class="cm-keyword">return</span> <span class="cm-keyword">this</span>.<span class="cm-property">_p0</span>; }
 
-    @validate
-    <span class="hljs-keyword">set</span> p1(value: Point) { <span class="hljs-keyword">this</span>._p1 = value; }
-    <span class="hljs-keyword">get</span> p1() { <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._p1; }
+    <span class="cm-variable">@validate</span>
+    <span class="cm-variable">set</span> <span class="cm-variable">p1</span>(<span class="cm-variable">value</span>: <span class="cm-variable">Point</span>) { <span class="cm-keyword">this</span>.<span class="cm-property">_p1</span> <span class="cm-operator">=</span> <span class="cm-variable">value</span>; }
+    <span class="cm-variable">get</span> <span class="cm-variable">p1</span>() { <span class="cm-keyword">return</span> <span class="cm-keyword">this</span>.<span class="cm-property">_p1</span>; }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validate</span>&lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">target: <span class="hljs-built_in">any</span>, propertyKey: <span class="hljs-built_in">string</span>, descriptor: TypedPropertyDescriptor&lt;T&gt;</span>) </span>{
-    <span class="hljs-keyword">let</span> <span class="hljs-keyword">set</span> = descriptor.set;
-    descriptor.set = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value: T</span>) </span>{
-        <span class="hljs-keyword">let</span> <span class="hljs-keyword">type</span> = Reflect.getMetadata(<span class="hljs-string">&quot;design:type&quot;</span>, target, propertyKey);
-        <span class="hljs-keyword">if</span> (!(value <span class="hljs-keyword">instanceof</span> <span class="hljs-keyword">type</span>)) {
-            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">TypeError</span>(<span class="hljs-string">&quot;Invalid type.&quot;</span>);
+<span class="cm-keyword">function</span> <span class="cm-variable">validate</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">target</span>: <span class="cm-variable-3">any</span>, <span class="cm-variable">propertyKey</span>: <span class="cm-variable-3">string</span>, <span class="cm-variable">descriptor</span>: <span class="cm-variable">TypedPropertyDescriptor</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span>) {
+    <span class="cm-keyword">let</span> <span class="cm-variable">set</span> <span class="cm-operator">=</span> <span class="cm-variable">descriptor</span>.<span class="cm-property">set</span>;
+    <span class="cm-variable">descriptor</span>.<span class="cm-property">set</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span> (<span class="cm-def">value</span>: <span class="cm-variable-3">T</span>) {
+        <span class="cm-keyword">let</span> <span class="cm-def">type</span> <span class="cm-operator">=</span> <span class="cm-variable">Reflect</span>.<span class="cm-property">getMetadata</span>(<span class="cm-string">&quot;design:type&quot;</span>, <span class="cm-variable">target</span>, <span class="cm-variable">propertyKey</span>);
+        <span class="cm-keyword">if</span> (<span class="cm-operator">!</span>(<span class="cm-variable-2">value</span> <span class="cm-keyword">instanceof</span> <span class="cm-variable-2">type</span>)) {
+            <span class="cm-keyword">throw</span> <span class="cm-keyword">new</span> <span class="cm-variable">TypeError</span>(<span class="cm-string">&quot;Invalid type.&quot;</span>);
         }
-        <span class="hljs-keyword">set</span>(value);
+        <span class="cm-variable">set</span>(<span class="cm-variable-2">value</span>);
     }
 }
 </code></pre>
 <p>The TypeScript compiler will inject design-time type information using the <code>@Reflect.metadata</code> decorator.
 You could consider it the equivalent of the following TypeScript:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">class</span> Line {
-    <span class="hljs-keyword">private</span> _p0: Point;
-    <span class="hljs-keyword">private</span> _p1: Point;
+<pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">Line</span> {
+    <span class="cm-keyword">private</span> <span class="cm-variable">_p0</span>: <span class="cm-variable">Point</span>;
+    <span class="cm-keyword">private</span> <span class="cm-variable">_p1</span>: <span class="cm-variable">Point</span>;
 
-    @validate
-    @Reflect.metadata(<span class="hljs-string">&quot;design:type&quot;</span>, Point)
-    <span class="hljs-keyword">set</span> p0(value: Point) { <span class="hljs-keyword">this</span>._p0 = value; }
-    <span class="hljs-keyword">get</span> p0() { <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._p0; }
+    <span class="cm-variable">@validate</span>
+    <span class="cm-variable">@Reflect</span>.<span class="cm-variable">metadata</span>(<span class="cm-string">&quot;design:type&quot;</span>, <span class="cm-variable">Point</span>)
+    <span class="cm-variable">set</span> <span class="cm-variable">p0</span>(<span class="cm-variable">value</span>: <span class="cm-variable">Point</span>) { <span class="cm-keyword">this</span>.<span class="cm-variable">_p0</span> <span class="cm-operator">=</span> <span class="cm-variable">value</span>; }
+    <span class="cm-variable">get</span> <span class="cm-variable">p0</span>() { <span class="cm-keyword">return</span> <span class="cm-keyword">this</span>.<span class="cm-property">_p0</span>; }
 
-    @validate
-    @Reflect.metadata(<span class="hljs-string">&quot;design:type&quot;</span>, Point)
-    <span class="hljs-keyword">set</span> p1(value: Point) { <span class="hljs-keyword">this</span>._p1 = value; }
-    <span class="hljs-keyword">get</span> p1() { <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._p1; }
+    <span class="cm-variable">@validate</span>
+    <span class="cm-variable">@Reflect</span>.<span class="cm-property">metadata</span>(<span class="cm-string">&quot;design:type&quot;</span>, <span class="cm-variable">Point</span>)
+    <span class="cm-variable">set</span> <span class="cm-variable">p1</span>(<span class="cm-variable">value</span>: <span class="cm-variable">Point</span>) { <span class="cm-keyword">this</span>.<span class="cm-property">_p1</span> <span class="cm-operator">=</span> <span class="cm-variable">value</span>; }
+    <span class="cm-variable">get</span> <span class="cm-variable">p1</span>() { <span class="cm-keyword">return</span> <span class="cm-keyword">this</span>.<span class="cm-property">_p1</span>; }
 }
 </code></pre>
 <blockquote>
@@ -1150,12 +1159,13 @@ You could consider it the equivalent of the following TypeScript:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Decorators","level":"3.19","depth":1,"next":{"title":"Mixins","level":"3.20","depth":1,"path":"pages/Mixins.md","ref":"pages/Mixins.md","articles":[]},"previous":{"title":"JSX","level":"3.18","depth":1,"path":"pages/JSX.md","ref":"pages/JSX.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Decorators.md","mtime":"2018-02-06T13:12:52.647Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T14:21:41.019Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Decorators","level":"3.19","depth":1,"next":{"title":"Mixins","level":"3.20","depth":1,"path":"pages/Mixins.md","ref":"pages/Mixins.md","articles":[]},"previous":{"title":"JSX","level":"3.18","depth":1,"path":"pages/JSX.md","ref":"pages/JSX.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Decorators.md","mtime":"2018-02-05T16:09:39.240Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:22:50.132Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
     
@@ -1182,6 +1192,8 @@ You could consider it the equivalent of the following TypeScript:</p>
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
+    
+
     
 
     </body>

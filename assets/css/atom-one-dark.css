@@ -1,0 +1,54 @@
+/*
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+*/
+
+pre {
+	background-color: #282a36 !important;
+  color: #f8f8f2 !important;
+  border: none;
+}
+/*
+    Name:       dracula
+    Author:     Michael Kaminsky (http://github.com/mkaminsky11)
+    Original dracula color scheme by Zeno Rocha (https://github.com/zenorocha/dracula-theme)
+*/
+
+
+.CodeMirror-gutters { color: #282a36; }
+.CodeMirror-cursor { border-left: solid thin #f8f8f0; }
+.CodeMirror-linenumber { color: #6D8A88; }
+.CodeMirror-selected { background: rgba(255, 255, 255, 0.10); }
+.CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection { background: rgba(255, 255, 255, 0.10); }
+.CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection { background: rgba(255, 255, 255, 0.10); }
+span.cm-comment { color: #6272a4; }
+span.cm-string, span.cm-string-2 { color: #f1fa8c; }
+span.cm-number { color: #bd93f9; }
+span.cm-variable { color: #50fa7b; }
+span.cm-variable-2 { color: white; }
+span.cm-def { color: #50fa7b; }
+span.cm-operator { color: #ff79c6; }
+span.cm-keyword { color: #ff79c6; }
+span.cm-atom { color: #bd93f9; }
+span.cm-meta { color: #f8f8f2; }
+span.cm-tag { color: #ff79c6; }
+span.cm-attribute { color: #50fa7b; }
+span.cm-qualifier { color: #50fa7b; }
+span.cm-property { color: #66d9ef; }
+span.cm-builtin { color: #50fa7b; }
+span.cm-variable-3, span.cm-type { color: #ffb86c; }
+
+.CodeMirror-activeline-background { background: rgba(255,255,255,0.1); }
+.CodeMirror-matchingbracket { text-decoration: underline; color: white !important; }

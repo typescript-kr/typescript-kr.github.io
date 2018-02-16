@@ -12,9 +12,14 @@
         
         
     
+    
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight-1/website.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
@@ -44,6 +49,10 @@
         
     
         
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/atom-one-dark.css" />
     
 
         
@@ -702,36 +711,36 @@ Some built-in types like <code>Array</code>, <code>Map</code>, <code>Set</code>,
 <h2 id="forof-statements"><code>for..of</code> statements</h2>
 <p><code>for..of</code> loops over an iterable object, invoking the <code>Symbol.iterator</code> property on the object.
 Here is a simple <code>for..of</code> loop on an array:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">let</span> someArray = [<span class="hljs-number">1</span>, <span class="hljs-string">&quot;string&quot;</span>, <span class="hljs-literal">false</span>];
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">someArray</span> <span class="cm-operator">=</span> [<span class="cm-number">1</span>, <span class="cm-string">&quot;string&quot;</span>, <span class="cm-atom">false</span>];
 
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> entry of someArray) {
-    <span class="hljs-built_in">console</span>.log(entry); <span class="hljs-comment">// 1, &quot;string&quot;, false</span>
+<span class="cm-keyword">for</span> (<span class="cm-keyword">let</span> <span class="cm-variable">entry</span> <span class="cm-keyword">of</span> <span class="cm-variable">someArray</span>) {
+    <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">entry</span>); <span class="cm-comment">// 1, &quot;string&quot;, false</span>
 }
 </code></pre>
 <h3 id="forof-vs-forin-statements"><code>for..of</code> vs. <code>for..in</code> statements</h3>
 <p>Both <code>for..of</code> and <code>for..in</code> statements iterate over lists; the values iterated on are different though, <code>for..in</code> returns a list of <em>keys</em> on the object being iterated, whereas <code>for..of</code> returns a list of <em>values</em> of the numeric properties of the object being iterated.</p>
 <p>Here is an example that demonstrates this distinction:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">let</span> list = [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>];
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">list</span> <span class="cm-operator">=</span> [<span class="cm-number">4</span>, <span class="cm-number">5</span>, <span class="cm-number">6</span>];
 
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i <span class="hljs-keyword">in</span> list) {
-   <span class="hljs-built_in">console</span>.log(i); <span class="hljs-comment">// &quot;0&quot;, &quot;1&quot;, &quot;2&quot;,</span>
+<span class="cm-keyword">for</span> (<span class="cm-keyword">let</span> <span class="cm-variable">i</span> <span class="cm-keyword">in</span> <span class="cm-variable">list</span>) {
+   <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">i</span>); <span class="cm-comment">// &quot;0&quot;, &quot;1&quot;, &quot;2&quot;,</span>
 }
 
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i of list) {
-   <span class="hljs-built_in">console</span>.log(i); <span class="hljs-comment">// &quot;4&quot;, &quot;5&quot;, &quot;6&quot;</span>
+<span class="cm-keyword">for</span> (<span class="cm-keyword">let</span> <span class="cm-variable">i</span> <span class="cm-keyword">of</span> <span class="cm-variable">list</span>) {
+   <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">i</span>); <span class="cm-comment">// &quot;4&quot;, &quot;5&quot;, &quot;6&quot;</span>
 }
 </code></pre>
 <p>Another distinction is that <code>for..in</code> operates on any object; it serves as a way to inspect properties on this object.
 <code>for..of</code> on the other hand, is mainly interested in values of iterable objects. Built-in objects like <code>Map</code> and <code>Set</code> implement <code>Symbol.iterator</code> property allowing access to stored values.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">let</span> pets = <span class="hljs-keyword">new</span> Set([<span class="hljs-string">&quot;Cat&quot;</span>, <span class="hljs-string">&quot;Dog&quot;</span>, <span class="hljs-string">&quot;Hamster&quot;</span>]);
-pets[<span class="hljs-string">&quot;species&quot;</span>] = <span class="hljs-string">&quot;mammals&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">pets</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Set</span>([<span class="cm-string">&quot;Cat&quot;</span>, <span class="cm-string">&quot;Dog&quot;</span>, <span class="cm-string">&quot;Hamster&quot;</span>]);
+<span class="cm-variable">pets</span>[<span class="cm-string">&quot;species&quot;</span>] <span class="cm-operator">=</span> <span class="cm-string">&quot;mammals&quot;</span>;
 
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> pet <span class="hljs-keyword">in</span> pets) {
-   <span class="hljs-built_in">console</span>.log(pet); <span class="hljs-comment">// &quot;species&quot;</span>
+<span class="cm-keyword">for</span> (<span class="cm-keyword">let</span> <span class="cm-variable">pet</span> <span class="cm-keyword">in</span> <span class="cm-variable">pets</span>) {
+   <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">pet</span>); <span class="cm-comment">// &quot;species&quot;</span>
 }
 
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> pet of pets) {
-    <span class="hljs-built_in">console</span>.log(pet); <span class="hljs-comment">// &quot;Cat&quot;, &quot;Dog&quot;, &quot;Hamster&quot;</span>
+<span class="cm-keyword">for</span> (<span class="cm-keyword">let</span> <span class="cm-variable">pet</span> <span class="cm-keyword">of</span> <span class="cm-variable">pets</span>) {
+    <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">pet</span>); <span class="cm-comment">// &quot;Cat&quot;, &quot;Dog&quot;, &quot;Hamster&quot;</span>
 }
 </code></pre>
 <h3 id="code-generation">Code generation</h3>
@@ -739,16 +748,16 @@ pets[<span class="hljs-string">&quot;species&quot;</span>] = <span class="hljs-s
 <p>When targeting an ES5 or ES3, iterators are only allowed on values of <code>Array</code> type.
 It is an error to use <code>for..of</code> loops on non-Array values, even if these non-Array values implement the <code>Symbol.iterator</code> property.</p>
 <p>The compiler will generate a simple <code>for</code> loop for a <code>for..of</code> loop, for instance:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">let</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> num of numbers) {
-    <span class="hljs-built_in">console</span>.log(num);
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">numbers</span> <span class="cm-operator">=</span> [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>];
+<span class="cm-keyword">for</span> (<span class="cm-keyword">let</span> <span class="cm-variable">num</span> <span class="cm-keyword">of</span> <span class="cm-variable">numbers</span>) {
+    <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">num</span>);
 }
 </code></pre>
 <p>will be generated as:</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> _i = <span class="hljs-number">0</span>; _i &lt; numbers.length; _i++) {
-    <span class="hljs-keyword">var</span> num = numbers[_i];
-    <span class="hljs-built_in">console</span>.log(num);
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">numbers</span> <span class="cm-operator">=</span> [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>];
+<span class="cm-keyword">for</span> (<span class="cm-keyword">var</span> <span class="cm-variable">_i</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">_i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">numbers</span>.<span class="cm-property">length</span>; <span class="cm-variable">_i</span><span class="cm-operator">++</span>) {
+    <span class="cm-keyword">var</span> <span class="cm-variable">num</span> <span class="cm-operator">=</span> <span class="cm-variable">numbers</span>[<span class="cm-variable">_i</span>];
+    <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">num</span>);
 }
 </code></pre>
 <h4 id="targeting-ecmascript-2015-and-higher">Targeting ECMAScript 2015 and higher</h4>
@@ -796,12 +805,13 @@ It is an error to use <code>for..of</code> loops on non-Array values, even if th
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Iterators and Generators","level":"3.12","depth":1,"next":{"title":"Modules","level":"3.13","depth":1,"path":"pages/Modules.md","ref":"pages/Modules.md","articles":[]},"previous":{"title":"심볼","level":"3.11","depth":1,"path":"pages/Symbols.md","ref":"pages/Symbols.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Iterators and Generators.md","mtime":"2018-02-06T13:12:52.651Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T14:21:41.019Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Iterators and Generators","level":"3.12","depth":1,"next":{"title":"Modules","level":"3.13","depth":1,"path":"pages/Modules.md","ref":"pages/Modules.md","articles":[]},"previous":{"title":"심볼","level":"3.11","depth":1,"path":"pages/Symbols.md","ref":"pages/Symbols.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Iterators and Generators.md","mtime":"2018-02-05T16:09:39.242Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:22:50.132Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
     
@@ -828,6 +838,8 @@ It is an error to use <code>for..of</code> loops on non-Array values, even if th
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
+    
+
     
 
     </body>

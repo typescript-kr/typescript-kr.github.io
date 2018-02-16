@@ -12,9 +12,14 @@
         
         
     
+    
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight-1/website.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
@@ -44,6 +49,10 @@
         
     
         
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../../assets/css/atom-one-dark.css" />
     
 
         
@@ -741,108 +750,108 @@ cd ..
 <p>TypeScript &#xD30C;&#xC77C;&#xC744; &#xD568;&#xAED8; &#xAC00;&#xC838;&#xC624;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74; &#xD544;&#xC694;&#xD55C; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xBFD0;&#xB9CC; &#xC544;&#xB2C8;&#xB77C; &#xC791;&#xC131;&#xD560; &#xCF54;&#xB4DC; &#xBAA8;&#xB450; &#xC791;&#xC131;&#xD558;&#xC138;&#xC694;.</p>
 <p>&#xC774;&#xB807;&#xAC8C; &#xD558;&#xB824;&#xBA74; &#xBAA8;&#xB4E0; &#xCEF4;&#xD30C;&#xC77C; &#xC124;&#xC815;&#xACFC; &#xD568;&#xAED8; &#xC785;&#xB825; &#xD30C;&#xC77C; &#xBAA9;&#xB85D;&#xC774; &#xD3EC;&#xD568;&#xB41C; <code>tsconfig.json</code>&#xC744; &#xC0DD;&#xC131;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xB8E8;&#xD2B8;&#xC5D0; <code>tsconfig.json</code>&#xC774;&#xB77C;&#xB294; &#xC774;&#xB984;&#xC758; &#xC0C8; &#xD30C;&#xC77C;&#xC744; &#xB9CC;&#xB4E4;&#xACE0; &#xB0B4;&#xC6A9;&#xC744; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xCC44;&#xC6B0;&#xAE30;&#xB9CC; &#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-json">{
-    <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
-        <span class="hljs-string">&quot;outDir&quot;</span>: <span class="hljs-string">&quot;./dist/&quot;</span>,
-        <span class="hljs-string">&quot;sourceMap&quot;</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">&quot;noImplicitAny&quot;</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">&quot;module&quot;</span>: <span class="hljs-string">&quot;commonjs&quot;</span>,
-        <span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;es5&quot;</span>,
-        <span class="hljs-string">&quot;jsx&quot;</span>: <span class="hljs-string">&quot;react&quot;</span>
+    <span class="cm-property">&quot;compilerOptions&quot;</span>: {
+        <span class="cm-property">&quot;outDir&quot;</span>: <span class="cm-string">&quot;./dist/&quot;</span>,
+        <span class="cm-property">&quot;sourceMap&quot;</span>: <span class="cm-atom">true</span>,
+        <span class="cm-property">&quot;noImplicitAny&quot;</span>: <span class="cm-atom">true</span>,
+        <span class="cm-property">&quot;module&quot;</span>: <span class="cm-string">&quot;commonjs&quot;</span>,
+        <span class="cm-property">&quot;target&quot;</span>: <span class="cm-string">&quot;es5&quot;</span>,
+        <span class="cm-property">&quot;jsx&quot;</span>: <span class="cm-string">&quot;react&quot;</span>
     },
-    <span class="hljs-string">&quot;include&quot;</span>: [
-        <span class="hljs-string">&quot;./src/**/*&quot;</span>
+    <span class="cm-property">&quot;include&quot;</span>: [
+        <span class="cm-string">&quot;./src/**/*&quot;</span>
     ]
 }
 </code></pre>
 <p><code>tsconfig.json</code> &#xD30C;&#xC77C;&#xC5D0; &#xB300;&#xD55C; &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="../tsconfig.json.html">&#xC5EC;&#xAE30;</a>&#xB97C; &#xCC38;&#xC870;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.</p>
 <h1 id="&#xBA87;-&#xAC00;&#xC9C0;-&#xCF54;&#xB4DC;-&#xC791;&#xC131;-write-some-code">&#xBA87; &#xAC00;&#xC9C0; &#xCF54;&#xB4DC; &#xC791;&#xC131; (Write some code)</h1>
 <p>React&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xCCAB; &#xBC88;&#xC9F8; TypeScript &#xD30C;&#xC77C;&#xC744; &#xC791;&#xC131;&#xD574; &#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xBA3C;&#xC800;<code>src/components</code>&#xC5D0; <code>Hello.tsx</code>&#xB77C;&#xB294; &#xC774;&#xB984;&#xC758; &#xD30C;&#xC77C;&#xC744; &#xB9CC;&#xB4E4;&#xACE0; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC791;&#xC131;&#xD569;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-ts">import * as React from &quot;react&quot;;
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">React</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;react&quot;</span>;
 
-export interface HelloProps { compiler: string; framework: string; }
+<span class="cm-keyword">export</span> <span class="cm-keyword">interface</span> <span class="cm-variable">HelloProps</span> { <span class="cm-variable">compiler</span>: <span class="cm-variable-3">string</span>; <span class="cm-variable">framework</span>: <span class="cm-variable-3">string</span>; }
 
-export const Hello = (props: HelloProps) =&gt; &lt;h1&gt;Hello from {props.compiler} and {props.framework}!&lt;/h1&gt;;
+<span class="cm-keyword">export</span> <span class="cm-keyword">const</span> <span class="cm-variable">Hello</span> <span class="cm-operator">=</span> (<span class="cm-def">props</span>: <span class="cm-variable">HelloProps</span>) <span class="cm-operator">=&gt;</span> <span class="cm-operator">&lt;</span><span class="cm-variable">h1</span><span class="cm-operator">&gt;</span><span class="cm-variable">Hello</span> <span class="cm-variable">from</span> {<span class="cm-variable">props</span>.<span class="cm-property">compiler</span>} <span class="cm-variable">and</span> {<span class="cm-variable">props</span>.<span class="cm-property">framework</span>}<span class="cm-operator">!&lt;</span><span class="cm-string-2">/h1&gt;;</span>
 </code></pre>
 <p>&#xC774; &#xC608;&#xC81C;&#xC5D0;&#xC11C;&#xB294; <a href="https://facebook.github.io/react/docs/reusable-components.html#stateless-functions" target="_blank">stateless functional components</a>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xC5D0; &#xB300;&#xBE44;&#xD558;&#xC5EC; &#xC608;&#xC81C;&#xB97C; &#xC880; &#xB354; <em>&#xACE0;&#xAE09;&#xC2A4;&#xB7FD;&#xAC8C;</em> &#xB9CC;&#xB4E4; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-ts">import * as React from &quot;react&quot;;
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">React</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;react&quot;</span>;
 
-export interface HelloProps { compiler: string; framework: string; }
+<span class="cm-keyword">export</span> <span class="cm-keyword">interface</span> <span class="cm-variable">HelloProps</span> { <span class="cm-variable">compiler</span>: <span class="cm-variable-3">string</span>; <span class="cm-variable">framework</span>: <span class="cm-variable-3">string</span>; }
 
-// &apos;HelloProps&apos;&#xB294; props&#xC758; &#xD615;&#xD0DC;&#xC744; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;.
-// State&#xAC00; &#xC124;&#xC815;&#xB418;&#xC5B4; &#xC788;&#xC9C0; &#xC54A;&#xC544; &apos;{}&apos;&#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.
-export class Hello extends React.Component&lt;HelloProps, {}&gt; {
-    render() {
-        return &lt;h1&gt;Hello from {this.props.compiler} and {this.props.framework}!&lt;/h1&gt;;
+<span class="cm-comment">// &apos;HelloProps&apos;&#xB294; props&#xC758; &#xD615;&#xD0DC;&#xC744; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-comment">// State&#xAC00; &#xC124;&#xC815;&#xB418;&#xC5B4; &#xC788;&#xC9C0; &#xC54A;&#xC544; &apos;{}&apos;&#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">Hello</span> <span class="cm-keyword">extends</span> <span class="cm-variable">React</span>.<span class="cm-property">Component</span><span class="cm-operator">&lt;</span><span class="cm-variable">HelloProps</span>, {}<span class="cm-operator">&gt;</span> {
+    <span class="cm-property">render</span>() {
+        <span class="cm-keyword">return</span> <span class="cm-operator">&lt;</span><span class="cm-variable">h1</span><span class="cm-operator">&gt;</span><span class="cm-variable">Hello</span> <span class="cm-variable">from</span> {<span class="cm-keyword">this</span>.<span class="cm-property">props</span>.<span class="cm-property">compiler</span>} <span class="cm-variable">and</span> {<span class="cm-keyword">this</span>.<span class="cm-property">props</span>.<span class="cm-property">framework</span>}<span class="cm-operator">!&lt;</span><span class="cm-string-2">/h1&gt;;</span>
     }
 }
 </code></pre>
 <p>&#xADF8;&#xB7F0; &#xB2E4;&#xC74C; <code>src</code>&#xC5D0; <code>index.tsx</code>&#xB97C; &#xC0DD;&#xC131;&#xD574; &#xBD05;&#xC2DC;&#xB2E4; :</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> * as React from <span class="hljs-string">&quot;react&quot;</span>;
-<span class="hljs-keyword">import</span> * as ReactDOM from <span class="hljs-string">&quot;react-dom&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">React</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;react&quot;</span>;
+<span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">ReactDOM</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;react-dom&quot;</span>;
 
-<span class="hljs-keyword">import</span> { Hello } from <span class="hljs-string">&quot;./components/Hello&quot;</span>;
+<span class="cm-keyword">import</span> { <span class="cm-variable">Hello</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;./components/Hello&quot;</span>;
 
-ReactDOM.render(
-    &lt;Hello compiler=<span class="hljs-string">&quot;TypeScript&quot;</span> framework=<span class="hljs-string">&quot;React&quot;</span> /&gt;,
-    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;example&quot;</span>)
+<span class="cm-variable">ReactDOM</span>.<span class="cm-property">render</span>(
+    <span class="cm-operator">&lt;</span><span class="cm-variable">Hello</span> <span class="cm-variable">compiler</span><span class="cm-operator">=</span><span class="cm-string">&quot;TypeScript&quot;</span> <span class="cm-variable">framework</span><span class="cm-operator">=</span><span class="cm-string">&quot;React&quot;</span> <span class="cm-operator">/&gt;</span>,
+    <span class="cm-variable">document</span>.<span class="cm-variable">getElementById</span>(<span class="cm-string">&quot;example&quot;</span>)
 );
 </code></pre>
 <p><code>Hello</code> &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB97C; <code>index.tsx</code>&#xB85C; &#xAC00;&#xC838;&#xC654;&#xC2B5;&#xB2C8;&#xB2E4;.<br><code>&quot;react&quot;</code> &#xB610;&#xB294; <code>&quot;react-dom&quot;</code>&#xACFC; &#xB2EC;&#xB9AC; <code>Hello.tsx</code>&#xC5D0; &#xB300;&#xD55C; &#xC0C1;&#xB300; &#xACBD;&#xB85C;&#xB97C; &#xC0AC;&#xC6A9;&#xD588;&#xC74C;&#xC744; &#xC8FC;&#xBAA9;&#xD558;&#xC138;&#xC694; - &#xC774;&#xAC83;&#xC740; &#xC911;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xB2E4;&#xBA74; TypeScript&#xB294; &#xB300;&#xC2E0;<code>node_modules</code> &#xD3F4;&#xB354;&#xB97C; &#xC0B4;&#xD3B4; &#xBCF4;&#xC558;&#xC744; &#xAC81;&#xB2C8;&#xB2E4;.</p>
 <p>&#xB610;&#xD55C; <code>Hello</code> &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB97C; &#xBCF4;&#xC5EC;&#xC904; &#xD398;&#xC774;&#xC9C0;&#xAC00; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xB0B4;&#xC6A9;&#xC744; &#xB2F4;&#xC740; <code>index.html</code>&#xD30C;&#xC77C;&#xC744; <code>proj</code>&#xC758; &#xB8E8;&#xD2B8;&#xC5D0; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span> /&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Hello React!<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<pre><code class="lang-html"><span class="cm-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">html</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">head</span><span class="cm-tagcm-bracket">&gt;</span>
+        <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">meta</span> <span class="cm-attribute">charset</span>=<span class="cm-string">&quot;UTF-8&quot;</span> <span class="cm-tagcm-bracket">/&gt;</span>
+        <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">title</span><span class="cm-tagcm-bracket">&gt;</span>Hello React!<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">title</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">head</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">body</span><span class="cm-tagcm-bracket">&gt;</span>
+        <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">id</span>=<span class="cm-string">&quot;example&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
 
-        <span class="hljs-comment">&lt;!-- Dependencies --&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./node_modules/react/umd/react.development.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./node_modules/react-dom/umd/react-dom.development.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+        <span class="cm-comment">&lt;!-- Dependencies --&gt;</span>
+        <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">script</span> <span class="cm-attribute">src</span>=<span class="cm-string">&quot;./node_modules/react/umd/react.development.js&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">script</span><span class="cm-tagcm-bracket">&gt;</span>
+        <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">script</span> <span class="cm-attribute">src</span>=<span class="cm-string">&quot;./node_modules/react-dom/umd/react-dom.development.js&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">script</span><span class="cm-tagcm-bracket">&gt;</span>
 
-        <span class="hljs-comment">&lt;!-- Main --&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./dist/bundle.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+        <span class="cm-comment">&lt;!-- Main --&gt;</span>
+        <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">script</span> <span class="cm-attribute">src</span>=<span class="cm-string">&quot;./dist/bundle.js&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">script</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">body</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">html</span><span class="cm-tagcm-bracket">&gt;</span>
 </code></pre>
 <p><code>node_modules</code>&#xC5D0;&#xC11C; &#xD30C;&#xC77C;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC788;&#xC74C;&#xC744; &#xC8FC;&#xBAA9;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.<br>React&#xC640; React-DOM&#xC758; npm &#xD328;&#xD0A4;&#xC9C0;&#xC5D0;&#xB294; &#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xC5D0; &#xD3EC;&#xD568;&#xD560; &#xC218; &#xC788;&#xB294; &#xB3C5;&#xB9BD;&#xC801;&#xC778; <code>.js</code> &#xD30C;&#xC77C;&#xC774; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xC73C;&#xBA70;<br>&#xC774;&#xB97C; &#xBE60;&#xB974;&#xAC8C; &#xC704;&#xD574; &#xC9C1;&#xC811; &#xCC38;&#xC870;&#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xC774;&#xB7EC;&#xD55C; &#xD30C;&#xC77C;&#xC744; &#xB2E4;&#xB978; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC5D0; &#xC790;&#xC720;&#xB86D;&#xAC8C; &#xBCF5;&#xC0AC;&#xD558;&#xAC70;&#xB098; CDN&#xC744; &#xD1B5;&#xD574; &#xD638;&#xC2A4;&#xD305;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xD398;&#xC774;&#xC2A4;&#xBD81;&#xC740; React&#xC758; CDN &#xD638;&#xC2A4;&#xD305; &#xBC84;&#xC804;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xBA70; <a href="http://facebook.github.io/react/downloads.html#development-vs.-production-builds" target="_blank">&#xC5EC;&#xAE30;&#xC5D0;&#xC11C;</a> &#xB354; &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h1 id="&#xC6F9;&#xD329;-&#xC124;&#xC815;-&#xD30C;&#xC77C;-&#xB9CC;&#xB4E4;&#xAE30;-create-a-webpack-configuration-file">&#xC6F9;&#xD329; &#xC124;&#xC815; &#xD30C;&#xC77C; &#xB9CC;&#xB4E4;&#xAE30; (Create a webpack configuration file)</h1>
 <p>&#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC758; &#xB8E8;&#xD2B8;&#xC5D0; <code>webpack.config.js</code> &#xD30C;&#xC77C;&#xC744; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = {
-    entry: <span class="hljs-string">&quot;./src/index.tsx&quot;</span>,
-    output: {
-        filename: <span class="hljs-string">&quot;bundle.js&quot;</span>,
-        path: __dirname + <span class="hljs-string">&quot;/dist&quot;</span>
+<pre><code class="lang-js"><span class="cm-keyword">module</span>.<span class="cm-variable">exports</span> <span class="cm-operator">=</span> {
+    <span class="cm-property">entry</span>: <span class="cm-string">&quot;./src/index.tsx&quot;</span>,
+    <span class="cm-property">output</span>: {
+        <span class="cm-property">filename</span>: <span class="cm-string">&quot;bundle.js&quot;</span>,
+        <span class="cm-property">path</span>: <span class="cm-variable">__dirname</span> <span class="cm-operator">+</span> <span class="cm-string">&quot;/dist&quot;</span>
     },
 
-    <span class="hljs-comment">// webpack&#xC758; &#xCD9C;&#xB825;&#xC744; &#xB514;&#xBC84;&#xAE45; &#xD560; &#xC18C;&#xC2A4; &#xB9F5;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</span>
-    devtool: <span class="hljs-string">&quot;source-map&quot;</span>,
+    <span class="cm-comment">// webpack&#xC758; &#xCD9C;&#xB825;&#xC744; &#xB514;&#xBC84;&#xAE45; &#xD560; &#xC18C;&#xC2A4; &#xB9F5;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</span>
+    <span class="cm-property">devtool</span>: <span class="cm-string">&quot;source-map&quot;</span>,
 
-    resolve: {
-        <span class="hljs-comment">// &#xD655;&#xC778; &#xAC00;&#xB2A5;&#xD55C; &#xD655;&#xC7A5;&#xC790;&#xB85C; &apos;.ts&apos; &#xBC0F; &apos;.tsx&apos;&#xB97C; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</span>
-        extensions: [<span class="hljs-string">&quot;.ts&quot;</span>, <span class="hljs-string">&quot;.tsx&quot;</span>, <span class="hljs-string">&quot;.js&quot;</span>, <span class="hljs-string">&quot;.json&quot;</span>]
+    <span class="cm-property">resolve</span>: {
+        <span class="cm-comment">// &#xD655;&#xC778; &#xAC00;&#xB2A5;&#xD55C; &#xD655;&#xC7A5;&#xC790;&#xB85C; &apos;.ts&apos; &#xBC0F; &apos;.tsx&apos;&#xB97C; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</span>
+        <span class="cm-property">extensions</span>: [<span class="cm-string">&quot;.ts&quot;</span>, <span class="cm-string">&quot;.tsx&quot;</span>, <span class="cm-string">&quot;.js&quot;</span>, <span class="cm-string">&quot;.json&quot;</span>]
     },
 
-    <span class="hljs-built_in">module</span>: {
-        rules: [
-            <span class="hljs-comment">// &apos;.ts&apos; &#xB610;&#xB294; &apos;.tsx&apos; &#xD655;&#xC7A5;&#xC790;&#xB97C; &#xAC00;&#xC9C4; &#xBAA8;&#xB4E0; &#xD30C;&#xC77C;&#xC740; &apos;awesome-typescript-loader&apos;&#xC5D0; &#xC758;&#xD574; &#xCC98;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;.</span>
-            { test: <span class="hljs-regexp">/\.tsx?$/</span>, loader: <span class="hljs-string">&quot;awesome-typescript-loader&quot;</span> },
+    <span class="cm-keyword">module</span>: {
+        <span class="cm-variable">rules</span>: [
+            <span class="cm-comment">// &apos;.ts&apos; &#xB610;&#xB294; &apos;.tsx&apos; &#xD655;&#xC7A5;&#xC790;&#xB97C; &#xAC00;&#xC9C4; &#xBAA8;&#xB4E0; &#xD30C;&#xC77C;&#xC740; &apos;awesome-typescript-loader&apos;&#xC5D0; &#xC758;&#xD574; &#xCC98;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;.</span>
+            { <span class="cm-variable">test</span>: <span class="cm-string-2">/\.tsx?$/</span>, <span class="cm-variable">loader</span>: <span class="cm-string">&quot;awesome-typescript-loader&quot;</span> },
 
-            <span class="hljs-comment">// &apos;.js&apos; &#xD30C;&#xC77C;&#xC758; &#xBAA8;&#xB4E0; &#xCD9C;&#xB825;&#xC5D0;&#xB294; &apos;source-maps-loader&apos;&#xB85C; &#xB2E4;&#xC2DC; &#xCC98;&#xB9AC;&#xB41C; &#xC18C;&#xC2A4; &#xB9F5;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
-            { enforce: <span class="hljs-string">&quot;pre&quot;</span>, test: <span class="hljs-regexp">/\.js$/</span>, loader: <span class="hljs-string">&quot;source-map-loader&quot;</span> }
+            <span class="cm-comment">// &apos;.js&apos; &#xD30C;&#xC77C;&#xC758; &#xBAA8;&#xB4E0; &#xCD9C;&#xB825;&#xC5D0;&#xB294; &apos;source-maps-loader&apos;&#xB85C; &#xB2E4;&#xC2DC; &#xCC98;&#xB9AC;&#xB41C; &#xC18C;&#xC2A4; &#xB9F5;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+            { <span class="cm-property">enforce</span>: <span class="cm-string">&quot;pre&quot;</span>, <span class="cm-property">test</span>: <span class="cm-string-2">/\.js$/</span>, <span class="cm-property">loader</span>: <span class="cm-string">&quot;source-map-loader&quot;</span> }
         ]
     },
 
-    <span class="hljs-comment">// &#xACBD;&#xB85C;&#xAC00; &#xB2E4;&#xC74C; &#xC911; &#xD558;&#xB098;&#xC640; &#xC77C;&#xCE58;&#xD558;&#xB294; &#xBAA8;&#xB4C8;&#xC744; &#xC784;&#xD3EC;&#xD2B8; &#xACBD;&#xC6B0;</span>
-    <span class="hljs-comment">// &#xD574;&#xB2F9;&#xD558;&#xB294; &#xAE00;&#xB85C;&#xBC8C; &#xBCC0;&#xC218;&#xAC00; &#xC788;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD558;&#xACE0; &#xB300;&#xC2E0; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;.</span>
-    <span class="hljs-comment">// &#xC774;&#xB294; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xAC00; &#xBE4C;&#xB4DC;&#xC640; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xC0AC;&#xC774;&#xC5D0; &#xCE90;&#xC2DC; &#xD560; &#xC218; &#xC788;&#xAC8C; &#xD574;&#xC8FC;&#xB294;</span>
-    <span class="hljs-comment">// &#xBAA8;&#xB4E0; &#xC885;&#xC18D;&#xC131;&#xC744; &#xBC88;&#xB4E4;&#xB85C; &#xBB36;&#xB294; &#xAC83;&#xC744; &#xD53C;&#xD560; &#xC218; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC911;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</span>
-    externals: {
-        <span class="hljs-string">&quot;react&quot;</span>: <span class="hljs-string">&quot;React&quot;</span>,
-        <span class="hljs-string">&quot;react-dom&quot;</span>: <span class="hljs-string">&quot;ReactDOM&quot;</span>
+    <span class="cm-comment">// &#xACBD;&#xB85C;&#xAC00; &#xB2E4;&#xC74C; &#xC911; &#xD558;&#xB098;&#xC640; &#xC77C;&#xCE58;&#xD558;&#xB294; &#xBAA8;&#xB4C8;&#xC744; &#xC784;&#xD3EC;&#xD2B8; &#xACBD;&#xC6B0;</span>
+    <span class="cm-comment">// &#xD574;&#xB2F9;&#xD558;&#xB294; &#xAE00;&#xB85C;&#xBC8C; &#xBCC0;&#xC218;&#xAC00; &#xC788;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD558;&#xACE0; &#xB300;&#xC2E0; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;.</span>
+    <span class="cm-comment">// &#xC774;&#xB294; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xAC00; &#xBE4C;&#xB4DC;&#xC640; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xC0AC;&#xC774;&#xC5D0; &#xCE90;&#xC2DC; &#xD560; &#xC218; &#xC788;&#xAC8C; &#xD574;&#xC8FC;&#xB294;</span>
+    <span class="cm-comment">// &#xBAA8;&#xB4E0; &#xC885;&#xC18D;&#xC131;&#xC744; &#xBC88;&#xB4E4;&#xB85C; &#xBB36;&#xB294; &#xAC83;&#xC744; &#xD53C;&#xD560; &#xC218; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC911;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</span>
+    <span class="cm-variable">externals</span>: {
+        <span class="cm-string">&quot;react&quot;</span>: <span class="cm-string">&quot;React&quot;</span>,
+        <span class="cm-string">&quot;react-dom&quot;</span>: <span class="cm-string">&quot;ReactDOM&quot;</span>
     },
 };
 </code></pre>
@@ -898,12 +907,13 @@ ReactDOM.render(
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"리액트 & 웹팩","level":"2.5","depth":1,"next":{"title":"기본 타입","level":"3.1","depth":1,"path":"pages/Basic Types.md","ref":"pages/Basic Types.md","articles":[]},"previous":{"title":"JavaScript에서 마이그레이션","level":"2.4","depth":1,"path":"pages/tutorials/Migrating from JavaScript.md","ref":"pages/tutorials/Migrating from JavaScript.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tutorials/React & Webpack.md","mtime":"2018-02-11T15:23:37.723Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T14:21:41.019Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"리액트 & 웹팩","level":"2.5","depth":1,"next":{"title":"기본 타입","level":"3.1","depth":1,"path":"pages/Basic Types.md","ref":"pages/Basic Types.md","articles":[]},"previous":{"title":"JavaScript에서 마이그레이션","level":"2.4","depth":1,"path":"pages/tutorials/Migrating from JavaScript.md","ref":"pages/tutorials/Migrating from JavaScript.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tutorials/React & Webpack.md","mtime":"2018-02-15T11:46:40.502Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:22:50.132Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
     
@@ -930,6 +940,8 @@ ReactDOM.render(
         
         <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
+    
+
     
 
     </body>

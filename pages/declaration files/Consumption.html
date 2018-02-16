@@ -12,9 +12,14 @@
         
         
     
+    
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight-1/website.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
@@ -44,6 +49,10 @@
         
     
         
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../../assets/css/atom-one-dark.css" />
     
 
         
@@ -707,11 +716,11 @@ This page details exactly how to do all three.</p>
 <p>From there you&#x2019;ll be able to use lodash in your TypeScript code with no fuss.
 This works for both modules and global code.</p>
 <p>For example, once you&#x2019;ve <code>npm install</code>-ed your type declarations, you can use imports and write</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> * as _ from <span class="hljs-string">&quot;lodash&quot;</span>;
-_.padStart(<span class="hljs-string">&quot;Hello TypeScript!&quot;</span>, <span class="hljs-number">20</span>, <span class="hljs-string">&quot; &quot;</span>);
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">_</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;lodash&quot;</span>;
+<span class="cm-variable">_</span>.<span class="cm-property">padStart</span>(<span class="cm-string">&quot;Hello TypeScript!&quot;</span>, <span class="cm-number">20</span>, <span class="cm-string">&quot; &quot;</span>);
 </code></pre>
 <p>or if you&#x2019;re not using modules, you can just use the global variable <code>_</code>.</p>
-<pre><code class="lang-ts">_.padStart(<span class="hljs-string">&quot;Hello TypeScript!&quot;</span>, <span class="hljs-number">20</span>, <span class="hljs-string">&quot; &quot;</span>);
+<pre><code class="lang-ts"><span class="cm-variable">_</span>.<span class="cm-property">padStart</span>(<span class="cm-string">&quot;Hello TypeScript!&quot;</span>, <span class="cm-number">20</span>, <span class="cm-string">&quot; &quot;</span>);
 </code></pre>
 <h1 id="searching">Searching</h1>
 <p>For the most part, type declaration packages should always have the same name as the package name on <code>npm</code>, but prefixed with <code>@types/</code>,
@@ -763,12 +772,13 @@ Please see the DefinitelyTyped <a href="http://definitelytyped.org/guides/contri
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Consumption","level":"4.8","depth":1,"next":{"title":"tsconfig.json","level":"5.1","depth":1,"path":"pages/tsconfig.json.md","ref":"pages/tsconfig.json.md","articles":[]},"previous":{"title":"Publishing","level":"4.7","depth":1,"path":"pages/declaration files/Publishing.md","ref":"pages/declaration files/Publishing.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/declaration files/Consumption.md","mtime":"2018-02-08T11:52:59.025Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T14:21:41.019Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Consumption","level":"4.8","depth":1,"next":{"title":"tsconfig.json","level":"5.1","depth":1,"path":"pages/tsconfig.json.md","ref":"pages/tsconfig.json.md","articles":[]},"previous":{"title":"Publishing","level":"4.7","depth":1,"path":"pages/declaration files/Publishing.md","ref":"pages/declaration files/Publishing.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/declaration files/Consumption.md","mtime":"2018-02-05T16:16:48.204Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:22:50.132Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
     
@@ -795,6 +805,8 @@ Please see the DefinitelyTyped <a href="http://definitelytyped.org/guides/contri
         
         <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
+    
+
     
 
     </body>

@@ -12,9 +12,14 @@
         
         
     
+    
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight-1/website.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
@@ -44,6 +49,10 @@
         
     
         
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/atom-one-dark.css" />
     
 
         
@@ -743,19 +752,19 @@ The impact here is similar to passing <code>--noLib</code> on the command line.<
 This can lead to problems when other tools are used to process the resulting modules, such as bundlers (e.g. <code>r.js</code>).</p>
 <p>The <code>amd-module</code> directive allows passing an optional module name to the compiler:</p>
 <h5 id="amdmodulets">amdModule.ts</h5>
-<pre><code class="lang-ts"><span class="hljs-comment">///&lt;amd-module name=&quot;NamedModule&quot;/&gt;</span>
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> C {
+<pre><code class="lang-ts"><span class="cm-comment">///&lt;amd-module name=&quot;NamedModule&quot;/&gt;</span>
+<span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">C</span> {
 }
 </code></pre>
 <p>Will result in assigning the name <code>NamedModule</code> to the module as part of calling the AMD <code>define</code>:</p>
 <h5 id="amdmodulejs">amdModule.js</h5>
-<pre><code class="lang-js">define(<span class="hljs-string">&quot;NamedModule&quot;</span>, [<span class="hljs-string">&quot;require&quot;</span>, <span class="hljs-string">&quot;exports&quot;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">require, exports</span>) </span>{
-    <span class="hljs-keyword">var</span> C = (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">C</span>(<span class="hljs-params"></span>) </span>{
+<pre><code class="lang-js"><span class="cm-variable">define</span>(<span class="cm-string">&quot;NamedModule&quot;</span>, [<span class="cm-string">&quot;require&quot;</span>, <span class="cm-string">&quot;exports&quot;</span>], <span class="cm-keyword">function</span> (<span class="cm-def">require</span>, <span class="cm-def">exports</span>) {
+    <span class="cm-keyword">var</span> <span class="cm-def">C</span> <span class="cm-operator">=</span> (<span class="cm-keyword">function</span> () {
+        <span class="cm-keyword">function</span> <span class="cm-def">C</span>() {
         }
-        <span class="hljs-keyword">return</span> C;
+        <span class="cm-keyword">return</span> <span class="cm-variable-2">C</span>;
     })();
-    exports.C = C;
+    <span class="cm-variable-2">exports</span>.<span class="cm-property">C</span> <span class="cm-operator">=</span> <span class="cm-variable-2">C</span>;
 });
 </code></pre>
 <h2 id="amd-dependency-"><code>/// &lt;amd-dependency /&gt;</code></h2>
@@ -764,13 +773,13 @@ This can lead to problems when other tools are used to process the resulting mod
 </blockquote>
 <p><code>/// &lt;amd-dependency path=&quot;x&quot; /&gt;</code> informs the compiler about a non-TS module dependency that needs to be injected in the resulting module&apos;s require call.</p>
 <p>The <code>amd-dependency</code> directive can also have an optional <code>name</code> property; this allows passing an optional name for an amd-dependency:</p>
-<pre><code class="lang-ts"><span class="hljs-comment">/// &lt;amd-dependency path=&quot;legacy/moduleA&quot; name=&quot;moduleA&quot;/&gt;</span>
-<span class="hljs-keyword">declare</span> <span class="hljs-keyword">var</span> moduleA:MyType
-moduleA.callStuff()
+<pre><code class="lang-ts"><span class="cm-comment">/// &lt;amd-dependency path=&quot;legacy/moduleA&quot; name=&quot;moduleA&quot;/&gt;</span>
+<span class="cm-variable">declare</span> <span class="cm-keyword">var</span> <span class="cm-variable">moduleA</span>:<span class="cm-variable-3">MyType</span>
+<span class="cm-variable">moduleA</span>.<span class="cm-property">callStuff</span>()
 </code></pre>
 <p>Generated JS code:</p>
-<pre><code class="lang-js">define([<span class="hljs-string">&quot;require&quot;</span>, <span class="hljs-string">&quot;exports&quot;</span>, <span class="hljs-string">&quot;legacy/moduleA&quot;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">require, exports, moduleA</span>) </span>{
-    moduleA.callStuff()
+<pre><code class="lang-js"><span class="cm-variable">define</span>([<span class="cm-string">&quot;require&quot;</span>, <span class="cm-string">&quot;exports&quot;</span>, <span class="cm-string">&quot;legacy/moduleA&quot;</span>], <span class="cm-keyword">function</span> (<span class="cm-def">require</span>, <span class="cm-def">exports</span>, <span class="cm-def">moduleA</span>) {
+    <span class="cm-variable-2">moduleA</span>.<span class="cm-property">callStuff</span>()
 });
 </code></pre>
 
@@ -816,12 +825,13 @@ moduleA.callStuff()
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Triple-Slash Directives","level":"3.21","depth":1,"next":{"title":"Type Checking JavaScript Files","level":"3.22","depth":1,"path":"pages/Type Checking JavaScript Files.md","ref":"pages/Type Checking JavaScript Files.md","articles":[]},"previous":{"title":"Mixins","level":"3.20","depth":1,"path":"pages/Mixins.md","ref":"pages/Mixins.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Triple-Slash Directives.md","mtime":"2018-02-06T13:12:52.658Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T14:21:41.019Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Triple-Slash Directives","level":"3.21","depth":1,"next":{"title":"Type Checking JavaScript Files","level":"3.22","depth":1,"path":"pages/Type Checking JavaScript Files.md","ref":"pages/Type Checking JavaScript Files.md","articles":[]},"previous":{"title":"Mixins","level":"3.20","depth":1,"path":"pages/Mixins.md","ref":"pages/Mixins.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Triple-Slash Directives.md","mtime":"2018-02-05T16:09:39.250Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:22:50.132Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
     
@@ -848,6 +858,8 @@ moduleA.callStuff()
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
+    
+
     
 
     </body>

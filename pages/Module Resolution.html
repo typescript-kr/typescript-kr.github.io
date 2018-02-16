@@ -12,9 +12,14 @@
         
         
     
+    
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight-1/website.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
@@ -44,6 +49,10 @@
         
     
         
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/atom-one-dark.css" />
     
 
         
@@ -871,10 +880,10 @@ Loaders use a mapping configuration to map module names to files at run-time, se
 <p>The TypeScript compiler supports the declaration of such mappings using <code>&quot;paths&quot;</code> property in <code>tsconfig.json</code> files.
 Here is an example for how to specify the <code>&quot;paths&quot;</code> property for <code>jquery</code>.</p>
 <pre><code class="lang-json">{
-  <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
-    <span class="hljs-string">&quot;baseUrl&quot;</span>: <span class="hljs-string">&quot;.&quot;</span>, <span class="hljs-comment">// This must be specified if &quot;paths&quot; is.</span>
-    <span class="hljs-string">&quot;paths&quot;</span>: {
-      <span class="hljs-string">&quot;jquery&quot;</span>: [<span class="hljs-string">&quot;node_modules/jquery/dist/jquery&quot;</span>] <span class="hljs-comment">// This mapping is relative to &quot;baseUrl&quot;</span>
+  <span class="cm-property">&quot;compilerOptions&quot;</span>: {
+    <span class="cm-property">&quot;baseUrl&quot;</span>: <span class="cm-string">&quot;.&quot;</span>, <span class="cm-comment">// This must be specified if &quot;paths&quot; is.</span>
+    <span class="cm-property">&quot;paths&quot;</span>: {
+      <span class="cm-property">&quot;jquery&quot;</span>: [<span class="cm-string">&quot;node_modules/jquery/dist/jquery&quot;</span>] <span class="cm-comment">// This mapping is relative to &quot;baseUrl&quot;</span>
     }
   }
 }
@@ -898,12 +907,12 @@ The project layout may look like:</p>
 </code></pre>
 <p>The corresponding <code>tsconfig.json</code> would look like:</p>
 <pre><code class="lang-json">{
-  <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
-    <span class="hljs-string">&quot;baseUrl&quot;</span>: <span class="hljs-string">&quot;.&quot;</span>,
-    <span class="hljs-string">&quot;paths&quot;</span>: {
-      <span class="hljs-string">&quot;*&quot;</span>: [
-        <span class="hljs-string">&quot;*&quot;</span>,
-        <span class="hljs-string">&quot;generated/*&quot;</span>
+  <span class="cm-property">&quot;compilerOptions&quot;</span>: {
+    <span class="cm-property">&quot;baseUrl&quot;</span>: <span class="cm-string">&quot;.&quot;</span>,
+    <span class="cm-property">&quot;paths&quot;</span>: {
+      <span class="cm-property">&quot;*&quot;</span>: [
+        <span class="cm-string">&quot;*&quot;</span>,
+        <span class="cm-string">&quot;generated/*&quot;</span>
       ]
     }
   }
@@ -958,10 +967,10 @@ At run-time, a view can expect its template to exist next to it, and thus should
 <code>&quot;rootDirs&quot;</code> specify a list of <em>roots</em> whose contents are expected to merge at run-time.
 So following our example, the <code>tsconfig.json</code> file should look like:</p>
 <pre><code class="lang-json">{
-  <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
-    <span class="hljs-string">&quot;rootDirs&quot;</span>: [
-      <span class="hljs-string">&quot;src/views&quot;</span>,
-      <span class="hljs-string">&quot;generated/templates/views&quot;</span>
+  <span class="cm-property">&quot;compilerOptions&quot;</span>: {
+    <span class="cm-property">&quot;rootDirs&quot;</span>: [
+      <span class="cm-string">&quot;src/views&quot;</span>,
+      <span class="cm-string">&quot;generated/templates/views&quot;</span>
     ]
   }
 }
@@ -970,18 +979,18 @@ So following our example, the <code>tsconfig.json</code> file should look like:<
 <p>The flexibility of <code>rootDirs</code> is not limited to specifying a list of physical source directories that are logically merged. The supplied array may include any number of ad hoc, arbitrary directory names, regardless of whether they exist or not. This allows the compiler to capture sophisticated bundling and runtime features such as conditional inclusion and project specific loader plugins in a type safe way.</p>
 <p>Consider an internationalization scenario where a build tool automatically generates locale specific bundles by interpolating a special path token, say <code>#{locale}</code>, as part of a relative module path such as <code>./#{locale}/messages</code>. In this hypothetical setup the tool enumerates supported locales, mapping the abstracted path into <code>./zh/messages</code>, <code>./de/messages</code>, and so forth.</p>
 <p>Assume that each of these modules exports an array of strings. For example <code>./zh/messages</code> might contain:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> [
-    <span class="hljs-string">&quot;&#x60A8;&#x597D;&#x5417;&quot;</span>,
-    <span class="hljs-string">&quot;&#x5F88;&#x9AD8;&#x5174;&#x8BA4;&#x8BC6;&#x4F60;&quot;</span>
+<pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">default</span> [
+    <span class="cm-string">&quot;&#x60A8;&#x597D;&#x5417;&quot;</span>,
+    <span class="cm-string">&quot;&#x5F88;&#x9AD8;&#x5174;&#x8BA4;&#x8BC6;&#x4F60;&quot;</span>
 ];
 </code></pre>
 <p>By leveraging <code>rootDirs</code> we can inform the compiler of this mapping and thereby allow it to safely resolve <code>./#{locale}/messages</code>, even though the directory will never exist. For example, with the following <code>tsconfig.json</code>:</p>
 <pre><code class="lang-json">{
-  <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
-    <span class="hljs-string">&quot;rootDirs&quot;</span>: [
-      <span class="hljs-string">&quot;src/zh&quot;</span>,
-      <span class="hljs-string">&quot;src/de&quot;</span>,
-      <span class="hljs-string">&quot;src/#{locale}&quot;</span>
+  <span class="cm-property">&quot;compilerOptions&quot;</span>: {
+    <span class="cm-property">&quot;rootDirs&quot;</span>: [
+      <span class="cm-string">&quot;src/zh&quot;</span>,
+      <span class="cm-string">&quot;src/de&quot;</span>,
+      <span class="cm-string">&quot;src/#{locale}&quot;</span>
     ]
   }
 }
@@ -1050,8 +1059,8 @@ Every time it successfully resolves an <code>import</code> to a file, the file i
 It will still try to resolve the module to files, but if the file is not specified, it will not be included.</p>
 <p>For instance:</p>
 <h4 id="appts">app.ts</h4>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> * as A from <span class="hljs-string">&quot;moduleA&quot;</span> <span class="hljs-comment">// OK, &apos;moduleA&apos; passed on the command-line</span>
-<span class="hljs-keyword">import</span> * as B from <span class="hljs-string">&quot;moduleB&quot;</span> <span class="hljs-comment">// Error TS2307: Cannot find module &apos;moduleB&apos;.</span>
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">A</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;moduleA&quot;</span> <span class="cm-comment">// OK, &apos;moduleA&apos; passed on the command-line</span>
+<span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">B</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;moduleB&quot;</span> <span class="cm-comment">// Error TS2307: Cannot find module &apos;moduleB&apos;.</span>
 </code></pre>
 <pre><code class="lang-shell">tsc app.ts moduleA.ts --noResolve
 </code></pre>
@@ -1112,12 +1121,13 @@ If the compiler identified a file as a target of a module import, it will be inc
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Module Resolution","level":"3.16","depth":1,"next":{"title":"Declaration Merging","level":"3.17","depth":1,"path":"pages/Declaration Merging.md","ref":"pages/Declaration Merging.md","articles":[]},"previous":{"title":"Namespaces and Modules","level":"3.15","depth":1,"path":"pages/Namespaces and Modules.md","ref":"pages/Namespaces and Modules.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Module Resolution.md","mtime":"2018-02-06T13:12:52.653Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T14:21:41.019Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Module Resolution","level":"3.16","depth":1,"next":{"title":"Declaration Merging","level":"3.17","depth":1,"path":"pages/Declaration Merging.md","ref":"pages/Declaration Merging.md","articles":[]},"previous":{"title":"Namespaces and Modules","level":"3.15","depth":1,"path":"pages/Namespaces and Modules.md","ref":"pages/Namespaces and Modules.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Module Resolution.md","mtime":"2018-02-05T16:09:39.244Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:22:50.132Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
     
@@ -1144,6 +1154,8 @@ If the compiler identified a file as a target of a module import, it will be inc
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
+    
+
     
 
     </body>

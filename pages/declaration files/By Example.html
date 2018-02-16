@@ -12,9 +12,14 @@
         
         
     
+    
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight-1/website.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
@@ -44,6 +49,10 @@
         
     
         
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../../assets/css/atom-one-dark.css" />
     
 
         
@@ -717,14 +726,14 @@ This guide is structured by showing documentation for some API, along with sampl
 <p>The global variable <code>foo</code> contains the number of widgets present.</p>
 </blockquote>
 <p><em>Code</em></p>
-<pre><code class="lang-ts"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Half the number of widgets is &quot;</span> + (foo / <span class="hljs-number">2</span>));
+<pre><code class="lang-ts"><span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">&quot;Half the number of widgets is &quot;</span> <span class="cm-operator">+</span> (<span class="cm-variable">foo</span> <span class="cm-operator">/</span> <span class="cm-number">2</span>));
 </code></pre>
 <p><em>Declaration</em></p>
 <p>Use <code>declare var</code> to declare variables.
 If the variable is read-only, you can use <code>declare const</code>.
 You can also use <code>declare let</code> if the variable is block-scoped.</p>
-<pre><code class="lang-ts"><span class="hljs-comment">/** The number of widgets present */</span>
-<span class="hljs-keyword">declare</span> <span class="hljs-keyword">var</span> foo: <span class="hljs-built_in">number</span>;
+<pre><code class="lang-ts"><span class="cm-comment">/** The number of widgets present */</span>
+<span class="cm-variable">declare</span> <span class="cm-keyword">var</span> <span class="cm-variable">foo</span>: <span class="cm-variable-3">number</span>;
 </code></pre>
 <h2 id="global-functions">Global Functions</h2>
 <p><em>Documentation</em></p>
@@ -732,11 +741,11 @@ You can also use <code>declare let</code> if the variable is block-scoped.</p>
 <p>You can call the function <code>greet</code> with a string to show a greeting to the user.</p>
 </blockquote>
 <p><em>Code</em></p>
-<pre><code class="lang-ts">greet(<span class="hljs-string">&quot;hello, world&quot;</span>);
+<pre><code class="lang-ts"><span class="cm-variable">greet</span>(<span class="cm-string">&quot;hello, world&quot;</span>);
 </code></pre>
 <p><em>Declaration</em></p>
 <p>Use <code>declare function</code> to declare functions.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greet</span>(<span class="hljs-params">greeting: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">void</span></span>;
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">greet</span>(<span class="cm-def">greeting</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable">void</span>;
 </code></pre>
 <h2 id="objects-with-properties">Objects with Properties</h2>
 <p><em>Documentation</em></p>
@@ -745,29 +754,29 @@ You can also use <code>declare let</code> if the variable is block-scoped.</p>
 and a property <code>numberOfGreetings</code> indicating the number of greetings made so far.</p>
 </blockquote>
 <p><em>Code</em></p>
-<pre><code class="lang-ts"><span class="hljs-keyword">let</span> result = myLib.makeGreeting(<span class="hljs-string">&quot;hello, world&quot;</span>);
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;The computed greeting is:&quot;</span> + result);
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">result</span> <span class="cm-operator">=</span> <span class="cm-variable">myLib</span>.<span class="cm-property">makeGreeting</span>(<span class="cm-string">&quot;hello, world&quot;</span>);
+<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">&quot;The computed greeting is:&quot;</span> <span class="cm-operator">+</span> <span class="cm-variable">result</span>);
 
-<span class="hljs-keyword">let</span> count = myLib.numberOfGreetings;
+<span class="cm-keyword">let</span> <span class="cm-variable">count</span> <span class="cm-operator">=</span> <span class="cm-variable">myLib</span>.<span class="cm-property">numberOfGreetings</span>;
 </code></pre>
 <p><em>Declaration</em></p>
 <p>Use <code>declare namespace</code> to describe types or values accessed by dotted notation.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">namespace</span> myLib {
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeGreeting</span>(<span class="hljs-params">s: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">string</span></span>;
-    <span class="hljs-keyword">let</span> numberOfGreetings: <span class="hljs-built_in">number</span>;
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-variable">namespace</span> <span class="cm-variable">myLib</span> {
+    <span class="cm-keyword">function</span> <span class="cm-variable">makeGreeting</span>(<span class="cm-def">s</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable-3">string</span>;
+    <span class="cm-keyword">let</span> <span class="cm-variable">numberOfGreetings</span>: <span class="cm-variable-3">number</span>;
 }
 </code></pre>
 <h2 id="overloaded-functions">Overloaded Functions</h2>
 <p><em>Documentation</em></p>
 <p>The <code>getWidget</code> function accepts a number and returns a Widget, or accepts a string and returns a Widget array.</p>
 <p><em>Code</em></p>
-<pre><code class="lang-ts"><span class="hljs-keyword">let</span> x: Widget = getWidget(<span class="hljs-number">43</span>);
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">x</span>: <span class="cm-variable-3">Widget</span> <span class="cm-operator">=</span> <span class="cm-variable">getWidget</span>(<span class="cm-number">43</span>);
 
-<span class="hljs-keyword">let</span> arr: Widget[] = getWidget(<span class="hljs-string">&quot;all of them&quot;</span>);
+<span class="cm-keyword">let</span> <span class="cm-variable">arr</span>: <span class="cm-variable-3">Widget</span>[] <span class="cm-operator">=</span> <span class="cm-variable">getWidget</span>(<span class="cm-string">&quot;all of them&quot;</span>);
 </code></pre>
 <p><em>Declaration</em></p>
-<pre><code class="lang-ts">declare function getWidget(n: number): Widget;
-declare function getWidget(s: string): Widget[];
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">getWidget</span>(<span class="cm-def">n</span>: <span class="cm-variable-3">number</span>): <span class="cm-variable">Widget</span>;
+<span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">getWidget</span>(<span class="cm-def">s</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable">Widget</span>[];
 </code></pre>
 <h2 id="reusable-types-interfaces">Reusable Types (Interfaces)</h2>
 <p><em>Documentation</em></p>
@@ -779,20 +788,20 @@ This object has the following properties:</p>
 <p>3 - color: Optional string, e.g. &apos;#ff00ff&apos;</p>
 </blockquote>
 <p><em>Code</em></p>
-<pre><code class="lang-ts">greet({
-  greeting: <span class="hljs-string">&quot;hello world&quot;</span>,
-  duration: <span class="hljs-number">4000</span>
+<pre><code class="lang-ts"><span class="cm-variable">greet</span>({
+  <span class="cm-property">greeting</span>: <span class="cm-string">&quot;hello world&quot;</span>,
+  <span class="cm-property">duration</span>: <span class="cm-number">4000</span>
 });
 </code></pre>
 <p><em>Declaration</em></p>
 <p>Use an <code>interface</code> to define a type with properties.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> GreetingSettings {
-  greeting: <span class="hljs-built_in">string</span>;
-  duration?: <span class="hljs-built_in">number</span>;
-  color?: <span class="hljs-built_in">string</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">GreetingSettings</span> {
+  <span class="cm-variable">greeting</span>: <span class="cm-variable-3">string</span>;
+  <span class="cm-variable">duration</span><span class="cm-operator">?</span>: <span class="cm-variable-3">number</span>;
+  <span class="cm-variable">color</span><span class="cm-operator">?</span>: <span class="cm-variable-3">string</span>;
 }
 
-<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greet</span>(<span class="hljs-params">setting: GreetingSettings</span>): <span class="hljs-title">void</span></span>;
+<span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">greet</span>(<span class="cm-def">setting</span>: <span class="cm-variable-3">GreetingSettings</span>): <span class="cm-variable">void</span>;
 </code></pre>
 <h2 id="reusable-types-type-aliases">Reusable Types (Type Aliases)</h2>
 <p><em>Documentation</em></p>
@@ -800,20 +809,20 @@ This object has the following properties:</p>
 <p>Anywhere a greeting is expected, you can provide a <code>string</code>, a function returning a <code>string</code>, or a <code>Greeter</code> instance.</p>
 </blockquote>
 <p><em>Code</em></p>
-<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getGreeting</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;howdy&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">getGreeting</span>() {
+    <span class="cm-keyword">return</span> <span class="cm-string">&quot;howdy&quot;</span>;
 }
-<span class="hljs-keyword">class</span> MyGreeter extends Greeter { }
+<span class="cm-keyword">class</span> <span class="cm-variable">MyGreeter</span> <span class="cm-keyword">extends</span> <span class="cm-variable">Greeter</span> { }
 
-greet(<span class="hljs-string">&quot;hello&quot;</span>);
-greet(getGreeting);
-greet(<span class="hljs-keyword">new</span> MyGreeter());
+<span class="cm-variable">greet</span>(<span class="cm-string">&quot;hello&quot;</span>);
+<span class="cm-variable">greet</span>(<span class="cm-variable">getGreeting</span>);
+<span class="cm-variable">greet</span>(<span class="cm-keyword">new</span> <span class="cm-variable">MyGreeter</span>());
 </code></pre>
 <p><em>Declaration</em></p>
 <p>You can use a type alias to make a shorthand for a type:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">type</span> GreetingLike = <span class="hljs-built_in">string</span> | (() =&gt; <span class="hljs-built_in">string</span>) | MyGreeter;
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">GreetingLike</span> <span class="cm-operator">=</span> <span class="cm-variable-3">string</span> <span class="cm-operator">|</span> (() <span class="cm-operator">=&gt;</span> <span class="cm-variable-3">string</span>) <span class="cm-operator">|</span> <span class="cm-variable">MyGreeter</span>;
 
-<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greet</span>(<span class="hljs-params">g: GreetingLike</span>): <span class="hljs-title">void</span></span>;
+<span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">greet</span>(<span class="cm-def">g</span>: <span class="cm-variable-3">GreetingLike</span>): <span class="cm-variable">void</span>;
 </code></pre>
 <h2 id="organizing-types">Organizing Types</h2>
 <p><em>Documentation</em></p>
@@ -822,33 +831,33 @@ greet(<span class="hljs-keyword">new</span> MyGreeter());
 You can provide LogOptions to <code>.log(...)</code> and alert options to <code>.alert(...)</code></p>
 </blockquote>
 <p><em>Code</em></p>
-<pre><code class="lang-ts"><span class="hljs-keyword">const</span> g = <span class="hljs-keyword">new</span> Greeter(<span class="hljs-string">&quot;Hello&quot;</span>);
-g.log({ verbose: <span class="hljs-literal">true</span> });
-g.alert({ modal: <span class="hljs-literal">false</span>, title: <span class="hljs-string">&quot;Current Greeting&quot;</span> });
+<pre><code class="lang-ts"><span class="cm-keyword">const</span> <span class="cm-variable">g</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Greeter</span>(<span class="cm-string">&quot;Hello&quot;</span>);
+<span class="cm-variable">g</span>.<span class="cm-property">log</span>({ <span class="cm-property">verbose</span>: <span class="cm-atom">true</span> });
+<span class="cm-variable">g</span>.<span class="cm-property">alert</span>({ <span class="cm-property">modal</span>: <span class="cm-atom">false</span>, <span class="cm-property">title</span>: <span class="cm-string">&quot;Current Greeting&quot;</span> });
 </code></pre>
 <p><em>Declaration</em></p>
 <p>Use namespaces to organize types.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">namespace</span> GreetingLib {
-    <span class="hljs-keyword">interface</span> LogOptions {
-        verbose?: <span class="hljs-built_in">boolean</span>;
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-variable">namespace</span> <span class="cm-variable">GreetingLib</span> {
+    <span class="cm-keyword">interface</span> <span class="cm-variable">LogOptions</span> {
+        <span class="cm-variable">verbose</span><span class="cm-operator">?</span>: <span class="cm-variable">boolean</span>;
     }
-    <span class="hljs-keyword">interface</span> AlertOptions {
-        modal: <span class="hljs-built_in">boolean</span>;
-        title?: <span class="hljs-built_in">string</span>;
-        color?: <span class="hljs-built_in">string</span>;
+    <span class="cm-keyword">interface</span> <span class="cm-variable">AlertOptions</span> {
+        <span class="cm-variable">modal</span>: <span class="cm-variable">boolean</span>;
+        <span class="cm-variable">title</span><span class="cm-operator">?</span>: <span class="cm-variable-3">string</span>;
+        <span class="cm-variable">color</span><span class="cm-operator">?</span>: <span class="cm-variable-3">string</span>;
     }
 }
 </code></pre>
 <p>You can also create nested namespaces in one declaration:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">namespace</span> GreetingLib.Options {
-    <span class="hljs-comment">// Refer to via GreetingLib.Options.Log</span>
-    <span class="hljs-keyword">interface</span> Log {
-        verbose?: <span class="hljs-built_in">boolean</span>;
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-variable">namespace</span> <span class="cm-variable">GreetingLib</span>.<span class="cm-property">Options</span> {
+    <span class="cm-comment">// Refer to via GreetingLib.Options.Log</span>
+    <span class="cm-keyword">interface</span> <span class="cm-variable">Log</span> {
+        <span class="cm-variable">verbose</span><span class="cm-operator">?</span>: <span class="cm-variable">boolean</span>;
     }
-    <span class="hljs-keyword">interface</span> Alert {
-        modal: <span class="hljs-built_in">boolean</span>;
-        title?: <span class="hljs-built_in">string</span>;
-        color?: <span class="hljs-built_in">string</span>;
+    <span class="cm-keyword">interface</span> <span class="cm-variable">Alert</span> {
+        <span class="cm-variable">modal</span>: <span class="cm-variable">boolean</span>;
+        <span class="cm-variable">title</span><span class="cm-operator">?</span>: <span class="cm-variable-3">string</span>;
+        <span class="cm-variable">color</span><span class="cm-operator">?</span>: <span class="cm-variable-3">string</span>;
     }
 }
 </code></pre>
@@ -858,24 +867,24 @@ g.alert({ modal: <span class="hljs-literal">false</span>, title: <span class="hl
 <p>You can create a greeter by instantiating the <code>Greeter</code> object, or create a customized greeter by extending from it.</p>
 </blockquote>
 <p><em>Code</em></p>
-<pre><code class="lang-ts"><span class="hljs-keyword">const</span> myGreeter = <span class="hljs-keyword">new</span> Greeter(<span class="hljs-string">&quot;hello, world&quot;</span>);
-myGreeter.greeting = <span class="hljs-string">&quot;howdy&quot;</span>;
-myGreeter.showGreeting();
+<pre><code class="lang-ts"><span class="cm-keyword">const</span> <span class="cm-variable">myGreeter</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Greeter</span>(<span class="cm-string">&quot;hello, world&quot;</span>);
+<span class="cm-variable">myGreeter</span>.<span class="cm-property">greeting</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;howdy&quot;</span>;
+<span class="cm-variable">myGreeter</span>.<span class="cm-property">showGreeting</span>();
 
-<span class="hljs-keyword">class</span> SpecialGreeter extends Greeter {
-    <span class="hljs-keyword">constructor</span>() {
-        <span class="hljs-keyword">super</span>(<span class="hljs-string">&quot;Very special greetings&quot;</span>);
+<span class="cm-keyword">class</span> <span class="cm-variable">SpecialGreeter</span> <span class="cm-keyword">extends</span> <span class="cm-variable">Greeter</span> {
+    <span class="cm-keyword">constructor</span>() {
+        <span class="cm-keyword">super</span>(<span class="cm-string">&quot;Very special greetings&quot;</span>);
     }
 }
 </code></pre>
 <p><em>Declaration</em></p>
 <p>Use <code>declare class</code> to describe a class or class-like object.
 Classes can have properties and methods as well as a constructor.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">class</span> Greeter {
-    <span class="hljs-keyword">constructor</span>(greeting: string);
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">class</span> <span class="cm-variable">Greeter</span> {
+    <span class="cm-keyword">constructor</span>(<span class="cm-variable">greeting</span>: <span class="cm-variable-3">string</span>);
 
-    greeting: string;
-    showGreeting(): void;
+    <span class="cm-variable">greeting</span>: <span class="cm-variable-3">string</span>;
+    <span class="cm-variable">showGreeting</span>(): <span class="cm-variable">void</span>;
 }
 </code></pre>
 <!-- Template
@@ -941,12 +950,13 @@ Classes can have properties and methods as well as a constructor.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"By Example","level":"4.3","depth":1,"next":{"title":"Do's and Don'ts","level":"4.4","depth":1,"path":"pages/declaration files/Do's and Don'ts.md","ref":"pages/declaration files/Do's and Don'ts.md","articles":[]},"previous":{"title":"Library Structures","level":"4.2","depth":1,"path":"pages/declaration files/Library Structures.md","ref":"pages/declaration files/Library Structures.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/declaration files/By Example.md","mtime":"2018-02-08T11:52:59.027Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T14:21:41.019Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"By Example","level":"4.3","depth":1,"next":{"title":"Do's and Don'ts","level":"4.4","depth":1,"path":"pages/declaration files/Do's and Don'ts.md","ref":"pages/declaration files/Do's and Don'ts.md","articles":[]},"previous":{"title":"Library Structures","level":"4.2","depth":1,"path":"pages/declaration files/Library Structures.md","ref":"pages/declaration files/Library Structures.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/declaration files/By Example.md","mtime":"2018-02-05T16:16:48.205Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:22:50.132Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
     
@@ -973,6 +983,8 @@ Classes can have properties and methods as well as a constructor.</p>
         
         <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
+    
+
     
 
     </body>

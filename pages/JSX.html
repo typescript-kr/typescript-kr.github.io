@@ -12,9 +12,14 @@
         
         
     
+    
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight-1/website.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
@@ -44,6 +49,10 @@
         
     
         
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/atom-one-dark.css" />
     
 
         
@@ -748,13 +757,13 @@ The <code>react-native</code> mode is the equivalent of <code>preserve</code> in
 </blockquote>
 <h1 id="the-as-operator">The <code>as</code> operator</h1>
 <p>Recall how to write a type assertion:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">var</span> foo = &lt;foo&gt;bar;
+<pre><code class="lang-ts"><span class="cm-keyword">var</span> <span class="cm-variable">foo</span> <span class="cm-operator">=</span> <span class="cm-operator">&lt;</span><span class="cm-variable">foo</span><span class="cm-operator">&gt;</span><span class="cm-variable">bar</span>;
 </code></pre>
 <p>Here we are asserting the variable <code>bar</code> to have the type <code>foo</code>.
 Since TypeScript also uses angle brackets for type assertions, JSX&apos;s syntax introduces certain parsing difficulties. As a result, TypeScript disallows angle bracket type assertions in <code>.tsx</code> files.</p>
 <p>To make up for this loss of functionality in <code>.tsx</code> files, a new type assertion operator has been added: <code>as</code>.
 The above example can easily be rewritten with the <code>as</code> operator.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">var</span> foo = bar as foo;
+<pre><code class="lang-ts"><span class="cm-keyword">var</span> <span class="cm-variable">foo</span> <span class="cm-operator">=</span> <span class="cm-variable">bar</span> <span class="cm-variable">as</span> <span class="cm-variable">foo</span>;
 </code></pre>
 <p>The <code>as</code> operator is available in both <code>.ts</code> and <code>.tsx</code> files, and is identical in behavior to the other type assertion style.</p>
 <h1 id="type-checking">Type Checking</h1>
@@ -773,31 +782,31 @@ An intrinsic element always begins with a lowercase letter, and a value-based el
 By default, if this interface is not specified, then anything goes and intrinsic elements will not be type checked.
 However, if this interface <em>is</em> present, then the name of the intrinsic element is looked up as a property on the <code>JSX.IntrinsicElements</code> interface.
 For example:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">namespace</span> JSX {
-    <span class="hljs-keyword">interface</span> IntrinsicElements {
-        foo: <span class="hljs-built_in">any</span>
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-variable">namespace</span> <span class="cm-variable">JSX</span> {
+    <span class="cm-keyword">interface</span> <span class="cm-variable">IntrinsicElements</span> {
+        <span class="cm-variable">foo</span>: <span class="cm-variable-3">any</span>
     }
 }
 
-&lt;foo /&gt;; <span class="hljs-comment">// ok</span>
-&lt;bar /&gt;; <span class="hljs-comment">// error</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">foo</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// ok</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">bar</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// error</span>
 </code></pre>
 <p>In the above example, <code>&lt;foo /&gt;</code> will work fine but <code>&lt;bar /&gt;</code> will result in an error since it has not been specified on <code>JSX.IntrinsicElements</code>.</p>
 <blockquote>
 <p>Note: You can also specify a catch-all string indexer on <code>JSX.IntrinsicElements</code> as follows:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">namespace</span> JSX {
-   <span class="hljs-keyword">interface</span> IntrinsicElements {
-       [elemName: <span class="hljs-built_in">string</span>]: <span class="hljs-built_in">any</span>;
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-variable">namespace</span> <span class="cm-variable">JSX</span> {
+   <span class="cm-keyword">interface</span> <span class="cm-variable">IntrinsicElements</span> {
+       [<span class="cm-variable">elemName</span>: <span class="cm-variable-3">string</span>]: <span class="cm-variable-3">any</span>;
    }
 }
 </code></pre>
 </blockquote>
 <h2 id="value-based-elements">Value-based elements</h2>
 <p>Value based elements are simply looked up by identifiers that are in scope.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> MyComponent from <span class="hljs-string">&quot;./myComponent&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-variable">MyComponent</span> <span class="cm-keyword">from</span> <span class="cm-string">&quot;./myComponent&quot;</span>;
 
-&lt;MyComponent /&gt;; <span class="hljs-comment">// ok</span>
-&lt;SomeOtherComponent /&gt;; <span class="hljs-comment">// error</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">MyComponent</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// ok</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">SomeOtherComponent</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// error</span>
 </code></pre>
 <p>There are two ways to define a value-based element:</p>
 <ol>
@@ -808,35 +817,35 @@ For example:</p>
 <h3 id="stateless-functional-component">Stateless Functional Component</h3>
 <p>As the name suggested, the component is defined as JavaScript function where its first argument is a <code>props</code> object.
 We enforce that its return type must be assignable to <code>JSX.Element</code></p>
-<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> FooProp {
-  name: <span class="hljs-built_in">string</span>;
-  X: <span class="hljs-built_in">number</span>;
-  Y: <span class="hljs-built_in">number</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">FooProp</span> {
+  <span class="cm-variable">name</span>: <span class="cm-variable-3">string</span>;
+  <span class="cm-variable">X</span>: <span class="cm-variable-3">number</span>;
+  <span class="cm-variable">Y</span>: <span class="cm-variable-3">number</span>;
 }
 
-<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">AnotherComponent</span>(<span class="hljs-params">prop: {name: <span class="hljs-built_in">string</span>}</span>)</span>;
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ComponentFoo</span>(<span class="hljs-params">prop: FooProp</span>) </span>{
-  <span class="hljs-keyword">return</span> &lt;AnotherComponent name=prop.name /&gt;;
+<span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">AnotherComponent</span>(<span class="cm-def">prop</span>: {<span class="cm-variable">name</span>: <span class="cm-variable-3">string</span>});
+<span class="cm-keyword">function</span> <span class="cm-variable">ComponentFoo</span>(<span class="cm-def">prop</span>: <span class="cm-variable-3">FooProp</span>) {
+  <span class="cm-keyword">return</span> <span class="cm-operator">&lt;</span><span class="cm-variable">AnotherComponent</span> <span class="cm-variable">name</span><span class="cm-operator">=</span><span class="cm-variable-2">prop</span>.<span class="cm-property">name</span> <span class="cm-operator">/&gt;</span>;
 }
 
-<span class="hljs-keyword">const</span> Button = (prop: {value: <span class="hljs-built_in">string</span>}, context: { color: <span class="hljs-built_in">string</span> }) =&gt; &lt;button&gt;
+<span class="cm-keyword">const</span> <span class="cm-variable">Button</span> <span class="cm-operator">=</span> (<span class="cm-def">prop</span>: {<span class="cm-variable">value</span>: <span class="cm-variable-3">string</span>}, <span class="cm-variable">context</span>: { <span class="cm-variable">color</span>: <span class="cm-variable-3">string</span> }) <span class="cm-operator">=&gt;</span> <span class="cm-operator">&lt;</span><span class="cm-variable">button</span><span class="cm-operator">&gt;</span>
 </code></pre>
 <p>Because SFC is simply a JavaScript function, we can utilize function overload here as well.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> ClickableProps {
-  children: JSX.Element[] | JSX.Element
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">ClickableProps</span> {
+  <span class="cm-variable">children</span>: <span class="cm-variable">JSX</span>.<span class="cm-property">Element</span>[] <span class="cm-operator">|</span> <span class="cm-variable">JSX</span>.<span class="cm-property">Element</span>
 }
 
-<span class="hljs-keyword">interface</span> HomeProps <span class="hljs-keyword">extends</span> ClickableProps {
-  home: JSX.Element;
+<span class="cm-keyword">interface</span> <span class="cm-variable">HomeProps</span> <span class="cm-keyword">extends</span> <span class="cm-variable">ClickableProps</span> {
+  <span class="cm-variable">home</span>: <span class="cm-variable">JSX</span>.<span class="cm-property">Element</span>;
 }
 
-<span class="hljs-keyword">interface</span> SideProps <span class="hljs-keyword">extends</span> ClickableProps {
-  side: JSX.Element | <span class="hljs-built_in">string</span>;
+<span class="cm-keyword">interface</span> <span class="cm-variable">SideProps</span> <span class="cm-keyword">extends</span> <span class="cm-variable">ClickableProps</span> {
+  <span class="cm-variable">side</span>: <span class="cm-variable">JSX</span>.<span class="cm-property">Element</span> <span class="cm-operator">|</span> <span class="cm-variable-3">string</span>;
 }
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MainButton</span>(<span class="hljs-params">prop: HomeProps</span>): <span class="hljs-title">JSX</span>.<span class="hljs-title">Element</span></span>;
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MainButton</span>(<span class="hljs-params">prop: SideProps</span>): <span class="hljs-title">JSX</span>.<span class="hljs-title">Element</span> </span>{
-  ...
+<span class="cm-keyword">function</span> <span class="cm-variable">MainButton</span>(<span class="cm-def">prop</span>: <span class="cm-variable-3">HomeProps</span>): <span class="cm-variable">JSX</span>.<span class="cm-property">Element</span>;
+<span class="cm-keyword">function</span> <span class="cm-variable">MainButton</span>(<span class="cm-def">prop</span>: <span class="cm-variable-3">SideProps</span>): <span class="cm-variable">JSX</span>.<span class="cm-property">Element</span> {
+  <span class="cm-meta">...</span>
 }
 </code></pre>
 <h3 id="class-component">Class Component</h3>
@@ -847,109 +856,109 @@ So in the example above, if <code>MyComponent</code> was an ES6 class the class 
 If <code>MyComponent</code> was a factory function, the class type would be that function.</p>
 <p>Once the class type is established, the instance type is determined by the union of the return types of the class type&apos;s call signatures and construct signatures.
 So again, in the case of an ES6 class, the instance type would be the type of an instance of that class, and in the case of a factory function, it would be the type of the value returned from the function.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">class</span> MyComponent {
-  render() {}
+<pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">MyComponent</span> {
+  <span class="cm-property">render</span>() {}
 }
 
-<span class="hljs-comment">// use a construct signature</span>
-<span class="hljs-keyword">var</span> myComponent = <span class="hljs-keyword">new</span> MyComponent();
+<span class="cm-comment">// use a construct signature</span>
+<span class="cm-keyword">var</span> <span class="cm-variable">myComponent</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">MyComponent</span>();
 
-<span class="hljs-comment">// element class type =&gt; MyComponent</span>
-<span class="hljs-comment">// element instance type =&gt; { render: () =&gt; void }</span>
+<span class="cm-comment">// element class type =&gt; MyComponent</span>
+<span class="cm-comment">// element instance type =&gt; { render: () =&gt; void }</span>
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyFactoryFunction</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">return</span> {
-    render: () =&gt; {
+<span class="cm-keyword">function</span> <span class="cm-variable">MyFactoryFunction</span>() {
+  <span class="cm-keyword">return</span> {
+    <span class="cm-property">render</span>: () <span class="cm-operator">=&gt;</span> {
     }
   }
 }
 
-<span class="hljs-comment">// use a call signature</span>
-<span class="hljs-keyword">var</span> myComponent = MyFactoryFunction();
+<span class="cm-comment">// use a call signature</span>
+<span class="cm-keyword">var</span> <span class="cm-variable">myComponent</span> <span class="cm-operator">=</span> <span class="cm-variable">MyFactoryFunction</span>();
 
-<span class="hljs-comment">// element class type =&gt; FactoryFunction</span>
-<span class="hljs-comment">// element instance type =&gt; { render: () =&gt; void }</span>
+<span class="cm-comment">// element class type =&gt; FactoryFunction</span>
+<span class="cm-comment">// element instance type =&gt; { render: () =&gt; void }</span>
 </code></pre>
 <p>The element instance type is interesting because it must be assignable to <code>JSX.ElementClass</code> or it will result in an error.
 By default <code>JSX.ElementClass</code> is <code>{}</code>, but it can be augmented to limit the use of JSX to only those types that conform to the proper interface.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">namespace</span> JSX {
-  <span class="hljs-keyword">interface</span> ElementClass {
-    render: <span class="hljs-built_in">any</span>;
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-variable">namespace</span> <span class="cm-variable">JSX</span> {
+  <span class="cm-keyword">interface</span> <span class="cm-variable">ElementClass</span> {
+    <span class="cm-variable">render</span>: <span class="cm-variable-3">any</span>;
   }
 }
 
-<span class="hljs-keyword">class</span> MyComponent {
-  render() {}
+<span class="cm-keyword">class</span> <span class="cm-variable">MyComponent</span> {
+  <span class="cm-property">render</span>() {}
 }
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyFactoryFunction</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">return</span> { render: () =&gt; {} }
-}
-
-&lt;MyComponent /&gt;; <span class="hljs-comment">// ok</span>
-&lt;MyFactoryFunction /&gt;; <span class="hljs-comment">// ok</span>
-
-<span class="hljs-keyword">class</span> NotAValidComponent {}
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">NotAValidFactoryFunction</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">return</span> {};
+<span class="cm-keyword">function</span> <span class="cm-variable">MyFactoryFunction</span>() {
+  <span class="cm-keyword">return</span> { <span class="cm-property">render</span>: () <span class="cm-operator">=&gt;</span> {} }
 }
 
-&lt;NotAValidComponent /&gt;; <span class="hljs-comment">// error</span>
-&lt;NotAValidFactoryFunction /&gt;; <span class="hljs-comment">// error</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">MyComponent</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// ok</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">MyFactoryFunction</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// ok</span>
+
+<span class="cm-keyword">class</span> <span class="cm-variable">NotAValidComponent</span> {}
+<span class="cm-keyword">function</span> <span class="cm-variable">NotAValidFactoryFunction</span>() {
+  <span class="cm-keyword">return</span> {};
+}
+
+<span class="cm-operator">&lt;</span><span class="cm-variable">NotAValidComponent</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// error</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">NotAValidFactoryFunction</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// error</span>
 </code></pre>
 <h2 id="attribute-type-checking">Attribute type checking</h2>
 <p>The first step to type checking attributes is to determine the <em>element attributes type</em>.
 This is slightly different between intrinsic and value-based elements.</p>
 <p>For intrinsic elements, it is the type of the property on <code>JSX.IntrinsicElements</code></p>
-<pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">namespace</span> JSX {
-  <span class="hljs-keyword">interface</span> IntrinsicElements {
-    foo: { bar?: <span class="hljs-built_in">boolean</span> }
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-variable">namespace</span> <span class="cm-variable">JSX</span> {
+  <span class="cm-keyword">interface</span> <span class="cm-variable">IntrinsicElements</span> {
+    <span class="cm-variable">foo</span>: { <span class="cm-variable">bar</span><span class="cm-operator">?</span>: <span class="cm-variable">boolean</span> }
   }
 }
 
-<span class="hljs-comment">// element attributes type for &apos;foo&apos; is &apos;{bar?: boolean}&apos;</span>
-&lt;foo bar /&gt;;
+<span class="cm-comment">// element attributes type for &apos;foo&apos; is &apos;{bar?: boolean}&apos;</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">foo</span> <span class="cm-variable">bar</span> <span class="cm-operator">/&gt;</span>;
 </code></pre>
 <p>For value-based elements, it is a bit more complex.
 It is determined by the type of a property on the <em>element instance type</em> that was previously determined.
 Which property to use is determined by <code>JSX.ElementAttributesProperty</code>.
 It should be declared with a single property.
 The name of that property is then used.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">namespace</span> JSX {
-  <span class="hljs-keyword">interface</span> ElementAttributesProperty {
-    props; <span class="hljs-comment">// specify the property name to use</span>
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-variable">namespace</span> <span class="cm-variable">JSX</span> {
+  <span class="cm-keyword">interface</span> <span class="cm-variable">ElementAttributesProperty</span> {
+    <span class="cm-variable">props</span>; <span class="cm-comment">// specify the property name to use</span>
   }
 }
 
-<span class="hljs-keyword">class</span> MyComponent {
-  <span class="hljs-comment">// specify the property on the element instance type</span>
-  props: {
-    foo?: <span class="hljs-built_in">string</span>;
+<span class="cm-keyword">class</span> <span class="cm-variable">MyComponent</span> {
+  <span class="cm-comment">// specify the property on the element instance type</span>
+  <span class="cm-property">props</span>: {
+    <span class="cm-property">foo</span><span class="cm-operator">?</span>: <span class="cm-variable-3">string</span>;
   }
 }
 
-<span class="hljs-comment">// element attributes type for &apos;MyComponent&apos; is &apos;{foo?: string}&apos;</span>
-&lt;MyComponent foo=<span class="hljs-string">&quot;bar&quot;</span> /&gt;
+<span class="cm-comment">// element attributes type for &apos;MyComponent&apos; is &apos;{foo?: string}&apos;</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">MyComponent</span> <span class="cm-variable">foo</span><span class="cm-operator">=</span><span class="cm-string">&quot;bar&quot;</span> <span class="cm-operator">/&gt;</span>
 </code></pre>
 <p>The element attribute type is used to type check the attributes in the JSX.
 Optional and required properties are supported.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">namespace</span> JSX {
-  <span class="hljs-keyword">interface</span> IntrinsicElements {
-    foo: { requiredProp: <span class="hljs-built_in">string</span>; optionalProp?: <span class="hljs-built_in">number</span> }
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-variable">namespace</span> <span class="cm-variable">JSX</span> {
+  <span class="cm-keyword">interface</span> <span class="cm-variable">IntrinsicElements</span> {
+    <span class="cm-variable">foo</span>: { <span class="cm-variable">requiredProp</span>: <span class="cm-variable-3">string</span>; <span class="cm-variable">optionalProp</span><span class="cm-operator">?</span>: <span class="cm-variable-3">number</span> }
   }
 }
 
-&lt;foo requiredProp=<span class="hljs-string">&quot;bar&quot;</span> /&gt;; <span class="hljs-comment">// ok</span>
-&lt;foo requiredProp=<span class="hljs-string">&quot;bar&quot;</span> optionalProp={<span class="hljs-number">0</span>} /&gt;; <span class="hljs-comment">// ok</span>
-&lt;foo /&gt;; <span class="hljs-comment">// error, requiredProp is missing</span>
-&lt;foo requiredProp={<span class="hljs-number">0</span>} /&gt;; <span class="hljs-comment">// error, requiredProp should be a string</span>
-&lt;foo requiredProp=<span class="hljs-string">&quot;bar&quot;</span> unknownProp /&gt;; <span class="hljs-comment">// error, unknownProp does not exist</span>
-&lt;foo requiredProp=<span class="hljs-string">&quot;bar&quot;</span> some-unknown-prop /&gt;; <span class="hljs-comment">// ok, because &apos;some-unknown-prop&apos; is not a valid identifier</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">foo</span> <span class="cm-variable">requiredProp</span><span class="cm-operator">=</span><span class="cm-string">&quot;bar&quot;</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// ok</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">foo</span> <span class="cm-variable">requiredProp</span><span class="cm-operator">=</span><span class="cm-string">&quot;bar&quot;</span> <span class="cm-variable">optionalProp</span><span class="cm-operator">=</span>{<span class="cm-number">0</span>} <span class="cm-string-2">/&gt;; /</span><span class="cm-operator">/</span> <span class="cm-variable">ok</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">foo</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// error, requiredProp is missing</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">foo</span> <span class="cm-variable">requiredProp</span><span class="cm-operator">=</span>{<span class="cm-number">0</span>} <span class="cm-string-2">/&gt;; /</span><span class="cm-operator">/</span> <span class="cm-variable">error</span>, <span class="cm-variable">requiredProp</span> <span class="cm-variable">should</span> <span class="cm-variable">be</span> <span class="cm-variable">a</span> <span class="cm-variable-3">string</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">foo</span> <span class="cm-variable">requiredProp</span><span class="cm-operator">=</span><span class="cm-string">&quot;bar&quot;</span> <span class="cm-variable">unknownProp</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// error, unknownProp does not exist</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">foo</span> <span class="cm-variable">requiredProp</span><span class="cm-operator">=</span><span class="cm-string">&quot;bar&quot;</span> <span class="cm-variable">some</span><span class="cm-operator">-</span><span class="cm-variable">unknown</span><span class="cm-operator">-</span><span class="cm-variable">prop</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// ok, because &apos;some-unknown-prop&apos; is not a valid identifier</span>
 </code></pre>
 <blockquote>
 <p>Note: If an attribute name is not a valid JS identifier (like a <code>data-*</code> attribute), it is not considered to be an error if it is not found in the element attributes type.</p>
 </blockquote>
 <p>The spread operator also works:</p>
-<pre><code class="lang-JSX"><span class="hljs-keyword">var</span> props = { requiredProp: <span class="hljs-string">&quot;bar&quot;</span> };
+<pre><code class="lang-JSX">var props = { requiredProp: &quot;bar&quot; };
 &lt;foo {...props} /&gt;; // ok
 
 var badProps = {};
@@ -959,60 +968,60 @@ var badProps = {};
 <p>In 2.3, we introduce type checking of <em>children</em>. <em>children</em> is a property in an <em>element attributes type</em> which we have determined from type checking attributes.
 Similar to how we use <code>JSX.ElementAttributesProperty</code> to determine the name of <em>props</em>, we use <code>JSX.ElementChildrenAttribute</code> to determine the name of <em>children</em>.
 <code>JSX.ElementChildrenAttribute</code> should be declared with a single property.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">namespace</span> JSX {
-  <span class="hljs-keyword">interface</span> ElementChildrenAttribute {
-    children: {};  <span class="hljs-comment">// specify children name to use</span>
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-variable">namespace</span> <span class="cm-variable">JSX</span> {
+  <span class="cm-keyword">interface</span> <span class="cm-variable">ElementChildrenAttribute</span> {
+    <span class="cm-variable">children</span>: {};  <span class="cm-comment">// specify children name to use</span>
   }
 }
 </code></pre>
 <p>Without explicitly specify type of children, we will use default type from <a href="https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react" target="_blank">React typings</a>.</p>
-<pre><code class="lang-ts">&lt;div&gt;
-  &lt;h1&gt;Hello&lt;/h1&gt;
-&lt;/div&gt;;
+<pre><code class="lang-ts"><span class="cm-operator">&lt;</span><span class="cm-variable">div</span><span class="cm-operator">&gt;</span>
+  <span class="cm-operator">&lt;</span><span class="cm-variable">h1</span><span class="cm-operator">&gt;</span><span class="cm-variable">Hello</span><span class="cm-operator">&lt;</span><span class="cm-string-2">/h1&gt;</span>
+<span class="cm-operator">&lt;</span><span class="cm-string-2">/div&gt;;</span>
 
-&lt;div&gt;
-  &lt;h1&gt;Hello&lt;/h1&gt;
-  World
-&lt;/div&gt;;
+<span class="cm-operator">&lt;</span><span class="cm-variable">div</span><span class="cm-operator">&gt;</span>
+  <span class="cm-operator">&lt;</span><span class="cm-variable">h1</span><span class="cm-operator">&gt;</span><span class="cm-variable">Hello</span><span class="cm-operator">&lt;</span><span class="cm-string-2">/h1&gt;</span>
+  <span class="cm-variable">World</span>
+<span class="cm-operator">&lt;</span><span class="cm-string-2">/div&gt;;</span>
 
-const CustomComp = (props) =&gt; &lt;div&gt;props.children&lt;/div&gt;
-&lt;CustomComp&gt;
-  &lt;div&gt;Hello World&lt;/div&gt;
-  {&quot;This is just a JS expression...&quot; + 1000}
-&lt;/CustomComp&gt;
+<span class="cm-keyword">const</span> <span class="cm-variable">CustomComp</span> <span class="cm-operator">=</span> (<span class="cm-def">props</span>) <span class="cm-operator">=&gt;</span> <span class="cm-operator">&lt;</span><span class="cm-variable">div</span><span class="cm-operator">&gt;</span><span class="cm-variable-2">props</span>.<span class="cm-property">children</span><span class="cm-operator">&lt;</span><span class="cm-string-2">/div&gt;</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">CustomComp</span><span class="cm-operator">&gt;</span>
+  <span class="cm-operator">&lt;</span><span class="cm-variable">div</span><span class="cm-operator">&gt;</span><span class="cm-variable">Hello</span> <span class="cm-variable">World</span><span class="cm-operator">&lt;</span><span class="cm-string-2">/div&gt;</span>
+  {<span class="cm-string">&quot;This is just a JS expression...&quot;</span> <span class="cm-operator">+</span> <span class="cm-number">1000</span>}
+<span class="cm-operator">&lt;</span><span class="cm-string-2">/CustomComp&gt;</span>
 </code></pre>
 <p>You can specify type of <em>children</em> like any other attribute. This will overwritten default type from <a href="https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react" target="_blank">React typings</a>.</p>
-<pre><code class="lang-ts">interface PropsType {
-  children: JSX.Element
-  name: string
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">PropsType</span> {
+  <span class="cm-variable">children</span>: <span class="cm-variable">JSX</span>.<span class="cm-property">Element</span>
+  <span class="cm-variable">name</span>: <span class="cm-variable-3">string</span>
 }
 
-class Component extends React.Component&lt;PropsType, {}&gt; {
-  render() {
-    return (
-      &lt;h2&gt;
-        this.props.children
-      &lt;/h2&gt;
+<span class="cm-keyword">class</span> <span class="cm-variable">Component</span> <span class="cm-keyword">extends</span> <span class="cm-variable">React</span>.<span class="cm-property">Component</span><span class="cm-operator">&lt;</span><span class="cm-variable">PropsType</span>, {}<span class="cm-operator">&gt;</span> {
+  <span class="cm-property">render</span>() {
+    <span class="cm-keyword">return</span> (
+      <span class="cm-operator">&lt;</span><span class="cm-variable">h2</span><span class="cm-operator">&gt;</span>
+        <span class="cm-keyword">this</span>.<span class="cm-property">props</span>.<span class="cm-property">children</span>
+      <span class="cm-operator">&lt;</span><span class="cm-string-2">/h2&gt;</span>
     )
   }
 }
 
-// OK
-&lt;Component&gt;
-  &lt;h1&gt;Hello World&lt;/h1&gt;
-&lt;/Component&gt;
+<span class="cm-comment">// OK</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">Component</span><span class="cm-operator">&gt;</span>
+  <span class="cm-operator">&lt;</span><span class="cm-variable">h1</span><span class="cm-operator">&gt;</span><span class="cm-variable">Hello</span> <span class="cm-variable">World</span><span class="cm-operator">&lt;</span><span class="cm-string-2">/h1&gt;</span>
+<span class="cm-operator">&lt;</span><span class="cm-string-2">/Component&gt;</span>
 
-// Error: children is of type JSX.Element not array of JSX.Element
-&lt;Component&gt;
-  &lt;h1&gt;Hello World&lt;/h1&gt;
-  &lt;h2&gt;Hello World&lt;/h2&gt;
-&lt;/Component&gt;
+<span class="cm-comment">// Error: children is of type JSX.Element not array of JSX.Element</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">Component</span><span class="cm-operator">&gt;</span>
+  <span class="cm-operator">&lt;</span><span class="cm-variable">h1</span><span class="cm-operator">&gt;</span><span class="cm-variable">Hello</span> <span class="cm-variable">World</span><span class="cm-operator">&lt;</span><span class="cm-string-2">/h1&gt;</span>
+  <span class="cm-operator">&lt;</span><span class="cm-variable">h2</span><span class="cm-operator">&gt;</span><span class="cm-variable">Hello</span> <span class="cm-variable">World</span><span class="cm-operator">&lt;</span><span class="cm-string-2">/h2&gt;</span>
+<span class="cm-operator">&lt;</span><span class="cm-string-2">/Component&gt;</span>
 
-// Error: children is of type JSX.Element not array of JSX.Element or string.
-&lt;Component&gt;
-  &lt;h1&gt;Hello&lt;/h1&gt;
-  World
-&lt;/Component&gt;
+<span class="cm-comment">// Error: children is of type JSX.Element not array of JSX.Element or string.</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">Component</span><span class="cm-operator">&gt;</span>
+  <span class="cm-operator">&lt;</span><span class="cm-variable">h1</span><span class="cm-operator">&gt;</span><span class="cm-variable">Hello</span><span class="cm-operator">&lt;</span><span class="cm-string-2">/h1&gt;</span>
+  <span class="cm-variable">World</span>
+<span class="cm-operator">&lt;</span><span class="cm-string-2">/Component&gt;</span>
 </code></pre>
 <h1 id="the-jsx-result-type">The JSX result type</h1>
 <p>By default the result of a JSX expression is typed as <code>any</code>.
@@ -1021,33 +1030,33 @@ However, it is not possible to retrieve type information about the element, attr
 It is a black box.</p>
 <h1 id="embedding-expressions">Embedding Expressions</h1>
 <p>JSX allows you to embed expressions between tags by surrounding the expressions with curly braces (<code>{ }</code>).</p>
-<pre><code class="lang-JSX"><span class="hljs-keyword">var</span> a = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-  {[&quot;foo&quot;, &quot;bar&quot;].map(i =&gt; <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>{i / 2}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)}
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<pre><code class="lang-JSX">var a = &lt;div&gt;
+  {[&quot;foo&quot;, &quot;bar&quot;].map(i =&gt; &lt;span&gt;{i / 2}&lt;/span&gt;)}
+&lt;/div&gt;
 </code></pre>
 <p>The above code will result in an error since you cannot divide a string by a number.
 The output, when using the <code>preserve</code> option, looks like:</p>
-<pre><code class="lang-JSX"><span class="hljs-keyword">var</span> a = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-  {[&quot;foo&quot;, &quot;bar&quot;].map(function (i) { return <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>{i / 2}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>; })}
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<pre><code class="lang-JSX">var a = &lt;div&gt;
+  {[&quot;foo&quot;, &quot;bar&quot;].map(function (i) { return &lt;span&gt;{i / 2}&lt;/span&gt;; })}
+&lt;/div&gt;
 </code></pre>
 <h1 id="react-integration">React integration</h1>
 <p>To use JSX with React you should use the <a href="https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react" target="_blank">React typings</a>.
 These typings define the <code>JSX</code> namespace appropriately for use with React.</p>
-<pre><code class="lang-ts">/// &lt;reference path=&quot;react.d.ts&quot; /&gt;
+<pre><code class="lang-ts"><span class="cm-comment">/// &lt;reference path=&quot;react.d.ts&quot; /&gt;</span>
 
-interface Props {
-  foo: string;
+<span class="cm-keyword">interface</span> <span class="cm-variable">Props</span> {
+  <span class="cm-variable">foo</span>: <span class="cm-variable-3">string</span>;
 }
 
-class MyComponent extends React.Component&lt;Props, {}&gt; {
-  render() {
-    return &lt;span&gt;{this.props.foo}&lt;/span&gt;
+<span class="cm-keyword">class</span> <span class="cm-variable">MyComponent</span> <span class="cm-keyword">extends</span> <span class="cm-variable">React</span>.<span class="cm-property">Component</span><span class="cm-operator">&lt;</span><span class="cm-variable">Props</span>, {}<span class="cm-operator">&gt;</span> {
+  <span class="cm-property">render</span>() {
+    <span class="cm-keyword">return</span> <span class="cm-operator">&lt;</span><span class="cm-variable">span</span><span class="cm-operator">&gt;</span>{<span class="cm-keyword">this</span>.<span class="cm-variable">props</span>.<span class="cm-variable">foo</span>}<span class="cm-operator">&lt;</span><span class="cm-string-2">/span&gt;</span>
   }
 }
 
-&lt;MyComponent foo=&quot;bar&quot; /&gt;; // ok
-&lt;MyComponent foo={0} /&gt;; // error
+<span class="cm-operator">&lt;</span><span class="cm-variable">MyComponent</span> <span class="cm-variable">foo</span><span class="cm-operator">=</span><span class="cm-string">&quot;bar&quot;</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// ok</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">MyComponent</span> <span class="cm-variable">foo</span><span class="cm-operator">=</span>{<span class="cm-numbercm-property">0</span>} <span class="cm-string-2">/&gt;; /</span><span class="cm-operator">/</span> <span class="cm-variable">error</span>
 </code></pre>
 
                                 
@@ -1092,12 +1101,13 @@ class MyComponent extends React.Component&lt;Props, {}&gt; {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"JSX","level":"3.18","depth":1,"next":{"title":"Decorators","level":"3.19","depth":1,"path":"pages/Decorators.md","ref":"pages/Decorators.md","articles":[]},"previous":{"title":"Declaration Merging","level":"3.17","depth":1,"path":"pages/Declaration Merging.md","ref":"pages/Declaration Merging.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/JSX.md","mtime":"2018-02-06T13:12:52.652Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T14:21:41.019Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"JSX","level":"3.18","depth":1,"next":{"title":"Decorators","level":"3.19","depth":1,"path":"pages/Decorators.md","ref":"pages/Decorators.md","articles":[]},"previous":{"title":"Declaration Merging","level":"3.17","depth":1,"path":"pages/Declaration Merging.md","ref":"pages/Declaration Merging.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/JSX.md","mtime":"2018-02-05T16:09:39.242Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:22:50.132Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
     
@@ -1124,6 +1134,8 @@ class MyComponent extends React.Component&lt;Props, {}&gt; {
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
+    
+
     
 
     </body>

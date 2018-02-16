@@ -12,9 +12,14 @@
         
         
     
+    
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight-1/website.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
@@ -44,6 +49,10 @@
         
     
         
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../../assets/css/atom-one-dark.css" />
     
 
         
@@ -728,32 +737,32 @@ mkdir dist
 <h2 id="&#xAC04;&#xB2E8;&#xD55C;-&#xC608;&#xC81C;-&#xC791;&#xC131;-write-a-simple-example">&#xAC04;&#xB2E8;&#xD55C; &#xC608;&#xC81C; &#xC791;&#xC131; (Write a simple example)</h2>
 <p>Hello World &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC744; &#xC791;&#xC131;&#xD574; &#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p><code>src</code>&#xC5D0; <code>main.ts</code> &#xD30C;&#xC77C;&#xC744; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4; :</p>
-<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hello</span>(<span class="hljs-params">compiler: <span class="hljs-built_in">string</span></span>) </span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Hello from <span class="hljs-subst">${compiler}</span>`</span>);
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">hello</span>(<span class="cm-def">compiler</span>: <span class="cm-variable-3">string</span>) {
+    <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string-2">`Hello from ${</span><span class="cm-variable-2">compiler</span><span class="cm-string-2">}</span><span class="cm-string-2">`</span>);
 }
-hello(<span class="hljs-string">&quot;TypeScript&quot;</span>);
+<span class="cm-variable">hello</span>(<span class="cm-string">&quot;TypeScript&quot;</span>);
 </code></pre>
 <p><code>proj</code>&#xC774;&#xB77C;&#xB294; &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xB8E8;&#xD2B8;&#xC5D0; <code>tsconfig.json</code> &#xD30C;&#xC77C;&#xC744; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4; :</p>
 <pre><code class="lang-json">{
-    <span class="hljs-string">&quot;files&quot;</span>: [
-        <span class="hljs-string">&quot;src/main.ts&quot;</span>
+    <span class="cm-property">&quot;files&quot;</span>: [
+        <span class="cm-string">&quot;src/main.ts&quot;</span>
     ],
-    <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
-        <span class="hljs-string">&quot;noImplicitAny&quot;</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;es5&quot;</span>
+    <span class="cm-property">&quot;compilerOptions&quot;</span>: {
+        <span class="cm-property">&quot;noImplicitAny&quot;</span>: <span class="cm-atom">true</span>,
+        <span class="cm-property">&quot;target&quot;</span>: <span class="cm-string">&quot;es5&quot;</span>
     }
 }
 </code></pre>
 <h2 id="gulpfilejs-&#xC0DD;&#xC131;-create-a-gulpfilejs"><code>gulpfile.js</code> &#xC0DD;&#xC131; (Create a <code>gulpfile.js</code>)</h2>
 <p>&#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xB8E8;&#xD2B8;&#xC5D0; <code>gulpfile.js</code> &#xD30C;&#xC77C;&#xC744; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4; :</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp&quot;</span>);
-<span class="hljs-keyword">var</span> ts = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp-typescript&quot;</span>);
-<span class="hljs-keyword">var</span> tsProject = ts.createProject(<span class="hljs-string">&quot;tsconfig.json&quot;</span>);
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">gulp</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;gulp&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">ts</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;gulp-typescript&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">tsProject</span> <span class="cm-operator">=</span> <span class="cm-variable">ts</span>.<span class="cm-property">createProject</span>(<span class="cm-string">&quot;tsconfig.json&quot;</span>);
 
-gulp.task(<span class="hljs-string">&quot;default&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">return</span> tsProject.src()
-        .pipe(tsProject())
-        .js.pipe(gulp.dest(<span class="hljs-string">&quot;dist&quot;</span>));
+<span class="cm-variable">gulp</span>.<span class="cm-property">task</span>(<span class="cm-string">&quot;default&quot;</span>, <span class="cm-keyword">function</span> () {
+    <span class="cm-keyword">return</span> <span class="cm-variable">tsProject</span>.<span class="cm-property">src</span>()
+        .<span class="cm-property">pipe</span>(<span class="cm-variable">tsProject</span>())
+        .<span class="cm-property">js</span>.<span class="cm-property">pipe</span>(<span class="cm-variable">gulp</span>.<span class="cm-property">dest</span>(<span class="cm-string">&quot;dist&quot;</span>));
 });
 </code></pre>
 <h2 id="resulting-&#xC571;-&#xD14C;&#xC2A4;&#xD2B8;-test-the-resulting-app">resulting &#xC571; &#xD14C;&#xC2A4;&#xD2B8; (Test the resulting app)</h2>
@@ -764,24 +773,24 @@ node dist/main.js
 <h1 id="&#xCF54;&#xB4DC;&#xC5D0;-&#xBAA8;&#xB4C8;-&#xCD94;&#xAC00;-add-modules-to-the-code">&#xCF54;&#xB4DC;&#xC5D0; &#xBAA8;&#xB4C8; &#xCD94;&#xAC00; (Add modules to the code)</h1>
 <p>Browserify&#xB97C; &#xC2DC;&#xC791;&#xD558;&#xAE30; &#xC804;&#xC5D0; &#xCF54;&#xB4DC;&#xB97C; &#xB9CC;&#xB4E4;&#xACE0; &#xBBF9;&#xC2A4;&#xC5D0; &#xBAA8;&#xB4C8;&#xC744; &#xCD94;&#xAC00;&#xD574; &#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xAC83;&#xC740; &#xC2E4;&#xC81C; &#xC571;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC26C;&#xC6B4; &#xAD6C;&#xC870;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <p><code>src/greet.ts</code> &#xD30C;&#xC77C;&#xC744; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4; :</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span>(<span class="hljs-params">name: <span class="hljs-built_in">string</span></span>) </span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-string">`Hello from <span class="hljs-subst">${name}</span>`</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">function</span> <span class="cm-variable">sayHello</span>(<span class="cm-def">name</span>: <span class="cm-variable-3">string</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-string-2">`Hello from ${</span><span class="cm-variable-2">name</span><span class="cm-string-2">}</span><span class="cm-string-2">`</span>;
 }
 </code></pre>
 <p>&#xC774;&#xC81C; <code>src/main.ts</code>&#xC758; <code>sayHello</code>&#xB97C; <code>greet.ts</code>&#xC5D0;&#xC11C; &#xAC00;&#xC838;&#xC624;&#xB3C4;&#xB85D; &#xBCC0;&#xACBD;&#xD569;&#xB2C8;&#xB2E4; :</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { sayHello } from <span class="hljs-string">&quot;./greet&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> { <span class="cm-variable">sayHello</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;./greet&quot;</span>;
 
-<span class="hljs-built_in">console</span>.log(sayHello(<span class="hljs-string">&quot;TypeScript&quot;</span>));
+<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">sayHello</span>(<span class="cm-string">&quot;TypeScript&quot;</span>));
 </code></pre>
 <p>&#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; <code>src/greet.ts</code>&#xB97C; <code>tsconfig.json</code>&#xC5D0; &#xCD94;&#xAC00;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
 <pre><code class="lang-json">{
-    <span class="hljs-string">&quot;files&quot;</span>: [
-        <span class="hljs-string">&quot;src/main.ts&quot;</span>,
-        <span class="hljs-string">&quot;src/greet.ts&quot;</span>
+    <span class="cm-property">&quot;files&quot;</span>: [
+        <span class="cm-string">&quot;src/main.ts&quot;</span>,
+        <span class="cm-string">&quot;src/greet.ts&quot;</span>
     ],
-    <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
-        <span class="hljs-string">&quot;noImplicitAny&quot;</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;es5&quot;</span>
+    <span class="cm-property">&quot;compilerOptions&quot;</span>: {
+        <span class="cm-property">&quot;noImplicitAny&quot;</span>: <span class="cm-atom">true</span>,
+        <span class="cm-property">&quot;target&quot;</span>: <span class="cm-string">&quot;es5&quot;</span>
     }
 }
 </code></pre>
@@ -797,54 +806,54 @@ node dist/main.js
 </code></pre>
 <h2 id="&#xD398;&#xC774;&#xC9C0;-&#xB9CC;&#xB4E4;&#xAE30;-create-a-page">&#xD398;&#xC774;&#xC9C0; &#xB9CC;&#xB4E4;&#xAE30; (Create a page)</h2>
 <p><code>src</code>&#xC5D0; <code>index.html</code> &#xD30C;&#xC77C;&#xC744; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4; :</p>
-<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span> /&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Hello World!<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;greeting&quot;</span>&gt;</span>Loading ...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;bundle.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+<pre><code class="lang-html"><span class="cm-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">html</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">head</span><span class="cm-tagcm-bracket">&gt;</span>
+        <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">meta</span> <span class="cm-attribute">charset</span>=<span class="cm-string">&quot;UTF-8&quot;</span> <span class="cm-tagcm-bracket">/&gt;</span>
+        <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">title</span><span class="cm-tagcm-bracket">&gt;</span>Hello World!<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">title</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">head</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">body</span><span class="cm-tagcm-bracket">&gt;</span>
+        <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">p</span> <span class="cm-attribute">id</span>=<span class="cm-string">&quot;greeting&quot;</span><span class="cm-tagcm-bracket">&gt;</span>Loading ...<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">p</span><span class="cm-tagcm-bracket">&gt;</span>
+        <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">script</span> <span class="cm-attribute">src</span>=<span class="cm-string">&quot;bundle.js&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">script</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">body</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">html</span><span class="cm-tagcm-bracket">&gt;</span>
 </code></pre>
 <p>&#xC774;&#xC81C; <code>main.ts</code>&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xC5EC; &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { sayHello } from <span class="hljs-string">&quot;./greet&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> { <span class="cm-variable">sayHello</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;./greet&quot;</span>;
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showHello</span>(<span class="hljs-params">divName: <span class="hljs-built_in">string</span>, name: <span class="hljs-built_in">string</span></span>) </span>{
-    <span class="hljs-keyword">const</span> elt = <span class="hljs-built_in">document</span>.getElementById(divName);
-    elt.innerText = sayHello(name);
+<span class="cm-keyword">function</span> <span class="cm-variable">showHello</span>(<span class="cm-def">divName</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">name</span>: <span class="cm-variable-3">string</span>) {
+    <span class="cm-keyword">const</span> <span class="cm-def">elt</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-variable-2">divName</span>);
+    <span class="cm-variable-2">elt</span>.<span class="cm-property">innerText</span> <span class="cm-operator">=</span> <span class="cm-variable">sayHello</span>(<span class="cm-variable-2">name</span>);
 }
 
-showHello(<span class="hljs-string">&quot;greeting&quot;</span>, <span class="hljs-string">&quot;TypeScript&quot;</span>);
+<span class="cm-variable">showHello</span>(<span class="cm-string">&quot;greeting&quot;</span>, <span class="cm-string">&quot;TypeScript&quot;</span>);
 </code></pre>
 <p><code>showHello</code> &#xD638;&#xCD9C;&#xC740; <code>sayHello</code>&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xC5EC; paragraph &#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xBCC0;&#xACBD;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xC81C; gulpfile&#xC744; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xBCC0;&#xACBD;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp&quot;</span>);
-<span class="hljs-keyword">var</span> browserify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;browserify&quot;</span>);
-<span class="hljs-keyword">var</span> source = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;vinyl-source-stream&apos;</span>);
-<span class="hljs-keyword">var</span> tsify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;tsify&quot;</span>);
-<span class="hljs-keyword">var</span> paths = {
-    pages: [<span class="hljs-string">&apos;src/*.html&apos;</span>]
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">gulp</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;gulp&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">browserify</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;browserify&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">source</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&apos;vinyl-source-stream&apos;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">tsify</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;tsify&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">paths</span> <span class="cm-operator">=</span> {
+    <span class="cm-property">pages</span>: [<span class="cm-string">&apos;src/*.html&apos;</span>]
 };
 
-gulp.task(<span class="hljs-string">&quot;copy-html&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">return</span> gulp.src(paths.pages)
-        .pipe(gulp.dest(<span class="hljs-string">&quot;dist&quot;</span>));
+<span class="cm-variable">gulp</span>.<span class="cm-property">task</span>(<span class="cm-string">&quot;copy-html&quot;</span>, <span class="cm-keyword">function</span> () {
+    <span class="cm-keyword">return</span> <span class="cm-variable">gulp</span>.<span class="cm-property">src</span>(<span class="cm-variable">paths</span>.<span class="cm-property">pages</span>)
+        .<span class="cm-property">pipe</span>(<span class="cm-variable">gulp</span>.<span class="cm-property">dest</span>(<span class="cm-string">&quot;dist&quot;</span>));
 });
 
-gulp.task(<span class="hljs-string">&quot;default&quot;</span>, [<span class="hljs-string">&quot;copy-html&quot;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">return</span> browserify({
-        basedir: <span class="hljs-string">&apos;.&apos;</span>,
-        debug: <span class="hljs-literal">true</span>,
-        entries: [<span class="hljs-string">&apos;src/main.ts&apos;</span>],
-        cache: {},
-        packageCache: {}
+<span class="cm-variable">gulp</span>.<span class="cm-property">task</span>(<span class="cm-string">&quot;default&quot;</span>, [<span class="cm-string">&quot;copy-html&quot;</span>], <span class="cm-keyword">function</span> () {
+    <span class="cm-keyword">return</span> <span class="cm-variable">browserify</span>({
+        <span class="cm-property">basedir</span>: <span class="cm-string">&apos;.&apos;</span>,
+        <span class="cm-property">debug</span>: <span class="cm-atom">true</span>,
+        <span class="cm-property">entries</span>: [<span class="cm-string">&apos;src/main.ts&apos;</span>],
+        <span class="cm-property">cache</span>: {},
+        <span class="cm-property">packageCache</span>: {}
     })
-    .plugin(tsify)
-    .bundle()
-    .pipe(source(<span class="hljs-string">&apos;bundle.js&apos;</span>))
-    .pipe(gulp.dest(<span class="hljs-string">&quot;dist&quot;</span>));
+    .<span class="cm-property">plugin</span>(<span class="cm-variable">tsify</span>)
+    .<span class="cm-property">bundle</span>()
+    .<span class="cm-property">pipe</span>(<span class="cm-variable">source</span>(<span class="cm-string">&apos;bundle.js&apos;</span>))
+    .<span class="cm-property">pipe</span>(<span class="cm-variable">gulp</span>.<span class="cm-property">dest</span>(<span class="cm-string">&quot;dist&quot;</span>));
 });
 </code></pre>
 <p><code>copy-html</code> &#xD0DC;&#xC2A4;&#xD06C;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xACE0; <code>default</code>&#xC758; &#xC758;&#xC874;&#xC131;&#xC73C;&#xB85C; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.<br><code>default</code>&#xAC00; &#xC2E4;&#xD589;&#xB420; &#xB54C;&#xB9C8;&#xB2E4; <code>copy-html</code>&#xC774; &#xBA3C;&#xC800; &#xC2E4;&#xD589;&#xB418;&#xC5B4;&#xC57C; &#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB610;&#xD55C; <code>default</code>&#xB97C; gulp-typescript &#xB300;&#xC2E0; tsify &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC73C;&#xB85C; Browserify&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xB3C4;&#xB85D; &#xBCC0;&#xACBD;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xD3B8;&#xB9AC;&#xD558;&#xAC8C;&#xB3C4; &#xB458; &#xBAA8;&#xB450; TypeScript &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xC5D0; &#xB3D9;&#xC77C;&#xD55C; options &#xAC1D;&#xCCB4;&#xB97C; &#xC804;&#xB2EC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
@@ -866,39 +875,39 @@ gulp.task(<span class="hljs-string">&quot;default&quot;</span>, [<span class="hl
 <pre><code class="lang-shell">npm install --save-dev watchify gulp-util
 </code></pre>
 <p>&#xC774;&#xC81C; gulpfile&#xC744; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xBCC0;&#xACBD;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp&quot;</span>);
-<span class="hljs-keyword">var</span> browserify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;browserify&quot;</span>);
-<span class="hljs-keyword">var</span> source = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;vinyl-source-stream&apos;</span>);
-<span class="hljs-keyword">var</span> watchify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;watchify&quot;</span>);
-<span class="hljs-keyword">var</span> tsify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;tsify&quot;</span>);
-<span class="hljs-keyword">var</span> gutil = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp-util&quot;</span>);
-<span class="hljs-keyword">var</span> paths = {
-    pages: [<span class="hljs-string">&apos;src/*.html&apos;</span>]
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">gulp</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;gulp&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">browserify</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;browserify&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">source</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&apos;vinyl-source-stream&apos;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">watchify</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;watchify&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">tsify</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;tsify&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">gutil</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;gulp-util&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">paths</span> <span class="cm-operator">=</span> {
+    <span class="cm-property">pages</span>: [<span class="cm-string">&apos;src/*.html&apos;</span>]
 };
 
-<span class="hljs-keyword">var</span> watchedBrowserify = watchify(browserify({
-    basedir: <span class="hljs-string">&apos;.&apos;</span>,
-    debug: <span class="hljs-literal">true</span>,
-    entries: [<span class="hljs-string">&apos;src/main.ts&apos;</span>],
-    cache: {},
-    packageCache: {}
-}).plugin(tsify));
+<span class="cm-keyword">var</span> <span class="cm-variable">watchedBrowserify</span> <span class="cm-operator">=</span> <span class="cm-variable">watchify</span>(<span class="cm-variable">browserify</span>({
+    <span class="cm-property">basedir</span>: <span class="cm-string">&apos;.&apos;</span>,
+    <span class="cm-property">debug</span>: <span class="cm-atom">true</span>,
+    <span class="cm-property">entries</span>: [<span class="cm-string">&apos;src/main.ts&apos;</span>],
+    <span class="cm-property">cache</span>: {},
+    <span class="cm-property">packageCache</span>: {}
+}).<span class="cm-property">plugin</span>(<span class="cm-variable">tsify</span>));
 
-gulp.task(<span class="hljs-string">&quot;copy-html&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">return</span> gulp.src(paths.pages)
-        .pipe(gulp.dest(<span class="hljs-string">&quot;dist&quot;</span>));
+<span class="cm-variable">gulp</span>.<span class="cm-property">task</span>(<span class="cm-string">&quot;copy-html&quot;</span>, <span class="cm-keyword">function</span> () {
+    <span class="cm-keyword">return</span> <span class="cm-variable">gulp</span>.<span class="cm-property">src</span>(<span class="cm-variable">paths</span>.<span class="cm-property">pages</span>)
+        .<span class="cm-property">pipe</span>(<span class="cm-variable">gulp</span>.<span class="cm-property">dest</span>(<span class="cm-string">&quot;dist&quot;</span>));
 });
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bundle</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">return</span> watchedBrowserify
-        .bundle()
-        .pipe(source(<span class="hljs-string">&apos;bundle.js&apos;</span>))
-        .pipe(gulp.dest(<span class="hljs-string">&quot;dist&quot;</span>));
+<span class="cm-keyword">function</span> <span class="cm-variable">bundle</span>() {
+    <span class="cm-keyword">return</span> <span class="cm-variable">watchedBrowserify</span>
+        .<span class="cm-property">bundle</span>()
+        .<span class="cm-property">pipe</span>(<span class="cm-variable">source</span>(<span class="cm-string">&apos;bundle.js&apos;</span>))
+        .<span class="cm-property">pipe</span>(<span class="cm-variable">gulp</span>.<span class="cm-property">dest</span>(<span class="cm-string">&quot;dist&quot;</span>));
 }
 
-gulp.task(<span class="hljs-string">&quot;default&quot;</span>, [<span class="hljs-string">&quot;copy-html&quot;</span>], bundle);
-watchedBrowserify.on(<span class="hljs-string">&quot;update&quot;</span>, bundle);
-watchedBrowserify.on(<span class="hljs-string">&quot;log&quot;</span>, gutil.log);
+<span class="cm-variable">gulp</span>.<span class="cm-property">task</span>(<span class="cm-string">&quot;default&quot;</span>, [<span class="cm-string">&quot;copy-html&quot;</span>], <span class="cm-variable">bundle</span>);
+<span class="cm-variable">watchedBrowserify</span>.<span class="cm-property">on</span>(<span class="cm-string">&quot;update&quot;</span>, <span class="cm-variable">bundle</span>);
+<span class="cm-variable">watchedBrowserify</span>.<span class="cm-property">on</span>(<span class="cm-string">&quot;log&quot;</span>, <span class="cm-variable">gutil</span>.<span class="cm-property">log</span>);
 </code></pre>
 <p>&#xC5EC;&#xAE30;&#xC5D0;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC138; &#xAC00;&#xC9C0; &#xBCC0;&#xACBD; &#xC0AC;&#xD56D;&#xC774; &#xC788;&#xC9C0;&#xB9CC; &#xCF54;&#xB4DC;&#xB97C; &#xC57D;&#xAC04; &#xB9AC;&#xD329;&#xD1A0;&#xB9C1;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <ol>
@@ -924,38 +933,38 @@ watchedBrowserify.on(<span class="hljs-string">&quot;log&quot;</span>, gutil.log
 <pre><code class="lang-shell">npm install --save-dev gulp-uglify vinyl-buffer gulp-sourcemaps
 </code></pre>
 <p>&#xC774;&#xC81C; gulpfile&#xC744; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xBCC0;&#xACBD;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp&quot;</span>);
-<span class="hljs-keyword">var</span> browserify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;browserify&quot;</span>);
-<span class="hljs-keyword">var</span> source = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;vinyl-source-stream&apos;</span>);
-<span class="hljs-keyword">var</span> tsify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;tsify&quot;</span>);
-<span class="hljs-keyword">var</span> uglify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-uglify&apos;</span>);
-<span class="hljs-keyword">var</span> sourcemaps = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-sourcemaps&apos;</span>);
-<span class="hljs-keyword">var</span> buffer = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;vinyl-buffer&apos;</span>);
-<span class="hljs-keyword">var</span> paths = {
-    pages: [<span class="hljs-string">&apos;src/*.html&apos;</span>]
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">gulp</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;gulp&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">browserify</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;browserify&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">source</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&apos;vinyl-source-stream&apos;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">tsify</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;tsify&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">uglify</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&apos;gulp-uglify&apos;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">sourcemaps</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&apos;gulp-sourcemaps&apos;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">buffer</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&apos;vinyl-buffer&apos;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">paths</span> <span class="cm-operator">=</span> {
+    <span class="cm-property">pages</span>: [<span class="cm-string">&apos;src/*.html&apos;</span>]
 };
 
-gulp.task(<span class="hljs-string">&quot;copy-html&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">return</span> gulp.src(paths.pages)
-        .pipe(gulp.dest(<span class="hljs-string">&quot;dist&quot;</span>));
+<span class="cm-variable">gulp</span>.<span class="cm-property">task</span>(<span class="cm-string">&quot;copy-html&quot;</span>, <span class="cm-keyword">function</span> () {
+    <span class="cm-keyword">return</span> <span class="cm-variable">gulp</span>.<span class="cm-property">src</span>(<span class="cm-variable">paths</span>.<span class="cm-property">pages</span>)
+        .<span class="cm-property">pipe</span>(<span class="cm-variable">gulp</span>.<span class="cm-property">dest</span>(<span class="cm-string">&quot;dist&quot;</span>));
 });
 
-gulp.task(<span class="hljs-string">&quot;default&quot;</span>, [<span class="hljs-string">&quot;copy-html&quot;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">return</span> browserify({
-        basedir: <span class="hljs-string">&apos;.&apos;</span>,
-        debug: <span class="hljs-literal">true</span>,
-        entries: [<span class="hljs-string">&apos;src/main.ts&apos;</span>],
-        cache: {},
-        packageCache: {}
+<span class="cm-variable">gulp</span>.<span class="cm-property">task</span>(<span class="cm-string">&quot;default&quot;</span>, [<span class="cm-string">&quot;copy-html&quot;</span>], <span class="cm-keyword">function</span> () {
+    <span class="cm-keyword">return</span> <span class="cm-variable">browserify</span>({
+        <span class="cm-property">basedir</span>: <span class="cm-string">&apos;.&apos;</span>,
+        <span class="cm-property">debug</span>: <span class="cm-atom">true</span>,
+        <span class="cm-property">entries</span>: [<span class="cm-string">&apos;src/main.ts&apos;</span>],
+        <span class="cm-property">cache</span>: {},
+        <span class="cm-property">packageCache</span>: {}
     })
-    .plugin(tsify)
-    .bundle()
-    .pipe(source(<span class="hljs-string">&apos;bundle.js&apos;</span>))
-    .pipe(buffer())
-    .pipe(sourcemaps.init({loadMaps: <span class="hljs-literal">true</span>}))
-    .pipe(uglify())
-    .pipe(sourcemaps.write(<span class="hljs-string">&apos;./&apos;</span>))
-    .pipe(gulp.dest(<span class="hljs-string">&quot;dist&quot;</span>));
+    .<span class="cm-property">plugin</span>(<span class="cm-variable">tsify</span>)
+    .<span class="cm-property">bundle</span>()
+    .<span class="cm-property">pipe</span>(<span class="cm-variable">source</span>(<span class="cm-string">&apos;bundle.js&apos;</span>))
+    .<span class="cm-property">pipe</span>(<span class="cm-variable">buffer</span>())
+    .<span class="cm-property">pipe</span>(<span class="cm-variable">sourcemaps</span>.<span class="cm-property">init</span>({<span class="cm-property">loadMaps</span>: <span class="cm-atom">true</span>}))
+    .<span class="cm-property">pipe</span>(<span class="cm-variable">uglify</span>())
+    .<span class="cm-property">pipe</span>(<span class="cm-variable">sourcemaps</span>.<span class="cm-property">write</span>(<span class="cm-string">&apos;./&apos;</span>))
+    .<span class="cm-property">pipe</span>(<span class="cm-variable">gulp</span>.<span class="cm-property">dest</span>(<span class="cm-string">&quot;dist&quot;</span>));
 });
 </code></pre>
 <p><code>uglify</code> &#xC790;&#xCCB4;&#xC5D0;&#xB294; &#xD558;&#xB098;&#xC758; &#xD638;&#xCD9C;&#xB9CC; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; &#x2014; <code>buffer</code>&#xC640; <code>sourcemaps</code>&#xC5D0; &#xB300;&#xD55C; &#xD638;&#xCD9C;&#xC740; sourcemaps&#xC774; &#xACC4;&#xC18D; &#xC791;&#xB3D9;&#xD558;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC874;&#xC7AC;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB7EC;&#xD55C; &#xD638;&#xCD9C;&#xC744; &#xD1B5;&#xD574; &#xC774;&#xC804;&#xACFC; &#xAC19;&#xC774; &#xC778;&#xB77C;&#xC778; &#xC18C;&#xC2A4; &#xB9F5;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xB300;&#xC2E0; &#xBCC4;&#xB3C4;&#xC758; &#xC18C;&#xC2A4; &#xB9F5; &#xD30C;&#xC77C;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xC81C; Gulp&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xACE0; <code>bundle.js</code>&#xAC00; &#xB09C;&#xB3C5;&#xD654;&#xB85C; &#xC555;&#xCD95;&#xB418;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
@@ -967,51 +976,51 @@ cat dist/bundle.js
 <pre><code class="lang-shell">npm install --save-dev babelify babel-core babel-preset-es2015 vinyl-buffer gulp-sourcemaps
 </code></pre>
 <p>&#xC774;&#xC81C; gulpfile&#xC744; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xBCC0;&#xACBD;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp&apos;</span>);
-<span class="hljs-keyword">var</span> browserify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;browserify&apos;</span>);
-<span class="hljs-keyword">var</span> source = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;vinyl-source-stream&apos;</span>);
-<span class="hljs-keyword">var</span> tsify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;tsify&apos;</span>);
-<span class="hljs-keyword">var</span> sourcemaps = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-sourcemaps&apos;</span>);
-<span class="hljs-keyword">var</span> buffer = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;vinyl-buffer&apos;</span>);
-<span class="hljs-keyword">var</span> paths = {
-    pages: [<span class="hljs-string">&apos;src/*.html&apos;</span>]
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">gulp</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&apos;gulp&apos;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">browserify</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&apos;browserify&apos;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">source</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&apos;vinyl-source-stream&apos;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">tsify</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&apos;tsify&apos;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">sourcemaps</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&apos;gulp-sourcemaps&apos;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">buffer</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&apos;vinyl-buffer&apos;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">paths</span> <span class="cm-operator">=</span> {
+    <span class="cm-property">pages</span>: [<span class="cm-string">&apos;src/*.html&apos;</span>]
 };
 
-gulp.task(<span class="hljs-string">&apos;copyHtml&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">return</span> gulp.src(paths.pages)
-        .pipe(gulp.dest(<span class="hljs-string">&apos;dist&apos;</span>));
+<span class="cm-variable">gulp</span>.<span class="cm-property">task</span>(<span class="cm-string">&apos;copyHtml&apos;</span>, <span class="cm-keyword">function</span> () {
+    <span class="cm-keyword">return</span> <span class="cm-variable">gulp</span>.<span class="cm-property">src</span>(<span class="cm-variable">paths</span>.<span class="cm-property">pages</span>)
+        .<span class="cm-property">pipe</span>(<span class="cm-variable">gulp</span>.<span class="cm-property">dest</span>(<span class="cm-string">&apos;dist&apos;</span>));
 });
 
-gulp.task(<span class="hljs-string">&apos;default&apos;</span>, [<span class="hljs-string">&apos;copyHtml&apos;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">return</span> browserify({
-        basedir: <span class="hljs-string">&apos;.&apos;</span>,
-        debug: <span class="hljs-literal">true</span>,
-        entries: [<span class="hljs-string">&apos;src/main.ts&apos;</span>],
-        cache: {},
-        packageCache: {}
+<span class="cm-variable">gulp</span>.<span class="cm-property">task</span>(<span class="cm-string">&apos;default&apos;</span>, [<span class="cm-string">&apos;copyHtml&apos;</span>], <span class="cm-keyword">function</span> () {
+    <span class="cm-keyword">return</span> <span class="cm-variable">browserify</span>({
+        <span class="cm-property">basedir</span>: <span class="cm-string">&apos;.&apos;</span>,
+        <span class="cm-property">debug</span>: <span class="cm-atom">true</span>,
+        <span class="cm-property">entries</span>: [<span class="cm-string">&apos;src/main.ts&apos;</span>],
+        <span class="cm-property">cache</span>: {},
+        <span class="cm-property">packageCache</span>: {}
     })
-    .plugin(tsify)
-    .transform(<span class="hljs-string">&apos;babelify&apos;</span>, {
-        presets: [<span class="hljs-string">&apos;es2015&apos;</span>],
-        extensions: [<span class="hljs-string">&apos;.ts&apos;</span>]
+    .<span class="cm-property">plugin</span>(<span class="cm-variable">tsify</span>)
+    .<span class="cm-property">transform</span>(<span class="cm-string">&apos;babelify&apos;</span>, {
+        <span class="cm-property">presets</span>: [<span class="cm-string">&apos;es2015&apos;</span>],
+        <span class="cm-property">extensions</span>: [<span class="cm-string">&apos;.ts&apos;</span>]
     })
-    .bundle()
-    .pipe(source(<span class="hljs-string">&apos;bundle.js&apos;</span>))
-    .pipe(buffer())
-    .pipe(sourcemaps.init({loadMaps: <span class="hljs-literal">true</span>}))
-    .pipe(sourcemaps.write(<span class="hljs-string">&apos;./&apos;</span>))
-    .pipe(gulp.dest(<span class="hljs-string">&apos;dist&apos;</span>));
+    .<span class="cm-property">bundle</span>()
+    .<span class="cm-property">pipe</span>(<span class="cm-variable">source</span>(<span class="cm-string">&apos;bundle.js&apos;</span>))
+    .<span class="cm-property">pipe</span>(<span class="cm-variable">buffer</span>())
+    .<span class="cm-property">pipe</span>(<span class="cm-variable">sourcemaps</span>.<span class="cm-property">init</span>({<span class="cm-property">loadMaps</span>: <span class="cm-atom">true</span>}))
+    .<span class="cm-property">pipe</span>(<span class="cm-variable">sourcemaps</span>.<span class="cm-property">write</span>(<span class="cm-string">&apos;./&apos;</span>))
+    .<span class="cm-property">pipe</span>(<span class="cm-variable">gulp</span>.<span class="cm-property">dest</span>(<span class="cm-string">&apos;dist&apos;</span>));
 });
 </code></pre>
 <p>TypeScript &#xB300;&#xC0C1; ES2015&#xB3C4; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.<br>Babel&#xC740; TypeScript&#xC5D0;&#xC11C; &#xB0B4;&#xBCF4;&#xB0B4;&#xB294; ES2015 &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; ES5&#xB97C; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p><code>tsconfig.json</code>&#xC744; &#xC218;&#xC815;&#xD569;&#xC2DC;&#xB2E4; :</p>
 <pre><code class="lang-json">{
-    <span class="hljs-string">&quot;files&quot;</span>: [
-        <span class="hljs-string">&quot;src/main.ts&quot;</span>
+    <span class="cm-property">&quot;files&quot;</span>: [
+        <span class="cm-string">&quot;src/main.ts&quot;</span>
     ],
-    <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
-        <span class="hljs-string">&quot;noImplicitAny&quot;</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;es2015&quot;</span>
+    <span class="cm-property">&quot;compilerOptions&quot;</span>: {
+        <span class="cm-property">&quot;noImplicitAny&quot;</span>: <span class="cm-atom">true</span>,
+        <span class="cm-property">&quot;target&quot;</span>: <span class="cm-string">&quot;es2015&quot;</span>
     }
 }
 </code></pre>
@@ -1059,12 +1068,13 @@ gulp.task(<span class="hljs-string">&apos;default&apos;</span>, [<span class="hl
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"걸프","level":"2.3","depth":1,"next":{"title":"JavaScript에서 마이그레이션","level":"2.4","depth":1,"path":"pages/tutorials/Migrating from JavaScript.md","ref":"pages/tutorials/Migrating from JavaScript.md","articles":[]},"previous":{"title":"ASP.NET Core","level":"2.2","depth":1,"path":"pages/tutorials/ASP.NET Core.md","ref":"pages/tutorials/ASP.NET Core.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tutorials/Gulp.md","mtime":"2018-02-13T14:10:14.665Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T14:21:41.019Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"걸프","level":"2.3","depth":1,"next":{"title":"JavaScript에서 마이그레이션","level":"2.4","depth":1,"path":"pages/tutorials/Migrating from JavaScript.md","ref":"pages/tutorials/Migrating from JavaScript.md","articles":[]},"previous":{"title":"ASP.NET Core","level":"2.2","depth":1,"path":"pages/tutorials/ASP.NET Core.md","ref":"pages/tutorials/ASP.NET Core.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tutorials/Gulp.md","mtime":"2018-02-15T11:46:40.502Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:22:50.132Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
     
@@ -1091,6 +1101,8 @@ gulp.task(<span class="hljs-string">&apos;default&apos;</span>, [<span class="hl
         
         <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
+    
+
     
 
     </body>

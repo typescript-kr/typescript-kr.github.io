@@ -12,9 +12,14 @@
         
         
     
+    
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight-1/website.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
@@ -44,6 +49,10 @@
         
     
         
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/atom-one-dark.css" />
     
 
         
@@ -701,56 +710,56 @@ You may be familiar with the idea of mixins or traits for languages like Scala, 
 <h1 id="mixin-sample">Mixin sample</h1>
 <p>In the code below, we show how you can model mixins in TypeScript.
 After the code, we&apos;ll break down how it works.</p>
-<pre><code class="lang-ts"><span class="hljs-comment">// Disposable Mixin</span>
-<span class="hljs-keyword">class</span> Disposable {
-    isDisposed: <span class="hljs-built_in">boolean</span>;
-    dispose() {
-        <span class="hljs-keyword">this</span>.isDisposed = <span class="hljs-literal">true</span>;
+<pre><code class="lang-ts"><span class="cm-comment">// Disposable Mixin</span>
+<span class="cm-keyword">class</span> <span class="cm-variable">Disposable</span> {
+    <span class="cm-property">isDisposed</span>: <span class="cm-variable">boolean</span>;
+    <span class="cm-variable">dispose</span>() {
+        <span class="cm-keyword">this</span>.<span class="cm-variable">isDisposed</span> <span class="cm-operator">=</span> <span class="cm-atom">true</span>;
     }
 
 }
 
-<span class="hljs-comment">// Activatable Mixin</span>
-<span class="hljs-keyword">class</span> Activatable {
-    isActive: <span class="hljs-built_in">boolean</span>;
-    activate() {
-        <span class="hljs-keyword">this</span>.isActive = <span class="hljs-literal">true</span>;
+<span class="cm-comment">// Activatable Mixin</span>
+<span class="cm-keyword">class</span> <span class="cm-variable">Activatable</span> {
+    <span class="cm-property">isActive</span>: <span class="cm-variable">boolean</span>;
+    <span class="cm-variable">activate</span>() {
+        <span class="cm-keyword">this</span>.<span class="cm-variable">isActive</span> <span class="cm-operator">=</span> <span class="cm-atom">true</span>;
     }
-    deactivate() {
-        <span class="hljs-keyword">this</span>.isActive = <span class="hljs-literal">false</span>;
+    <span class="cm-variable">deactivate</span>() {
+        <span class="cm-keyword">this</span>.<span class="cm-property">isActive</span> <span class="cm-operator">=</span> <span class="cm-atom">false</span>;
     }
 }
 
-<span class="hljs-keyword">class</span> SmartObject <span class="hljs-keyword">implements</span> Disposable, Activatable {
-    <span class="hljs-keyword">constructor</span>() {
-        setInterval(() =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.isActive + <span class="hljs-string">&quot; : &quot;</span> + <span class="hljs-keyword">this</span>.isDisposed), <span class="hljs-number">500</span>);
+<span class="cm-keyword">class</span> <span class="cm-variable">SmartObject</span> <span class="cm-variable">implements</span> <span class="cm-variable">Disposable</span>, <span class="cm-variable">Activatable</span> {
+    <span class="cm-keyword">constructor</span>() {
+        <span class="cm-variable">setInterval</span>(() <span class="cm-operator">=&gt;</span> <span class="cm-variable">console</span>.<span class="cm-variable">log</span>(<span class="cm-keyword">this</span>.<span class="cm-variable">isActive</span> <span class="cm-operator">+</span> <span class="cm-string">&quot; : &quot;</span> <span class="cm-operator">+</span> <span class="cm-keyword">this</span>.<span class="cm-variable">isDisposed</span>), <span class="cm-number">500</span>);
     }
 
-    interact() {
-        <span class="hljs-keyword">this</span>.activate();
+    <span class="cm-variable">interact</span>() {
+        <span class="cm-keyword">this</span>.<span class="cm-property">activate</span>();
     }
 
-    <span class="hljs-comment">// Disposable</span>
-    isDisposed: <span class="hljs-built_in">boolean</span> = <span class="hljs-literal">false</span>;
-    dispose: () =&gt; <span class="hljs-built_in">void</span>;
-    <span class="hljs-comment">// Activatable</span>
-    isActive: <span class="hljs-built_in">boolean</span> = <span class="hljs-literal">false</span>;
-    activate: () =&gt; <span class="hljs-built_in">void</span>;
-    deactivate: () =&gt; <span class="hljs-built_in">void</span>;
+    <span class="cm-comment">// Disposable</span>
+    <span class="cm-variable">isDisposed</span>: <span class="cm-variable">boolean</span> <span class="cm-operator">=</span> <span class="cm-atom">false</span>;
+    <span class="cm-variable">dispose</span>: () <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span>;
+    <span class="cm-comment">// Activatable</span>
+    <span class="cm-variable">isActive</span>: <span class="cm-variable">boolean</span> <span class="cm-operator">=</span> <span class="cm-atom">false</span>;
+    <span class="cm-variable">activate</span>: () <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span>;
+    <span class="cm-variable">deactivate</span>: () <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span>;
 }
-applyMixins(SmartObject, [Disposable, Activatable]);
+<span class="cm-variable">applyMixins</span>(<span class="cm-variable">SmartObject</span>, [<span class="cm-variable">Disposable</span>, <span class="cm-variable">Activatable</span>]);
 
-<span class="hljs-keyword">let</span> smartObj = <span class="hljs-keyword">new</span> SmartObject();
-setTimeout(() =&gt; smartObj.interact(), <span class="hljs-number">1000</span>);
+<span class="cm-keyword">let</span> <span class="cm-variable">smartObj</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">SmartObject</span>();
+<span class="cm-variable">setTimeout</span>(() <span class="cm-operator">=&gt;</span> <span class="cm-variable">smartObj</span>.<span class="cm-variable">interact</span>(), <span class="cm-number">1000</span>);
 
-<span class="hljs-comment">////////////////////////////////////////</span>
-<span class="hljs-comment">// In your runtime library somewhere</span>
-<span class="hljs-comment">////////////////////////////////////////</span>
+<span class="cm-comment">////////////////////////////////////////</span>
+<span class="cm-comment">// In your runtime library somewhere</span>
+<span class="cm-comment">////////////////////////////////////////</span>
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">applyMixins</span>(<span class="hljs-params">derivedCtor: <span class="hljs-built_in">any</span>, baseCtors: <span class="hljs-built_in">any</span>[]</span>) </span>{
-    baseCtors.forEach(baseCtor =&gt; {
-        <span class="hljs-built_in">Object</span>.getOwnPropertyNames(baseCtor.prototype).forEach(name =&gt; {
-            derivedCtor.prototype[name] = baseCtor.prototype[name];
+<span class="cm-keyword">function</span> <span class="cm-variable">applyMixins</span>(<span class="cm-def">derivedCtor</span>: <span class="cm-variable-3">any</span>, <span class="cm-def">baseCtors</span>: <span class="cm-variable-3">any</span>[]) {
+    <span class="cm-variable-2">baseCtors</span>.<span class="cm-property">forEach</span>(<span class="cm-def">baseCtor</span> <span class="cm-operator">=&gt;</span> {
+        <span class="cm-variable">Object</span>.<span class="cm-property">getOwnPropertyNames</span>(<span class="cm-variable-2">baseCtor</span>.<span class="cm-property">prototype</span>).<span class="cm-property">forEach</span>(<span class="cm-def">name</span> <span class="cm-operator">=&gt;</span> {
+            <span class="cm-variable-2">derivedCtor</span>.<span class="cm-property">prototype</span>[<span class="cm-variable-2">name</span>] <span class="cm-operator">=</span> <span class="cm-variable-2">baseCtor</span>.<span class="cm-property">prototype</span>[<span class="cm-variable-2">name</span>];
         });
     });
 }
@@ -759,29 +768,29 @@ setTimeout(() =&gt; smartObj.interact(), <span class="hljs-number">1000</span>);
 <p>The code sample starts with the two classes that will act as our mixins.
 You can see each one is focused on a particular activity or capability.
 We&apos;ll later mix these together to form a new class from both capabilities.</p>
-<pre><code class="lang-ts"><span class="hljs-comment">// Disposable Mixin</span>
-<span class="hljs-keyword">class</span> Disposable {
-    isDisposed: <span class="hljs-built_in">boolean</span>;
-    dispose() {
-        <span class="hljs-keyword">this</span>.isDisposed = <span class="hljs-literal">true</span>;
+<pre><code class="lang-ts"><span class="cm-comment">// Disposable Mixin</span>
+<span class="cm-keyword">class</span> <span class="cm-variable">Disposable</span> {
+    <span class="cm-property">isDisposed</span>: <span class="cm-variable">boolean</span>;
+    <span class="cm-variable">dispose</span>() {
+        <span class="cm-keyword">this</span>.<span class="cm-variable">isDisposed</span> <span class="cm-operator">=</span> <span class="cm-atom">true</span>;
     }
 
 }
 
-<span class="hljs-comment">// Activatable Mixin</span>
-<span class="hljs-keyword">class</span> Activatable {
-    isActive: <span class="hljs-built_in">boolean</span>;
-    activate() {
-        <span class="hljs-keyword">this</span>.isActive = <span class="hljs-literal">true</span>;
+<span class="cm-comment">// Activatable Mixin</span>
+<span class="cm-keyword">class</span> <span class="cm-variable">Activatable</span> {
+    <span class="cm-property">isActive</span>: <span class="cm-variable">boolean</span>;
+    <span class="cm-variable">activate</span>() {
+        <span class="cm-keyword">this</span>.<span class="cm-variable">isActive</span> <span class="cm-operator">=</span> <span class="cm-atom">true</span>;
     }
-    deactivate() {
-        <span class="hljs-keyword">this</span>.isActive = <span class="hljs-literal">false</span>;
+    <span class="cm-variable">deactivate</span>() {
+        <span class="cm-keyword">this</span>.<span class="cm-property">isActive</span> <span class="cm-operator">=</span> <span class="cm-atom">false</span>;
     }
 }
 </code></pre>
 <p>Next, we&apos;ll create the class that will handle the combination of the two mixins.
 Let&apos;s look at this in more detail to see how it does this:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">class</span> SmartObject <span class="hljs-keyword">implements</span> Disposable, Activatable {
+<pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">SmartObject</span> <span class="cm-variable">implements</span> <span class="cm-variable">Disposable</span>, <span class="cm-variable">Activatable</span> {
 </code></pre>
 <p>The first thing you may notice in the above is that instead of using <code>extends</code>, we use <code>implements</code>.
 This treats the classes as interfaces, and only uses the types behind Disposable and Activatable rather than the implementation.
@@ -790,23 +799,23 @@ Except, that&apos;s exactly what we want to avoid by using mixins.</p>
 <p>To satisfy this requirement, we create stand-in properties and their types for the members that will come from our mixins.
 This satisfies the compiler that these members will be available at runtime.
 This lets us still get the benefit of the mixins, albeit with some bookkeeping overhead.</p>
-<pre><code class="lang-ts"><span class="hljs-comment">// Disposable</span>
-isDisposed: <span class="hljs-built_in">boolean</span> = <span class="hljs-literal">false</span>;
-dispose: () =&gt; <span class="hljs-built_in">void</span>;
-<span class="hljs-comment">// Activatable</span>
-isActive: <span class="hljs-built_in">boolean</span> = <span class="hljs-literal">false</span>;
-activate: () =&gt; <span class="hljs-built_in">void</span>;
-deactivate: () =&gt; <span class="hljs-built_in">void</span>;
+<pre><code class="lang-ts"><span class="cm-comment">// Disposable</span>
+<span class="cm-variable">isDisposed</span>: <span class="cm-variable">boolean</span> <span class="cm-operator">=</span> <span class="cm-atom">false</span>;
+<span class="cm-variable">dispose</span>: () <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span>;
+<span class="cm-comment">// Activatable</span>
+<span class="cm-variable">isActive</span>: <span class="cm-variable">boolean</span> <span class="cm-operator">=</span> <span class="cm-atom">false</span>;
+<span class="cm-variable">activate</span>: () <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span>;
+<span class="cm-variable">deactivate</span>: () <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span>;
 </code></pre>
 <p>Finally, we mix our mixins into the class, creating the full implementation.</p>
-<pre><code class="lang-ts">applyMixins(SmartObject, [Disposable, Activatable]);
+<pre><code class="lang-ts"><span class="cm-variable">applyMixins</span>(<span class="cm-variable">SmartObject</span>, [<span class="cm-variable">Disposable</span>, <span class="cm-variable">Activatable</span>]);
 </code></pre>
 <p>Lastly, we create a helper function that will do the mixing for us.
 This will run through the properties of each of the mixins and copy them over to the target of the mixins, filling out the stand-in properties with their implementations.</p>
-<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">applyMixins</span>(<span class="hljs-params">derivedCtor: <span class="hljs-built_in">any</span>, baseCtors: <span class="hljs-built_in">any</span>[]</span>) </span>{
-    baseCtors.forEach(baseCtor =&gt; {
-        <span class="hljs-built_in">Object</span>.getOwnPropertyNames(baseCtor.prototype).forEach(name =&gt; {
-            derivedCtor.prototype[name] = baseCtor.prototype[name];
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">applyMixins</span>(<span class="cm-def">derivedCtor</span>: <span class="cm-variable-3">any</span>, <span class="cm-def">baseCtors</span>: <span class="cm-variable-3">any</span>[]) {
+    <span class="cm-variable-2">baseCtors</span>.<span class="cm-property">forEach</span>(<span class="cm-def">baseCtor</span> <span class="cm-operator">=&gt;</span> {
+        <span class="cm-variable">Object</span>.<span class="cm-property">getOwnPropertyNames</span>(<span class="cm-variable-2">baseCtor</span>.<span class="cm-property">prototype</span>).<span class="cm-property">forEach</span>(<span class="cm-def">name</span> <span class="cm-operator">=&gt;</span> {
+            <span class="cm-variable-2">derivedCtor</span>.<span class="cm-property">prototype</span>[<span class="cm-variable-2">name</span>] <span class="cm-operator">=</span> <span class="cm-variable-2">baseCtor</span>.<span class="cm-property">prototype</span>[<span class="cm-variable-2">name</span>];
         });
     });
 }
@@ -854,12 +863,13 @@ This will run through the properties of each of the mixins and copy them over to
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Mixins","level":"3.20","depth":1,"next":{"title":"Triple-Slash Directives","level":"3.21","depth":1,"path":"pages/Triple-Slash Directives.md","ref":"pages/Triple-Slash Directives.md","articles":[]},"previous":{"title":"Decorators","level":"3.19","depth":1,"path":"pages/Decorators.md","ref":"pages/Decorators.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Mixins.md","mtime":"2018-02-06T13:12:52.653Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T14:21:41.019Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Mixins","level":"3.20","depth":1,"next":{"title":"Triple-Slash Directives","level":"3.21","depth":1,"path":"pages/Triple-Slash Directives.md","ref":"pages/Triple-Slash Directives.md","articles":[]},"previous":{"title":"Decorators","level":"3.19","depth":1,"path":"pages/Decorators.md","ref":"pages/Decorators.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Mixins.md","mtime":"2018-02-05T16:09:39.243Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:22:50.132Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
     
@@ -886,6 +896,8 @@ This will run through the properties of each of the mixins and copy them over to
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
+    
+
     
 
     </body>

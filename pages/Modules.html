@@ -12,9 +12,14 @@
         
         
     
+    
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight-1/website.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
@@ -44,6 +49,10 @@
         
     
         
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/atom-one-dark.css" />
     
 
         
@@ -714,69 +723,69 @@ Well-known modules loaders used in JavaScript are the <a href="https://en.wikipe
 <h2 id="exporting-a-declaration">Exporting a declaration</h2>
 <p>Any declaration (such as a variable, function, class, type alias, or interface) can be exported by adding the <code>export</code> keyword.</p>
 <h5 id="validationts">Validation.ts</h5>
-<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> StringValidator {
-    isAcceptable(s: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">boolean</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">interface</span> <span class="cm-variable">StringValidator</span> {
+    <span class="cm-variable">isAcceptable</span>(<span class="cm-variable">s</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable">boolean</span>;
 }
 </code></pre>
 <h5 id="zipcodevalidatorts">ZipCodeValidator.ts</h5>
-<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> numberRegexp = <span class="hljs-regexp">/^[0-9]+$/</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">const</span> <span class="cm-variable">numberRegexp</span> <span class="cm-operator">=</span> <span class="cm-string-2">/^[0-9]+$/</span>;
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> ZipCodeValidator <span class="hljs-keyword">implements</span> StringValidator {
-    isAcceptable(s: <span class="hljs-built_in">string</span>) {
-        <span class="hljs-keyword">return</span> s.length === <span class="hljs-number">5</span> &amp;&amp; numberRegexp.test(s);
+<span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">ZipCodeValidator</span> <span class="cm-variable">implements</span> <span class="cm-variable">StringValidator</span> {
+    <span class="cm-variable">isAcceptable</span>(<span class="cm-variable">s</span>: <span class="cm-variable-3">string</span>) {
+        <span class="cm-keyword">return</span> <span class="cm-variable">s</span>.<span class="cm-property">length</span> <span class="cm-operator">===</span> <span class="cm-number">5</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable">numberRegexp</span>.<span class="cm-property">test</span>(<span class="cm-variable">s</span>);
     }
 }
 </code></pre>
 <h2 id="export-statements">Export statements</h2>
 <p>Export statements are handy when exports need to be renamed for consumers, so the above example can be written as:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">class</span> ZipCodeValidator <span class="hljs-keyword">implements</span> StringValidator {
-    isAcceptable(s: <span class="hljs-built_in">string</span>) {
-        <span class="hljs-keyword">return</span> s.length === <span class="hljs-number">5</span> &amp;&amp; numberRegexp.test(s);
+<pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">ZipCodeValidator</span> <span class="cm-variable">implements</span> <span class="cm-variable">StringValidator</span> {
+    <span class="cm-variable">isAcceptable</span>(<span class="cm-variable">s</span>: <span class="cm-variable-3">string</span>) {
+        <span class="cm-keyword">return</span> <span class="cm-variable">s</span>.<span class="cm-property">length</span> <span class="cm-operator">===</span> <span class="cm-number">5</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable">numberRegexp</span>.<span class="cm-property">test</span>(<span class="cm-variable">s</span>);
     }
 }
-<span class="hljs-keyword">export</span> { ZipCodeValidator };
-<span class="hljs-keyword">export</span> { ZipCodeValidator as mainValidator };
+<span class="cm-keyword">export</span> { <span class="cm-variable">ZipCodeValidator</span> };
+<span class="cm-keyword">export</span> { <span class="cm-variable">ZipCodeValidator</span> <span class="cm-variable">as</span> <span class="cm-variable">mainValidator</span> };
 </code></pre>
 <h2 id="re-exports">Re-exports</h2>
 <p>Often modules extend other modules, and partially expose some of their features.
 A re-export does not import it locally, or introduce a local variable.</p>
 <h5 id="parseintbasedzipcodevalidatorts">ParseIntBasedZipCodeValidator.ts</h5>
-<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> ParseIntBasedZipCodeValidator {
-    isAcceptable(s: <span class="hljs-built_in">string</span>) {
-        <span class="hljs-keyword">return</span> s.length === <span class="hljs-number">5</span> &amp;&amp; <span class="hljs-built_in">parseInt</span>(s).toString() === s;
+<pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">ParseIntBasedZipCodeValidator</span> {
+    <span class="cm-property">isAcceptable</span>(<span class="cm-def">s</span>: <span class="cm-variable-3">string</span>) {
+        <span class="cm-keyword">return</span> <span class="cm-variable-2">s</span>.<span class="cm-property">length</span> <span class="cm-operator">===</span> <span class="cm-number">5</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable">parseInt</span>(<span class="cm-variable-2">s</span>).<span class="cm-property">toString</span>() <span class="cm-operator">===</span> <span class="cm-variable-2">s</span>;
     }
 }
 
-<span class="hljs-comment">// Export original validator but rename it</span>
-<span class="hljs-keyword">export</span> {ZipCodeValidator as RegExpBasedZipCodeValidator} from <span class="hljs-string">&quot;./ZipCodeValidator&quot;</span>;
+<span class="cm-comment">// Export original validator but rename it</span>
+<span class="cm-keyword">export</span> {<span class="cm-variable">ZipCodeValidator</span> <span class="cm-variable">as</span> <span class="cm-variable">RegExpBasedZipCodeValidator</span>} <span class="cm-variable">from</span> <span class="cm-string">&quot;./ZipCodeValidator&quot;</span>;
 </code></pre>
 <p>Optionally, a module can wrap one or more modules and combine all their exports using <code>export * from &quot;module&quot;</code> syntax.</p>
 <h5 id="allvalidatorsts">AllValidators.ts</h5>
-<pre><code class="lang-ts"><span class="hljs-keyword">export</span> * from <span class="hljs-string">&quot;./StringValidator&quot;</span>; <span class="hljs-comment">// exports interface &apos;StringValidator&apos;</span>
-<span class="hljs-keyword">export</span> * from <span class="hljs-string">&quot;./LettersOnlyValidator&quot;</span>; <span class="hljs-comment">// exports class &apos;LettersOnlyValidator&apos;</span>
-<span class="hljs-keyword">export</span> * from <span class="hljs-string">&quot;./ZipCodeValidator&quot;</span>;  <span class="hljs-comment">// exports class &apos;ZipCodeValidator&apos;</span>
+<pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">*</span> <span class="cm-keyword">from</span> <span class="cm-string">&quot;./StringValidator&quot;</span>; <span class="cm-comment">// exports interface &apos;StringValidator&apos;</span>
+<span class="cm-keyword">export</span> <span class="cm-keyword">*</span> <span class="cm-keyword">from</span> <span class="cm-string">&quot;./LettersOnlyValidator&quot;</span>; <span class="cm-comment">// exports class &apos;LettersOnlyValidator&apos;</span>
+<span class="cm-keyword">export</span> <span class="cm-keyword">*</span> <span class="cm-keyword">from</span> <span class="cm-string">&quot;./ZipCodeValidator&quot;</span>;  <span class="cm-comment">// exports class &apos;ZipCodeValidator&apos;</span>
 </code></pre>
 <h1 id="import">Import</h1>
 <p>Importing is just about as easy as exporting from a module.
 Importing an exported declaration is done through using one of the <code>import</code> forms below:</p>
 <h2 id="import-a-single-export-from-a-module">Import a single export from a module</h2>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { ZipCodeValidator } from <span class="hljs-string">&quot;./ZipCodeValidator&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> { <span class="cm-variable">ZipCodeValidator</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;./ZipCodeValidator&quot;</span>;
 
-<span class="hljs-keyword">let</span> myValidator = <span class="hljs-keyword">new</span> ZipCodeValidator();
+<span class="cm-keyword">let</span> <span class="cm-variable">myValidator</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">ZipCodeValidator</span>();
 </code></pre>
 <p>imports can also be renamed</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { ZipCodeValidator as ZCV } from <span class="hljs-string">&quot;./ZipCodeValidator&quot;</span>;
-<span class="hljs-keyword">let</span> myValidator = <span class="hljs-keyword">new</span> ZCV();
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> { <span class="cm-variable">ZipCodeValidator</span> <span class="cm-variable">as</span> <span class="cm-variable">ZCV</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;./ZipCodeValidator&quot;</span>;
+<span class="cm-keyword">let</span> <span class="cm-variable">myValidator</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">ZCV</span>();
 </code></pre>
 <h2 id="import-the-entire-module-into-a-single-variable-and-use-it-to-access-the-module-exports">Import the entire module into a single variable, and use it to access the module exports</h2>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> * as validator from <span class="hljs-string">&quot;./ZipCodeValidator&quot;</span>;
-<span class="hljs-keyword">let</span> myValidator = <span class="hljs-keyword">new</span> validator.ZipCodeValidator();
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">validator</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;./ZipCodeValidator&quot;</span>;
+<span class="cm-keyword">let</span> <span class="cm-variable">myValidator</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">validator</span>.<span class="cm-property">ZipCodeValidator</span>();
 </code></pre>
 <h2 id="import-a-module-for-side-effects-only">Import a module for side-effects only</h2>
 <p>Though not recommended practice, some modules set up some global state that can be used by other modules.
 These modules may not have any exports, or the consumer is not interested in any of their exports.
 To import these modules, use:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;./my-module.js&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-string">&quot;./my-module.js&quot;</span>;
 </code></pre>
 <h1 id="default-exports">Default exports</h1>
 <p>Each module can optionally export a <code>default</code> export.
@@ -785,55 +794,55 @@ Default exports are marked with the keyword <code>default</code>; and there can 
 <p><code>default</code> exports are really handy.
 For instance, a library like JQuery might have a default export of <code>jQuery</code> or <code>$</code>, which we&apos;d probably also import under the name <code>$</code> or <code>jQuery</code>.</p>
 <h5 id="jquerydts">JQuery.d.ts</h5>
-<pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">let</span> $: JQuery;
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> $;
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">let</span> <span class="cm-variable">$</span>: <span class="cm-variable-3">JQuery</span>;
+<span class="cm-keyword">export</span> <span class="cm-keyword">default</span> <span class="cm-variable">$</span>;
 </code></pre>
 <h5 id="appts">App.ts</h5>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> $ from <span class="hljs-string">&quot;JQuery&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-variable">$</span> <span class="cm-keyword">from</span> <span class="cm-string">&quot;JQuery&quot;</span>;
 
-$(<span class="hljs-string">&quot;button.continue&quot;</span>).html( <span class="hljs-string">&quot;Next Step...&quot;</span> );
+<span class="cm-variable">$</span>(<span class="cm-string">&quot;button.continue&quot;</span>).<span class="cm-property">html</span>( <span class="cm-string">&quot;Next Step...&quot;</span> );
 </code></pre>
 <p>Classes and function declarations can be authored directly as default exports.
 Default export class and function declaration names are optional.</p>
 <h5 id="zipcodevalidatorts">ZipCodeValidator.ts</h5>
-<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">class</span> ZipCodeValidator {
-    <span class="hljs-keyword">static</span> numberRegexp = <span class="hljs-regexp">/^[0-9]+$/</span>;
-    isAcceptable(s: <span class="hljs-built_in">string</span>) {
-        <span class="hljs-keyword">return</span> s.length === <span class="hljs-number">5</span> &amp;&amp; ZipCodeValidator.numberRegexp.test(s);
+<pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">default</span> <span class="cm-keyword">class</span> <span class="cm-variable">ZipCodeValidator</span> {
+    <span class="cm-keyword">static</span> <span class="cm-variable">numberRegexp</span> <span class="cm-operator">=</span> <span class="cm-string-2">/^[0-9]+$/</span>;
+    <span class="cm-variable">isAcceptable</span>(<span class="cm-variable">s</span>: <span class="cm-variable-3">string</span>) {
+        <span class="cm-keyword">return</span> <span class="cm-variable">s</span>.<span class="cm-property">length</span> <span class="cm-operator">===</span> <span class="cm-number">5</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable">ZipCodeValidator</span>.<span class="cm-property">numberRegexp</span>.<span class="cm-property">test</span>(<span class="cm-variable">s</span>);
     }
 }
 </code></pre>
 <h5 id="testts">Test.ts</h5>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> validator from <span class="hljs-string">&quot;./ZipCodeValidator&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-variable">validator</span> <span class="cm-keyword">from</span> <span class="cm-string">&quot;./ZipCodeValidator&quot;</span>;
 
-<span class="hljs-keyword">let</span> myValidator = <span class="hljs-keyword">new</span> validator();
+<span class="cm-keyword">let</span> <span class="cm-variable">myValidator</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">validator</span>();
 </code></pre>
 <p>or</p>
 <h5 id="staticzipcodevalidatorts">StaticZipCodeValidator.ts</h5>
-<pre><code class="lang-ts"><span class="hljs-keyword">const</span> numberRegexp = <span class="hljs-regexp">/^[0-9]+$/</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">const</span> <span class="cm-variable">numberRegexp</span> <span class="cm-operator">=</span> <span class="cm-string-2">/^[0-9]+$/</span>;
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">s: <span class="hljs-built_in">string</span></span>) </span>{
-    <span class="hljs-keyword">return</span> s.length === <span class="hljs-number">5</span> &amp;&amp; numberRegexp.test(s);
+<span class="cm-keyword">export</span> <span class="cm-keyword">default</span> <span class="cm-keyword">function</span> (<span class="cm-def">s</span>: <span class="cm-variable-3">string</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-variable-2">s</span>.<span class="cm-property">length</span> <span class="cm-operator">===</span> <span class="cm-number">5</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable">numberRegexp</span>.<span class="cm-property">test</span>(<span class="cm-variable-2">s</span>);
 }
 </code></pre>
 <h5 id="testts">Test.ts</h5>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> validate from <span class="hljs-string">&quot;./StaticZipCodeValidator&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-variable">validate</span> <span class="cm-keyword">from</span> <span class="cm-string">&quot;./StaticZipCodeValidator&quot;</span>;
 
-<span class="hljs-keyword">let</span> strings = [<span class="hljs-string">&quot;Hello&quot;</span>, <span class="hljs-string">&quot;98052&quot;</span>, <span class="hljs-string">&quot;101&quot;</span>];
+<span class="cm-keyword">let</span> <span class="cm-variable">strings</span> <span class="cm-operator">=</span> [<span class="cm-string">&quot;Hello&quot;</span>, <span class="cm-string">&quot;98052&quot;</span>, <span class="cm-string">&quot;101&quot;</span>];
 
-<span class="hljs-comment">// Use function validate</span>
-strings.forEach(s =&gt; {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`&quot;<span class="hljs-subst">${s}</span>&quot; <span class="hljs-subst">${validate(s) ? &quot; matches&quot; : &quot; does not match&quot;}</span>`</span>);
+<span class="cm-comment">// Use function validate</span>
+<span class="cm-variable">strings</span>.<span class="cm-property">forEach</span>(<span class="cm-def">s</span> <span class="cm-operator">=&gt;</span> {
+  <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string-2">`&quot;${</span><span class="cm-variable-2">s</span><span class="cm-string-2">}</span><span class="cm-string-2">&quot; ${</span><span class="cm-variable">validate</span>(<span class="cm-variable-2">s</span>) <span class="cm-operator">?</span> <span class="cm-string">&quot; matches&quot;</span> : <span class="cm-string">&quot; does not match&quot;</span><span class="cm-string-2">}</span><span class="cm-string-2">`</span>);
 });
 </code></pre>
 <p><code>default</code> exports can also be just values:</p>
 <h5 id="onetwothreets">OneTwoThree.ts</h5>
-<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-string">&quot;123&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">default</span> <span class="cm-string">&quot;123&quot;</span>;
 </code></pre>
 <h5 id="logts">Log.ts</h5>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> num from <span class="hljs-string">&quot;./OneTwoThree&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-variable">num</span> <span class="cm-keyword">from</span> <span class="cm-string">&quot;./OneTwoThree&quot;</span>;
 
-<span class="hljs-built_in">console</span>.log(num); <span class="hljs-comment">// &quot;123&quot;</span>
+<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">num</span>); <span class="cm-comment">// &quot;123&quot;</span>
 </code></pre>
 <h1 id="export--and-import--require"><code>export =</code> and <code>import = require()</code></h1>
 <p>Both CommonJS and AMD generally have the concept of an <code>exports</code> object which contains all exports from a module.</p>
@@ -844,26 +853,26 @@ TypeScript supports <code>export =</code> to model the traditional CommonJS and 
 This can be a class, interface, namespace, function, or enum.</p>
 <p>When importing a module using <code>export =</code>, TypeScript-specific <code>import module = require(&quot;module&quot;)</code> must be used to import the module.</p>
 <h5 id="zipcodevalidatorts">ZipCodeValidator.ts</h5>
-<pre><code class="lang-ts"><span class="hljs-keyword">let</span> numberRegexp = <span class="hljs-regexp">/^[0-9]+$/</span>;
-<span class="hljs-keyword">class</span> ZipCodeValidator {
-    isAcceptable(s: <span class="hljs-built_in">string</span>) {
-        <span class="hljs-keyword">return</span> s.length === <span class="hljs-number">5</span> &amp;&amp; numberRegexp.test(s);
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">numberRegexp</span> <span class="cm-operator">=</span> <span class="cm-string-2">/^[0-9]+$/</span>;
+<span class="cm-keyword">class</span> <span class="cm-variable">ZipCodeValidator</span> {
+    <span class="cm-property">isAcceptable</span>(<span class="cm-def">s</span>: <span class="cm-variable-3">string</span>) {
+        <span class="cm-keyword">return</span> <span class="cm-variable-2">s</span>.<span class="cm-property">length</span> <span class="cm-operator">===</span> <span class="cm-number">5</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable">numberRegexp</span>.<span class="cm-property">test</span>(<span class="cm-variable-2">s</span>);
     }
 }
-<span class="hljs-keyword">export</span> = ZipCodeValidator;
+<span class="cm-keyword">export</span> <span class="cm-operator">=</span> <span class="cm-variable">ZipCodeValidator</span>;
 </code></pre>
 <h5 id="testts">Test.ts</h5>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> zip = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./ZipCodeValidator&quot;</span>);
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-variable">zip</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;./ZipCodeValidator&quot;</span>);
 
-<span class="hljs-comment">// Some samples to try</span>
-<span class="hljs-keyword">let</span> strings = [<span class="hljs-string">&quot;Hello&quot;</span>, <span class="hljs-string">&quot;98052&quot;</span>, <span class="hljs-string">&quot;101&quot;</span>];
+<span class="cm-comment">// Some samples to try</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">strings</span> <span class="cm-operator">=</span> [<span class="cm-string">&quot;Hello&quot;</span>, <span class="cm-string">&quot;98052&quot;</span>, <span class="cm-string">&quot;101&quot;</span>];
 
-<span class="hljs-comment">// Validators to use</span>
-<span class="hljs-keyword">let</span> validator = <span class="hljs-keyword">new</span> zip();
+<span class="cm-comment">// Validators to use</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">validator</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">zip</span>();
 
-<span class="hljs-comment">// Show whether each string passed each validator</span>
-strings.forEach(s =&gt; {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`&quot;<span class="hljs-subst">${ s }</span>&quot; - <span class="hljs-subst">${ validator.isAcceptable(s) ? &quot;matches&quot; : &quot;does not match&quot; }</span>`</span>);
+<span class="cm-comment">// Show whether each string passed each validator</span>
+<span class="cm-variable">strings</span>.<span class="cm-property">forEach</span>(<span class="cm-def">s</span> <span class="cm-operator">=&gt;</span> {
+  <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string-2">`&quot;${</span> <span class="cm-variable-2">s</span> <span class="cm-string-2">}</span><span class="cm-string-2">&quot; - ${</span> <span class="cm-variable">validator</span>.<span class="cm-property">isAcceptable</span>(<span class="cm-variable-2">s</span>) <span class="cm-operator">?</span> <span class="cm-string">&quot;matches&quot;</span> : <span class="cm-string">&quot;does not match&quot;</span> <span class="cm-string-2">}</span><span class="cm-string-2">`</span>);
 });
 </code></pre>
 <h1 id="code-generation-for-modules">Code Generation for Modules</h1>
@@ -871,49 +880,49 @@ strings.forEach(s =&gt; {
 For more information on what the <code>define</code>, <code>require</code> and <code>register</code> calls in the generated code do, consult the documentation for each module loader.</p>
 <p>This simple example shows how the names used during importing and exporting get translated into the module loading code.</p>
 <h5 id="simplemodulets">SimpleModule.ts</h5>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> m = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;mod&quot;</span>);
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> t = m.something + <span class="hljs-number">1</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-variable">m</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;mod&quot;</span>);
+<span class="cm-keyword">export</span> <span class="cm-keyword">let</span> <span class="cm-variable">t</span> <span class="cm-operator">=</span> <span class="cm-variable">m</span>.<span class="cm-property">something</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>;
 </code></pre>
 <h5 id="amd--requirejs-simplemodulejs">AMD / RequireJS SimpleModule.js</h5>
-<pre><code class="lang-js">define([<span class="hljs-string">&quot;require&quot;</span>, <span class="hljs-string">&quot;exports&quot;</span>, <span class="hljs-string">&quot;./mod&quot;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">require, exports, mod_1</span>) </span>{
-    exports.t = mod_1.something + <span class="hljs-number">1</span>;
+<pre><code class="lang-js"><span class="cm-variable">define</span>([<span class="cm-string">&quot;require&quot;</span>, <span class="cm-string">&quot;exports&quot;</span>, <span class="cm-string">&quot;./mod&quot;</span>], <span class="cm-keyword">function</span> (<span class="cm-def">require</span>, <span class="cm-def">exports</span>, <span class="cm-def">mod_1</span>) {
+    <span class="cm-variable-2">exports</span>.<span class="cm-property">t</span> <span class="cm-operator">=</span> <span class="cm-variable-2">mod_1</span>.<span class="cm-property">something</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>;
 });
 </code></pre>
 <h5 id="commonjs--node-simplemodulejs">CommonJS / Node SimpleModule.js</h5>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> mod_1 = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./mod&quot;</span>);
-exports.t = mod_1.something + <span class="hljs-number">1</span>;
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">mod_1</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;./mod&quot;</span>);
+<span class="cm-variable">exports</span>.<span class="cm-property">t</span> <span class="cm-operator">=</span> <span class="cm-variable">mod_1</span>.<span class="cm-property">something</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>;
 </code></pre>
 <h5 id="umd-simplemodulejs">UMD SimpleModule.js</h5>
-<pre><code class="lang-js">(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">factory</span>) </span>{
-    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span> === <span class="hljs-string">&quot;object&quot;</span> &amp;&amp; <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span>.exports === <span class="hljs-string">&quot;object&quot;</span>) {
-        <span class="hljs-keyword">var</span> v = factory(<span class="hljs-built_in">require</span>, exports); <span class="hljs-keyword">if</span> (v !== <span class="hljs-literal">undefined</span>) <span class="hljs-built_in">module</span>.exports = v;
+<pre><code class="lang-js">(<span class="cm-keyword">function</span> (<span class="cm-def">factory</span>) {
+    <span class="cm-keyword">if</span> (<span class="cm-keyword">typeof</span> <span class="cm-keyword">module</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;object&quot;</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-keyword">typeof</span> <span class="cm-keyword">module</span>.<span class="cm-variable">exports</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;object&quot;</span>) {
+        <span class="cm-keyword">var</span> <span class="cm-def">v</span> <span class="cm-operator">=</span> <span class="cm-variable-2">factory</span>(<span class="cm-variable">require</span>, <span class="cm-variable">exports</span>); <span class="cm-keyword">if</span> (<span class="cm-variable-2">v</span> <span class="cm-operator">!==</span> <span class="cm-atom">undefined</span>) <span class="cm-keyword">module</span>.<span class="cm-variable">exports</span> <span class="cm-operator">=</span> <span class="cm-variable-2">v</span>;
     }
-    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> define === <span class="hljs-string">&quot;function&quot;</span> &amp;&amp; define.amd) {
-        define([<span class="hljs-string">&quot;require&quot;</span>, <span class="hljs-string">&quot;exports&quot;</span>, <span class="hljs-string">&quot;./mod&quot;</span>], factory);
+    <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-keyword">typeof</span> <span class="cm-variable">define</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;function&quot;</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable">define</span>.<span class="cm-property">amd</span>) {
+        <span class="cm-variable">define</span>([<span class="cm-string">&quot;require&quot;</span>, <span class="cm-string">&quot;exports&quot;</span>, <span class="cm-string">&quot;./mod&quot;</span>], <span class="cm-variable-2">factory</span>);
     }
-})(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">require, exports</span>) </span>{
-    <span class="hljs-keyword">var</span> mod_1 = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./mod&quot;</span>);
-    exports.t = mod_1.something + <span class="hljs-number">1</span>;
+})(<span class="cm-keyword">function</span> (<span class="cm-def">require</span>, <span class="cm-def">exports</span>) {
+    <span class="cm-keyword">var</span> <span class="cm-def">mod_1</span> <span class="cm-operator">=</span> <span class="cm-variable-2">require</span>(<span class="cm-string">&quot;./mod&quot;</span>);
+    <span class="cm-variable-2">exports</span>.<span class="cm-property">t</span> <span class="cm-operator">=</span> <span class="cm-variable-2">mod_1</span>.<span class="cm-property">something</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>;
 });
 </code></pre>
 <h5 id="system-simplemodulejs">System SimpleModule.js</h5>
-<pre><code class="lang-js">System.register([<span class="hljs-string">&quot;./mod&quot;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exports_1</span>) </span>{
-    <span class="hljs-keyword">var</span> mod_1;
-    <span class="hljs-keyword">var</span> t;
-    <span class="hljs-keyword">return</span> {
-        setters:[
-            <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">mod_1_1</span>) </span>{
-                mod_1 = mod_1_1;
+<pre><code class="lang-js"><span class="cm-variable">System</span>.<span class="cm-property">register</span>([<span class="cm-string">&quot;./mod&quot;</span>], <span class="cm-keyword">function</span>(<span class="cm-def">exports_1</span>) {
+    <span class="cm-keyword">var</span> <span class="cm-def">mod_1</span>;
+    <span class="cm-keyword">var</span> <span class="cm-def">t</span>;
+    <span class="cm-keyword">return</span> {
+        <span class="cm-property">setters</span>:[
+            <span class="cm-keyword">function</span> (<span class="cm-def">mod_1_1</span>) {
+                <span class="cm-variable-2">mod_1</span> <span class="cm-operator">=</span> <span class="cm-variable-2">mod_1_1</span>;
             }],
-        execute: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-            exports_1(<span class="hljs-string">&quot;t&quot;</span>, t = mod_1.something + <span class="hljs-number">1</span>);
+        <span class="cm-property">execute</span>: <span class="cm-keyword">function</span>() {
+            <span class="cm-variable-2">exports_1</span>(<span class="cm-string">&quot;t&quot;</span>, <span class="cm-variable-2">t</span> <span class="cm-operator">=</span> <span class="cm-variable-2">mod_1</span>.<span class="cm-property">something</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>);
         }
     }
 });
 </code></pre>
 <h5 id="native-ecmascript-2015-modules-simplemodulejs">Native ECMAScript 2015 modules SimpleModule.js</h5>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> { something } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./mod&quot;</span>;
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">var</span> t = something + <span class="hljs-number">1</span>;
+<pre><code class="lang-js"><span class="cm-keyword">import</span> { <span class="cm-variable">something</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;./mod&quot;</span>;
+<span class="cm-keyword">export</span> <span class="cm-keyword">var</span> <span class="cm-variable">t</span> <span class="cm-operator">=</span> <span class="cm-variable">something</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>;
 </code></pre>
 <h1 id="simple-example">Simple Example</h1>
 <p>Below, we&apos;ve consolidated the Validator implementations used in previous examples to only export a single named export from each module.</p>
@@ -924,49 +933,49 @@ for require.js, use <code>--module amd</code>. For example:</p>
 <p>When compiled, each module will become a separate <code>.js</code> file.
 As with reference tags, the compiler will follow <code>import</code> statements to compile dependent files.</p>
 <h5 id="validationts">Validation.ts</h5>
-<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> StringValidator {
-    isAcceptable(s: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">boolean</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">interface</span> <span class="cm-variable">StringValidator</span> {
+    <span class="cm-variable">isAcceptable</span>(<span class="cm-variable">s</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable">boolean</span>;
 }
 </code></pre>
 <h5 id="lettersonlyvalidatorts">LettersOnlyValidator.ts</h5>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { StringValidator } from <span class="hljs-string">&quot;./Validation&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> { <span class="cm-variable">StringValidator</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;./Validation&quot;</span>;
 
-<span class="hljs-keyword">const</span> lettersRegexp = <span class="hljs-regexp">/^[A-Za-z]+$/</span>;
+<span class="cm-keyword">const</span> <span class="cm-variable">lettersRegexp</span> <span class="cm-operator">=</span> <span class="cm-string-2">/^[A-Za-z]+$/</span>;
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> LettersOnlyValidator <span class="hljs-keyword">implements</span> StringValidator {
-    isAcceptable(s: <span class="hljs-built_in">string</span>) {
-        <span class="hljs-keyword">return</span> lettersRegexp.test(s);
+<span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">LettersOnlyValidator</span> <span class="cm-variable">implements</span> <span class="cm-variable">StringValidator</span> {
+    <span class="cm-variable">isAcceptable</span>(<span class="cm-variable">s</span>: <span class="cm-variable-3">string</span>) {
+        <span class="cm-keyword">return</span> <span class="cm-variable">lettersRegexp</span>.<span class="cm-property">test</span>(<span class="cm-variable">s</span>);
     }
 }
 </code></pre>
 <h5 id="zipcodevalidatorts">ZipCodeValidator.ts</h5>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { StringValidator } from <span class="hljs-string">&quot;./Validation&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> { <span class="cm-variable">StringValidator</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;./Validation&quot;</span>;
 
-<span class="hljs-keyword">const</span> numberRegexp = <span class="hljs-regexp">/^[0-9]+$/</span>;
+<span class="cm-keyword">const</span> <span class="cm-variable">numberRegexp</span> <span class="cm-operator">=</span> <span class="cm-string-2">/^[0-9]+$/</span>;
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> ZipCodeValidator <span class="hljs-keyword">implements</span> StringValidator {
-    isAcceptable(s: <span class="hljs-built_in">string</span>) {
-        <span class="hljs-keyword">return</span> s.length === <span class="hljs-number">5</span> &amp;&amp; numberRegexp.test(s);
+<span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">ZipCodeValidator</span> <span class="cm-variable">implements</span> <span class="cm-variable">StringValidator</span> {
+    <span class="cm-variable">isAcceptable</span>(<span class="cm-variable">s</span>: <span class="cm-variable-3">string</span>) {
+        <span class="cm-keyword">return</span> <span class="cm-variable">s</span>.<span class="cm-property">length</span> <span class="cm-operator">===</span> <span class="cm-number">5</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable">numberRegexp</span>.<span class="cm-property">test</span>(<span class="cm-variable">s</span>);
     }
 }
 </code></pre>
 <h5 id="testts">Test.ts</h5>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { StringValidator } from <span class="hljs-string">&quot;./Validation&quot;</span>;
-<span class="hljs-keyword">import</span> { ZipCodeValidator } from <span class="hljs-string">&quot;./ZipCodeValidator&quot;</span>;
-<span class="hljs-keyword">import</span> { LettersOnlyValidator } from <span class="hljs-string">&quot;./LettersOnlyValidator&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> { <span class="cm-variable">StringValidator</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;./Validation&quot;</span>;
+<span class="cm-keyword">import</span> { <span class="cm-variable">ZipCodeValidator</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;./ZipCodeValidator&quot;</span>;
+<span class="cm-keyword">import</span> { <span class="cm-variable">LettersOnlyValidator</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;./LettersOnlyValidator&quot;</span>;
 
-<span class="hljs-comment">// Some samples to try</span>
-<span class="hljs-keyword">let</span> strings = [<span class="hljs-string">&quot;Hello&quot;</span>, <span class="hljs-string">&quot;98052&quot;</span>, <span class="hljs-string">&quot;101&quot;</span>];
+<span class="cm-comment">// Some samples to try</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">strings</span> <span class="cm-operator">=</span> [<span class="cm-string">&quot;Hello&quot;</span>, <span class="cm-string">&quot;98052&quot;</span>, <span class="cm-string">&quot;101&quot;</span>];
 
-<span class="hljs-comment">// Validators to use</span>
-<span class="hljs-keyword">let</span> validators: { [s: <span class="hljs-built_in">string</span>]: StringValidator; } = {};
-validators[<span class="hljs-string">&quot;ZIP code&quot;</span>] = <span class="hljs-keyword">new</span> ZipCodeValidator();
-validators[<span class="hljs-string">&quot;Letters only&quot;</span>] = <span class="hljs-keyword">new</span> LettersOnlyValidator();
+<span class="cm-comment">// Validators to use</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">validators</span>: { [<span class="cm-variable">s</span>: <span class="cm-variable-3">string</span>]: <span class="cm-variable">StringValidator</span>; } <span class="cm-operator">=</span> {};
+<span class="cm-variable">validators</span>[<span class="cm-string">&quot;ZIP code&quot;</span>] <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">ZipCodeValidator</span>();
+<span class="cm-variable">validators</span>[<span class="cm-string">&quot;Letters only&quot;</span>] <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">LettersOnlyValidator</span>();
 
-<span class="hljs-comment">// Show whether each string passed each validator</span>
-strings.forEach(s =&gt; {
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> name <span class="hljs-keyword">in</span> validators) {
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`&quot;<span class="hljs-subst">${ s }</span>&quot; - <span class="hljs-subst">${ validators[name].isAcceptable(s) ? &quot;matches&quot; : &quot;does not match&quot; }</span> <span class="hljs-subst">${ name }</span>`</span>);
+<span class="cm-comment">// Show whether each string passed each validator</span>
+<span class="cm-variable">strings</span>.<span class="cm-property">forEach</span>(<span class="cm-def">s</span> <span class="cm-operator">=&gt;</span> {
+    <span class="cm-keyword">for</span> (<span class="cm-keyword">let</span> <span class="cm-def">name</span> <span class="cm-keyword">in</span> <span class="cm-variable">validators</span>) {
+        <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string-2">`&quot;${</span> <span class="cm-variable-2">s</span> <span class="cm-string-2">}</span><span class="cm-string-2">&quot; - ${</span> <span class="cm-variable">validators</span>[<span class="cm-variable-2">name</span>].<span class="cm-property">isAcceptable</span>(<span class="cm-variable-2">s</span>) <span class="cm-operator">?</span> <span class="cm-string">&quot;matches&quot;</span> : <span class="cm-string">&quot;does not match&quot;</span> <span class="cm-string-2">}</span> <span class="cm-string-2">${</span> <span class="cm-variable-2">name</span> <span class="cm-string-2">}</span><span class="cm-string-2">`</span>);
     }
 });
 </code></pre>
@@ -983,37 +992,37 @@ For this pattern to work, it&apos;s important that the symbol defined via an <co
 <p>To maintain type safety, we can use the <code>typeof</code> keyword.
 The <code>typeof</code> keyword, when used in a type position, produces the type of a value, in this case the type of the module.</p>
 <h5 id="dynamic-module-loading-in-nodejs">Dynamic Module Loading in Node.js</h5>
-<pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">require</span>(<span class="hljs-params">moduleName: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">any</span></span>;
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">require</span>(<span class="cm-def">moduleName</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable-3">any</span>;
 
-<span class="hljs-keyword">import</span> { ZipCodeValidator as Zip } from <span class="hljs-string">&quot;./ZipCodeValidator&quot;</span>;
+<span class="cm-keyword">import</span> { <span class="cm-variable">ZipCodeValidator</span> <span class="cm-variable">as</span> <span class="cm-variable">Zip</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;./ZipCodeValidator&quot;</span>;
 
-<span class="hljs-keyword">if</span> (needZipValidation) {
-    <span class="hljs-keyword">let</span> ZipCodeValidator: <span class="hljs-keyword">typeof</span> Zip = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./ZipCodeValidator&quot;</span>);
-    <span class="hljs-keyword">let</span> validator = <span class="hljs-keyword">new</span> ZipCodeValidator();
-    <span class="hljs-keyword">if</span> (validator.isAcceptable(<span class="hljs-string">&quot;...&quot;</span>)) { <span class="hljs-comment">/* ... */</span> }
+<span class="cm-keyword">if</span> (<span class="cm-variable">needZipValidation</span>) {
+    <span class="cm-keyword">let</span> <span class="cm-variable">ZipCodeValidator</span>: <span class="cm-keyword">typeof</span> <span class="cm-variable">Zip</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;./ZipCodeValidator&quot;</span>);
+    <span class="cm-keyword">let</span> <span class="cm-variable">validator</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">ZipCodeValidator</span>();
+    <span class="cm-keyword">if</span> (<span class="cm-variable">validator</span>.<span class="cm-property">isAcceptable</span>(<span class="cm-string">&quot;...&quot;</span>)) { <span class="cm-comment">/* ... */</span> }
 }
 </code></pre>
 <h5 id="sample-dynamic-module-loading-in-requirejs">Sample: Dynamic Module Loading in require.js</h5>
-<pre><code class="lang-ts">declare function require(moduleNames: string[], onLoad: (...args: any[]) =&gt; void): void;
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">require</span>(<span class="cm-def">moduleNames</span>: <span class="cm-variable-3">string</span>[], <span class="cm-variable">onLoad</span>: (<span class="cm-meta">...</span><span class="cm-variable">args</span>: <span class="cm-variable-3">any</span>[]) <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span>): <span class="cm-variable">void</span>;
 
-import * as Zip from &quot;./ZipCodeValidator&quot;;
+<span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">Zip</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;./ZipCodeValidator&quot;</span>;
 
-if (needZipValidation) {
-    require([&quot;./ZipCodeValidator&quot;], (ZipCodeValidator: typeof Zip) =&gt; {
-        let validator = new ZipCodeValidator.ZipCodeValidator();
-        if (validator.isAcceptable(&quot;...&quot;)) { /* ... */ }
+<span class="cm-keyword">if</span> (<span class="cm-variable">needZipValidation</span>) {
+    <span class="cm-variable">require</span>([<span class="cm-string">&quot;./ZipCodeValidator&quot;</span>], (<span class="cm-def">ZipCodeValidator</span>: <span class="cm-keyword">typeof</span> <span class="cm-variable">Zip</span>) <span class="cm-operator">=&gt;</span> {
+        <span class="cm-keyword">let</span> <span class="cm-def">validator</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable-2">ZipCodeValidator</span>.<span class="cm-property">ZipCodeValidator</span>();
+        <span class="cm-keyword">if</span> (<span class="cm-variable-2">validator</span>.<span class="cm-property">isAcceptable</span>(<span class="cm-string">&quot;...&quot;</span>)) { <span class="cm-comment">/* ... */</span> }
     });
 }
 </code></pre>
 <h5 id="sample-dynamic-module-loading-in-systemjs">Sample: Dynamic Module Loading in System.js</h5>
-<pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">const</span> System: <span class="hljs-built_in">any</span>;
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">const</span> <span class="cm-variable">System</span>: <span class="cm-variable-3">any</span>;
 
-<span class="hljs-keyword">import</span> { ZipCodeValidator as Zip } from <span class="hljs-string">&quot;./ZipCodeValidator&quot;</span>;
+<span class="cm-keyword">import</span> { <span class="cm-variable">ZipCodeValidator</span> <span class="cm-variable">as</span> <span class="cm-variable">Zip</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;./ZipCodeValidator&quot;</span>;
 
-<span class="hljs-keyword">if</span> (needZipValidation) {
-    System.import(<span class="hljs-string">&quot;./ZipCodeValidator&quot;</span>).then((ZipCodeValidator: <span class="hljs-keyword">typeof</span> Zip) =&gt; {
-        <span class="hljs-keyword">var</span> x = <span class="hljs-keyword">new</span> ZipCodeValidator();
-        <span class="hljs-keyword">if</span> (x.isAcceptable(<span class="hljs-string">&quot;...&quot;</span>)) { <span class="hljs-comment">/* ... */</span> }
+<span class="cm-keyword">if</span> (<span class="cm-variable">needZipValidation</span>) {
+    <span class="cm-variable">System</span>.<span class="cm-property">import</span>(<span class="cm-string">&quot;./ZipCodeValidator&quot;</span>).<span class="cm-property">then</span>((<span class="cm-def">ZipCodeValidator</span>: <span class="cm-keyword">typeof</span> <span class="cm-variable">Zip</span>) <span class="cm-operator">=&gt;</span> {
+        <span class="cm-keyword">var</span> <span class="cm-def">x</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable-2">ZipCodeValidator</span>();
+        <span class="cm-keyword">if</span> (<span class="cm-variable-2">x</span>.<span class="cm-property">isAcceptable</span>(<span class="cm-string">&quot;...&quot;</span>)) { <span class="cm-comment">/* ... */</span> }
     });
 }
 </code></pre>
@@ -1029,55 +1038,55 @@ We could define each module in its own <code>.d.ts</code> file with top-level ex
 To do so, we use a construct similar to ambient namespaces, but we use the <code>module</code> keyword and the quoted name of the module which will be available to a later import.
 For example:</p>
 <h5 id="nodedts-simplified-excerpt">node.d.ts (simplified excerpt)</h5>
-<pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">module</span> &quot;url&quot; {
-    <span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> Url {
-        protocol?: <span class="hljs-built_in">string</span>;
-        hostname?: <span class="hljs-built_in">string</span>;
-        pathname?: <span class="hljs-built_in">string</span>;
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">module</span> <span class="cm-string">&quot;url&quot;</span> {
+    <span class="cm-keyword">export</span> <span class="cm-keyword">interface</span> <span class="cm-variable">Url</span> {
+        <span class="cm-variable">protocol</span><span class="cm-operator">?</span>: <span class="cm-variable-3">string</span>;
+        <span class="cm-variable">hostname</span><span class="cm-operator">?</span>: <span class="cm-variable-3">string</span>;
+        <span class="cm-variable">pathname</span><span class="cm-operator">?</span>: <span class="cm-variable-3">string</span>;
     }
 
-    <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parse</span>(<span class="hljs-params">urlStr: <span class="hljs-built_in">string</span>, parseQueryString?, slashesDenoteHost?</span>): <span class="hljs-title">Url</span></span>;
+    <span class="cm-keyword">export</span> <span class="cm-keyword">function</span> <span class="cm-variable">parse</span>(<span class="cm-variable">urlStr</span>: <span class="cm-variable-3">string</span>, <span class="cm-variable">parseQueryString</span><span class="cm-operator">?</span>, <span class="cm-variable">slashesDenoteHost</span><span class="cm-operator">?</span>): <span class="cm-variable">Url</span>;
 }
 
-<span class="hljs-keyword">declare</span> <span class="hljs-keyword">module</span> &quot;path&quot; {
-    <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">normalize</span>(<span class="hljs-params">p: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">string</span></span>;
-    <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">join</span>(<span class="hljs-params">...paths: <span class="hljs-built_in">any</span>[]</span>): <span class="hljs-title">string</span></span>;
-    <span class="hljs-keyword">export</span> <span class="hljs-keyword">var</span> sep: <span class="hljs-built_in">string</span>;
+<span class="cm-variable">declare</span> <span class="cm-keyword">module</span> <span class="cm-string">&quot;path&quot;</span> {
+    <span class="cm-keyword">export</span> <span class="cm-keyword">function</span> <span class="cm-def">normalize</span>(<span class="cm-def">p</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable-3">string</span>;
+    <span class="cm-keyword">export</span> <span class="cm-keyword">function</span> <span class="cm-def">join</span>(<span class="cm-meta">...</span><span class="cm-def">paths</span>: <span class="cm-variable-3">any</span>[]): <span class="cm-variable-3">string</span>;
+    <span class="cm-keyword">export</span> <span class="cm-keyword">var</span> <span class="cm-def">sep</span>: <span class="cm-variable-3">string</span>;
 }
 </code></pre>
 <p>Now we can <code>/// &lt;reference&gt;</code> <code>node.d.ts</code> and then load the modules using <code>import url = require(&quot;url&quot;);</code> or <code>import * as URL from &quot;url&quot;</code>.</p>
-<pre><code class="lang-ts"><span class="hljs-comment">/// &lt;reference path=&quot;node.d.ts&quot;/&gt;</span>
-<span class="hljs-keyword">import</span> * as URL from <span class="hljs-string">&quot;url&quot;</span>;
-<span class="hljs-keyword">let</span> myUrl = URL.parse(<span class="hljs-string">&quot;http://www.typescriptlang.org&quot;</span>);
+<pre><code class="lang-ts"><span class="cm-comment">/// &lt;reference path=&quot;node.d.ts&quot;/&gt;</span>
+<span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">URL</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;url&quot;</span>;
+<span class="cm-keyword">let</span> <span class="cm-variable">myUrl</span> <span class="cm-operator">=</span> <span class="cm-variable">URL</span>.<span class="cm-property">parse</span>(<span class="cm-string">&quot;http://www.typescriptlang.org&quot;</span>);
 </code></pre>
 <h3 id="shorthand-ambient-modules">Shorthand ambient modules</h3>
 <p>If you don&apos;t want to take the time to write out declarations before using a new module, you can use a shorthand declaration to get started quickly.</p>
 <h5 id="declarationsdts">declarations.d.ts</h5>
-<pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">module</span> &quot;hot-new-<span class="hljs-keyword">module</span>&quot;;
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">module</span> <span class="cm-string">&quot;hot-new-module&quot;</span>;
 </code></pre>
 <p>All imports from a shorthand module will have the <code>any</code> type.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> x, {y} from <span class="hljs-string">&quot;hot-new-module&quot;</span>;
-x(y);
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-variable">x</span>, {<span class="cm-variable">y</span>} <span class="cm-variable">from</span> <span class="cm-string">&quot;hot-new-module&quot;</span>;
+<span class="cm-variable">x</span>(<span class="cm-variable">y</span>);
 </code></pre>
 <h3 id="wildcard-module-declarations">Wildcard module declarations</h3>
 <p>Some module loaders such as <a href="https://github.com/systemjs/systemjs/blob/master/docs/overview.md#plugin-syntax" target="_blank">SystemJS</a>
 and <a href="https://github.com/amdjs/amdjs-api/blob/master/LoaderPlugins.md" target="_blank">AMD</a> allow non-JavaScript content to be imported.
 These typically use a prefix or suffix to indicate the special loading semantics.
 Wildcard module declarations can be used to cover these cases.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">module</span> &quot;*!text&quot; {
-    <span class="hljs-keyword">const</span> content: <span class="hljs-built_in">string</span>;
-    <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> content;
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">module</span> <span class="cm-string">&quot;*!text&quot;</span> {
+    <span class="cm-keyword">const</span> <span class="cm-def">content</span>: <span class="cm-variable-3">string</span>;
+    <span class="cm-keyword">export</span> <span class="cm-keyword">default</span> <span class="cm-variable-2">content</span>;
 }
-<span class="hljs-comment">// Some do it the other way around.</span>
-<span class="hljs-keyword">declare</span> <span class="hljs-keyword">module</span> &quot;json!*&quot; {
-    <span class="hljs-keyword">const</span> value: <span class="hljs-built_in">any</span>;
-    <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> value;
+<span class="cm-comment">// Some do it the other way around.</span>
+<span class="cm-variable">declare</span> <span class="cm-keyword">module</span> <span class="cm-string">&quot;json!*&quot;</span> {
+    <span class="cm-keyword">const</span> <span class="cm-def">value</span>: <span class="cm-variable-3">any</span>;
+    <span class="cm-keyword">export</span> <span class="cm-keyword">default</span> <span class="cm-variable-2">value</span>;
 }
 </code></pre>
 <p>Now you can import things that match <code>&quot;*!text&quot;</code> or <code>&quot;json!*&quot;</code>.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> fileContent from <span class="hljs-string">&quot;./xyz.txt!text&quot;</span>;
-<span class="hljs-keyword">import</span> data from <span class="hljs-string">&quot;json!http://example.com/data.json&quot;</span>;
-<span class="hljs-built_in">console</span>.log(data, fileContent);
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-variable">fileContent</span> <span class="cm-keyword">from</span> <span class="cm-string">&quot;./xyz.txt!text&quot;</span>;
+<span class="cm-keyword">import</span> <span class="cm-variable">data</span> <span class="cm-keyword">from</span> <span class="cm-string">&quot;json!http://example.com/data.json&quot;</span>;
+<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">data</span>, <span class="cm-variable">fileContent</span>);
 </code></pre>
 <h3 id="umd-modules">UMD modules</h3>
 <p>Some libraries are designed to be used in many module loaders, or with no module loading (global variables).
@@ -1085,17 +1094,17 @@ These are known as <a href="https://github.com/umdjs/umd" target="_blank">UMD</a
 These libraries can be accessed through either an import or a global variable.
 For example:</p>
 <h5 id="math-libdts">math-lib.d.ts</h5>
-<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isPrime</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">boolean</span></span>;
-<span class="hljs-keyword">export</span> as <span class="hljs-keyword">namespace</span> mathLib;
+<pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">function</span> <span class="cm-variable">isPrime</span>(<span class="cm-def">x</span>: <span class="cm-variable-3">number</span>): <span class="cm-variable">boolean</span>;
+<span class="cm-keyword">export</span> <span class="cm-variable">as</span> <span class="cm-variable">namespace</span> <span class="cm-variable">mathLib</span>;
 </code></pre>
 <p>The library can then be used as an import within modules:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { isPrime } from <span class="hljs-string">&quot;math-lib&quot;</span>;
-isPrime(<span class="hljs-number">2</span>);
-mathLib.isPrime(<span class="hljs-number">2</span>); <span class="hljs-comment">// ERROR: can&apos;t use the global definition from inside a module</span>
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> { <span class="cm-variable">isPrime</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;math-lib&quot;</span>;
+<span class="cm-variable">isPrime</span>(<span class="cm-number">2</span>);
+<span class="cm-variable">mathLib</span>.<span class="cm-property">isPrime</span>(<span class="cm-number">2</span>); <span class="cm-comment">// ERROR: can&apos;t use the global definition from inside a module</span>
 </code></pre>
 <p>It can also be used as a global variable, but only inside of a script.
 (A script is a file with no imports or exports.)</p>
-<pre><code class="lang-ts">mathLib.isPrime(<span class="hljs-number">2</span>);
+<pre><code class="lang-ts"><span class="cm-variable">mathLib</span>.<span class="cm-property">isPrime</span>(<span class="cm-number">2</span>);
 </code></pre>
 <h1 id="guidance-for-structuring-modules">Guidance for structuring modules</h1>
 <h2 id="export-as-close-to-top-level-as-possible">Export as close to top-level as possible</h2>
@@ -1112,42 +1121,42 @@ If a module&apos;s primary purpose is to house one specific export, then you sho
 This makes both importing and actually using the import a little easier.
 For example:</p>
 <h4 id="myclassts">MyClass.ts</h4>
-<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">class</span> SomeType {
-  <span class="hljs-keyword">constructor</span>() { ... }
+<pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">default</span> <span class="cm-keyword">class</span> <span class="cm-variable">SomeType</span> {
+  <span class="cm-keyword">constructor</span>() { <span class="cm-meta">...</span> }
 }
 </code></pre>
 <h4 id="myfuncts">MyFunc.ts</h4>
-<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getThing</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;thing&quot;</span>; }
+<pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">default</span> <span class="cm-keyword">function</span> <span class="cm-variable">getThing</span>() { <span class="cm-keyword">return</span> <span class="cm-string">&quot;thing&quot;</span>; }
 </code></pre>
 <h4 id="consumerts">Consumer.ts</h4>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> t from <span class="hljs-string">&quot;./MyClass&quot;</span>;
-<span class="hljs-keyword">import</span> f from <span class="hljs-string">&quot;./MyFunc&quot;</span>;
-<span class="hljs-keyword">let</span> x = <span class="hljs-keyword">new</span> t();
-<span class="hljs-built_in">console</span>.log(f());
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-variable">t</span> <span class="cm-keyword">from</span> <span class="cm-string">&quot;./MyClass&quot;</span>;
+<span class="cm-keyword">import</span> <span class="cm-variable">f</span> <span class="cm-keyword">from</span> <span class="cm-string">&quot;./MyFunc&quot;</span>;
+<span class="cm-keyword">let</span> <span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">t</span>();
+<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">f</span>());
 </code></pre>
 <p>This is optimal for consumers. They can name your type whatever they want (<code>t</code> in this case) and don&apos;t have to do any excessive dotting to find your objects.</p>
 <h3 id="if-youre-exporting-multiple-objects-put-them-all-at-top-level">If you&apos;re exporting multiple objects, put them all at top-level</h3>
 <h4 id="mythingsts">MyThings.ts</h4>
-<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> SomeType { <span class="hljs-comment">/* ... */</span> }
-<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">someFunc</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-comment">/* ... */</span> }
+<pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">SomeType</span> { <span class="cm-comment">/* ... */</span> }
+<span class="cm-keyword">export</span> <span class="cm-keyword">function</span> <span class="cm-variable">someFunc</span>() { <span class="cm-comment">/* ... */</span> }
 </code></pre>
 <p>Conversely when importing:</p>
 <h3 id="explicitly-list-imported-names">Explicitly list imported names</h3>
 <h4 id="consumerts">Consumer.ts</h4>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { SomeType, someFunc } from <span class="hljs-string">&quot;./MyThings&quot;</span>;
-<span class="hljs-keyword">let</span> x = <span class="hljs-keyword">new</span> SomeType();
-<span class="hljs-keyword">let</span> y = someFunc();
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> { <span class="cm-variable">SomeType</span>, <span class="cm-variable">someFunc</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;./MyThings&quot;</span>;
+<span class="cm-keyword">let</span> <span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">SomeType</span>();
+<span class="cm-keyword">let</span> <span class="cm-variable">y</span> <span class="cm-operator">=</span> <span class="cm-variable">someFunc</span>();
 </code></pre>
 <h3 id="use-the-namespace-import-pattern-if-youre-importing-a-large-number-of-things">Use the namespace import pattern if you&apos;re importing a large number of things</h3>
 <h4 id="mylargemodulets">MyLargeModule.ts</h4>
-<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> Dog { ... }
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> Cat { ... }
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> Tree { ... }
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> Flower { ... }
+<pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">Dog</span> { <span class="cm-meta">...</span> }
+<span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">Cat</span> { <span class="cm-meta">...</span> }
+<span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">Tree</span> { <span class="cm-meta">...</span> }
+<span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">Flower</span> { <span class="cm-meta">...</span> }
 </code></pre>
 <h4 id="consumerts">Consumer.ts</h4>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> * as myLargeModule from <span class="hljs-string">&quot;./MyLargeModule.ts&quot;</span>;
-<span class="hljs-keyword">let</span> x = <span class="hljs-keyword">new</span> myLargeModule.Dog();
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">myLargeModule</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;./MyLargeModule.ts&quot;</span>;
+<span class="cm-keyword">let</span> <span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">myLargeModule</span>.<span class="cm-property">Dog</span>();
 </code></pre>
 <h2 id="re-export-to-extend">Re-export to extend</h2>
 <p>Often you will need to extend functionality on a module.
@@ -1157,120 +1166,120 @@ The recommended solution is to <em>not</em> mutate the original object, but rath
 <p>Consider a simple calculator implementation defined in module <code>Calculator.ts</code>.
 The module also exports a helper function to test the calculator functionality by passing a list of input strings and writing the result at the end.</p>
 <h4 id="calculatorts">Calculator.ts</h4>
-<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> Calculator {
-    <span class="hljs-keyword">private</span> current = <span class="hljs-number">0</span>;
-    <span class="hljs-keyword">private</span> memory = <span class="hljs-number">0</span>;
-    <span class="hljs-keyword">private</span> operator: <span class="hljs-built_in">string</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">Calculator</span> {
+    <span class="cm-keyword">private</span> <span class="cm-variable">current</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;
+    <span class="cm-keyword">private</span> <span class="cm-variable">memory</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;
+    <span class="cm-keyword">private</span> <span class="cm-variable">operator</span>: <span class="cm-variable-3">string</span>;
 
-    <span class="hljs-keyword">protected</span> processDigit(digit: <span class="hljs-built_in">string</span>, currentValue: <span class="hljs-built_in">number</span>) {
-        <span class="hljs-keyword">if</span> (digit &gt;= <span class="hljs-string">&quot;0&quot;</span> &amp;&amp; digit &lt;= <span class="hljs-string">&quot;9&quot;</span>) {
-            <span class="hljs-keyword">return</span> currentValue * <span class="hljs-number">10</span> + (digit.charCodeAt(<span class="hljs-number">0</span>) - <span class="hljs-string">&quot;0&quot;</span>.charCodeAt(<span class="hljs-number">0</span>));
+    <span class="cm-keyword">protected</span> <span class="cm-variable">processDigit</span>(<span class="cm-variable">digit</span>: <span class="cm-variable-3">string</span>, <span class="cm-variable">currentValue</span>: <span class="cm-variable-3">number</span>) {
+        <span class="cm-keyword">if</span> (<span class="cm-variable">digit</span> <span class="cm-operator">&gt;=</span> <span class="cm-string">&quot;0&quot;</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable">digit</span> <span class="cm-operator">&lt;=</span> <span class="cm-string">&quot;9&quot;</span>) {
+            <span class="cm-keyword">return</span> <span class="cm-variable">currentValue</span> <span class="cm-operator">*</span> <span class="cm-number">10</span> <span class="cm-operator">+</span> (<span class="cm-variable">digit</span>.<span class="cm-variable">charCodeAt</span>(<span class="cm-number">0</span>) <span class="cm-operator">-</span> <span class="cm-string">&quot;0&quot;</span>.<span class="cm-variable">charCodeAt</span>(<span class="cm-number">0</span>));
         }
     }
 
-    <span class="hljs-keyword">protected</span> processOperator(operator: <span class="hljs-built_in">string</span>) {
-        <span class="hljs-keyword">if</span> ([<span class="hljs-string">&quot;+&quot;</span>, <span class="hljs-string">&quot;-&quot;</span>, <span class="hljs-string">&quot;*&quot;</span>, <span class="hljs-string">&quot;/&quot;</span>].indexOf(operator) &gt;= <span class="hljs-number">0</span>) {
-            <span class="hljs-keyword">return</span> operator;
+    <span class="cm-keyword">protected</span> <span class="cm-variable">processOperator</span>(<span class="cm-variable">operator</span>: <span class="cm-variable-3">string</span>) {
+        <span class="cm-keyword">if</span> ([<span class="cm-string">&quot;+&quot;</span>, <span class="cm-string">&quot;-&quot;</span>, <span class="cm-string">&quot;*&quot;</span>, <span class="cm-string">&quot;/&quot;</span>].<span class="cm-property">indexOf</span>(<span class="cm-variable">operator</span>) <span class="cm-operator">&gt;=</span> <span class="cm-number">0</span>) {
+            <span class="cm-keyword">return</span> <span class="cm-variable">operator</span>;
         }
     }
 
-    <span class="hljs-keyword">protected</span> evaluateOperator(operator: <span class="hljs-built_in">string</span>, left: <span class="hljs-built_in">number</span>, right: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">number</span> {
-        <span class="hljs-keyword">switch</span> (<span class="hljs-keyword">this</span>.operator) {
-            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;+&quot;</span>: <span class="hljs-keyword">return</span> left + right;
-            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;-&quot;</span>: <span class="hljs-keyword">return</span> left - right;
-            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;*&quot;</span>: <span class="hljs-keyword">return</span> left * right;
-            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;/&quot;</span>: <span class="hljs-keyword">return</span> left / right;
+    <span class="cm-keyword">protected</span> <span class="cm-variable">evaluateOperator</span>(<span class="cm-variable">operator</span>: <span class="cm-variable-3">string</span>, <span class="cm-variable">left</span>: <span class="cm-variable-3">number</span>, <span class="cm-variable">right</span>: <span class="cm-variable-3">number</span>): <span class="cm-variable-3">number</span> {
+        <span class="cm-keyword">switch</span> (<span class="cm-keyword">this</span>.<span class="cm-property">operator</span>) {
+            <span class="cm-keyword">case</span> <span class="cm-string">&quot;+&quot;</span>: <span class="cm-keyword">return</span> <span class="cm-variable">left</span> <span class="cm-operator">+</span> <span class="cm-variable">right</span>;
+            <span class="cm-keyword">case</span> <span class="cm-string">&quot;-&quot;</span>: <span class="cm-keyword">return</span> <span class="cm-variable">left</span> <span class="cm-operator">-</span> <span class="cm-variable">right</span>;
+            <span class="cm-keyword">case</span> <span class="cm-string">&quot;*&quot;</span>: <span class="cm-keyword">return</span> <span class="cm-variable">left</span> <span class="cm-operator">*</span> <span class="cm-variable">right</span>;
+            <span class="cm-keyword">case</span> <span class="cm-string">&quot;/&quot;</span>: <span class="cm-keyword">return</span> <span class="cm-variable">left</span> <span class="cm-operator">/</span> <span class="cm-variable">right</span>;
         }
     }
 
-    <span class="hljs-keyword">private</span> evaluate() {
-        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.operator) {
-            <span class="hljs-keyword">this</span>.memory = <span class="hljs-keyword">this</span>.evaluateOperator(<span class="hljs-keyword">this</span>.operator, <span class="hljs-keyword">this</span>.memory, <span class="hljs-keyword">this</span>.current);
+    <span class="cm-keyword">private</span> <span class="cm-variable">evaluate</span>() {
+        <span class="cm-keyword">if</span> (<span class="cm-keyword">this</span>.<span class="cm-property">operator</span>) {
+            <span class="cm-keyword">this</span>.<span class="cm-property">memory</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">evaluateOperator</span>(<span class="cm-keyword">this</span>.<span class="cm-property">operator</span>, <span class="cm-keyword">this</span>.<span class="cm-property">memory</span>, <span class="cm-keyword">this</span>.<span class="cm-property">current</span>);
         }
-        <span class="hljs-keyword">else</span> {
-            <span class="hljs-keyword">this</span>.memory = <span class="hljs-keyword">this</span>.current;
+        <span class="cm-keyword">else</span> {
+            <span class="cm-keyword">this</span>.<span class="cm-property">memory</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">current</span>;
         }
-        <span class="hljs-keyword">this</span>.current = <span class="hljs-number">0</span>;
+        <span class="cm-keyword">this</span>.<span class="cm-property">current</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;
     }
 
-    <span class="hljs-keyword">public</span> handelChar(char: <span class="hljs-built_in">string</span>) {
-        <span class="hljs-keyword">if</span> (char === <span class="hljs-string">&quot;=&quot;</span>) {
-            <span class="hljs-keyword">this</span>.evaluate();
-            <span class="hljs-keyword">return</span>;
+    <span class="cm-keyword">public</span> <span class="cm-variable">handelChar</span>(<span class="cm-variable">char</span>: <span class="cm-variable-3">string</span>) {
+        <span class="cm-keyword">if</span> (<span class="cm-variable">char</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;=&quot;</span>) {
+            <span class="cm-keyword">this</span>.<span class="cm-property">evaluate</span>();
+            <span class="cm-keyword">return</span>;
         }
-        <span class="hljs-keyword">else</span> {
-            <span class="hljs-keyword">let</span> value = <span class="hljs-keyword">this</span>.processDigit(char, <span class="hljs-keyword">this</span>.current);
-            <span class="hljs-keyword">if</span> (value !== <span class="hljs-literal">undefined</span>) {
-                <span class="hljs-keyword">this</span>.current = value;
-                <span class="hljs-keyword">return</span>;
+        <span class="cm-keyword">else</span> {
+            <span class="cm-keyword">let</span> <span class="cm-variable">value</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">processDigit</span>(<span class="cm-variable">char</span>, <span class="cm-keyword">this</span>.<span class="cm-property">current</span>);
+            <span class="cm-keyword">if</span> (<span class="cm-variable">value</span> <span class="cm-operator">!==</span> <span class="cm-atom">undefined</span>) {
+                <span class="cm-keyword">this</span>.<span class="cm-property">current</span> <span class="cm-operator">=</span> <span class="cm-variable">value</span>;
+                <span class="cm-keyword">return</span>;
             }
-            <span class="hljs-keyword">else</span> {
-                <span class="hljs-keyword">let</span> value = <span class="hljs-keyword">this</span>.processOperator(char);
-                <span class="hljs-keyword">if</span> (value !== <span class="hljs-literal">undefined</span>) {
-                    <span class="hljs-keyword">this</span>.evaluate();
-                    <span class="hljs-keyword">this</span>.operator = value;
-                    <span class="hljs-keyword">return</span>;
+            <span class="cm-keyword">else</span> {
+                <span class="cm-keyword">let</span> <span class="cm-variable">value</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">processOperator</span>(<span class="cm-variable">char</span>);
+                <span class="cm-keyword">if</span> (<span class="cm-variable">value</span> <span class="cm-operator">!==</span> <span class="cm-atom">undefined</span>) {
+                    <span class="cm-keyword">this</span>.<span class="cm-property">evaluate</span>();
+                    <span class="cm-keyword">this</span>.<span class="cm-property">operator</span> <span class="cm-operator">=</span> <span class="cm-variable">value</span>;
+                    <span class="cm-keyword">return</span>;
                 }
             }
         }
-        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`Unsupported input: &apos;<span class="hljs-subst">${char}</span>&apos;`</span>);
+        <span class="cm-keyword">throw</span> <span class="cm-keyword">new</span> <span class="cm-variable">Error</span>(<span class="cm-string-2">`Unsupported input: &apos;${</span><span class="cm-variable">char</span><span class="cm-string-2">}</span><span class="cm-string-2">&apos;`</span>);
     }
 
-    <span class="hljs-keyword">public</span> getResult() {
-        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.memory;
+    <span class="cm-keyword">public</span> <span class="cm-variable">getResult</span>() {
+        <span class="cm-keyword">return</span> <span class="cm-keyword">this</span>.<span class="cm-property">memory</span>;
     }
 }
 
-<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params">c: Calculator, input: <span class="hljs-built_in">string</span></span>) </span>{
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; input.length; i++) {
-        c.handelChar(input[i]);
+<span class="cm-keyword">export</span> <span class="cm-keyword">function</span> <span class="cm-variable">test</span>(<span class="cm-def">c</span>: <span class="cm-variable-3">Calculator</span>, <span class="cm-def">input</span>: <span class="cm-variable-3">string</span>) {
+    <span class="cm-keyword">for</span> (<span class="cm-keyword">let</span> <span class="cm-def">i</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable-2">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable-2">input</span>.<span class="cm-property">length</span>; <span class="cm-variable-2">i</span><span class="cm-operator">++</span>) {
+        <span class="cm-variable-2">c</span>.<span class="cm-property">handelChar</span>(<span class="cm-variable-2">input</span>[<span class="cm-variable-2">i</span>]);
     }
 
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`result of &apos;<span class="hljs-subst">${input}</span>&apos; is &apos;<span class="hljs-subst">${c.getResult()}</span>&apos;`</span>);
+    <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string-2">`result of &apos;${</span><span class="cm-variable-2">input</span><span class="cm-string-2">}</span><span class="cm-string-2">&apos; is &apos;${</span><span class="cm-variable-2">c</span>.<span class="cm-property">getResult</span>()<span class="cm-string-2">}</span><span class="cm-string-2">&apos;`</span>);
 }
 </code></pre>
 <p>Here is a simple test for the calculator using the exposed <code>test</code> function.</p>
 <h4 id="testcalculatorts">TestCalculator.ts</h4>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { Calculator, test } from <span class="hljs-string">&quot;./Calculator&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> { <span class="cm-variable">Calculator</span>, <span class="cm-variable">test</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;./Calculator&quot;</span>;
 
 
-<span class="hljs-keyword">let</span> c = <span class="hljs-keyword">new</span> Calculator();
-test(c, <span class="hljs-string">&quot;1+2*33/11=&quot;</span>); <span class="hljs-comment">// prints 9</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">c</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Calculator</span>();
+<span class="cm-variable">test</span>(<span class="cm-variable">c</span>, <span class="cm-string">&quot;1+2*33/11=&quot;</span>); <span class="cm-comment">// prints 9</span>
 </code></pre>
 <p>Now to extend this to add support for input with numbers in bases other than 10, let&apos;s create <code>ProgrammerCalculator.ts</code></p>
 <h4 id="programmercalculatorts">ProgrammerCalculator.ts</h4>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { Calculator } from <span class="hljs-string">&quot;./Calculator&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> { <span class="cm-variable">Calculator</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;./Calculator&quot;</span>;
 
-<span class="hljs-keyword">class</span> ProgrammerCalculator extends Calculator {
-    <span class="hljs-keyword">static</span> digits = [<span class="hljs-string">&quot;0&quot;</span>, <span class="hljs-string">&quot;1&quot;</span>, <span class="hljs-string">&quot;2&quot;</span>, <span class="hljs-string">&quot;3&quot;</span>, <span class="hljs-string">&quot;4&quot;</span>, <span class="hljs-string">&quot;5&quot;</span>, <span class="hljs-string">&quot;6&quot;</span>, <span class="hljs-string">&quot;7&quot;</span>, <span class="hljs-string">&quot;8&quot;</span>, <span class="hljs-string">&quot;9&quot;</span>, <span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-string">&quot;B&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>, <span class="hljs-string">&quot;D&quot;</span>, <span class="hljs-string">&quot;E&quot;</span>, <span class="hljs-string">&quot;F&quot;</span>];
+<span class="cm-keyword">class</span> <span class="cm-variable">ProgrammerCalculator</span> <span class="cm-keyword">extends</span> <span class="cm-variable">Calculator</span> {
+    <span class="cm-keyword">static</span> <span class="cm-variable">digits</span> <span class="cm-operator">=</span> [<span class="cm-string">&quot;0&quot;</span>, <span class="cm-string">&quot;1&quot;</span>, <span class="cm-string">&quot;2&quot;</span>, <span class="cm-string">&quot;3&quot;</span>, <span class="cm-string">&quot;4&quot;</span>, <span class="cm-string">&quot;5&quot;</span>, <span class="cm-string">&quot;6&quot;</span>, <span class="cm-string">&quot;7&quot;</span>, <span class="cm-string">&quot;8&quot;</span>, <span class="cm-string">&quot;9&quot;</span>, <span class="cm-string">&quot;A&quot;</span>, <span class="cm-string">&quot;B&quot;</span>, <span class="cm-string">&quot;C&quot;</span>, <span class="cm-string">&quot;D&quot;</span>, <span class="cm-string">&quot;E&quot;</span>, <span class="cm-string">&quot;F&quot;</span>];
 
-    <span class="hljs-keyword">constructor</span>(public base: number) {
-        <span class="hljs-keyword">super</span>();
-        <span class="hljs-keyword">if</span> (base &lt;= <span class="hljs-number">0</span> || base &gt; ProgrammerCalculator.digits.length) {
-            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;base has to be within 0 to 16 inclusive.&quot;</span>);
+    <span class="cm-keyword">constructor</span>(<span class="cm-keyword">public</span> <span class="cm-variable">base</span>: <span class="cm-variable-3">number</span>) {
+        <span class="cm-keyword">super</span>();
+        <span class="cm-keyword">if</span> (<span class="cm-variable">base</span> <span class="cm-operator">&lt;=</span> <span class="cm-number">0</span> <span class="cm-operator">||</span> <span class="cm-variable">base</span> <span class="cm-operator">&gt;</span> <span class="cm-variable">ProgrammerCalculator</span>.<span class="cm-variable">digits</span>.<span class="cm-variable">length</span>) {
+            <span class="cm-keyword">throw</span> <span class="cm-keyword">new</span> <span class="cm-variable">Error</span>(<span class="cm-string">&quot;base has to be within 0 to 16 inclusive.&quot;</span>);
         }
     }
 
-    <span class="hljs-keyword">protected</span> processDigit(digit: <span class="hljs-built_in">string</span>, currentValue: <span class="hljs-built_in">number</span>) {
-        <span class="hljs-keyword">if</span> (ProgrammerCalculator.digits.indexOf(digit) &gt;= <span class="hljs-number">0</span>) {
-            <span class="hljs-keyword">return</span> currentValue * <span class="hljs-keyword">this</span>.base + ProgrammerCalculator.digits.indexOf(digit);
+    <span class="cm-keyword">protected</span> <span class="cm-variable">processDigit</span>(<span class="cm-variable">digit</span>: <span class="cm-variable-3">string</span>, <span class="cm-variable">currentValue</span>: <span class="cm-variable-3">number</span>) {
+        <span class="cm-keyword">if</span> (<span class="cm-variable">ProgrammerCalculator</span>.<span class="cm-property">digits</span>.<span class="cm-property">indexOf</span>(<span class="cm-variable">digit</span>) <span class="cm-operator">&gt;=</span> <span class="cm-number">0</span>) {
+            <span class="cm-keyword">return</span> <span class="cm-variable">currentValue</span> <span class="cm-operator">*</span> <span class="cm-keyword">this</span>.<span class="cm-property">base</span> <span class="cm-operator">+</span> <span class="cm-variable">ProgrammerCalculator</span>.<span class="cm-property">digits</span>.<span class="cm-property">indexOf</span>(<span class="cm-variable">digit</span>);
         }
     }
 }
 
-<span class="hljs-comment">// Export the new extended calculator as Calculator</span>
-<span class="hljs-keyword">export</span> { ProgrammerCalculator as Calculator };
+<span class="cm-comment">// Export the new extended calculator as Calculator</span>
+<span class="cm-keyword">export</span> { <span class="cm-variable">ProgrammerCalculator</span> <span class="cm-variable">as</span> <span class="cm-variable">Calculator</span> };
 
-<span class="hljs-comment">// Also, export the helper function</span>
-<span class="hljs-keyword">export</span> { test } from <span class="hljs-string">&quot;./Calculator&quot;</span>;
+<span class="cm-comment">// Also, export the helper function</span>
+<span class="cm-keyword">export</span> { <span class="cm-variable">test</span> } <span class="cm-variable">from</span> <span class="cm-string">&quot;./Calculator&quot;</span>;
 </code></pre>
 <p>The new module <code>ProgrammerCalculator</code> exports an API shape similar to that of the original <code>Calculator</code> module, but does not augment any objects in the original module.
 Here is a test for our ProgrammerCalculator class:</p>
 <h4 id="testprogrammercalculatorts">TestProgrammerCalculator.ts</h4>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { Calculator, test } from <span class="hljs-string">&quot;./ProgrammerCalculator&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> { <span class="cm-variable">Calculator</span>, <span class="cm-variable">test</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;./ProgrammerCalculator&quot;</span>;
 
-<span class="hljs-keyword">let</span> c = <span class="hljs-keyword">new</span> Calculator(<span class="hljs-number">2</span>);
-test(c, <span class="hljs-string">&quot;001+010=&quot;</span>); <span class="hljs-comment">// prints 3</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">c</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Calculator</span>(<span class="cm-number">2</span>);
+<span class="cm-variable">test</span>(<span class="cm-variable">c</span>, <span class="cm-string">&quot;001+010=&quot;</span>); <span class="cm-comment">// prints 3</span>
 </code></pre>
 <h2 id="do-not-use-namespaces-in-modules">Do not use namespaces in modules</h2>
 <p>When first moving to a module-based organization, a common tendency is to wrap exports in an additional layer of namespaces.
@@ -1340,12 +1349,13 @@ From the consumption side, the consumer of any given module gets to pick the nam
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Modules","level":"3.13","depth":1,"next":{"title":"Namespaces","level":"3.14","depth":1,"path":"pages/Namespaces.md","ref":"pages/Namespaces.md","articles":[]},"previous":{"title":"Iterators and Generators","level":"3.12","depth":1,"path":"pages/Iterators and Generators.md","ref":"pages/Iterators and Generators.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Modules.md","mtime":"2018-02-06T13:12:52.655Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T14:21:41.019Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Modules","level":"3.13","depth":1,"next":{"title":"Namespaces","level":"3.14","depth":1,"path":"pages/Namespaces.md","ref":"pages/Namespaces.md","articles":[]},"previous":{"title":"Iterators and Generators","level":"3.12","depth":1,"path":"pages/Iterators and Generators.md","ref":"pages/Iterators and Generators.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Modules.md","mtime":"2018-02-05T16:09:39.245Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:22:50.132Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
     
@@ -1372,6 +1382,8 @@ From the consumption side, the consumer of any given module gets to pick the nam
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
+    
+
     
 
     </body>

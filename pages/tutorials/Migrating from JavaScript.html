@@ -12,9 +12,14 @@
         
         
     
+    
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight-1/website.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
@@ -44,6 +49,10 @@
         
     
         
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../../assets/css/atom-one-dark.css" />
     
 
         
@@ -713,13 +722,13 @@
 <h1 id="&#xC124;&#xC815;-&#xD30C;&#xC77C;-&#xC791;&#xC131;&#xD558;&#xAE30;-writing-a-configuration-file">&#xC124;&#xC815; &#xD30C;&#xC77C; &#xC791;&#xC131;&#xD558;&#xAE30; (Writing a Configuration File)</h1>
 <p>TypeScript&#xB294; <code>tsconfig.json</code>&#xC774;&#xB77C;&#xB294; &#xD30C;&#xC77C;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD3EC;&#xD568;&#xC2DC;&#xD0AC; &#xD30C;&#xC77C;&#xACFC; &#xAC80;&#xC0AC;&#xC758; &#xC885;&#xB958;&#xC640; &#xAC19;&#xC740; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC758; &#xC635;&#xC158;&#xC744; &#xAD00;&#xB9AC;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0; &#xC0AC;&#xC6A9;&#xD560; &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xBF08;&#xB300;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-json">{
-    <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
-        <span class="hljs-string">&quot;outDir&quot;</span>: <span class="hljs-string">&quot;./built&quot;</span>,
-        <span class="hljs-string">&quot;allowJs&quot;</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;es5&quot;</span>
+    <span class="cm-property">&quot;compilerOptions&quot;</span>: {
+        <span class="cm-property">&quot;outDir&quot;</span>: <span class="cm-string">&quot;./built&quot;</span>,
+        <span class="cm-property">&quot;allowJs&quot;</span>: <span class="cm-atom">true</span>,
+        <span class="cm-property">&quot;target&quot;</span>: <span class="cm-string">&quot;es5&quot;</span>
     },
-    <span class="hljs-string">&quot;include&quot;</span>: [
-        <span class="hljs-string">&quot;./src/**/*&quot;</span>
+    <span class="cm-property">&quot;include&quot;</span>: [
+        <span class="cm-string">&quot;./src/**/*&quot;</span>
     ]
 }
 </code></pre>
@@ -749,33 +758,33 @@ TypeScript &#xB85C;&#xB354;&#xC778; <code>awesome-typescript-loader</code>&#xB97
 <pre><code class="lang-shell">npm install awesome-typescript-loader source-map-loader
 </code></pre>
 <p>&#xADF8;&#xB9AC;&#xACE0; &#xB2E4;&#xC74C;&#xC758; &#xC635;&#xC158;&#xC744; <code>webpack.config.js</code> &#xD30C;&#xC77C;&#xC5D0; &#xBCD1;&#xD569;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
-<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = {
-    entry: <span class="hljs-string">&quot;./src/index.ts&quot;</span>,
-    output: {
-        filename: <span class="hljs-string">&quot;./dist/bundle.js&quot;</span>,
+<pre><code class="lang-js"><span class="cm-keyword">module</span>.<span class="cm-variable">exports</span> <span class="cm-operator">=</span> {
+    <span class="cm-property">entry</span>: <span class="cm-string">&quot;./src/index.ts&quot;</span>,
+    <span class="cm-property">output</span>: {
+        <span class="cm-property">filename</span>: <span class="cm-string">&quot;./dist/bundle.js&quot;</span>,
     },
 
-    <span class="hljs-comment">// webpack&#xC758; &#xCD9C;&#xB825;&#xC744; &#xB514;&#xBC84;&#xAE45; &#xD560; &#xC18C;&#xC2A4; &#xB9F5;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</span>
-    devtool: <span class="hljs-string">&quot;source-map&quot;</span>,
+    <span class="cm-comment">// webpack&#xC758; &#xCD9C;&#xB825;&#xC744; &#xB514;&#xBC84;&#xAE45; &#xD560; &#xC18C;&#xC2A4; &#xB9F5;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</span>
+    <span class="cm-property">devtool</span>: <span class="cm-string">&quot;source-map&quot;</span>,
 
-    resolve: {
-        <span class="hljs-comment">// &#xD655;&#xC778; &#xAC00;&#xB2A5;&#xD55C; &#xD655;&#xC7A5;&#xC790;&#xB85C; &apos;.ts&apos; &#xBC0F; &apos;.tsx&apos;&#xB97C; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</span>
-        extensions: [<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;.webpack.js&quot;</span>, <span class="hljs-string">&quot;.web.js&quot;</span>, <span class="hljs-string">&quot;.ts&quot;</span>, <span class="hljs-string">&quot;.tsx&quot;</span>, <span class="hljs-string">&quot;.js&quot;</span>]
+    <span class="cm-property">resolve</span>: {
+        <span class="cm-comment">// &#xD655;&#xC778; &#xAC00;&#xB2A5;&#xD55C; &#xD655;&#xC7A5;&#xC790;&#xB85C; &apos;.ts&apos; &#xBC0F; &apos;.tsx&apos;&#xB97C; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</span>
+        <span class="cm-property">extensions</span>: [<span class="cm-string">&quot;&quot;</span>, <span class="cm-string">&quot;.webpack.js&quot;</span>, <span class="cm-string">&quot;.web.js&quot;</span>, <span class="cm-string">&quot;.ts&quot;</span>, <span class="cm-string">&quot;.tsx&quot;</span>, <span class="cm-string">&quot;.js&quot;</span>]
     },
 
-    <span class="hljs-built_in">module</span>: {
-        loaders: [
-            <span class="hljs-comment">// &apos;.ts&apos; &#xB610;&#xB294; &apos;.tsx&apos; &#xD655;&#xC7A5;&#xC790;&#xB97C; &#xAC00;&#xC9C4; &#xBAA8;&#xB4E0; &#xD30C;&#xC77C;&#xC740; &apos;awesome-typescript-loader&apos;&#xC5D0; &#xC758;&#xD574; &#xCC98;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;.</span>
-            { test: <span class="hljs-regexp">/\.tsx?$/</span>, loader: <span class="hljs-string">&quot;awesome-typescript-loader&quot;</span> }
+    <span class="cm-keyword">module</span>: {
+        <span class="cm-variable">loaders</span>: [
+            <span class="cm-comment">// &apos;.ts&apos; &#xB610;&#xB294; &apos;.tsx&apos; &#xD655;&#xC7A5;&#xC790;&#xB97C; &#xAC00;&#xC9C4; &#xBAA8;&#xB4E0; &#xD30C;&#xC77C;&#xC740; &apos;awesome-typescript-loader&apos;&#xC5D0; &#xC758;&#xD574; &#xCC98;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;.</span>
+            { <span class="cm-variable">test</span>: <span class="cm-string-2">/\.tsx?$/</span>, <span class="cm-variable">loader</span>: <span class="cm-string">&quot;awesome-typescript-loader&quot;</span> }
         ],
 
-        preLoaders: [
-            <span class="hljs-comment">// &apos;.js&apos; &#xD30C;&#xC77C;&#xC758; &#xBAA8;&#xB4E0; &#xCD9C;&#xB825;&#xC5D0;&#xB294; &apos;source-maps-loader&apos;&#xB85C; &#xB2E4;&#xC2DC; &#xCC98;&#xB9AC;&#xB41C; &#xC18C;&#xC2A4; &#xB9F5;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
-            { test: <span class="hljs-regexp">/\.js$/</span>, loader: <span class="hljs-string">&quot;source-map-loader&quot;</span> }
+        <span class="cm-variable">preLoaders</span>: [
+            <span class="cm-comment">// &apos;.js&apos; &#xD30C;&#xC77C;&#xC758; &#xBAA8;&#xB4E0; &#xCD9C;&#xB825;&#xC5D0;&#xB294; &apos;source-maps-loader&apos;&#xB85C; &#xB2E4;&#xC2DC; &#xCC98;&#xB9AC;&#xB41C; &#xC18C;&#xC2A4; &#xB9F5;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+            { <span class="cm-property">test</span>: <span class="cm-string-2">/\.js$/</span>, <span class="cm-property">loader</span>: <span class="cm-string">&quot;source-map-loader&quot;</span> }
         ]
     },
 
-    <span class="hljs-comment">// &#xB2E4;&#xB978; &#xC635;&#xC158;&#xB4E4;...</span>
+    <span class="cm-comment">// &#xB2E4;&#xB978; &#xC635;&#xC158;&#xB4E4;...</span>
 };
 </code></pre>
 <p><code>.js</code> &#xD30C;&#xC77C;&#xC744; &#xB2E4;&#xB8E8;&#xB294; &#xB2E4;&#xB978; &#xB85C;&#xB354;&#xBCF4;&#xB2E4; awesome-typescript-loader&#xB97C; &#xBA3C;&#xC800; &#xC2E4;&#xD589;&#xD574;&#xC57C; &#xD55C;&#xB2E4;&#xB294; &#xC810;&#xC5D0; &#xC8FC;&#xC758;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>Webpack&#xC744; &#xC704;&#xD55C; TypeScript &#xB85C;&#xB354;&#xC778; <a href="https://github.com/TypeStrong/ts-loader" target="_blank">ts-loader</a>&#xB3C4; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xC785;&#xB2C8;&#xB2E4;.<br><a href="https://github.com/s-panferov/awesome-typescript-loader#differences-between-ts-loader" target="_blank">&#xC5EC;&#xAE30;&#xC5D0;&#xC11C;</a>. &#xADF8; &#xB458;&#xC758; &#xCC28;&#xC774;&#xC810;&#xC5D0; &#xB300;&#xD574; &#xB354; &#xC77D;&#xC5B4;&#xBCFC; &#xC218; &#xC788;&#xB2E4;. </p>
@@ -793,29 +802,29 @@ TypeScript &#xB85C;&#xB354;&#xC778; <code>awesome-typescript-loader</code>&#xB97
 <h3 id="&#xBAA8;&#xB4C8;-&#xAC00;&#xC838;&#xC624;&#xAE30;-importing-from-modules">&#xBAA8;&#xB4C8; &#xAC00;&#xC838;&#xC624;&#xAE30; (Importing from Modules)</h3>
 <p><code>Cannot find name &apos;require&apos;.</code>&#xC640; <code>Cannot find name &apos;define&apos;.</code> &#xAC19;&#xC740; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xAE30; &#xC2DC;&#xC791;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB7EC;&#xD55C; &#xACBD;&#xC6B0; &#xBAA8;&#xB4C8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC788;&#xC744; &#xAC00;&#xB2A5;&#xC131;&#xC774; &#xB192;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>TypeScript&#xB85C; &#xC791;&#xC131;&#xD558;&#xB294; &#xB3D9;&#xC548; &#xD655;&#xC2E4;&#xD560; &#xC218; &#xC788;&#xC9C0;&#xB9CC;</p>
-<pre><code class="lang-ts"><span class="hljs-comment">// Node/CommonJS&#xB97C; &#xC704;&#xD55C;</span>
-<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">require</span>(<span class="hljs-params">path: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">any</span></span>;
+<pre><code class="lang-ts"><span class="cm-comment">// Node/CommonJS&#xB97C; &#xC704;&#xD55C;</span>
+<span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">require</span>(<span class="cm-def">path</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable-3">any</span>;
 </code></pre>
 <p>&#xB610;&#xB294;</p>
-<pre><code class="lang-ts"><span class="hljs-comment">// RequireJS/AMD&#xB97C; &#xC704;&#xD55C;</span>
-<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">define</span>(<span class="hljs-params">...args: <span class="hljs-built_in">any</span>[]</span>): <span class="hljs-title">any</span></span>;
+<pre><code class="lang-ts"><span class="cm-comment">// RequireJS/AMD&#xB97C; &#xC704;&#xD55C;</span>
+<span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">define</span>(<span class="cm-meta">...</span><span class="cm-def">args</span>: <span class="cm-variable-3">any</span>[]): <span class="cm-variable-3">any</span>;
 </code></pre>
 <p>&#xC774;&#xB7EC;&#xD55C; &#xD638;&#xCD9C;&#xB4E4;&#xC740; &#xC81C;&#xAC70;&#xD558;&#xACE0; import&#xC5D0; TypeScript &#xAD6C;&#xBB38;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>&#xBA3C;&#xC800; TypeScript&#xC758; <code>module</code> &#xD50C;&#xB798;&#xADF8;&#xB97C; &#xC124;&#xC815;&#xD558;&#xC5EC; &#xC77C;&#xBD80; &#xBAA8;&#xB4C8; &#xC2DC;&#xC2A4;&#xD15C;&#xC744; &#xD65C;&#xC131;&#xD654;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xC720;&#xD6A8;&#xD55C; &#xC635;&#xC158;&#xC740;<code>commonjs</code>,<code>amd</code>,<code>system</code> &#xADF8;&#xB9AC;&#xACE0; <code>umd</code>&#xC785;&#xB2C8;&#xB2E4;.</p>
 <p>&#xB2E4;&#xC74C; Node/CommonJS &#xCF54;&#xB4DC;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294; &#xACBD;&#xC6B0;:</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> foo = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;foo&quot;</span>);
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">foo</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;foo&quot;</span>);
 
-foo.doStuff();
+<span class="cm-variable">foo</span>.<span class="cm-property">doStuff</span>();
 </code></pre>
 <p>&#xB610;&#xB294; &#xB2E4;&#xC74C; RequireJS / AMD &#xCF54;&#xB4DC;:</p>
-<pre><code class="lang-js">define([<span class="hljs-string">&quot;foo&quot;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">foo</span>) </span>{
-    foo.doStuff();
+<pre><code class="lang-js"><span class="cm-variable">define</span>([<span class="cm-string">&quot;foo&quot;</span>], <span class="cm-keyword">function</span>(<span class="cm-def">foo</span>) {
+    <span class="cm-variable-2">foo</span>.<span class="cm-property">doStuff</span>();
 })
 </code></pre>
 <p>&#xADF8;&#xB7EC;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; TypeScript &#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> foo = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;foo&quot;</span>);
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-variable">foo</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;foo&quot;</span>);
 
-foo.doStuff();
+<span class="cm-variable">foo</span>.<span class="cm-property">doStuff</span>();
 </code></pre>
 <h3 id="&#xC120;&#xC5B8;-&#xD30C;&#xC77C;-&#xAC00;&#xC838;-&#xC624;&#xAE30;-getting-declaration-files">&#xC120;&#xC5B8; &#xD30C;&#xC77C; &#xAC00;&#xC838; &#xC624;&#xAE30; (Getting Declaration Files)</h3>
 <p>TypeScript&#xB85C; &#xC804;&#xD658;&#xD558;&#xAE30; &#xC2DC;&#xC791;&#xD558;&#xBA74; <code>Cannot find module &apos;foo&apos;.</code>&#xACFC; &#xAC19;&#xC740; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC5EC;&#xAE30;&#xC11C; &#xBB38;&#xC81C;&#xB294; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xC124;&#xBA85;&#xD560; &#xC218; &#xC788;&#xB294; <em>&#xC120;&#xC5B8; &#xD30C;&#xC77C;(declaration files)</em> &#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC9C0; &#xC54A;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xD589;&#xD788;&#xB3C4; &#xC774;&#xAC83;&#xC740; &#xAF64; &#xC27D;&#xC2B5;&#xB2C8;&#xB2E4;.<br>TypeScript&#xC5D0;&#xC11C; <code>lodash</code>&#xC640; &#xAC19;&#xC740; &#xD328;&#xD0A4;&#xC9C0;&#xC5D0; &#xB300;&#xD574; &#xBD88;&#xD3C9;&#xD558;&#xB294; &#xACBD;&#xC6B0; &#xADF8;&#xB0E5; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
@@ -826,56 +835,56 @@ foo.doStuff();
 <h3 id="&#xBAA8;&#xB4C8;-&#xB0B4;&#xBCF4;&#xB0B4;&#xAE30;-exporting-from-modules">&#xBAA8;&#xB4C8; &#xB0B4;&#xBCF4;&#xB0B4;&#xAE30; (Exporting from Modules)</h3>
 <p>&#xC804;&#xD615;&#xC801;&#xC73C;&#xB85C; &#xBAA8;&#xB4C8;&#xC5D0;&#xC11C; &#xB0B4;&#xBCF4;&#xB0B4;&#xAE30;&#xB294; <code>exports</code> &#xB098; <code>module.exports</code>&#xC640; &#xAC19;&#xC740; &#xAC12;&#xC5D0; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xB294; &#xAC83;&#xC744; &#xD3EC;&#xD568;&#xD569;&#xB2C8;&#xB2E4;.<br>TypeScript&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xCD5C;&#xC0C1;&#xC704; &#xB808;&#xBCA8; &#xB0B4;&#xBCF4;&#xB0B4;&#xAE30; &#xBA85;&#xB839;&#xBB38;&#xC744; &#xD5C8;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; &#xC774;&#xC640; &#xAC19;&#xC740; &#xD568;&#xC218;&#xB97C; &#xB0B4;&#xBCF4;&#xB0B8; &#xACBD;&#xC6B0;:</p>
-<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports.feedPets = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">pets</span>) </span>{
-    <span class="hljs-comment">// ...</span>
+<pre><code class="lang-js"><span class="cm-keyword">module</span>.<span class="cm-variable">exports</span>.<span class="cm-property">feedPets</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">pets</span>) {
+    <span class="cm-comment">// ...</span>
 }
 </code></pre>
 <p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">feedPets</span>(<span class="hljs-params">pets</span>) </span>{
-    <span class="hljs-comment">// ...</span>
+<pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">function</span> <span class="cm-variable">feedPets</span>(<span class="cm-def">pets</span>) {
+    <span class="cm-comment">// ...</span>
 }
 </code></pre>
 <p>&#xB54C;&#xB85C;&#xB294; exports &#xAC1D;&#xCCB4;&#xB97C; &#xC644;&#xC804;&#xD788; &#xB36E;&#xC5B4;&#xC4F0;&#xAE30;&#xB3C4; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC774;&#xAC83;&#xC740; &#xBAA8;&#xB4C8;&#xC744; &#xC774; &#xCF54;&#xB4DC;&#xCC98;&#xB7FC; &#xC989;&#xC2DC; &#xD638;&#xCD9C; &#xAC00;&#xB2A5;&#xD55C; &#xBAA8;&#xB4C8;&#xB85C; &#xB9CC;&#xB4E4;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD328;&#xD134;&#xC785;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;express&quot;</span>);
-<span class="hljs-keyword">var</span> app = express();
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">express</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;express&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">app</span> <span class="cm-operator">=</span> <span class="cm-variable">express</span>();
 </code></pre>
 <p>&#xC774;&#xC804;&#xC5D0;&#xB294; &#xC774;&#xB807;&#xAC8C; &#xC791;&#xC131;&#xD588;&#xC744; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; :</p>
-<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-comment">// ...</span>
+<pre><code class="lang-js"><span class="cm-keyword">function</span> <span class="cm-variable">foo</span>() {
+    <span class="cm-comment">// ...</span>
 }
-<span class="hljs-built_in">module</span>.exports = foo;
+<span class="cm-keyword">module</span>.<span class="cm-variable">exports</span> <span class="cm-operator">=</span> <span class="cm-variable">foo</span>;
 </code></pre>
 <p>TypeScript&#xC5D0;&#xC11C;&#xB294; &#xC774;&#xAC83;&#xC744; <code>export =</code> &#xAD6C;&#xC870;&#xB85C; &#xBAA8;&#xB378;&#xB9C1;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-comment">// ...</span>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">foo</span>() {
+    <span class="cm-comment">// ...</span>
 }
-<span class="hljs-keyword">export</span> = foo;
+<span class="cm-keyword">export</span> <span class="cm-operator">=</span> <span class="cm-variable">foo</span>;
 </code></pre>
 <h3 id="&#xB108;&#xBB34;-&#xB9CE;&#xAC70;&#xB098;-&#xC801;&#xC740;-&#xC778;&#xC218;-too-manytoo-few-arguments">&#xB108;&#xBB34; &#xB9CE;&#xAC70;&#xB098; &#xC801;&#xC740; &#xC778;&#xC218; (Too many/too few arguments)</h3>
 <p>&#xB54C;&#xB54C;&#xB85C; &#xB108;&#xBB34;&#xB098; &#xB9CE;&#xAC70;&#xB098; &#xC801;&#xC740; &#xC778;&#xC218;&#xB97C; &#xAC00;&#xC9C4; &#xD568;&#xC218;&#xB97C; &#xD638;&#xCD9C;&#xD560; &#xB54C;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC804;&#xD615;&#xC801;&#xC73C;&#xB85C; &#xC774;&#xAC83;&#xC740; &#xBC84;&#xADF8;&#xC774;&#xC9C0;&#xB9CC; &#xC5B4;&#xB5A4; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xB97C; &#xC4F0;&#xB294; &#xB300;&#xC2E0; <code>arguments</code> &#xAC1D;&#xCCB4;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xD568;&#xC218;&#xB97C; &#xC120;&#xC5B8;&#xD588;&#xC744; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myCoolFunction</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">arguments</span>.length == <span class="hljs-number">2</span> &amp;&amp; !<span class="hljs-built_in">Array</span>.isArray(<span class="hljs-built_in">arguments</span>[<span class="hljs-number">1</span>])) {
-        <span class="hljs-keyword">var</span> f = <span class="hljs-built_in">arguments</span>[<span class="hljs-number">0</span>];
-        <span class="hljs-keyword">var</span> arr = <span class="hljs-built_in">arguments</span>[<span class="hljs-number">1</span>];
-        <span class="hljs-comment">// ...</span>
+<pre><code class="lang-js"><span class="cm-keyword">function</span> <span class="cm-variable">myCoolFunction</span>() {
+    <span class="cm-keyword">if</span> (<span class="cm-variable-2">arguments</span>.<span class="cm-property">length</span> <span class="cm-operator">==</span> <span class="cm-number">2</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-operator">!</span><span class="cm-variable">Array</span>.<span class="cm-property">isArray</span>(<span class="cm-variable-2">arguments</span>[<span class="cm-number">1</span>])) {
+        <span class="cm-keyword">var</span> <span class="cm-def">f</span> <span class="cm-operator">=</span> <span class="cm-variable-2">arguments</span>[<span class="cm-number">0</span>];
+        <span class="cm-keyword">var</span> <span class="cm-def">arr</span> <span class="cm-operator">=</span> <span class="cm-variable-2">arguments</span>[<span class="cm-number">1</span>];
+        <span class="cm-comment">// ...</span>
     }
-    <span class="hljs-comment">// ...</span>
+    <span class="cm-comment">// ...</span>
 }
 
-myCoolFunction(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x</span>) </span>{ <span class="hljs-built_in">console</span>.log(x) }, [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]);
-myCoolFunction(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x</span>) </span>{ <span class="hljs-built_in">console</span>.log(x) }, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+<span class="cm-variable">myCoolFunction</span>(<span class="cm-keyword">function</span>(<span class="cm-def">x</span>) { <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable-2">x</span>) }, [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>, <span class="cm-number">4</span>]);
+<span class="cm-variable">myCoolFunction</span>(<span class="cm-keyword">function</span>(<span class="cm-def">x</span>) { <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable-2">x</span>) }, <span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>, <span class="cm-number">4</span>);
 </code></pre>
 <p>&#xC774;&#xB7F0; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; TypeScript&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; <code>myCoolfunction</code>&#xC774; &#xD568;&#xC218; &#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xB97C; &#xD1B5;&#xD574; &#xD638;&#xCD9C;&#xB420; &#xC218; &#xC788;&#xB294; &#xBC29;&#xBC95;&#xC5D0; &#xB300;&#xD574; &#xC54C;&#xB824;&#xC8FC;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-ts">function myCoolFunction(f: (x: number) =&gt; void, nums: number[]): void;
-function myCoolFunction(f: (x: number) =&gt; void, ...nums: number[]): void;
-function myCoolFunction() {
-    if (arguments.length == 2 &amp;&amp; !Array.isArray(arguments[1])) {
-        var f = arguments[0];
-        var arr = arguments[1];
-        // ...
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">myCoolFunction</span>(<span class="cm-def">f</span>: (<span class="cm-variable">x</span>: <span class="cm-variable-3">number</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span>, <span class="cm-variable">nums</span>: <span class="cm-variable-3">number</span>[]): <span class="cm-variable">void</span>;
+<span class="cm-keyword">function</span> <span class="cm-variable">myCoolFunction</span>(<span class="cm-def">f</span>: (<span class="cm-variable">x</span>: <span class="cm-variable-3">number</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span>, <span class="cm-meta">...</span><span class="cm-variable">nums</span>: <span class="cm-variable-3">number</span>[]): <span class="cm-variable">void</span>;
+<span class="cm-keyword">function</span> <span class="cm-variable">myCoolFunction</span>() {
+    <span class="cm-keyword">if</span> (<span class="cm-variable-2">arguments</span>.<span class="cm-property">length</span> <span class="cm-operator">==</span> <span class="cm-number">2</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-operator">!</span><span class="cm-variable">Array</span>.<span class="cm-property">isArray</span>(<span class="cm-variable-2">arguments</span>[<span class="cm-number">1</span>])) {
+        <span class="cm-keyword">var</span> <span class="cm-def">f</span> <span class="cm-operator">=</span> <span class="cm-variable-2">arguments</span>[<span class="cm-number">0</span>];
+        <span class="cm-keyword">var</span> <span class="cm-def">arr</span> <span class="cm-operator">=</span> <span class="cm-variable-2">arguments</span>[<span class="cm-number">1</span>];
+        <span class="cm-comment">// ...</span>
     }
-    // ...
+    <span class="cm-comment">// ...</span>
 }
 </code></pre>
 <p><code>myCoolFunction</code>&#xC5D0; &#xB450; &#xAC1C;&#xC758; &#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xB97C; &#xCD94;&#xAC00;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.
@@ -883,22 +892,22 @@ function myCoolFunction() {
 &#xB450;&#xBC88;&#xC9F8;&#xB294; &#xD568;&#xC218;&#xB3C4; &#xAC16;&#xCDB0;&#xC57C; &#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC774;&#xACE0; &#xADF8; &#xB4A4;&#xC5D0; &#xC624;&#xB294; &#xC778;&#xC218;&#xAC00; &#xC22B;&#xC790;&#xC5EC;&#xC57C; &#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC54C;&#xB9AC;&#xAE30; &#xC704;&#xD574; &#xB098;&#xBA38;&#xC9C0; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;(<code>...nums</code>)&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="&#xC21C;&#xCC28;&#xC801;&#xC73C;&#xB85C;-&#xCD94;&#xAC00;&#xB418;&#xB294;-&#xD504;&#xB85C;&#xD37C;&#xD2F0;-sequentially-added-properties">&#xC21C;&#xCC28;&#xC801;&#xC73C;&#xB85C; &#xCD94;&#xAC00;&#xB418;&#xB294; &#xD504;&#xB85C;&#xD37C;&#xD2F0; (Sequentially Added Properties)</h3>
 <p>&#xC5B4;&#xB5A4; &#xC0AC;&#xB78C;&#xB4E4;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC989;&#xC2DC; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xACE0; &#xC18D;&#xC131;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xB294; &#xAC83;&#xC774; &#xB354; &#xC608;&#xC220;&#xC801;&#xC73C;&#xB85C; &#xC990;&#xAC81;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC54C;&#xAC8C;&#xB429;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> options = {};
-options.color = <span class="hljs-string">&quot;red&quot;</span>;
-options.volume = <span class="hljs-number">11</span>;
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">options</span> <span class="cm-operator">=</span> {};
+<span class="cm-variable">options</span>.<span class="cm-property">color</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;red&quot;</span>;
+<span class="cm-variable">options</span>.<span class="cm-property">volume</span> <span class="cm-operator">=</span> <span class="cm-number">11</span>;
 </code></pre>
 <p>TypeScript&#xB294; <code>options</code>&#xC758; &#xD0C0;&#xC785;&#xC744; &#xC5B4;&#xB5A0;&#xD55C; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB3C4; &#xAC16;&#xC9C0; &#xC54A;&#xB294; <code>{}</code>&#xB85C; &#xBA3C;&#xC800; &#xCC3E;&#xC544;&#xB0C8;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; <code>volume</code>&#xACFC; <code>color</code>&#xC5D0; &#xD560;&#xB2F9;&#xD560; &#xC218; &#xC5C6;&#xB2E4;&#xACE0; &#xB9D0;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xB300;&#xC2E0; &#xC120;&#xC5B8;&#xC744; &#xAC1D;&#xCCB4; &#xB9AC;&#xD130;&#xB7F4; &#xC790;&#xCCB4;&#xB85C; &#xC62E;&#xAE30;&#xBA74; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">let</span> options = {
-    color: <span class="hljs-string">&quot;red&quot;</span>,
-    volume: <span class="hljs-number">11</span>
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">options</span> <span class="cm-operator">=</span> {
+    <span class="cm-property">color</span>: <span class="cm-string">&quot;red&quot;</span>,
+    <span class="cm-property">volume</span>: <span class="cm-number">11</span>
 };
 </code></pre>
 <p><code>options</code>&#xC758; &#xD0C0;&#xC785;&#xC744; &#xC815;&#xC758;&#xD558;&#xACE0; &#xAC1D;&#xCCB4; &#xB9AC;&#xD130;&#xB7F4;&#xC5D0; &#xD0C0;&#xC785; &#xD45C;&#xBA85;(type assertion)&#xC744; &#xCD94;&#xAC00; &#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Options { color: <span class="hljs-built_in">string</span>; volume: <span class="hljs-built_in">number</span> }
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">Options</span> { <span class="cm-variable">color</span>: <span class="cm-variable-3">string</span>; <span class="cm-variable">volume</span>: <span class="cm-variable-3">number</span> }
 
-<span class="hljs-keyword">let</span> options = {} as Options;
-options.color = <span class="hljs-string">&quot;red&quot;</span>;
-options.volume = <span class="hljs-number">11</span>;
+<span class="cm-keyword">let</span> <span class="cm-variable">options</span> <span class="cm-operator">=</span> {} <span class="cm-variable">as</span> <span class="cm-variable">Options</span>;
+<span class="cm-variable">options</span>.<span class="cm-property">color</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;red&quot;</span>;
+<span class="cm-variable">options</span>.<span class="cm-property">volume</span> <span class="cm-operator">=</span> <span class="cm-number">11</span>;
 </code></pre>
 <p>&#xB610;&#xB294; <code>options</code>&#xC5D0; <code>any</code> &#xD0C0;&#xC785;&#xC774;&#xB77C;&#xACE0; &#xD558;&#xB294; &#xAC83;&#xC774; &#xAC00;&#xC7A5; &#xC26C;&#xC6B4; &#xBC29;&#xBC95;&#xC774;&#xC9C0;&#xB9CC; &#xAC00;&#xC7A5; &#xC774;&#xB4DD;&#xC774; &#xC801;&#xC740; &#xC77C;&#xC774; &#xB420; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h3 id="any&#xC640;-object-&#xADF8;&#xB9AC;&#xACE0;--any-object-and-"><code>any</code>&#xC640; <code>Object</code> &#xADF8;&#xB9AC;&#xACE0; <code>{}</code> (<code>any</code>, <code>Object</code>, and <code>{}</code>)</h3>
@@ -916,38 +925,38 @@ options.volume = <span class="hljs-number">11</span>;
 <p><code>strictNullChecks</code>&#xAC00; &#xD65C;&#xC131;&#xD654;&#xB418;&#xBA74; <code>null</code>&#xACFC; <code>undefined</code>&#xB294; <code>null</code>&#xACFC; <code>undefined</code> &#xAC01;&#xAC01;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xAC16;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p><em>&#xD639;&#xC2DC;</em> <code>null</code> &#xC77C; &#xC218; &#xC788;&#xB294; &#xD56D;&#xBAA9;&#xC774; &#xC788;&#xC744; &#xB54C; &#xC6D0;&#xB798; &#xD0C0;&#xC785;&#xC744; union &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB807;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xD0C0;&#xC785;&#xC774; <code>number</code>(&#xC774;)&#xAC70;&#xB098; <code>null</code> &#xC77C; &#xC218; &#xC788;&#xB294; &#xACBD;&#xC6B0; &#xD574;&#xB2F9; &#xD0C0;&#xC785;&#xC744; <code>number | null</code>&#xB85C; &#xC4F0;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <p>TypeScript&#xAC00; <code>null</code> /<code>undefined</code>&#xB77C;&#xACE0; &#xC0DD;&#xAC01;&#xD558;&#xB294; &#xAC12;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC9C0;&#xB9CC; &#xB354; &#xC798; &#xC54C;&#xACE0; &#xC788;&#xB2E4;&#xBA74; &#xD6C4;&#xC704; &#xC5F0;&#xC0B0;&#xC790; <code>!</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xB2E4;&#xB974;&#xAC8C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">var</span> foo: <span class="hljs-built_in">string</span>[] | <span class="hljs-literal">null</span>;
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">var</span> <span class="cm-variable">foo</span>: <span class="cm-variable-3">string</span>[] <span class="cm-operator">|</span> <span class="cm-atom">null</span>;
 
-foo.length;  <span class="hljs-comment">// &#xC624;&#xB958; - &apos;foo&apos;&#xB294; &apos;null&apos;&#xC77C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-variable">foo</span>.<span class="cm-property">length</span>;  <span class="cm-comment">// &#xC624;&#xB958; - &apos;foo&apos;&#xB294; &apos;null&apos;&#xC77C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
 
-foo!.length; <span class="hljs-comment">// &#xC88B;&#xC544;&#xC694; - &apos;foo!&apos;&#xC5D0; &apos;string[]&apos;&#xD0C0;&#xC785;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-variable">foo</span><span class="cm-operator">!</span>.<span class="cm-variable">length</span>; <span class="cm-comment">// &#xC88B;&#xC544;&#xC694; - &apos;foo!&apos;&#xC5D0; &apos;string[]&apos;&#xD0C0;&#xC785;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
 </code></pre>
 <p>&#xCC38;&#xACE0;&#xB85C; <code>strictNullChecks</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xB294; <code>strictNullChecks</code>&#xB3C4; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC758;&#xC874;&#xC131;&#xC744; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD574;&#xC57C; &#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h3 id="&#xBB35;&#xC2DC;&#xC801;&#xC778;-this&#xC758;-any-no-no-implicit-any-for-this">&#xBB35;&#xC2DC;&#xC801;&#xC778; <code>this</code>&#xC758; <code>any</code> No! (No Implicit <code>any</code> for <code>this</code>)</h3>
 <p>&#xD074;&#xB798;&#xC2A4; &#xBC16;&#xC5D0;&#xC11C; <code>this</code> &#xD0A4;&#xC6CC;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; <code>any</code> &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9D1;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; <code>Point</code> &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC0DD;&#xAC01;&#xD558;&#xC5EC; &#xBA54;&#xC11C;&#xB4DC;&#xB85C; &#xCD94;&#xAC00;&#xD558;&#xACE0;&#xC790; &#xD558;&#xB294; &#xD568;&#xC218;&#xB97C; &#xC791;&#xC131;&#xD574;&#xBCF4;&#xC138;&#xC694; :</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">class</span> Point {
-    <span class="hljs-keyword">constructor</span>(public x, public y) {}
-    getDistance(p: Point) {
-        <span class="hljs-keyword">let</span> dx = p.x - <span class="hljs-keyword">this</span>.x;
-        <span class="hljs-keyword">let</span> dy = p.y - <span class="hljs-keyword">this</span>.y;
-        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.sqrt(dx ** <span class="hljs-number">2</span> + dy ** <span class="hljs-number">2</span>);
+<pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">Point</span> {
+    <span class="cm-keyword">constructor</span>(<span class="cm-keyword">public</span> <span class="cm-variable">x</span>, <span class="cm-keyword">public</span> <span class="cm-variable">y</span>) {}
+    <span class="cm-variable">getDistance</span>(<span class="cm-variable">p</span>: <span class="cm-variable">Point</span>) {
+        <span class="cm-keyword">let</span> <span class="cm-variable">dx</span> <span class="cm-operator">=</span> <span class="cm-variable">p</span>.<span class="cm-property">x</span> <span class="cm-operator">-</span> <span class="cm-keyword">this</span>.<span class="cm-property">x</span>;
+        <span class="cm-keyword">let</span> <span class="cm-variable">dy</span> <span class="cm-operator">=</span> <span class="cm-variable">p</span>.<span class="cm-property">y</span> <span class="cm-operator">-</span> <span class="cm-keyword">this</span>.<span class="cm-property">y</span>;
+        <span class="cm-keyword">return</span> <span class="cm-variable">Math</span>.<span class="cm-property">sqrt</span>(<span class="cm-variable">dx</span> <span class="cm-operator">**</span> <span class="cm-number">2</span> <span class="cm-operator">+</span> <span class="cm-variable">dy</span> <span class="cm-operator">**</span> <span class="cm-number">2</span>);
     }
 }
-<span class="hljs-comment">// ...</span>
+<span class="cm-comment">// ...</span>
 
-<span class="hljs-comment">// &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xB2E4;&#xC2DC; &#xC5F4;&#xC5B4;&#xBCF4;&#xC138;&#xC694;</span>
-<span class="hljs-keyword">interface</span> Point {
-    distanceFromOrigin(point: Point): <span class="hljs-built_in">number</span>;
+<span class="cm-comment">// &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xB2E4;&#xC2DC; &#xC5F4;&#xC5B4;&#xBCF4;&#xC138;&#xC694;</span>
+<span class="cm-keyword">interface</span> <span class="cm-variable">Point</span> {
+    <span class="cm-variable">distanceFromOrigin</span>(<span class="cm-variable">point</span>: <span class="cm-variable">Point</span>): <span class="cm-variable-3">number</span>;
 }
-Point.prototype.distanceFromOrigin = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">point: Point</span>) </span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.getDistance({ x: <span class="hljs-number">0</span>, y: <span class="hljs-number">0</span>});
+<span class="cm-variable">Point</span>.<span class="cm-property">prototype</span>.<span class="cm-property">distanceFromOrigin</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">point</span>: <span class="cm-variable-3">Point</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-keyword">this</span>.<span class="cm-property">getDistance</span>({ <span class="cm-property">x</span>: <span class="cm-number">0</span>, <span class="cm-property">y</span>: <span class="cm-number">0</span>});
 }
 </code></pre>
 <p>&#xC774;&#xAC83;&#xC740; &#xC704;&#xC5D0;&#xC11C; &#xC5B8;&#xAE09;&#xD55C; &#xAC83;&#xACFC; &#xB3D9;&#xC77C;&#xD55C; &#xBB38;&#xC81C;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; - <code>getDistance</code>&#xC758; &#xCCA0;&#xC790;&#xAC00; &#xD2C0;&#xB9AC;&#xAC70;&#xB098; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xC9C0; &#xC54A;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB7EC;&#xD55C; &#xC774;&#xC720;&#xB85C; TypeScript&#xB294; <code>noImplicitThis</code> &#xC635;&#xC158;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xC635;&#xC158;&#xC744; &#xC124;&#xC815;&#xD558;&#xBA74; TypeScript&#xC5D0;&#xC11C; &#xBA85;&#xC2DC;&#xC801;(&#xB610;&#xB294; &#xCD94;&#xB860;&#xB41C;) &#xD0C0;&#xC785; &#xC5C6;&#xC774; <code>this</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xACBD;&#xC6B0; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>&#xD574;&#xACB0;&#xCC45;&#xC740; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB098; &#xD568;&#xC218; &#xC790;&#xCCB4;&#xC5D0; <code>this</code>-&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBA85;&#xD655;&#xD55C; &#xD0C0;&#xC785;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-ts">Point.prototype.distanceFromOrigin = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-keyword">this</span>: Point, point: Point</span>) </span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.getDistance({ x: <span class="hljs-number">0</span>, y: <span class="hljs-number">0</span>});
+<pre><code class="lang-ts"><span class="cm-variable">Point</span>.<span class="cm-property">prototype</span>.<span class="cm-property">distanceFromOrigin</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-keyword">this</span>: <span class="cm-variable">Point</span>, <span class="cm-variable">point</span>: <span class="cm-variable">Point</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-keyword">this</span>.<span class="cm-property">getDistance</span>({ <span class="cm-property">x</span>: <span class="cm-number">0</span>, <span class="cm-property">y</span>: <span class="cm-number">0</span>});
 }
 </code></pre>
 
@@ -993,12 +1002,13 @@ Point.prototype.distanceFromOrigin = <span class="hljs-function"><span class="hl
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"JavaScript에서 마이그레이션","level":"2.4","depth":1,"next":{"title":"리액트 & 웹팩","level":"2.5","depth":1,"path":"pages/tutorials/React & Webpack.md","ref":"pages/tutorials/React & Webpack.md","articles":[]},"previous":{"title":"걸프","level":"2.3","depth":1,"path":"pages/tutorials/Gulp.md","ref":"pages/tutorials/Gulp.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tutorials/Migrating from JavaScript.md","mtime":"2018-02-11T15:30:32.001Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T14:21:41.019Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"JavaScript에서 마이그레이션","level":"2.4","depth":1,"next":{"title":"리액트 & 웹팩","level":"2.5","depth":1,"path":"pages/tutorials/React & Webpack.md","ref":"pages/tutorials/React & Webpack.md","articles":[]},"previous":{"title":"걸프","level":"2.3","depth":1,"path":"pages/tutorials/Gulp.md","ref":"pages/tutorials/Gulp.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tutorials/Migrating from JavaScript.md","mtime":"2018-02-15T11:46:40.502Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:22:50.132Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
     
@@ -1025,6 +1035,8 @@ Point.prototype.distanceFromOrigin = <span class="hljs-function"><span class="hl
         
         <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
+    
+
     
 
     </body>

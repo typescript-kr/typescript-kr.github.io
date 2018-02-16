@@ -12,9 +12,14 @@
         
         
     
+    
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight-1/website.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
@@ -44,6 +49,10 @@
         
     
         
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../../assets/css/atom-one-dark.css" />
     
 
         
@@ -699,12 +708,12 @@
 <h2 id="number-string-boolean-and-object"><code>Number</code>, <code>String</code>, <code>Boolean</code>, and <code>Object</code></h2>
 <p><em>Don&apos;t</em> ever use the types <code>Number</code>, <code>String</code>, <code>Boolean</code>, or <code>Object</code>.
 These types refer to non-primitive boxed objects that are almost never used appropriately in JavaScript code.</p>
-<pre><code class="lang-ts"><span class="hljs-comment">/* WRONG */</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reverse</span>(<span class="hljs-params">s: <span class="hljs-built_in">String</span></span>): <span class="hljs-title">String</span></span>;
+<pre><code class="lang-ts"><span class="cm-comment">/* WRONG */</span>
+<span class="cm-keyword">function</span> <span class="cm-variable">reverse</span>(<span class="cm-def">s</span>: <span class="cm-variable-3">String</span>): <span class="cm-variable">String</span>;
 </code></pre>
 <p><em>Do</em> use the types <code>number</code>, <code>string</code>, and <code>boolean</code>.</p>
-<pre><code class="lang-ts"><span class="hljs-comment">/* OK */</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reverse</span>(<span class="hljs-params">s: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">string</span></span>;
+<pre><code class="lang-ts"><span class="cm-comment">/* OK */</span>
+<span class="cm-keyword">function</span> <span class="cm-variable">reverse</span>(<span class="cm-def">s</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable-3">string</span>;
 </code></pre>
 <p>Instead of <code>Object</code>, use the non-primitive <code>object</code> type (<a href="../release%20notes/TypeScript%202.2.md#object-type">added in TypeScript 2.2</a>).</p>
 <h2 id="generics">Generics</h2>
@@ -715,28 +724,28 @@ See more details in <a href="https://github.com/Microsoft/TypeScript/wiki/FAQ#wh
 <h2 id="return-types-of-callbacks">Return Types of Callbacks</h2>
 <!-- TODO: Reword; these examples make no sense in the context of a declaration file -->
 <p><em>Don&apos;t</em> use the return type <code>any</code> for callbacks whose value will be ignored:</p>
-<pre><code class="lang-ts">/* WRONG */
-function fn(x: () =&gt; any) {
-    x();
+<pre><code class="lang-ts"><span class="cm-comment">/* WRONG */</span>
+<span class="cm-keyword">function</span> <span class="cm-variable">fn</span>(<span class="cm-def">x</span>: () <span class="cm-operator">=&gt;</span> <span class="cm-variable-3">any</span>) {
+    <span class="cm-variable">x</span>();
 }
 </code></pre>
 <p><em>Do</em> use the return type <code>void</code> for callbacks whose value will be ignored:</p>
-<pre><code class="lang-ts">/* OK */
-function fn(x: () =&gt; void) {
-    x();
+<pre><code class="lang-ts"><span class="cm-comment">/* OK */</span>
+<span class="cm-keyword">function</span> <span class="cm-variable">fn</span>(<span class="cm-def">x</span>: () <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span>) {
+    <span class="cm-variable">x</span>();
 }
 </code></pre>
 <p><em>Why</em>: Using <code>void</code> is safer because it prevents you from accidently using the return value of <code>x</code> in an unchecked way:</p>
-<pre><code class="lang-ts">function fn(x: () =&gt; void) {
-    var k = x(); // oops! meant to do something else
-    k.doSomething(); // error, but would be OK if the return type had been &apos;any&apos;
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">fn</span>(<span class="cm-def">x</span>: () <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span>) {
+    <span class="cm-keyword">var</span> <span class="cm-variable">k</span> <span class="cm-operator">=</span> <span class="cm-variable">x</span>(); <span class="cm-comment">// oops! meant to do something else</span>
+    <span class="cm-variable">k</span>.<span class="cm-property">doSomething</span>(); <span class="cm-comment">// error, but would be OK if the return type had been &apos;any&apos;</span>
 }
 </code></pre>
 <h2 id="optional-parameters-in-callbacks">Optional Parameters in Callbacks</h2>
 <p><em>Don&apos;t</em> use optional parameters in callbacks unless you really mean it:</p>
-<pre><code class="lang-ts"><span class="hljs-comment">/* WRONG */</span>
-<span class="hljs-keyword">interface</span> Fetcher {
-    getObject(done: (data: <span class="hljs-built_in">any</span>, elapsedTime?: <span class="hljs-built_in">number</span>) =&gt; <span class="hljs-built_in">void</span>): <span class="hljs-built_in">void</span>;
+<pre><code class="lang-ts"><span class="cm-comment">/* WRONG */</span>
+<span class="cm-keyword">interface</span> <span class="cm-variable">Fetcher</span> {
+    <span class="cm-variable">getObject</span>(<span class="cm-variable">done</span>: (<span class="cm-variable">data</span>: <span class="cm-variable-3">any</span>, <span class="cm-variable">elapsedTime</span><span class="cm-operator">?</span>: <span class="cm-variable-3">number</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span>): <span class="cm-variable">void</span>;
 }
 </code></pre>
 <p>This has a very specific meaning: the <code>done</code> callback might be invoked with 1 argument or might be invoked with 2 arguments.
@@ -744,58 +753,58 @@ The author probably intended to say that the callback might not care about the <
   but there&apos;s no need to make the parameter optional to accomplish this --
   it&apos;s always legal to provide a callback that accepts fewer arguments.</p>
 <p><em>Do</em> write callback parameters as non-optional:</p>
-<pre><code class="lang-ts"><span class="hljs-comment">/* OK */</span>
-<span class="hljs-keyword">interface</span> Fetcher {
-    getObject(done: (data: <span class="hljs-built_in">any</span>, elapsedTime: <span class="hljs-built_in">number</span>) =&gt; <span class="hljs-built_in">void</span>): <span class="hljs-built_in">void</span>;
+<pre><code class="lang-ts"><span class="cm-comment">/* OK */</span>
+<span class="cm-keyword">interface</span> <span class="cm-variable">Fetcher</span> {
+    <span class="cm-variable">getObject</span>(<span class="cm-variable">done</span>: (<span class="cm-variable">data</span>: <span class="cm-variable-3">any</span>, <span class="cm-variable">elapsedTime</span>: <span class="cm-variable-3">number</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span>): <span class="cm-variable">void</span>;
 }
 </code></pre>
 <h2 id="overloads-and-callbacks">Overloads and Callbacks</h2>
 <p><em>Don&apos;t</em> write separate overloads that differ only on callback arity:</p>
-<pre><code class="lang-ts">/* WRONG */
-declare function beforeAll(action: () =&gt; void, timeout?: number): void;
-declare function beforeAll(action: (done: DoneFn) =&gt; void, timeout?: number): void;
+<pre><code class="lang-ts"><span class="cm-comment">/* WRONG */</span>
+<span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">beforeAll</span>(<span class="cm-def">action</span>: () <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span>, <span class="cm-variable">timeout</span><span class="cm-operator">?</span>: <span class="cm-variable-3">number</span>): <span class="cm-variable">void</span>;
+<span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">beforeAll</span>(<span class="cm-def">action</span>: (<span class="cm-variable">done</span>: <span class="cm-variable">DoneFn</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span>, <span class="cm-variable">timeout</span><span class="cm-operator">?</span>: <span class="cm-variable-3">number</span>): <span class="cm-variable">void</span>;
 </code></pre>
 <p><em>Do</em> write a single overload using the maximum arity:</p>
-<pre><code class="lang-ts">/* OK */
-declare function beforeAll(action: (done: DoneFn) =&gt; void, timeout?: number): void;
+<pre><code class="lang-ts"><span class="cm-comment">/* OK */</span>
+<span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">beforeAll</span>(<span class="cm-def">action</span>: (<span class="cm-variable">done</span>: <span class="cm-variable">DoneFn</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span>, <span class="cm-variable">timeout</span><span class="cm-operator">?</span>: <span class="cm-variable-3">number</span>): <span class="cm-variable">void</span>;
 </code></pre>
 <p><em>Why</em>: It&apos;s always legal for a callback to disregard a parameter, so there&apos;s no need for the shorter overload.
 Providing a shorter callback first allows incorrectly-typed functions to be passed in because they match the first overload.</p>
 <h1 id="function-overloads">Function Overloads</h1>
 <h2 id="ordering">Ordering</h2>
 <p><em>Don&apos;t</em> put more general overloads before more specific overloads:</p>
-<pre><code class="lang-ts"><span class="hljs-comment">/* WRONG */</span>
-<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params">x: <span class="hljs-built_in">any</span></span>): <span class="hljs-title">any</span></span>;
-<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params">x: HTMLElement</span>): <span class="hljs-title">number</span></span>;
-<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params">x: HTMLDivElement</span>): <span class="hljs-title">string</span></span>;
+<pre><code class="lang-ts"><span class="cm-comment">/* WRONG */</span>
+<span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">fn</span>(<span class="cm-def">x</span>: <span class="cm-variable-3">any</span>): <span class="cm-variable-3">any</span>;
+<span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">fn</span>(<span class="cm-def">x</span>: <span class="cm-variable-3">HTMLElement</span>): <span class="cm-variable-3">number</span>;
+<span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">fn</span>(<span class="cm-def">x</span>: <span class="cm-variable-3">HTMLDivElement</span>): <span class="cm-variable-3">string</span>;
 
-<span class="hljs-keyword">var</span> myElem: HTMLDivElement;
-<span class="hljs-keyword">var</span> x = fn(myElem); <span class="hljs-comment">// x: any, wat?</span>
+<span class="cm-keyword">var</span> <span class="cm-variable">myElem</span>: <span class="cm-variable-3">HTMLDivElement</span>;
+<span class="cm-keyword">var</span> <span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-variable">fn</span>(<span class="cm-variable">myElem</span>); <span class="cm-comment">// x: any, wat?</span>
 </code></pre>
 <p><em>Do</em> sort overloads by putting the more general signatures after more specific signatures:</p>
-<pre><code class="lang-ts"><span class="hljs-comment">/* OK */</span>
-<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params">x: HTMLDivElement</span>): <span class="hljs-title">string</span></span>;
-<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params">x: HTMLElement</span>): <span class="hljs-title">number</span></span>;
-<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params">x: <span class="hljs-built_in">any</span></span>): <span class="hljs-title">any</span></span>;
+<pre><code class="lang-ts"><span class="cm-comment">/* OK */</span>
+<span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">fn</span>(<span class="cm-def">x</span>: <span class="cm-variable-3">HTMLDivElement</span>): <span class="cm-variable-3">string</span>;
+<span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">fn</span>(<span class="cm-def">x</span>: <span class="cm-variable-3">HTMLElement</span>): <span class="cm-variable-3">number</span>;
+<span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">fn</span>(<span class="cm-def">x</span>: <span class="cm-variable-3">any</span>): <span class="cm-variable-3">any</span>;
 
-<span class="hljs-keyword">var</span> myElem: HTMLDivElement;
-<span class="hljs-keyword">var</span> x = fn(myElem); <span class="hljs-comment">// x: string, :)</span>
+<span class="cm-keyword">var</span> <span class="cm-variable">myElem</span>: <span class="cm-variable-3">HTMLDivElement</span>;
+<span class="cm-keyword">var</span> <span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-variable">fn</span>(<span class="cm-variable">myElem</span>); <span class="cm-comment">// x: string, :)</span>
 </code></pre>
 <p><em>Why</em>: TypeScript chooses the <em>first matching overload</em> when resolving function calls.
 When an earlier overload is &quot;more general&quot; than a later one, the later one is effectively hidden and cannot be called.</p>
 <h2 id="use-optional-parameters">Use Optional Parameters</h2>
 <p><em>Don&apos;t</em> write several overloads that differ only in trailing parameters:</p>
-<pre><code class="lang-ts"><span class="hljs-comment">/* WRONG */</span>
-<span class="hljs-keyword">interface</span> Example {
-    diff(one: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">number</span>;
-    diff(one: <span class="hljs-built_in">string</span>, two: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">number</span>;
-    diff(one: <span class="hljs-built_in">string</span>, two: <span class="hljs-built_in">string</span>, three: <span class="hljs-built_in">boolean</span>): <span class="hljs-built_in">number</span>;
+<pre><code class="lang-ts"><span class="cm-comment">/* WRONG */</span>
+<span class="cm-keyword">interface</span> <span class="cm-variable">Example</span> {
+    <span class="cm-variable">diff</span>(<span class="cm-variable">one</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable-3">number</span>;
+    <span class="cm-variable">diff</span>(<span class="cm-variable">one</span>: <span class="cm-variable-3">string</span>, <span class="cm-variable">two</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable-3">number</span>;
+    <span class="cm-variable">diff</span>(<span class="cm-variable">one</span>: <span class="cm-variable-3">string</span>, <span class="cm-variable">two</span>: <span class="cm-variable-3">string</span>, <span class="cm-variable">three</span>: <span class="cm-variable">boolean</span>): <span class="cm-variable-3">number</span>;
 }
 </code></pre>
 <p><em>Do</em> use optional parameters whenever possible:</p>
-<pre><code class="lang-ts"><span class="hljs-comment">/* OK */</span>
-<span class="hljs-keyword">interface</span> Example {
-    diff(one: <span class="hljs-built_in">string</span>, two?: <span class="hljs-built_in">string</span>, three?: <span class="hljs-built_in">boolean</span>): <span class="hljs-built_in">number</span>;
+<pre><code class="lang-ts"><span class="cm-comment">/* OK */</span>
+<span class="cm-keyword">interface</span> <span class="cm-variable">Example</span> {
+    <span class="cm-variable">diff</span>(<span class="cm-variable">one</span>: <span class="cm-variable-3">string</span>, <span class="cm-variable">two</span><span class="cm-operator">?</span>: <span class="cm-variable-3">string</span>, <span class="cm-variable">three</span><span class="cm-operator">?</span>: <span class="cm-variable">boolean</span>): <span class="cm-variable-3">number</span>;
 }
 </code></pre>
 <p>Note that this collapsing should only occur when all overloads have the same return type.</p>
@@ -803,44 +812,44 @@ When an earlier overload is &quot;more general&quot; than a later one, the later
 <p>TypeScript resolves signature compatibility by seeing if any signature of the target can be invoked with the arguments of the source,
   <em>and extraneous arguments are allowed</em>.
 This code, for example, exposes a bug only when the signature is correctly written using optional parameters:</p>
-<pre><code class="lang-ts">function fn(x: (a: string, b: number, c: number) =&gt; void) { }
-var x: Example;
-// When written with overloads, OK -- used first overload
-// When written with optionals, correctly an error
-fn(x.diff);
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">fn</span>(<span class="cm-def">x</span>: (<span class="cm-variable">a</span>: <span class="cm-variable-3">string</span>, <span class="cm-variable">b</span>: <span class="cm-variable-3">number</span>, <span class="cm-variable">c</span>: <span class="cm-variable-3">number</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span>) { }
+<span class="cm-keyword">var</span> <span class="cm-variable">x</span>: <span class="cm-variable-3">Example</span>;
+<span class="cm-comment">// When written with overloads, OK -- used first overload</span>
+<span class="cm-comment">// When written with optionals, correctly an error</span>
+<span class="cm-variable">fn</span>(<span class="cm-variable">x</span>.<span class="cm-property">diff</span>);
 </code></pre>
 <p>The second reason is when a consumer uses the &quot;strict null checking&quot; feature of TypeScript.
 Because unspecified parameters appear as <code>undefined</code> in JavaScript, it&apos;s usually fine to pass an explicit <code>undefined</code> to a function with optional arguments.
 This code, for example, should be OK under strict nulls:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">var</span> x: Example;
-<span class="hljs-comment">// When written with overloads, incorrectly an error because of passing &apos;undefined&apos; to &apos;string&apos;</span>
-<span class="hljs-comment">// When written with optionals, correctly OK</span>
-x.diff(<span class="hljs-string">&quot;something&quot;</span>, <span class="hljs-literal">true</span> ? <span class="hljs-literal">undefined</span> : <span class="hljs-string">&quot;hour&quot;</span>);
+<pre><code class="lang-ts"><span class="cm-keyword">var</span> <span class="cm-variable">x</span>: <span class="cm-variable-3">Example</span>;
+<span class="cm-comment">// When written with overloads, incorrectly an error because of passing &apos;undefined&apos; to &apos;string&apos;</span>
+<span class="cm-comment">// When written with optionals, correctly OK</span>
+<span class="cm-variable">x</span>.<span class="cm-property">diff</span>(<span class="cm-string">&quot;something&quot;</span>, <span class="cm-atom">true</span> <span class="cm-operator">?</span> <span class="cm-atom">undefined</span> : <span class="cm-string">&quot;hour&quot;</span>);
 </code></pre>
 <h2 id="use-union-types">Use Union Types</h2>
 <p><em>Don&apos;t</em> write overloads that differ by type in only one argument position:</p>
-<pre><code class="lang-ts"><span class="hljs-comment">/* WRONG */</span>
-<span class="hljs-keyword">interface</span> Moment {
-    utcOffset(): <span class="hljs-built_in">number</span>;
-    utcOffset(b: <span class="hljs-built_in">number</span>): Moment;
-    utcOffset(b: <span class="hljs-built_in">string</span>): Moment;
+<pre><code class="lang-ts"><span class="cm-comment">/* WRONG */</span>
+<span class="cm-keyword">interface</span> <span class="cm-variable">Moment</span> {
+    <span class="cm-variable">utcOffset</span>(): <span class="cm-variable-3">number</span>;
+    <span class="cm-variable">utcOffset</span>(<span class="cm-variable">b</span>: <span class="cm-variable-3">number</span>): <span class="cm-variable">Moment</span>;
+    <span class="cm-variable">utcOffset</span>(<span class="cm-variable">b</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable">Moment</span>;
 }
 </code></pre>
 <p><em>Do</em> use union types whenever possible:</p>
-<pre><code class="lang-ts"><span class="hljs-comment">/* OK */</span>
-<span class="hljs-keyword">interface</span> Moment {
-    utcOffset(): <span class="hljs-built_in">number</span>;
-    utcOffset(b: <span class="hljs-built_in">number</span>|<span class="hljs-built_in">string</span>): Moment;
+<pre><code class="lang-ts"><span class="cm-comment">/* OK */</span>
+<span class="cm-keyword">interface</span> <span class="cm-variable">Moment</span> {
+    <span class="cm-variable">utcOffset</span>(): <span class="cm-variable-3">number</span>;
+    <span class="cm-variable">utcOffset</span>(<span class="cm-variable">b</span>: <span class="cm-variable-3">number</span><span class="cm-operator">|</span><span class="cm-variable-3">string</span>): <span class="cm-variable">Moment</span>;
 }
 </code></pre>
 <p>Note that we didn&apos;t make <code>b</code> optional here because the return types of the signatures differ.</p>
 <p><em>Why</em>: This is important for people who are &quot;passing through&quot; a value to your function:</p>
-<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params">x: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">void</span></span>;
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">void</span></span>;
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span>|<span class="hljs-built_in">string</span></span>) </span>{
-    <span class="hljs-comment">// When written with separate overloads, incorrectly an error</span>
-    <span class="hljs-comment">// When written with union types, correctly OK</span>
-    <span class="hljs-keyword">return</span> moment().utcOffset(x);
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">fn</span>(<span class="cm-def">x</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable">void</span>;
+<span class="cm-keyword">function</span> <span class="cm-variable">fn</span>(<span class="cm-def">x</span>: <span class="cm-variable-3">number</span>): <span class="cm-variable">void</span>;
+<span class="cm-keyword">function</span> <span class="cm-variable">fn</span>(<span class="cm-def">x</span>: <span class="cm-variable-3">number</span><span class="cm-operator">|</span><span class="cm-variable-3">string</span>) {
+    <span class="cm-comment">// When written with separate overloads, incorrectly an error</span>
+    <span class="cm-comment">// When written with union types, correctly OK</span>
+    <span class="cm-keyword">return</span> <span class="cm-variable">moment</span>().<span class="cm-property">utcOffset</span>(<span class="cm-variable-2">x</span>);
 }
 </code></pre>
 
@@ -886,12 +895,13 @@ x.diff(<span class="hljs-string">&quot;something&quot;</span>, <span class="hljs
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Do's and Don'ts","level":"4.4","depth":1,"next":{"title":"Deep Dive","level":"4.5","depth":1,"path":"pages/declaration files/Deep Dive.md","ref":"pages/declaration files/Deep Dive.md","articles":[]},"previous":{"title":"By Example","level":"4.3","depth":1,"path":"pages/declaration files/By Example.md","ref":"pages/declaration files/By Example.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/declaration files/Do's and Don'ts.md","mtime":"2018-02-08T11:52:59.031Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T14:21:41.019Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Do's and Don'ts","level":"4.4","depth":1,"next":{"title":"Deep Dive","level":"4.5","depth":1,"path":"pages/declaration files/Deep Dive.md","ref":"pages/declaration files/Deep Dive.md","articles":[]},"previous":{"title":"By Example","level":"4.3","depth":1,"path":"pages/declaration files/By Example.md","ref":"pages/declaration files/By Example.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/declaration files/Do's and Don'ts.md","mtime":"2018-02-05T16:16:48.209Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:22:50.132Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
     
@@ -918,6 +928,8 @@ x.diff(<span class="hljs-string">&quot;something&quot;</span>, <span class="hljs
         
         <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
+    
+
     
 
     </body>

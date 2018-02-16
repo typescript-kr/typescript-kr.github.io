@@ -12,9 +12,14 @@
         
         
     
+    
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight-1/website.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
@@ -44,6 +49,10 @@
         
     
         
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/atom-one-dark.css" />
     
 
         
@@ -710,47 +719,47 @@ A project is compiled in one of the following ways:</p>
 <ul>
 <li><p>Using the <code>&quot;files&quot;</code> property</p>
 <pre><code class="lang-json">{
-    <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
-        <span class="hljs-string">&quot;module&quot;</span>: <span class="hljs-string">&quot;commonjs&quot;</span>,
-        <span class="hljs-string">&quot;noImplicitAny&quot;</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">&quot;removeComments&quot;</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">&quot;preserveConstEnums&quot;</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">&quot;sourceMap&quot;</span>: <span class="hljs-literal">true</span>
+    <span class="cm-property">&quot;compilerOptions&quot;</span>: {
+        <span class="cm-property">&quot;module&quot;</span>: <span class="cm-string">&quot;commonjs&quot;</span>,
+        <span class="cm-property">&quot;noImplicitAny&quot;</span>: <span class="cm-atom">true</span>,
+        <span class="cm-property">&quot;removeComments&quot;</span>: <span class="cm-atom">true</span>,
+        <span class="cm-property">&quot;preserveConstEnums&quot;</span>: <span class="cm-atom">true</span>,
+        <span class="cm-property">&quot;sourceMap&quot;</span>: <span class="cm-atom">true</span>
     },
-    <span class="hljs-string">&quot;files&quot;</span>: [
-        <span class="hljs-string">&quot;core.ts&quot;</span>,
-        <span class="hljs-string">&quot;sys.ts&quot;</span>,
-        <span class="hljs-string">&quot;types.ts&quot;</span>,
-        <span class="hljs-string">&quot;scanner.ts&quot;</span>,
-        <span class="hljs-string">&quot;parser.ts&quot;</span>,
-        <span class="hljs-string">&quot;utilities.ts&quot;</span>,
-        <span class="hljs-string">&quot;binder.ts&quot;</span>,
-        <span class="hljs-string">&quot;checker.ts&quot;</span>,
-        <span class="hljs-string">&quot;emitter.ts&quot;</span>,
-        <span class="hljs-string">&quot;program.ts&quot;</span>,
-        <span class="hljs-string">&quot;commandLineParser.ts&quot;</span>,
-        <span class="hljs-string">&quot;tsc.ts&quot;</span>,
-        <span class="hljs-string">&quot;diagnosticInformationMap.generated.ts&quot;</span>
+    <span class="cm-property">&quot;files&quot;</span>: [
+        <span class="cm-string">&quot;core.ts&quot;</span>,
+        <span class="cm-string">&quot;sys.ts&quot;</span>,
+        <span class="cm-string">&quot;types.ts&quot;</span>,
+        <span class="cm-string">&quot;scanner.ts&quot;</span>,
+        <span class="cm-string">&quot;parser.ts&quot;</span>,
+        <span class="cm-string">&quot;utilities.ts&quot;</span>,
+        <span class="cm-string">&quot;binder.ts&quot;</span>,
+        <span class="cm-string">&quot;checker.ts&quot;</span>,
+        <span class="cm-string">&quot;emitter.ts&quot;</span>,
+        <span class="cm-string">&quot;program.ts&quot;</span>,
+        <span class="cm-string">&quot;commandLineParser.ts&quot;</span>,
+        <span class="cm-string">&quot;tsc.ts&quot;</span>,
+        <span class="cm-string">&quot;diagnosticInformationMap.generated.ts&quot;</span>
     ]
 }
 </code></pre>
 </li>
 <li><p>Using the <code>&quot;include&quot;</code> and <code>&quot;exclude&quot;</code> properties</p>
 <pre><code class="lang-json">{
-    <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
-        <span class="hljs-string">&quot;module&quot;</span>: <span class="hljs-string">&quot;system&quot;</span>,
-        <span class="hljs-string">&quot;noImplicitAny&quot;</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">&quot;removeComments&quot;</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">&quot;preserveConstEnums&quot;</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">&quot;outFile&quot;</span>: <span class="hljs-string">&quot;../../built/local/tsc.js&quot;</span>,
-        <span class="hljs-string">&quot;sourceMap&quot;</span>: <span class="hljs-literal">true</span>
+    <span class="cm-property">&quot;compilerOptions&quot;</span>: {
+        <span class="cm-property">&quot;module&quot;</span>: <span class="cm-string">&quot;system&quot;</span>,
+        <span class="cm-property">&quot;noImplicitAny&quot;</span>: <span class="cm-atom">true</span>,
+        <span class="cm-property">&quot;removeComments&quot;</span>: <span class="cm-atom">true</span>,
+        <span class="cm-property">&quot;preserveConstEnums&quot;</span>: <span class="cm-atom">true</span>,
+        <span class="cm-property">&quot;outFile&quot;</span>: <span class="cm-string">&quot;../../built/local/tsc.js&quot;</span>,
+        <span class="cm-property">&quot;sourceMap&quot;</span>: <span class="cm-atom">true</span>
     },
-    <span class="hljs-string">&quot;include&quot;</span>: [
-        <span class="hljs-string">&quot;src/**/*&quot;</span>
+    <span class="cm-property">&quot;include&quot;</span>: [
+        <span class="cm-string">&quot;src/**/*&quot;</span>
     ],
-    <span class="hljs-string">&quot;exclude&quot;</span>: [
-        <span class="hljs-string">&quot;node_modules&quot;</span>,
-        <span class="hljs-string">&quot;**/*.spec.ts&quot;</span>
+    <span class="cm-property">&quot;exclude&quot;</span>: [
+        <span class="cm-string">&quot;node_modules&quot;</span>,
+        <span class="cm-string">&quot;**/*.spec.ts&quot;</span>
     ]
 }
 </code></pre>
@@ -786,8 +795,8 @@ specifically, that means packages within <code>./node_modules/@types/</code>,  <
 <p>If <code>typeRoots</code> is specified, <em>only</em> packages under <code>typeRoots</code> will be included.
 For example:</p>
 <pre><code class="lang-json">{
-   <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
-       <span class="hljs-string">&quot;typeRoots&quot;</span> : [<span class="hljs-string">&quot;./typings&quot;</span>]
+   <span class="cm-property">&quot;compilerOptions&quot;</span>: {
+       <span class="cm-property">&quot;typeRoots&quot;</span> : [<span class="cm-string">&quot;./typings&quot;</span>]
    }
 }
 </code></pre>
@@ -795,8 +804,8 @@ For example:</p>
 <p>If <code>types</code> is specified, only packages listed will be included.
 For instance:</p>
 <pre><code class="lang-json">{
-   <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
-       <span class="hljs-string">&quot;types&quot;</span> : [<span class="hljs-string">&quot;node&quot;</span>, <span class="hljs-string">&quot;lodash&quot;</span>, <span class="hljs-string">&quot;express&quot;</span>]
+   <span class="cm-property">&quot;compilerOptions&quot;</span>: {
+       <span class="cm-property">&quot;types&quot;</span> : [<span class="cm-string">&quot;node&quot;</span>, <span class="cm-string">&quot;lodash&quot;</span>, <span class="cm-string">&quot;express&quot;</span>]
    }
 }
 </code></pre>
@@ -816,35 +825,35 @@ If a circularity is encountered, we report an error.</p>
 <p>For example:</p>
 <p><code>configs/base.json</code>:</p>
 <pre><code class="lang-json">{
-  <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
-    <span class="hljs-string">&quot;noImplicitAny&quot;</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-string">&quot;strictNullChecks&quot;</span>: <span class="hljs-literal">true</span>
+  <span class="cm-property">&quot;compilerOptions&quot;</span>: {
+    <span class="cm-property">&quot;noImplicitAny&quot;</span>: <span class="cm-atom">true</span>,
+    <span class="cm-property">&quot;strictNullChecks&quot;</span>: <span class="cm-atom">true</span>
   }
 }
 </code></pre>
 <p><code>tsconfig.json</code>:</p>
 <pre><code class="lang-json">{
-  <span class="hljs-string">&quot;extends&quot;</span>: <span class="hljs-string">&quot;./configs/base&quot;</span>,
-  <span class="hljs-string">&quot;files&quot;</span>: [
-    <span class="hljs-string">&quot;main.ts&quot;</span>,
-    <span class="hljs-string">&quot;supplemental.ts&quot;</span>
+  <span class="cm-property">&quot;extends&quot;</span>: <span class="cm-string">&quot;./configs/base&quot;</span>,
+  <span class="cm-property">&quot;files&quot;</span>: [
+    <span class="cm-string">&quot;main.ts&quot;</span>,
+    <span class="cm-string">&quot;supplemental.ts&quot;</span>
   ]
 }
 </code></pre>
 <p><code>tsconfig.nostrictnull.json</code>:</p>
 <pre><code class="lang-json">{
-  <span class="hljs-string">&quot;extends&quot;</span>: <span class="hljs-string">&quot;./tsconfig&quot;</span>,
-  <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
-    <span class="hljs-string">&quot;strictNullChecks&quot;</span>: <span class="hljs-literal">false</span>
+  <span class="cm-property">&quot;extends&quot;</span>: <span class="cm-string">&quot;./tsconfig&quot;</span>,
+  <span class="cm-property">&quot;compilerOptions&quot;</span>: {
+    <span class="cm-property">&quot;strictNullChecks&quot;</span>: <span class="cm-atom">false</span>
   }
 }
 </code></pre>
 <h2 id="compileonsave"><code>compileOnSave</code></h2>
 <p>Setting a top-level property <code>compileOnSave</code> signals to the IDE to generate all files for a given tsconfig.json upon saving.</p>
 <pre><code class="lang-json">{
-   <span class="hljs-string">&quot;compileOnSave&quot;</span>: <span class="hljs-literal">true</span>,
-   <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
-       <span class="hljs-string">&quot;noImplicitAny&quot;</span> : <span class="hljs-literal">true</span>
+   <span class="cm-property">&quot;compileOnSave&quot;</span>: <span class="cm-atom">true</span>,
+   <span class="cm-property">&quot;compilerOptions&quot;</span>: {
+       <span class="cm-property">&quot;noImplicitAny&quot;</span> : <span class="cm-atom">true</span>
    }
 }
 </code></pre>
@@ -894,12 +903,13 @@ If a circularity is encountered, we report an error.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"tsconfig.json","level":"5.1","depth":1,"next":{"title":"Compiler Options","level":"5.2","depth":1,"path":"pages/Compiler Options.md","ref":"pages/Compiler Options.md","articles":[]},"previous":{"title":"Consumption","level":"4.8","depth":1,"path":"pages/declaration files/Consumption.md","ref":"pages/declaration files/Consumption.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tsconfig.json.md","mtime":"2018-02-08T11:52:59.059Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T14:21:41.019Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"tsconfig.json","level":"5.1","depth":1,"next":{"title":"Compiler Options","level":"5.2","depth":1,"path":"pages/Compiler Options.md","ref":"pages/Compiler Options.md","articles":[]},"previous":{"title":"Consumption","level":"4.8","depth":1,"path":"pages/declaration files/Consumption.md","ref":"pages/declaration files/Consumption.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tsconfig.json.md","mtime":"2018-02-05T16:16:48.230Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:22:50.132Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
     
@@ -926,6 +936,8 @@ If a circularity is encountered, we report an error.</p>
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
+    
+
     
 
     </body>

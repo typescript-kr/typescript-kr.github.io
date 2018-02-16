@@ -12,9 +12,14 @@
         
         
     
+    
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight-1/website.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
@@ -44,6 +49,10 @@
         
     
         
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/atom-one-dark.css" />
     
 
         
@@ -731,15 +740,15 @@ If a specific file could not be found, then the compiler will look for an <em>am
 Recall that these need to be declared in a <code>.d.ts</code> file.</p>
 <ul>
 <li><p><code>myModules.d.ts</code></p>
-<pre><code class="lang-ts"><span class="hljs-comment">// In a .d.ts file or .ts file that is not a module:</span>
-<span class="hljs-keyword">declare</span> <span class="hljs-keyword">module</span> &quot;SomeModule&quot; {
-    <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params"></span>): <span class="hljs-title">string</span></span>;
+<pre><code class="lang-ts"><span class="cm-comment">// In a .d.ts file or .ts file that is not a module:</span>
+<span class="cm-variable">declare</span> <span class="cm-keyword">module</span> <span class="cm-string">&quot;SomeModule&quot;</span> {
+    <span class="cm-keyword">export</span> <span class="cm-keyword">function</span> <span class="cm-def">fn</span>(): <span class="cm-variable-3">string</span>;
 }
 </code></pre>
 </li>
 <li><p><code>myOtherModule.ts</code></p>
-<pre><code class="lang-ts"><span class="hljs-comment">/// &lt;reference path=&quot;myModules.d.ts&quot; /&gt;</span>
-<span class="hljs-keyword">import</span> * as m from <span class="hljs-string">&quot;SomeModule&quot;</span>;
+<pre><code class="lang-ts"><span class="cm-comment">/// &lt;reference path=&quot;myModules.d.ts&quot; /&gt;</span>
+<span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">m</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;SomeModule&quot;</span>;
 </code></pre>
 </li>
 </ul>
@@ -749,9 +758,9 @@ This is how the <code>node.d.ts</code> file that several of the TypeScript sampl
 <p>If you&apos;re converting a program from namespaces to modules, it can be easy to end up with a file that looks like this:</p>
 <ul>
 <li><p><code>shapes.ts</code></p>
-<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">namespace</span> Shapes {
-    <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> Triangle { <span class="hljs-comment">/* ... */</span> }
-    <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> Square { <span class="hljs-comment">/* ... */</span> }
+<pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-variable">namespace</span> <span class="cm-variable">Shapes</span> {
+    <span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">Triangle</span> { <span class="cm-comment">/* ... */</span> }
+    <span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">Square</span> { <span class="cm-comment">/* ... */</span> }
 }
 </code></pre>
 </li>
@@ -760,8 +769,8 @@ This is how the <code>node.d.ts</code> file that several of the TypeScript sampl
 This is confusing and annoying for consumers of your module:</p>
 <ul>
 <li><p><code>shapeConsumer.ts</code></p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> * as shapes from <span class="hljs-string">&quot;./shapes&quot;</span>;
-<span class="hljs-keyword">let</span> t = <span class="hljs-keyword">new</span> shapes.Shapes.Triangle(); <span class="hljs-comment">// shapes.Shapes?</span>
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">shapes</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;./shapes&quot;</span>;
+<span class="cm-keyword">let</span> <span class="cm-variable">t</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">shapes</span>.<span class="cm-property">Shapes</span>.<span class="cm-property">Triangle</span>(); <span class="cm-comment">// shapes.Shapes?</span>
 </code></pre>
 </li>
 </ul>
@@ -772,13 +781,13 @@ Because the module file itself is already a logical grouping, and its top-level 
 <p>Here&apos;s a revised example:</p>
 <ul>
 <li><p><code>shapes.ts</code></p>
-<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> Triangle { <span class="hljs-comment">/* ... */</span> }
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> Square { <span class="hljs-comment">/* ... */</span> }
+<pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">Triangle</span> { <span class="cm-comment">/* ... */</span> }
+<span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">Square</span> { <span class="cm-comment">/* ... */</span> }
 </code></pre>
 </li>
 <li><p><code>shapeConsumer.ts</code></p>
-<pre><code class="lang-ts"><span class="hljs-keyword">import</span> * as shapes from <span class="hljs-string">&quot;./shapes&quot;</span>;
-<span class="hljs-keyword">let</span> t = <span class="hljs-keyword">new</span> shapes.Triangle();
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">shapes</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;./shapes&quot;</span>;
+<span class="cm-keyword">let</span> <span class="cm-variable">t</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">shapes</span>.<span class="cm-property">Triangle</span>();
 </code></pre>
 </li>
 </ul>
@@ -829,12 +838,13 @@ For instance, you can&apos;t use the <code>outFile</code> option while targeting
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Namespaces and Modules","level":"3.15","depth":1,"next":{"title":"Module Resolution","level":"3.16","depth":1,"path":"pages/Module Resolution.md","ref":"pages/Module Resolution.md","articles":[]},"previous":{"title":"Namespaces","level":"3.14","depth":1,"path":"pages/Namespaces.md","ref":"pages/Namespaces.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Namespaces and Modules.md","mtime":"2018-02-06T13:12:52.656Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T14:21:41.019Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Namespaces and Modules","level":"3.15","depth":1,"next":{"title":"Module Resolution","level":"3.16","depth":1,"path":"pages/Module Resolution.md","ref":"pages/Module Resolution.md","articles":[]},"previous":{"title":"Namespaces","level":"3.14","depth":1,"path":"pages/Namespaces.md","ref":"pages/Namespaces.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Namespaces and Modules.md","mtime":"2018-02-05T16:09:39.244Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:22:50.132Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
     
@@ -861,6 +871,8 @@ For instance, you can&apos;t use the <code>outFile</code> option while targeting
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
+    
+
     
 
     </body>

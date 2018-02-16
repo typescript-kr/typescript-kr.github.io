@@ -12,9 +12,14 @@
         
         
     
+    
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight-1/website.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
@@ -44,6 +49,10 @@
         
     
         
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/atom-one-dark.css" />
     
 
         
@@ -716,12 +725,12 @@ You can either install the npm package globally or to a local <code>node_modules
 <p>The rest of this section assumes <code>typescript@next</code> is already installed.</p>
 <h3 id="visual-studio-code">Visual Studio Code</h3>
 <p>Update <code>.vscode/settings.json</code> with the following:</p>
-<pre><code class="lang-json"><span class="hljs-string">&quot;typescript.tsdk&quot;</span>: <span class="hljs-string">&quot;&lt;path to your folder&gt;/node_modules/typescript/lib&quot;</span>
+<pre><code class="lang-json"><span class="cm-string">&quot;typescript.tsdk&quot;</span>: <span class="cm-string">&quot;&lt;path to your folder&gt;/node_modules/typescript/lib&quot;</span>
 </code></pre>
 <p>More information is available at <a href="https://code.visualstudio.com/Docs/languages/typescript#_using-newer-typescript-versions" target="_blank">VSCode documentation</a>.</p>
 <h3 id="sublime-text">Sublime Text</h3>
 <p>Update the <code>Settings - User</code> file with the following:</p>
-<pre><code class="lang-json"><span class="hljs-string">&quot;typescript_tsdk&quot;</span>: <span class="hljs-string">&quot;&lt;path to your folder&gt;/node_modules/typescript/lib&quot;</span>
+<pre><code class="lang-json"><span class="cm-string">&quot;typescript_tsdk&quot;</span>: <span class="cm-string">&quot;&lt;path to your folder&gt;/node_modules/typescript/lib&quot;</span>
 </code></pre>
 <p>More information is available at the <a href="https://github.com/Microsoft/TypeScript-Sublime-Plugin#installation" target="_blank">TypeScript Plugin for Sublime Text installation documentation</a>.</p>
 <h3 id="visual-studio-2013-and-2015">Visual Studio 2013 and 2015</h3>
@@ -788,12 +797,13 @@ You can either install the npm package globally or to a local <code>node_modules
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Nightly Builds","level":"5.5","depth":1,"previous":{"title":"Integrating with Build Tools","level":"5.4","depth":1,"path":"pages/Iterators and Generators.md","ref":"pages/Iterators and Generators.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Nightly Builds.md","mtime":"2018-02-08T11:52:59.035Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T14:21:41.019Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Nightly Builds","level":"5.5","depth":1,"previous":{"title":"Integrating with Build Tools","level":"5.4","depth":1,"path":"pages/Iterators and Generators.md","ref":"pages/Iterators and Generators.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Nightly Builds.md","mtime":"2018-02-05T16:16:48.213Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:22:50.132Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
     
@@ -820,6 +830,8 @@ You can either install the npm package globally or to a local <code>node_modules
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
+    
+
     
 
     </body>

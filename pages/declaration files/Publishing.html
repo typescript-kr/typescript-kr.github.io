@@ -12,9 +12,14 @@
         
         
     
+    
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight-1/website.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
@@ -44,6 +49,10 @@
         
     
         
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../../assets/css/atom-one-dark.css" />
     
 
         
@@ -708,11 +717,11 @@ That way, your declarations and JavaScript always travel together.</p>
 Set the <code>types</code> property to point to your bundled declaration file.
 For example:</p>
 <pre><code class="lang-json">{
-    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;awesome&quot;</span>,
-    <span class="hljs-string">&quot;author&quot;</span>: <span class="hljs-string">&quot;Vandelay Industries&quot;</span>,
-    <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.0.0&quot;</span>,
-    <span class="hljs-string">&quot;main&quot;</span>: <span class="hljs-string">&quot;./lib/main.js&quot;</span>,
-    <span class="hljs-string">&quot;types&quot;</span>: <span class="hljs-string">&quot;./lib/main.d.ts&quot;</span>
+    <span class="cm-property">&quot;name&quot;</span>: <span class="cm-string">&quot;awesome&quot;</span>,
+    <span class="cm-property">&quot;author&quot;</span>: <span class="cm-string">&quot;Vandelay Industries&quot;</span>,
+    <span class="cm-property">&quot;version&quot;</span>: <span class="cm-string">&quot;1.0.0&quot;</span>,
+    <span class="cm-property">&quot;main&quot;</span>: <span class="cm-string">&quot;./lib/main.js&quot;</span>,
+    <span class="cm-property">&quot;types&quot;</span>: <span class="cm-string">&quot;./lib/main.d.ts&quot;</span>
 }
 </code></pre>
 <p>Note that the <code>&quot;typings&quot;</code> field is synonymous with <code>&quot;types&quot;</code>, and could be used as well.</p>
@@ -722,15 +731,15 @@ For example:</p>
 Make sure all the declaration packages you depend on are marked appropriately in the <code>&quot;dependencies&quot;</code> section in your <code>package.json</code>.
 For example, imagine we authored a package that used Browserify and TypeScript.</p>
 <pre><code class="lang-json">{
-    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;browserify-typescript-extension&quot;</span>,
-    <span class="hljs-string">&quot;author&quot;</span>: <span class="hljs-string">&quot;Vandelay Industries&quot;</span>,
-    <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.0.0&quot;</span>,
-    <span class="hljs-string">&quot;main&quot;</span>: <span class="hljs-string">&quot;./lib/main.js&quot;</span>,
-    <span class="hljs-string">&quot;types&quot;</span>: <span class="hljs-string">&quot;./lib/main.d.ts&quot;</span>,
-    <span class="hljs-string">&quot;dependencies&quot;</span>: {
-        <span class="hljs-string">&quot;browserify&quot;</span>: <span class="hljs-string">&quot;latest&quot;</span>,
-        <span class="hljs-string">&quot;@types/browserify&quot;</span>: <span class="hljs-string">&quot;latest&quot;</span>,
-        <span class="hljs-string">&quot;typescript&quot;</span>: <span class="hljs-string">&quot;next&quot;</span>
+    <span class="cm-property">&quot;name&quot;</span>: <span class="cm-string">&quot;browserify-typescript-extension&quot;</span>,
+    <span class="cm-property">&quot;author&quot;</span>: <span class="cm-string">&quot;Vandelay Industries&quot;</span>,
+    <span class="cm-property">&quot;version&quot;</span>: <span class="cm-string">&quot;1.0.0&quot;</span>,
+    <span class="cm-property">&quot;main&quot;</span>: <span class="cm-string">&quot;./lib/main.js&quot;</span>,
+    <span class="cm-property">&quot;types&quot;</span>: <span class="cm-string">&quot;./lib/main.d.ts&quot;</span>,
+    <span class="cm-property">&quot;dependencies&quot;</span>: {
+        <span class="cm-property">&quot;browserify&quot;</span>: <span class="cm-string">&quot;latest&quot;</span>,
+        <span class="cm-property">&quot;@types/browserify&quot;</span>: <span class="cm-string">&quot;latest&quot;</span>,
+        <span class="cm-property">&quot;typescript&quot;</span>: <span class="cm-string">&quot;next&quot;</span>
     }
 }
 </code></pre>
@@ -743,12 +752,12 @@ If we had just written a command line application and not expected our package t
 <h2 id="red-flags">Red flags</h2>
 <h3 id="reference-path-"><code>/// &lt;reference path=&quot;...&quot; /&gt;</code></h3>
 <p><em>Don&apos;t</em> use <code>/// &lt;reference path=&quot;...&quot; /&gt;</code> in your declaration files.</p>
-<pre><code class="lang-ts"><span class="hljs-comment">/// &lt;reference path=&quot;../typescript/lib/typescriptServices.d.ts&quot; /&gt;</span>
-....
+<pre><code class="lang-ts"><span class="cm-comment">/// &lt;reference path=&quot;../typescript/lib/typescriptServices.d.ts&quot; /&gt;</span>
+<span class="cm-meta">...</span>.
 </code></pre>
 <p><em>Do</em> use <code>/// &lt;reference types=&quot;...&quot; /&gt;</code> instead.</p>
-<pre><code class="lang-ts"><span class="hljs-comment">/// &lt;reference types=&quot;typescript&quot; /&gt;</span>
-....
+<pre><code class="lang-ts"><span class="cm-comment">/// &lt;reference types=&quot;typescript&quot; /&gt;</span>
+<span class="cm-meta">...</span>.
 </code></pre>
 <p>Make sure to revisit the <a href="Library%20Structures.md#consuming-dependencies">Consuming dependencies</a> section for more information.</p>
 <h3 id="packaging-dependent-declarations">Packaging dependent declarations</h3>
@@ -805,12 +814,13 @@ You can find more details in the <a href="http://definitelytyped.org/guides/cont
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Publishing","level":"4.7","depth":1,"next":{"title":"Consumption","level":"4.8","depth":1,"path":"pages/declaration files/Consumption.md","ref":"pages/declaration files/Consumption.md","articles":[]},"previous":{"title":"Templates","level":"4.6","depth":1,"path":"pages/declaration files/Templates.md","ref":"pages/declaration files/Templates.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/declaration files/Publishing.md","mtime":"2018-02-08T11:52:59.024Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T14:21:41.019Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Publishing","level":"4.7","depth":1,"next":{"title":"Consumption","level":"4.8","depth":1,"path":"pages/declaration files/Consumption.md","ref":"pages/declaration files/Consumption.md","articles":[]},"previous":{"title":"Templates","level":"4.6","depth":1,"path":"pages/declaration files/Templates.md","ref":"pages/declaration files/Templates.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/declaration files/Publishing.md","mtime":"2018-02-05T16:16:48.203Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:22:50.132Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
     
@@ -837,6 +847,8 @@ You can find more details in the <a href="http://definitelytyped.org/guides/cont
         
         <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
+    
+
     
 
     </body>

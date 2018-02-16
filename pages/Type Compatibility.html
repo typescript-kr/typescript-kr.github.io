@@ -12,9 +12,14 @@
         
         
     
+    
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight-1/website.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
@@ -44,6 +49,10 @@
         
     
         
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/atom-one-dark.css" />
     
 
         
@@ -698,17 +707,17 @@
                                 <h1 id="&#xC18C;&#xAC1C;-introduction">&#xC18C;&#xAC1C; (Introduction)</h1>
 <p>TypeScript&#xC758; &#xD0C0;&#xC785; &#xD638;&#xD658;&#xC131;&#xC740; &#xAD6C;&#xC870;&#xC801; &#xD558;&#xC704; &#xD0C0;&#xC785;&#xC744; &#xAE30;&#xBC18;&#xC73C;&#xB85C;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xAD6C;&#xC870;&#xC801; &#xD0C0;&#xC774;&#xD551;&#xC740; &#xBA64;&#xBC84;&#xC5D0; &#xB530;&#xB77C; &#xD0C0;&#xC785;&#xC744; &#xAD00;&#xACC4;&#xC2DC;&#xD0A4;&#xB294; &#xBC29;&#xBC95;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xAC83;&#xC740; &#xBA85;&#xC0AC;&#xBFD0;&#xC778; &#xD0C0;&#xC774;&#xD551;&#xACFC; &#xB300;&#xC870;&#xC801;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <p>&#xB2E4;&#xC74C; &#xCF54;&#xB4DC;&#xB97C; &#xC0B4;&#xD3B4;&#xBCF4;&#xC138;&#xC694; :</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Named {
-    name: <span class="hljs-built_in">string</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">Named</span> {
+    <span class="cm-variable">name</span>: <span class="cm-variable-3">string</span>;
 }
 
-<span class="hljs-keyword">class</span> Person {
-    name: <span class="hljs-built_in">string</span>;
+<span class="cm-keyword">class</span> <span class="cm-variable">Person</span> {
+    <span class="cm-property">name</span>: <span class="cm-variable-3">string</span>;
 }
 
-<span class="hljs-keyword">let</span> p: Named;
-<span class="hljs-comment">// &#xAD6C;&#xC870;&#xC801; &#xD0C0;&#xC774;&#xD551;&#xC774;&#xB2C8;&#xAE4C; &#xC88B;&#xC544;&#xC694; </span>
-p = <span class="hljs-keyword">new</span> Person();
+<span class="cm-keyword">let</span> <span class="cm-variable">p</span>: <span class="cm-variable-3">Named</span>;
+<span class="cm-comment">// &#xAD6C;&#xC870;&#xC801; &#xD0C0;&#xC774;&#xD551;&#xC774;&#xB2C8;&#xAE4C; &#xC88B;&#xC544;&#xC694; </span>
+<span class="cm-variable">p</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Person</span>();
 </code></pre>
 <p>C# &#xB610;&#xB294; Java &#xAC19;&#xC740; &#xBA85;&#xC0AC;&#xC801;&#xC778; &#xC5B8;&#xC5B4;&#xC5D0;&#xC11C;&#xB294; <code>person</code> &#xD074;&#xB798;&#xC2A4;&#xAC00; &#xC790;&#xC2E0;&#xC744; <code>Named</code> &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC758; &#xAD6C;&#xD604;&#xCCB4;&#xB85C; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xAE30;&#xC220;&#xD558;&#xC9C0; &#xC54A;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xB3D9;&#xC77C;&#xD55C; &#xCF54;&#xB4DC;&#xAC00; &#xC624;&#xB958;&#xAC00; &#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>TypeScript&#xC758; &#xAD6C;&#xC870;&#xC801;&#xC778; &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;&#xC740; &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; JavaScript &#xCF54;&#xB4DC;&#xAC00; &#xC791;&#xC131;&#xB41C; &#xBC29;&#xC2DD;&#xC5D0; &#xB530;&#xB77C; &#xC124;&#xACC4;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
@@ -719,22 +728,22 @@ p = <span class="hljs-keyword">new</span> Person();
 <h1 id="&#xC2DC;&#xC791;&#xD558;&#xAE30;-starting-out">&#xC2DC;&#xC791;&#xD558;&#xAE30; (Starting out)</h1>
 <p>TypeScript&#xC758; &#xAD6C;&#xC870; &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;&#xC5D0; &#xB300;&#xD55C; &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xADDC;&#xCE59;&#xC740; <code>y</code>&#xAC00; &#xC801;&#xC5B4;&#xB3C4;<code>x</code>&#xC640; &#xAC19;&#xC740; &#xBA64;&#xBC84;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;&#xBA74; <code>x</code>&#xB294; <code>y</code>&#xC640; &#xD638;&#xD658;&#xB41C;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Named {
-    name: <span class="hljs-built_in">string</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">Named</span> {
+    <span class="cm-variable">name</span>: <span class="cm-variable-3">string</span>;
 }
 
-<span class="hljs-keyword">let</span> x: Named;
-<span class="hljs-comment">// y&#xC758; &#xCD94;&#xB860;&#xB41C; &#xD0C0;&#xC785;&#xC740; { name: string; location: string; } &#xC785;&#xB2C8;&#xB2E4;</span>
-<span class="hljs-keyword">let</span> y = { name: <span class="hljs-string">&quot;Alice&quot;</span>, location: <span class="hljs-string">&quot;Seattle&quot;</span> };
-x = y;
+<span class="cm-keyword">let</span> <span class="cm-variable">x</span>: <span class="cm-variable-3">Named</span>;
+<span class="cm-comment">// y&#xC758; &#xCD94;&#xB860;&#xB41C; &#xD0C0;&#xC785;&#xC740; { name: string; location: string; } &#xC785;&#xB2C8;&#xB2E4;</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">y</span> <span class="cm-operator">=</span> { <span class="cm-property">name</span>: <span class="cm-string">&quot;Alice&quot;</span>, <span class="cm-property">location</span>: <span class="cm-string">&quot;Seattle&quot;</span> };
+<span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-variable">y</span>;
 </code></pre>
 <p><code>y</code>&#xAC00; <code>x</code>&#xC5D0; &#xD560;&#xB2F9;&#xB420; &#xC218; &#xC788;&#xB294;&#xC9C0;&#xB97C; &#xAC80;&#xC0AC;&#xD558;&#xAE30; &#xC704;&#xD574; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; <code>x</code>&#xC758; &#xAC01; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xAC80;&#xC0AC;&#xD558;&#xC5EC; <code>y</code>&#xC5D0;&#xC11C; &#xC0C1;&#xC751;&#xD558;&#xB294; &#xD638;&#xD658;&#xB418;&#xB294; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xCC3E;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC774; &#xACBD;&#xC6B0; <code>y</code>&#xB294; &#xBB38;&#xC790;&#xC5F4;&#xC778; <code>name</code> &#xBA64;&#xBC84;&#xB97C; &#xAC00;&#xC838;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB807;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xD560;&#xB2F9;&#xC774; &#xD5C8;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <p>&#xD568;&#xC218; &#xD638;&#xCD9C; &#xC778;&#xC218;&#xB97C; &#xAC80;&#xC0AC;&#xD560; &#xB54C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xD560;&#xB2F9; &#xADDC;&#xCE59;&#xC774; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4; :</p>
-<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greet</span>(<span class="hljs-params">n: Named</span>) </span>{
-    alert(<span class="hljs-string">&quot;Hello, &quot;</span> + n.name);
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">greet</span>(<span class="cm-def">n</span>: <span class="cm-variable-3">Named</span>) {
+    <span class="cm-variable">alert</span>(<span class="cm-string">&quot;Hello, &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable-2">n</span>.<span class="cm-property">name</span>);
 }
-greet(y); <span class="hljs-comment">// &#xC88B;&#xC544;&#xC694;</span>
+<span class="cm-variable">greet</span>(<span class="cm-variable">y</span>); <span class="cm-comment">// &#xC88B;&#xC544;&#xC694;</span>
 </code></pre>
 <p><code>y</code>&#xB294; &#xBCC4;&#xB3C4;&#xC758; <code>location</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC9C0;&#xB9CC;  &#xC774;&#xB85C; &#xC778;&#xD574; &#xC624;&#xB958;&#xAC00; &#xC0DD;&#xAE30;&#xB294; &#xAC83;&#xC740; &#xC544;&#xB2C8;&#xB77C;&#xB294; &#xC810;&#xC5D0; &#xC720;&#xC758;&#xD55C;&#xB2E4;.  </p>
 <p>&#xD638;&#xD658;&#xC131;&#xC744; &#xAC80;&#xC0AC;&#xD560; &#xB54C; &#xB300;&#xC0C1;&#xC758; &#xD0C0;&#xC785; (&#xC774; &#xACBD;&#xC6B0; <code>Named</code>) &#xBA64;&#xBC84;&#xB9CC; &#xACE0;&#xB824;&#xB429;&#xB2C8;&#xB2E4;.</p>
@@ -742,11 +751,11 @@ greet(y); <span class="hljs-comment">// &#xC88B;&#xC544;&#xC694;</span>
 <h1 id="&#xB450;-&#xD568;&#xC218;-&#xBE44;&#xAD50;-comparing-two-functions">&#xB450; &#xD568;&#xC218; &#xBE44;&#xAD50; (Comparing two functions)</h1>
 <p>&#xC6D0;&#xC2DC;&#xC801;&#xC778; &#xD0C0;&#xC785;&#xACFC; &#xAC1D;&#xCCB4; &#xD0C0;&#xC785;&#xC744; &#xBE44;&#xAD50;&#xD558;&#xB294; &#xAC83;&#xC740; &#xBE44;&#xAD50;&#xC801; &#xAC04;&#xB2E8;&#xD558;&#xC9C0;&#xB9CC; &#xD638;&#xD658;&#xC131;&#xC774; &#xC788;&#xB294; &#xAC83;&#xC73C;&#xB85C; &#xAC04;&#xC8FC;&#xB418;&#xC5B4;&#xC57C; &#xD558;&#xB294; &#xD568;&#xC218;&#xC758; &#xC885;&#xB958;&#xC5D0; &#xB300;&#xD55C; &#xC9C8;&#xBB38;&#xC740; &#xC880; &#xB354; &#xBCF5;&#xC7A1;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>&#xBA3C;&#xC800; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xBAA9;&#xB85D;&#xC5D0;&#xC11C;&#xB9CC; &#xB2E4;&#xB978; &#xB450; &#xD568;&#xC218;&#xC758; &#xAE30;&#xBCF8; &#xC608;&#xC81C;&#xB97C; &#xC0B4;&#xD3B4;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4; :</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">let</span> x = (a: <span class="hljs-built_in">number</span>) =&gt; <span class="hljs-number">0</span>;
-<span class="hljs-keyword">let</span> y = (b: <span class="hljs-built_in">number</span>, s: <span class="hljs-built_in">string</span>) =&gt; <span class="hljs-number">0</span>;
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">x</span> <span class="cm-operator">=</span> (<span class="cm-def">a</span>: <span class="cm-variable-3">number</span>) <span class="cm-operator">=&gt;</span> <span class="cm-number">0</span>;
+<span class="cm-keyword">let</span> <span class="cm-variable">y</span> <span class="cm-operator">=</span> (<span class="cm-def">b</span>: <span class="cm-variable-3">number</span>, <span class="cm-variable">s</span>: <span class="cm-variable-3">string</span>) <span class="cm-operator">=&gt;</span> <span class="cm-number">0</span>;
 
-y = x; <span class="hljs-comment">// &#xC88B;&#xC544;&#xC694;</span>
-x = y; <span class="hljs-comment">// &#xC624;&#xB958;</span>
+<span class="cm-variable">y</span> <span class="cm-operator">=</span> <span class="cm-variable">x</span>; <span class="cm-comment">// &#xC88B;&#xC544;&#xC694;</span>
+<span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-variable">y</span>; <span class="cm-comment">// &#xC624;&#xB958;</span>
 </code></pre>
 <p><code>x</code>&#xAC00; <code>y</code>&#xC5D0; &#xD560;&#xB2F9;&#xB420; &#xC218; &#xC788;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC6B0;&#xC120; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218; &#xBAA9;&#xB85D;&#xC744; &#xC0B4;&#xD3B4;&#xBD05;&#xB2C8;&#xB2E4;.
 <code>x</code>&#xC758; &#xAC01; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xB294; &#xD638;&#xD658; &#xAC00;&#xB2A5;&#xD55C; &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C4; <code>y</code>&#xC5D0;&#xC11C; &#xC0C1;&#xC751;&#xD558;&#xB294; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xB97C; &#xAC00;&#xC838;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.</p>
@@ -755,20 +764,20 @@ x = y; <span class="hljs-comment">// &#xC624;&#xB958;</span>
 <p><code>y = x</code> &#xC608;&#xC2DC;&#xC640; &#xAC19;&#xC740; &apos;&#xBC84;&#xB824;&#xC9C0;&#xB294;&apos; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xD5C8;&#xC6A9;&#xD558;&#xB294;&#xC9C0; &#xC774;&#xC720;&#xAC00; &#xC758;&#xC2EC;&#xC2A4;&#xB7EC;&#xC6B8;&#xAC81;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xD560;&#xB2F9;&#xC774; &#xD5C8;&#xC6A9;&#xB418;&#xB294; &#xC774;&#xC720;&#xB294; JavaScript&#xC5D0;&#xC11C; &#xCD94;&#xAC00;&#xC801;&#xC778; &#xD568;&#xC218; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xB97C; &#xBB34;&#xC2DC;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC0C1;&#xB2F9;&#xD788; &#xD754;&#xD55C; &#xC77C;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.  </p>
 <p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; <code>Array#forEach</code>&#xB294; &#xCF5C;&#xBC31; &#xD568;&#xC218;&#xC5D0; &#xC138; &#xAC1C;&#xC758; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xB97C; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4; : &#xBC30;&#xC5F4; &#xC694;&#xC18C;&#xC640; &#xD574;&#xB2F9; &#xC778;&#xB371;&#xC2A4; &#xBC0F; &#xD3EC;&#xD568;&#xB41C; &#xBC30;&#xC5F4;
 &#xADF8;&#xB7FC;&#xC5D0;&#xB3C4; &#xBD88;&#xAD6C;&#xD558;&#xACE0; &#xCCAB; &#xBC88;&#xC9F8; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218; &#xB9CC; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xCF5C;&#xBC31;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xAC83;&#xC740; &#xB9E4;&#xC6B0; &#xC720;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4; :</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">let</span> items = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">items</span> <span class="cm-operator">=</span> [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>];
 
-<span class="hljs-comment">// &#xC774;&#xB7EC;&#xD55C; &#xCD94;&#xAC00; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xB97C; &#xAC15;&#xC81C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xB9C8;&#xC138;&#xC694;</span>
-items.forEach((item, index, array) =&gt; <span class="hljs-built_in">console</span>.log(item));
+<span class="cm-comment">// &#xC774;&#xB7EC;&#xD55C; &#xCD94;&#xAC00; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xB97C; &#xAC15;&#xC81C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xB9C8;&#xC138;&#xC694;</span>
+<span class="cm-variable">items</span>.<span class="cm-property">forEach</span>((<span class="cm-def">item</span>, <span class="cm-def">index</span>, <span class="cm-def">array</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable-2">item</span>));
 
-<span class="hljs-comment">// &#xAD1C;&#xCC2E;&#xC744; &#xAC70;&#xC5D0;&#xC694;!</span>
-items.forEach(item =&gt; <span class="hljs-built_in">console</span>.log(item));
+<span class="cm-comment">// &#xAD1C;&#xCC2E;&#xC744; &#xAC70;&#xC5D0;&#xC694;!</span>
+<span class="cm-variable">items</span>.<span class="cm-property">forEach</span>(<span class="cm-def">item</span> <span class="cm-operator">=&gt;</span> <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable-2">item</span>));
 </code></pre>
 <p>&#xC774;&#xC81C; &#xD0C0;&#xC785; &#xC720;&#xD615;&#xC5D0; &#xB530;&#xB77C; &#xB2E4;&#xB978; &#xB450; &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBC18;&#xD658; &#xD0C0;&#xC785;&#xC744; &#xCC98;&#xB9AC;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC0B4;&#xD3B4;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">let</span> x = () =&gt; ({name: <span class="hljs-string">&quot;Alice&quot;</span>});
-<span class="hljs-keyword">let</span> y = () =&gt; ({name: <span class="hljs-string">&quot;Alice&quot;</span>, location: <span class="hljs-string">&quot;Seattle&quot;</span>});
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">x</span> <span class="cm-operator">=</span> () <span class="cm-operator">=&gt;</span> ({<span class="cm-property">name</span>: <span class="cm-string">&quot;Alice&quot;</span>});
+<span class="cm-keyword">let</span> <span class="cm-variable">y</span> <span class="cm-operator">=</span> () <span class="cm-operator">=&gt;</span> ({<span class="cm-property">name</span>: <span class="cm-string">&quot;Alice&quot;</span>, <span class="cm-property">location</span>: <span class="cm-string">&quot;Seattle&quot;</span>});
 
-x = y; <span class="hljs-comment">// &#xC88B;&#xC544;&#xC694;</span>
-y = x; <span class="hljs-comment">// x&#xC5D0; location &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xAC00; &#xC5C6;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC624;&#xB958;</span>
+<span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-variable">y</span>; <span class="cm-comment">// &#xC88B;&#xC544;&#xC694;</span>
+<span class="cm-variable">y</span> <span class="cm-operator">=</span> <span class="cm-variable">x</span>; <span class="cm-comment">// x&#xC5D0; location &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xAC00; &#xC5C6;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC624;&#xB958;</span>
 </code></pre>
 <p>&#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;&#xC740; &#xC18C;&#xC2A4; &#xD568;&#xC218;&#xC758; &#xBC18;&#xD658; &#xD0C0;&#xC785;&#xC774; &#xB300;&#xC0C1; &#xD0C0;&#xC785;&#xC758; &#xBC18;&#xD658; &#xD0C0;&#xC785;&#xC758; &#xC11C;&#xBE0C; &#xD0C0;&#xC785;&#xC774;&#xB418;&#xB3C4;&#xB85D; &#xAC15;&#xC81C;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h2 id="&#xD568;&#xC218;-&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC758;-bivariance-function-parameter-bivariance">&#xD568;&#xC218; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC758; Bivariance (Function Parameter Bivariance)</h2>
@@ -776,105 +785,105 @@ y = x; <span class="hljs-comment">// x&#xC5D0; location &#xD504;&#xB85C;&#xD37C;
 <p>&#xC774;&#xAC83;&#xC740; &#xD638;&#xCD9C;&#xD55C; &#xCE21;&#xC5D0;&#xC11C; &#xB354; &#xD2B9;&#xC218;&#xD654;&#xB41C; &#xD0C0;&#xC785;&#xC744; &#xCDE8;&#xD558;&#xB294; &#xD568;&#xC218;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xAC8C; &#xB420; &#xC218;&#xB3C4; &#xC788;&#xC9C0;&#xB9CC; &#xB35C; &#xD2B9;&#xC218;&#xD654;&#xB41C; &#xD0C0;&#xC785;&#xC758; &#xD568;&#xC218;&#xB97C; &#xD638;&#xCD9C;&#xD560; &#xC218; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xBC14;&#xB78C;&#xC9C1;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC2E4;&#xC81C;&#xB85C; &#xC774;&#xB7F0; &#xC885;&#xB958;&#xC758; &#xC624;&#xB958;&#xB294; &#xB4DC;&#xBB3C;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC774;&#xB97C; &#xD1B5;&#xD574; &#xB9CE;&#xC740; &#xC77C;&#xBC18;&#xC801;&#xC778; JavaScript &#xD328;&#xD134;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
 <p>&#xAC04;&#xB2E8;&#xD55C; &#xC608;&#xC81C;:</p>
-<pre><code class="lang-ts">enum EventType { Mouse, Keyboard }
+<pre><code class="lang-ts"><span class="cm-variable">enum</span> <span class="cm-variable">EventType</span> { <span class="cm-variable">Mouse</span>, <span class="cm-variable">Keyboard</span> }
 
-interface Event { timestamp: number; }
-interface MouseEvent extends Event { x: number; y: number }
-interface KeyEvent extends Event { keyCode: number }
+<span class="cm-keyword">interface</span> <span class="cm-variable">Event</span> { <span class="cm-variable">timestamp</span>: <span class="cm-variable-3">number</span>; }
+<span class="cm-keyword">interface</span> <span class="cm-variable">MouseEvent</span> <span class="cm-keyword">extends</span> <span class="cm-variable">Event</span> { <span class="cm-variable">x</span>: <span class="cm-variable-3">number</span>; <span class="cm-variable">y</span>: <span class="cm-variable-3">number</span> }
+<span class="cm-keyword">interface</span> <span class="cm-variable">KeyEvent</span> <span class="cm-keyword">extends</span> <span class="cm-variable">Event</span> { <span class="cm-variable">keyCode</span>: <span class="cm-variable-3">number</span> }
 
-function listenEvent(eventType: EventType, handler: (n: Event) =&gt; void) {
-    /* ... */
+<span class="cm-keyword">function</span> <span class="cm-variable">listenEvent</span>(<span class="cm-def">eventType</span>: <span class="cm-variable-3">EventType</span>, <span class="cm-def">handler</span>: (<span class="cm-variable">n</span>: <span class="cm-variable">Event</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span>) {
+    <span class="cm-comment">/* ... */</span>
 }
 
-// &#xBD80;&#xC801;&#xC808;&#xD558;&#xC9C0;&#xB9CC; &#xC720;&#xC775;&#xD558;&#xACE0; &#xC77C;&#xBC18;&#xC801;&#xC778;
-listenEvent(EventType.Mouse, (e: MouseEvent) =&gt; console.log(e.x + &quot;,&quot; + e.y));
+<span class="cm-comment">// &#xBD80;&#xC801;&#xC808;&#xD558;&#xC9C0;&#xB9CC; &#xC720;&#xC775;&#xD558;&#xACE0; &#xC77C;&#xBC18;&#xC801;&#xC778;</span>
+<span class="cm-variable">listenEvent</span>(<span class="cm-variable">EventType</span>.<span class="cm-property">Mouse</span>, (<span class="cm-def">e</span>: <span class="cm-variable">MouseEvent</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable-2">e</span>.<span class="cm-property">x</span> <span class="cm-operator">+</span> <span class="cm-string">&quot;,&quot;</span> <span class="cm-operator">+</span> <span class="cm-variable-2">e</span>.<span class="cm-property">y</span>));
 
-// &#xC548;&#xC815;&#xC131;&#xC5D0;&#xC11C; &#xBC14;&#xB78C;&#xC9C1;&#xD558;&#xC9C0; &#xC54A;&#xC740; &#xB300;&#xC548;
-listenEvent(EventType.Mouse, (e: Event) =&gt; console.log((&lt;MouseEvent&gt;e).x + &quot;,&quot; + (&lt;MouseEvent&gt;e).y));
-listenEvent(EventType.Mouse, &lt;(e: Event) =&gt; void&gt;((e: MouseEvent) =&gt; console.log(e.x + &quot;,&quot; + e.y)));
+<span class="cm-comment">// &#xC548;&#xC815;&#xC131;&#xC5D0;&#xC11C; &#xBC14;&#xB78C;&#xC9C1;&#xD558;&#xC9C0; &#xC54A;&#xC740; &#xB300;&#xC548;</span>
+<span class="cm-variable">listenEvent</span>(<span class="cm-variable">EventType</span>.<span class="cm-property">Mouse</span>, (<span class="cm-def">e</span>: <span class="cm-variable">Event</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">console</span>.<span class="cm-property">log</span>((<span class="cm-operator">&lt;</span><span class="cm-variable">MouseEvent</span><span class="cm-operator">&gt;</span><span class="cm-variable-2">e</span>).<span class="cm-property">x</span> <span class="cm-operator">+</span> <span class="cm-string">&quot;,&quot;</span> <span class="cm-operator">+</span> (<span class="cm-operator">&lt;</span><span class="cm-variable">MouseEvent</span><span class="cm-operator">&gt;</span><span class="cm-variable-2">e</span>).<span class="cm-property">y</span>));
+<span class="cm-variable">listenEvent</span>(<span class="cm-variable">EventType</span>.<span class="cm-property">Mouse</span>, <span class="cm-operator">&lt;</span>(<span class="cm-def">e</span>: <span class="cm-variable">Event</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span><span class="cm-operator">&gt;</span>((<span class="cm-def">e</span>: <span class="cm-variable">MouseEvent</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable-2">e</span>.<span class="cm-property">x</span> <span class="cm-operator">+</span> <span class="cm-string">&quot;,&quot;</span> <span class="cm-operator">+</span> <span class="cm-variable-2">e</span>.<span class="cm-property">y</span>)));
 
-//&#xADF8;&#xB798;&#xB3C4; &#xD5C8;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;(&#xBA85;&#xD655;&#xD55C; &#xC624;&#xB958;). &#xC644;&#xC804;&#xD788; &#xD638;&#xD658;&#xB418;&#xC9C0; &#xC54A;&#xB294; &#xC720;&#xD615;&#xC5D0; &#xB300;&#xD574; &#xC801;&#xC6A9;&#xB418;&#xB294; &#xD0C0;&#xC785; &#xC548;&#xC804;&#xC131;(Type safety)
-listenEvent(EventType.Mouse, (e: number) =&gt; console.log(e));
+<span class="cm-comment">//&#xADF8;&#xB798;&#xB3C4; &#xD5C8;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;(&#xBA85;&#xD655;&#xD55C; &#xC624;&#xB958;). &#xC644;&#xC804;&#xD788; &#xD638;&#xD658;&#xB418;&#xC9C0; &#xC54A;&#xB294; &#xC720;&#xD615;&#xC5D0; &#xB300;&#xD574; &#xC801;&#xC6A9;&#xB418;&#xB294; &#xD0C0;&#xC785; &#xC548;&#xC804;&#xC131;(Type safety)</span>
+<span class="cm-variable">listenEvent</span>(<span class="cm-variable">EventType</span>.<span class="cm-property">Mouse</span>, (<span class="cm-def">e</span>: <span class="cm-variable-3">number</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable-2">e</span>));
 </code></pre>
 <h2 id="&#xC120;&#xD0DD;&#xC801;-&#xB9E4;&#xAC1C;-&#xBCC0;&#xC218;&#xC640;-&#xB098;&#xBA38;&#xC9C0;-&#xB9E4;&#xAC1C;-&#xBCC0;&#xC218;-optional-parameters-and-rest-parameters">&#xC120;&#xD0DD;&#xC801; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xC640; &#xB098;&#xBA38;&#xC9C0; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218; (Optional Parameters and Rest Parameters)</h2>
 <p>&#xD638;&#xD658;&#xC131;&#xC744; &#xC704;&#xD55C; &#xD568;&#xC218;&#xB97C; &#xBE44;&#xAD50;&#xD560; &#xB54C; &#xC120;&#xD0DD;&#xC801; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xC640; &#xD544;&#xC218; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xB294; &#xC11C;&#xB85C; &#xBC14;&#xAFD4;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC6D0;&#xBCF8; &#xD0C0;&#xC785;&#xC758; &#xCD94;&#xAC00; &#xC120;&#xD0DD;&#xC801; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xB294; &#xC624;&#xB958;&#xAC00; &#xC544;&#xB2C8;&#xBA70; &#xC6D0;&#xBCF8; &#xD0C0;&#xC785;&#xC758; &#xD574;&#xB2F9; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xAC00; &#xC5C6;&#xB294; &#xB300;&#xC0C1; &#xD0C0;&#xC785;&#xC758; &#xC120;&#xD0DD;&#xC801; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xB294; &#xC624;&#xB958;&#xAC00; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;.</p>
 <p>&#xD568;&#xC218;&#xC5D0; &#xB098;&#xBA38;&#xC9C0; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xAC00; &#xC788;&#xC73C;&#xBA74; &#xD568;&#xC218;&#xAC00; &#xC120;&#xD0DD;&#xC801; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xC758; &#xBB34;&#xD55C;&#xC801;&#xC785; &#xC9D1;&#xD569;&#xC778;&#xAC83;&#xCC98;&#xB7FC; &#xCC98;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC774;&#xB294; &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;&#xC758; &#xAD00;&#xC810;&#xC5D0;&#xC11C; &#xBCF4;&#xBA74; &#xC911;&#xC694;&#xD558;&#xC9C0; &#xC54A;&#xC9C0;&#xB9CC; &#xB7F0;&#xD0C0;&#xC784; &#xAD00;&#xC810;&#xC5D0;&#xC11C; &#xC120;&#xD0DD;&#xC801; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xC758; &#xAC1C;&#xB150;&#xC740; &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xC798; &#xC801;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC65C;&#xB0D0;&#xD558;&#xBA74; &#xADF8; &#xC704;&#xCE58;&#xC5D0;&#xC11C; <code>undefined</code>&#xAC00; &#xD1B5;&#xACFC;&#xD558;&#xB294; &#xAC83;&#xC774; &#xB300;&#xBD80;&#xBD84;&#xC758; &#xD568;&#xC218;&#xAC00; &#xAC19;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <p>&#xB3D9;&#xAE30;&#xB97C; &#xBD80;&#xC5EC;&#xD558;&#xB294; &#xC608;&#xC81C;&#xB294; &#xCF5C;&#xBC31;&#xC744; &#xC218;&#xD589;&#xD558;&#xACE0; &#xC77C;&#xBD80;(&#xAC1C;&#xBC1C;&#xC790;&#xC5D0;&#xAC8C;) &#xC608;&#xCE21; &#xAC00;&#xB2A5;&#xD558;&#xC9C0;&#xB9CC; (&#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;&#xC5D0;) &#xC54C; &#xC218; &#xC5C6;&#xB294; &#xC778;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD638;&#xCD9C;&#xD558;&#xB294; &#xD568;&#xC218;&#xC758; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD328;&#xD134;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-ts">function invokeLater(args: any[], callback: (...args: any[]) =&gt; void) {
-    /* ... &apos;arg&apos;&#xB85C; &#xCF5C;&#xBC31;&#xC744; &#xD638;&#xCD9C;&#xD569;&#xB2C8;&#xB2E4;. ... */
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">invokeLater</span>(<span class="cm-def">args</span>: <span class="cm-variable-3">any</span>[], <span class="cm-variable">callback</span>: (<span class="cm-meta">...</span><span class="cm-variable-2">args</span>: <span class="cm-variable-3">any</span>[]) <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span>) {
+    <span class="cm-comment">/* ... &apos;arg&apos;&#xB85C; &#xCF5C;&#xBC31;&#xC744; &#xD638;&#xCD9C;&#xD569;&#xB2C8;&#xB2E4;. ... */</span>
 }
 
-// &#xBD80;&#xC801;&#xC808;&#xD568; - invokeLater &#xC784;&#xC758;&#xC758; &#xC218;&#xC758; &#xC778;&#xC218;&#xB97C; &#xC81C;&#xACF5;&quot;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;&quot;
-invokeLater([1, 2], (x, y) =&gt; console.log(x + &quot;, &quot; + y));
+<span class="cm-comment">// &#xBD80;&#xC801;&#xC808;&#xD568; - invokeLater &#xC784;&#xC758;&#xC758; &#xC218;&#xC758; &#xC778;&#xC218;&#xB97C; &#xC81C;&#xACF5;&quot;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;&quot;</span>
+<span class="cm-variable">invokeLater</span>([<span class="cm-number">1</span>, <span class="cm-number">2</span>], (<span class="cm-def">x</span>, <span class="cm-def">y</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable-2">x</span> <span class="cm-operator">+</span> <span class="cm-string">&quot;, &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable-2">y</span>));
 
-// &#xD63C;&#xB780;&#xC2A4;&#xB7EC;&#xC6C0; (x&#xC640; y&#xB294; &#xC815;&#xB9D0;&#xB85C; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;) &#xBC1C;&#xACAC; &#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
-invokeLater([1, 2], (x?, y?) =&gt; console.log(x + &quot;, &quot; + y));
+<span class="cm-comment">// &#xD63C;&#xB780;&#xC2A4;&#xB7EC;&#xC6C0; (x&#xC640; y&#xB294; &#xC815;&#xB9D0;&#xB85C; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;) &#xBC1C;&#xACAC; &#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-variable">invokeLater</span>([<span class="cm-number">1</span>, <span class="cm-number">2</span>], (<span class="cm-def">x</span><span class="cm-operator">?</span>, <span class="cm-variable">y</span><span class="cm-operator">?</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable-2">x</span> <span class="cm-operator">+</span> <span class="cm-string">&quot;, &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable">y</span>));
 </code></pre>
 <h2 id="&#xC624;&#xBC84;&#xB85C;&#xB4DC;-&#xD568;&#xC218;-functions-with-overloads">&#xC624;&#xBC84;&#xB85C;&#xB4DC; &#xD568;&#xC218; (Functions with overloads)</h2>
 <p>&#xD568;&#xC218;&#xC5D0; &#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xAC00; &#xC788;&#xB294; &#xACBD;&#xC6B0; &#xC6D0;&#xBCF8; &#xD0C0;&#xC785;&#xC758; &#xAC01; &#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xB294; &#xB300;&#xC0C1; &#xD0C0;&#xC785;&#xC758; &#xD638;&#xD658;&#xAC00;&#xB2A5;&#xD55C; &#xC11C;&#xBA85;&#xACFC; &#xC77C;&#xCE58;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB807;&#xAC8C;&#xD558;&#xBA74; &#xC6D0;&#xBCF8; &#xD568;&#xC218;&#xC640; &#xB3D9;&#xC77C;&#xD55C; &#xBAA8;&#xB4E0; &#xC0C1;&#xD669;&#xC5D0;&#xC11C; &#xB300;&#xC0C1; &#xD568;&#xC218;&#xB97C; &#xD638;&#xCD9C; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h1 id="&#xC5F4;&#xAC70;&#xD615;-enums">&#xC5F4;&#xAC70;&#xD615; (Enums)</h1>
 <p>&#xC5F4;&#xAC70;&#xD615;&#xC740; &#xC22B;&#xC790;&#xC640; &#xD638;&#xD658;&#xB418;&#xBA70; &#xC22B;&#xC790;&#xB294; &#xC5F4;&#xAC70;&#xD615;&#xACFC; &#xD638;&#xD658;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xB978; &#xC5F4;&#xAC70;&#xD615;&#xC5D0;&#xC11C; &#xAC00;&#xC838;&#xC628; &#xC5F4;&#xAC70;&#xD615;&#xC758; &#xAC12;&#xC740; &#xD638;&#xD658;&#xB418;&#xC9C0; &#xC54A;&#xB294; &#xAC83;&#xC73C;&#xB85C; &#xAC04;&#xC8FC;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">enum</span> Status { Ready, Waiting };
-<span class="hljs-keyword">enum</span> Color { Red, Blue, Green };
+<pre><code class="lang-ts"><span class="cm-variable">enum</span> <span class="cm-variable">Status</span> { <span class="cm-variable">Ready</span>, <span class="cm-variable">Waiting</span> };
+<span class="cm-variable">enum</span> <span class="cm-variable">Color</span> { <span class="cm-variable">Red</span>, <span class="cm-variable">Blue</span>, <span class="cm-variable">Green</span> };
 
-<span class="hljs-keyword">let</span> status = Status.Ready;
-status = Color.Green;  <span class="hljs-comment">// &#xC624;&#xB958;</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">status</span> <span class="cm-operator">=</span> <span class="cm-variable">Status</span>.<span class="cm-property">Ready</span>;
+<span class="cm-variable">status</span> <span class="cm-operator">=</span> <span class="cm-variable">Color</span>.<span class="cm-property">Green</span>;  <span class="cm-comment">// &#xC624;&#xB958;</span>
 </code></pre>
 <h1 id="&#xD074;&#xB798;&#xC2A4;-classes">&#xD074;&#xB798;&#xC2A4; (Classes)</h1>
 <p>&#xD074;&#xB798;&#xC2A4;&#xB294; &#xD55C;&#xAC00;&#xC9C0; &#xC608;&#xC678;&#xB97C; &#xC81C;&#xC678;&#xD558;&#xACE0; &#xAC1D;&#xCCB4;&#xC758; &#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785; &#xBC0F; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC640; &#xC720;&#xC0AC;&#xD558;&#xAC8C; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;: &#xC815;&#xC801; &#xD0C0;&#xC785;&#xACFC; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xD0C0;&#xC785;&#xC744; &#xBAA8;&#xB450; &#xD3EC;&#xD568;&#xD569;&#xB2C8;&#xB2E4;.  </p>
 <p>&#xD55C; &#xD074;&#xB798;&#xC2A4; &#xD0C0;&#xC785;&#xC758; &#xB450; &#xAC1D;&#xCCB4;&#xB97C; &#xBE44;&#xAD50;&#xD560; &#xB54C; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xC758; &#xBA64;&#xBC84;&#xB9CC; &#xBE44;&#xAD50;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC815;&#xC801; &#xBA64;&#xBC84; &#xBC0F; &#xC0DD;&#xC131;&#xC790;&#xB294; &#xD638;&#xD658;&#xC131;&#xC5D0; &#xC601;&#xD5A5;&#xC744; &#xBBF8;&#xCE58;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">class</span> Animal {
-    feet: <span class="hljs-built_in">number</span>;
-    <span class="hljs-keyword">constructor</span>(name: string, numFeet: number) { }
+<pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">Animal</span> {
+    <span class="cm-property">feet</span>: <span class="cm-variable-3">number</span>;
+    <span class="cm-keyword">constructor</span>(<span class="cm-variable">name</span>: <span class="cm-variable-3">string</span>, <span class="cm-variable">numFeet</span>: <span class="cm-variable-3">number</span>) { }
 }
 
-<span class="hljs-keyword">class</span> Size {
-    feet: <span class="hljs-built_in">number</span>;
-    <span class="hljs-keyword">constructor</span>(numFeet: number) { }
+<span class="cm-keyword">class</span> <span class="cm-variable">Size</span> {
+    <span class="cm-property">feet</span>: <span class="cm-variable-3">number</span>;
+    <span class="cm-keyword">constructor</span>(<span class="cm-variable">numFeet</span>: <span class="cm-variable-3">number</span>) { }
 }
 
-<span class="hljs-keyword">let</span> a: Animal;
-<span class="hljs-keyword">let</span> s: Size;
+<span class="cm-keyword">let</span> <span class="cm-variable">a</span>: <span class="cm-variable-3">Animal</span>;
+<span class="cm-keyword">let</span> <span class="cm-variable">s</span>: <span class="cm-variable-3">Size</span>;
 
-a = s;  <span class="hljs-comment">// &#xC88B;&#xC544;&#xC694;</span>
-s = a;  <span class="hljs-comment">// &#xC88B;&#xC544;&#xC694;</span>
+<span class="cm-variable">a</span> <span class="cm-operator">=</span> <span class="cm-variable">s</span>;  <span class="cm-comment">// &#xC88B;&#xC544;&#xC694;</span>
+<span class="cm-variable">s</span> <span class="cm-operator">=</span> <span class="cm-variable">a</span>;  <span class="cm-comment">// &#xC88B;&#xC544;&#xC694;</span>
 </code></pre>
 <h2 id="&#xD074;&#xB798;&#xC2A4;&#xC758;-private&#xC640;-protected-&#xBA64;&#xBC84;-private-and-protected-members-in-classes">&#xD074;&#xB798;&#xC2A4;&#xC758; Private&#xC640; protected &#xBA64;&#xBC84; (Private and protected members in classes)</h2>
 <p>&#xD074;&#xB798;&#xC2A4;&#xC758; Private&#xC640; &#xBC0F; protected &#xBA64;&#xBC84;&#xB294; &#xD638;&#xD658;&#xC131;&#xC5D0; &#xC601;&#xD5A5;&#xC744; &#xC90D;&#xB2C8;&#xB2E4;.<br>&#xD074;&#xB798;&#xC2A4;&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xAC00; &#xD638;&#xD658;&#xC131;&#xC744; &#xAC80;&#xC0AC;&#xD560; &#xB54C; &#xB300;&#xC0C1; &#xD0C0;&#xC785;&#xC5D0; private &#xBA64;&#xBC84;&#xAC00; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xC73C;&#xBA74; &#xC6D0;&#xBCF8; &#xD0C0;&#xC785;&#xC5D0; &#xB3D9;&#xC77C;&#xD55C; &#xD074;&#xB798;&#xC2A4;&#xC5D0;&#xC11C; &#xBE44;&#xB86F;&#xB41C; private &#xBA64;&#xBC84;&#xAC00; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xC5B4;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; protected &#xBA64;&#xBC84;&#xAC00; &#xC788;&#xB294; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xC5D0;&#xB3C4; &#xB3D9;&#xC77C;&#xD558;&#xAC8C; &#xC801;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB97C; &#xD1B5;&#xD574; &#xD074;&#xB798;&#xC2A4;&#xB294; &#xC218;&#xD37C; &#xD074;&#xB798;&#xC2A4;&#xC640; &#xD560;&#xB2F9;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xB294; &#xAC83;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xC9C0;&#xB9CC; &#xB2E4;&#xB978; &#xC0C1;&#xC18D; &#xACC4;&#xCE35; &#xAD6C;&#xC870;&#xC758; &#xD074;&#xB798;&#xC2A4;&#xC5D0;&#xC11C;&#xB294; &#xB3D9;&#xC77C;&#xD55C; &#xD615;&#xD0DC;&#xC744; &#xAC00;&#xC9C8; &#xC218; <em>&#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;</em>.</p>
 <h1 id="&#xC81C;&#xB124;&#xB9AD;-generics">&#xC81C;&#xB124;&#xB9AD; (Generics)</h1>
 <p>TypeScript&#xB294; &#xAD6C;&#xC870;&#xC801;&#xC778; &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xD0C0;&#xC785; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB294; &#xBA64;&#xBC84; &#xD0C0;&#xC785;&#xC758; &#xC77C;&#xBD80;&#xB85C; &#xC0AC;&#xC6A9;&#xB420; &#xB54C; &#xACB0;&#xACFC; &#xD0C0;&#xC785;&#xC5D0; &#xB9CC; &#xC601;&#xD5A5;&#xC744; &#xC90D;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Empty&lt;T&gt; {
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">Empty</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span> {
 }
-<span class="hljs-keyword">let</span> x: Empty&lt;<span class="hljs-built_in">number</span>&gt;;
-<span class="hljs-keyword">let</span> y: Empty&lt;<span class="hljs-built_in">string</span>&gt;;
+<span class="cm-keyword">let</span> <span class="cm-variable">x</span>: <span class="cm-variable-3">Empty</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">number</span><span class="cm-operator">&gt;</span>;
+<span class="cm-keyword">let</span> <span class="cm-variable">y</span>: <span class="cm-variable-3">Empty</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">string</span><span class="cm-operator">&gt;</span>;
 
-x = y;  <span class="hljs-comment">// &#xC88B;&#xC544;&#xC694;, y&#xB294; x&#xC758; &#xAD6C;&#xC870;&#xC640; &#xC77C;&#xCE58;&#xD569;&#xB2C8;&#xB2E4;</span>
+<span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-variable">y</span>;  <span class="cm-comment">// &#xC88B;&#xC544;&#xC694;, y&#xB294; x&#xC758; &#xAD6C;&#xC870;&#xC640; &#xC77C;&#xCE58;&#xD569;&#xB2C8;&#xB2E4;</span>
 </code></pre>
 <p>&#xC704;&#xC758; &#xACBD;&#xC6B0; <code>x</code>&#xC640; <code>y</code>&#xC758; &#xAD6C;&#xC870;&#xAC00; &#xC778;&#xC218; &#xD0C0;&#xC785;&#xB97C; &#xCC28;&#xBCC4;&#xD654;&#xB41C; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xD638;&#xD658; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p><code>Empty&lt;T&gt;</code>&#xC5D0; &#xBA64;&#xBC84;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xC774; &#xC608;&#xC81C;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xB3D9;&#xC791;&#xD558;&#xB294;&#xC9C0; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4; :</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> NotEmpty&lt;T&gt; {
-    data: T;
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">NotEmpty</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span> {
+    <span class="cm-property">data</span>: <span class="cm-variable">T</span>;
 }
-<span class="hljs-keyword">let</span> x: NotEmpty&lt;<span class="hljs-built_in">number</span>&gt;;
-<span class="hljs-keyword">let</span> y: NotEmpty&lt;<span class="hljs-built_in">string</span>&gt;;
+<span class="cm-keyword">let</span> <span class="cm-variable">x</span>: <span class="cm-variable-3">NotEmpty</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">number</span><span class="cm-operator">&gt;</span>;
+<span class="cm-keyword">let</span> <span class="cm-variable">y</span>: <span class="cm-variable-3">NotEmpty</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">string</span><span class="cm-operator">&gt;</span>;
 
-x = y;  <span class="hljs-comment">// &#xC624;&#xB958;, x&#xC640; y&#xB294; &#xD638;&#xD658;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;</span>
+<span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-variable">y</span>;  <span class="cm-comment">// &#xC624;&#xB958;, x&#xC640; y&#xB294; &#xD638;&#xD658;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;</span>
 </code></pre>
 <p>&#xC774;&#xB7F0; &#xC2DD;&#xC73C;&#xB85C; &#xC778;&#xC218; &#xD0C0;&#xC785;&#xC774; &#xBA85;&#xC2DC;&#xB41C; &#xC81C;&#xB124;&#xB9AD; &#xD0C0;&#xC785;&#xC740; &#xBE44;-&#xC81C;&#xB124;&#xB9AD; &#xD0C0;&#xC785;&#xCC98;&#xB7FC; &#xB3D9;&#xC791;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC778;&#xC218; &#xD0C0;&#xC785; &#xC9C0;&#xC815;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xC81C;&#xB124;&#xB9AD; &#xD0C0;&#xC785;&#xC758; &#xACBD;&#xC6B0; &#xBAA8;&#xB4E0; &#xC9C0;&#xC815;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xC778;&#xC218; &#xD0C0;&#xC785; &#xB300;&#xC2E0;&#xC5D0; <code>any</code>&#xB97C; &#xC9C0;&#xC815;&#xD558;&#xC5EC; &#xD638;&#xD658;&#xC131;&#xC744; &#xAC80;&#xC0AC;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB7F0; &#xB2E4;&#xC74C; &#xACB0;&#xACFC;&#xB85C; &#xB098;&#xD0C0;&#xB098;&#xB294; &#xC720;&#xD615;&#xC758; &#xD638;&#xD658;&#xC131;&#xC744; &#xC77C;&#xBC18;&#xC801;&#xC774;&#xC9C0; &#xC54A;&#xC740; &#xACBD;&#xC6B0;&#xC640; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xAC80;&#xC0AC;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xADF8; &#xACB0;&#xACFC; &#xC0DD;&#xC131;&#xB41C; &#xD0C0;&#xC785;&#xC740; &#xBE44;-&#xC81C;&#xB124;&#xB9AD; &#xACBD;&#xC6B0;&#xC640; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xD638;&#xD658;&#xC131;&#xC744; &#xAC80;&#xC0AC;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">let</span> identity = <span class="hljs-function"><span class="hljs-keyword">function</span>&lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">x: T</span>): <span class="hljs-title">T</span> </span>{
-    <span class="hljs-comment">// ...</span>
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">identity</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">x</span>: <span class="cm-variable">T</span>): <span class="cm-variable">T</span> {
+    <span class="cm-comment">// ...</span>
 }
 
-<span class="hljs-keyword">let</span> reverse = <span class="hljs-function"><span class="hljs-keyword">function</span>&lt;<span class="hljs-title">U</span>&gt;(<span class="hljs-params">y: U</span>): <span class="hljs-title">U</span> </span>{
-    <span class="hljs-comment">// ...</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">reverse</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span><span class="cm-operator">&lt;</span><span class="cm-variable">U</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">y</span>: <span class="cm-variable">U</span>): <span class="cm-variable">U</span> {
+    <span class="cm-comment">// ...</span>
 }
 
-identity = reverse;  <span class="hljs-comment">// &#xC88B;&#xC544;&#xC694; &#xC65C;&#xB0D0;&#xD558;&#xBA74; (x: any)=&gt;any &#xC77C;&#xCE58; (y: any)=&gt;any</span>
+<span class="cm-variable">identity</span> <span class="cm-operator">=</span> <span class="cm-variable">reverse</span>;  <span class="cm-comment">// &#xC88B;&#xC544;&#xC694; &#xC65C;&#xB0D0;&#xD558;&#xBA74; (x: any)=&gt;any &#xC77C;&#xCE58; (y: any)=&gt;any</span>
 </code></pre>
 <h1 id="&#xACE0;&#xAE09;-&#xC8FC;&#xC81C;-advanced-topics">&#xACE0;&#xAE09; &#xC8FC;&#xC81C; (Advanced Topics)</h1>
 <h2 id="&#xD558;&#xC704;-&#xD0C0;&#xC785;-vs-&#xD560;&#xB2F9;-subtype-vs-assignment">&#xD558;&#xC704; &#xD0C0;&#xC785; vs &#xD560;&#xB2F9; (Subtype vs Assignment)</h2>
@@ -925,12 +934,13 @@ identity = reverse;  <span class="hljs-comment">// &#xC88B;&#xC544;&#xC694; &#xC
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"타입 호환성","level":"3.9","depth":1,"next":{"title":"고급 타입","level":"3.10","depth":1,"path":"pages/Advanced Types.md","ref":"pages/Advanced Types.md","articles":[]},"previous":{"title":"타입 추론","level":"3.8","depth":1,"path":"pages/Type Inference.md","ref":"pages/Type Inference.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Type Compatibility.md","mtime":"2018-02-13T14:10:14.665Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T14:21:41.019Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"타입 호환성","level":"3.9","depth":1,"next":{"title":"고급 타입","level":"3.10","depth":1,"path":"pages/Advanced Types.md","ref":"pages/Advanced Types.md","articles":[]},"previous":{"title":"타입 추론","level":"3.8","depth":1,"path":"pages/Type Inference.md","ref":"pages/Type Inference.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Type Compatibility.md","mtime":"2018-02-15T11:46:40.502Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:22:50.132Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
     
@@ -957,6 +967,8 @@ identity = reverse;  <span class="hljs-comment">// &#xC88B;&#xC544;&#xC694; &#xC
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
+    
+
     
 
     </body>

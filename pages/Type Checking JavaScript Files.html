@@ -12,9 +12,14 @@
         
         
     
+    
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight-1/website.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
@@ -44,6 +49,10 @@
         
     
         
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/atom-one-dark.css" />
     
 
         
@@ -703,76 +712,76 @@ You can also ignore errors on specific lines by adding <code>// @ts-ignore</code
 <p>In a <code>.js</code> file, types can often be inferred just like in <code>.ts</code> files.
 Likewise, when types can&apos;t be inferred, they can be specified using JSDoc the same way that type annotations do in a <code>.ts</code> file. </p>
 <p>JSDoc annotations adorning a declaration will be used to set the type of that declaration. For example:</p>
-<pre><code class="lang-js"><span class="hljs-comment">/** @type {number} */</span>
-<span class="hljs-keyword">var</span> x;
+<pre><code class="lang-js"><span class="cm-comment">/** @type {number} */</span>
+<span class="cm-keyword">var</span> <span class="cm-variable">x</span>;
 
-x = <span class="hljs-number">0</span>;      <span class="hljs-comment">// OK</span>
-x = <span class="hljs-literal">false</span>;  <span class="hljs-comment">// Error: boolean is not assignable to number</span>
+<span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;      <span class="cm-comment">// OK</span>
+<span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-atom">false</span>;  <span class="cm-comment">// Error: boolean is not assignable to number</span>
 </code></pre>
 <p>You can find the full list of supported JSDoc patterns in the <a href="https://github.com/Microsoft/TypeScript/wiki/JSDoc-support-in-JavaScript" target="_blank">JSDoc support in JavaScript documentation</a>.</p>
 <h2 id="property-declaration-inferred-from-assignments-in-class-bodies">Property declaration inferred from assignments in class bodies</h2>
 <p>ES2015/ES6 does not have a means for declaring properties on classes. Properties are dynamically assigned, just like in the case of object literals. </p>
 <p>In a <code>.js</code> file property declarations are inferred from assignments to the properties inside the class body. The type of properties is the union of the types of all the right-hand values in these assignments. Properties defined in the constructor are always assumed to exist, where as ones defined in methods, getters, or setters are considered optional.</p>
 <p>Adorn property assignments with JSDoc to specify the type of the property as needed. For instance:</p>
-<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">C</span> </span>{
-    <span class="hljs-keyword">constructor</span>() {
-        <span class="hljs-comment">/** @type {number | undefined} */</span>
-    <span class="hljs-keyword">this</span>.prop = <span class="hljs-literal">undefined</span>;
+<pre><code class="lang-js"><span class="cm-keyword">class</span> <span class="cm-variable">C</span> {
+    <span class="cm-property">constructor</span>() {
+        <span class="cm-comment">/** @type {number | undefined} */</span>
+    <span class="cm-keyword">this</span>.<span class="cm-property">prop</span> <span class="cm-operator">=</span> <span class="cm-atom">undefined</span>;
     }
 }
 
 
-<span class="hljs-keyword">let</span> c = <span class="hljs-keyword">new</span> C();
-c.prop = <span class="hljs-number">0</span>;         <span class="hljs-comment">// OK</span>
-c.prop = <span class="hljs-string">&quot;string&quot;</span>;  <span class="hljs-comment">// Error: string is not assignable to number|undefined</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">c</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">C</span>();
+<span class="cm-variable">c</span>.<span class="cm-property">prop</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;         <span class="cm-comment">// OK</span>
+<span class="cm-variable">c</span>.<span class="cm-property">prop</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;string&quot;</span>;  <span class="cm-comment">// Error: string is not assignable to number|undefined</span>
 </code></pre>
 <p>If properties are never set in the class body, they are considered unknown. If your class has properties that are only read from, consider adding an initialization in the constructor to undefined, e.g. <code>this.prop = undefined;</code>.</p>
 <h2 id="commonjs-module-input-support">CommonJS module input support</h2>
 <p>In a <code>.js</code> files CommonJS module format is allowed as an input module format. Assignments to <code>exports</code>, and <code>module.exports</code> are recognized as export declarations. Similarly, <code>require</code> function calls are recognized as module imports. For example:</p>
-<pre><code class="lang-ts"><span class="hljs-comment">// import module &quot;fs&quot;</span>
-<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+<pre><code class="lang-ts"><span class="cm-comment">// import module &quot;fs&quot;</span>
+<span class="cm-keyword">const</span> <span class="cm-variable">fs</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;fs&quot;</span>);
 
 
-<span class="hljs-comment">// export function readFile</span>
-<span class="hljs-keyword">module</span>.exports.readFile = function(f) {
-    <span class="hljs-keyword">return</span> fs.readFileSync(f);    
+<span class="cm-comment">// export function readFile</span>
+<span class="cm-keyword">module</span>.<span class="cm-variable">exports</span>.<span class="cm-property">readFile</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">f</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-variable">fs</span>.<span class="cm-property">readFileSync</span>(<span class="cm-variable-2">f</span>);    
 }
 </code></pre>
 <h2 id="object-literals-are-open-ended">Object literals are open-ended</h2>
 <p>By default object literals in variable declarations provide the type of a declaration. No new members can be added that were not specified in the original initialization. This rule is relaxed in a <code>.js</code> file; object literals have an open-ended type, allowing adding and looking up properties that were not defined originally. For instance:</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> obj = { a: <span class="hljs-number">1</span> };
-obj.b = <span class="hljs-number">2</span>;  <span class="hljs-comment">// Allowed</span>
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">obj</span> <span class="cm-operator">=</span> { <span class="cm-property">a</span>: <span class="cm-number">1</span> };
+<span class="cm-variable">obj</span>.<span class="cm-property">b</span> <span class="cm-operator">=</span> <span class="cm-number">2</span>;  <span class="cm-comment">// Allowed</span>
 </code></pre>
 <p>Object literals get a default index signature <code>[x:string]: any</code> that allows them to be treated as open maps instead of closed objects.</p>
 <p>Similar to other special JS checking behaviors, this behavior can be changed by specifying a JSDoc type for the variable. For example:</p>
-<pre><code class="lang-js"><span class="hljs-comment">/** @type {{a: number}} */</span>
-<span class="hljs-keyword">var</span> obj = { a: <span class="hljs-number">1</span> };
-obj.b = <span class="hljs-number">2</span>;  <span class="hljs-comment">// Error, type {a: number} does not have property b</span>
+<pre><code class="lang-js"><span class="cm-comment">/** @type {{a: number}} */</span>
+<span class="cm-keyword">var</span> <span class="cm-variable">obj</span> <span class="cm-operator">=</span> { <span class="cm-property">a</span>: <span class="cm-number">1</span> };
+<span class="cm-variable">obj</span>.<span class="cm-property">b</span> <span class="cm-operator">=</span> <span class="cm-number">2</span>;  <span class="cm-comment">// Error, type {a: number} does not have property b</span>
 </code></pre>
 <h2 id="function-parameters-are-optional-by-default">Function parameters are optional by default</h2>
 <p>Since there is no way to specify optionality on parameters in JS (without specifying a default value), all function parameters in <code>.js</code> file are considered optional. Calls with fewer arguments are allowed. </p>
 <p>It is important to note that it is an error to call a function with too many arguments.</p>
 <p>For instance:</p>
-<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span>(<span class="hljs-params">a, b</span>)</span>{
-    <span class="hljs-built_in">console</span>.log(a + <span class="hljs-string">&quot; &quot;</span> + b);
+<pre><code class="lang-js"><span class="cm-keyword">function</span> <span class="cm-variable">bar</span>(<span class="cm-def">a</span>, <span class="cm-def">b</span>){
+    <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable-2">a</span> <span class="cm-operator">+</span> <span class="cm-string">&quot; &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable-2">b</span>);
 }
 
-bar(<span class="hljs-number">1</span>);       <span class="hljs-comment">// OK, second argument considered optional</span>
-bar(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);
-bar(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>); <span class="hljs-comment">// Error, too many arguments</span>
+<span class="cm-variable">bar</span>(<span class="cm-number">1</span>);       <span class="cm-comment">// OK, second argument considered optional</span>
+<span class="cm-variable">bar</span>(<span class="cm-number">1</span>, <span class="cm-number">2</span>);
+<span class="cm-variable">bar</span>(<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>); <span class="cm-comment">// Error, too many arguments</span>
 </code></pre>
 <p>JSDoc annotated functions are excluded from this rule. Use JSDoc optional parameter syntax to express optionality. e.g.:</p>
-<pre><code class="lang-js"><span class="hljs-comment">/**
- * @param {string} [somebody] - Somebody&apos;s name.
- */</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span>(<span class="hljs-params">somebody</span>) </span>{
-    <span class="hljs-keyword">if</span> (!somebody) {
-        somebody = <span class="hljs-string">&apos;John Doe&apos;</span>;
+<pre><code class="lang-js"><span class="cm-comment">/**</span>
+<span class="cm-comment"> * @param {string} [somebody] - Somebody&apos;s name.</span>
+<span class="cm-comment"> */</span>
+<span class="cm-keyword">function</span> <span class="cm-variable">sayHello</span>(<span class="cm-def">somebody</span>) {
+    <span class="cm-keyword">if</span> (<span class="cm-operator">!</span><span class="cm-variable-2">somebody</span>) {
+        <span class="cm-variable-2">somebody</span> <span class="cm-operator">=</span> <span class="cm-string">&apos;John Doe&apos;</span>;
     }
-    alert(<span class="hljs-string">&apos;Hello &apos;</span> + somebody);
+    <span class="cm-variable">alert</span>(<span class="cm-string">&apos;Hello &apos;</span> <span class="cm-operator">+</span> <span class="cm-variable-2">somebody</span>);
 }
 
-sayHello();
+<span class="cm-variable">sayHello</span>();
 </code></pre>
 <h2 id="var-args-parameter-declaration-inferred-from-use-of-arguments">Var-args parameter declaration inferred from use of <code>arguments</code></h2>
 <p>A function whose body has a reference to the <code>arguments</code> reference is implicitly considered to have a var-arg parameter (i.e. <code>(...arg: any[]) =&gt; any</code>). Use JSDoc var-arg syntax to specify the type of the arguments.</p>
@@ -781,46 +790,46 @@ sayHello();
 <h4 id="in-extends-clause">In extends clause:</h4>
 <p>For instance, <code>React.Component</code> is defined to have two generic type parameters, <code>Props</code> and <code>State</code>. 
 In a <code>.js</code> file, there is no legal way to specify these in the extends clause. By default the type arguments will be <code>any</code>:</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react&quot;</span>;
+<pre><code class="lang-js"><span class="cm-keyword">import</span> { <span class="cm-variable">Component</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;react&quot;</span>;
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
-    render() {
-       <span class="hljs-keyword">this</span>.props.b; <span class="hljs-comment">// Allowed, since this.props is of type any</span>
+<span class="cm-keyword">class</span> <span class="cm-variable">MyComponent</span> <span class="cm-keyword">extends</span> <span class="cm-variable">Component</span> {
+    <span class="cm-property">render</span>() {
+       <span class="cm-keyword">this</span>.<span class="cm-property">props</span>.<span class="cm-property">b</span>; <span class="cm-comment">// Allowed, since this.props is of type any</span>
     }
 }
 </code></pre>
 <p>Use JSDoc <code>@augments</code> to specify the types explicitly. for instance:</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react&quot;</span>;
+<pre><code class="lang-js"><span class="cm-keyword">import</span> { <span class="cm-variable">Component</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;react&quot;</span>;
 
-<span class="hljs-comment">/**
- * @augments {Component&lt;{a: number}, State&gt;}
- */</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
-    render() {
-        <span class="hljs-keyword">this</span>.props.b; <span class="hljs-comment">// Error: b does not exist on {a:number}</span>
+<span class="cm-comment">/**</span>
+<span class="cm-comment"> * @augments {Component&lt;{a: number}, State&gt;}</span>
+<span class="cm-comment"> */</span>
+<span class="cm-keyword">class</span> <span class="cm-variable">MyComponent</span> <span class="cm-keyword">extends</span> <span class="cm-variable">Component</span> {
+    <span class="cm-property">render</span>() {
+        <span class="cm-keyword">this</span>.<span class="cm-property">props</span>.<span class="cm-property">b</span>; <span class="cm-comment">// Error: b does not exist on {a:number}</span>
     }
 }
 </code></pre>
 <h4 id="in-jsdoc-references">In JSDoc references</h4>
 <p>An unspecified generic type argument in JSDoc defaults to any:</p>
-<pre><code class="lang-js"><span class="hljs-comment">/** @type{Array} */</span>
-<span class="hljs-keyword">var</span> x = [];
+<pre><code class="lang-js"><span class="cm-comment">/** @type{Array} */</span>
+<span class="cm-keyword">var</span> <span class="cm-variable">x</span> <span class="cm-operator">=</span> [];
 
-x.push(<span class="hljs-number">1</span>);        <span class="hljs-comment">// OK</span>
-x.push(<span class="hljs-string">&quot;string&quot;</span>); <span class="hljs-comment">// OK, x is of type Array&lt;any&gt;</span>
+<span class="cm-variable">x</span>.<span class="cm-property">push</span>(<span class="cm-number">1</span>);        <span class="cm-comment">// OK</span>
+<span class="cm-variable">x</span>.<span class="cm-property">push</span>(<span class="cm-string">&quot;string&quot;</span>); <span class="cm-comment">// OK, x is of type Array&lt;any&gt;</span>
 
 
-<span class="hljs-comment">/** @type{Array.&lt;number&gt;} */</span>
-<span class="hljs-keyword">var</span> y = [];
+<span class="cm-comment">/** @type{Array.&lt;number&gt;} */</span>
+<span class="cm-keyword">var</span> <span class="cm-variable">y</span> <span class="cm-operator">=</span> [];
 
-y.push(<span class="hljs-number">1</span>);        <span class="hljs-comment">// OK</span>
-y.push(<span class="hljs-string">&quot;string&quot;</span>); <span class="hljs-comment">// Error, string is not assignable to number</span>
+<span class="cm-variable">y</span>.<span class="cm-property">push</span>(<span class="cm-number">1</span>);        <span class="cm-comment">// OK</span>
+<span class="cm-variable">y</span>.<span class="cm-property">push</span>(<span class="cm-string">&quot;string&quot;</span>); <span class="cm-comment">// Error, string is not assignable to number</span>
 </code></pre>
 <h4 id="in-function-calls">In function calls</h4>
 <p>A call to generic functions uses arguments to infer the generic type parameters. Sometimes this process fails to infer any types, mainly because of lack on inference sources; in these cases, the generic type parameters will default to <code>any</code>. For example:</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> p = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; { reject() });
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">p</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Promise</span>((<span class="cm-def">resolve</span>, <span class="cm-def">reject</span>) <span class="cm-operator">=&gt;</span> { <span class="cm-variable-2">reject</span>() });
 
-p; <span class="hljs-comment">// Promise&lt;any&gt;;</span>
+<span class="cm-variable">p</span>; <span class="cm-comment">// Promise&lt;any&gt;;</span>
 </code></pre>
 
                                 
@@ -865,12 +874,13 @@ p; <span class="hljs-comment">// Promise&lt;any&gt;;</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Type Checking JavaScript Files","level":"3.22","depth":1,"next":{"title":"Introduction","level":"4.1","depth":1,"path":"pages/declaration files/Introduction.md","ref":"pages/declaration files/Introduction.md","articles":[]},"previous":{"title":"Triple-Slash Directives","level":"3.21","depth":1,"path":"pages/Triple-Slash Directives.md","ref":"pages/Triple-Slash Directives.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Type Checking JavaScript Files.md","mtime":"2018-02-06T13:12:52.659Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T14:21:41.019Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Type Checking JavaScript Files","level":"3.22","depth":1,"next":{"title":"Introduction","level":"4.1","depth":1,"path":"pages/declaration files/Introduction.md","ref":"pages/declaration files/Introduction.md","articles":[]},"previous":{"title":"Triple-Slash Directives","level":"3.21","depth":1,"path":"pages/Triple-Slash Directives.md","ref":"pages/Triple-Slash Directives.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Type Checking JavaScript Files.md","mtime":"2018-02-05T16:09:39.252Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:22:50.132Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
     
@@ -897,6 +907,8 @@ p; <span class="hljs-comment">// Promise&lt;any&gt;;</span>
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
+    
+
     
 
     </body>
