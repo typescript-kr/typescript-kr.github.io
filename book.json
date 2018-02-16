@@ -1,5 +1,5 @@
 {
-	"plugins": ["theme-darkblue", "addcssjs", "highlight", "custom-favicon"],
+	"plugins": ["theme-darkblue", "addcssjs", "highlight-1", "custom-favicon"],
 	"pluginsConfig": {
 		"addcssjs": {
 			"css": ["assets/css/atom-one-dark.css"]
