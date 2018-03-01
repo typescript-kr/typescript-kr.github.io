@@ -338,7 +338,7 @@
                 <a href="Iterators and Generators.html">
             
                     
-                    Iterators and Generators
+                    이터러블과 제네레이터
             
                 </a>
             
@@ -778,7 +778,7 @@ The supported glob wildcards are:</p>
 <p>If a segment of a glob pattern includes only <code>*</code> or <code>.*</code>, then only files with supported extensions are included (e.g. <code>.ts</code>, <code>.tsx</code>, and <code>.d.ts</code> by default with <code>.js</code> and <code>.jsx</code> if <code>allowJs</code> is set to true).</p>
 <p>If the <code>&quot;files&quot;</code> and <code>&quot;include&quot;</code> are both left unspecified, the compiler defaults to including all TypeScript (<code>.ts</code>, <code>.d.ts</code> and <code>.tsx</code>) files in the containing directory and subdirectories except those excluded using the <code>&quot;exclude&quot;</code> property. JS files (<code>.js</code> and <code>.jsx</code>) are also included if <code>allowJs</code> is set to true.
 If the <code>&quot;files&quot;</code> or <code>&quot;include&quot;</code> properties are specified, the compiler will instead include the union of the files included by those two properties.
-Files in the directory specified using the <code>&quot;outDir&quot;</code> compiler option are always excluded unless explicitly included via the <code>&quot;files&quot;</code> property (even when the &quot;<code>exclude</code>&quot; property is specified).</p>
+Files in the directory specified using the <code>&quot;outDir&quot;</code> compiler option are excluded as long as <code>&quot;exclude&quot;</code> property is not specfied. </p>
 <p>Files included using <code>&quot;include&quot;</code> can be filtered using the <code>&quot;exclude&quot;</code> property.
 However, files included explicitly using the <code>&quot;files&quot;</code> property are always included regardless of <code>&quot;exclude&quot;</code>.
 The <code>&quot;exclude&quot;</code> property defaults to excluding the <code>node_modules</code>, <code>bower_components</code>, <code>jspm_packages</code> and <code>&lt;outDir&gt;</code> directories when not specified.</p>
@@ -810,7 +810,8 @@ For instance:</p>
 }
 </code></pre>
 <p>This <code>tsconfig.json</code> file will <em>only</em> include  <code>./node_modules/@types/node</code>, <code>./node_modules/@types/lodash</code> and <code>./node_modules/@types/express</code>.
-Other packages under <code>node_modules/@types/*</code> will not be included.</p>
+Other packages under <code>node_modules/@types/*</code> will not be included. </p>
+<p>A types package is a folder with a file called <code>index.d.ts</code> or a folder with a <code>package.json</code> that has a <code>types</code> field.</p>
 <p>Specify <code>&quot;types&quot;: []</code> to disable automatic inclusion of <code>@types</code> packages.</p>
 <p>Keep in mind that automatic inclusion is only important if you&apos;re using files with global declarations (as opposed to files declared as modules).
 If you use an <code>import &quot;foo&quot;</code> statement, for instance, TypeScript may still look through <code>node_modules</code> &amp; <code>node_modules/@types</code> folders to find the <code>foo</code> package.</p>
@@ -903,7 +904,7 @@ If a circularity is encountered, we report an error.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"tsconfig.json","level":"5.1","depth":1,"next":{"title":"Compiler Options","level":"5.2","depth":1,"path":"pages/Compiler Options.md","ref":"pages/Compiler Options.md","articles":[]},"previous":{"title":"Consumption","level":"4.8","depth":1,"path":"pages/declaration files/Consumption.md","ref":"pages/declaration files/Consumption.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tsconfig.json.md","mtime":"2018-02-05T16:16:48.230Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:21:38.612Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"tsconfig.json","level":"5.1","depth":1,"next":{"title":"Compiler Options","level":"5.2","depth":1,"path":"pages/Compiler Options.md","ref":"pages/Compiler Options.md","articles":[]},"previous":{"title":"Consumption","level":"4.8","depth":1,"path":"pages/declaration files/Consumption.md","ref":"pages/declaration files/Consumption.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tsconfig.json.md","mtime":"2018-03-01T04:27:45.945Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-01T05:27:31.738Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

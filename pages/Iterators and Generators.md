@@ -1,13 +1,15 @@
-# Iterables
+# 이터러블 (Iterables)
 
-An object is deemed iterable if it has an implementation for the [`Symbol.iterator`](Symbols.md#symboliterator) property.
-Some built-in types like `Array`, `Map`, `Set`, `String`, `Int32Array`, `Uint32Array`, etc. have their `Symbol.iterator` property already implemented.
-`Symbol.iterator` function on an object is responsible for returning the list of values to iterate on.
+[`Symbol.iterator`](Symbols.md#symboliterator) 프로퍼티에 대한 구현을 하고 있는 객체는 iterable로 간주됩니다.  
+`Array`, `Map`, `Set`, `String`, `Int32Array`, `Uint32Array` 등과 같은 몇몇 내장 타입은 이미 구현된 `Symbol.iterator` 프로퍼티를 가지고 있습니다.
 
-## `for..of` statements
+객체의 `Symbol.iterator` 함수는 반복할 값 목록을 반환하는 것을 담당한다.
 
-`for..of` loops over an iterable object, invoking the `Symbol.iterator` property on the object.
-Here is a simple `for..of` loop on an array:
+## `for..of` 문 (statements)
+
+`for..of`는 반복 가능한 객체에 대해 반복하며 객체에 대해 `Symbol.iterator` 프로퍼티를 호출합니다.
+
+다음은 배열의 간단한 `for..of` 루프입니다:
 
 ```ts
 let someArray = [1, "string", false];
@@ -17,11 +19,12 @@ for (let entry of someArray) {
 }
 ```
 
-### `for..of` vs. `for..in` statements
+### `for..of` vs. `for..in` 문 (statements)
 
-Both `for..of` and `for..in` statements iterate over lists; the values iterated on are different though, `for..in` returns a list of *keys* on the object being iterated, whereas `for..of` returns a list of *values* of the numeric properties of the object being iterated.
+`for..of`와 `for..in` 모두 리스트를 반복합니다.  
+반복되는 값은 다르지만, `for..in`은 반복되는 객체의 *키* 를 반환하는 반면 `for..of`는 반복되는 객체의 숫자(numeric) 프로퍼티의 *값* 을 반환합니다.
 
-Here is an example that demonstrates this distinction:
+다음은 이러한 차이를 보여 주는 예제입니다:
 
 ```ts
 let list = [4, 5, 6];
@@ -35,8 +38,11 @@ for (let i of list) {
 }
 ```
 
-Another distinction is that `for..in` operates on any object; it serves as a way to inspect properties on this object.
-`for..of` on the other hand, is mainly interested in values of iterable objects. Built-in objects like `Map` and `Set` implement `Symbol.iterator` property allowing access to stored values.
+또 다른 차이점은 `for..in`은 어떠한 객체에서도 작동한다는 것입니다.  
+이 객체의 프로퍼티를 검사하는 방법으로 사용됩니다.  
+한편 `for..of`는 주로 반복 가능한 객체의 값에 관심이 있습니다.  
+
+`Map`과 `Set` 같은 내장객체는 저장된 값에 접근할 수 있게 해 주는 는`Symbol.iterator` 프로퍼티를 구현합니다.
 
 ```ts
 let pets = new Set(["Cat", "Dog", "Hamster"]);
@@ -51,14 +57,15 @@ for (let pet of pets) {
 }
 ```
 
-### Code generation
+### 코드 생성
 
-#### Targeting ES5 and ES3
+#### ES3와 ES5 대상 (Targeting ES5 and ES3)
 
-When targeting an ES5 or ES3, iterators are only allowed on values of `Array` type.
-It is an error to use `for..of` loops on non-Array values, even if these non-Array values implement the `Symbol.iterator` property.
+ES5 또는 ES3를 대상으로 할 때 반복자는 `Array` 타입의 값에만 사용할 수 있습니다.
 
-The compiler will generate a simple `for` loop for a `for..of` loop, for instance:
+컴파일러는 `for..of` 루프를 위한 간단한 `for` 루프를 생성할 것입니다.
+
+예를 들어 :
 
 ```ts
 let numbers = [1, 2, 3];
@@ -67,7 +74,7 @@ for (let num of numbers) {
 }
 ```
 
-will be generated as:
+다음과 같이 생성됩니다 :
 
 ```js
 var numbers = [1, 2, 3];
@@ -77,6 +84,7 @@ for (var _i = 0; _i < numbers.length; _i++) {
 }
 ```
 
-#### Targeting ECMAScript 2015 and higher
+#### ECMAScript 2015 이상 대상 (Targeting ECMAScript 2015 and higher)
 
-When targeting an ECMAScipt 2015-compliant engine, the compiler will generate `for..of` loops to target the built-in iterator implementation in the engine.
+ECMAScipt 2015 호환 엔진을 대상으로 할 때 컴파일러는 엔진에서 내장 반복자 구현을 대상으로 `for..of` 루프를 생성합니다.
+

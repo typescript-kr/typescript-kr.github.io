@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Iterators and Generators · GitBook</title>
+        <title>이터러블과 제네레이터 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -338,7 +338,7 @@
                 <a href="Iterators and Generators.html">
             
                     
-                    Iterators and Generators
+                    이터러블과 제네레이터
             
                 </a>
             
@@ -689,7 +689,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Iterators and Generators</a>
+        <a href=".." >이터러블과 제네레이터</a>
     </h1>
 </div>
 
@@ -704,22 +704,21 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="iterables">Iterables</h1>
-<p>An object is deemed iterable if it has an implementation for the <a href="Symbols.html#symboliterator"><code>Symbol.iterator</code></a> property.
-Some built-in types like <code>Array</code>, <code>Map</code>, <code>Set</code>, <code>String</code>, <code>Int32Array</code>, <code>Uint32Array</code>, etc. have their <code>Symbol.iterator</code> property already implemented.
-<code>Symbol.iterator</code> function on an object is responsible for returning the list of values to iterate on.</p>
-<h2 id="forof-statements"><code>for..of</code> statements</h2>
-<p><code>for..of</code> loops over an iterable object, invoking the <code>Symbol.iterator</code> property on the object.
-Here is a simple <code>for..of</code> loop on an array:</p>
+                                <h1 id="&#xC774;&#xD130;&#xB7EC;&#xBE14;-iterables">&#xC774;&#xD130;&#xB7EC;&#xBE14; (Iterables)</h1>
+<p><a href="Symbols.html#symboliterator"><code>Symbol.iterator</code></a> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0; &#xB300;&#xD55C; &#xAD6C;&#xD604;&#xC744; &#xD558;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;&#xB294; iterable&#xB85C; &#xAC04;&#xC8FC;&#xB429;&#xB2C8;&#xB2E4;.<br><code>Array</code>, <code>Map</code>, <code>Set</code>, <code>String</code>, <code>Int32Array</code>, <code>Uint32Array</code> &#xB4F1;&#xACFC; &#xAC19;&#xC740; &#xBA87;&#xBA87; &#xB0B4;&#xC7A5; &#xD0C0;&#xC785;&#xC740; &#xC774;&#xBBF8; &#xAD6C;&#xD604;&#xB41C; <code>Symbol.iterator</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xAC1D;&#xCCB4;&#xC758; <code>Symbol.iterator</code> &#xD568;&#xC218;&#xB294; &#xBC18;&#xBCF5;&#xD560; &#xAC12; &#xBAA9;&#xB85D;&#xC744; &#xBC18;&#xD658;&#xD558;&#xB294; &#xAC83;&#xC744; &#xB2F4;&#xB2F9;&#xD55C;&#xB2E4;.</p>
+<h2 id="forof-&#xBB38;-statements"><code>for..of</code> &#xBB38; (statements)</h2>
+<p><code>for..of</code>&#xB294; &#xBC18;&#xBCF5; &#xAC00;&#xB2A5;&#xD55C; &#xAC1D;&#xCCB4;&#xC5D0; &#xB300;&#xD574; &#xBC18;&#xBCF5;&#xD558;&#xBA70; &#xAC1D;&#xCCB4;&#xC5D0; &#xB300;&#xD574; <code>Symbol.iterator</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xD638;&#xCD9C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C;&#xC740; &#xBC30;&#xC5F4;&#xC758; &#xAC04;&#xB2E8;&#xD55C; <code>for..of</code> &#xB8E8;&#xD504;&#xC785;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">someArray</span> <span class="cm-operator">=</span> [<span class="cm-number">1</span>, <span class="cm-string">&quot;string&quot;</span>, <span class="cm-atom">false</span>];
 
 <span class="cm-keyword">for</span> (<span class="cm-keyword">let</span> <span class="cm-variable">entry</span> <span class="cm-keyword">of</span> <span class="cm-variable">someArray</span>) {
     <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">entry</span>); <span class="cm-comment">// 1, &quot;string&quot;, false</span>
 }
 </code></pre>
-<h3 id="forof-vs-forin-statements"><code>for..of</code> vs. <code>for..in</code> statements</h3>
-<p>Both <code>for..of</code> and <code>for..in</code> statements iterate over lists; the values iterated on are different though, <code>for..in</code> returns a list of <em>keys</em> on the object being iterated, whereas <code>for..of</code> returns a list of <em>values</em> of the numeric properties of the object being iterated.</p>
-<p>Here is an example that demonstrates this distinction:</p>
+<h3 id="forof-vs-forin-&#xBB38;-statements"><code>for..of</code> vs. <code>for..in</code> &#xBB38; (statements)</h3>
+<p><code>for..of</code>&#xC640; <code>for..in</code> &#xBAA8;&#xB450; &#xB9AC;&#xC2A4;&#xD2B8;&#xB97C; &#xBC18;&#xBCF5;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xBC18;&#xBCF5;&#xB418;&#xB294; &#xAC12;&#xC740; &#xB2E4;&#xB974;&#xC9C0;&#xB9CC;, <code>for..in</code>&#xC740; &#xBC18;&#xBCF5;&#xB418;&#xB294; &#xAC1D;&#xCCB4;&#xC758; <em>&#xD0A4;</em> &#xB97C; &#xBC18;&#xD658;&#xD558;&#xB294; &#xBC18;&#xBA74; <code>for..of</code>&#xB294; &#xBC18;&#xBCF5;&#xB418;&#xB294; &#xAC1D;&#xCCB4;&#xC758; &#xC22B;&#xC790;(numeric) &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC758; <em>&#xAC12;</em> &#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C;&#xC740; &#xC774;&#xB7EC;&#xD55C; &#xCC28;&#xC774;&#xB97C; &#xBCF4;&#xC5EC; &#xC8FC;&#xB294; &#xC608;&#xC81C;&#xC785;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">list</span> <span class="cm-operator">=</span> [<span class="cm-number">4</span>, <span class="cm-number">5</span>, <span class="cm-number">6</span>];
 
 <span class="cm-keyword">for</span> (<span class="cm-keyword">let</span> <span class="cm-variable">i</span> <span class="cm-keyword">in</span> <span class="cm-variable">list</span>) {
@@ -730,8 +729,8 @@ Here is a simple <code>for..of</code> loop on an array:</p>
    <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">i</span>); <span class="cm-comment">// &quot;4&quot;, &quot;5&quot;, &quot;6&quot;</span>
 }
 </code></pre>
-<p>Another distinction is that <code>for..in</code> operates on any object; it serves as a way to inspect properties on this object.
-<code>for..of</code> on the other hand, is mainly interested in values of iterable objects. Built-in objects like <code>Map</code> and <code>Set</code> implement <code>Symbol.iterator</code> property allowing access to stored values.</p>
+<p>&#xB610; &#xB2E4;&#xB978; &#xCC28;&#xC774;&#xC810;&#xC740; <code>for..in</code>&#xC740; &#xC5B4;&#xB5A0;&#xD55C; &#xAC1D;&#xCCB4;&#xC5D0;&#xC11C;&#xB3C4; &#xC791;&#xB3D9;&#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xAC1D;&#xCCB4;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xAC80;&#xC0AC;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xD55C;&#xD3B8; <code>for..of</code>&#xB294; &#xC8FC;&#xB85C; &#xBC18;&#xBCF5; &#xAC00;&#xB2A5;&#xD55C; &#xAC1D;&#xCCB4;&#xC758; &#xAC12;&#xC5D0; &#xAD00;&#xC2EC;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  </p>
+<p><code>Map</code>&#xACFC; <code>Set</code> &#xAC19;&#xC740; &#xB0B4;&#xC7A5;&#xAC1D;&#xCCB4;&#xB294; &#xC800;&#xC7A5;&#xB41C; &#xAC12;&#xC5D0; &#xC811;&#xADFC;&#xD560; &#xC218; &#xC788;&#xAC8C; &#xD574; &#xC8FC;&#xB294; &#xB294;<code>Symbol.iterator</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xAD6C;&#xD604;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">pets</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Set</span>([<span class="cm-string">&quot;Cat&quot;</span>, <span class="cm-string">&quot;Dog&quot;</span>, <span class="cm-string">&quot;Hamster&quot;</span>]);
 <span class="cm-variable">pets</span>[<span class="cm-string">&quot;species&quot;</span>] <span class="cm-operator">=</span> <span class="cm-string">&quot;mammals&quot;</span>;
 
@@ -743,25 +742,25 @@ Here is a simple <code>for..of</code> loop on an array:</p>
     <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">pet</span>); <span class="cm-comment">// &quot;Cat&quot;, &quot;Dog&quot;, &quot;Hamster&quot;</span>
 }
 </code></pre>
-<h3 id="code-generation">Code generation</h3>
-<h4 id="targeting-es5-and-es3">Targeting ES5 and ES3</h4>
-<p>When targeting an ES5 or ES3, iterators are only allowed on values of <code>Array</code> type.
-It is an error to use <code>for..of</code> loops on non-Array values, even if these non-Array values implement the <code>Symbol.iterator</code> property.</p>
-<p>The compiler will generate a simple <code>for</code> loop for a <code>for..of</code> loop, for instance:</p>
+<h3 id="&#xCF54;&#xB4DC;-&#xC0DD;&#xC131;">&#xCF54;&#xB4DC; &#xC0DD;&#xC131;</h3>
+<h4 id="es3&#xC640;-es5-&#xB300;&#xC0C1;-targeting-es5-and-es3">ES3&#xC640; ES5 &#xB300;&#xC0C1; (Targeting ES5 and ES3)</h4>
+<p>ES5 &#xB610;&#xB294; ES3&#xB97C; &#xB300;&#xC0C1;&#xC73C;&#xB85C; &#xD560; &#xB54C; &#xBC18;&#xBCF5;&#xC790;&#xB294; <code>Array</code> &#xD0C0;&#xC785;&#xC758; &#xAC12;&#xC5D0;&#xB9CC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; <code>for..of</code> &#xB8E8;&#xD504;&#xB97C; &#xC704;&#xD55C; &#xAC04;&#xB2E8;&#xD55C; <code>for</code> &#xB8E8;&#xD504;&#xB97C; &#xC0DD;&#xC131;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; :</p>
 <pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">numbers</span> <span class="cm-operator">=</span> [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>];
 <span class="cm-keyword">for</span> (<span class="cm-keyword">let</span> <span class="cm-variable">num</span> <span class="cm-keyword">of</span> <span class="cm-variable">numbers</span>) {
     <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">num</span>);
 }
 </code></pre>
-<p>will be generated as:</p>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC0DD;&#xC131;&#xB429;&#xB2C8;&#xB2E4; :</p>
 <pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">numbers</span> <span class="cm-operator">=</span> [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>];
 <span class="cm-keyword">for</span> (<span class="cm-keyword">var</span> <span class="cm-variable">_i</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">_i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">numbers</span>.<span class="cm-property">length</span>; <span class="cm-variable">_i</span><span class="cm-operator">++</span>) {
     <span class="cm-keyword">var</span> <span class="cm-variable">num</span> <span class="cm-operator">=</span> <span class="cm-variable">numbers</span>[<span class="cm-variable">_i</span>];
     <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">num</span>);
 }
 </code></pre>
-<h4 id="targeting-ecmascript-2015-and-higher">Targeting ECMAScript 2015 and higher</h4>
-<p>When targeting an ECMAScipt 2015-compliant engine, the compiler will generate <code>for..of</code> loops to target the built-in iterator implementation in the engine.</p>
+<h4 id="ecmascript-2015-&#xC774;&#xC0C1;-&#xB300;&#xC0C1;-targeting-ecmascript-2015-and-higher">ECMAScript 2015 &#xC774;&#xC0C1; &#xB300;&#xC0C1; (Targeting ECMAScript 2015 and higher)</h4>
+<p>ECMAScipt 2015 &#xD638;&#xD658; &#xC5D4;&#xC9C4;&#xC744; &#xB300;&#xC0C1;&#xC73C;&#xB85C; &#xD560; &#xB54C; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; &#xC5D4;&#xC9C4;&#xC5D0;&#xC11C; &#xB0B4;&#xC7A5; &#xBC18;&#xBCF5;&#xC790; &#xAD6C;&#xD604;&#xC744; &#xB300;&#xC0C1;&#xC73C;&#xB85C; <code>for..of</code> &#xB8E8;&#xD504;&#xB97C; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.</p>
 
                                 
                                 </section>
@@ -805,7 +804,7 @@ It is an error to use <code>for..of</code> loops on non-Array values, even if th
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Iterators and Generators","level":"3.12","depth":1,"next":{"title":"Modules","level":"3.13","depth":1,"path":"pages/Modules.md","ref":"pages/Modules.md","articles":[]},"previous":{"title":"심볼","level":"3.11","depth":1,"path":"pages/Symbols.md","ref":"pages/Symbols.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Iterators and Generators.md","mtime":"2018-02-05T16:09:39.242Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-16T05:21:38.612Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"이터러블과 제네레이터","level":"3.12","depth":1,"next":{"title":"Modules","level":"3.13","depth":1,"path":"pages/Modules.md","ref":"pages/Modules.md","articles":[]},"previous":{"title":"심볼","level":"3.11","depth":1,"path":"pages/Symbols.md","ref":"pages/Symbols.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Iterators and Generators.md","mtime":"2018-03-01T05:23:22.488Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-01T05:27:31.738Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
