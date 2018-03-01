@@ -52,3 +52,4 @@ span.cm-variable-3, span.cm-type { color: #ffb86c; }
 
 .CodeMirror-activeline-background { background: rgba(255,255,255,0.1); }
 .CodeMirror-matchingbracket { text-decoration: underline; color: white !important; }
+.page-inner { max-width: 970px !important; }
