@@ -23,7 +23,7 @@
 * [타입 호환성](pages/Type Compatibility.md)
 * [고급 타입](pages/Advanced Types.md)
 * [심볼](pages/Symbols.md)
-* [Iterators and Generators](pages/Iterators and Generators.md)
+* [이터러블과 제네레이터](pages/Iterators and Generators.md)
 * [Modules](pages/Modules.md)
 * [Namespaces](pages/Namespaces.md)
 * [Namespaces and Modules](pages/Namespaces and Modules.md)
