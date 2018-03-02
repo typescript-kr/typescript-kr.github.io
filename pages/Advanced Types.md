@@ -390,8 +390,8 @@ function fixed(name: string | null): string {
 
 # Type Aliases
 
-Type aliases create a new name for a type.
-Type aliases are sometimes similar to interfaces, but can name primitives, unions, tuples, and any other types that you'd otherwise have to write by hand.
+타입 aliases는 타입의 새로운 이름을 생성합니다.  
+타입 aliases은 인터페이스와 유사하지만 원시 타입, 유니온, 튜플 및 기타 직접 작성해야하는 다른 타입의 이름을 지정할 수 있습니다.
 
 ```ts
 type Name = string;
@@ -407,16 +407,16 @@ function getName(n: NameOrResolver): Name {
 }
 ```
 
-Aliasing doesn't actually create a new type - it creates a new *name* to refer to that type.
-Aliasing a primitive is not terribly useful, though it can be used as a form of documentation.
+Aliasing(Type Aliases)은 실제로 새로운 타입을 생성하지는 않습니다 - 그 타입을 참조하기 위해 새로운 *이름*을 생성합니다.  
+원시값을 Aliasing 하는 것은 문서의 형태로 사용될 수 있지만 굉장히 유용하지 않습니다.
 
-Just like interfaces, type aliases can also be generic - we can just add type parameters and use them on the right side of the alias declaration:
+인터페이스와 마찬가지로 타입 aliases도 일반적일 수 있습니다 - aliases 선언의 오른쪽에 타입 매개 변수를 추가하여 사용하면 됩니다:
 
 ```ts
 type Container<T> = { value: T };
 ```
 
-We can also have a type alias refer to itself in a property:
+type alias를 프로퍼티에서 참조할 수도 있습니다:
 
 ```ts
 type Tree<T> = {
@@ -426,7 +426,7 @@ type Tree<T> = {
 }
 ```
 
-Together with intersection types, we can make some pretty mind-bending types:
+교차(intersection) 타입과 함께 mind-bending 타입을 만들 수 있습니다:
 
 ```ts
 type LinkedList<T> = T & { next: LinkedList<T> };
@@ -442,19 +442,19 @@ var s = people.next.next.name;
 var s = people.next.next.next.name;
 ```
 
-However, it's not possible for a type alias to appear anywhere else on the right side of the declaration:
+그러나 타입 alias가 선언의 다른 오른쪽에 나타나는 것은 불가능합니다:
 
 ```ts
-type Yikes = Array<Yikes>; // error
+type Yikes = Array<Yikes>; // 오류
 ```
 
 ## Interfaces vs. Type Aliases
 
-As we mentioned, type aliases can act sort of like interfaces; however, there are some subtle differences.
+앞서 언급했듯이, 타입 type aliases는 인터페이스와 같은 역할을 할 수 있지만 몇가지 미묘한 차이점이 있습니다.
 
-One difference is that interfaces create a new name that is used everywhere.
-Type aliases don't create a new name &mdash; for instance, error messages won't use the alias name.
-In the code below, hovering over `interfaced` in an editor will show that it returns an `Interface`, but will show that `aliased` returns object literal type.
+한가지 다른 점은 인터페이스가 어디에서나 사용되는 새로운 이름을 만들어 낸다는 것입니다.  
+타입 aliases는 새로운 이름을 만들지 않습니다&mdash; 예를 들어 오류 메시지는 alias 이름을 사용하지 않습니다.  
+아래 코드에서, 에디터의 `interfaced` 위로 마우스를 가져가면 `Interface`를 반환할 것을 보여주지만 `aliased`는 객체 리터럴 타입을 반환한다는 것을 보여줍니다.
 
 ```ts
 type Alias = { num: number }
@@ -465,16 +465,15 @@ declare function aliased(arg: Alias): Alias;
 declare function interfaced(arg: Interface): Interface;
 ```
 
-A second more important difference is that type aliases cannot be extended or implemented from (nor can they extend/implement other types).
-Because [an ideal property of software is being open to extension](https://en.wikipedia.org/wiki/Open/closed_principle), you should always use an interface over a type alias if possible.
+두번째 더 중요한 차이점은 타입 aliases를 다음에서 확장하거나 구현할 수 없다는 것입니다 (다른 타입을 확장/구현할 수도 없습니다).  
+왜냐하면 [소프트웨어의 이상적인 특성이 확장에 열려있다](https://en.wikipedia.org/wiki/Open/closed_principle) 가능한 경우 타입 alias에 대한 인터페이스를 사용해야합니다.  
+다른 한편으로는, 인터페이스로 일부 형태를 표현할 수 없고 유니온이나 튜플 타입을 사용해야하는 경우 타입 aliases을 사용하는 것이 보통 좋습니다.
 
-On the other hand, if you can't express some shape with an interface and you need to use a union or tuple type, type aliases are usually the way to go.
+# 문자열 리터럴 타입 (String Literal Types)
 
-# String Literal Types
-
-String literal types allow you to specify the exact value a string must have.
-In practice string literal types combine nicely with union types, type guards, and type aliases.
-You can use these features together to get enum-like behavior with strings.
+문자열 리터럴 타입을 사용하여 문자열에 필요한 정확한 값을 지정할 수 있습니다.  
+실제로 문자열 리터럴 타입은 유니온 타입, 타입 가드 및 타입 aliases와 잘 결합됩니다.  
+이러한 기능을 함께 사용하여 문자열에서 열거형과 같은 동작을 얻을 수 있습니다.
 
 ```ts
 type Easing = "ease-in" | "ease-out" | "ease-in-out";
@@ -488,36 +487,36 @@ class UIElement {
         else if (easing === "ease-in-out") {
         }
         else {
-            // error! should not pass null or undefined.
+            // 오류! null 또는 undefined로 통과해서는 안 됩니다.
         }
     }
 }
 
 let button = new UIElement();
 button.animate(0, 0, "ease-in");
-button.animate(0, 0, "uneasy"); // error: "uneasy" is not allowed here
+button.animate(0, 0, "uneasy"); // 오류: 여기서 "uneasy"가 허용되지 않습니다.
 ```
 
-You can pass any of the three allowed strings, but any other string will give the error
+허용되는 세 문자열 중 아무 것이나 전달할 수 있지만 다른 문자열은 오류를 제공합니다.
 
 ```text
-Argument of type '"uneasy"' is not assignable to parameter of type '"ease-in" | "ease-out" | "ease-in-out"'
+'"uneasy"' 타입의 인수를 타입의 매개 변수에 지정할 수 없습니다. '"ease-in" | "ease-out" | "ease-in-out"'
 ```
 
-String literal types can be used in the same way to distinguish overloads:
+오버로드를 구별하기 위해 동일한 방법으로 문자열 리터럴 타입을 사용할 수 있습니다.
 
 ```ts
 function createElement(tagName: "img"): HTMLImageElement;
 function createElement(tagName: "input"): HTMLInputElement;
-// ... more overloads ...
+// ... 더 많은 오버로드 ...
 function createElement(tagName: string): Element {
-    // ... code goes here ...
+    // ... 코드는 여기에 있습니다 ...
 }
 ```
 
-# Numeric Literal Types
+# 숫자 리터럴 타입 (Numeric Literal Types)
 
-TypeScript also has numeric literal types.
+TypeScript에는 숫자 리터럴 타입도 있습니다.
 
 ```ts
 function rollDie(): 1 | 2 | 3 | 4 | 5 | 6 {
@@ -525,24 +524,24 @@ function rollDie(): 1 | 2 | 3 | 4 | 5 | 6 {
 }
 ```
 
-These are seldom written explicitly, they can be useful when narrowing can catch bugs:
+이들은 명시 적으로 작성되는 경우는 거의 없으며 범위를 좁히는 것이 버그를 잡는 데 유용할 수 있습니다:
 
 ```ts
 function foo(x: number) {
     if (x !== 1 || x !== 2) {
         //         ~~~~~~~
-        // Operator '!==' cannot be applied to types '1' and '2'.
+        // 연산자 '!=='는 '1'과 '2' 타입에는 적용 할 수 없습니다.
     }
 }
 ```
 
-In other words, `x` must be `1` when it gets compared to `2`, meaning that the above check is making an invalid comparison.
+바꾸어 말하면 `x`는 `2`와 비교할 때 `1`이어야하며 이것은 위 체크가 유효하지 않은 비교를 하고 있음을 의미합니다.
 
-# Enum Member Types
+# 열거형 멤버 타입 (Enum Member Types)
 
-As mentioned in [our section on enums](./Enums.md#union-enums-and-enum-member-types), enum members have types when every member is literal-initialized.
+[열거형 섹션](./Enums.md#union-enums-and-enum-member-types)에서 언급했듯이 열거형 멤버는 모든 멤버가 리터럴로 초기화될 때 타입을 가집니다.
 
-Much of the time when we talk about "singleton types", we're referring to both enum member types as well as numeric/string literal types, though many users will use "singleton types" and "literal types" interchangeably.
+"싱글톤 타입"에 대해 이야기할 때 많은 시간동안, 많은 사용자가 "싱글톤 타입"과 "리터럴 타입"을 바꿔 사용하겠지만 숫자/문자열 리터럴 타입뿐만 아니라 열거형 멤버 타입을 모두 참조합니다
 
 # Discriminated Unions
 
