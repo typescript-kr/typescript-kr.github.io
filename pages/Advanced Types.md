@@ -74,7 +74,7 @@ padLeft("Hello world", 4); // "    Hello world" 반환
 let indentedString = padLeft("Hello world", true); // 컴파일 타임에는 통과되지만 런타임에는 실패합니다.
 ```
 
-전통적인 객체 지향 코드에서는 유형의 계층을 만들어 두 가지 유형을 추상화 할 수 있습니다.  
+전통적인 객체 지향 코드에서는 타입의 계층을 만들어 두 가지 타입을 추상화 할 수 있습니다.  
 이것이 훨씬 더 명백하기는 하지만 또 약간 지나치기도 합니다.  
 `padLeft`의 원래 버전에 대한 좋은 점 중 하나는 원시 값을 전달할 수 있다는 것입니다.  
 이는 사용법이 간단하고 간결하다는 것을 의미했습니다.  
@@ -158,14 +158,14 @@ else {
 }
 ```
 
-## User-Defined Type Guards
+## 사용자 정의 타입 가드 (User-Defined Type Guards)
 
-Notice that we had to use type assertions several times.
-It would be much better if once we performed the check, we could know the type of `pet` within each branch.
+타입 표명(type assertions)을 여러번 사용해야 했다는 것에 주목하세요.  
+일단 이 검사을 실시하면 각 지점에서 `pet`의 타입를 알 수 있습니다.
 
-It just so happens that TypeScript has something called a *type guard*.
-A type guard is some expression that performs a runtime check that guarantees the type in some scope.
-To define a type guard, we simply need to define a function whose return type is a *type predicate*:
+그런 일이 있을때 TypeScript에는 *type guard*라는 것이 있습니다.  
+타입 가드(type guard)는 일부 스코프에서 타입을 보장하는 런타임 검사를 수행하는 표현식입니다.  
+타입 가드를 정의하려면 반환 타입이 *타입 명제 (type predicate)* 인 함수를 정의하기만 하면 됩니다 :
 
 ```ts
 function isFish(pet: Fish | Bird): pet is Fish {
@@ -173,13 +173,13 @@ function isFish(pet: Fish | Bird): pet is Fish {
 }
 ```
 
-`pet is Fish` is our type predicate in this example.
-A predicate takes the form `parameterName is Type`, where `parameterName` must be the name of a parameter from the current function signature.
+`pet is Fish '는 이 예제에서 타입 명제입니다.  
+명제는 `parameterName is Type` 형태을 취합니다, 여기서 `parameterName`은 현재 함수 서명의 매개 변수 이름이어야합니다.
 
-Any time `isFish` is called with some variable, TypeScript will *narrow* that variable to that specific type if the original type is compatible.
+`IsFish`가 일부 변수와 함께 호출될 때 원래 타입이 호환 가능하다면 TypeScript는 그 변수를 특정 타입으로 *제한*할 것입니다.
 
 ```ts
-// Both calls to 'swim' and 'fly' are now okay.
+// 'swim'과 'fly' 호출은 이제 모두 괜찮습니다.
 
 if (isFish(pet)) {
     pet.swim();
@@ -189,13 +189,13 @@ else {
 }
 ```
 
-Notice that TypeScript not only knows that `pet` is a `Fish` in the `if` branch;
-it also knows that in the `else` branch, you *don't* have a `Fish`, so you must have a `Bird`.
+TypeScript는 `pet`이 `if` 스코프의 `Fish`라는 것을 알고있을뿐만 아니라,  
+`else` 스코프에서는 `Fish`가 *없다는 것을* 알기 때문에 `Bird`가 있어야합니다.
 
-## `typeof` type guards
+## `typeof` 타입 가드 (`typeof` type guards)
 
-Let's go back and write the code for the version of `padLeft` that uses union types.
-We could write it with type predicates as follows:
+그럼 다시 돌아와 유니온 타입을 사용하는 `padLeft` 버전의 코드를 작성해보겠습니다.  
+다음과 같이 타입 명제로 작성할 수 있습니다 :
 
 ```ts
 function isNumber(x: any): x is number {
@@ -217,9 +217,9 @@ function padLeft(value: string, padding: string | number) {
 }
 ```
 
-However, having to define a function to figure out if a type is a primitive is kind of a pain.
-Luckily, you don't need to abstract `typeof x === "number"` into its own function because TypeScript will recognize it as a type guard on its own.
-That means we could just write these checks inline.
+그러나 어떤 타입이 원시적인지 알아내는 함수를 정의하는 것은 고통스럽습니다.  
+다행스럽게도, typeScript가 자체적으로 타입 가드임을 인식하기 때문에 `typeof x === "number"`를 직접 함수로 추상화할 필요는 없습니다.  
+즉 이러한 인라인 검사를 작성할 수 있다는 것을 의미합니다.
 
 ```ts
 function padLeft(value: string, padding: string | number) {
@@ -233,15 +233,15 @@ function padLeft(value: string, padding: string | number) {
 }
 ```
 
-These *`typeof` type guards* are recognized in two different forms: `typeof v === "typename"` and `typeof v !== "typename"`, where `"typename"` must be `"number"`, `"string"`, `"boolean"`, or `"symbol"`.
-While TypeScript won't stop you from comparing to other strings, the language won't recognize those expressions as type guards.
+이것들의 *`typeof` 타입 가드*는 두가지 다른 형태로 인식됩니다: `typeof v === "typename"`와  `typeof v !== "typename"`, 여기서  `"typename"`은 반드시 `"number"`, `"string"`, `"boolean"`, 또는 `"symbol"`.  
+TypeScript에서 다른 문자열과 비교하는 것을 멈추지는 않지만 언어에서는 이러한 표현식을 타입 가드로 인식하지 않습니다.
 
-## `instanceof` type guards
+## `instanceof` 타입 가드 (`instanceof` type guards)
 
-If you've read about `typeof` type guards and are familiar with the `instanceof` operator in JavaScript, you probably have some idea of what this section is about.
+`typeof` 타입 가드를 읽었고 JavaScript에서 `instanceof` 연산자에 익숙하다면 아마 이 섹션에 대해 알 수 있을 것입니다.
 
-*`instanceof` type guards* are a way of narrowing types using their constructor function.
-For instance, let's borrow our industrial string-padder example from earlier:
+*`instanceof` 타입 가드*는 생성자 함수를 사용하여 타입을 좁히는 방법입니다.  
+예를 들어, 이전의 string-padder 예제를 차용해보겠습니다:
 
 ```ts
 interface Padder {
@@ -268,51 +268,51 @@ function getRandomPadder() {
         new StringPadder("  ");
 }
 
-// Type is 'SpaceRepeatingPadder | StringPadder'
+// 'SpaceRepeatingPadder | StringPadder' 타입입니다
 let padder: Padder = getRandomPadder();
 
 if (padder instanceof SpaceRepeatingPadder) {
-    padder; // type narrowed to 'SpaceRepeatingPadder'
-}
+    padder; // 타입이 'SpaceRepeatingPadder'로 좁혀졌습니다
+
 if (padder instanceof StringPadder) {
-    padder; // type narrowed to 'StringPadder'
+    padder; // 타입이 'StringPadder'로 좁혀졌습니다.
 }
 ```
 
-The right side of the `instanceof` needs to be a constructor function, and TypeScript will narrow down to:
+`instanceof`의 오른쪽에는 생성자 함수가 있어야 하며 TypeScript는 다음과 같이 범위를 좁혀 나갑니다:
 
-1. the type of the function's `prototype` property if its type is not `any`
-2. the union of types returned by that type's construct signatures
+1. 타입이 `any`가 아닌 경우 함수의 `prototype` 프로퍼티 타입
+2. 해당 타입의 생성자 서명에 의해 반환된 타입의 결합
 
-in that order.
+이와 같은 순서로 진행됩니다.
 
 # Nullable types
 
-TypeScript has two special types, `null` and `undefined`, that have the values null and undefined respectively.
-We mentioned these briefly in [the Basic Types section](./Basic Types.md).
-By default, the type checker considers `null` and `undefined` assignable to anything.
-Effectively, `null` and `undefined` are valid values of every type.
-That means it's not possible to *stop* them from being assigned to any type, even when you would like to prevent it.
-The inventor of `null`, Tony Hoare, calls this his ["billion dollar mistake"](https://en.wikipedia.org/wiki/Null_pointer#History).
+TypeScript는 `null`과 `undefined` 값을 가지는 두가지 특별한 타입이 있습니다.  
+이것을 [기본 타입](./Basic Types.md) 섹션에서 간략하게 언급했었습니다.  
+기본적으로 타입 체커는 `null`과 `undefined`를 모든 항목에 할당 가능한 것으로 간주합니다.  
+사실상 `null` 과 `undefined`는 모든 타입의 유효한 값입니다.  
+즉 방지하려는 경우조차도 any 타입에 할당되지 *않도록* 할 수 없습니다.  
+`null`의 발명가 토니 호어는 이것을 ["10억달러의 실수"](https://en.wikipedia.org/wiki/Null_pointer#History)라고 부릅니다.
 
-The `--strictNullChecks` flag fixes this: when you declare a variable, it doesn't automatically include `null` or `undefined`.
-You can include them explicitly using a union type:
+`--strictNullChecks`에서 다음과 같이 수정할 수 있습니다: 변수를 선언할 때 자동으로 `null` 또는 `undefined`가 포함되지 않습니다.  
+유니온 타입을 사용하여 명시적으로 포함할 수 있습니다:
 
 ```ts
 let s = "foo";
-s = null; // error, 'null' is not assignable to 'string'
+s = null; // 오류, 'null'은 'string'에 할당할 수 없습니다.
 let sn: string | null = "bar";
-sn = null; // ok
+sn = null; // 좋아요
 
-sn = undefined; // error, 'undefined' is not assignable to 'string | null'
+sn = undefined; // 오류, 'undefined'는 'string | null'에 할당할 수 없습니다.
 ```
 
-Note that TypeScript treats `null` and `undefined` differently in order to match JavaScript semantics.
-`string | null` is a different type than `string | undefined` and `string | undefined | null`.
+TypeScript는 JavaScript의 의미론과 일치하도록 `null`과 `undefined`를 다르게 다루고 있습니다.  
+`string | null`은 `string | undefined` 및 `string | undefined | null`과는 다른 타입입니다.
 
-## Optional parameters and properties
+## 선택적 매개변수와 프로퍼티 (Optional parameters and properties)
 
-With `--strictNullChecks`, an optional parameter automatically adds `| undefined`:
+`--strictNullChecks`와 선택적 매개 변수는 자동으로 `| undefined`를 추가합니다:
 
 ```ts
 function f(x: number, y?: number) {
@@ -321,10 +321,10 @@ function f(x: number, y?: number) {
 f(1, 2);
 f(1);
 f(1, undefined);
-f(1, null); // error, 'null' is not assignable to 'number | undefined'
+f(1, null); // 오류, 'null'은 'number | undefined'에 할당할 수 없습니다
 ```
 
-The same is true for optional properties:
+선택적 프로퍼티의 경우에도 동일합니다:
 
 ```ts
 class C {
@@ -333,16 +333,16 @@ class C {
 }
 let c = new C();
 c.a = 12;
-c.a = undefined; // error, 'undefined' is not assignable to 'number'
+c.a = undefined; // 오류, 'undefined'를 'number'에 할당 할 수 없습니다
 c.b = 13;
 c.b = undefined; // ok
-c.b = null; // error, 'null' is not assignable to 'number | undefined'
+c.b = null; // 오류, 'null'은 'number | undefined'에 할당할 수 없습니다
 ```
 
-## Type guards and type assertions
+## 타입 가드와 타입 표명 (Type guards and type assertions)
 
-Since nullable types are implemented with a union, you need to use a type guard to get rid of the `null`.
-Fortunately, this is the same code you'd write in JavaScript:
+nullable 타입은 유니온으로 구현되기때문에 타입 가드를 사용하여 `null`을 제거해야합니다.  
+다행히 JavaScript에서 작성하는 코드는 다음과 같습니다:
 
 ```ts
 function f(sn: string | null): string {
@@ -355,7 +355,7 @@ function f(sn: string | null): string {
 }
 ```
 
-The `null` elimination is pretty obvious here, but you can use terser operators too:
+여기서 `null`을 제거하는 것은 확실히 좋지만 간단한 연산자도 사용할 수 있습니다.:
 
 ```ts
 function f(sn: string | null): string {
@@ -363,13 +363,13 @@ function f(sn: string | null): string {
 }
 ```
 
-In cases where the compiler can't eliminate `null` or `undefined`, you can use the type assertion operator to manually remove them.
-The syntax is postfix `!`: `identifier!` removes `null` and `undefined` from the type of `identifier`:
+컴파일러가 `null` 또는`undefined`를 제거 할 수 없는 경우 타입 표명 연산자를 사용하여 수동으로 제거할 수 있습니다.  
+구문은 후위에 `!` 입니다: `identifier!`는 `identifier`의 타입 `null`과 `undefined`를 제거합니다:
 
 ```ts
 function broken(name: string | null): string {
   function postfix(epithet: string) {
-    return name.charAt(0) + '.  the ' + epithet; // error, 'name' is possibly null
+    return name.charAt(0) + '.  the ' + epithet; // 오류, 'name'이 null일 수 있습니다.
   }
   name = name || "Bob";
   return postfix("great");
@@ -377,21 +377,21 @@ function broken(name: string | null): string {
 
 function fixed(name: string | null): string {
   function postfix(epithet: string) {
-    return name!.charAt(0) + '.  the ' + epithet; // ok
+    return name!.charAt(0) + '.  the ' + epithet; // 좋아요
   }
   name = name || "Bob";
   return postfix("great");
 }
 ```
 
-The example uses a nested function here because the compiler can't eliminate nulls inside a nested function (except immediately-invoked function expressions).
-That's because it can't track all calls to the nested function, especially if you return it from the outer function.
-Without knowing where the function is called, it can't know what the type of `name` will be at the time the body executes.
+이 예제에서 컴파일러가 중첩된 함수 내에서 null을 제거할 수 없기 때문에 여기에 중첩된 함수를 사용합니다(즉시실행함수 제외).  
+특히 외부 함수에서 호출한 경우 중첩된 함수에 대한 모든 호출을 추적할 수 없기 때문입니다.  
+함수가 어디에서 호출되는지 알지 못하면 body가 실행될 때 `name`의 타입이 무엇인지 알 수 없습니다.
 
 # Type Aliases
 
-Type aliases create a new name for a type.
-Type aliases are sometimes similar to interfaces, but can name primitives, unions, tuples, and any other types that you'd otherwise have to write by hand.
+타입 aliases는 타입의 새로운 이름을 생성합니다.  
+타입 aliases은 인터페이스와 유사하지만 원시 타입, 유니온, 튜플 및 기타 직접 작성해야하는 다른 타입의 이름을 지정할 수 있습니다.
 
 ```ts
 type Name = string;
@@ -407,16 +407,16 @@ function getName(n: NameOrResolver): Name {
 }
 ```
 
-Aliasing doesn't actually create a new type - it creates a new *name* to refer to that type.
-Aliasing a primitive is not terribly useful, though it can be used as a form of documentation.
+Aliasing(Type Aliases)은 실제로 새로운 타입을 생성하지는 않습니다 - 그 타입을 참조하기 위해 새로운 *이름*을 생성합니다.  
+원시값을 Aliasing 하는 것은 문서의 형태로 사용될 수 있지만 굉장히 유용하지 않습니다.
 
-Just like interfaces, type aliases can also be generic - we can just add type parameters and use them on the right side of the alias declaration:
+인터페이스와 마찬가지로 타입 aliases도 일반적일 수 있습니다 - aliases 선언의 오른쪽에 타입 매개 변수를 추가하여 사용하면 됩니다:
 
 ```ts
 type Container<T> = { value: T };
 ```
 
-We can also have a type alias refer to itself in a property:
+type alias를 프로퍼티에서 참조할 수도 있습니다:
 
 ```ts
 type Tree<T> = {
@@ -426,7 +426,7 @@ type Tree<T> = {
 }
 ```
 
-Together with intersection types, we can make some pretty mind-bending types:
+교차(intersection) 타입과 함께 mind-bending 타입을 만들 수 있습니다:
 
 ```ts
 type LinkedList<T> = T & { next: LinkedList<T> };
@@ -442,19 +442,19 @@ var s = people.next.next.name;
 var s = people.next.next.next.name;
 ```
 
-However, it's not possible for a type alias to appear anywhere else on the right side of the declaration:
+그러나 타입 alias가 선언의 다른 오른쪽에 나타나는 것은 불가능합니다:
 
 ```ts
-type Yikes = Array<Yikes>; // error
+type Yikes = Array<Yikes>; // 오류
 ```
 
 ## Interfaces vs. Type Aliases
 
-As we mentioned, type aliases can act sort of like interfaces; however, there are some subtle differences.
+앞서 언급했듯이, 타입 type aliases는 인터페이스와 같은 역할을 할 수 있지만 몇가지 미묘한 차이점이 있습니다.
 
-One difference is that interfaces create a new name that is used everywhere.
-Type aliases don't create a new name &mdash; for instance, error messages won't use the alias name.
-In the code below, hovering over `interfaced` in an editor will show that it returns an `Interface`, but will show that `aliased` returns object literal type.
+한가지 다른 점은 인터페이스가 어디에서나 사용되는 새로운 이름을 만들어 낸다는 것입니다.  
+타입 aliases는 새로운 이름을 만들지 않습니다&mdash; 예를 들어 오류 메시지는 alias 이름을 사용하지 않습니다.  
+아래 코드에서, 에디터의 `interfaced` 위로 마우스를 가져가면 `Interface`를 반환할 것을 보여주지만 `aliased`는 객체 리터럴 타입을 반환한다는 것을 보여줍니다.
 
 ```ts
 type Alias = { num: number }
@@ -465,16 +465,15 @@ declare function aliased(arg: Alias): Alias;
 declare function interfaced(arg: Interface): Interface;
 ```
 
-A second more important difference is that type aliases cannot be extended or implemented from (nor can they extend/implement other types).
-Because [an ideal property of software is being open to extension](https://en.wikipedia.org/wiki/Open/closed_principle), you should always use an interface over a type alias if possible.
+두번째 더 중요한 차이점은 타입 aliases를 다음에서 확장하거나 구현할 수 없다는 것입니다 (다른 타입을 확장/구현할 수도 없습니다).  
+왜냐하면 [소프트웨어의 이상적인 특성이 확장에 열려있다](https://en.wikipedia.org/wiki/Open/closed_principle) 가능한 경우 타입 alias에 대한 인터페이스를 사용해야합니다.  
+다른 한편으로는, 인터페이스로 일부 형태를 표현할 수 없고 유니온이나 튜플 타입을 사용해야하는 경우 타입 aliases을 사용하는 것이 보통 좋습니다.
 
-On the other hand, if you can't express some shape with an interface and you need to use a union or tuple type, type aliases are usually the way to go.
+# 문자열 리터럴 타입 (String Literal Types)
 
-# String Literal Types
-
-String literal types allow you to specify the exact value a string must have.
-In practice string literal types combine nicely with union types, type guards, and type aliases.
-You can use these features together to get enum-like behavior with strings.
+문자열 리터럴 타입을 사용하여 문자열에 필요한 정확한 값을 지정할 수 있습니다.  
+실제로 문자열 리터럴 타입은 유니온 타입, 타입 가드 및 타입 aliases와 잘 결합됩니다.  
+이러한 기능을 함께 사용하여 문자열에서 열거형과 같은 동작을 얻을 수 있습니다.
 
 ```ts
 type Easing = "ease-in" | "ease-out" | "ease-in-out";
@@ -488,36 +487,36 @@ class UIElement {
         else if (easing === "ease-in-out") {
         }
         else {
-            // error! should not pass null or undefined.
+            // 오류! null 또는 undefined로 통과해서는 안 됩니다.
         }
     }
 }
 
 let button = new UIElement();
 button.animate(0, 0, "ease-in");
-button.animate(0, 0, "uneasy"); // error: "uneasy" is not allowed here
+button.animate(0, 0, "uneasy"); // 오류: 여기서 "uneasy"가 허용되지 않습니다.
 ```
 
-You can pass any of the three allowed strings, but any other string will give the error
+허용되는 세 문자열 중 아무 것이나 전달할 수 있지만 다른 문자열은 오류를 제공합니다.
 
 ```text
-Argument of type '"uneasy"' is not assignable to parameter of type '"ease-in" | "ease-out" | "ease-in-out"'
+'"uneasy"' 타입의 인수를 타입의 매개 변수에 지정할 수 없습니다. '"ease-in" | "ease-out" | "ease-in-out"'
 ```
 
-String literal types can be used in the same way to distinguish overloads:
+오버로드를 구별하기 위해 동일한 방법으로 문자열 리터럴 타입을 사용할 수 있습니다.
 
 ```ts
 function createElement(tagName: "img"): HTMLImageElement;
 function createElement(tagName: "input"): HTMLInputElement;
-// ... more overloads ...
+// ... 더 많은 오버로드 ...
 function createElement(tagName: string): Element {
-    // ... code goes here ...
+    // ... 코드는 여기에 있습니다 ...
 }
 ```
 
-# Numeric Literal Types
+# 숫자 리터럴 타입 (Numeric Literal Types)
 
-TypeScript also has numeric literal types.
+TypeScript에는 숫자 리터럴 타입도 있습니다.
 
 ```ts
 function rollDie(): 1 | 2 | 3 | 4 | 5 | 6 {
@@ -525,24 +524,24 @@ function rollDie(): 1 | 2 | 3 | 4 | 5 | 6 {
 }
 ```
 
-These are seldom written explicitly, they can be useful when narrowing can catch bugs:
+이들은 명시 적으로 작성되는 경우는 거의 없으며 범위를 좁히는 것이 버그를 잡는 데 유용할 수 있습니다:
 
 ```ts
 function foo(x: number) {
     if (x !== 1 || x !== 2) {
         //         ~~~~~~~
-        // Operator '!==' cannot be applied to types '1' and '2'.
+        // 연산자 '!=='는 '1'과 '2' 타입에는 적용 할 수 없습니다.
     }
 }
 ```
 
-In other words, `x` must be `1` when it gets compared to `2`, meaning that the above check is making an invalid comparison.
+바꾸어 말하면 `x`는 `2`와 비교할 때 `1`이어야하며 이것은 위 체크가 유효하지 않은 비교를 하고 있음을 의미합니다.
 
-# Enum Member Types
+# 열거형 멤버 타입 (Enum Member Types)
 
-As mentioned in [our section on enums](./Enums.md#union-enums-and-enum-member-types), enum members have types when every member is literal-initialized.
+[열거형 섹션](./Enums.md#union-enums-and-enum-member-types)에서 언급했듯이 열거형 멤버는 모든 멤버가 리터럴로 초기화될 때 타입을 가집니다.
 
-Much of the time when we talk about "singleton types", we're referring to both enum member types as well as numeric/string literal types, though many users will use "singleton types" and "literal types" interchangeably.
+"싱글톤 타입"에 대해 이야기할 때 많은 시간동안, 많은 사용자가 "싱글톤 타입"과 "리터럴 타입"을 바꿔 사용하겠지만 숫자/문자열 리터럴 타입뿐만 아니라 열거형 멤버 타입을 모두 참조합니다
 
 # Discriminated Unions
 

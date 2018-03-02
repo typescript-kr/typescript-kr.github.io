@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>심볼 · GitBook</title>
+        <title>Integrating with Build Tools · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -66,10 +66,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Iterators and Generators.html" />
+    <link rel="next" href="Nightly Builds.html" />
     
     
-    <link rel="prev" href="Advanced Types.html" />
+    <link rel="prev" href="Compiler Options in MSBuild.html" />
     
 
     </head>
@@ -320,7 +320,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.11" data-path="Symbols.html">
+        <li class="chapter " data-level="3.11" data-path="Symbols.html">
             
                 <a href="Symbols.html">
             
@@ -633,7 +633,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.4" data-path="Integrating with Build Tools.html">
+        <li class="chapter active" data-level="5.4" data-path="Integrating with Build Tools.html">
             
                 <a href="Integrating with Build Tools.html">
             
@@ -689,7 +689,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >심볼</a>
+        <a href=".." >Integrating with Build Tools</a>
     </h1>
 </div>
 
@@ -704,69 +704,163 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#xC18C;&#xAC1C;-introduction">&#xC18C;&#xAC1C; (Introduction)</h1>
-<p>ECMAScript 2015&#xC5D0;&#xC11C; &#xC2DC;&#xC791;&#xB41C; <code>symbol</code>&#xC740; <code>number</code>&#xC640; <code>string</code>&#xAC19;&#xC740; primitive &#xB370;&#xC774;&#xD130; &#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<p><code>symbol</code> &#xAC12;&#xC740; <code>Symbol</code> &#xC0DD;&#xC131;&#xC790;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xC5EC; &#xC0DD;&#xC131;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">sym1</span> <span class="cm-operator">=</span> <span class="cm-variable">Symbol</span>();
-
-<span class="cm-keyword">let</span> <span class="cm-variable">sym2</span> <span class="cm-operator">=</span> <span class="cm-variable">Symbol</span>(<span class="cm-string">&quot;key&quot;</span>); <span class="cm-comment">// &#xC120;&#xD0DD;&#xC801; &#xBB38;&#xC790;&#xC5F4; &#xD0A4;</span>
+                                <p>Build tools</p>
+<ul>
+<li><a href="#browserify">Browserify</a></li>
+<li><a href="#duo">Duo</a></li>
+<li><a href="#grunt">Grunt</a></li>
+<li><a href="#gulp">Gulp</a></li>
+<li><a href="#jspm">Jspm</a></li>
+<li><a href="#webpack">Webpack</a></li>
+<li><a href="#msbuild">MSBuild</a></li>
+<li><a href="#nuget">NuGet</a></li>
+</ul>
+<h1 id="browserify">Browserify</h1>
+<h3 id="install">Install</h3>
+<pre><code class="lang-sh"><span class="cm-builtin">npm</span> install tsify
 </code></pre>
-<p>&#xC2EC;&#xBCFC;&#xC740; &#xBD88;&#xBCC0;&#xC774;&#xACE0; &#xACE0;&#xC720;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">sym2</span> <span class="cm-operator">=</span> <span class="cm-variable">Symbol</span>(<span class="cm-string">&quot;key&quot;</span>);
-<span class="cm-keyword">let</span> <span class="cm-variable">sym3</span> <span class="cm-operator">=</span> <span class="cm-variable">Symbol</span>(<span class="cm-string">&quot;key&quot;</span>);
-
-<span class="cm-variable">sym2</span> <span class="cm-operator">===</span> <span class="cm-variable">sym3</span>; <span class="cm-comment">// false, &#xC2EC;&#xBCFC;&#xC740; &#xACE0;&#xC720;&#xD569;&#xB2C8;&#xB2E4;.</span>
+<h3 id="using-command-line-interface">Using Command Line Interface</h3>
+<pre><code class="lang-sh">browserify main.ts <span class="cm-attribute">-p</span> [ tsify <span class="cm-attribute">--noImplicitAny</span> ] &gt; bundle.js
 </code></pre>
-<p>&#xBB38;&#xC790;&#xC5F4;&#xACFC; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xC2EC;&#xBCFC;&#xC744; &#xAC1D;&#xCCB4; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC758; &#xD0A4;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">sym</span> <span class="cm-operator">=</span> <span class="cm-variable">Symbol</span>();
+<h3 id="using-api">Using API</h3>
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">browserify</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;browserify&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">tsify</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;tsify&quot;</span>);
 
-<span class="cm-keyword">let</span> <span class="cm-variable">obj</span> <span class="cm-operator">=</span> {
-    [<span class="cm-variable">sym</span>]: <span class="cm-string">&quot;value&quot;</span>
+<span class="cm-variable">browserify</span>()
+    .<span class="cm-property">add</span>(<span class="cm-string">&quot;main.ts&quot;</span>)
+    .<span class="cm-property">plugin</span>(<span class="cm-string">&quot;tsify&quot;</span>, { <span class="cm-property">noImplicitAny</span>: <span class="cm-atom">true</span> })
+    .<span class="cm-property">bundle</span>()
+    .<span class="cm-property">pipe</span>(<span class="cm-variable">process</span>.<span class="cm-property">stdout</span>);
+</code></pre>
+<p>More details: <a href="https://github.com/smrq/tsify" target="_blank">smrq/tsify</a></p>
+<h1 id="duo">Duo</h1>
+<h3 id="install">Install</h3>
+<pre><code class="lang-sh"><span class="cm-builtin">npm</span> install duo-typescript
+</code></pre>
+<h3 id="using-command-line-interface">Using Command Line Interface</h3>
+<pre><code class="lang-sh">duo <span class="cm-attribute">--use</span> duo-typescript entry.ts
+</code></pre>
+<h3 id="using-api">Using API</h3>
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">Duo</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;duo&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">fs</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;fs&quot;</span>)
+<span class="cm-keyword">var</span> <span class="cm-variable">path</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;path&quot;</span>)
+<span class="cm-keyword">var</span> <span class="cm-variable">typescript</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;duo-typescript&quot;</span>);
+
+<span class="cm-keyword">var</span> <span class="cm-variable">out</span> <span class="cm-operator">=</span> <span class="cm-variable">path</span>.<span class="cm-property">join</span>(<span class="cm-variable">__dirname</span>, <span class="cm-string">&quot;output.js&quot;</span>)
+
+<span class="cm-variable">Duo</span>(<span class="cm-variable">__dirname</span>)
+    .<span class="cm-property">entry</span>(<span class="cm-string">&quot;entry.ts&quot;</span>)
+    .<span class="cm-property">use</span>(<span class="cm-variable">typescript</span>())
+    .<span class="cm-property">run</span>(<span class="cm-keyword">function</span> (<span class="cm-def">err</span>, <span class="cm-def">results</span>) {
+        <span class="cm-keyword">if</span> (<span class="cm-variable-2">err</span>) <span class="cm-keyword">throw</span> <span class="cm-variable-2">err</span>;
+        <span class="cm-comment">// Write compiled result to output file</span>
+        <span class="cm-variable">fs</span>.<span class="cm-property">writeFileSync</span>(<span class="cm-variable">out</span>, <span class="cm-variable-2">results</span>.<span class="cm-property">code</span>);
+    });
+</code></pre>
+<p>More details: <a href="https://github.com/frankwallis/duo-typescript" target="_blank">frankwallis/duo-typescript</a></p>
+<h1 id="grunt">Grunt</h1>
+<h3 id="install">Install</h3>
+<pre><code class="lang-sh"><span class="cm-builtin">npm</span> install grunt-ts
+</code></pre>
+<h3 id="basic-gruntfilejs">Basic Gruntfile.js</h3>
+<pre><code class="lang-js"><span class="cm-keyword">module</span>.<span class="cm-variable">exports</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">grunt</span>) {
+    <span class="cm-variable-2">grunt</span>.<span class="cm-property">initConfig</span>({
+        <span class="cm-property">ts</span>: {
+            <span class="cm-keyword">default</span> : {
+                <span class="cm-variable">src</span>: [<span class="cm-string">&quot;**/*.ts&quot;</span>, <span class="cm-string">&quot;!node_modules/**/*.ts&quot;</span>]
+            }
+        }
+    });
+    <span class="cm-variable-2">grunt</span>.<span class="cm-property">loadNpmTasks</span>(<span class="cm-string">&quot;grunt-ts&quot;</span>);
+    <span class="cm-variable-2">grunt</span>.<span class="cm-property">registerTask</span>(<span class="cm-string">&quot;default&quot;</span>, [<span class="cm-string">&quot;ts&quot;</span>]);
 };
-
-<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">obj</span>[<span class="cm-variable">sym</span>]); <span class="cm-comment">// &quot;value&quot;</span>
 </code></pre>
-<p>&#xC2EC;&#xBCFC;&#xC744; &#xACC4;&#xC0B0;&#xB41C; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xC120;&#xC5B8;&#xACFC; &#xACB0;&#xD569;&#xD558;&#xC5EC; &#xAC1D;&#xCCB4; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC640; &#xD074;&#xB798;&#xC2A4; &#xBA64;&#xBC84;&#xB97C; &#xC120;&#xC5B8;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-ts"><span class="cm-keyword">const</span> <span class="cm-variable">getClassNameSymbol</span> <span class="cm-operator">=</span> <span class="cm-variable">Symbol</span>();
+<p>More details: <a href="https://github.com/TypeStrong/grunt-ts" target="_blank">TypeStrong/grunt-ts</a></p>
+<h1 id="gulp">Gulp</h1>
+<h3 id="install">Install</h3>
+<pre><code class="lang-sh"><span class="cm-builtin">npm</span> install gulp-typescript
+</code></pre>
+<h3 id="basic-gulpfilejs">Basic gulpfile.js</h3>
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">gulp</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;gulp&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">ts</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;gulp-typescript&quot;</span>);
 
-<span class="cm-keyword">class</span> <span class="cm-variable">C</span> {
-    [<span class="cm-variable">getClassNameSymbol</span>](){
-       <span class="cm-keyword">return</span> <span class="cm-string">&quot;C&quot;</span>;
+<span class="cm-variable">gulp</span>.<span class="cm-property">task</span>(<span class="cm-string">&quot;default&quot;</span>, <span class="cm-keyword">function</span> () {
+    <span class="cm-keyword">var</span> <span class="cm-def">tsResult</span> <span class="cm-operator">=</span> <span class="cm-variable">gulp</span>.<span class="cm-property">src</span>(<span class="cm-string">&quot;src/*.ts&quot;</span>)
+        .<span class="cm-property">pipe</span>(<span class="cm-variable">ts</span>({
+              <span class="cm-property">noImplicitAny</span>: <span class="cm-atom">true</span>,
+              <span class="cm-property">out</span>: <span class="cm-string">&quot;output.js&quot;</span>
+        }));
+    <span class="cm-keyword">return</span> <span class="cm-variable-2">tsResult</span>.<span class="cm-property">js</span>.<span class="cm-property">pipe</span>(<span class="cm-variable">gulp</span>.<span class="cm-property">dest</span>(<span class="cm-string">&quot;built/local&quot;</span>));
+});
+</code></pre>
+<p>More details: <a href="https://github.com/ivogabe/gulp-typescript" target="_blank">ivogabe/gulp-typescript</a></p>
+<h1 id="jspm">Jspm</h1>
+<h3 id="install">Install</h3>
+<pre><code class="lang-sh"><span class="cm-builtin">npm</span> install <span class="cm-attribute">-g</span> jspm@beta
+</code></pre>
+<p><em>Note: Currently TypeScript support in jspm is in 0.16beta</em></p>
+<p>More details: <a href="https://github.com/Microsoft/TypeScriptSamples/tree/master/jspm" target="_blank">TypeScriptSamples/jspm</a></p>
+<h1 id="webpack">Webpack</h1>
+<h3 id="install">Install</h3>
+<pre><code class="lang-sh"><span class="cm-builtin">npm</span> install ts-loader <span class="cm-attribute">--save</span><span class="cm-attribute">-dev</span>
+</code></pre>
+<h3 id="basic-webpackconfigjs">Basic webpack.config.js</h3>
+<pre><code class="lang-js"><span class="cm-keyword">module</span>.<span class="cm-variable">exports</span> <span class="cm-operator">=</span> {
+    <span class="cm-property">entry</span>: <span class="cm-string">&quot;./src/index.tsx&quot;</span>,
+    <span class="cm-property">output</span>: {
+        <span class="cm-property">filename</span>: <span class="cm-string">&quot;bundle.js&quot;</span>
+    },
+    <span class="cm-property">resolve</span>: {
+        <span class="cm-comment">// Add &apos;.ts&apos; and &apos;.tsx&apos; as a resolvable extension.</span>
+        <span class="cm-property">extensions</span>: [<span class="cm-string">&quot;&quot;</span>, <span class="cm-string">&quot;.webpack.js&quot;</span>, <span class="cm-string">&quot;.web.js&quot;</span>, <span class="cm-string">&quot;.ts&quot;</span>, <span class="cm-string">&quot;.tsx&quot;</span>, <span class="cm-string">&quot;.js&quot;</span>]
+    },
+    <span class="cm-keyword">module</span>: {
+        <span class="cm-variable">loaders</span>: [
+            <span class="cm-comment">// all files with a &apos;.ts&apos; or &apos;.tsx&apos; extension will be handled by &apos;ts-loader&apos;</span>
+            { <span class="cm-variable">test</span>: <span class="cm-string-2">/\.tsx?$/</span>, <span class="cm-variable">loader</span>: <span class="cm-string">&quot;ts-loader&quot;</span> }
+        ]
     }
 }
-
-<span class="cm-keyword">let</span> <span class="cm-variable">c</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">C</span>();
-<span class="cm-keyword">let</span> <span class="cm-variable">className</span> <span class="cm-operator">=</span> <span class="cm-variable">c</span>[<span class="cm-variable">getClassNameSymbol</span>](); <span class="cm-comment">// &quot;C&quot;</span>
 </code></pre>
-<h1 id="&#xC798;-&#xC54C;&#xB824;&#xC9C4;-&#xC2EC;&#xBCFC;-well-known-symbols">&#xC798; &#xC54C;&#xB824;&#xC9C4; &#xC2EC;&#xBCFC; (Well-known Symbols)</h1>
-<p>&#xC0AC;&#xC6A9;&#xC790; &#xC815;&#xC758; &#xC2EC;&#xBCFC; &#xC678;&#xC5D0;&#xB3C4; &#xC798; &#xC54C;&#xB824;&#xC9C4; &#xB0B4;&#xC7A5; &#xC2EC;&#xBCFC;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-&#xB0B4;&#xC7A5; &#xC2EC;&#xBCFC;&#xC740; &#xB0B4;&#xBD80; &#xC5B8;&#xC5B4; &#xB3D9;&#xC791;&#xC744; &#xB098;&#xD0C0;&#xB0B4;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB2E4;&#xC74C;&#xC740; &#xC798; &#xC54C;&#xB824;&#xC9C4; &#xC2EC;&#xBCFC; &#xBAA9;&#xB85D;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<h2 id="symbolhasinstance"><code>Symbol.hasInstance</code></h2>
-<p>&#xC0DD;&#xC131;&#xC790; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xC790;&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xC911; &#xD558;&#xB098;&#xB85C;&#xC11C; &#xAC1D;&#xCCB4;&#xB97C; &#xC778;&#xC2DD;&#xD558;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;&#xB97C; &#xD310;&#xB2E8;&#xD558;&#xB294; &#xBA54;&#xC11C;&#xB4DC;&#xC785;&#xB2C8;&#xB2E4;. <code>instanceof</code> &#xC5F0;&#xC0B0;&#xC790;&#xC758; &#xC758;&#xBBF8;&#xB85C; &#xD638;&#xCD9C;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<h2 id="symbolisconcatspreadable"><code>Symbol.isConcatSpreadable</code></h2>
-<p>&#xAC1D;&#xCCB4;&#xAC00; <code>Array.prototype.concat</code>&#xC5D0; &#xC758;&#xD574; &#xBC30;&#xC5F4; &#xC694;&#xC18C;&#xB85C; &#xBCD1;&#xD569;&#xB418;&#xC5B4;&#xC57C; &#xD568;&#xC744; &#xB098;&#xD0C0;&#xB0B4;&#xB294; boolean &#xAC12;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<h2 id="symboliterator"><code>Symbol.iterator</code></h2>
-<p>&#xAC1D;&#xCCB4;&#xC758; &#xAE30;&#xBCF8; &#xBC18;&#xBCF5;&#xC790;&#xB97C; &#xBC18;&#xD658;&#xD558;&#xB294; &#xBA54;&#xC11C;&#xB4DC;&#xC785;&#xB2C8;&#xB2E4;. for-of &#xAD6C;&#xBB38;&#xC5D0; &#xC758;&#xD574; &#xD638;&#xCD9C;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<h2 id="symbolmatch"><code>Symbol.match</code></h2>
-<p>&#xC815;&#xADDC; &#xD45C;&#xD604;&#xC2DD;&#xC744; &#xBB38;&#xC790;&#xC5F4;&#xACFC; &#xBE44;&#xAD50;&#xD558;&#xB294; &#xC815;&#xADDC; &#xD45C;&#xD604;&#xC2DD; &#xBA54;&#xC18C;&#xB4DC;&#xC785;&#xB2C8;&#xB2E4;. <code>String.prototype.match</code> &#xBA54;&#xC11C;&#xB4DC;&#xB85C; &#xD638;&#xCD9C; &#xB429;&#xB2C8;&#xB2E4;.</p>
-<h2 id="symbolreplace"><code>Symbol.replace</code></h2>
-<p>&#xC77C;&#xCE58;&#xD558;&#xB294; &#xBB38;&#xC790;&#xC5F4;&#xC758; &#xBD80;&#xBD84; &#xBB38;&#xC790;&#xC5F4;&#xC744; &#xB300;&#xCCB4;&#xD558;&#xB294; &#xC815;&#xADDC; &#xD45C;&#xD604;&#xC2DD; &#xBA54;&#xC11C;&#xB4DC;&#xC785;&#xB2C8;&#xB2E4;. <code>String.prototype.replace</code> &#xBA54;&#xC11C;&#xB4DC;&#xB85C; &#xD638;&#xCD9C; &#xB429;&#xB2C8;&#xB2E4;.</p>
-<h2 id="symbolsearch"><code>Symbol.search</code></h2>
-<p>&#xC815;&#xADDC;&#xC2DD;&#xACFC; &#xC77C;&#xCE58;&#xD558;&#xB294; &#xBB38;&#xC790;&#xC5F4;&#xC5D0;&#xC11C; &#xC778;&#xB371;&#xC2A4;&#xB97C; &#xBC18;&#xD658;&#xD558;&#xB294; &#xC815;&#xADDC;&#xC2DD; &#xBA54;&#xC11C;&#xB4DC;&#xC785;&#xB2C8;&#xB2E4;. <code>String.prototype.search</code> &#xBA54;&#xC11C;&#xB4DC;&#xB85C; &#xD638;&#xCD9C; &#xB429;&#xB2C8;&#xB2E4;.</p>
-<h2 id="symbolspecies"><code>Symbol.species</code></h2>
-<p>&#xD30C;&#xC0DD;&#xB41C; &#xAC1D;&#xCCB4;&#xB97C; &#xB9CC;&#xB4DC;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xC0DD;&#xC131;&#xC790; &#xD568;&#xC218;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xAC12;&#xC744; &#xAC16;&#xB294; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<h2 id="symbolsplit"><code>Symbol.split</code></h2>
-<p>&#xC815;&#xADDC; &#xD45C;&#xD604;&#xC2DD;&#xACFC; &#xC77C;&#xCE58;&#xD558;&#xB294; &#xC778;&#xB371;&#xC2A4;&#xC5D0;&#xC11C; &#xBB38;&#xC790;&#xC5F4;&#xC744; &#xBD84;&#xD560;&#xD558;&#xB294; &#xC815;&#xADDC; &#xD45C;&#xD604;&#xC2DD; &#xBA54;&#xC11C;&#xB4DC;&#xC785;&#xB2C8;&#xB2E4;.
- <code>String.prototype.split</code> &#xBA54;&#xC11C;&#xB4DC;&#xC5D0; &#xC758;&#xD574; &#xD638;&#xCD9C; &#xB429;&#xB2C8;&#xB2E4;.</p>
-<h2 id="symboltoprimitive"><code>Symbol.toPrimitive</code></h2>
-<p>&#xAC1D;&#xCCB4;&#xB97C; &#xD574;&#xB2F9;&#xD558;&#xB294; primitive &#xAC12;&#xC73C;&#xB85C; &#xBCC0;&#xD658;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC785;&#xB2C8;&#xB2E4;.
-<code>ToPrimitive</code> &#xCD94;&#xC0C1; &#xB3D9;&#xC791;&#xC5D0; &#xC758;&#xD574; &#xD638;&#xCD9C;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<h2 id="symboltostringtag"><code>Symbol.toStringTag</code></h2>
-<p>&#xAC1D;&#xCCB4;&#xC758; &#xAE30;&#xBCF8; &#xBB38;&#xC790;&#xC5F4; &#xC124;&#xBA85;&#xC744; &#xB9CC;&#xB4DC;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xB418;&#xB294; String &#xAC12;&#xC785;&#xB2C8;&#xB2E4;.
-&#xB0B4;&#xC7A5; &#xBA54;&#xC18C;&#xB4DC;<code>Object.prototype.toString</code>&#xB85C; &#xD638;&#xCD9C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<h2 id="symbolunscopables"><code>Symbol.unscopables</code></h2>
-<p>&#xC790;&#xC2E0;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xC774;&#xB984;&quot;&#xC744;&quot; &#xAC00;&#xC9C0;&#xB294; &#xAC1D;&#xCCB4;&#xB294; &#xC5F0;&#xAD00;&#xB41C; &#xAC1D;&#xCCB4;&#xC758; &#xD658;&#xACBD; &#xBC14;&#xC778;&#xB529;&#xC5D0;&#xC11C; &#xC81C;&#xC678;&#xB418;&#xB294; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xC774;&#xB984;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>See <a href="https://www.npmjs.com/package/ts-loader" target="_blank">more details on ts-loader here</a>.</p>
+<p>Alternatives:</p>
+<ul>
+<li><a href="https://www.npmjs.com/package/awesome-typescript-loader" target="_blank">awesome-typescript-loader</a></li>
+</ul>
+<h1 id="msbuild">MSBuild</h1>
+<p>Update project file to include locally installed <code>Microsoft.TypeScript.Default.props</code> (at the top) and <code>Microsoft.TypeScript.targets</code> (at the bottom) files:</p>
+<pre><code class="lang-xml"><span class="cm-meta">&lt;?xml</span> <span class="cm-meta">version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">Project</span> <span class="cm-attribute">ToolsVersion</span>=<span class="cm-string">&quot;4.0&quot;</span> <span class="cm-attribute">DefaultTargets</span>=<span class="cm-string">&quot;Build&quot;</span> <span class="cm-attribute">xmlns</span>=<span class="cm-string">&quot;http://schemas.microsoft.com/developer/msbuild/2003&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
+  <span class="cm-comment">&lt;!-- Include default props at the bottom --&gt;</span>
+  <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">Import</span>
+      <span class="cm-attribute">Project</span>=<span class="cm-string">&quot;$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props&quot;</span>
+      <span class="cm-attribute">Condition</span>=<span class="cm-string">&quot;Exists(&apos;$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props&apos;)&quot;</span> <span class="cm-tagcm-bracket">/&gt;</span>
+
+  <span class="cm-comment">&lt;!-- TypeScript configurations go here --&gt;</span>
+  <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">PropertyGroup</span> <span class="cm-attribute">Condition</span>=<span class="cm-string">&quot;&apos;$(Configuration)&apos; == &apos;Debug&apos;&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">TypeScriptRemoveComments</span><span class="cm-tagcm-bracket">&gt;</span>false<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">TypeScriptRemoveComments</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">TypeScriptSourceMap</span><span class="cm-tagcm-bracket">&gt;</span>true<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">TypeScriptSourceMap</span><span class="cm-tagcm-bracket">&gt;</span>
+  <span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">PropertyGroup</span><span class="cm-tagcm-bracket">&gt;</span>
+  <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">PropertyGroup</span> <span class="cm-attribute">Condition</span>=<span class="cm-string">&quot;&apos;$(Configuration)&apos; == &apos;Release&apos;&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">TypeScriptRemoveComments</span><span class="cm-tagcm-bracket">&gt;</span>true<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">TypeScriptRemoveComments</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">TypeScriptSourceMap</span><span class="cm-tagcm-bracket">&gt;</span>false<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">TypeScriptSourceMap</span><span class="cm-tagcm-bracket">&gt;</span>
+  <span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">PropertyGroup</span><span class="cm-tagcm-bracket">&gt;</span>
+
+  <span class="cm-comment">&lt;!-- Include default targets at the bottom --&gt;</span>
+  <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">Import</span>
+      <span class="cm-attribute">Project</span>=<span class="cm-string">&quot;$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets&quot;</span>
+      <span class="cm-attribute">Condition</span>=<span class="cm-string">&quot;Exists(&apos;$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets&apos;)&quot;</span> <span class="cm-tagcm-bracket">/&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">Project</span><span class="cm-tagcm-bracket">&gt;</span>
+</code></pre>
+<p>More details about defining MSBuild compiler options: <a href="Compiler%20Options%20in%20MSBuild.md">Setting Compiler Options in MSBuild projects</a></p>
+<h1 id="nuget">NuGet</h1>
+<ul>
+<li>Right-Click -&gt; Manage NuGet Packages</li>
+<li>Search for <code>Microsoft.TypeScript.MSBuild</code></li>
+<li>Hit <code>Install</code></li>
+<li>When install is complete, rebuild!</li>
+</ul>
+<p>More details can be found at <a href="http://docs.nuget.org/Consume/Package-Manager-Dialog" target="_blank">Package Manager Dialog</a> and <a href="https://github.com/Microsoft/TypeScript/wiki/Nightly-drops#using-nuget-with-msbuild" target="_blank">using nightly builds with NuGet</a></p>
 
                                 
                                 </section>
@@ -794,12 +888,12 @@
 
             
                 
-                <a href="Advanced Types.html" class="navigation navigation-prev " aria-label="Previous page: 고급 타입">
+                <a href="Compiler Options in MSBuild.html" class="navigation navigation-prev " aria-label="Previous page: Compiler Options in MSBuild">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="Iterators and Generators.html" class="navigation navigation-next " aria-label="Next page: 이터러블과 제네레이터">
+                <a href="Nightly Builds.html" class="navigation navigation-next " aria-label="Next page: Nightly Builds">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -810,7 +904,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"심볼","level":"3.11","depth":1,"next":{"title":"이터러블과 제네레이터","level":"3.12","depth":1,"path":"pages/Iterators and Generators.md","ref":"pages/Iterators and Generators.md","articles":[]},"previous":{"title":"고급 타입","level":"3.10","depth":1,"path":"pages/Advanced Types.md","ref":"pages/Advanced Types.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Symbols.md","mtime":"2018-03-01T05:45:28.649Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-02T15:46:34.035Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Integrating with Build Tools","level":"5.4","depth":1,"next":{"title":"Nightly Builds","level":"5.5","depth":1,"path":"pages/Nightly Builds.md","ref":"pages/Nightly Builds.md","articles":[]},"previous":{"title":"Compiler Options in MSBuild","level":"5.3","depth":1,"path":"pages/Compiler Options in MSBuild.md","ref":"pages/Compiler Options in MSBuild.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Integrating with Build Tools.md","mtime":"2018-03-01T05:45:28.927Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-02T15:46:34.035Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
