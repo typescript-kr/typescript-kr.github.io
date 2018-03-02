@@ -51,5 +51,5 @@
 * [tsconfig.json](pages/tsconfig.json.md)
 * [Compiler Options](pages/Compiler Options.md)
 * [Compiler Options in MSBuild](pages/Compiler Options in MSBuild.md)
-* [Integrating with Build Tools](pages/Iterators and Generators.md)
+* [Integrating with Build Tools](pages/Integrating with Build Tools.md)
 * [Nightly Builds](pages/Nightly Builds.md)
