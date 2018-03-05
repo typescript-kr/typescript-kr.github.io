@@ -388,7 +388,7 @@ function fixed(name: string | null): string {
 특히 외부 함수에서 호출한 경우 중첩된 함수에 대한 모든 호출을 추적할 수 없기 때문입니다.  
 함수가 어디에서 호출되는지 알지 못하면 body가 실행될 때 `name`의 타입이 무엇인지 알 수 없습니다.
 
-# Type Aliases
+# 타입 별칭 (Type Aliases)
 
 타입 aliases는 타입의 새로운 이름을 생성합니다.  
 타입 aliases은 인터페이스와 유사하지만 원시 타입, 유니온, 튜플 및 기타 직접 작성해야하는 다른 타입의 이름을 지정할 수 있습니다.
@@ -535,7 +535,7 @@ function foo(x: number) {
 }
 ```
 
-바꾸어 말하면 `x`는 `2`와 비교할 때 `1`이어야하며 이것은 위 체크가 유효하지 않은 비교를 하고 있음을 의미합니다.
+바꿔 말하면 `x`는 `2`와 비교할 때 `1`이어야하며 이것은 위 체크가 유효하지 않은 비교를 하고 있음을 의미합니다.
 
 # 열거형 멤버 타입 (Enum Member Types)
 
@@ -543,16 +543,16 @@ function foo(x: number) {
 
 "싱글톤 타입"에 대해 이야기할 때 많은 시간동안, 많은 사용자가 "싱글톤 타입"과 "리터럴 타입"을 바꿔 사용하겠지만 숫자/문자열 리터럴 타입뿐만 아니라 열거형 멤버 타입을 모두 참조합니다
 
-# Discriminated Unions
+# 식별 유니온 (Discriminated Unions)
 
-You can combine singleton types, union types, type guards, and type aliases to build an advanced pattern called *discriminated unions*, also known as *tagged unions* or *algebraic data types*.
-Discriminated unions are useful in functional programming.
-Some languages automatically discriminate unions for you; TypeScript instead builds on JavaScript patterns as they exist today.
-There are three ingredients:
+싱글톤 타입, 유니온 타입, 타입 가드 및 타입 별칭을 결합하여 *discriminated unions*, *tagged unions* 또는 *대수의(algebraic) 데이터 타입*라는 고급 패턴을 빌드할 수 있습니다.  
+Discriminated unions은 함수형 프로그래밍에 유용합니다.  
+일부 언어는 자동으로 discriminate unions합니다; TypeScript는 현재 존재하는 JavaScript 패턴을 기반으로합니다.  
+세가지 구성요소가 있습니다:
 
-1. Types that have a common, singleton type property &mdash; the *discriminant*.
-2. A type alias that takes the union of those types &mdash; the *union*.
-3. Type guards on the common property.
+1. 공통적인 싱글톤 타입의 특성을 갖는 타입 &mdash; *discriminant*.
+2. 이러한 타입의 합집합을 취하는 타입 별칭 &mdash; *union*.
+3. 공통 프로퍼티에 타입 가드.
 
 ```ts
 interface Square {
@@ -570,18 +570,18 @@ interface Circle {
 }
 ```
 
-First we declare the interfaces we will union.
-Each interface has a `kind` property with a different string literal type.
-The `kind` property is called the *discriminant* or *tag*.
-The other properties are specific to each interface.
-Notice that the interfaces are currently unrelated.
-Let's put them into a union:
+먼저 결합할 인터페이스를 선언합니다.  
+각 인터페이스는 다른 문자열 리터럴 타입을 가진 `kind` 프로퍼티를 가지고 있습니다.  
+`kind` 프로퍼티는 *discriminant* 또는 *tag*라고 부릅니다.  
+다른 프로퍼티는 각 인터페이스에 고유합니다.  
+인터페이스는 현재 관련이 없습니다.  
+그것들을 결합하여 넣습니다:
 
 ```ts
 type Shape = Square | Rectangle | Circle;
 ```
 
-Now let's use the discriminated union:
+이제 식별 유니온을 사용합니다:
 
 ```ts
 function area(s: Shape) {
@@ -593,10 +593,10 @@ function area(s: Shape) {
 }
 ```
 
-## Exhaustiveness checking
+## 철저한 검사 (Exhaustiveness checking)
 
-We would like the compiler to tell us when we don't cover all variants of the discriminated union.
-For example, if we add `Triangle` to `Shape`, we need to update `area` as well:
+식별 유니온의 모든 변형을 다루지 않을 때 컴파일러에서 알려주면 좋겠습니다.  
+예를 들어 `Shape`에 `Triangle`을 추가하면 `area`도 업데이트해야합니다:
 
 ```ts
 type Shape = Square | Rectangle | Circle | Triangle;
@@ -606,15 +606,15 @@ function area(s: Shape) {
         case "rectangle": return s.height * s.width;
         case "circle": return Math.PI * s.radius ** 2;
     }
-    // should error here - we didn't handle case "triangle"
+    // 여기서 오류가 발생해야합니다 - "triangle"을 핸들링하지 않았습니다
 }
 ```
 
-There are two ways to do this.
-The first is to turn on `--strictNullChecks` and specify a return type:
+두 가지 방법이 있습니다.
+첫 번째는 `--strictNullChecks`를 켜고 반환 타입을 지정하는 것입니다 :
 
 ```ts
-function area(s: Shape): number { // error: returns number | undefined
+function area(s: Shape): number { // 오류: returns number | undefined
     switch (s.kind) {
         case "square": return s.size * s.size;
         case "rectangle": return s.height * s.width;
@@ -623,11 +623,11 @@ function area(s: Shape): number { // error: returns number | undefined
 }
 ```
 
-Because the `switch` is no longer exhaustive, TypeScript is aware that the function could sometimes return `undefined`.
-If you have an explicit return type `number`, then you will get an error that the return type is actually `number | undefined`.
-However, this method is quite subtle and, besides, `--strictNullChecks` does not always work with old code.
+`switch`가 더 이상 완전하지 않기 때문에 TypeScript는 그 함수가 때때로 `undefined`를 반환할 수 있다는 것을 알고 있습니다.  
+명시적 반환 타입 `number`를 가지고 있다면 반환 타입이 실제로 `number | undefined`라는 오류가 발생합니다.   
+그러나 이 방법은 매우 미묘하며 `--strictNullChecks`가 오래된 코드에서 항상 작동하는 것은 아닙니다.
 
-The second method uses the `never` type that the compiler uses to check for exhaustiveness:
+두 번째 방법은 컴파일러가 철저히 검사하기 위해 `never` 타입을 사용한다는 점입니다.
 
 ```ts
 function assertNever(x: never): never {
@@ -638,14 +638,14 @@ function area(s: Shape) {
         case "square": return s.size * s.size;
         case "rectangle": return s.height * s.width;
         case "circle": return Math.PI * s.radius ** 2;
-        default: return assertNever(s); // error here if there are missing cases
+        default: return assertNever(s); // 누락된 경우 여기에 오류가 발생합니다
     }
 }
 ```
 
-Here, `assertNever` checks that `s` is of type `never` &mdash; the type that's left after all other cases have been removed.
-If you forget a case, then `s` will have a real type and you will get a type error.
-This method requires you to define an extra function, but it's much more obvious when you forget it.
+여기서, `assertNever`는 `s`가 `never` 타입인지 확인합니다. &mdash; 다른 모든 case가 종료된 후에 남겨진 타입이 제거되었습니다.  
+case를 잊어버리면 `s`가 실제 타입을 가지게되고 타입 에러가 생깁니다.  
+이 방법을 사용하려면 추가 함수을 정의해야하지만 잊어버렸을 때 훨씬 더 분명해집니다.
 
 # Polymorphic `this` types
 
