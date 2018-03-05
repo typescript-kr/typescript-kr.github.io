@@ -742,42 +742,46 @@ let strings: string[] = pluck(person, ['name']); // 좋아요, string[]
 let personProps: keyof Person; // 'name' | 'age'
 ```
 
-`keyof Person` is completely interchangeable with `'name' | 'age'`.
-The difference is that if you add another property to `Person`, say `address: string`, then `keyof Person` will automatically update to be `'name' | 'age' | 'address'`.
-And you can use `keyof` in generic contexts like `pluck`, where you can't possibly know the property names ahead of time.
-That means the compiler will check that you pass the right set of property names to `pluck`:
+`keyof Person`은 `'name' | 'age'`와 완전히 호환됩니다.  
+차이점은 `Person`에 또 다른 프로퍼티인 `address: string`을 추가하면 `keyof Person`은 자동으로 `'name' | 'age' | 'address'`로 업데이트된다는 점이다.  
+그리고 `pluck`과 같은 일반적인 컨텍스트에서 `keyof`를 사용할 수 있으며 이때 프로퍼티 이름을 미리 알 수는 없습니다.  
+즉 컴파일러가 올바른 프로퍼티 이름을 `pluck`으로 전달했는지 확인합니다:
 
 ```ts
-pluck(person, ['age', 'unknown']); // error, 'unknown' is not in 'name' | 'age'
+pluck(person, ['age', 'unknown']); // 오류, 'unknown'은 'name' | 'age'에 없습니다
 ```
 
-The second operator is `T[K]`, the **indexed access operator**.
-Here, the type syntax reflects the expression syntax.
-That means that `person['name']` has the type `Person['name']` &mdash; which in our example is just `string`.
-However, just like index type queries, you can use `T[K]` in a generic context, which is where its real power comes to life.
-You just have to make sure that the type variable `K extends keyof T`.
-Here's another example with a function named `getProperty`.
+두 번째 연산자는 `T[K]`, **색인 접근 연산자(indexed access operator)** 입니다.
+
+여기서 타입의 구문은 표현식을 반영합니다.
+
+즉 `person['name']`은 `Person['name']`타입을 가집니다 &mdash;
+예제에서는 단지 `string`입니다.
+
+하지만 인덱스 타입 쿼리와 마찬가지로 `T[K]`를 사용하면 실질적으로 힘이 발휘되는 일반적인 컨텍스트에서 사용할 수 있습니다.  
+타입 변수 `K extends keyof T`를 확실히 만들어야합니다.  
+여기 `getProperty`라는 함수가 있는 또 다른 예제가 있습니다.
 
 ```ts
 function getProperty<T, K extends keyof T>(o: T, name: K): T[K] {
-    return o[name]; // o[name] is of type T[K]
+    return o[name]; // o[name]은 T[K] 타입입니다
 }
 ```
 
-In `getProperty`, `o: T` and `name: K`, so that means `o[name]: T[K]`.
-Once you return the `T[K]` result, the compiler will instantiate the actual type of the key, so the return type of `getProperty` will vary according to which property you request.
+`getProperty`에서, `o: T`와 `name: K`는 `o[name]: T[K]`를 의미합니다.  
+일단 `T[K]` 결과를 반환하면 컴파일러는 실제 키의 타입을 인스턴스화하므로 `getProperty`의 반환 타입은 사용자가 요청하는 프로퍼티에 따라 달라집니다.
 
 ```ts
 let name: string = getProperty(person, 'name');
 let age: number = getProperty(person, 'age');
-let unknown = getProperty(person, 'unknown'); // error, 'unknown' is not in 'name' | 'age'
+let unknown = getProperty(person, 'unknown'); // 오류, 'unknown'은 'name' | 'age'에 없습니다
 ```
 
-## Index types and string index signatures
+## 인덱스 타입과 문자열 인덱스 서명 (Index types and string index signatures)
 
-`keyof` and `T[K]` interact with string index signatures.
-If you have a type with a string index signature, `keyof T` will just be `string`.
-And `T[string]` is just the type of the index signature:
+`keyof`와 `T[K]`는 문자열 인덱스 서명과 상호 작용합니다.  
+문자열 인덱스 서명을 가진 타입을 가지고 있다면 `keyof T`는 단지`string`이 될 것입니다.  
+그리고`T[string]`은 인덱스 서명의 한 종류일뿐입니다:
 
 ```ts
 interface Map<T> {
@@ -789,7 +793,7 @@ let value: Map<number>['foo']; // number
 
 # Mapped types
 
-A common task is to take an existing type and make each of its properties optional:
+일반적인 작업은 기존 타입을 선택하고 각 프로퍼티를 선택적으로 만드는 것입니다:
 
 ```ts
 interface PersonPartial {
@@ -798,7 +802,7 @@ interface PersonPartial {
 }
 ```
 
-Or we might want a readonly version:
+또는 readonly를 원할 수도 있습니다.
 
 ```ts
 interface PersonReadonly {
@@ -807,10 +811,10 @@ interface PersonReadonly {
 }
 ```
 
-This happens often enough in Javascript that TypeScript provides a way to create new types based on old types &mdash; **mapped types**.
-In a mapped type, the new type transforms each property in the old type in the same way.
-For example, you can make all properties of a type `readonly` or optional.
-Here are a couple of examples:
+이러한 일은 Javascript에서 자주 발생하여 TypeScript는 이전 타입인 &mdash; **mapped types** 타입을 기반으로 새로운 타입을 만드는 방법을 제공합니다.  
+mapped type에서 새로운 타입은 이전 타입의 각 프로퍼티를 동일한 방식으로 변환합니다.  
+예를 들어 모든 프로퍼티 타입을 `readonly` 또는 선택적으로 설정할 수 있습니다.  
+여기 몇가지 예제가 있습니다:
 
 ```ts
 type Readonly<T> = {
@@ -821,14 +825,14 @@ type Partial<T> = {
 }
 ```
 
-And to use it:
+그리고 그것을 사용하려면:
 
 ```ts
 type PersonPartial = Partial<Person>;
 type ReadonlyPerson = Readonly<Person>;
 ```
 
-Let's take a look at the simplest mapped type and its parts:
+가장 간단한 mapped type과 해당 부분을 살펴보겠습니다:
 
 ```ts
 type Keys = 'option1' | 'option2';
