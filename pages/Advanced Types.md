@@ -543,7 +543,7 @@ function foo(x: number) {
 
 "싱글톤 타입"에 대해 이야기할 때 많은 시간동안, 많은 사용자가 "싱글톤 타입"과 "리터럴 타입"을 바꿔 사용하겠지만 숫자/문자열 리터럴 타입뿐만 아니라 열거형 멤버 타입을 모두 참조합니다
 
-# 식별 유니온 (Discriminated Unions)
+# 공용체 식별 (Discriminated Unions)
 
 싱글톤 타입, 유니온 타입, 타입 가드 및 타입 별칭을 결합하여 *discriminated unions*, *tagged unions* 또는 *대수의(algebraic) 데이터 타입*라는 고급 패턴을 빌드할 수 있습니다.  
 Discriminated unions은 함수형 프로그래밍에 유용합니다.  
@@ -643,16 +643,16 @@ function area(s: Shape) {
 }
 ```
 
-여기서, `assertNever`는 `s`가 `never` 타입인지 확인합니다. &mdash; 다른 모든 case가 종료된 후에 남겨진 타입이 제거되었습니다.  
+여기서, `assertNever`는 `s`가 `never` 타입인지 확인합니다 &mdash; 다른 모든 case가 종료된 후에 남겨진 타입이 제거되었습니다.  
 case를 잊어버리면 `s`가 실제 타입을 가지게되고 타입 에러가 생깁니다.  
 이 방법을 사용하려면 추가 함수을 정의해야하지만 잊어버렸을 때 훨씬 더 분명해집니다.
 
-# Polymorphic `this` types
+# 다형성의 `this` 타입 (Polymorphic `this` types)
 
-A polymorphic `this` type represents a type that is the *subtype* of the containing class or interface.
-This is called *F*-bounded polymorphism.
-This makes hierarchical fluent interfaces much easier to express, for example.
-Take a simple calculator that returns `this` after each operation:
+다형성의`this` 타입은 포함된 클래스나 인터페이스의 *서브타입* 타입을 나타냅니다.  
+이것을 *F*-바운드 다형성이라고 합니다.
+따라서 계층적으로 완만한 인터페이스를 훨씬 쉽게 표현할 수 있습니다.  
+각각의 연산자에 `this`를 반환하는 간단한 계산기가 있습니다:
 
 ```ts
 class BasicCalculator {
@@ -668,7 +668,7 @@ class BasicCalculator {
         this.value *= operand;
         return this;
     }
-    // ... other operations go here ...
+    // ... 다른 연산은 여기에 있습니다 ...
 }
 
 let v = new BasicCalculator(2)
@@ -677,7 +677,7 @@ let v = new BasicCalculator(2)
             .currentValue();
 ```
 
-Since the class uses `this` types, you can extend it and the new class can use the old methods with no changes.
+클래스는 `this` 타입을 사용하기 때문에 확장할 수 있으며 새로운 클래스는 변경없이 이전 메소드를 사용할 수 있습니다.
 
 ```ts
 class ScientificCalculator extends BasicCalculator {
@@ -688,7 +688,7 @@ class ScientificCalculator extends BasicCalculator {
         this.value = Math.sin(this.value);
         return this;
     }
-    // ... other operations go here ...
+    // ... 다른 연산은 여기에 있습니다 ...
 }
 
 let v = new ScientificCalculator(2)
@@ -698,14 +698,14 @@ let v = new ScientificCalculator(2)
         .currentValue();
 ```
 
-Without `this` types, `ScientificCalculator` would not have been able to extend `BasicCalculator` and keep the fluent interface.
-`multiply` would have returned `BasicCalculator`, which doesn't have the `sin` method.
-However, with `this` types, `multiply` returns `this`, which is `ScientificCalculator` here.
+`this` 타입이 없었다면 `ScientificCalculator`는 `BasicCalculator`를 확장하지도 못하고 완만한 인터페이스를 유지할 수 없었을 것입니다.  
+`multiply`는 `sin` 메소드가없는`BasicCalculator`를 반환했을 것입니다.  
+그러나 `this` 타입의 경우 `multiply`는 `this`를 리턴합니다. `this`는 `ScientificCalculator`입니다.
 
-# Index types
+# 인덱스 타입 (Index types)
 
-With index types, you can get the compiler to check code that uses dynamic property names.
-For example, a common Javascript pattern is to pick a subset of properties from an object:
+인덱스 타입을 사용하면 동적 프로퍼티 이름을 사용하는 코드를 컴파일러가 검사하도록 할 수 있습니다.
+예를 들어 일반적인 Javascript 패턴은 객체에서 프로퍼티의 하위 집합을 선택하는 것입니다:
 
 ```js
 function pluck(o, names) {
@@ -713,7 +713,7 @@ function pluck(o, names) {
 }
 ```
 
-Here's how you would write and use this function in TypeScript, using the **index type query** and **indexed access** operators:
+다음은 **인덱스 타입 쿼리** 및 **인덱스 접근** 연산자를 사용하여 TypeScript에서 이 함수를 작성하고 사용하는 방법입니다.
 
 ```ts
 function pluck<T, K extends keyof T>(o: T, names: K[]): T[K][] {
@@ -728,14 +728,15 @@ let person: Person = {
     name: 'Jarid',
     age: 35
 };
-let strings: string[] = pluck(person, ['name']); // ok, string[]
+let strings: string[] = pluck(person, ['name']); // 좋아요, string[]
 ```
 
-The compiler checks that `name` is actually a property on `Person`.
-The example introduces a couple of new type operators.
-First is `keyof T`, the **index type query operator**.
-For any type `T`, `keyof T` is the union of known, public property names of `T`.
-For example:
+컴파일러는 `name`이 실제로 `Person`의 프로퍼티인지 확인합니다.  
+이 예제는 몇 가지 새로운 타입의 연산자를 소개합니다.
+첫 번째는 `keyof T`으로 **인덱스 타입 쿼리 연산자**입니다.  
+어떤 타입의 `T`에 대해서 `keyof T`는 `T`의 알려진 public 프로퍼티 이름들의 공용체입니다.
+
+예를 들어:
 
 ```ts
 let personProps: keyof Person; // 'name' | 'age'
