@@ -44,7 +44,7 @@ jim.log();
 # 유니온 타입 (Union Types)
 
 유니온 타입은 교차 타입과 밀접한 관련이 있지만 매우 다르게 사용됩니다.  
-때로는 매개 변수가`number` 또는`string`이 될 것으로 기대하는 라이브러리를 실행하게됩니다.
+때로는 매개 변수가 `number` 또는`string`이 될 것으로 기대하는 라이브러리를 실행하게 됩니다.
 
 예를 들어 다음과 같은 함수을 수행하십시오:
 
@@ -78,9 +78,9 @@ let indentedString = padLeft("Hello world", true); // 컴파일 타임에는 통
 이것이 훨씬 더 명백하기는 하지만 또 약간 지나치기도 합니다.  
 `padLeft`의 원래 버전에 대한 좋은 점 중 하나는 원시 값을 전달할 수 있다는 것입니다.  
 이는 사용법이 간단하고 간결하다는 것을 의미했습니다.  
-이 새로운 접근법은 이미 다른 곳에있는 함수를 사용하려는 경우에도 도움이되지 않습니다.
+이 새로운 접근법은 이미 다른 곳에 있는 함수를 사용하려는 경우에도 도움이 되지 않습니다.
 
-`any` 대신 `padding` 매개변수에 *union type* 을 사용할 수 있습니다 :
+`any` 대신 `padding` 매개변수에 *union type* 을 사용할 수 있습니다:
 
 ```ts
 /**
@@ -121,12 +121,12 @@ pet.swim();    // 오류
 ```
 
 유니온 타입이 좀 까다로울 수도 있지만 익숙해지는 데는 약간의 직관이 필요할 뿐입니다.  
-어떤 값에 `A | B` 타입이 있다면 `A` *와* `B` 모두 가지고있는 멤버가 있음을 *확실히* 알고 있습니다.  
+어떠한 값에 `A | B` 타입이 있다면 `A` *와* `B` 모두 가지고 있는 멤버가 있음을 *확실히* 알고 있습니다.  
 이 예제에서 `Bird`는 `fly`라는 멤버를 가지고 있습니다.  
 하지만 `Bird | Fish`의 변수 타입이 `fly` 메서드로 작용하고 있는지는 알 수 없습니다.  
 런타임에 변수가 `Fish` 인경우 `pet.fly()` 호출은 실패합니다.
 
-# 타입 가드와 차별 타입 (Type Guards and Differentiating Types)
+# 타입 가드와 차별된 타입 (Type Guards and Differentiating Types)
 
 유니온 타입은 값을 취할 수있는 타입으로 겹칠 수있는 상황을 모델링 할 때 유용합니다.  
 `Fish`를 가지고 있는지에 대해 구체적으로 알아야 할 필요가 있을 때 무슨 일이 일어날까요?  
@@ -145,7 +145,7 @@ else if (pet.fly) {
 }
 ```
 
-동일한 코드가 작동하도록하려면 타입 표명을 사용해야합니다 :
+동일한 코드가 작동하도록 하려면 타입 표명을 사용해야 합니다 :
 
 ```ts
 let pet = getSmallPet();
@@ -160,10 +160,10 @@ else {
 
 ## 사용자 정의 타입 가드 (User-Defined Type Guards)
 
-타입 표명(type assertions)을 여러번 사용해야 했다는 것에 주목하세요.  
-일단 이 검사을 실시하면 각 지점에서 `pet`의 타입를 알 수 있습니다.
+타입 표명(type assertions)을 여러 번 사용해야 했다는 것에 주목하세요.  
+일단 이 검사를 실시하면 각 지점에서 `pet`의 타입를 알 수 있습니다.
 
-그런 일이 있을때 TypeScript에는 *type guard*라는 것이 있습니다.  
+그런 일이 있을 때 TypeScript에는 *type guard*라는 것이 있습니다.  
 타입 가드(type guard)는 일부 스코프에서 타입을 보장하는 런타임 검사를 수행하는 표현식입니다.  
 타입 가드를 정의하려면 반환 타입이 *타입 명제 (type predicate)* 인 함수를 정의하기만 하면 됩니다 :
 
@@ -173,8 +173,8 @@ function isFish(pet: Fish | Bird): pet is Fish {
 }
 ```
 
-`pet is Fish '는 이 예제에서 타입 명제입니다.  
-명제는 `parameterName is Type` 형태을 취합니다, 여기서 `parameterName`은 현재 함수 서명의 매개 변수 이름이어야합니다.
+`pet is Fish`는 이 예제에서 타입 명제입니다.  
+명제는 `parameterName is Type` 형태을 취합니다, 여기서 `parameterName`은 현재 함수 서명의 매개 변수 이름이어야 합니다.
 
 `IsFish`가 일부 변수와 함께 호출될 때 원래 타입이 호환 가능하다면 TypeScript는 그 변수를 특정 타입으로 *제한*할 것입니다.
 
@@ -189,8 +189,8 @@ else {
 }
 ```
 
-TypeScript는 `pet`이 `if` 스코프의 `Fish`라는 것을 알고있을뿐만 아니라,  
-`else` 스코프에서는 `Fish`가 *없다는 것을* 알기 때문에 `Bird`가 있어야합니다.
+TypeScript는 `pet`이 `if` 스코프의 `Fish`라는 것을 알고 있을 뿐만 아니라,  
+`else` 스코프에서는 `Fish`가 *없다는 것을* 알기 때문에 `Bird`가 있어야 합니다.
 
 ## `typeof` 타입 가드 (`typeof` type guards)
 
@@ -288,12 +288,12 @@ if (padder instanceof StringPadder) {
 
 # Nullable types
 
-TypeScript는 `null`과 `undefined` 값을 가지는 두가지 특별한 타입이 있습니다.  
+TypeScript는 `null`과 `undefined` 값을 가지는 두 가지 특별한 타입이 있습니다.  
 이것을 [기본 타입](./Basic Types.md) 섹션에서 간략하게 언급했었습니다.  
 기본적으로 타입 체커는 `null`과 `undefined`를 모든 항목에 할당 가능한 것으로 간주합니다.  
 사실상 `null` 과 `undefined`는 모든 타입의 유효한 값입니다.  
 즉 방지하려는 경우조차도 any 타입에 할당되지 *않도록* 할 수 없습니다.  
-`null`의 발명가 토니 호어는 이것을 ["10억달러의 실수"](https://en.wikipedia.org/wiki/Null_pointer#History)라고 부릅니다.
+`null`의 발명가 토니 호어는 이것을 ["10억 달러의 실수"](https://en.wikipedia.org/wiki/Null_pointer#History)라고 부릅니다.
 
 `--strictNullChecks`에서 다음과 같이 수정할 수 있습니다: 변수를 선언할 때 자동으로 `null` 또는 `undefined`가 포함되지 않습니다.  
 유니온 타입을 사용하여 명시적으로 포함할 수 있습니다:
@@ -341,7 +341,7 @@ c.b = null; // 오류, 'null'은 'number | undefined'에 할당할 수 없습니
 
 ## 타입 가드와 타입 표명 (Type guards and type assertions)
 
-nullable 타입은 유니온으로 구현되기때문에 타입 가드를 사용하여 `null`을 제거해야합니다.  
+nullable 타입은 유니온으로 구현되기 때문에 타입 가드를 사용하여 `null`을 제거해야 합니다.  
 다행히 JavaScript에서 작성하는 코드는 다음과 같습니다:
 
 ```ts
@@ -363,7 +363,7 @@ function f(sn: string | null): string {
 }
 ```
 
-컴파일러가 `null` 또는`undefined`를 제거 할 수 없는 경우 타입 표명 연산자를 사용하여 수동으로 제거할 수 있습니다.  
+컴파일러가 `null` 또는 `undefined`를 제거 할 수 없는 경우 타입 표명 연산자를 사용하여 수동으로 제거할 수 있습니다.  
 구문은 후위에 `!` 입니다: `identifier!`는 `identifier`의 타입 `null`과 `undefined`를 제거합니다:
 
 ```ts
@@ -388,10 +388,10 @@ function fixed(name: string | null): string {
 특히 외부 함수에서 호출한 경우 중첩된 함수에 대한 모든 호출을 추적할 수 없기 때문입니다.  
 함수가 어디에서 호출되는지 알지 못하면 body가 실행될 때 `name`의 타입이 무엇인지 알 수 없습니다.
 
-# Type Aliases
+# 타입 별칭 (Type Aliases)
 
 타입 aliases는 타입의 새로운 이름을 생성합니다.  
-타입 aliases은 인터페이스와 유사하지만 원시 타입, 유니온, 튜플 및 기타 직접 작성해야하는 다른 타입의 이름을 지정할 수 있습니다.
+타입 aliases은 인터페이스와 유사하지만 원시 타입, 유니온, 튜플 및 기타 직접 작성해야 하는 다른 타입의 이름을 지정할 수 있습니다.
 
 ```ts
 type Name = string;
@@ -408,7 +408,7 @@ function getName(n: NameOrResolver): Name {
 ```
 
 Aliasing(Type Aliases)은 실제로 새로운 타입을 생성하지는 않습니다 - 그 타입을 참조하기 위해 새로운 *이름*을 생성합니다.  
-원시값을 Aliasing 하는 것은 문서의 형태로 사용될 수 있지만 굉장히 유용하지 않습니다.
+원시 값을 Aliasing 하는 것은 문서의 형태로 사용될 수 있지만 굉장히 유용하지 않습니다.
 
 인터페이스와 마찬가지로 타입 aliases도 일반적일 수 있습니다 - aliases 선언의 오른쪽에 타입 매개 변수를 추가하여 사용하면 됩니다:
 
@@ -450,7 +450,7 @@ type Yikes = Array<Yikes>; // 오류
 
 ## Interfaces vs. Type Aliases
 
-앞서 언급했듯이, 타입 type aliases는 인터페이스와 같은 역할을 할 수 있지만 몇가지 미묘한 차이점이 있습니다.
+앞서 언급했듯이, 타입 type aliases는 인터페이스와 같은 역할을 할 수 있지만 몇 가지 미묘한 차이점이 있습니다.
 
 한가지 다른 점은 인터페이스가 어디에서나 사용되는 새로운 이름을 만들어 낸다는 것입니다.  
 타입 aliases는 새로운 이름을 만들지 않습니다&mdash; 예를 들어 오류 메시지는 alias 이름을 사용하지 않습니다.  
@@ -465,9 +465,9 @@ declare function aliased(arg: Alias): Alias;
 declare function interfaced(arg: Interface): Interface;
 ```
 
-두번째 더 중요한 차이점은 타입 aliases를 다음에서 확장하거나 구현할 수 없다는 것입니다 (다른 타입을 확장/구현할 수도 없습니다).  
-왜냐하면 [소프트웨어의 이상적인 특성이 확장에 열려있다](https://en.wikipedia.org/wiki/Open/closed_principle) 가능한 경우 타입 alias에 대한 인터페이스를 사용해야합니다.  
-다른 한편으로는, 인터페이스로 일부 형태를 표현할 수 없고 유니온이나 튜플 타입을 사용해야하는 경우 타입 aliases을 사용하는 것이 보통 좋습니다.
+두 번째 더 중요한 차이점은 타입 aliases를 다음에서 확장하거나 구현할 수 없다는 것입니다 (다른 타입을 확장/구현할 수도 없습니다).  
+왜냐하면 [소프트웨어의 이상적인 특성이 확장에 열려있다](https://en.wikipedia.org/wiki/Open/closed_principle) 가능한 경우 타입 alias에 대한 인터페이스를 사용해야 합니다.  
+다른 한편으로는, 인터페이스로 일부 형태를 표현할 수 없고 유니온이나 튜플 타입을 사용해야 하는 경우 타입 aliases을 사용하는 것이 보통 좋습니다.
 
 # 문자열 리터럴 타입 (String Literal Types)
 
@@ -497,7 +497,7 @@ button.animate(0, 0, "ease-in");
 button.animate(0, 0, "uneasy"); // 오류: 여기서 "uneasy"가 허용되지 않습니다.
 ```
 
-허용되는 세 문자열 중 아무 것이나 전달할 수 있지만 다른 문자열은 오류를 제공합니다.
+허용되는 세 문자열 중 아무거나 전달할 수 있지만 다른 문자열은 오류를 제공합니다.
 
 ```text
 '"uneasy"' 타입의 인수를 타입의 매개 변수에 지정할 수 없습니다. '"ease-in" | "ease-out" | "ease-in-out"'
@@ -524,7 +524,7 @@ function rollDie(): 1 | 2 | 3 | 4 | 5 | 6 {
 }
 ```
 
-이들은 명시 적으로 작성되는 경우는 거의 없으며 범위를 좁히는 것이 버그를 잡는 데 유용할 수 있습니다:
+이들은 명시적으로 작성되는 경우는 거의 없으며 범위를 좁히는 것이 버그를 잡는 데 유용할 수 있습니다:
 
 ```ts
 function foo(x: number) {
@@ -535,24 +535,24 @@ function foo(x: number) {
 }
 ```
 
-바꾸어 말하면 `x`는 `2`와 비교할 때 `1`이어야하며 이것은 위 체크가 유효하지 않은 비교를 하고 있음을 의미합니다.
+바꿔 말하면 `x`는 `2`와 비교할 때 `1`이어야 하며 이것은 위 체크가 유효하지 않은 비교를 하고 있음을 의미합니다.
 
 # 열거형 멤버 타입 (Enum Member Types)
 
 [열거형 섹션](./Enums.md#union-enums-and-enum-member-types)에서 언급했듯이 열거형 멤버는 모든 멤버가 리터럴로 초기화될 때 타입을 가집니다.
 
-"싱글톤 타입"에 대해 이야기할 때 많은 시간동안, 많은 사용자가 "싱글톤 타입"과 "리터럴 타입"을 바꿔 사용하겠지만 숫자/문자열 리터럴 타입뿐만 아니라 열거형 멤버 타입을 모두 참조합니다
+"싱글톤 타입"에 대해 이야기할 때 많은 시간 동안, 많은 사용자가 "싱글톤 타입"과 "리터럴 타입"을 바꿔 사용하겠지만 숫자/문자열 리터럴 타입뿐만 아니라 열거형 멤버 타입을 모두 참조합니다
 
-# Discriminated Unions
+# 공용체 식별 (Discriminated Unions)
 
-You can combine singleton types, union types, type guards, and type aliases to build an advanced pattern called *discriminated unions*, also known as *tagged unions* or *algebraic data types*.
-Discriminated unions are useful in functional programming.
-Some languages automatically discriminate unions for you; TypeScript instead builds on JavaScript patterns as they exist today.
-There are three ingredients:
+싱글톤 타입, 유니온 타입, 타입 가드 및 타입 별칭을 결합하여 *discriminated unions*, *tagged unions* 또는 *대수의(algebraic) 데이터 타입*라는 고급 패턴을 빌드할 수 있습니다.  
+Discriminated unions은 함수형 프로그래밍에 유용합니다.  
+일부 언어는 자동으로 discriminate unions합니다; TypeScript는 현재 존재하는 JavaScript 패턴을 기반으로 합니다.  
+세가지 구성요소가 있습니다:
 
-1. Types that have a common, singleton type property &mdash; the *discriminant*.
-2. A type alias that takes the union of those types &mdash; the *union*.
-3. Type guards on the common property.
+1. 공통적인 싱글톤 타입의 특성을 갖는 타입 &mdash; *discriminant*.
+2. 이러한 타입의 합집합을 취하는 타입 별칭 &mdash; *union*.
+3. 공통 프로퍼티에 타입 가드.
 
 ```ts
 interface Square {
@@ -570,18 +570,18 @@ interface Circle {
 }
 ```
 
-First we declare the interfaces we will union.
-Each interface has a `kind` property with a different string literal type.
-The `kind` property is called the *discriminant* or *tag*.
-The other properties are specific to each interface.
-Notice that the interfaces are currently unrelated.
-Let's put them into a union:
+먼저 결합할 인터페이스를 선언합니다.  
+각 인터페이스는 다른 문자열 리터럴 타입을 가진 `kind` 프로퍼티를 가지고 있습니다.  
+`kind` 프로퍼티는 *discriminant* 또는 *tag*라고 부릅니다.  
+다른 프로퍼티는 각 인터페이스에 고유합니다.  
+인터페이스는 현재 관련이 없습니다.  
+그것들을 결합하여 넣습니다:
 
 ```ts
 type Shape = Square | Rectangle | Circle;
 ```
 
-Now let's use the discriminated union:
+이제 식별 유니온을 사용합니다:
 
 ```ts
 function area(s: Shape) {
@@ -593,10 +593,10 @@ function area(s: Shape) {
 }
 ```
 
-## Exhaustiveness checking
+## 철저한 검사 (Exhaustiveness checking)
 
-We would like the compiler to tell us when we don't cover all variants of the discriminated union.
-For example, if we add `Triangle` to `Shape`, we need to update `area` as well:
+식별 유니온의 모든 변형을 다루지 않을 때 컴파일러에서 알려주면 좋겠습니다.  
+예를 들어 `Shape`에 `Triangle`을 추가하면 `area`도 업데이트해야 합니다:
 
 ```ts
 type Shape = Square | Rectangle | Circle | Triangle;
@@ -606,15 +606,15 @@ function area(s: Shape) {
         case "rectangle": return s.height * s.width;
         case "circle": return Math.PI * s.radius ** 2;
     }
-    // should error here - we didn't handle case "triangle"
+    // 여기서 오류가 발생해야합니다 - "triangle"을 핸들링하지 않았습니다
 }
 ```
 
-There are two ways to do this.
-The first is to turn on `--strictNullChecks` and specify a return type:
+두 가지 방법이 있습니다.
+첫 번째는 `--strictNullChecks`를 켜고 반환 타입을 지정하는 것입니다 :
 
 ```ts
-function area(s: Shape): number { // error: returns number | undefined
+function area(s: Shape): number { // 오류: returns number | undefined
     switch (s.kind) {
         case "square": return s.size * s.size;
         case "rectangle": return s.height * s.width;
@@ -623,11 +623,11 @@ function area(s: Shape): number { // error: returns number | undefined
 }
 ```
 
-Because the `switch` is no longer exhaustive, TypeScript is aware that the function could sometimes return `undefined`.
-If you have an explicit return type `number`, then you will get an error that the return type is actually `number | undefined`.
-However, this method is quite subtle and, besides, `--strictNullChecks` does not always work with old code.
+`switch`가 더 이상 완전하지 않기 때문에 TypeScript는 그 함수가 때때로 `undefined`를 반환할 수 있다는 것을 알고 있습니다.  
+명시적 반환 타입 `number`를 가지고 있다면 반환 타입이 실제로 `number | undefined`라는 오류가 발생합니다.   
+그러나 이 방법은 매우 미묘하며 `--strictNullChecks`가 오래된 코드에서 항상 작동하는 것은 아닙니다.
 
-The second method uses the `never` type that the compiler uses to check for exhaustiveness:
+두 번째 방법은 컴파일러가 철저히 검사하기 위해 `never` 타입을 사용한다는 점입니다.
 
 ```ts
 function assertNever(x: never): never {
@@ -638,21 +638,21 @@ function area(s: Shape) {
         case "square": return s.size * s.size;
         case "rectangle": return s.height * s.width;
         case "circle": return Math.PI * s.radius ** 2;
-        default: return assertNever(s); // error here if there are missing cases
+        default: return assertNever(s); // 누락된 경우 여기에 오류가 발생합니다
     }
 }
 ```
 
-Here, `assertNever` checks that `s` is of type `never` &mdash; the type that's left after all other cases have been removed.
-If you forget a case, then `s` will have a real type and you will get a type error.
-This method requires you to define an extra function, but it's much more obvious when you forget it.
+여기서, `assertNever`는 `s`가 `never` 타입인지 확인합니다 &mdash; 다른 모든 case가 종료된 후에 남겨진 타입이 제거되었습니다.  
+case를 잊어버리면 `s`가 실제 타입을 가지게되고 타입 에러가 생깁니다.  
+이 방법을 사용하려면 추가 함수을 정의해야 하지만 잊어버렸을 때 훨씬 더 분명해집니다.
 
-# Polymorphic `this` types
+# 다형성의 `this` 타입 (Polymorphic `this` types)
 
-A polymorphic `this` type represents a type that is the *subtype* of the containing class or interface.
-This is called *F*-bounded polymorphism.
-This makes hierarchical fluent interfaces much easier to express, for example.
-Take a simple calculator that returns `this` after each operation:
+다형성의`this` 타입은 포함된 클래스나 인터페이스의 *서브타입* 타입을 나타냅니다.  
+이것을 *F*-바운드 다형성이라고 합니다.
+따라서 계층적으로 완만한 인터페이스를 훨씬 쉽게 표현할 수 있습니다.  
+각각의 연산자에 `this`를 반환하는 간단한 계산기가 있습니다:
 
 ```ts
 class BasicCalculator {
@@ -668,7 +668,7 @@ class BasicCalculator {
         this.value *= operand;
         return this;
     }
-    // ... other operations go here ...
+    // ... 다른 연산은 여기에 있습니다 ...
 }
 
 let v = new BasicCalculator(2)
@@ -677,7 +677,7 @@ let v = new BasicCalculator(2)
             .currentValue();
 ```
 
-Since the class uses `this` types, you can extend it and the new class can use the old methods with no changes.
+클래스는 `this` 타입을 사용하기 때문에 확장할 수 있으며 새로운 클래스는 변경 없이 이전 메소드를 사용할 수 있습니다.
 
 ```ts
 class ScientificCalculator extends BasicCalculator {
@@ -688,7 +688,7 @@ class ScientificCalculator extends BasicCalculator {
         this.value = Math.sin(this.value);
         return this;
     }
-    // ... other operations go here ...
+    // ... 다른 연산은 여기에 있습니다 ...
 }
 
 let v = new ScientificCalculator(2)
@@ -698,14 +698,14 @@ let v = new ScientificCalculator(2)
         .currentValue();
 ```
 
-Without `this` types, `ScientificCalculator` would not have been able to extend `BasicCalculator` and keep the fluent interface.
-`multiply` would have returned `BasicCalculator`, which doesn't have the `sin` method.
-However, with `this` types, `multiply` returns `this`, which is `ScientificCalculator` here.
+`this` 타입이 없었다면 `ScientificCalculator`는 `BasicCalculator`를 확장하지도 못하고 완만한 인터페이스를 유지할 수 없었을 것입니다.  
+`multiply`는 `sin` 메서드가 없는`BasicCalculator`를 반환했을 것입니다.  
+그러나 `this` 타입의 경우 `multiply`는 `this`를 리턴합니다. `this`는 `ScientificCalculator`입니다.
 
-# Index types
+# 인덱스 타입 (Index types)
 
-With index types, you can get the compiler to check code that uses dynamic property names.
-For example, a common Javascript pattern is to pick a subset of properties from an object:
+인덱스 타입을 사용하면 동적 프로퍼티 이름을 사용하는 코드를 컴파일러가 검사하도록 할 수 있습니다.
+예를 들어 일반적인 Javascript 패턴은 객체에서 프로퍼티의 하위 집합을 선택하는 것입니다:
 
 ```js
 function pluck(o, names) {
@@ -713,7 +713,7 @@ function pluck(o, names) {
 }
 ```
 
-Here's how you would write and use this function in TypeScript, using the **index type query** and **indexed access** operators:
+다음은 **인덱스 타입 쿼리** 및 **인덱스 접근** 연산자를 사용하여 TypeScript에서 이 함수를 작성하고 사용하는 방법입니다.
 
 ```ts
 function pluck<T, K extends keyof T>(o: T, names: K[]): T[K][] {
@@ -728,55 +728,60 @@ let person: Person = {
     name: 'Jarid',
     age: 35
 };
-let strings: string[] = pluck(person, ['name']); // ok, string[]
+let strings: string[] = pluck(person, ['name']); // 좋아요, string[]
 ```
 
-The compiler checks that `name` is actually a property on `Person`.
-The example introduces a couple of new type operators.
-First is `keyof T`, the **index type query operator**.
-For any type `T`, `keyof T` is the union of known, public property names of `T`.
-For example:
+컴파일러는 `name`이 실제로 `Person`의 프로퍼티인지 확인합니다.  
+이 예제는 몇 가지 새로운 타입의 연산자를 소개합니다.
+첫 번째는 `keyof T`으로 **인덱스 타입 쿼리 연산자**입니다.  
+어떤 타입의 `T`에 대해서 `keyof T`는 `T`의 알려진 public 프로퍼티 이름들의 공용체입니다.
+
+예를 들어:
 
 ```ts
 let personProps: keyof Person; // 'name' | 'age'
 ```
 
-`keyof Person` is completely interchangeable with `'name' | 'age'`.
-The difference is that if you add another property to `Person`, say `address: string`, then `keyof Person` will automatically update to be `'name' | 'age' | 'address'`.
-And you can use `keyof` in generic contexts like `pluck`, where you can't possibly know the property names ahead of time.
-That means the compiler will check that you pass the right set of property names to `pluck`:
+`keyof Person`은 `'name' | 'age'`와 완전히 호환됩니다.  
+차이점은 `Person`에 또 다른 프로퍼티인 `address: string`을 추가하면 `keyof Person`은 자동으로 `'name' | 'age' | 'address'`로 업데이트된다는 점이다.  
+그리고 `pluck`과 같은 일반적인 컨텍스트에서 `keyof`를 사용할 수 있으며 이때 프로퍼티 이름을 미리 알 수는 없습니다.  
+즉 컴파일러가 올바른 프로퍼티 이름을 `pluck`으로 전달했는지 확인합니다:
 
 ```ts
-pluck(person, ['age', 'unknown']); // error, 'unknown' is not in 'name' | 'age'
+pluck(person, ['age', 'unknown']); // 오류, 'unknown'은 'name' | 'age'에 없습니다
 ```
 
-The second operator is `T[K]`, the **indexed access operator**.
-Here, the type syntax reflects the expression syntax.
-That means that `person['name']` has the type `Person['name']` &mdash; which in our example is just `string`.
-However, just like index type queries, you can use `T[K]` in a generic context, which is where its real power comes to life.
-You just have to make sure that the type variable `K extends keyof T`.
-Here's another example with a function named `getProperty`.
+두 번째 연산자는 `T[K]`, **색인 접근 연산자(indexed access operator)** 입니다.
+
+여기서 타입의 구문은 표현식을 반영합니다.
+
+즉 `person['name']`은 `Person['name']`타입을 가집니다 &mdash;
+예제에서는 단지 `string`입니다.
+
+하지만 인덱스 타입 쿼리와 마찬가지로 `T[K]`를 사용하면 실질적으로 힘이 발휘되는 일반적인 컨텍스트에서 사용할 수 있습니다.  
+타입 변수 `K extends keyof T`를 확실히 만들어야 합니다.  
+여기 `getProperty`라는 함수가 있는 또 다른 예제가 있습니다.
 
 ```ts
 function getProperty<T, K extends keyof T>(o: T, name: K): T[K] {
-    return o[name]; // o[name] is of type T[K]
+    return o[name]; // o[name]은 T[K] 타입입니다
 }
 ```
 
-In `getProperty`, `o: T` and `name: K`, so that means `o[name]: T[K]`.
-Once you return the `T[K]` result, the compiler will instantiate the actual type of the key, so the return type of `getProperty` will vary according to which property you request.
+`getProperty`에서, `o: T`와 `name: K`는 `o[name]: T[K]`를 의미합니다.  
+일단 `T[K]` 결과를 반환하면 컴파일러는 실제 키의 타입을 인스턴스화하므로 `getProperty`의 반환 타입은 사용자가 요청하는 프로퍼티에 따라 달라집니다.
 
 ```ts
 let name: string = getProperty(person, 'name');
 let age: number = getProperty(person, 'age');
-let unknown = getProperty(person, 'unknown'); // error, 'unknown' is not in 'name' | 'age'
+let unknown = getProperty(person, 'unknown'); // 오류, 'unknown'은 'name' | 'age'에 없습니다
 ```
 
-## Index types and string index signatures
+## 인덱스 타입과 문자열 인덱스 서명 (Index types and string index signatures)
 
-`keyof` and `T[K]` interact with string index signatures.
-If you have a type with a string index signature, `keyof T` will just be `string`.
-And `T[string]` is just the type of the index signature:
+`keyof`와 `T[K]`는 문자열 인덱스 서명과 상호 작용합니다.  
+문자열 인덱스 서명을 가진 타입을 가지고 있다면 `keyof T`는 단지`string`이 될 것입니다.  
+그리고 `T[string]`은 인덱스 서명의 한가지 종류일뿐입니다:
 
 ```ts
 interface Map<T> {
@@ -788,7 +793,7 @@ let value: Map<number>['foo']; // number
 
 # Mapped types
 
-A common task is to take an existing type and make each of its properties optional:
+일반적인 작업은 기존 타입을 선택하고 각 프로퍼티를 선택적으로 만드는 것입니다:
 
 ```ts
 interface PersonPartial {
@@ -797,7 +802,7 @@ interface PersonPartial {
 }
 ```
 
-Or we might want a readonly version:
+또는 readonly를 원할 수도 있습니다.
 
 ```ts
 interface PersonReadonly {
@@ -806,10 +811,10 @@ interface PersonReadonly {
 }
 ```
 
-This happens often enough in Javascript that TypeScript provides a way to create new types based on old types &mdash; **mapped types**.
-In a mapped type, the new type transforms each property in the old type in the same way.
-For example, you can make all properties of a type `readonly` or optional.
-Here are a couple of examples:
+이러한 일은 Javascript에서 자주 발생하여 TypeScript는 이전 타입인 &mdash; **mapped types** 타입을 기반으로 새로운 타입을 만드는 방법을 제공합니다.  
+mapped type에서 새로운 타입은 이전 타입의 각 프로퍼티를 동일한 방식으로 변환합니다.  
+예를 들어 모든 프로퍼티 타입을 `readonly` 또는 선택적으로 설정할 수 있습니다.  
+아래 몇 가지 예제가 있습니다:
 
 ```ts
 type Readonly<T> = {
@@ -820,28 +825,28 @@ type Partial<T> = {
 }
 ```
 
-And to use it:
+그리고 그것을 사용하려면:
 
 ```ts
 type PersonPartial = Partial<Person>;
 type ReadonlyPerson = Readonly<Person>;
 ```
 
-Let's take a look at the simplest mapped type and its parts:
+가장 간단한 mapped type과 해당 부분을 살펴보겠습니다:
 
 ```ts
 type Keys = 'option1' | 'option2';
 type Flags = { [K in Keys]: boolean };
 ```
 
-The syntax resembles the syntax for index signatures with a `for .. in` inside.
-There are three parts:
+구문은 인덱스 서명을 위한 구문과 `for .. in` 내부가 유사하게 사용됩니다.  
+세 가지 파트로 나뉩니다:
 
-1. The type variable `K`, which gets bound to each property in turn.
-2. The string literal union `Keys`, which contains the names of properties to iterate over.
-3. The resulting type of the property.
+1. 변수의 타입 `K`는 각 프로퍼티에 차례대로 바인딩 됩니다.
+2. 문자열 리터럴 공용체 `Keys`는 반복할 프로퍼티의 이름을 포함합니다.
+3. 결과적으로 생성된 프로퍼티의 타입.
 
-In this simple example, `Keys` is a hard-coded list of property names and the property type is always `boolean`, so this mapped type is equivalent to writing:
+이 간단한 예제에서 `Keys`는 하드 코딩된 프로퍼티 이름의 리스트이고 프로퍼티 타입은 항상 `boolean`이므로 mapped type은 작성된 것과 같습니다.
 
 ```ts
 type Flags = {
@@ -850,29 +855,28 @@ type Flags = {
 }
 ```
 
-Real applications, however, look like `Readonly` or `Partial` above.
-They're based on some existing type, and they transform the fields in some way.
-That's where `keyof` and indexed access types come in:
+그러나 실제 애플리케이션은 위의 `Readonly` 또는 `Partial`처럼 보입니다.  
+기존의 타입을 기반으로 하며 어떤 방식으로든 필드를 변환합니다.  
+즉 `keyof`와 인덱스 접근 타입이 들어있는 곳입니다:
 
 ```ts
 type NullablePerson = { [P in keyof Person]: Person[P] | null }
 type PartialPerson = { [P in keyof Person]?: Person[P] }
 ```
 
-But it's more useful to have a general version.
+하지만 일반적인 버전을 사용하는 것이 더 유용합니다.
 
 ```ts
 type Nullable<T> = { [P in keyof T]: T[P] | null }
 type Partial<T> = { [P in keyof T]?: T[P] }
 ```
 
-In these examples, the properties list is `keyof T` and the resulting type is some variant of `T[P]`.
-This is a good template for any general use of mapped types.
-That's because this kind of transformation is [homomorphic](https://en.wikipedia.org/wiki/Homomorphism), which means that the mapping applies only to properties of `T` and no others.
-The compiler knows that it can copy all the existing property modifiers before adding any new ones.
-For example, if `Person.name` was readonly, `Partial<Person>.name` would be readonly and optional.
-
-Here's one more example, in which `T[P]` is wrapped in a `Proxy<T>` class:
+이 예제에서 프로퍼티 목록은 `keyof T`이며 결과 타입은 `T[P]`의 변형입니다.  
+이것은 mapped types의 일반적인 사용을 위한 좋은 템플릿입니다.  
+왜냐하면 이러한 종류의 변환은 유사 [동형(homomorphic)](https://en.wikipedia.org/wiki/Homomorphism)이기 때문에 매핑은 `T`의 프로퍼티에만 적용되고 다른 프로퍼티에는 적용되지 않습니다.  
+컴파일러는 새로운 프로퍼티를 추가하기 전에 기존의 프로퍼티 지정자를 모두 복사할 수 있다는 것을 알고 있습니다.  
+예를 들어 `Person.name`이 읽기 전용인 경우 `Partial<Person>.name`은 읽기 전용 및 선택적입니다.  
+다음은 `T[P]`가 `Proxy<T>` 클래스에 래핑된 또 하나의 예제입니다:
 
 ```ts
 type Proxy<T> = {
@@ -883,12 +887,12 @@ type Proxify<T> = {
     [P in keyof T]: Proxy<T[P]>;
 }
 function proxify<T>(o: T): Proxify<T> {
-   // ... wrap proxies ...
+   // ... proxies 감싸기 ...
 }
 let proxyProps = proxify(props);
 ```
 
-Note that `Readonly<T>` and `Partial<T>` are so useful, they are included in TypeScript's standard library along with `Pick` and `Record`:
+`Readonly<T>`와 `Partial<T>`는 매우 유용하기 때문에 TypeScript의 표준 라이브러리에 `Pick`과 `Record`와 함께 포함되어 있습니다:
 
 ```ts
 type Pick<T, K extends keyof T> = {
@@ -899,19 +903,19 @@ type Record<K extends string, T> = {
 }
 ```
 
-`Readonly`, `Partial` and `Pick` are homomorphic whereas `Record` is not.
-One clue that `Record` is not homomorphic is that it doesn't take an input type to copy properties from:
+`Readonly`, `Partial`과 `Pick`은 동형(homomorphic)인 반면 `Record`는 그렇지 않습니다.  
+`Record`가 동형(homomorphic)이 아닌 한가지 단서는 프로퍼티를 복사하는 데 입력 타입을 사용하지 않는다는 점입니다:
 
 ```ts
 type ThreeStringProps = Record<'prop1' | 'prop2' | 'prop3', string>
 ```
 
-Non-homomorphic types are essentially creating new properties, so they can't copy property modifiers from anywhere.
+동형이 아닌 타입은 본질적으로 새로운 프로퍼티를 생성하기 때문에 어디에서나 프로퍼티 지정자를 복사할 수 없습니다.
 
-## Inference from mapped types
+## mapped types의 추론 (Inference from mapped types)
 
-Now that you know how to wrap the properties of a type, the next thing you'll want to do is unwrap them.
-Fortunately, that's pretty easy:
+이제는 타입의 프로퍼티를 래핑하는 방법을 알았으므로 다음으로 해야 할 일은 언래핑(푸는) 것입니다.  
+다행히도 꽤 쉽습니다 :
 
 ```ts
 function unproxify<T>(t: Proxify<T>): T {
@@ -925,5 +929,5 @@ function unproxify<T>(t: Proxify<T>): T {
 let originalProps = unproxify(proxyProps);
 ```
 
-Note that this unwrapping inference only works on homomorphic mapped types.
-If the mapped type is not homomorphic you'll have to give an explicit type parameter to your unwrapping function.
+이 언래핑 추론은 동형 매핑 타입에서만 작동합니다.  
+매핑된 타입이 동형이 아닌 경우에는 언래핑 함수에 명시적 타입 매개 변수를 지정해야 합니다.
