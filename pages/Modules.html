@@ -705,23 +705,19 @@
                                 <section class="normal markdown-section">
                                 
                                 <blockquote>
-<p><strong>A note about terminology:</strong>
-It&apos;s important to note that in TypeScript 1.5, the nomenclature has changed.
-&quot;Internal modules&quot; are now &quot;namespaces&quot;.
-&quot;External modules&quot; are now simply &quot;modules&quot;, as to align with <a href="http://www.ecma-international.org/ecma-262/6.0/" target="_blank">ECMAScript 2015</a>&apos;s terminology, (namely that <code>module X {</code> is equivalent to the now-preferred <code>namespace X {</code>).</p>
+<p><strong>&#xC6A9;&#xC5B4;&#xC5D0; &#xB300;&#xD55C; &#xCC38;&#xACE0; &#xC0AC;&#xD56D;:</strong>
+TypeScript 1.5&#xC5D0;&#xC11C;&#xB294; &#xBA85;&#xCE6D;&#xC774; &#xBCC0;&#xACBD;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&quot;&#xB0B4;&#xBD80;(Internal) &#xBAA8;&#xB4C8;&quot;&#xC740; &#xC774;&#xC81C; &quot;&#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&quot;&#xC785;&#xB2C8;&#xB2E4;.<br>&quot;&#xC678;&#xBD80;(External) &#xBAA8;&#xB4C8;&quot;&#xC740; &#xC774;&#xC81C; <a href="http://www.ecma-international.org/ecma-262/6.0" target="_blank">ECMAScript 2015</a>&#xC758; &#xC6A9;&#xC5B4;&#xC5D0; &#xB9DE;&#xAC8C;  &#xAC04;&#xB2E8;&#xD788; &quot;&#xBAA8;&#xB4C8;&quot;&#xC785;&#xB2C8;&#xB2E4;
+(&#xC989; <code>&#xBAA8;&#xB4C8; X {</code> &#xB294; &#xD604;&#xC7AC; &#xC120;&#xD638;&#xB418;&#xB294; <code>&#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4; X {</code> &#xC640; &#xB3D9;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;).</p>
 </blockquote>
-<h1 id="introduction">Introduction</h1>
-<p>Starting with ECMAScript 2015, JavaScript has a concept of modules. TypeScript shares this concept.</p>
-<p>Modules are executed within their own scope, not in the global scope; this means that variables, functions, classes, etc. declared in a module are not visible outside the module unless they are explicitly exported using one of the <a href="#export"><code>export</code> forms</a>.
-Conversely, to consume a variable, function, class, interface, etc. exported from a different module, it has to be imported using one of the <a href="#import"><code>import</code> forms</a>.</p>
-<p>Modules are declarative; the relationships between modules are specified in terms of imports and exports at the file level.</p>
-<p>Modules import one another using a module loader.
-At runtime the module loader is responsible for locating and executing all dependencies of a module before executing it.
-Well-known modules loaders used in JavaScript are the <a href="https://en.wikipedia.org/wiki/CommonJS" target="_blank">CommonJS</a> module loader for Node.js and <a href="http://requirejs.org/" target="_blank">require.js</a> for Web applications.</p>
-<p>In TypeScript, just as in ECMAScript 2015, any file containing a top-level <code>import</code> or <code>export</code> is considered a module.</p>
-<h1 id="export">Export</h1>
-<h2 id="exporting-a-declaration">Exporting a declaration</h2>
-<p>Any declaration (such as a variable, function, class, type alias, or interface) can be exported by adding the <code>export</code> keyword.</p>
+<h1 id="&#xC18C;&#xAC1C;">&#xC18C;&#xAC1C;</h1>
+<p>ECMAScript 2015&#xBD80;&#xD130; JavaScript&#xC5D0;&#xB294; &#xBAA8;&#xB4C8; &#xAC1C;&#xB150;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. TypeScript&#xB294; &#xC774; &#xAC1C;&#xB150;&#xC744; &#xACF5;&#xC720;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xBAA8;&#xB4C8;&#xC740; &#xC804;&#xC5ED; &#xC2A4;&#xCF54;&#xD504;&#xAC00; &#xC544;&#xB2CC; &#xC790;&#xCCB4; &#xC2A4;&#xCF54;&#xD504;&#xB0B4;&#xC5D0;&#xC11C; &#xC2E4;&#xD589;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB294; <a href="#export"><code>export</code> &#xD615;&#xC2DD;</a> &#xC911; &#xD558;&#xB098;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xB0B4;&#xBCF4;&#xB0B4;&#xC9C0; &#xC54A;&#xB294; &#xD55C; &#xBAA8;&#xB4C8;&#xC5D0; &#xC120;&#xC5B8;&#xB41C; &#xBCC0;&#xC218;, &#xD568;&#xC218;, &#xD074;&#xB798;&#xC2A4; &#xB4F1;&#xC774; &#xBAA8;&#xB4C8; &#xC678;&#xBD80;&#xC5D0; &#xBCF4;&#xC774;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xBC18;&#xB300;&#xB85C; &#xB2E4;&#xB978; &#xBAA8;&#xB4C8;&#xC5D0;&#xC11C; &#xB0B4;&#xBCF4;&#xB0B8; &#xBCC0;&#xC218;, &#xD568;&#xC218;, &#xD074;&#xB798;&#xC2A4;, &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4; &#xB4F1;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; <a href="#import"><code>import</code> &#xD615;&#xC2DD;</a> &#xC911; &#xD558;&#xB098;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xAC00;&#xC838;&#xC640;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.  </p>
+<p>&#xBAA8;&#xB4C8;&#xC740; &#xC120;&#xC5B8;&#xC801;&#xC785;&#xB2C8;&#xB2E4;. &#xBAA8;&#xB4C8; &#xAC04;&#xC758; &#xAD00;&#xACC4;&#xB294; &#xD30C;&#xC77C; &#xC218;&#xC900;&#xC5D0;&#xC11C; imports &#xBC0F; exports &#xCE21;&#xBA74;&#xC5D0;&#xC11C; &#xC9C0;&#xC815;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xBAA8;&#xB4C8;&#xC740; &#xBAA8;&#xB4C8; &#xB85C;&#xB354;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xB610; &#xB2E4;&#xB978; &#xBAA8;&#xB4C8;&#xC744; import &#xD569;&#xB2C8;&#xB2E4;.<br>&#xB7F0;&#xD0C0;&#xC784;&#xC2DC; &#xBAA8;&#xB4C8; &#xB85C;&#xB354;&#xB294; &#xBAA8;&#xB4C8;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xAE30; &#xC804;&#xC5D0; &#xBAA8;&#xB4C8;&#xC758; &#xBAA8;&#xB4E0; &#xC758;&#xC874;&#xC131;&#xC744; &#xCC3E;&#xACE0; &#xC2E4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.<br>JavaScript&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xC798; &#xC54C;&#xB824;&#xC9C4; &#xBAA8;&#xB4C8; &#xB85C;&#xB354;&#xB294; Node.js&#xC758; <a href="https://en.wikipedia.org/wiki/CommonJS" target="_blank">CommonJS</a>&#xBAA8;&#xB4C8; &#xB85C;&#xB354;&#xC774;&#xBA70; &#xC6F9; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xACBD;&#xC6B0; <a href="http://requirejs.org/" target="_blank">require.js</a>&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>TypeScript&#xC5D0;&#xC11C;&#xB294; ECMAScript 2015&#xC640; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xCD5C;&#xC0C1;&#xC704; <code>import</code> &#xB610;&#xB294; <code>export</code>&#xAC00; &#xD3EC;&#xD568;&#xB41C; &#xD30C;&#xC77C;&#xC744; &#xBAA8;&#xB4C8;&#xB85C; &#xAC04;&#xC8FC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xB0B4;&#xBCF4;&#xB0B4;&#xAE30;-export">&#xB0B4;&#xBCF4;&#xB0B4;&#xAE30; (Export)</h1>
+<h2 id="&#xB0B4;&#xBCF4;&#xB0B4;&#xAE30;-&#xC120;&#xC5B8;-exporting-a-declaration">&#xB0B4;&#xBCF4;&#xB0B4;&#xAE30; &#xC120;&#xC5B8; (Exporting a declaration)</h2>
+<p>&#xBCC0;&#xC218;, &#xD568;&#xC218;, &#xD074;&#xB798;&#xC2A4;, &#xD0C0;&#xC785; &#xBCC4;&#xCE6D; &#xB610;&#xB294; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC640; &#xAC19;&#xC740; &#xC120;&#xC5B8;&#xBB38;&#xC740; <code>export</code> &#xD0A4;&#xC6CC;&#xB4DC;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xB0B4;&#xBCF4;&#xB0BC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h5 id="validationts">Validation.ts</h5>
 <pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">interface</span> <span class="cm-variable">StringValidator</span> {
     <span class="cm-variable">isAcceptable</span>(<span class="cm-variable">s</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable">boolean</span>;
@@ -736,8 +732,8 @@ Well-known modules loaders used in JavaScript are the <a href="https://en.wikipe
     }
 }
 </code></pre>
-<h2 id="export-statements">Export statements</h2>
-<p>Export statements are handy when exports need to be renamed for consumers, so the above example can be written as:</p>
+<h2 id="&#xB0B4;&#xBCF4;&#xB0B4;&#xAE30;-&#xBB38;-export-statements">&#xB0B4;&#xBCF4;&#xB0B4;&#xAE30; &#xBB38; (Export statements)</h2>
+<p>Export &#xBB38;&#xC740; &#xC0AC;&#xC6A9;&#xC790;&#xB97C; &#xC704;&#xD574; Export&#xC758; &#xC774;&#xB984;&#xC744; &#xBCC0;&#xACBD;&#xD574;&#xC57C; &#xD558;&#xB294; &#xACBD;&#xC6B0;&#xC5D0; &#xC720;&#xC6A9;&#xD558;&#xBBC0;&#xB85C; &#xC704;&#xC758; &#xC608;&#xC81C;&#xB97C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">ZipCodeValidator</span> <span class="cm-variable">implements</span> <span class="cm-variable">StringValidator</span> {
     <span class="cm-variable">isAcceptable</span>(<span class="cm-variable">s</span>: <span class="cm-variable-3">string</span>) {
         <span class="cm-keyword">return</span> <span class="cm-variable">s</span>.<span class="cm-property">length</span> <span class="cm-operator">===</span> <span class="cm-number">5</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable">numberRegexp</span>.<span class="cm-property">test</span>(<span class="cm-variable">s</span>);
@@ -747,8 +743,7 @@ Well-known modules loaders used in JavaScript are the <a href="https://en.wikipe
 <span class="cm-keyword">export</span> { <span class="cm-variable">ZipCodeValidator</span> <span class="cm-variable">as</span> <span class="cm-variable">mainValidator</span> };
 </code></pre>
 <h2 id="re-exports">Re-exports</h2>
-<p>Often modules extend other modules, and partially expose some of their features.
-A re-export does not import it locally, or introduce a local variable.</p>
+<p>&#xC885;&#xC885; &#xBAA8;&#xB4C8;&#xC740; &#xB2E4;&#xB978; &#xBAA8;&#xB4C8;&#xC744; &#xD655;&#xC7A5;&#xD558;&#xACE0; &#xC77C;&#xBD80; &#xAE30;&#xB2A5;&#xC744; &#xBD80;&#xBD84;&#xC801;&#xC73C;&#xB85C; &#xB178;&#xCD9C;&#xD569;&#xB2C8;&#xB2E4;.<br>re-export&#xB294; &#xB85C;&#xCEEC;&#xB85C; import&#xD558;&#xAC70;&#xB098; &#xB85C;&#xCEEC; &#xBCC0;&#xC218;&#xB97C; &#xB3C4;&#xC785;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h5 id="parseintbasedzipcodevalidatorts">ParseIntBasedZipCodeValidator.ts</h5>
 <pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">ParseIntBasedZipCodeValidator</span> {
     <span class="cm-property">isAcceptable</span>(<span class="cm-def">s</span>: <span class="cm-variable-3">string</span>) {
@@ -756,10 +751,10 @@ A re-export does not import it locally, or introduce a local variable.</p>
     }
 }
 
-<span class="cm-comment">// Export original validator but rename it</span>
+<span class="cm-comment">// &#xC6D0;&#xBCF8; validator &#xB0B4;&#xBCF4;&#xB0B4;&#xC9C0;&#xB9CC; &#xC774;&#xB984;&#xC744; &#xBCC0;&#xACBD;&#xD569;&#xB2C8;&#xB2E4;</span>
 <span class="cm-keyword">export</span> {<span class="cm-variable">ZipCodeValidator</span> <span class="cm-variable">as</span> <span class="cm-variable">RegExpBasedZipCodeValidator</span>} <span class="cm-variable">from</span> <span class="cm-string">&quot;./ZipCodeValidator&quot;</span>;
 </code></pre>
-<p>Optionally, a module can wrap one or more modules and combine all their exports using <code>export * from &quot;module&quot;</code> syntax.</p>
+<p>&#xC120;&#xD0DD;&#xC801;&#xC73C;&#xB85C; &#xBAA8;&#xB4C8;&#xC740; &#xD558;&#xB098; &#xC774;&#xC0C1;&#xC758; &#xBAA8;&#xB4C8;&#xC744; &#xB7A9;&#xD551;&#xD558;&#xACE0; <code>export * from &quot;module&quot;</code> &#xAD6C;&#xBB38;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBAA8;&#xB4E0; &#xB0B4;&#xBCF4;&#xB0B4;&#xAE30;&#xB97C; &#xACB0;&#xD569;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h5 id="allvalidatorsts">AllValidators.ts</h5>
 <pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">*</span> <span class="cm-keyword">from</span> <span class="cm-string">&quot;./StringValidator&quot;</span>; <span class="cm-comment">// exports interface &apos;StringValidator&apos;</span>
 <span class="cm-keyword">export</span> <span class="cm-keyword">*</span> <span class="cm-keyword">from</span> <span class="cm-string">&quot;./LettersOnlyValidator&quot;</span>; <span class="cm-comment">// exports class &apos;LettersOnlyValidator&apos;</span>
@@ -1349,7 +1344,7 @@ From the consumption side, the consumer of any given module gets to pick the nam
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Modules","level":"3.13","depth":1,"next":{"title":"Namespaces","level":"3.14","depth":1,"path":"pages/Namespaces.md","ref":"pages/Namespaces.md","articles":[]},"previous":{"title":"이터레이터와 제네레이터","level":"3.12","depth":1,"path":"pages/Iterators and Generators.md","ref":"pages/Iterators and Generators.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Modules.md","mtime":"2018-03-02T15:46:51.672Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-06T07:32:48.071Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Modules","level":"3.13","depth":1,"next":{"title":"Namespaces","level":"3.14","depth":1,"path":"pages/Namespaces.md","ref":"pages/Namespaces.md","articles":[]},"previous":{"title":"이터레이터와 제네레이터","level":"3.12","depth":1,"path":"pages/Iterators and Generators.md","ref":"pages/Iterators and Generators.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Modules.md","mtime":"2018-03-08T10:15:53.413Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-08T10:41:08.539Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
