@@ -1,28 +1,30 @@
-> **A note about terminology:**
-It's important to note that in TypeScript 1.5, the nomenclature has changed.
-"Internal modules" are now "namespaces".
-"External modules" are now simply "modules", as to align with [ECMAScript 2015](http://www.ecma-international.org/ecma-262/6.0/)'s terminology, (namely that `module X {` is equivalent to the now-preferred `namespace X {`).
+> **용어에 대한 참고 사항:**
+TypeScript 1.5에서는 명칭이 변경되었습니다.  
+"내부(Internal) 모듈"은 이제 "네임스페이스"입니다.  
+"외부(External) 모듈"은 이제 [ECMAScript 2015](http://www.ecma-international.org/ecma-262/6.0)의 용어에 맞게  간단히 "모듈"입니다
+(즉 `모듈 X {` 는 현재 선호되는 `네임스페이스 X {` 와 동일합니다).
 
-# Introduction
+# 소개
 
-Starting with ECMAScript 2015, JavaScript has a concept of modules. TypeScript shares this concept.
+ECMAScript 2015부터 JavaScript에는 모듈 개념이 있습니다. TypeScript는 이 개념을 공유합니다.
 
-Modules are executed within their own scope, not in the global scope; this means that variables, functions, classes, etc. declared in a module are not visible outside the module unless they are explicitly exported using one of the [`export` forms](#export).
-Conversely, to consume a variable, function, class, interface, etc. exported from a different module, it has to be imported using one of the [`import` forms](#import).
+모듈은 전역 스코프가 아닌 자체 스코프내에서 실행됩니다.  
+이는 [`export` 형식](#export) 중 하나를 사용하여 명시적으로 내보내지 않는 한 모듈에 선언된 변수, 함수, 클래스 등이 모듈 외부에 보이지 않는다는 것을 의미합니다.  
+반대로 다른 모듈에서 내보낸 변수, 함수, 클래스, 인터페이스 등을 사용하려면 [`import` 형식](#import) 중 하나를 사용하여 가져와야합니다.  
 
-Modules are declarative; the relationships between modules are specified in terms of imports and exports at the file level.
+모듈은 선언적입니다. 모듈 간의 관계는 파일 수준에서 imports 및 exports 측면에서 지정됩니다.
 
-Modules import one another using a module loader.
-At runtime the module loader is responsible for locating and executing all dependencies of a module before executing it.
-Well-known modules loaders used in JavaScript are the [CommonJS](https://en.wikipedia.org/wiki/CommonJS) module loader for Node.js and [require.js](http://requirejs.org/) for Web applications.
+모듈은 모듈 로더를 사용하여 또 다른 모듈을 import 합니다.  
+런타임시 모듈 로더는 모듈을 실행하기 전에 모듈의 모든 의존성을 찾고 실행합니다.  
+JavaScript에서 사용되는 잘 알려진 모듈 로더는 Node.js의 [CommonJS](https://en.wikipedia.org/wiki/CommonJS)모듈 로더이며 웹 어플리케이션의 경우 [require.js](http://requirejs.org/)입니다.
 
-In TypeScript, just as in ECMAScript 2015, any file containing a top-level `import` or `export` is considered a module.
+TypeScript에서는 ECMAScript 2015와 마찬가지로 최상위 `import` 또는 `export`가 포함된 파일을 모듈로 간주합니다.
 
-# Export
+# 내보내기 (Export)
 
-## Exporting a declaration
+## 내보내기 선언 (Exporting a declaration)
 
-Any declaration (such as a variable, function, class, type alias, or interface) can be exported by adding the `export` keyword.
+변수, 함수, 클래스, 타입 별칭 또는 인터페이스와 같은 선언문은 `export` 키워드를 추가하여 내보낼 수 있습니다.
 
 ##### Validation.ts
 
@@ -44,9 +46,9 @@ export class ZipCodeValidator implements StringValidator {
 }
 ```
 
-## Export statements
+## 내보내기 문 (Export statements)
 
-Export statements are handy when exports need to be renamed for consumers, so the above example can be written as:
+Export 문은 사용자를 위해 Export의 이름을 변경해야 하는 경우에 유용하므로 위의 예제를 다음과 같이 작성할 수 있습니다:
 
 ```ts
 class ZipCodeValidator implements StringValidator {
@@ -60,8 +62,9 @@ export { ZipCodeValidator as mainValidator };
 
 ## Re-exports
 
-Often modules extend other modules, and partially expose some of their features.
-A re-export does not import it locally, or introduce a local variable.
+종종 모듈은 다른 모듈을 확장하고 일부 기능을 부분적으로 노출합니다.  
+re-export는 로컬로 import하거나 로컬 변수를 도입하지 않습니다.
+
 
 ##### ParseIntBasedZipCodeValidator.ts
 
@@ -72,11 +75,11 @@ export class ParseIntBasedZipCodeValidator {
     }
 }
 
-// Export original validator but rename it
+// 원본 validator 내보내지만 이름을 변경합니다
 export {ZipCodeValidator as RegExpBasedZipCodeValidator} from "./ZipCodeValidator";
 ```
 
-Optionally, a module can wrap one or more modules and combine all their exports using `export * from "module"` syntax.
+선택적으로 모듈은 하나 이상의 모듈을 랩핑하고 `export * from "module"` 구문을 사용하여 모든 내보내기를 결합할 수 있습니다.
 
 ##### AllValidators.ts
 
