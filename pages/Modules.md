@@ -91,10 +91,10 @@ export * from "./ZipCodeValidator";  // exports class 'ZipCodeValidator'
 
 # Import
 
-Importing is just about as easy as exporting from a module.
-Importing an exported declaration is done through using one of the `import` forms below:
+import는 모듈에서 export만큼 쉽습니다.  
+export 선언을 가져오려면 아래의 `import` 형식 중 하나를 사용하십시오.
 
-## Import a single export from a module
+## 모듈에서 단일 내보내기 가져오기 (Import a single export from a module)
 
 ```ts
 import { ZipCodeValidator } from "./ZipCodeValidator";
@@ -102,38 +102,39 @@ import { ZipCodeValidator } from "./ZipCodeValidator";
 let myValidator = new ZipCodeValidator();
 ```
 
-imports can also be renamed
+imports 이름을 변경할 수도 있습니다.
 
 ```ts
 import { ZipCodeValidator as ZCV } from "./ZipCodeValidator";
 let myValidator = new ZCV();
 ```
 
-## Import the entire module into a single variable, and use it to access the module exports
+## 전체 모듈을 단일 변수로 가져오고 이를 사용하여 모듈 내보내기에 접근합니다 (Import the entire module into a single variable, and use it to access the module exports)
 
 ```ts
 import * as validator from "./ZipCodeValidator";
 let myValidator = new validator.ZipCodeValidator();
 ```
 
-## Import a module for side-effects only
+## 부수-효과에 대한 모듈만 가져오기 (Import a module for side-effects only)
 
-Though not recommended practice, some modules set up some global state that can be used by other modules.
-These modules may not have any exports, or the consumer is not interested in any of their exports.
-To import these modules, use:
+권장되지는 않지만 일부 모듈은 다른 모듈에서 사용할 수 있는 글로벌 상태를 설정합니다.  
+이러한 모듈에는 어떠한 exports도 없거나 사용자가 해당 exports에 관심이 없을 수 있습니다.
+
+이러한 모듈을 가져오려면 다음을 사용합니다:
 
 ```ts
 import "./my-module.js";
 ```
 
-# Default exports
+# 기본 내보내기 (Default exports)
 
-Each module can optionally export a `default` export.
-Default exports are marked with the keyword `default`; and there can only be one `default` export per module.
-`default` exports are imported using a different import form.
+각 모듈은 선택적으로 `default` export를 내보낼 수 있습니다.  
+Default exports는 `default` 키워드로 표시됩니다. 모듈별 `default` exports는 하나만 가능합니다.  
+`default` exports는 다른 import 형식을 사용하여 가져옵니다.
 
-`default` exports are really handy.
-For instance, a library like JQuery might have a default export of `jQuery` or `$`, which we'd probably also import under the name `$` or `jQuery`.
+`default` exports는 정말 편리합니다.  
+예를 들어 `JQuery` 같은 라이브러리에는 default export인 `jQuery`또는 `$`가 있을 수 있으며 이를 `$`나 `jQuery`라는 이름으로도 가져올 수 있습니다.
 
 ##### JQuery.d.ts
 
@@ -150,8 +151,8 @@ import $ from "JQuery";
 $("button.continue").html( "Next Step..." );
 ```
 
-Classes and function declarations can be authored directly as default exports.
-Default export class and function declaration names are optional.
+클래스 및 함수 선언은  default exports로 직접 작성될 수 있습니다.  
+Default export 클래스와 함수 선언 네이밍은 선택적입니다.
 
 ##### ZipCodeValidator.ts
 
@@ -172,7 +173,7 @@ import validator from "./ZipCodeValidator";
 let myValidator = new validator();
 ```
 
-or
+또는
 
 ##### StaticZipCodeValidator.ts
 
@@ -191,13 +192,13 @@ import validate from "./StaticZipCodeValidator";
 
 let strings = ["Hello", "98052", "101"];
 
-// Use function validate
+// 함수 유효성 검사 사용
 strings.forEach(s => {
   console.log(`"${s}" ${validate(s) ? " matches" : " does not match"}`);
 });
 ```
 
-`default` exports can also be just values:
+`default` exports는 값 일 수도 있습니다:
 
 ##### OneTwoThree.ts
 
@@ -215,16 +216,17 @@ console.log(num); // "123"
 
 # `export =` and `import = require()`
 
-Both CommonJS and AMD generally have the concept of an `exports` object which contains all exports from a module.
+CommonJS와 AMD 모두 일반적으로 모듈의 모든 exports를 포함하는`exports` 객체 개념을 가지고 있습니다.
 
-They also support replacing the `exports` object with a custom single object.
-Default exports are meant to act as a replacement for this behavior; however, the two are incompatible.
-TypeScript supports `export =` to model the traditional CommonJS and AMD workflow.
+또한 `exports` 객체를 커스텀 단일 객체로 대체하는 것을 지원합니다.  
+Default exports는이 동작을 대신하는 역할을 합니다.  
+그러나 그 둘은 호환되지 않습니다.  
+TypeScript는 기존의 CommonJS와 AMD 워크플로우를 모델링하기 위해 `export =`를 지원합니다.
 
-The `export =` syntax specifies a single object that is exported from the module.
-This can be a class, interface, namespace, function, or enum.
+`export =` 구문은 모듈에서 export된 단일 객체를 지정합니다.
+클래스, 인터페이스, 네임스페이스, 함수 또는 열거 형이 될 수 있습니다.
 
-When importing a module using `export =`, TypeScript-specific `import module = require("module")` must be used to import the module.
+`export =`를 사용하여 모듈을 가져올 때 모듈을 임포트하기 위해 TypeScript에 특정한 `import module = require("module")`을 사용해야합니다.
 
 ##### ZipCodeValidator.ts
 
@@ -243,24 +245,24 @@ export = ZipCodeValidator;
 ```ts
 import zip = require("./ZipCodeValidator");
 
-// Some samples to try
+// 시도할 샘플 몇개
 let strings = ["Hello", "98052", "101"];
 
-// Validators to use
+// 사용할 Validators
 let validator = new zip();
 
-// Show whether each string passed each validator
+// 각 문자열이 각 Validator를 통과했는지 여부를 보여줍니다.
 strings.forEach(s => {
   console.log(`"${ s }" - ${ validator.isAcceptable(s) ? "matches" : "does not match" }`);
 });
 ```
 
-# Code Generation for Modules
+# 모듈을 위한 코드 생성 (Code Generation for Modules)
 
-Depending on the module target specified during compilation, the compiler will generate appropriate code for Node.js ([CommonJS](http://wiki.commonjs.org/wiki/CommonJS)), require.js ([AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)), [UMD](https://github.com/umdjs/umd), [SystemJS](https://github.com/systemjs/systemjs), or [ECMAScript 2015 native modules](http://www.ecma-international.org/ecma-262/6.0/#sec-modules) (ES6) module-loading systems.
-For more information on what the `define`, `require` and `register` calls in the generated code do, consult the documentation for each module loader.
+컴파일시 지정된 모듈 대상에 따라 컴파일러는 Node.js ([CommonJS](http://wiki.commonjs.org/wiki/CommonJS)), require.js ([AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)), [UMD](https://github.com/umdjs/umd), [SystemJS](https://github.com/systemjs/systemjs) 또는 [ECMAScript 2015 네이티브 모듈](http://www.ecma-international.org/ecma-262/6.0/#sec-modules) (ES6)에 적절한 코드를 생성합니다.  
+생성된 코드에서 `define`, `require` 및 `register` 호출에 대한 자세한 정보는 각 모듈 로더에 대한 문서를 참조하세요.
 
-This simple example shows how the names used during importing and exporting get translated into the module loading code.
+이 간단한 예제는 import 및 export 중에 사용되는 이름이 모듈 로딩 코드로 어떻게 변환되는지 보여줍니다.
 
 ##### SimpleModule.ts
 
@@ -327,17 +329,18 @@ export var t = something + 1;
 
 # Simple Example
 
-Below, we've consolidated the Validator implementations used in previous examples to only export a single named export from each module.
+아래에서는 각 모듈에서 이름이 지정된 단일 export만 내보내도록 이전 예제에 사용된 Validator 구현을 통합했습니다.
 
-To compile, we must specify a module target on the command line. For Node.js, use `--module commonjs`;
-for require.js, use `--module amd`. For example:
+컴파일하려면 커맨드 라인에 모듈 대상을 지정해야합니다.  
+Node.js는 `--module commonjs`를 사용하세요.  
+require.js의 경우, --module amd를 사용합니다.  
+예를 들면:
 
 ```Shell
 tsc --module commonjs Test.ts
 ```
-
-When compiled, each module will become a separate `.js` file.
-As with reference tags, the compiler will follow `import` statements to compile dependent files.
+컴파일시 각 모듈은 별도의 `.js` 파일이됩니다.  
+참조 태그와 마찬가지로 컴파일러는 의존된 파일들을 컴파일하기 위해 `import` 문을 따릅니다.
 
 ##### Validation.ts
 
@@ -382,15 +385,15 @@ import { StringValidator } from "./Validation";
 import { ZipCodeValidator } from "./ZipCodeValidator";
 import { LettersOnlyValidator } from "./LettersOnlyValidator";
 
-// Some samples to try
+// 시도할 샘플 몇개
 let strings = ["Hello", "98052", "101"];
 
-// Validators to use
+// 사용할 Validators
 let validators: { [s: string]: StringValidator; } = {};
 validators["ZIP code"] = new ZipCodeValidator();
 validators["Letters only"] = new LettersOnlyValidator();
 
-// Show whether each string passed each validator
+// 각 문자열이 각 Validator를 통과했는지 여부를 보여줍니다.
 strings.forEach(s => {
     for (let name in validators) {
         console.log(`"${ s }" - ${ validators[name].isAcceptable(s) ? "matches" : "does not match" } ${ name }`);
