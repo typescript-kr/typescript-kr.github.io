@@ -963,19 +963,11 @@ TypeScript 1.5&#xC5D0;&#xC11C;&#xB294; &#xBA85;&#xCE6D;&#xC774; &#xBCC0;&#xACBD;
     }
 });
 </code></pre>
-<h1 id="optional-module-loading-and-other-advanced-loading-scenarios">Optional Module Loading and Other Advanced Loading Scenarios</h1>
-<p>In some cases, you may want to only load a module under some conditions.
-In TypeScript, we can use the pattern shown below to implement this and other advanced loading scenarios to directly invoke the module loaders without losing type safety.</p>
-<p>The compiler detects whether each module is used in the emitted JavaScript.
-If a module identifier is only ever used as part of a type annotations and never as an expression, then no <code>require</code> call is emitted for that module.
-This elision of unused references is a good performance optimization, and also allows for optional loading of those modules.</p>
-<p>The core idea of the pattern is that the <code>import id = require(&quot;...&quot;)</code> statement gives us access to the types exposed by the module.
-The module loader is invoked (through <code>require</code>) dynamically, as shown in the <code>if</code> blocks below.
-This leverages the reference-elision optimization so that the module is only loaded when needed.
-For this pattern to work, it&apos;s important that the symbol defined via an <code>import</code> is only used in type positions (i.e. never in a position that would be emitted into the JavaScript).</p>
-<p>To maintain type safety, we can use the <code>typeof</code> keyword.
-The <code>typeof</code> keyword, when used in a type position, produces the type of a value, in this case the type of the module.</p>
-<h5 id="dynamic-module-loading-in-nodejs">Dynamic Module Loading in Node.js</h5>
+<h1 id="&#xC120;&#xD0DD;&#xC801;-&#xBAA8;&#xB4C8;-&#xB85C;&#xB529;&#xACFC;-&#xAE30;&#xD0C0;-&#xACE0;&#xAE09;-&#xB85C;&#xB529;-&#xC2DC;&#xB098;&#xB9AC;&#xC624;-optional-module-loading-and-other-advanced-loading-scenarios">&#xC120;&#xD0DD;&#xC801; &#xBAA8;&#xB4C8; &#xB85C;&#xB529;&#xACFC; &#xAE30;&#xD0C0; &#xACE0;&#xAE09; &#xB85C;&#xB529; &#xC2DC;&#xB098;&#xB9AC;&#xC624; (Optional Module Loading and Other Advanced Loading Scenarios)</h1>
+<p>&#xC0C1;&#xD669;&#xC5D0; &#xB530;&#xB77C; &#xC77C;&#xBD80; &#xC870;&#xAC74;&#xC5D0;&#xC11C;&#xB9CC; &#xBAA8;&#xB4C8;&#xC744; &#xB85C;&#xB4DC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>TypeScript&#xC5D0;&#xC11C;&#xB294; &#xC544;&#xB798;&#xC758; &#xD328;&#xD134;&#xC744; &#xD1B5;&#xD574; &#xB2E4;&#xB978; &#xACE0;&#xAE09; &#xB85C;&#xB4DC; &#xC2DC;&#xB098;&#xB9AC;&#xC624;&#xB97C; &#xAD6C;&#xD604;&#xD558;&#xC5EC; &#xD0C0;&#xC785; &#xC548;&#xC804;&#xC131;&#xC744; &#xC783;&#xC9C0; &#xC54A;&#xACE0; &#xBAA8;&#xB4C8; &#xB85C;&#xB354;&#xB97C; &#xC9C1;&#xC811; &#xD638;&#xCD9C;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; &#xAC01; &#xBAA8;&#xB4C8;&#xC774; &#xBC1C;&#xC0DD;&#xB41C; JavaScript&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;&#xB97C; &#xAC10;&#xC9C0;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xBAA8;&#xB4C8; &#xC2DD;&#xBCC4;&#xC790;&#xAC00; &#xD0C0;&#xC785; &#xC5B4;&#xB178;&#xD14C;&#xC774;&#xC158;&#xC758; &#xC77C;&#xBD80;&#xB85C;&#xB9CC; &#xC0AC;&#xC6A9;&#xB418;&#xACE0; &#xD45C;&#xD604;&#xC2DD;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xD574;&#xB2F9; &#xBAA8;&#xB4C8;&#xC5D0; &#xB300;&#xD55C; <code>require</code> &#xD638;&#xCD9C;&#xC774; &#xBC1C;&#xC0DD;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xCC38;&#xC870;&#xB97C; &#xC81C;&#xAC70;&#xD558;&#xBA74; &#xC131;&#xB2A5;&#xC774; &#xCD5C;&#xC801;&#xD654;&#xB418;&#xACE0; &#xD574;&#xB2F9; &#xBAA8;&#xB4C8;&#xC744; &#xC120;&#xD0DD;&#xC801;&#xC73C;&#xB85C; &#xB85C;&#xB4DC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774; &#xD328;&#xD134;&#xC758; &#xD575;&#xC2EC; &#xC544;&#xC774;&#xB514;&#xC5B4;&#xB294; <code>import id = require(&quot;...&quot;)</code>&#xBB38;&#xC774; &#xBAA8;&#xB4C8;&#xC5D0; &#xC758;&#xD574; &#xB178;&#xCD9C;&#xB41C; &#xD0C0;&#xC785;&#xC5D0; &#xC811;&#xADFC; &#xD560; &#xC218; &#xC788;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xBAA8;&#xB4C8; &#xB85C;&#xB354;&#xB294; &#xC544;&#xB798;&#xC758; <code>if</code> &#xBE14;&#xB85D;&#xCC98;&#xB7FC; &#xB3D9;&#xC801;&#xC73C;&#xB85C; (<code>require</code>&#xB97C; &#xD1B5;&#xD574;) &#xD638;&#xCD9C;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB294; &#xCC38;&#xC870; &#xC0DD;&#xB7B5; &#xCD5C;&#xC801;&#xD654;&#xAC00; &#xD65C;&#xC6A9;&#xB418;&#xC5B4; &#xBAA8;&#xB4C8;&#xC774; &#xD544;&#xC694;&#xD55C; &#xACBD;&#xC6B0;&#xC5D0;&#xB9CC; &#xB85C;&#xB4DC;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xD328;&#xD134;&#xC774; &#xC791;&#xB3D9;&#xD558;&#xB824;&#xBA74; <code>import</code>&#xB97C; &#xD1B5;&#xD574; &#xC815;&#xC758;&#xB41C; symbol&#xC774; &#xD0C0;&#xC785; &#xC704;&#xCE58;&#xC5D0;&#xC11C;&#xB9CC; &#xC0AC;&#xC6A9;&#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;(&#xC989; JavaScript&#xB85C; &#xBC1C;&#xC0DD;&#xB420; &#xC218; &#xC788;&#xB294; &#xC704;&#xCE58;&#xC5D0; &#xC808;&#xB300; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;).</p>
+<p>&#xD0C0;&#xC785; &#xC548;&#xC804;&#xC131;&#xC744; &#xC720;&#xC9C0;&#xD558;&#xAE30; &#xC704;&#xD574; <code>typeof</code> &#xD0A4;&#xC6CC;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br><code>typeof</code> &#xD0A4;&#xC6CC;&#xB4DC;&#xB294; &#xD0C0;&#xC785;&#xC758; &#xC704;&#xCE58;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB420; &#xB54C; &#xAC12;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xC0DD;&#xC131;&#xD558;&#xBA70; &#xC774; &#xACBD;&#xC6B0; &#xBAA8;&#xB4C8;&#xC758; &#xD0C0;&#xC785;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<h5 id="nodejs&#xC758;-&#xB3D9;&#xC801;-&#xBAA8;&#xB4C8;-&#xB85C;&#xB529;-dynamic-module-loading-in-nodejs">Node.js&#xC758; &#xB3D9;&#xC801; &#xBAA8;&#xB4C8; &#xB85C;&#xB529; (Dynamic Module Loading in Node.js)</h5>
 <pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">require</span>(<span class="cm-def">moduleName</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable-3">any</span>;
 
 <span class="cm-keyword">import</span> { <span class="cm-variable">ZipCodeValidator</span> <span class="cm-variable">as</span> <span class="cm-variable">Zip</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;./ZipCodeValidator&quot;</span>;
@@ -986,7 +978,7 @@ The <code>typeof</code> keyword, when used in a type position, produces the type
     <span class="cm-keyword">if</span> (<span class="cm-variable">validator</span>.<span class="cm-property">isAcceptable</span>(<span class="cm-string">&quot;...&quot;</span>)) { <span class="cm-comment">/* ... */</span> }
 }
 </code></pre>
-<h5 id="sample-dynamic-module-loading-in-requirejs">Sample: Dynamic Module Loading in require.js</h5>
+<h5 id="&#xC0D8;&#xD50C;-requirejs&#xC758;-&#xB3D9;&#xC801;-&#xBAA8;&#xB4C8;-&#xB85C;&#xB529;-dynamic-module-loading-in-requirejs">&#xC0D8;&#xD50C;: require.js&#xC758; &#xB3D9;&#xC801; &#xBAA8;&#xB4C8; &#xB85C;&#xB529; (Dynamic Module Loading in require.js)</h5>
 <pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">require</span>(<span class="cm-def">moduleNames</span>: <span class="cm-variable-3">string</span>[], <span class="cm-variable">onLoad</span>: (<span class="cm-meta">...</span><span class="cm-variable">args</span>: <span class="cm-variable-3">any</span>[]) <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span>): <span class="cm-variable">void</span>;
 
 <span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">Zip</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;./ZipCodeValidator&quot;</span>;
@@ -998,7 +990,7 @@ The <code>typeof</code> keyword, when used in a type position, produces the type
     });
 }
 </code></pre>
-<h5 id="sample-dynamic-module-loading-in-systemjs">Sample: Dynamic Module Loading in System.js</h5>
+<h5 id="&#xC0D8;&#xD50C;-systemjs&#xC758;-&#xB3D9;&#xC801;-&#xBAA8;&#xB4C8;-&#xB85C;&#xB529;-dynamic-module-loading-in-systemjs">&#xC0D8;&#xD50C;: System.js&#xC758; &#xB3D9;&#xC801; &#xBAA8;&#xB4C8; &#xB85C;&#xB529; (Dynamic Module Loading in System.js)</h5>
 <pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">const</span> <span class="cm-variable">System</span>: <span class="cm-variable-3">any</span>;
 
 <span class="cm-keyword">import</span> { <span class="cm-variable">ZipCodeValidator</span> <span class="cm-variable">as</span> <span class="cm-variable">Zip</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;./ZipCodeValidator&quot;</span>;
@@ -1010,17 +1002,14 @@ The <code>typeof</code> keyword, when used in a type position, produces the type
     });
 }
 </code></pre>
-<h1 id="working-with-other-javascript-libraries">Working with Other JavaScript Libraries</h1>
-<p>To describe the shape of libraries not written in TypeScript, we need to declare the API that the library exposes.</p>
-<p>We call declarations that don&apos;t define an implementation &quot;ambient&quot;.
-Typically, these are defined in <code>.d.ts</code> files.
-If you&apos;re familiar with C/C++, you can think of these as <code>.h</code> files.
-Let&apos;s look at a few examples.</p>
+<h1 id="&#xB2E4;&#xB978;-javascript-&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;-&#xC0AC;&#xC6A9;-working-with-other-javascript-libraries">&#xB2E4;&#xB978; JavaScript &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xC0AC;&#xC6A9; (Working with Other JavaScript Libraries)</h1>
+<p>TypeScript&#xB85C; &#xC791;&#xC131;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC758; &#xD615;&#xD0DC;&#xC744; &#xC124;&#xBA85;&#xD558;&#xB824;&#xBA74; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xAC00; &#xB098;&#xD0C0;&#xB0B4;&#xB294; API&#xB97C; &#xC120;&#xC5B8;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xAD6C;&#xD604;&#xC744; &quot;ambient&quot;&#xC73C;&#xB85C; &#xC815;&#xC758;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xC120;&#xC5B8;&#xC774;&#xB77C;&#xACE0; &#xD558;&#xBA70; 
+&#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xC774;&#xB4E4;&#xC740;<code>.d.ts</code> &#xD30C;&#xC77C;&#xC5D0; &#xC815;&#xC758;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>C/C++&#xC5D0; &#xC775;&#xC219;&#xD558;&#xB2E4;&#xBA74; &#xC774;&#xAC83;&#xB4E4;&#xC744; <code>.h</code>&#xD30C;&#xC77C;&#xB85C; &#xC0DD;&#xAC01;&#xD560; &#xC218; &#xC788;&#xC744; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xBA87;&#xAC00;&#xC9C0; &#xC608;&#xB97C; &#xB4E4;&#xC5B4;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;</p>
 <h2 id="ambient-modules">Ambient Modules</h2>
-<p>In Node.js, most tasks are accomplished by loading one or more modules.
-We could define each module in its own <code>.d.ts</code> file with top-level export declarations, but it&apos;s more convenient to write them as one larger <code>.d.ts</code> file.
-To do so, we use a construct similar to ambient namespaces, but we use the <code>module</code> keyword and the quoted name of the module which will be available to a later import.
-For example:</p>
+<p>Node.js&#xC5D0;&#xC11C; &#xB300;&#xBD80;&#xBD84;&#xC758; &#xC791;&#xC5C5;&#xC740; &#xD558;&#xB098; &#xC774;&#xC0C1;&#xC758; &#xBAA8;&#xB4C8;&#xC744; &#xB85C;&#xB4DC;&#xD558;&#xC5EC; &#xC218;&#xD589;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xAC01; &#xBAA8;&#xB4C8;&#xC744; <code>.d.ts</code> &#xD30C;&#xC77C;&#xC5D0; &#xCD5C;&#xC0C1;&#xC704; &#xC218;&#xC900;&#xC758; &#xB0B4;&#xBCF4;&#xB0B4;&#xAE30; &#xC120;&#xC5B8;&#xC73C;&#xB85C; &#xC815;&#xC758;&#xD560; &#xC218; &#xC788;&#xC9C0;&#xB9CC; &#xB354; &#xB113;&#xC740; <code>.d.ts</code> &#xD30C;&#xC77C;&#xB85C; &#xC791;&#xC131;&#xD558;&#xB294; &#xAC83;&#xC774; &#xB354; &#xD3B8;&#xB9AC;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB807;&#xAC8C;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; ambient &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC640; &#xBE44;&#xC2B7;&#xD55C; &#xAD6C;&#xC870;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0;&#xB9CC; &#xB098;&#xC911;&#xC5D0; import &#xD560; &#xC218;&#xC788;&#xB294; &#xBAA8;&#xB4C8;&#xC758; <code>module</code> &#xD0A4;&#xC6CC;&#xB4DC;&#xC640; &#xB530;&#xC634;&#xD45C; &#xBD99;&#xC740; &#xC774;&#xB984;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xBA74;:</p>
 <h5 id="nodedts-simplified-excerpt">node.d.ts (simplified excerpt)</h5>
 <pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">module</span> <span class="cm-string">&quot;url&quot;</span> {
     <span class="cm-keyword">export</span> <span class="cm-keyword">interface</span> <span class="cm-variable">Url</span> {
@@ -1038,17 +1027,18 @@ For example:</p>
     <span class="cm-keyword">export</span> <span class="cm-keyword">var</span> <span class="cm-def">sep</span>: <span class="cm-variable-3">string</span>;
 }
 </code></pre>
-<p>Now we can <code>/// &lt;reference&gt;</code> <code>node.d.ts</code> and then load the modules using <code>import url = require(&quot;url&quot;);</code> or <code>import * as URL from &quot;url&quot;</code>.</p>
+<p>&#xC774;&#xC81C; <code>/// &lt;reference&gt;</code> <code>node.d.ts</code> &#xB97C; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xACE0; <code>import url = require(&quot;url&quot;);</code> &#xB610;&#xB294; <code>import * as URL from &quot;url&quot;</code>
+&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBAA8;&#xB4C8;&#xC744; &#xC801;&#xC7AC; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-comment">/// &lt;reference path=&quot;node.d.ts&quot;/&gt;</span>
 <span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">URL</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;url&quot;</span>;
 <span class="cm-keyword">let</span> <span class="cm-variable">myUrl</span> <span class="cm-operator">=</span> <span class="cm-variable">URL</span>.<span class="cm-property">parse</span>(<span class="cm-string">&quot;http://www.typescriptlang.org&quot;</span>);
 </code></pre>
 <h3 id="shorthand-ambient-modules">Shorthand ambient modules</h3>
-<p>If you don&apos;t want to take the time to write out declarations before using a new module, you can use a shorthand declaration to get started quickly.</p>
+<p>&#xC0C8;&#xB85C;&#xC6B4; &#xBAA8;&#xB4C8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC804;&#xC5D0; &#xC120;&#xC5B8;&#xC744; &#xC791;&#xC131;&#xD558;&#xB294; &#xC2DC;&#xAC04;&#xC744; &#xB0B4;&#xACE0; &#xC2F6;&#xC9C0; &#xC54A;&#xB2E4;&#xBA74; shorthand &#xC120;&#xC5B8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBE60;&#xB974;&#xAC8C; &#xC2DC;&#xC791;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h5 id="declarationsdts">declarations.d.ts</h5>
 <pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">module</span> <span class="cm-string">&quot;hot-new-module&quot;</span>;
 </code></pre>
-<p>All imports from a shorthand module will have the <code>any</code> type.</p>
+<p>shorthand &#xBAA8;&#xB4C8;&#xC758; &#xBAA8;&#xB4E0; imports&#xB294; <code>any</code> &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9D1;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-variable">x</span>, {<span class="cm-variable">y</span>} <span class="cm-variable">from</span> <span class="cm-string">&quot;hot-new-module&quot;</span>;
 <span class="cm-variable">x</span>(<span class="cm-variable">y</span>);
 </code></pre>
@@ -1333,7 +1323,7 @@ From the consumption side, the consumer of any given module gets to pick the nam
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Modules","level":"3.13","depth":1,"next":{"title":"Namespaces","level":"3.14","depth":1,"path":"pages/Namespaces.md","ref":"pages/Namespaces.md","articles":[]},"previous":{"title":"이터레이터와 제네레이터","level":"3.12","depth":1,"path":"pages/Iterators and Generators.md","ref":"pages/Iterators and Generators.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Modules.md","mtime":"2018-03-11T12:19:31.094Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-11T12:37:57.657Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Modules","level":"3.13","depth":1,"next":{"title":"Namespaces","level":"3.14","depth":1,"path":"pages/Namespaces.md","ref":"pages/Namespaces.md","articles":[]},"previous":{"title":"이터레이터와 제네레이터","level":"3.12","depth":1,"path":"pages/Iterators and Generators.md","ref":"pages/Iterators and Generators.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Modules.md","mtime":"2018-03-12T14:02:07.330Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-12T14:02:59.215Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

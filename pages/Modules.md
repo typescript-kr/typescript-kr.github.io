@@ -401,24 +401,23 @@ strings.forEach(s => {
 });
 ```
 
-# Optional Module Loading and Other Advanced Loading Scenarios
+# 선택적 모듈 로딩과 기타 고급 로딩 시나리오 (Optional Module Loading and Other Advanced Loading Scenarios)
 
-In some cases, you may want to only load a module under some conditions.
-In TypeScript, we can use the pattern shown below to implement this and other advanced loading scenarios to directly invoke the module loaders without losing type safety.
+상황에 따라 일부 조건에서만 모듈을 로드할 수 있습니다.  
+TypeScript에서는 아래의 패턴을 통해 다른 고급 로드 시나리오를 구현하여 타입 안전성을 잃지 않고 모듈 로더를 직접 호출할 수 있습니다.  
+컴파일러는 각 모듈이 발생된 JavaScript에서 사용되는지 여부를 감지합니다.  
+모듈 식별자가 타입 어노테이션의 일부로만 사용되고 표현식으로 사용되지 않으면 해당 모듈에 대한 `require` 호출이 발생하지 않습니다.  
+사용하지 않는 참조를 제거하면 성능이 최적화되고 해당 모듈을 선택적으로 로드할 수 있습니다.
 
-The compiler detects whether each module is used in the emitted JavaScript.
-If a module identifier is only ever used as part of a type annotations and never as an expression, then no `require` call is emitted for that module.
-This elision of unused references is a good performance optimization, and also allows for optional loading of those modules.
+이 패턴의 핵심 아이디어는 `import id = require("...")`문이 모듈에 의해 노출된 타입에 접근 할 수 있다는 것입니다.  
+모듈 로더는 아래의 `if` 블록처럼 동적으로 (`require`를 통해) 호출됩니다.  
+이는 참조 생략 최적화가 활용되어 모듈이 필요한 경우에만 로드됩니다.  
+이 패턴이 작동하려면 `import`를 통해 정의된 symbol이 타입 위치에서만 사용되어야 합니다(즉 JavaScript로 발생될 수 있는 위치에 절대 존재하지 않습니다).
 
-The core idea of the pattern is that the `import id = require("...")` statement gives us access to the types exposed by the module.
-The module loader is invoked (through `require`) dynamically, as shown in the `if` blocks below.
-This leverages the reference-elision optimization so that the module is only loaded when needed.
-For this pattern to work, it's important that the symbol defined via an `import` is only used in type positions (i.e. never in a position that would be emitted into the JavaScript).
+타입 안전성을 유지하기 위해 `typeof` 키워드를 사용할 수 있습니다.  
+`typeof` 키워드는 타입의 위치에서 사용될 때 값의 타입을 생성하며 이 경우 모듈의 타입이 됩니다.
 
-To maintain type safety, we can use the `typeof` keyword.
-The `typeof` keyword, when used in a type position, produces the type of a value, in this case the type of the module.
-
-##### Dynamic Module Loading in Node.js
+##### Node.js의 동적 모듈 로딩 (Dynamic Module Loading in Node.js)
 
 ```ts
 declare function require(moduleName: string): any;
@@ -432,7 +431,7 @@ if (needZipValidation) {
 }
 ```
 
-##### Sample: Dynamic Module Loading in require.js
+##### 샘플: require.js의 동적 모듈 로딩 (Dynamic Module Loading in require.js)
 
 ```ts
 declare function require(moduleNames: string[], onLoad: (...args: any[]) => void): void;
@@ -447,7 +446,7 @@ if (needZipValidation) {
 }
 ```
 
-##### Sample: Dynamic Module Loading in System.js
+##### 샘플: System.js의 동적 모듈 로딩 (Dynamic Module Loading in System.js)
 
 ```ts
 declare const System: any;
@@ -462,21 +461,23 @@ if (needZipValidation) {
 }
 ```
 
-# Working with Other JavaScript Libraries
+# 다른 JavaScript 라이브러리 사용 (Working with Other JavaScript Libraries)
 
-To describe the shape of libraries not written in TypeScript, we need to declare the API that the library exposes.
+TypeScript로 작성되지 않은 라이브러리의 형태을 설명하려면 라이브러리가 나타내는 API를 선언해야합니다.
 
-We call declarations that don't define an implementation "ambient".
-Typically, these are defined in `.d.ts` files.
-If you're familiar with C/C++, you can think of these as `.h` files.
-Let's look at a few examples.
+구현을 "ambient"으로 정의하지 않는 선언이라고 하며 
+일반적으로 이들은`.d.ts` 파일에 정의되어 있습니다.  
+C/C++에 익숙하다면 이것들을 `.h`파일로 생각할 수 있을 것입니다.
+
+몇가지 예를 들어보겠습니다
 
 ## Ambient Modules
 
-In Node.js, most tasks are accomplished by loading one or more modules.
-We could define each module in its own `.d.ts` file with top-level export declarations, but it's more convenient to write them as one larger `.d.ts` file.
-To do so, we use a construct similar to ambient namespaces, but we use the `module` keyword and the quoted name of the module which will be available to a later import.
-For example:
+Node.js에서 대부분의 작업은 하나 이상의 모듈을 로드하여 수행됩니다.  
+각 모듈을 `.d.ts` 파일에 최상위 수준의 내보내기 선언으로 정의할 수 있지만 더 넓은 `.d.ts` 파일로 작성하는 것이 더 편리합니다.  
+그렇게하기 위해서 ambient 네임스페이스와 비슷한 구조를 사용하지만 나중에 import 할 수있는 모듈의 `module` 키워드와 따옴표 붙은 이름을 사용합니다.
+
+예를 들면:
 
 ##### node.d.ts (simplified excerpt)
 
@@ -498,7 +499,8 @@ declare module "path" {
 }
 ```
 
-Now we can `/// <reference>` `node.d.ts` and then load the modules using `import url = require("url");` or `import * as URL from "url"`.
+이제 `/// <reference>` `node.d.ts` 를 만들 수 있고 `import url = require("url");` 또는 `import * as URL from "url"`
+를 사용하여 모듈을 적재 할 수 있습니다.
 
 ```ts
 /// <reference path="node.d.ts"/>
@@ -508,7 +510,7 @@ let myUrl = URL.parse("http://www.typescriptlang.org");
 
 ### Shorthand ambient modules
 
-If you don't want to take the time to write out declarations before using a new module, you can use a shorthand declaration to get started quickly.
+새로운 모듈을 사용하기 전에 선언을 작성하는 시간을 내고 싶지 않다면 shorthand 선언을 사용하여 빠르게 시작할 수 있습니다.
 
 ##### declarations.d.ts
 
@@ -516,7 +518,7 @@ If you don't want to take the time to write out declarations before using a new 
 declare module "hot-new-module";
 ```
 
-All imports from a shorthand module will have the `any` type.
+shorthand 모듈의 모든 imports는 `any` 타입을 가집니다.
 
 ```ts
 import x, {y} from "hot-new-module";
