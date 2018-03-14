@@ -1,9 +1,9 @@
-> **A note about terminology:**
-It's important to note that in TypeScript 1.5, the nomenclature has changed.
-"Internal modules" are now "namespaces".
-"External modules" are now simply "modules", as to align with [ECMAScript 2015](http://www.ecma-international.org/ecma-262/6.0/)'s terminology, (namely that `module X {` is equivalent to the now-preferred `namespace X {`).
+> **용어에 대한 참고 사항:**
+TypeScript 1.5에 명칭이 변경되었습니다.  
+"내부 모듈"은 이제 "네임스페이스"입니다.  
+"외부 모듈"은 [ECMAScript 2015](http://www.ecma-international.org/ecma-262/6.0/)의 용어에 맞게 간단히 "모듈"입니다 (즉 모듈 X { 는 현재 선호되는 네임스페이스 X { 와 동일합니다).
 
-# Introduction
+# 소개
 
 This post outlines the various ways to organize your code using namespaces and modules in TypeScript.
 We'll also go over some advanced topics of how to use namespaces and modules, and address some common pitfalls when using them in TypeScript.

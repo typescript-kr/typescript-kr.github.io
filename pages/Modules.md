@@ -24,7 +24,7 @@ TypeScript에서는 ECMAScript 2015와 마찬가지로 최상위 `import` 또는
 
 ## 내보내기 선언 (Exporting a declaration)
 
-변수, 함수, 클래스, 타입 별칭 또는 인터페이스와 같은 선언문은 `export` 키워드를 추가하여 내보낼 수 있습니다.
+변수, 함수, 클래스, 타입 별칭(alias) 또는 인터페이스와 같은 선언문은 `export` 키워드를 추가하여 내보낼 수 있습니다.
 
 ##### Validation.ts
 
@@ -245,7 +245,7 @@ export = ZipCodeValidator;
 ```ts
 import zip = require("./ZipCodeValidator");
 
-// 시도할 샘플 몇개
+// 시험용 샘플
 let strings = ["Hello", "98052", "101"];
 
 // 사용할 Validators
@@ -386,7 +386,7 @@ import { StringValidator } from "./Validation";
 import { ZipCodeValidator } from "./ZipCodeValidator";
 import { LettersOnlyValidator } from "./LettersOnlyValidator";
 
-// 시도할 샘플 몇개
+// 시험용 샘플
 let strings = ["Hello", "98052", "101"];
 
 // 사용할 Validators

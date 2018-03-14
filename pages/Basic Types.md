@@ -12,7 +12,9 @@ let isDone: boolean = false;
 
 # 숫자형 \(Boolean\)
 
-JavaScript와 마찬가지로 TypeScript의 모든 숫자는 부동 소수 점 값입니다. 이 부동 소수 점 숫자는 `number` 타입을 받습니다. TypeScript는 16진수 및 10진수와 함께 ECMAScript2015에 도입된 2진수 및 8진수 문자를 지원합니다.
+JavaScript와 마찬가지로 TypeScript의 모든 숫자는 부동 소수 점 값입니다.  
+이 부동 소수 점 숫자는 `number` 타입을 받습니다.  
+TypeScript는 10진수 및 16진수와 함께 ECMAScript2015에 도입된 2진수 및 8진수 문자를 지원합니다.
 
 ```ts
 let decimal: number = 6;
@@ -23,15 +25,17 @@ let octal: number = 0o744;
 
 # 문자열 \(String\)
 
-웹 페이지와 서버를 위한 JavaScript 프로그램을 만드는 또 다른 기본적인 부분은 텍스트 데이터를 사용하는 것입니다. 다른 언어와 같이 이러한 텍스트 데이터 타입을 참조하기 위해 `string` 타입을 사용합니다. JavaScript와 마찬가지로 TypeScript 또한 문자열 데이터를 감싸기 위해 큰 따옴표\(`"`\) 또는 작은 따옴표\(`'`\)를 사용합니다.
+웹 페이지와 서버를 위한 JavaScript 프로그램을 만드는 또 다른 기본적인 부분은 텍스트 데이터를 사용하는 것입니다.  
+다른 언어와 같이 이러한 텍스트의 데이터 타입을 참조하기 위해 `string` 타입을 사용합니다.  
+JavaScript와 마찬가지로 TypeScript 또한 문자열 데이터를 감싸기 위해 큰 따옴표\(`"`\) 또는 작은 따옴표\(`'`\)를 사용합니다.
 
 ```ts
 let color: string = "blue";
 color = 'red';
 ```
 
-여러 줄에 걸쳐 표현식을 포함할 수 있는 _템플릿 문자열_을 사용할 수도 있습니다.  
-이 문자열은 백틱 / 백 쿼트 \(``` ``\) 문자로 감싸져 있으며 포함된 표현식은 `${ expr }`폼입니다.
+여러 줄에 걸쳐 표현식을 포함할 수 있는 _템플릿 문자열_ 을 사용할 수도 있습니다.  
+이 문자열은 백틱 / 백 쿼트 \(``` ``\) 문자로 감싸져 있으며 포함된 표현식은 `${ 표현식 }` 형식입니다.
 
 ```ts
 let fullName: string = `Bob Bobbington`;
@@ -59,7 +63,7 @@ TypeScript는 JavaScript와 같이 값의 배열을 사용할 수 있도록 합�
 let list: number[] = [1, 2, 3];
 ```
 
-두 번째 방법으로는 제네릭 배열 타입을 사용합니다, `Array<요소의 타입>`:
+두 번째 방법으로는 제네릭 배열 타입을 사용합니다. `Array<요소의 타입>`:
 
 ```ts
 let list: Array<number> = [1, 2, 3];
@@ -74,7 +78,7 @@ let list: Array<number> = [1, 2, 3];
 // 튜플 타입 선언
 let x: [string, number];
 // 초기화
-x = ["hello", 10]; // OK
+x = ["hello", 10]; // 좋아요
 // 부정확한 초기화
 x = [10, "hello"]; // 오류
 ```
@@ -82,21 +86,21 @@ x = [10, "hello"]; // 오류
 알려진 인덱스을 사용하여 요소에 접근하는 경우에 올바른 타입이 검색됩니다.
 
 ```ts
-console.log(x[0].substr(1)); // OK
+console.log(x[0].substr(1)); // 좋아요
 console.log(x[1].substr(1)); // 오류, 'number'은 'substr'을 가지고 있지 않습니다.
 ```
 
 알려진 인덱스 집합 외부의 요소에 접근할 때는 다음과 같이 Union 타입이 사용됩니다:
 
 ```ts
-x[3] = "world"; // OK, 'string'은 'string | number'에 할당될 수 있습니다.
+x[3] = "world"; // 좋아요, 'string'은 'string | number'에 할당될 수 있습니다.
 
-console.log(x[5].toString()); // OK, 'string' 및 'number'에 모두 'toString'이 있습니다.
+console.log(x[5].toString()); // 좋아요, 'string' 및 'number'에 모두 'toString'이 있습니다.
 
 x[6] = true; // 오류, 'boolean'은 'string | number' 타입이 아닙니다.
 ```
 
-Union 타입은 다음 장에서 다루게 될 고급 주제입니다.
+공용체 타입은 다음 장에서 다루게 될 고급 주제입니다.
 
 # 열거 \(Enum\)
 
@@ -144,18 +148,18 @@ alert(colorName); // 위의 값이 2 이므로 'Green'을 표시합니다.
 ```ts
 let notSure: any = 4;
 notSure = "문자열일수도 있다";
-notSure = false; // okay, 확실한 boolean
+notSure = false; // 좋아요, 확실한 boolean
 ```
 
-`any` 타입은 기존 JavaScript로 작업할 수 있는 강력한 방법으로, 컴파일 과정에서 타입 검사를 점진적으로 실행 \(opt-in\) 및 중지\(opt-out\) 할 수 있습니다.
+`any` 타입은 기존 JavaScript로 작업할 수 있는 강력한 방법으로 컴파일 과정에서 타입 검사를 점진적으로 실행 \(opt-in\) 및 중지\(opt-out\) 할 수 있습니다.
 
 다른 언어와 마찬가지로 `객체`도 비슷한 역할을 할 것으로 예상할 수 있습니다.  
 그러나 `객체` 타입의 변수를 사용하면 해당 `객체`에는 값만 할당할 수 있습니다 - 실제로 존재하는 것도 임의의 메소드를 호출할 수는 없습니다:
 
 ```ts
 let notSure: any = 4;
-notSure.ifItExists(); // okay, 런타임에 ifItExists가 존재할 수 있습니다.
-notSure.toFixed(); // okay, toFixed는 존재합니다. (그러나 컴파일러는 체크하지 않습니다.)
+notSure.ifItExists(); // 좋아요, 런타임에 ifItExists가 존재할 수 있습니다.
+notSure.toFixed(); // 좋아요, toFixed는 존재합니다. (그러나 컴파일러는 체크하지 않습니다)
 
 let prettySure: Object = 4;
 prettySure.toFixed(); // 오류: 'Object' 타입에 'toFixed' 프로퍼티는 존재하지 않습니다.
@@ -172,7 +176,7 @@ list[1] = 100;
 
 # Void
 
-`void`는 `any` 정반대이지만 조금 비슷합니다: 어떠한 타입의 부재도 전혀 없습니다.  
+`void`는 `any`의 정반대이지만 조금 비슷합니다: 어떠한 타입의 부재도 전혀 없습니다.  
 일반적으로 반환 값을 반환하지 않는 함수의 반환 타입으로 볼 수 있습니다:
 
 ```ts
@@ -189,7 +193,8 @@ let unusable: void = undefined;
 
 # Null 과 Undefined
 
-TypeScript에서 `undefined`와 `null`은 실제로 각기 `undefined`와 `null`이라는 자체적인 타입을 가집니다. `void`와 마찬가지로 그것들은 매우\(극단적으로\) 유용하지 않습니다 :
+TypeScript에서 `undefined`와 `null`은 실제로 각기 `undefined`와 `null`이라는 자체적인 타입을 가집니다.  
+`void`와 마찬가지로 그것들은 매우\(극단적으로\) 유용하지 않습니다 :
 
 ```ts
 // 그 외에도 이러한 변수에 할당할 수 있습니다!
@@ -265,7 +270,8 @@ let strLength: number = (someValue as string).length;
 ```
 
 두 샘플은 동일합니다.  
-다른 하나를 사용하는 것은 주로 선호도에 따른 선택입니다. 그러나 TypeScript를 JSX와 함께 사용할 때는 `as` 스타일의 어설션만 허용됩니다.
+다른 하나를 사용하는 것은 주로 선호도에 따른 선택입니다.  
+그러나 TypeScript를 JSX와 함께 사용할 때는 `as` 스타일의 표명만 허용됩니다.
 
 # `let`에 대한 메모
 
