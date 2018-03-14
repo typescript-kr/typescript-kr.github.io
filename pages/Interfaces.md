@@ -1,6 +1,6 @@
 # 소개 \(Introduction\)
 
-TypeScript의 핵심 원리 중 하나는 값이 가지는 _형태_에 초점을 맞추는 타입-체킹을 한다는 것입니다.  
+TypeScript의 핵심 원리 중 하나는 값이 가지는 _형태_ 에 초점을 맞추는 타입-체킹을 한다는 것입니다.  
 이것은 때때로 "덕 타이핑\(duck typing\)" 또는 "구조적 하위 유형화\(structural subtyping\)"라고도 합니다.  
 TypeScript에서는 인터페이스가 이러한 타입의 이름을 지정하는 역할을 하며 코드 내에서 계약을 정의하고 프로젝트 외부에서 코드를 사용하는 계약을 정의하는 강력한 방법입니다.
 
@@ -101,7 +101,8 @@ let mySquare = createSquare({color: "black"});
 
 # 읽기 전용 프로퍼티 \(Readonly properties\)
 
-일부 프로퍼티는 객체를 처음 생성할 때만 수정할 수 있어야 합니다. 프로퍼티 이름 앞에 `readonly`을 붙여 넣어 지정할 수 있습니다:
+일부 프로퍼티는 객체를 처음 생성할 때만 수정할 수 있어야 합니다.  
+프로퍼티 이름 앞에 `readonly`을 붙여 넣어 지정할 수 있습니다:
 
 ```ts
 interface Point {
@@ -174,7 +175,7 @@ let mySquare = createSquare({ colour: "red", width: 100 });
 let mySquare = createSquare({ colour: "red", width: 100 });
 ```
 
-이런 점검을 하는 것은 실제로 정말 간단합니다.  
+이런 검사을 하는 것은 실제로 정말 간단합니다.  
 가장 쉬운 방법은 타입 표명\(type assertion\)을 사용하는 것입니다:
 
 ```ts
@@ -193,7 +194,7 @@ interface SquareConfig {
 }
 ```
 
-이후에 인덱스 서명\(index signatures\)에 대해 이야기하겠지만 `SquareConfig`은 여러 프로퍼티들을 가질 수 있으며 `color` 이나 `width`가 아닌 다른 프로퍼티들의 타입은 문제 되지 않습니다.
+이후에 인덱스 서명\(index signatures\)에 대해 이야기하겠지만 `SquareConfig`은 여러 프로퍼티들을 가질 수 있으며 `color` 또는  `width`가 아닌 다른 프로퍼티들의 타입은 문제 되지 않습니다.
 
 이러한 검사를 하는 마지막 방법 중 하나는 객체를 다른 변수에 할당하는 것입니다: `squareOptions`은 너무 프로퍼티 초과 검사를 거치지 않기 때문에 컴파일러가 오류를 제공하지 않습니다:
 
@@ -205,7 +206,7 @@ let mySquare = createSquare(squareOptions);
 위와 같은 간단한 코드의 경우에는 이러한 검사를 "회피하는" 시도를 하지 말아야 합니다.  
 메서드와 상태를 유지하는 더 복잡한 객체 리터럴의 경우 이러한 기법을 유지하고 싶은 마음이겠지만 대부분의 초과 프로퍼티 오류는 실제로 버그입니다.  
 즉 옵션 가방\(option bags\)과 같은 물건에 대해 초과 프로퍼티 검사 문제가 발생하는 경우 타입 선언 중 일부를 수정해야 할 수도 있습니다.  
-이 경우 `createSquare`에 `color` or `colour` 프로퍼티를 모두 포함한 객체를 전달하는 것이 괜찮은 경우 `squareConfig`의 정의를 수정해야 합니다.
+`createSquare`에 `color` 또는 `colour` 프로퍼티를 모두 포함한 객체를 전달하는 것이 괜찮은 경우 `squareConfig`의 정의를 수정해야 합니다.
 
 # 함수 타입 \(Function Types\)
 
@@ -232,7 +233,8 @@ mySearch = function(source: string, subString: string) {
 }
 ```
 
-함수 타입의 타입을 점검할 때 매개 변수의 이름이 일치할 필요는 없습니다. 예를 들어 다음과 같은 예를 작성할 수 있습니다:
+함수 타입의 타입을 검사할 때 매개 변수의 이름이 일치할 필요는 없습니다.  
+예를 들어 다음과 같은 예를 작성할 수 있습니다:
 
 ```ts
 let mySearch: SearchFunc;
@@ -242,9 +244,9 @@ mySearch = function(src: string, sub: string): boolean {
 }
 ```
 
-함수 매개 변수는 하나씩 점검되며 각 해당 파라미터 위치의 타입을 서로 비교하며 점검합니다.  
+함수 매개 변수는 하나씩 검사되며 각 해당 파라미터 위치의 타입을 서로 비교하며 검사합니다.  
 타입을 지정하지 않으려는 경우 함수 값이 `SearchFunc` 타입의 변수에 직접 지정되므로 TypeScript의 컨텍스트 타입\(contextual typing\)에 따라 인수 타입을 추론할 수 있습니다.  
-또한 여기서 함수 표현식의 반환 타입은 반환되는 값에 의해서도 암시적으로 나타납니다\(여기서는 `false`와 `true`\)  
+또한 여기서 함수 표현식의 반환 타입은 반환되는 값에 의해서도 암시적으로 나타납니다\(여기서는 `true`와 `false`\)  
 함수 표현식이 숫자나 문자열을 반환하는 경우 타입-체커가 반환 타입이 `SearchFunc` 인터페이스에 설명된 반환 타입과 일치하지 않는다는 경고했을 것입니다
 
 ```ts
@@ -257,7 +259,7 @@ mySearch = function(src, sub) {
 
 # 인덱싱 가능 타입\(Indexable Types\)
 
-함수 타입을 설명하기 위해 인터페이스를 사용하는 방법과 마찬가지로 `a[10]` 또는 `ageMap["daniel"]`처럼 "인덱스를" 생성할 수 있는 타입을 만들 수도 있습니다.  
+함수 타입을 설명하기 위해 인터페이스를 사용하는 방법과 마찬가지로 `a[10]` 또는 `ageMap["daniel"]`처럼 "인덱스"를 생성할 수 있는 타입을 만들 수도 있습니다.  
 인덱싱 가능 타입에는 객체로 인덱싱 하는 데 사용할 수 있는 타입과 인덱싱 할 때 해당 반환 타입을 설명하는 _인덱스 서명\(index signature\)_ 이 있습니다.  
 예를 들어 보겠습니다.
 
@@ -354,7 +356,7 @@ class Clock implements ClockInterface {
 ```
 
 인터페이스는 public 측면과 private 측면이 아닌 public 측면의 class를 만듭니다.  
-클래스를 사용하여 클래스 인스턴스의 private 측에 특정 타입이 있는지 점검하는 것은 금지되어 있습니다.
+클래스를 사용하여 클래스 인스턴스의 private 측에 특정 타입이 있는지 검사하는 것은 금지되어 있습니다.
 
 ## 클래스의 스태틱과 인스턴스의 차이점\(Difference between the static and instance sides of classes\)
 
@@ -373,7 +375,7 @@ class Clock implements ClockConstructor {
 ```
 
 왜냐하면 클래스가 인터페이스를 구현할 때 클래스의 인스턴스 측면만 검사되기 때문입니다.  
-생성자는 정적인 측면이기 때문에 이 점검에 포함되지 않습니다.
+생성자는 정적인 측면이기 때문에 이 검사에 포함되지 않습니다.
 
 대신 클래스의 정적인 측면에서 직접 작업해야 합니다.  
 이 예제에서는 생성자를 위한 `ClockConstructor`와 인스턴스 메서드를 위한 `ClockInterface`라는 두 개의 인터페이스를 정의합니다.  
@@ -477,7 +479,7 @@ c.reset();
 c.interval = 5.0;
 ```
 
-서드파티 JavaScript와 상호 작용할 때 타입의 형태를 완전히 형성하려면 위와 같은 패턴을 사용해야 할 수 있습니다.
+써드-파티 JavaScript와 상호 작용할 때 타입의 형태를 완전히 형성하려면 위와 같은 패턴을 사용해야 할 수 있습니다.
 
 # 인터페이스 확장 클래스 \(Interfaces Extending Classes\)
 
@@ -525,6 +527,7 @@ class Location {
 
 `Control` 클래스 내에서 `SelectableControl`의 인스턴스를 통해 `state` private 멤버에 접근할 수 있습니다.  
 실제로 `SelectableControl`은 알려진 대로 `select` 메서드를 가진 `Control`과 같은 역할을 합니다.  
-`Button`과 `TextBox` 클래스는 `SelectableControl`의 하위 타입입니다 \(왜냐하면 둘 다 `Control`을 상속받으며 `select` 메서드를 가지기 때문입니다\).  
+`Button`과 `TextBox` 클래스는 `SelectableControl`의 하위 타입입니다  
+\(왜냐하면 둘 다 `Control`을 상속받으며 `select` 메서드를 가지기 때문입니다\).  
 그러나 `Image` 클래스와 `Location` 클래스는 그렇지 않습니다.
 

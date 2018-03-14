@@ -10,7 +10,7 @@ let sym1 = Symbol();
 let sym2 = Symbol("key"); // 선택적 문자열 키
 ```
 
-심볼은 불변이고 고유합니다.
+심볼은 불변이며 고유합니다.
 
 ```ts
 let sym2 = Symbol("key");
@@ -47,7 +47,7 @@ let className = c[getClassNameSymbol](); // "C"
 
 # 잘 알려진 심볼 (Well-known Symbols)
 
-사용자 정의 심볼 외에도 잘 알려진 내장 심볼이 있습니다.
+사용자 정의 심볼 외에도 잘 알려진 내장 심볼이 있습니다.  
 내장 심볼은 내부 언어 동작을 나타내는 데 사용됩니다.
 
 다음은 잘 알려진 심볼 목록입니다.
