@@ -5,38 +5,38 @@ TypeScript 1.5에 명칭이 변경되었습니다.
 
 # 소개
 
-This post outlines the various ways to organize your code using namespaces and modules in TypeScript.
-We'll also go over some advanced topics of how to use namespaces and modules, and address some common pitfalls when using them in TypeScript.
+이 게시물은 TypeScript의 네임스페이스와 모듈을 사용하여 구성하는 다양한 방법을 설명합니다.  
+또한 네임스페이스와 모듈을 사용하는 방법에 대한 몇가지 고급 주제를 살펴보고 TypeScript에서 사용할 때 일반적인 몇가지 함정을 다룰 예정입니다.
 
-See the [Modules](./Modules.md) documentation for more information about modules.
-See the [Namespaces](./Namespaces.md) documentation for more information about namespaces.
+[모듈](./Modules.md)에 대한 자세한 내용은 모듈의 문서를 참조하세요.  
+[네임스페이스](./Namespaces.md)에 대한 자세한 내용은 네임스페이스의 문서를 참조하세요.
 
-# Using Namespaces
+# 네임스페이스 사용하기 (Using Namespaces)
 
-Namespaces are simply named JavaScript objects in the global namespace.
-This makes namespaces a very simple construct to use.
-They can span multiple files, and can be concatenated using `--outFile`.
-Namespaces can be a good way to structure your code in a Web Application, with all dependencies included as `<script>` tags in your HTML page.
+네임스페이스는 전역 네임스페이스에서 JavaScript 객체로 불립니다.  
+네임스페이스를 매우 사용하기 간단한 구조로 만듭니다.  
+여러 파일에 걸쳐있을 수 있으며 `--outFile`을 사용하여 연결될 수 있습니다.  
+네임스페이스는 HTML 페이지에 `<script>` 태그로 포 된 모든 의존성을 가진 웹 애플리케이션에서 코드를 구조화하는 좋은 방법이 될 수 있습니다.
 
-Just like all global namespace pollution, it can be hard to identify component dependencies, especially in a large application.
+모든 전역 네임스페이스 오염과 마찬가지로, 특히 대규모 애플리케이션에서는 구성 요소 의존성을 식별하기 어려울 수 있습니다.
 
-# Using Modules
+# 모듈 사용하기 (Using Modules)
 
-Just like namespaces, modules can contain both code and declarations.
-The main difference is that modules *declare* their dependencies.
+네임 스페이스와 마찬가지로 모듈에는 코드와 선언을 모두 포함시킵니다.  
+가장 큰 차이점은 모듈이 의존성을 *선언*한다는 것입니다.
 
-Modules also have a dependency on a module loader (such as CommonJs/Require.js).
-For a small JS application this might not be optimal, but for larger applications, the cost comes with long term modularity and maintainability benefits.
-Modules provide for better code reuse, stronger isolation and better tooling support for bundling.
+모듈은 또한 모듈 로더에 대한 의존성을 가지고 있습니다 (예: CommonJs/Require.js)  
+작은 JS 애플리케이션의 경우는 최적이 아닐 수도 있지만 대규모 애플리케이션의 경우 장기적인 모듈성 및 유지 관리에 이점이 있습니다.  
+모듈은 더 나은 코드 재사용, 강력한 격리 및 번들링을 위한 향상된 도구 지원을 제공합니다.
 
-It is also worth noting that, for Node.js applications, modules are the default and the recommended approach to structure your code.
+또한 Node.js 애플리케이션의 경우 모듈이 기본이며 코드를 구조화하기위한 권장 방법임을 유의해야합니다.
 
-Starting with ECMAScript 2015, modules are native part of the language, and should be supported by all compliant engine implementations.
-Thus, for new projects modules would be the recommended code organization mechanism.
+ECMAScript 2015 부터는 모듈은 언어의 기본 요소이며 모든 호환 엔진 구현에서 지원해야합니다.  
+따라서 새로운 프로젝트의 경우 모듈이 코드 구성 메커니즘의 권장 사항이 됩니다.
 
-# Pitfalls of Namespaces and Modules
+# 네임스페이스와 모듈의 위험 (Pitfalls of Namespaces and Modules)
 
-In this section we'll describe various common pitfalls in using namespaces and modules, and how to avoid them.
+이 섹션에서는 네임스페이스와 모듈을 사용할 때 흔히 발생하는 다양한 위험에 대해 설명하고 이를 피하는 방법에 대해 알아보겠습니다.
 
 ## `/// <reference>`-ing a module
 
