@@ -6,7 +6,7 @@ TypeScript 1.5에 명칭이 변경되었습니다.
 # 소개
 
 이 게시물은 TypeScript의 네임스페이스와 모듈을 사용하여 구성하는 다양한 방법을 설명합니다.  
-또한 네임스페이스와 모듈을 사용하는 방법에 대한 몇가지 고급 주제를 살펴보고 TypeScript에서 사용할 때 일반적인 몇가지 함정을 다룰 예정입니다.
+또한 네임스페이스와 모듈을 사용하는 방법에 대한 몇 가지 고급 주제를 살펴보고 TypeScript에서 사용할 때 일반적인 몇 가지 함정을 다룰 예정입니다.
 
 [모듈](./Modules.md)에 대한 자세한 내용은 모듈의 문서를 참조하세요.  
 [네임스페이스](./Namespaces.md)에 대한 자세한 내용은 네임스페이스의 문서를 참조하세요.
@@ -29,9 +29,9 @@ TypeScript 1.5에 명칭이 변경되었습니다.
 작은 JS 애플리케이션의 경우는 최적이 아닐 수도 있지만 대규모 애플리케이션의 경우 장기적인 모듈성 및 유지 관리에 이점이 있습니다.  
 모듈은 더 나은 코드 재사용, 강력한 격리 및 번들링을 위한 향상된 도구 지원을 제공합니다.
 
-또한 Node.js 애플리케이션의 경우 모듈이 기본이며 코드를 구조화하기위한 권장 방법임을 유의해야합니다.
+또한 Node.js 애플리케이션의 경우 모듈이 기본이며 코드를 구조화하기 위한 권장 방법임을 유의해야 합니다.
 
-ECMAScript 2015 부터는 모듈은 언어의 기본 요소이며 모든 호환 엔진 구현에서 지원해야합니다.  
+ECMAScript 2015 부터는 모듈은 언어의 기본 요소이며 모든 호환 엔진 구현에서 지원해야 합니다.  
 따라서 새로운 프로젝트의 경우 모듈이 코드 구성 메커니즘의 권장 사항이 됩니다.
 
 # 네임스페이스와 모듈의 위험 (Pitfalls of Namespaces and Modules)
@@ -40,17 +40,17 @@ ECMAScript 2015 부터는 모듈은 언어의 기본 요소이며 모든 호환 
 
 ## `/// <reference>`-ing a module
 
-A common mistake is to try to use the `/// <reference ... />` syntax to refer to a module file, rather than using an `import` statement.
-To understand the distinction, we first need to understand how compiler can locate the type information for a module based on the path of an `import` (e.g. the `...` in `import x from "...";`, `import x = require("...");`, etc.) path.
+일반적인 실수는 `import` 문을 사용하는 대신 모듈 파일을 참조하기 위해 `/// <reference ... />` 문을 사용하는 것이다.  
+차이점을 이해하기 위해서는, 우선 컴파일러가 `import`(예:'...'에서 '...',`import x from "...";`에서 `import x = require("...");` 경로를 기반으로 모듈에 대한 타입 정보를 찾는 방법을 먼저 이해할 필요가 있습니다.
 
-The compiler will try to find a `.ts`, `.tsx`, and then a `.d.ts` with the appropriate path.
-If a specific file could not be found, then the compiler will look for an *ambient module declaration*.
-Recall that these need to be declared in a `.d.ts` file.
+컴파일러는 적절한 경로로 `.ts`, `.tsx` 그리고`.d.ts`를 찾으려 할 겁니다.  
+특정 파일을 찾을 수 없으면 컴파일러는 *ambient 모듈 선언*을 찾습니다.  
+이 파일들을 `.d.ts` 파일에 선언해야 한다는 것을 기억해야 합니다.
 
 * `myModules.d.ts`
 
   ```ts
-  // In a .d.ts file or .ts file that is not a module:
+  // 모듈이 아닌 .d.ts 파일 또는 .ts 파일:
   declare module "SomeModule" {
       export function fn(): string;
   }
@@ -63,12 +63,12 @@ Recall that these need to be declared in a `.d.ts` file.
   import * as m from "SomeModule";
   ```
 
-The reference tag here allows us to locate the declaration file that contains the declaration for the ambient module.
-This is how the `node.d.ts` file that several of the TypeScript samples use is consumed.
+여기서 참조 태그는 ambient 모듈에 대한 선언을 포함하는 선언 파일을 찾을 수 있게 해줍니다.  
+이것은 다수의 TypeScript 샘플에서 사용되는 `node.d.ts` 파일이 사용되는 방법입니다.
 
-## Needless Namespacing
+## 불필요한 네임스페이스 (Needless Namespacing)
 
-If you're converting a program from namespaces to modules, it can be easy to end up with a file that looks like this:
+프로그램을 네임스페이스에서 모듈로 변환하는 경우에는 다음과 파일로 같은 쉽게 끝날 수 있습니다:
 
 * `shapes.ts`
 
@@ -79,8 +79,8 @@ If you're converting a program from namespaces to modules, it can be easy to end
   }
   ```
 
-The top-level module here `Shapes` wraps up `Triangle` and `Square` for no reason.
-This is confusing and annoying for consumers of your module:
+여기 최상위 모듈인 `Shapes`은 `Triangle`과 `Square`를 감싸고 있는 데 아무런 이유가 없습니다.  
+이는 모듈의 사용자들을 혼란스럽고 성가시게 합니다:
 
 * `shapeConsumer.ts`
 
@@ -89,13 +89,13 @@ This is confusing and annoying for consumers of your module:
   let t = new shapes.Shapes.Triangle(); // shapes.Shapes?
   ```
 
-A key feature of modules in TypeScript is that two different modules will never contribute names to the same scope.
-Because the consumer of a module decides what name to assign it, there's no need to proactively wrap up the exported symbols in a namespace.
+TypeScript에서 모듈의 주요 특징은 두 개의 서로 다른 모듈이 동일한 스코프에 이름을 제공하지 않는다는 것입니다.  
+모듈의 사용자가 할당할 이름을 결정하기 때문에 네임스페이스에서 내보낸 심볼을 사전에 감쌀 필요가 없습니다.
 
-To reiterate why you shouldn't try to namespace your module contents, the general idea of namespacing is to provide logical grouping of constructs and to prevent name collisions.
-Because the module file itself is already a logical grouping, and its top-level name is defined by the code that imports it, it's unnecessary to use an additional module layer for exported objects.
+모듈 내용의 네임스페이스를 지정하지 않아야 하는 이유를 반복해서 설명하기 위해 Namespacing은 구조의 논리적 그룹을 제공하고 이름 충돌을 방지하는 것입니다.  
+모듈 파일 자체는 논리적 그룹이며 최상위 이름은 이를 가져오는 코드에 의해 정의되기 때문에 내보낸 객체에 대해 추가적인 모듈 계층을 사용할 필요가 없습니다.
 
-Here's a revised example:
+다음은 수정된 예입니다.
 
 * `shapes.ts`
 
@@ -111,8 +111,8 @@ Here's a revised example:
   let t = new shapes.Triangle();
   ```
 
-## Trade-offs of Modules
+## 모듈의 관계 (Trade-offs of Modules)
 
-Just as there is a one-to-one correspondence between JS files and modules, TypeScript has a one-to-one correspondence between module source files and their emitted JS files.
-One effect of this is that it's not possible to concatenate multiple module source files depending on the module system you target.
-For instance, you can't use the `outFile` option while targeting `commonjs` or `umd`, but with TypeScript 1.8 and later, [it's possible](./release%20notes/TypeScript%201.8.md#concatenate-amd-and-system-modules-with---outfile) to use `outFile` when targeting `amd` or `system`.
+JS 파일과 모듈 사이에 일대일 대응이 있는 것과 마찬가지로 TypeScript는 모듈 소스 파일과 발생된 JS 파일 간에 일대일 대응을 합니다.  
+이에 따른 한가지 효과는 대상 모듈 시스템에 따라 여러 모듈 소스 파일을 연결할 수 없다는 것입니다.  
+예를 들어 `commonjs` 또는 `umd`를 대상으로 하는 동안 `outFile` 옵션을 사용할 수 없지만 TypeScript 1.8 이상에서는 `amd` 또는 `system`을 대상으로 지정할 때 `outFile`을 사용[할 수 있습니다](./release%20notes/TypeScript%201.8.md#concatenate-amd-and-system-modules-with---outfile).
