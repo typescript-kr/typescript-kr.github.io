@@ -1,46 +1,45 @@
-> This section assumes some basic knowledge about modules.
-Please see the [Modules](./Modules.md) documentation for more information.
+> 이번 섹션에서는 모듈에 대한 몇 가지 기본 지식을 전제로합니다. 자세한 내용은 [모듈](./Modules.md)을 참조하세요.
 
-*Module resolution* is the process the compiler uses to figure out what an import refers to.
-Consider an import statement like `import { a } from "moduleA"`;
-in order to check any use of `a`, the compiler needs to know exactly what it represents, and will need to check its definition `moduleA`.
+*모듈 resolution*은 import가 무엇을 참조하는지 파악하기 위해 컴파일러가 사용하는 프로세스입니다.  
+`import { a } from "moduleA"`와 같은 import 문을 고려하세요.  
 
-At this point, the compiler will ask "what's the shape of `moduleA`?"
-While this sounds straightforward, `moduleA` could be defined in one of your own `.ts`/`.tsx` files, or in a `.d.ts` that your code depends on.
+a의 사용을 검사하기 위해서는 컴파일러는 그것이 무엇을 의미하는지 정확히 알아야 하며 그것의 정의인 `moduleA`를 검사해야 할 필요가 있습니다.
 
-First, the compiler will try to locate a file that represents the imported module.
-To do so the compiler follows one of two different strategies: [Classic](#classic) or [Node](#node).
-These strategies tell the compiler *where* to look for `moduleA`.
+이때 컴파일러가 "`moduleA`의 형태가 무엇입니까?"라고 묻습니다.  
+이것은 간단하게 들릴지 모르지만 `moduleA`는 자신의 `.ts`/`.tsx` 파일들 중 하나 또는 사용자의 코드가 의존하는 `.d.ts` 파일 중 하나에서 정의될 수 있습니다.
 
-If that didn't work and if the module name is non-relative (and in the case of `"moduleA"`, it is), then the compiler will attempt to locate an [ambient module declaration](./Modules.md#ambient-modules).
-We'll cover non-relative imports next.
+먼저 컴파일러는 가져온 모듈을 나타내는 파일을 찾습니다.  
+이렇게하기 위해 컴파일러는 다음 두 가지 전략 중 하나를 따릅니다:  [클래식](#classic) 또는 [노드](#node). 이 전략은 컴파일러에게 `moduleA`를 찾을 위치를 알려줍니다.
 
-Finally, if the compiler could not resolve the module, it will log an error.
-In this case, the error would be something like `error TS2307: Cannot find module 'moduleA'.`
+그래도 작동하지 않고 모듈 이름이 관련이 없는 경우(`"moduleA"`의 경우에는)  컴파일러는 [ambient module declaration](./Modules.md#ambient-modules)을 찾으려고 시도할 것입니다.  
+다음에 Non-relative imports에 대해 다룰 것입니다.
+
+마지막으로 컴파일러가 모듈을 해결하지 못하면 오류를 기록합니다.  
+이 경우 오류는 `오류 TS2307 : 모듈 'moduleA'을 찾을 수 없습니다.`
 
 ## Relative vs. Non-relative module imports
 
-Module imports are resolved differently based on whether the module reference is relative or non-relative.
+모듈 imports는 모듈 참조가 상대적인지 아닌지에 따라 다르게 처리됩니다.
 
-A *relative import* is one that starts with `/`, `./` or `../`.
-Some examples include:
+*relative import*는 `/`, `./` 또는 `../` 로 시작하는 임포트입니다.  
+몇 가지 예는 다음과 같습니다:
 
 * `import Entry from "./components/Entry";`
 * `import { DefaultHeaders } from "../constants/http";`
 * `import "/mod";`
 
-Any other import is considered **non-relative**.
-Some examples include:
+다른 모든 import는 **non-relative**로 간주됩니다.  
+몇 가지 예는 다음과 같습니다:
 
 * `import * as $ from "jquery";`
 * `import { Component } from "@angular/core";`
 
-A relative import is resolved relative to the importing file and *cannot* resolve to an ambient module declaration.
-You should use relative imports for your own modules that are guaranteed to maintain their relative location at runtime.
+import된 파일과 관련하여 relative import가 해결되었으며 ambient module declaration에 으로 해결할 수는 없습니다.  
+상대적인 위치를 런타임에 유지할 수 있도록 보장되는 모듈에 relative imports를 사용해야 합니다.
 
-A non-relative import can be resolved relative to `baseUrl`, or through path mapping, which we'll cover below.
-They can also resolve to [ambient module declarations](./Modules.md#ambient-modules).
-Use non-relative paths when importing any of your external dependencies.
+non-relative import는 `baseUrl`을 기준 또는 경로 매핑을 통해 해결 될 수 있습니다.  
+또한 [ambient module declarations](./Modules.md#ambient-modules)으로 해결할 수도 있습니다.  
+외부의 의존성을 가져올 때는 non-relative 경로를 사용하세요.
 
 ## Module Resolution Strategies
 
