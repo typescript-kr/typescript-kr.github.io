@@ -6,18 +6,18 @@ JavaScript 코드 베이스를 TypeScript로 변환하는 것은 다소 지루�
 
 React 프로젝트를 변환하려는 경우 [React Conversion Guide](https://github.com/Microsoft/TypeScript-React-Conversion-Guide#typescript-react-conversion-guide)를 먼저 참조하는 것이 좋습니다.
 
-# 디렉터리 설정하기 (Setting up your Directories)
+# 디렉토리 설정하기 (Setting up your Directories)
 
-평범한 JavaScript로 작성하는 경우 JavaScript가 `src`와 `lib` 또는 `dist` 디렉터리에 있는 `.js` 파일을 직접 실행하고 원하는 대로 실행할 수 있습니다.
+평범한 JavaScript로 작성하는 경우 JavaScript가 `src`와 `lib` 또는 `dist` 디렉토리에 있는 `.js` 파일을 직접 실행하고 원하는 대로 실행할 수 있습니다.
 
 이런 경우 작성한 파일은 TypeScript의 입력으로 사용되며 생성된 출력을 실행하게 됩니다.  
 JS에서 TS로 마이그레이션 하는 동안 TypeScript가 입력 파일을 덮어쓰지 않도록 입력 파일을 분리해야 합니다.  
-출력 파일이 특정 디렉터리에 있어야 하는 경우 해당 파일이 출력 디렉터리가 됩니다.
+출력 파일이 특정 디렉토리에 있어야 하는 경우 해당 파일이 출력 디렉토리가 됩니다.
 
 번들링이나 Babel과 같은 다른 트랜스파일러를 사용하는 것과 같이 JavaScript에서 중간 단계를 수행할 수도 있습니다.  
 이런 경우에는 이와 같은 폴더 구조가 이미 설정되어 있을 수 있습니다.
 
-지금부터 디렉터리가 다음과 같이 설정되었다고 가정할 것입니다:
+지금부터 디렉토리가 다음과 같이 설정되었다고 가정할 것입니다:
 
 ```text
 projectRoot
@@ -28,7 +28,7 @@ projectRoot
 └── tsconfig.json
 ```
 
-`src` 디렉터리 밖에 `tests` 폴더가 있다면 `src`에 `tsconfig.json`와 `tests`에 하나씩 가질 수 있습니다.
+`src` 디렉토리 밖에 `tests` 폴더가 있다면 `src`에 `tsconfig.json`와 `tests`에 하나씩 가질 수 있습니다.
 
 # 설정 파일 작성하기 (Writing a Configuration File)
 
@@ -50,12 +50,12 @@ TypeScript는 `tsconfig.json`이라는 파일을 사용하여 포함시킬 파�
 
 여기서 TypeScript에 몇 가지를 지정합니다:
 
-1. `src` 디렉터리에의 모든 파일을 읽습니다 (`include` 포함)
+1. `src` 디렉토리에의 모든 파일을 읽습니다 (`include` 포함)
 2. JavaScript 파일의 입력으로 허용합니다 (`allowJs` 포함)
 3. `builtd`에 모든 출력 파일을 내 보냅니다 (`outDir`와 함께)
 4. 최신 JavaScript 구문을 ECMAScript 5 같은 이전 버전으로 변환합니다 (`target` 사용)
 
-이때 프로젝트 루트에 `tsc`를 실행하려고 하면 `built` 디렉터리에 출력 파일이 표시됩니다.  
+이때 프로젝트 루트에 `tsc`를 실행하려고 하면 `built` 디렉토리에 출력 파일이 표시됩니다.  
 `built`에 있는 파일의 레이아웃은 `src`의 레이아웃과 동일해야 합니다.  
 이제 프로젝트에서 TypeScript로 작업해야 합니다.
 
