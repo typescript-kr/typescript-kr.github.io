@@ -204,32 +204,33 @@ baseUrl을 사용하는 것은 모듈이 런타임에 단일 폴더로 "배포"�
 
 ### 경로 매핑 (Path mapping)
 
-Sometimes modules are not directly located under *baseUrl*.
-For instance, an import to a module `"jquery"` would be translated at runtime to `"node_modules/jquery/dist/jquery.slim.min.js"`.
-Loaders use a mapping configuration to map module names to files at run-time, see [RequireJs documentation](http://requirejs.org/docs/api.html#config-paths) and [SystemJS documentation](https://github.com/systemjs/systemjs/blob/master/docs/config-api.md#paths).
+때때로 모듈은 *baseUrl* 아래에 직접 위치하지 않습니다.  
+예를 들어, 모듈 `"jquery"`에 대한 import는 런타임시에 `"node_modules/jquery/dist/jquery.slim.min.js"`로 변환됩니다.  
+로더는 매핑 구성을 사용하여 런타임에 모듈 이름을 파일에 매핑 합니다. 자세한 내용은 [RequireJs 문서](http://requirejs.org/docs/api.html#config-paths)와 [SystemJS 문서](https://github.com/systemjs/systemjs/blob/master/docs/config-api.md#paths)를 참조하세요.  
 
-The TypeScript compiler supports the declaration of such mappings using `"paths"` property in `tsconfig.json` files.
-Here is an example for how to specify the `"paths"` property for `jquery`.
+TypeScript 컴파일러는 `tsconfig.json`파일에서 `"paths"` 프로퍼티를  사용하여 이러한 매핑을 선언하는 기능을 지원합니다.  
+다음은 `jquery`에 대한 `"paths"` 프로퍼티를 지정하는 예제입니다.
 
 ```json
 {
   "compilerOptions": {
-    "baseUrl": ".", // This must be specified if "paths" is.
+    "baseUrl": ".", // "paths"가 지정된 경우 이 값을 지정해야합니다.
     "paths": {
-      "jquery": ["node_modules/jquery/dist/jquery"] // This mapping is relative to "baseUrl"
+      "jquery": ["node_modules/jquery/dist/jquery"] // 이 매핑은 "baseUrl"과 상대적입니다.
     }
   }
 }
 ```
 
-Please notice that `"paths"` are resolved relative to `"baseUrl"`.
-When setting `"baseUrl"` to another value than `"."`, i.e. the directory of `tsconfig.json`, the mappings must be changed accordingly.
-Say, you set `"baseUrl": "./src"` in the above example, then jquery should be mapped to `"../node_modules/jquery/dist/jquery"`.
+`"paths"`는 `"baseUrl"`에 비례해서 해석된다는 것을 주의하십시오.  
+`"baseUrl"`을 `"."`보다 다른 값으로 설정할 때 즉 `tsconfig.json`의 디렉토리일때마다 매핑을 적절하게 변경해야합니다.  
+가령 위의 예제에서 `"baseUrl": "./src"`를 설정하면 jquery는 `"../node_modules/jquery/dist/jquery"`에 매핑되어야합니다.
 
-Using `"paths"` also allows for more sophisticated mappings including multiple fall back locations.
-Consider a project configuration where only some modules are available in one location, and the rest are in another.
-A build step would put them all together in one place.
-The project layout may look like:
+`"paths"`를 사용하면 여러개의 fall back 위치를 포함한 좀 더 정교한 매핑을 사용할 수도 있습니다.  
+한 위치에서는 일부 모듈만 사용할 수 있고 나머지는 다른 위치에 있는 프로젝트 구성을 고려해보세요.  
+빌드 단계는 모든 것을 한 곳에 한 곳에 모일 것입니다.  
+
+프로젝트 레이아웃은 다음과 같을 수 있습니다:
 
 ```tree
 projectRoot
@@ -243,7 +244,7 @@ projectRoot
 └── tsconfig.json
 ```
 
-The corresponding `tsconfig.json` would look like:
+해당 `tsconfig.json`은 다음과 같습니다:
 
 ```json
 {
@@ -259,12 +260,12 @@ The corresponding `tsconfig.json` would look like:
 }
 ```
 
-This tells the compiler for any module import that matches the pattern `"*"` (i.e. all values), to look in two locations:
+이것은 `"*"`(모든 값) 패턴과 일치하는 모듈 import를 컴파일러에게 알려줌으로써 두 위치를 살펴봅니다:
 
- 1. `"*"`: meaning the same name unchanged, so map `<moduleName>` => `<baseUrl>/<moduleName>`
- 2. `"generated/*"` meaning the module name with an appended prefix "generated", so map `<moduleName>` => `<baseUrl>/generated/<moduleName>`
+ 1. `"*"`: 변경되지 않은 동일한 이름을 의미하기때문에 `<moduleName>` => `<baseUrl>/<moduleName>`을 매핑하세요.
+ 2. `"generated/*"` 추가된 접두어 "generated"가 붙은 모듈 이름을 의미하기때문에 `<moduleName>` => `<baseUrl>/generated/<moduleName>`을 매핑하세요.
 
-Following this logic, the compiler will attempt to resolve the two imports as such:
+이 로직에 따라 컴파일러는 두 가지 imports를 다음과 같이 해석하기위해 노력합니다:
 
 * import 'folder1/file2'
   1. pattern '*' is matched and wildcard captures the whole module name
