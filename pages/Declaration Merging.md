@@ -1,9 +1,9 @@
-# Introduction
+# 소개
 
-Some of the unique concepts in TypeScript describe the shape of JavaScript objects at the type level.
-One example that is especially unique to TypeScript is the concept of 'declaration merging'.
-Understanding this concept will give you an advantage when working with existing JavaScript.
-It also opens the door to more advanced abstraction concepts.
+TypeScript의 고유한 개념 중 일부는 타입 레벨에서 JavaScript 객체의 형태를 설명합니다.  
+특히 TypeScript에서의 고유한 예로는 '선언 병합'이라는 개념이 있습니다.  
+이 개념을 이해하는 것은 기존 JavaScript를 사용할 때 이점을 제공할 것입니다.   
+또한 고급 추상화 개념에 대한 문을 열어줍니다.
 
 For the purposes of this article, "declaration merging" means that the compiler merges two separate declarations declared with the same name into a single definition.
 This merged definition has the features of both of the original declarations.
