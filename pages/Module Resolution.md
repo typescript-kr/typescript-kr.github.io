@@ -362,12 +362,12 @@ export default [
 
 ## 모듈 해석 추적 (Tracing module resolution)
 
-As discussed earlier, the compiler can visit files outside the current folder when resolving a module.
-This can be hard when diagnosing why a module is not resolved, or is resolved to an incorrect definition.
-Enabling the compiler module resolution tracing using `--traceResolution` provides insight in what happened during the module resolution process.
+앞에서 설명한 것처럼 컴파일러가 모듈을 해석할 때 현재 폴더 외부의 파일들에 방문할 수 있습니다.  
+모듈이 해석되지 않은 이유를 진단하거나 잘못된 정의로 해석된 경우에는  문제 해석이 어려울 수 있습니다.  
+`--traceResolution`을 사용하여 컴파일러 모듈 해석 추적을 활성화하면 모듈 확인 프로세스 중에 발생한 일에 대한 통찰력을 얻을 수 있습니다.
 
-Let's say we have a sample application that uses the `typescript` module.
-`app.ts` has an import like `import * as ts from "typescript"`.
+`typescript` 모듈을 사용하는 샘플 애플리케이션이 있다고 가정해 봅시다.  
+`app.ts`는 `import * as ts from "typescript"`와 같은 import를 가지고 있습니다.
 
 ```tree
 │   tsconfig.json
@@ -379,13 +379,13 @@ Let's say we have a sample application that uses the `typescript` module.
         app.ts
 ```
 
-Invoking the compiler with `--traceResolution`
+`--traceResolution`을 사용하여 컴파일러 호출하기
 
 ```shell
 tsc --traceResolution
 ```
 
-Results in an output such as:
+결과는 다음과 같습니다:
 
 ```txt
 ======== Resolving module 'typescript' from 'src/app.ts'. ========
@@ -404,60 +404,61 @@ File 'node_modules/typescript/lib/typescript.d.ts' exist - use it as a module re
 ======== Module name 'typescript' was successfully resolved to 'node_modules/typescript/lib/typescript.d.ts'. ========
 ```
 
-#### Things to look out for
+#### 주의사항 (Things to look out for)
 
-* Name and location of the import
+* import의 이름과 위치
 
- > ======== Resolving module **'typescript'** from **'src/app.ts'**. ========
+ > ======== 모듈 해석 **'typescript'** from **'src/app.ts'**. ========
 
-* The strategy the compiler is following
+* 컴파일러가 따르는 방법
 
- > Module resolution kind is not specified, using **'NodeJs'**.
+ > **'NodeJs'** 를 사용하여 모듈 해석 종류가 지정되지 않았습니다.
 
-* Loading of types from npm packages
+* npm 패키지에서 타입 로드
 
- > 'package.json' has **'types'** field './lib/typescript.d.ts' that references 'node_modules/typescript/lib/typescript.d.ts'.
+ > 'package.json'에는 'node_modules/typescript/lib/typescript.d.ts'를 참조하는 **'types'** 필드인 './lib/typescript.d.ts'가 있습니다.
 
-* Final result
+* 최종 결과
 
- > ======== Module name 'typescript' was **successfully resolved** to 'node_modules/typescript/lib/typescript.d.ts'. ========
+ > ======== 모듈 이름 'typescript'는 'node_modules/typescript/lib/typescript.d.ts'에서 **성공적으로 해석되었습니다.** ========
 
-## Using `--noResolve`
+## `--noResolve` 사용하기 (Using `--noResolve`)
 
-Normally the compiler will attempt to resolve all module imports before it starts the compilation process.
-Every time it successfully resolves an `import` to a file, the file is added to the set of files the compiler will process later on.
+일반적으로 컴파일러는 컴파일 프로세스를 시작하기 전에 모든 모듈의 imports를 해석하려고 시도합니다.  
+파일에 `import`를 성공적으로 해석할 때마다 컴파일러는 파일을 나중에 처리할 파일 집합에 추가합니다.
 
-The `--noResolve` compiler options instructs the compiler not to "add" any files to the compilation that were not passed on the command line.
-It will still try to resolve the module to files, but if the file is not specified, it will not be included.
+`--noResolve` 컴파일러 옵션은 컴파일러가 커맨드라인에서 전달되지 않은 파일을 컴파일에 "추가"하지 않도록 지시합니다.  
+모듈을 파일로 해석하려고 하지만 파일이 지정되지 않으면 포함되지 않습니다.
 
-For instance:
+예를 들어:
 
 #### app.ts
 
 ```ts
-import * as A from "moduleA" // OK, 'moduleA' passed on the command-line
-import * as B from "moduleB" // Error TS2307: Cannot find module 'moduleB'.
+import * as A from "moduleA" // 좋아요, 'moduleA'가 커맨드라인에서 전달되었습니다.
+import * as B from "moduleB" // TS2307 오류: 'moduleB' 모듈을 찾을 수 없습니다.
 ```
 
 ```shell
 tsc app.ts moduleA.ts --noResolve
 ```
 
-Compiling `app.ts` using `--noResolve` should result in:
+`--noResolve`를 사용하여 `app.ts`를 컴파일하면 다음과 같은 결과가 발생합니다:
 
-* Correctly finding `moduleA` as it was passed on the command-line.
-* Error for not finding `moduleB` as it was not passed.
+* 커맨드라인에서 전달된대로 `moduleA`를 적절하게 찾습니다.
+* 전달되지 않았기 때문에 `moduleB`를 찾지 못하는 오류.
 
-## Common Questions
+## 공통 질문 (Common Questions)
 
-### Why does a module in the exclude list still get picked up by the compiler?
+### 제외 목록에 있는 모듈을 여전히 컴파일러가 선택하는 이유는 무엇입니까? (Why does a module in the exclude list still get picked up by the compiler?)
 
-`tsconfig.json` turns a folder into a “project”.
-Without specifying any `“exclude”` or `“files”` entries, all files in the folder containing the `tsconfig.json` and all its sub-directories are included in your compilation.
-If you want to exclude some of the files use `“exclude”`, if you would rather specify all the files instead of letting the compiler look them up, use `“files”`.
+`tsconfig.json`은 폴더를 "프로젝트"로 만듭니다.  
+`“exclude”` 또는 `“files”` 항목을 지정하지 않으면 `tsconfig.json`을 포함한 폴더의 모든 파일과 해당 하위 디렉토리가 컴파일에 포함됩니다.  
+일부 파일을 제외하려면 `“exclude”`를 사용하세요.  
+만일 모든 파일을 지정하고 싶다면 컴파일러가 찾아보게 하는 대신에 `“files”`을 사용하세요.
 
-That was `tsconfig.json` automatic inclusion.
-That does not embed module resolution as discussed above.
-If the compiler identified a file as a target of a module import, it will be included in the compilation regardless if it was excluded in the previous steps.
+`tsconfig.json`는 자동 포함입니다.  
+위에서 설명한 모듈 해석을 포함하지 않습니다.  
+컴파일러가 파일을 모듈 import의 대상으로 식별하는 경우 이전 단계에서 제외되었는지 여부에 관계 없이 컴파일에 포함됩니다.
 
-So to exclude a file from the compilation, you need to exclude it and **all** files that have an `import` or `/// <reference path="..." />` directive to it.
+따라서 컴파일에서 파일을 제외하려면 `import` 또는 `/// <reference path="..." />` 지시자가 있는 **모든** 파일을 제외해야 합니다.
