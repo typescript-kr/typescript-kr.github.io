@@ -948,11 +948,8 @@
 </code></pre>
 <p>&#xC774;&#xC81C; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; <code>import messages from &apos;./#{locale}/messages&apos;</code>&#xC5D0;&#xC11C; <code>import messages from &apos;./zh/messages&apos;</code>&#xC758; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xAC00;&#xC838; &#xC640;&#xC11C; &#xC2DC;&#xAC04; &#xC9C0;&#xC6D0; &#xACC4;&#xD68D;&#xC744; &#xD574;&#xCE58;&#xC9C0; &#xC54A;&#xACE0; &#xC9C0;&#xC5ED;&#xC5D0; &#xC0C1;&#xAD00;&#xC5C6;&#xC774; &#xAC1C;&#xBC1C;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h2 id="&#xBAA8;&#xB4C8;-&#xD574;&#xC11D;-&#xCD94;&#xC801;-tracing-module-resolution">&#xBAA8;&#xB4C8; &#xD574;&#xC11D; &#xCD94;&#xC801; (Tracing module resolution)</h2>
-<p>As discussed earlier, the compiler can visit files outside the current folder when resolving a module.
-This can be hard when diagnosing why a module is not resolved, or is resolved to an incorrect definition.
-Enabling the compiler module resolution tracing using <code>--traceResolution</code> provides insight in what happened during the module resolution process.</p>
-<p>Let&apos;s say we have a sample application that uses the <code>typescript</code> module.
-<code>app.ts</code> has an import like <code>import * as ts from &quot;typescript&quot;</code>.</p>
+<p>&#xC55E;&#xC5D0;&#xC11C; &#xC124;&#xBA85;&#xD55C; &#xAC83;&#xCC98;&#xB7FC; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xAC00; &#xBAA8;&#xB4C8;&#xC744; &#xD574;&#xC11D;&#xD560; &#xB54C; &#xD604;&#xC7AC; &#xD3F4;&#xB354; &#xC678;&#xBD80;&#xC758; &#xD30C;&#xC77C;&#xB4E4;&#xC5D0; &#xBC29;&#xBB38;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xBAA8;&#xB4C8;&#xC774; &#xD574;&#xC11D;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xC774;&#xC720;&#xB97C; &#xC9C4;&#xB2E8;&#xD558;&#xAC70;&#xB098; &#xC798;&#xBABB;&#xB41C; &#xC815;&#xC758;&#xB85C; &#xD574;&#xC11D;&#xB41C; &#xACBD;&#xC6B0;&#xC5D0;&#xB294;  &#xBB38;&#xC81C; &#xD574;&#xC11D;&#xC774; &#xC5B4;&#xB824;&#xC6B8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br><code>--traceResolution</code>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xBAA8;&#xB4C8; &#xD574;&#xC11D; &#xCD94;&#xC801;&#xC744; &#xD65C;&#xC131;&#xD654;&#xD558;&#xBA74; &#xBAA8;&#xB4C8; &#xD655;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xC911;&#xC5D0; &#xBC1C;&#xC0DD;&#xD55C; &#xC77C;&#xC5D0; &#xB300;&#xD55C; &#xD1B5;&#xCC30;&#xB825;&#xC744; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>typescript</code> &#xBAA8;&#xB4C8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC0D8;&#xD50C; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC788;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD574; &#xBD05;&#xC2DC;&#xB2E4;.<br><code>app.ts</code>&#xB294; <code>import * as ts from &quot;typescript&quot;</code>&#xC640; &#xAC19;&#xC740; import&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-tree">&#x2502;   tsconfig.json
 &#x251C;&#x2500;&#x2500;&#x2500;node_modules
 &#x2502;   &#x2514;&#x2500;&#x2500;&#x2500;typescript
@@ -961,10 +958,10 @@ Enabling the compiler module resolution tracing using <code>--traceResolution</c
 &#x2514;&#x2500;&#x2500;&#x2500;src
         app.ts
 </code></pre>
-<p>Invoking the compiler with <code>--traceResolution</code></p>
+<p><code>--traceResolution</code>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xD638;&#xCD9C;&#xD558;&#xAE30;</p>
 <pre><code class="lang-shell">tsc --traceResolution
 </code></pre>
-<p>Results in an output such as:</p>
+<p>&#xACB0;&#xACFC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-txt">======== Resolving module &apos;typescript&apos; from &apos;src/app.ts&apos;. ========
 Module resolution kind is not specified, using &apos;NodeJs&apos;.
 Loading module &apos;typescript&apos; from &apos;node_modules&apos; folder.
@@ -980,55 +977,49 @@ Found &apos;package.json&apos; at &apos;node_modules/typescript/package.json&apo
 File &apos;node_modules/typescript/lib/typescript.d.ts&apos; exist - use it as a module resolution result.
 ======== Module name &apos;typescript&apos; was successfully resolved to &apos;node_modules/typescript/lib/typescript.d.ts&apos;. ========
 </code></pre>
-<h4 id="things-to-look-out-for">Things to look out for</h4>
+<h4 id="&#xC8FC;&#xC758;&#xC0AC;&#xD56D;-things-to-look-out-for">&#xC8FC;&#xC758;&#xC0AC;&#xD56D; (Things to look out for)</h4>
 <ul>
-<li><p>Name and location of the import</p>
+<li><p>import&#xC758; &#xC774;&#xB984;&#xACFC; &#xC704;&#xCE58;</p>
 <blockquote>
-<p>======== Resolving module <strong>&apos;typescript&apos;</strong> from <strong>&apos;src/app.ts&apos;</strong>. ========</p>
+<p>======== &#xBAA8;&#xB4C8; &#xD574;&#xC11D; <strong>&apos;typescript&apos;</strong> from <strong>&apos;src/app.ts&apos;</strong>. ========</p>
 </blockquote>
 </li>
-<li><p>The strategy the compiler is following</p>
+<li><p>&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xAC00; &#xB530;&#xB974;&#xB294; &#xBC29;&#xBC95;</p>
 <blockquote>
-<p>Module resolution kind is not specified, using <strong>&apos;NodeJs&apos;</strong>.</p>
+<p><strong>&apos;NodeJs&apos;</strong> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBAA8;&#xB4C8; &#xD574;&#xC11D; &#xC885;&#xB958;&#xAC00; &#xC9C0;&#xC815;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
 </li>
-<li><p>Loading of types from npm packages</p>
+<li><p>npm &#xD328;&#xD0A4;&#xC9C0;&#xC5D0;&#xC11C; &#xD0C0;&#xC785; &#xB85C;&#xB4DC;</p>
 <blockquote>
-<p>&apos;package.json&apos; has <strong>&apos;types&apos;</strong> field &apos;./lib/typescript.d.ts&apos; that references &apos;node_modules/typescript/lib/typescript.d.ts&apos;.</p>
+<p>&apos;package.json&apos;&#xC5D0;&#xB294; &apos;node_modules/typescript/lib/typescript.d.ts&apos;&#xB97C; &#xCC38;&#xC870;&#xD558;&#xB294; <strong>&apos;types&apos;</strong> &#xD544;&#xB4DC;&#xC778; &apos;./lib/typescript.d.ts&apos;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
 </li>
-<li><p>Final result</p>
+<li><p>&#xCD5C;&#xC885; &#xACB0;&#xACFC;</p>
 <blockquote>
-<p>======== Module name &apos;typescript&apos; was <strong>successfully resolved</strong> to &apos;node_modules/typescript/lib/typescript.d.ts&apos;. ========</p>
+<p>======== &#xBAA8;&#xB4C8; &#xC774;&#xB984; &apos;typescript&apos;&#xB294; &apos;node_modules/typescript/lib/typescript.d.ts&apos;&#xC5D0;&#xC11C; <strong>&#xC131;&#xACF5;&#xC801;&#xC73C;&#xB85C; &#xD574;&#xC11D;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.</strong> ========</p>
 </blockquote>
 </li>
 </ul>
-<h2 id="using---noresolve">Using <code>--noResolve</code></h2>
-<p>Normally the compiler will attempt to resolve all module imports before it starts the compilation process.
-Every time it successfully resolves an <code>import</code> to a file, the file is added to the set of files the compiler will process later on.</p>
-<p>The <code>--noResolve</code> compiler options instructs the compiler not to &quot;add&quot; any files to the compilation that were not passed on the command line.
-It will still try to resolve the module to files, but if the file is not specified, it will not be included.</p>
-<p>For instance:</p>
+<h2 id="-noresolve-&#xC0AC;&#xC6A9;&#xD558;&#xAE30;-using---noresolve"><code>--noResolve</code> &#xC0AC;&#xC6A9;&#xD558;&#xAE30; (Using <code>--noResolve</code>)</h2>
+<p>&#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; &#xCEF4;&#xD30C;&#xC77C; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB97C; &#xC2DC;&#xC791;&#xD558;&#xAE30; &#xC804;&#xC5D0; &#xBAA8;&#xB4E0; &#xBAA8;&#xB4C8;&#xC758; imports&#xB97C; &#xD574;&#xC11D;&#xD558;&#xB824;&#xACE0; &#xC2DC;&#xB3C4;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xD30C;&#xC77C;&#xC5D0; <code>import</code>&#xB97C; &#xC131;&#xACF5;&#xC801;&#xC73C;&#xB85C; &#xD574;&#xC11D;&#xD560; &#xB54C;&#xB9C8;&#xB2E4; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; &#xD30C;&#xC77C;&#xC744; &#xB098;&#xC911;&#xC5D0; &#xCC98;&#xB9AC;&#xD560; &#xD30C;&#xC77C; &#xC9D1;&#xD569;&#xC5D0; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><code>--noResolve</code> &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC635;&#xC158;&#xC740; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xAC00; &#xCEE4;&#xB9E8;&#xB4DC;&#xB77C;&#xC778;&#xC5D0;&#xC11C; &#xC804;&#xB2EC;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xD30C;&#xC77C;&#xC744; &#xCEF4;&#xD30C;&#xC77C;&#xC5D0; &quot;&#xCD94;&#xAC00;&quot;&#xD558;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D; &#xC9C0;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xBAA8;&#xB4C8;&#xC744; &#xD30C;&#xC77C;&#xB85C; &#xD574;&#xC11D;&#xD558;&#xB824;&#xACE0; &#xD558;&#xC9C0;&#xB9CC; &#xD30C;&#xC77C;&#xC774; &#xC9C0;&#xC815;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xD3EC;&#xD568;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;:</p>
 <h4 id="appts">app.ts</h4>
-<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">A</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;moduleA&quot;</span> <span class="cm-comment">// OK, &apos;moduleA&apos; passed on the command-line</span>
-<span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">B</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;moduleB&quot;</span> <span class="cm-comment">// Error TS2307: Cannot find module &apos;moduleB&apos;.</span>
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">A</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;moduleA&quot;</span> <span class="cm-comment">// &#xC88B;&#xC544;&#xC694;, &apos;moduleA&apos;&#xAC00; &#xCEE4;&#xB9E8;&#xB4DC;&#xB77C;&#xC778;&#xC5D0;&#xC11C; &#xC804;&#xB2EC;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">B</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;moduleB&quot;</span> <span class="cm-comment">// TS2307 &#xC624;&#xB958;: &apos;moduleB&apos; &#xBAA8;&#xB4C8;&#xC744; &#xCC3E;&#xC744; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
 </code></pre>
 <pre><code class="lang-shell">tsc app.ts moduleA.ts --noResolve
 </code></pre>
-<p>Compiling <code>app.ts</code> using <code>--noResolve</code> should result in:</p>
+<p><code>--noResolve</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; <code>app.ts</code>&#xB97C; &#xCEF4;&#xD30C;&#xC77C;&#xD558;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xACB0;&#xACFC;&#xAC00; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <ul>
-<li>Correctly finding <code>moduleA</code> as it was passed on the command-line.</li>
-<li>Error for not finding <code>moduleB</code> as it was not passed.</li>
+<li>&#xCEE4;&#xB9E8;&#xB4DC;&#xB77C;&#xC778;&#xC5D0;&#xC11C; &#xC804;&#xB2EC;&#xB41C;&#xB300;&#xB85C; <code>moduleA</code>&#xB97C; &#xC801;&#xC808;&#xD558;&#xAC8C; &#xCC3E;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xC804;&#xB2EC;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; <code>moduleB</code>&#xB97C; &#xCC3E;&#xC9C0; &#xBABB;&#xD558;&#xB294; &#xC624;&#xB958;.</li>
 </ul>
-<h2 id="common-questions">Common Questions</h2>
-<h3 id="why-does-a-module-in-the-exclude-list-still-get-picked-up-by-the-compiler">Why does a module in the exclude list still get picked up by the compiler?</h3>
-<p><code>tsconfig.json</code> turns a folder into a &#x201C;project&#x201D;.
-Without specifying any <code>&#x201C;exclude&#x201D;</code> or <code>&#x201C;files&#x201D;</code> entries, all files in the folder containing the <code>tsconfig.json</code> and all its sub-directories are included in your compilation.
-If you want to exclude some of the files use <code>&#x201C;exclude&#x201D;</code>, if you would rather specify all the files instead of letting the compiler look them up, use <code>&#x201C;files&#x201D;</code>.</p>
-<p>That was <code>tsconfig.json</code> automatic inclusion.
-That does not embed module resolution as discussed above.
-If the compiler identified a file as a target of a module import, it will be included in the compilation regardless if it was excluded in the previous steps.</p>
-<p>So to exclude a file from the compilation, you need to exclude it and <strong>all</strong> files that have an <code>import</code> or <code>/// &lt;reference path=&quot;...&quot; /&gt;</code> directive to it.</p>
+<h2 id="&#xACF5;&#xD1B5;-&#xC9C8;&#xBB38;-common-questions">&#xACF5;&#xD1B5; &#xC9C8;&#xBB38; (Common Questions)</h2>
+<h3 id="&#xC81C;&#xC678;-&#xBAA9;&#xB85D;&#xC5D0;-&#xC788;&#xB294;-&#xBAA8;&#xB4C8;&#xC744;-&#xC5EC;&#xC804;&#xD788;-&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xAC00;-&#xC120;&#xD0DD;&#xD558;&#xB294;-&#xC774;&#xC720;&#xB294;-&#xBB34;&#xC5C7;&#xC785;&#xB2C8;&#xAE4C;-why-does-a-module-in-the-exclude-list-still-get-picked-up-by-the-compiler">&#xC81C;&#xC678; &#xBAA9;&#xB85D;&#xC5D0; &#xC788;&#xB294; &#xBAA8;&#xB4C8;&#xC744; &#xC5EC;&#xC804;&#xD788; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xAC00; &#xC120;&#xD0DD;&#xD558;&#xB294; &#xC774;&#xC720;&#xB294; &#xBB34;&#xC5C7;&#xC785;&#xB2C8;&#xAE4C;? (Why does a module in the exclude list still get picked up by the compiler?)</h3>
+<p><code>tsconfig.json</code>&#xC740; &#xD3F4;&#xB354;&#xB97C; &quot;&#xD504;&#xB85C;&#xC81D;&#xD2B8;&quot;&#xB85C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;.<br><code>&#x201C;exclude&#x201D;</code> &#xB610;&#xB294; <code>&#x201C;files&#x201D;</code> &#xD56D;&#xBAA9;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; <code>tsconfig.json</code>&#xC744; &#xD3EC;&#xD568;&#xD55C; &#xD3F4;&#xB354;&#xC758; &#xBAA8;&#xB4E0; &#xD30C;&#xC77C;&#xACFC; &#xD574;&#xB2F9; &#xD558;&#xC704; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xAC00; &#xCEF4;&#xD30C;&#xC77C;&#xC5D0; &#xD3EC;&#xD568;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC77C;&#xBD80; &#xD30C;&#xC77C;&#xC744; &#xC81C;&#xC678;&#xD558;&#xB824;&#xBA74; <code>&#x201C;exclude&#x201D;</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;.<br>&#xB9CC;&#xC77C; &#xBAA8;&#xB4E0; &#xD30C;&#xC77C;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xAC00; &#xCC3E;&#xC544;&#xBCF4;&#xAC8C; &#xD558;&#xB294; &#xB300;&#xC2E0;&#xC5D0; <code>&#x201C;files&#x201D;</code>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;.</p>
+<p><code>tsconfig.json</code>&#xB294; &#xC790;&#xB3D9; &#xD3EC;&#xD568;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC704;&#xC5D0;&#xC11C; &#xC124;&#xBA85;&#xD55C; &#xBAA8;&#xB4C8; &#xD574;&#xC11D;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xAC00; &#xD30C;&#xC77C;&#xC744; &#xBAA8;&#xB4C8; import&#xC758; &#xB300;&#xC0C1;&#xC73C;&#xB85C; &#xC2DD;&#xBCC4;&#xD558;&#xB294; &#xACBD;&#xC6B0; &#xC774;&#xC804; &#xB2E8;&#xACC4;&#xC5D0;&#xC11C; &#xC81C;&#xC678;&#xB418;&#xC5C8;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;&#xC5D0; &#xAD00;&#xACC4; &#xC5C6;&#xC774; &#xCEF4;&#xD30C;&#xC77C;&#xC5D0; &#xD3EC;&#xD568;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB530;&#xB77C;&#xC11C; &#xCEF4;&#xD30C;&#xC77C;&#xC5D0;&#xC11C; &#xD30C;&#xC77C;&#xC744; &#xC81C;&#xC678;&#xD558;&#xB824;&#xBA74; <code>import</code> &#xB610;&#xB294; <code>/// &lt;reference path=&quot;...&quot; /&gt;</code> &#xC9C0;&#xC2DC;&#xC790;&#xAC00; &#xC788;&#xB294; <strong>&#xBAA8;&#xB4E0;</strong> &#xD30C;&#xC77C;&#xC744; &#xC81C;&#xC678;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 
                                 
                                 </section>
@@ -1072,7 +1063,7 @@ If the compiler identified a file as a target of a module import, it will be inc
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"모듈 해석","level":"3.16","depth":1,"next":{"title":"Declaration Merging","level":"3.17","depth":1,"path":"pages/Declaration Merging.md","ref":"pages/Declaration Merging.md","articles":[]},"previous":{"title":"네임스페이스와 모듈","level":"3.15","depth":1,"path":"pages/Namespaces and Modules.md","ref":"pages/Namespaces and Modules.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Module Resolution.md","mtime":"2018-03-21T12:46:24.564Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-21T12:47:25.975Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"모듈 해석","level":"3.16","depth":1,"next":{"title":"Declaration Merging","level":"3.17","depth":1,"path":"pages/Declaration Merging.md","ref":"pages/Declaration Merging.md","articles":[]},"previous":{"title":"네임스페이스와 모듈","level":"3.15","depth":1,"path":"pages/Namespaces and Modules.md","ref":"pages/Namespaces and Modules.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Module Resolution.md","mtime":"2018-03-22T13:42:50.510Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-22T13:43:36.945Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
