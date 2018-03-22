@@ -28,7 +28,7 @@
 * [네임스페이스](pages/Namespaces.md)
 * [네임스페이스와 모듈](pages/Namespaces and Modules.md)
 * [모듈 해석](pages/Module Resolution.md)
-* [Declaration Merging](pages/Declaration Merging.md)
+* [선언 병합](pages/Declaration Merging.md)
 * [JSX](pages/JSX.md)
 * [Decorators](pages/Decorators.md)
 * [Mixins](pages/Mixins.md)
