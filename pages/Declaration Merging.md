@@ -5,9 +5,9 @@ TypeScript의 고유한 개념 중 일부는 타입 레벨에서 JavaScript 객�
 이 개념을 이해하는 것은 기존 JavaScript를 사용할 때 이점을 제공할 것입니다.   
 또한 고급 추상화 개념에 대한 문을 열어줍니다.
 
-For the purposes of this article, "declaration merging" means that the compiler merges two separate declarations declared with the same name into a single definition.
-This merged definition has the features of both of the original declarations.
-Any number of declarations can be merged; it's not limited to just two declarations.
+이 아티클의 목적인 "선언 병합"은 컴파일러가 동일한 이름으로 선언된 두개의 독립된 선언을 하나의 정의로 병합하는 것을 의미합니다.  
+이 병합된 정의에는 원래 선언의 두 가지 기능이 있습니다.  
+어떠한 수의 선언이든 병합할 수 있습니다. 단지 두 가지 선언에 제한되지 않습니다.
 
 # Basic Concepts
 

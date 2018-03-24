@@ -1,20 +1,21 @@
-# 소개
+# Introduction
 
-[JSX](https://facebook.github.io/jsx/)는 임베디드가 가능한 xml형식의 구문입니다.
-이러한 변환의 의미는 구현에 따라 다르지만 유효한 Javascript로 변환되도록 되어 있습니다. 
-JSX는 [React](http://facebook.github.io/react/) framework에서 인기를 얻었으나, 이후 다른 어플리케이션에서도 보았습니다.
-TypeScript는 JCX를 직접 JavaScript에 임베딩, 입력 및 컴파일할 수 있도록 지원합니다.
+[JSX](https://facebook.github.io/jsx/) is an embeddable XML-like syntax.
+It is meant to be transformed into valid JavaScript, though the semantics of that transformation are implementation-specific.
+JSX came to popularity with the [React](http://facebook.github.io/react/) framework, but has since seen other applications as well.
+TypeScript supports embedding, type checking, and compiling JSX directly into JavaScript.
 
-# 기본 사용법
+# Basic usage
 
-JSX를 사용하려면 두 가지 작업을 수행해야 합니다.
+In order to use JSX you must do two things.
 
-1. .tsx 확장자로 파일명을 지어야 합니다. 
-2. jsx 옵션을 사용합니다.
+1. Name your files with a `.tsx` extension
+2. Enable the `jsx` option
 
-TypeScript에는 3가지 JSX모드가 있습니다: `preserve`, `react`, and `react-native`.
-이러한 모드는 방출 단계에만 영향을 미칩니다. 유형 검사는 영향을 받지 않습니다.
-`preserve` 모드는 JSX를 다른 변환 단계 (예:[Babel](https://babeljs.io/))에서 더 소비되도록 출력의 일부로 유지합니다. 또한 출력에는 .jsx파일 확장자가 있습니다.
+TypeScript ships with three JSX modes: `preserve`, `react`, and `react-native`.
+These modes only affect the emit stage - type checking is unaffected.
+The `preserve` mode will keep the JSX as part of the output to be further consumed by another transform step (e.g. [Babel](https://babeljs.io/)).
+Additionally the output will have a `.jsx` file extension.
 The `react` mode will emit `React.createElement`, does not need to go through a JSX transformation before use, and the output will have a `.js` file extension.
 The `react-native` mode is the equivalent of `preserve` in that it keeps all JSX, but the output will instead have a `.js` file extension.
 
