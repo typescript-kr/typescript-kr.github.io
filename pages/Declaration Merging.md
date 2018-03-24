@@ -9,24 +9,24 @@ TypeScript의 고유한 개념 중 일부는 타입 레벨에서 JavaScript 객�
 이 병합된 정의에는 원래 선언의 두 가지 기능이 있습니다.  
 어떠한 수의 선언이든 병합할 수 있습니다. 단지 두 가지 선언에 제한되지 않습니다.
 
-# Basic Concepts
+# 기본 개념 (Basic Concepts)
 
-In TypeScript, a declaration creates entities in at least one of three groups: namespace, type, or value.
-Namespace-creating declarations create a namespace, which contains names that are accessed using a dotted notation.
-Type-creating declarations do just that: they create a type that is visible with the declared shape and bound to the given name.
-Lastly, value-creating declarations create values that are visible in the output JavaScript.
+TypeScript에서 선언은 다음 세 가지중 중 하나 이상의 엔티티를 생성합니다: 네임스페이스, 타입 또는 값  
+네임스페이스-생성 선언은 점 표기법을 사용하여 접근하는 이름이 포함된 네임스페이스를 생성합니다.  
+타입-생성 선언은 다음과 같습니다: 선언된 형태로 표시되고 주어진 이름에 바인딩되는 타입을 작성합니다.  
+마지막으로, 값-생성 선언은 출력된 JavaScript에서 볼 수 있는 값을 만듭니다.
 
-| Declaration Type | Namespace | Type | Value |
-|------------------|:---------:|:----:|:-----:|
-| Namespace        |     X     |      |   X   |
-| Class            |           |   X  |   X   |
-| Enum             |           |   X  |   X   |
-| Interface        |           |   X  |       |
-| Type Alias       |           |   X  |       |
-| Function         |           |      |   X   |
-| Variable         |           |      |   X   |
+|   선언 타입   | 네임스페이스 | 타입 |  값  |
+|---------------|:------------:|:----:|:----:|
+| Namespace     |     X        |      |   X  |
+| Class         |              |   X  |   X  |
+| Enum          |              |   X  |   X  |
+| Interface     |              |   X  |      |
+| Type Alias    |              |   X  |      |
+| Function      |              |      |   X  |
+| Variable      |              |      |   X  |
 
-Understanding what is created with each declaration will help you understand what is merged when you perform a declaration merge.
+각 선언으로 생성된 내용을 이해하면 선언 병합을 수행할 때 병합되는 내용을 이해하는 데 도움이 됩니다.
 
 # Merging Interfaces
 
