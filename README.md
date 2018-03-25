@@ -10,7 +10,7 @@
 [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/basic-types.html)의 모든 페이지를 번역할 예정입니다.
 
 # 진행 상황
-[이곳](./progress.md)을 통해 확인할 수 있습니다.
+[이곳](https://github.com/typescript-study/typescript-study.github.io/blob/master/progress.md)을 통해 확인할 수 있습니다.
 
 # 기여
 [번역가이드 및 규칙](https://github.com/typescript-study/docuement-wiki/wiki/translation-rules)을 참고하여 PR 해주시면 됩니다.
