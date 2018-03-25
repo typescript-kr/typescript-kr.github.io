@@ -1,5 +1,5 @@
 {
-	"plugins": ["theme-darkblue", "addcssjs", "highlight-1", "custom-favicon", "forkmegithub"],
+	"plugins": ["theme-darkblue", "addcssjs", "highlight-1", "custom-favicon", "forkmegithub", "sitemap"],
 	"pluginsConfig": {
 		"addcssjs": {
 			"css": ["assets/css/atom-one-dark.css"]
@@ -8,6 +8,9 @@
     "forkmegithub": {
       "url": "https://github.com/typescript-study/typescript-study.github.io",
       "color": "darkblue"
+    },
+    "sitemap": {
+      "hostname": "https://typescript-study.github.io"
     }
 	}
 }
