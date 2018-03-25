@@ -768,9 +768,8 @@
 </tbody>
 </table>
 <p>&#xAC01; &#xC120;&#xC5B8;&#xC73C;&#xB85C; &#xC0DD;&#xC131;&#xB41C; &#xB0B4;&#xC6A9;&#xC744; &#xC774;&#xD574;&#xD558;&#xBA74; &#xC120;&#xC5B8; &#xBCD1;&#xD569;&#xC744; &#xC218;&#xD589;&#xD560; &#xB54C; &#xBCD1;&#xD569;&#xB418;&#xB294; &#xB0B4;&#xC6A9;&#xC744; &#xC774;&#xD574;&#xD558;&#xB294; &#xB370; &#xB3C4;&#xC6C0;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</p>
-<h1 id="merging-interfaces">Merging Interfaces</h1>
-<p>The simplest, and perhaps most common, type of declaration merging is interface merging.
-At the most basic level, the merge mechanically joins the members of both declarations into a single interface with the same name.</p>
+<h1 id="&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;-&#xBCD1;&#xD569;-merging-interfaces">&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4; &#xBCD1;&#xD569; (Merging Interfaces)</h1>
+<p>&#xAC00;&#xC7A5; &#xB2E8;&#xC21C;&#xD558;&#xACE0; &#xC544;&#xB9C8;&#xB3C4; &#xAC00;&#xC7A5; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD0C0;&#xC785;&#xC758; &#xC120;&#xC5B8; &#xBCD1;&#xD569;&#xC740; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4; &#xBCD1;&#xD569;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xAC00;&#xC7A5; &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xC218;&#xC900;&#xC5D0;&#xC11C; &#xC774; &#xBCD1;&#xD569;&#xC740; &#xB450; &#xC120;&#xC5B8;&#xC758; &#xBA64;&#xBC84;&#xB97C; &#xAE30;&#xACC4;&#xC801;&#xC73C;&#xB85C; &#xAC19;&#xC740; &#xC774;&#xB984;&#xC758; &#xB2E8;&#xC77C; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xACB0;&#xD569;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">Box</span> {
     <span class="cm-variable">height</span>: <span class="cm-variable-3">number</span>;
     <span class="cm-variable">width</span>: <span class="cm-variable-3">number</span>;
@@ -782,12 +781,9 @@ At the most basic level, the merge mechanically joins the members of both declar
 
 <span class="cm-keyword">let</span> <span class="cm-variable">box</span>: <span class="cm-variable-3">Box</span> <span class="cm-operator">=</span> {<span class="cm-property">height</span>: <span class="cm-number">5</span>, <span class="cm-property">width</span>: <span class="cm-number">6</span>, <span class="cm-property">scale</span>: <span class="cm-number">10</span>};
 </code></pre>
-<p>Non-function members of the interfaces should be unique.
-If they are not unique, they must be of the same type.
-The compiler will issue an error if the interfaces both declare a non-function member of the same name, but of different types.</p>
-<p>For function members, each function member of the same name is treated as describing an overload of the same function.
-Of note, too, is that in the case of interface <code>A</code> merging with later interface <code>A</code>, the second interface will have a higher precedence than the first.</p>
-<p>That is, in the example:</p>
+<p>&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC758; &#xBE44;-&#xD568;&#xC218; &#xBA64;&#xBC84;&#xB294; &#xACE0;&#xC720;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xACE0;&#xC720;&#xD558;&#xC9C0; &#xC54A;&#xB2E4;&#xBA74; &#xB3D9;&#xC77C;&#xD55C; &#xD0C0;&#xC785;&#xC774;&#xC5B4;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xAC00; &#xBAA8;&#xB450; &#xAC19;&#xC740; &#xC774;&#xB984;&#xC774;&#xC9C0;&#xB9CC; &#xB2E4;&#xB978; &#xD0C0;&#xC785;&#xC758; &#xBE44;-&#xD568;&#xC218; &#xBA64;&#xBC84;&#xB97C; &#xC120;&#xC5B8;&#xD558;&#xB294; &#xACBD;&#xC6B0; &#xC624;&#xB958;&#xB97C; &#xBC1C;&#xC0DD;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD568;&#xC218; &#xBA64;&#xBC84;&#xC758; &#xACBD;&#xC6B0; &#xB3D9;&#xC77C;&#xD55C; &#xC774;&#xB984;&#xC758; &#xAC01; &#xD568;&#xC218; &#xBA64;&#xBC84;&#xAC00; &#xB3D9;&#xC77C;&#xD55C; &#xD568;&#xC218;&#xC758; &#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xB97C; &#xC124;&#xBA85;&#xD558;&#xB294; &#xAC83;&#xC73C;&#xB85C; &#xAC04;&#xC8FC;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xB610;&#xD55C; &#xD6C4;&#xC704;&#xC758; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4; <code>A</code>&#xC640; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4; <code>A</code>&#xB97C; &#xBCD1;&#xD569;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xB450;&#xBC88;&#xC9F8; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xAC00; &#xCCAB;&#xBC88;&#xC9F8; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xBCF4;&#xB2E4; &#xC6B0;&#xC120; &#xC21C;&#xC704;&#xAC00; &#xB354; &#xB192;&#xB2E4;&#xB294; &#xC810;&#xC774; &#xC8FC;&#xBAA9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">Cloner</span> {
     <span class="cm-variable">clone</span>(<span class="cm-variable">animal</span>: <span class="cm-variable">Animal</span>): <span class="cm-variable">Animal</span>;
 }
@@ -801,7 +797,7 @@ Of note, too, is that in the case of interface <code>A</code> merging with later
     <span class="cm-variable">clone</span>(<span class="cm-variable">animal</span>: <span class="cm-variable">Cat</span>): <span class="cm-variable">Cat</span>;
 }
 </code></pre>
-<p>The three interfaces will merge to create a single declaration as so:</p>
+<p>&#xC138; &#xAC1C;&#xC758; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xAC00; &#xBCD1;&#xD569;&#xB418;&#xC5B4; &#xB2E8;&#xC77C; &#xC120;&#xC5B8;&#xC744; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">Cloner</span> {
     <span class="cm-variable">clone</span>(<span class="cm-variable">animal</span>: <span class="cm-variable">Dog</span>): <span class="cm-variable">Dog</span>;
     <span class="cm-variable">clone</span>(<span class="cm-variable">animal</span>: <span class="cm-variable">Cat</span>): <span class="cm-variable">Cat</span>;
@@ -809,10 +805,9 @@ Of note, too, is that in the case of interface <code>A</code> merging with later
     <span class="cm-variable">clone</span>(<span class="cm-variable">animal</span>: <span class="cm-variable">Animal</span>): <span class="cm-variable">Animal</span>;
 }
 </code></pre>
-<p>Notice that the elements of each group maintains the same order, but the groups themselves are merged with later overload sets ordered first.</p>
-<p>One exception to this rule is specialized signatures.
-If a signature has a parameter whose type is a <em>single</em> string literal type (e.g. not a union of string literals), then it will be bubbled toward the top of its merged overload list.</p>
-<p>For instance, the following interfaces will merge together:</p>
+<p>&#xAC01; &#xADF8;&#xB8F9;&#xC758; &#xC694;&#xC18C;&#xB294; &#xB3D9;&#xC77C;&#xD55C; &#xC21C;&#xC11C;&#xB97C; &#xC720;&#xC9C0;&#xD558;&#xC9C0;&#xB9CC; &#xADF8;&#xB8F9; &#xC790;&#xCCB4;&#xB294; &#xB098;&#xC911;&#xC5D0; &#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xAC00; &#xBC1C;&#xC0DD;&#xB41C; &#xAC83;&#xC774; &#xAC00;&#xC7A5; &#xBA3C;&#xC800; &#xBCD1;&#xD569;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774; &#xADDC;&#xCE59;&#xC5D0; &#xB300;&#xD55C; &#xD55C;&#xAC00;&#xC9C0; &#xC608;&#xC678;&#xB294; &#xD2B9;&#xC218;&#xD55C; &#xC11C;&#xBA85;(specialized signatures)&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC11C;&#xBA85;&#xC758; &#xD0C0;&#xC785;&#xC774; <em>&#xB2E8;&#xC77C;</em> &#xBB38;&#xC790;&#xC5F4; &#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785;(&#xC608; : &#xBB38;&#xC790;&#xC5F4; &#xB9AC;&#xD130;&#xB7F4;&#xC758; &#xC720;&#xB2C8;&#xC628;&#xC774; &#xC544;&#xB2CC;)&#xC778; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xAC00; &#xC788;&#xB294; &#xACBD;&#xC6B0; &#xBCD1;&#xD569;&#xB41C; &#xC624;&#xBC84;&#xB85C;&#xB4DC; &#xBAA9;&#xB85D;&#xC758; &#xB9E8; &#xC704;&#xB85C; &#xBC84;&#xBE14;&#xB9C1;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; &#xB2E4;&#xC74C; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xAC00; &#xD568;&#xAED8; &#xBCD1;&#xD569;&#xB429;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">Document</span> {
     <span class="cm-variable">createElement</span>(<span class="cm-variable">tagName</span>: <span class="cm-variable-3">any</span>): <span class="cm-variable">Element</span>;
 }
@@ -825,7 +820,7 @@ If a signature has a parameter whose type is a <em>single</em> string literal ty
     <span class="cm-variable">createElement</span>(<span class="cm-variable">tagName</span>: <span class="cm-string">&quot;canvas&quot;</span>): <span class="cm-variable">HTMLCanvasElement</span>;
 }
 </code></pre>
-<p>The resulting merged declaration of <code>Document</code> will be the following:</p>
+<p><code>Document</code>&#xC758; &#xBCD1;&#xD569;&#xB41C; &#xC120;&#xC5B8;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">Document</span> {
     <span class="cm-variable">createElement</span>(<span class="cm-variable">tagName</span>: <span class="cm-string">&quot;canvas&quot;</span>): <span class="cm-variable">HTMLCanvasElement</span>;
     <span class="cm-variable">createElement</span>(<span class="cm-variable">tagName</span>: <span class="cm-string">&quot;div&quot;</span>): <span class="cm-variable">HTMLDivElement</span>;
@@ -1033,7 +1028,7 @@ However, you can&apos;t declare new top-level declarations in the augmentation -
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"선언 병합","level":"3.17","depth":1,"next":{"title":"JSX","level":"3.18","depth":1,"path":"pages/JSX.md","ref":"pages/JSX.md","articles":[]},"previous":{"title":"모듈 해석","level":"3.16","depth":1,"path":"pages/Module Resolution.md","ref":"pages/Module Resolution.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-study/typescript-study.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Declaration Merging.md","mtime":"2018-03-25T02:56:50.803Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-25T02:58:02.191Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"선언 병합","level":"3.17","depth":1,"next":{"title":"JSX","level":"3.18","depth":1,"path":"pages/JSX.md","ref":"pages/JSX.md","articles":[]},"previous":{"title":"모듈 해석","level":"3.16","depth":1,"path":"pages/Module Resolution.md","ref":"pages/Module Resolution.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-study/typescript-study.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Declaration Merging.md","mtime":"2018-03-25T03:27:20.449Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-25T03:28:23.615Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
