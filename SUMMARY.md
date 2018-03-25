@@ -2,7 +2,7 @@
 
 * [소개](README.md)
 
-## Tutorials
+## 튜토리얼
 
 * [5분 안에 보는 TypeScript](pages/tutorials/TypeScript in 5 minutes.md)
 * [ASP.NET Core](pages/tutorials/ASP.NET Core.md)
@@ -10,7 +10,7 @@
 * [JavaScript에서 마이그레이션](pages/tutorials/Migrating from JavaScript.md)
 * [리액트 & 웹팩](pages/tutorials/React & Webpack.md)
 
-## Handbook
+## 핸드북
 
 * [기본 타입](pages/Basic Types.md)
 * [변수 선언](pages/Variable Declarations.md)
@@ -23,12 +23,12 @@
 * [타입 호환성](pages/Type Compatibility.md)
 * [고급 타입](pages/Advanced Types.md)
 * [심볼](pages/Symbols.md)
-* [Iterators and Generators](pages/Iterators and Generators.md)
-* [Modules](pages/Modules.md)
-* [Namespaces](pages/Namespaces.md)
-* [Namespaces and Modules](pages/Namespaces and Modules.md)
-* [Module Resolution](pages/Module Resolution.md)
-* [Declaration Merging](pages/Declaration Merging.md)
+* [이터레이터와 제네레이터](pages/Iterators and Generators.md)
+* [모듈](pages/Modules.md)
+* [네임스페이스](pages/Namespaces.md)
+* [네임스페이스와 모듈](pages/Namespaces and Modules.md)
+* [모듈 해석](pages/Module Resolution.md)
+* [선언 병합](pages/Declaration Merging.md)
 * [JSX](pages/JSX.md)
 * [Decorators](pages/Decorators.md)
 * [Mixins](pages/Mixins.md)
@@ -51,5 +51,5 @@
 * [tsconfig.json](pages/tsconfig.json.md)
 * [Compiler Options](pages/Compiler Options.md)
 * [Compiler Options in MSBuild](pages/Compiler Options in MSBuild.md)
-* [Integrating with Build Tools](pages/Iterators and Generators.md)
+* [Integrating with Build Tools](pages/Integrating with Build Tools.md)
 * [Nightly Builds](pages/Nightly Builds.md)
