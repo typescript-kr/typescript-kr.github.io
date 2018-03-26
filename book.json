@@ -6,11 +6,11 @@
 		},
     "favicon": "assets/images/favicon.ico",
     "forkmegithub": {
-      "url": "https://github.com/typescript-study/typescript-study.github.io",
+      "url": "https://github.com/typescript-kr/typescript-kr.github.io",
       "color": "darkblue"
     },
     "sitemap": {
-      "hostname": "https://typescript-study.github.io"
+      "hostname": "https://typescript-kr.github.io/"
     }
 	}
 }
