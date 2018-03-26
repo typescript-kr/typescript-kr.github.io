@@ -18,13 +18,13 @@ TypeScript에서 선언은 다음 세 가지중 중 하나 이상의 엔티티�
 
 |   선언 타입   | 네임스페이스 | 타입 |  값  |
 |---------------|:------------:|:----:|:----:|
-| Namespace     |     X        |      |   X  |
-| Class         |              |   X  |   X  |
-| Enum          |              |   X  |   X  |
-| Interface     |              |   X  |      |
-| Type Alias    |              |   X  |      |
-| Function      |              |      |   X  |
-| Variable      |              |      |   X  |
+| 네임스페이스  |     X        |      |   X  |
+| 클래스        |              |   X  |   X  |
+| 열거형        |              |   X  |   X  |
+| 인터페이스    |              |   X  |      |
+| 타입 별칭     |              |   X  |      |
+| 함수          |              |      |   X  |
+| 변수          |              |      |   X  |
 
 각 선언으로 생성된 내용을 이해하면 선언 병합을 수행할 때 병합되는 내용을 이해하는 데 도움이 됩니다.
 
@@ -114,16 +114,16 @@ interface Document {
 }
 ```
 
-# Merging Namespaces
+# 네임스페이스 병합 (Merging Namespaces)
 
-Similarly to interfaces, namespaces of the same name will also merge their members.
-Since namespaces create both a namespace and a value, we need to understand how both merge.
+인터페이스와 마찬가지로 같은 이름의 네임 스페이스도 해당 멤버를 병합합니다.  
+네임 스페이스는 네임 스페이스와 값을 모두 생성하기 때문에 두 네임 스페이스가 어떻게 병합되는지 이해해야 합니다.
 
-To merge the namespaces, type definitions from exported interfaces declared in each namespace are themselves merged, forming a single namespace with merged interface definitions inside.
+네임 스페이스를 병합하기 위해 각 네임스페이스에 선언된 exported 인터페이스의 타입 정의 자체가 병합되며 내부에 병합된 인터페이스 정의가 있는 단일 네임스페이스를 형성합니다.
 
-To merge the namespace value, at each declaration site, if a namespace already exists with the given name, it is further extended by taking the existing namespace and adding the exported members of the second namespace to the first.
+네임 스페이스 값을 병합하려면 각 선언 사이트에 지정된 이름의 네임 스페이스가 이미 있는 경우 기존 네임 스페이스를 가져와 두 번째 네임 스페이스의 내보낸 멤버를 첫 번째 네임스페이스에 추가하여 네임 스페이스를 확장합니다.
 
-The declaration merge of `Animals` in this example:
+이 예에서는 `Animals`의 병합을 선언합니다:
 
 ```ts
 namespace Animals {
@@ -136,7 +136,7 @@ namespace Animals {
 }
 ```
 
-is equivalent to:
+다음과 같습니다.
 
 ```ts
 namespace Animals {
@@ -147,10 +147,13 @@ namespace Animals {
 }
 ```
 
-This model of namespace merging is a helpful starting place, but we also need to understand what happens with non-exported members.
-Non-exported members are only visible in the original (un-merged) namespace. This means that after merging, merged members that came from other declarations cannot see non-exported members.
+병합된 네임스페이스의 모델은 유용한 출발점이지만 내보내지 않은(non-exported) 멤버에 무슨 일이 일어나는지 이해할 필요가 있습니다.  
+내보낼 수없는 멤버는 원래 (병합되지 않은) 네임 스페이스에서만 볼 수 있습니다.  
+즉, 병합 후에는 다른 선언에서 가져온 병합 된 멤버는 내보낼 수없는 멤버를 볼 수 없습니다.
+내보내지 않은 멤버는 원래 네임스페이스에서만 볼 수 있습니다(병합되지 않음).  
+즉 병합 후에 다른 선언에서 가져온 병합된 멤버는 내보내지 않은 멤버를 볼 수 없습니다.
 
-We can see this more clearly in this example:
+이 예제에서 이것을 더 명확하게 볼 수 있습니다:
 
 ```ts
 namespace Animal {
@@ -163,23 +166,24 @@ namespace Animal {
 
 namespace Animal {
     export function doAnimalsHaveMuscles() {
-        return haveMuscles;  // <-- error, haveMuscles is not visible here
+        return haveMuscles;  // <-- 오류, haveMuscles는 여기에 표시되지 않습니다.
     }
 }
 ```
 
-Because `haveMuscles` is not exported, only the `animalsHaveMuscles` function that shares the same un-merged namespace can see the symbol.
-The `doAnimalsHaveMuscles` function, even though it's part of the merged `Animal` namespace can not see this un-exported member.
+`haveMuscles`가 exported되지 않았기 때문에 동일하게 병합되지 않은 네임스페이스를 공유하는 `animalsHaveMuscles` 함수만 이 심볼을 볼 수 있습니다.  
+`doAnimalsHaveMuscles` 함수는 병합된 `Animal` 네임스페이스의 일부임에도 불구하고 exported 되지 않은 멤버를 볼 수 없습니다.
 
-# Merging Namespaces with Classes, Functions, and Enums
+# 클래스, 함수 그리고 열거형 병합 (Merging Namespaces with Classes, Functions, and Enums)
 
-Namespaces are flexible enough to also merge with other types of declarations.
-To do so, the namespace declaration must follow the declaration it will merge with. The resulting declaration has properties of both declaration types.
-TypeScript uses this capability to model some of the patterns in JavaScript as well as other programming languages.
+네임스페이스는 다른 타입의 선언과도 통합이 가능할 정도로 유연합니다.  
+이렇게 하려면 네임스페이스 선언이 병합할 선언을 따라야 합니다.  
+결과 선언에는 두 선언 타입의 프로퍼티가 있습니다.  
+TypeScript는 이 기능을 사용하여 JavaScript의 일부 패턴과 다른 프로그래밍 언어를 모델링 합니다.
 
-## Merging Namespaces with Classes
+## 클래스와 네임스페이스 병합 (Merging Namespaces with Classes)
 
-This gives the user a way of describing inner classes.
+이는 사용자에게 내부(inner) 클래스를 설명하는 방법을 제공합니다.
 
 ```ts
 class Album {
@@ -190,12 +194,12 @@ namespace Album {
 }
 ```
 
-The visibility rules for merged members is the same as described in the 'Merging Namespaces' section, so we must export the `AlbumLabel` class for the merged class to see it.
-The end result is a class managed inside of another class.
-You can also use namespaces to add more static members to an existing class.
+병합된 멤버의 가시성 규칙은 '네임스페이스 병합' 섹션에 설명된 것과 같으므로 병합된 클래스를 보려면 `AlbumLabel` 클래스를 export해야 합니다.  
+최종 결과는 다른 클래스 내부에서 관리되는 클래스입니다.  
+네임스페이스를 사용하여 기존 클래스에 더 많은 정적 멤버를 추가할 수도 있습니다.
 
-In addition to the pattern of inner classes, you may also be familiar with JavaScript practice of creating a function and then extending the function further by adding properties onto the function.
-TypeScript uses declaration merging to build up definitions like this in a type-safe way.
+내부 클래스 패턴 외에도 함수를 생성한 다음 함수에 프로퍼티를 추가하여 함수를 확장하는 JavaScript 방법에 익숙할 수도 있습니다.  
+TypeScript는 이러한 타입을 안전한(type-safe) 방법으로 정의하기 위해 선언 병합을 사용합니다.
 
 ```ts
 function buildLabel(name: string): string {
@@ -210,7 +214,7 @@ namespace buildLabel {
 alert(buildLabel("Sam Smith"));
 ```
 
-Similarly, namespaces can be used to extend enums with static members:
+마찬가지로 네임스페이스를 사용하여 정적 멤버를 포함하는 열거형을 확장할 수 있습니다:
 
 ```ts
 enum Color {
@@ -237,27 +241,27 @@ namespace Color {
 }
 ```
 
-# Disallowed Merges
+# 허용되지 않는 병합 (Disallowed Merges)
 
-Not all merges are allowed in TypeScript.
-Currently, classes can not merge with other classes or with variables.
-For information on mimicking class merging, see the [Mixins in TypeScript](./Mixins.md) section.
+TypeScript에서는 일부 병합이 허용되지 않습니다.  
+현재 클래스는 다른 클래스 또는 변수와 병합할 수 없습니다.  
+클래스 병합을 모방하는 방법에 대한 자세한 내용은 [TypeScript의 Mixins](./Mixins.md) 섹션을 참조하세요.
 
 # Module Augmentation
 
-Although JavaScript modules do not support merging, you can patch existing objects by importing and then updating them.
-Let's look at a toy Observable example:
+JavaScript 모듈은 병합을 지원하지 않지만 기존 객체를 가져 와서 업데이트 할 수 있습니다.  
+Observable 예제를 살펴봅시다:
 
 ```js
 // observable.js
 export class Observable<T> {
-    // ... implementation left as an exercise for the reader ...
+    // ... 구현은 숙제로 남겨놨습니다 ...
 }
 
 // map.js
 import { Observable } from "./observable";
 Observable.prototype.map = function (f) {
-    // ... another exercise for the reader
+    // ... 또 다른 숙제
 }
 ```
 

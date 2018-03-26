@@ -724,43 +724,43 @@
 </thead>
 <tbody>
 <tr>
-<td>Namespace</td>
+<td>&#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;</td>
 <td style="text-align:center">X</td>
 <td style="text-align:center"></td>
 <td style="text-align:center">X</td>
 </tr>
 <tr>
-<td>Class</td>
+<td>&#xD074;&#xB798;&#xC2A4;</td>
 <td style="text-align:center"></td>
 <td style="text-align:center">X</td>
 <td style="text-align:center">X</td>
 </tr>
 <tr>
-<td>Enum</td>
+<td>&#xC5F4;&#xAC70;&#xD615;</td>
 <td style="text-align:center"></td>
 <td style="text-align:center">X</td>
 <td style="text-align:center">X</td>
 </tr>
 <tr>
-<td>Interface</td>
+<td>&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;</td>
 <td style="text-align:center"></td>
 <td style="text-align:center">X</td>
 <td style="text-align:center"></td>
 </tr>
 <tr>
-<td>Type Alias</td>
+<td>&#xD0C0;&#xC785; &#xBCC4;&#xCE6D;</td>
 <td style="text-align:center"></td>
 <td style="text-align:center">X</td>
 <td style="text-align:center"></td>
 </tr>
 <tr>
-<td>Function</td>
+<td>&#xD568;&#xC218;</td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
 <td style="text-align:center">X</td>
 </tr>
 <tr>
-<td>Variable</td>
+<td>&#xBCC0;&#xC218;</td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
 <td style="text-align:center">X</td>
@@ -829,12 +829,11 @@
     <span class="cm-variable">createElement</span>(<span class="cm-variable">tagName</span>: <span class="cm-variable-3">any</span>): <span class="cm-variable">Element</span>;
 }
 </code></pre>
-<h1 id="merging-namespaces">Merging Namespaces</h1>
-<p>Similarly to interfaces, namespaces of the same name will also merge their members.
-Since namespaces create both a namespace and a value, we need to understand how both merge.</p>
-<p>To merge the namespaces, type definitions from exported interfaces declared in each namespace are themselves merged, forming a single namespace with merged interface definitions inside.</p>
-<p>To merge the namespace value, at each declaration site, if a namespace already exists with the given name, it is further extended by taking the existing namespace and adding the exported members of the second namespace to the first.</p>
-<p>The declaration merge of <code>Animals</code> in this example:</p>
+<h1 id="&#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;-&#xBCD1;&#xD569;-merging-namespaces">&#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4; &#xBCD1;&#xD569; (Merging Namespaces)</h1>
+<p>&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC640; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xAC19;&#xC740; &#xC774;&#xB984;&#xC758; &#xB124;&#xC784; &#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xB3C4; &#xD574;&#xB2F9; &#xBA64;&#xBC84;&#xB97C; &#xBCD1;&#xD569;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB124;&#xC784; &#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xB294; &#xB124;&#xC784; &#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC640; &#xAC12;&#xC744; &#xBAA8;&#xB450; &#xC0DD;&#xC131;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xB450; &#xB124;&#xC784; &#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xAC00; &#xC5B4;&#xB5BB;&#xAC8C; &#xBCD1;&#xD569;&#xB418;&#xB294;&#xC9C0; &#xC774;&#xD574;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB124;&#xC784; &#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xBCD1;&#xD569;&#xD558;&#xAE30; &#xC704;&#xD574; &#xAC01; &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xC120;&#xC5B8;&#xB41C; exported &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC758; &#xD0C0;&#xC785; &#xC815;&#xC758; &#xC790;&#xCCB4;&#xAC00; &#xBCD1;&#xD569;&#xB418;&#xBA70; &#xB0B4;&#xBD80;&#xC5D0; &#xBCD1;&#xD569;&#xB41C; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4; &#xC815;&#xC758;&#xAC00; &#xC788;&#xB294; &#xB2E8;&#xC77C; &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xD615;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB124;&#xC784; &#xC2A4;&#xD398;&#xC774;&#xC2A4; &#xAC12;&#xC744; &#xBCD1;&#xD569;&#xD558;&#xB824;&#xBA74; &#xAC01; &#xC120;&#xC5B8; &#xC0AC;&#xC774;&#xD2B8;&#xC5D0; &#xC9C0;&#xC815;&#xB41C; &#xC774;&#xB984;&#xC758; &#xB124;&#xC784; &#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xAC00; &#xC774;&#xBBF8; &#xC788;&#xB294; &#xACBD;&#xC6B0; &#xAE30;&#xC874; &#xB124;&#xC784; &#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xAC00;&#xC838;&#xC640; &#xB450; &#xBC88;&#xC9F8; &#xB124;&#xC784; &#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC758; &#xB0B4;&#xBCF4;&#xB0B8; &#xBA64;&#xBC84;&#xB97C; &#xCCAB; &#xBC88;&#xC9F8; &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xB124;&#xC784; &#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xD655;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774; &#xC608;&#xC5D0;&#xC11C;&#xB294; <code>Animals</code>&#xC758; &#xBCD1;&#xD569;&#xC744; &#xC120;&#xC5B8;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-variable">namespace</span> <span class="cm-variable">Animals</span> {
     <span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">Zebra</span> { }
 }
@@ -844,7 +843,7 @@ Since namespaces create both a namespace and a value, we need to understand how 
     <span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">Dog</span> { }
 }
 </code></pre>
-<p>is equivalent to:</p>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-variable">namespace</span> <span class="cm-variable">Animals</span> {
     <span class="cm-keyword">export</span> <span class="cm-keyword">interface</span> <span class="cm-variable">Legged</span> { <span class="cm-variable">numberOfLegs</span>: <span class="cm-variable-3">number</span>; }
 
@@ -852,9 +851,9 @@ Since namespaces create both a namespace and a value, we need to understand how 
     <span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">Dog</span> { }
 }
 </code></pre>
-<p>This model of namespace merging is a helpful starting place, but we also need to understand what happens with non-exported members.
-Non-exported members are only visible in the original (un-merged) namespace. This means that after merging, merged members that came from other declarations cannot see non-exported members.</p>
-<p>We can see this more clearly in this example:</p>
+<p>&#xBCD1;&#xD569;&#xB41C; &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC758; &#xBAA8;&#xB378;&#xC740; &#xC720;&#xC6A9;&#xD55C; &#xCD9C;&#xBC1C;&#xC810;&#xC774;&#xC9C0;&#xB9CC; &#xB0B4;&#xBCF4;&#xB0B4;&#xC9C0; &#xC54A;&#xC740;(non-exported) &#xBA64;&#xBC84;&#xC5D0; &#xBB34;&#xC2A8; &#xC77C;&#xC774; &#xC77C;&#xC5B4;&#xB098;&#xB294;&#xC9C0; &#xC774;&#xD574;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xB0B4;&#xBCF4;&#xB0BC; &#xC218;&#xC5C6;&#xB294; &#xBA64;&#xBC84;&#xB294; &#xC6D0;&#xB798; (&#xBCD1;&#xD569;&#xB418;&#xC9C0; &#xC54A;&#xC740;) &#xB124;&#xC784; &#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC5D0;&#xC11C;&#xB9CC; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC989;, &#xBCD1;&#xD569; &#xD6C4;&#xC5D0;&#xB294; &#xB2E4;&#xB978; &#xC120;&#xC5B8;&#xC5D0;&#xC11C; &#xAC00;&#xC838;&#xC628; &#xBCD1;&#xD569; &#xB41C; &#xBA64;&#xBC84;&#xB294; &#xB0B4;&#xBCF4;&#xB0BC; &#xC218;&#xC5C6;&#xB294; &#xBA64;&#xBC84;&#xB97C; &#xBCFC; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB0B4;&#xBCF4;&#xB0B4;&#xC9C0; &#xC54A;&#xC740; &#xBA64;&#xBC84;&#xB294; &#xC6D0;&#xB798; &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC5D0;&#xC11C;&#xB9CC; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;(&#xBCD1;&#xD569;&#xB418;&#xC9C0; &#xC54A;&#xC74C;).<br>&#xC989; &#xBCD1;&#xD569; &#xD6C4;&#xC5D0; &#xB2E4;&#xB978; &#xC120;&#xC5B8;&#xC5D0;&#xC11C; &#xAC00;&#xC838;&#xC628; &#xBCD1;&#xD569;&#xB41C; &#xBA64;&#xBC84;&#xB294; &#xB0B4;&#xBCF4;&#xB0B4;&#xC9C0; &#xC54A;&#xC740; &#xBA64;&#xBC84;&#xB97C; &#xBCFC; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774; &#xC608;&#xC81C;&#xC5D0;&#xC11C; &#xC774;&#xAC83;&#xC744; &#xB354; &#xBA85;&#xD655;&#xD558;&#xAC8C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-variable">namespace</span> <span class="cm-variable">Animal</span> {
     <span class="cm-keyword">let</span> <span class="cm-variable">haveMuscles</span> <span class="cm-operator">=</span> <span class="cm-atom">true</span>;
 
@@ -865,18 +864,15 @@ Non-exported members are only visible in the original (un-merged) namespace. Thi
 
 <span class="cm-variable">namespace</span> <span class="cm-variable">Animal</span> {
     <span class="cm-keyword">export</span> <span class="cm-keyword">function</span> <span class="cm-variable">doAnimalsHaveMuscles</span>() {
-        <span class="cm-keyword">return</span> <span class="cm-variable">haveMuscles</span>;  <span class="cm-comment">// &lt;-- error, haveMuscles is not visible here</span>
+        <span class="cm-keyword">return</span> <span class="cm-variable">haveMuscles</span>;  <span class="cm-comment">// &lt;-- &#xC624;&#xB958;, haveMuscles&#xB294; &#xC5EC;&#xAE30;&#xC5D0; &#xD45C;&#xC2DC;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
     }
 }
 </code></pre>
-<p>Because <code>haveMuscles</code> is not exported, only the <code>animalsHaveMuscles</code> function that shares the same un-merged namespace can see the symbol.
-The <code>doAnimalsHaveMuscles</code> function, even though it&apos;s part of the merged <code>Animal</code> namespace can not see this un-exported member.</p>
-<h1 id="merging-namespaces-with-classes-functions-and-enums">Merging Namespaces with Classes, Functions, and Enums</h1>
-<p>Namespaces are flexible enough to also merge with other types of declarations.
-To do so, the namespace declaration must follow the declaration it will merge with. The resulting declaration has properties of both declaration types.
-TypeScript uses this capability to model some of the patterns in JavaScript as well as other programming languages.</p>
-<h2 id="merging-namespaces-with-classes">Merging Namespaces with Classes</h2>
-<p>This gives the user a way of describing inner classes.</p>
+<p><code>haveMuscles</code>&#xAC00; exported&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xB3D9;&#xC77C;&#xD558;&#xAC8C; &#xBCD1;&#xD569;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xACF5;&#xC720;&#xD558;&#xB294; <code>animalsHaveMuscles</code> &#xD568;&#xC218;&#xB9CC; &#xC774; &#xC2EC;&#xBCFC;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br><code>doAnimalsHaveMuscles</code> &#xD568;&#xC218;&#xB294; &#xBCD1;&#xD569;&#xB41C; <code>Animal</code> &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC758; &#xC77C;&#xBD80;&#xC784;&#xC5D0;&#xB3C4; &#xBD88;&#xAD6C;&#xD558;&#xACE0; exported &#xB418;&#xC9C0; &#xC54A;&#xC740; &#xBA64;&#xBC84;&#xB97C; &#xBCFC; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xD074;&#xB798;&#xC2A4;-&#xD568;&#xC218;-&#xADF8;&#xB9AC;&#xACE0;-&#xC5F4;&#xAC70;&#xD615;-&#xBCD1;&#xD569;-merging-namespaces-with-classes-functions-and-enums">&#xD074;&#xB798;&#xC2A4;, &#xD568;&#xC218; &#xADF8;&#xB9AC;&#xACE0; &#xC5F4;&#xAC70;&#xD615; &#xBCD1;&#xD569; (Merging Namespaces with Classes, Functions, and Enums)</h1>
+<p>&#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xB294; &#xB2E4;&#xB978; &#xD0C0;&#xC785;&#xC758; &#xC120;&#xC5B8;&#xACFC;&#xB3C4; &#xD1B5;&#xD569;&#xC774; &#xAC00;&#xB2A5;&#xD560; &#xC815;&#xB3C4;&#xB85C; &#xC720;&#xC5F0;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB807;&#xAC8C; &#xD558;&#xB824;&#xBA74; &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4; &#xC120;&#xC5B8;&#xC774; &#xBCD1;&#xD569;&#xD560; &#xC120;&#xC5B8;&#xC744; &#xB530;&#xB77C;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xACB0;&#xACFC; &#xC120;&#xC5B8;&#xC5D0;&#xB294; &#xB450; &#xC120;&#xC5B8; &#xD0C0;&#xC785;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>TypeScript&#xB294; &#xC774; &#xAE30;&#xB2A5;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; JavaScript&#xC758; &#xC77C;&#xBD80; &#xD328;&#xD134;&#xACFC; &#xB2E4;&#xB978; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D; &#xC5B8;&#xC5B4;&#xB97C; &#xBAA8;&#xB378;&#xB9C1; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xD074;&#xB798;&#xC2A4;&#xC640;-&#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;-&#xBCD1;&#xD569;-merging-namespaces-with-classes">&#xD074;&#xB798;&#xC2A4;&#xC640; &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4; &#xBCD1;&#xD569; (Merging Namespaces with Classes)</h2>
+<p>&#xC774;&#xB294; &#xC0AC;&#xC6A9;&#xC790;&#xC5D0;&#xAC8C; &#xB0B4;&#xBD80;(inner) &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC124;&#xBA85;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">Album</span> {
     <span class="cm-property">label</span>: <span class="cm-variable">Album</span>.<span class="cm-property">AlbumLabel</span>;
 }
@@ -884,11 +880,8 @@ TypeScript uses this capability to model some of the patterns in JavaScript as w
     <span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">AlbumLabel</span> { }
 }
 </code></pre>
-<p>The visibility rules for merged members is the same as described in the &apos;Merging Namespaces&apos; section, so we must export the <code>AlbumLabel</code> class for the merged class to see it.
-The end result is a class managed inside of another class.
-You can also use namespaces to add more static members to an existing class.</p>
-<p>In addition to the pattern of inner classes, you may also be familiar with JavaScript practice of creating a function and then extending the function further by adding properties onto the function.
-TypeScript uses declaration merging to build up definitions like this in a type-safe way.</p>
+<p>&#xBCD1;&#xD569;&#xB41C; &#xBA64;&#xBC84;&#xC758; &#xAC00;&#xC2DC;&#xC131; &#xADDC;&#xCE59;&#xC740; &apos;&#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4; &#xBCD1;&#xD569;&apos; &#xC139;&#xC158;&#xC5D0; &#xC124;&#xBA85;&#xB41C; &#xAC83;&#xACFC; &#xAC19;&#xC73C;&#xBBC0;&#xB85C; &#xBCD1;&#xD569;&#xB41C; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xBCF4;&#xB824;&#xBA74; <code>AlbumLabel</code> &#xD074;&#xB798;&#xC2A4;&#xB97C; export&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xCD5C;&#xC885; &#xACB0;&#xACFC;&#xB294; &#xB2E4;&#xB978; &#xD074;&#xB798;&#xC2A4; &#xB0B4;&#xBD80;&#xC5D0;&#xC11C; &#xAD00;&#xB9AC;&#xB418;&#xB294; &#xD074;&#xB798;&#xC2A4;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xAE30;&#xC874; &#xD074;&#xB798;&#xC2A4;&#xC5D0; &#xB354; &#xB9CE;&#xC740; &#xC815;&#xC801; &#xBA64;&#xBC84;&#xB97C; &#xCD94;&#xAC00;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB0B4;&#xBD80; &#xD074;&#xB798;&#xC2A4; &#xD328;&#xD134; &#xC678;&#xC5D0;&#xB3C4; &#xD568;&#xC218;&#xB97C; &#xC0DD;&#xC131;&#xD55C; &#xB2E4;&#xC74C; &#xD568;&#xC218;&#xC5D0; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xD568;&#xC218;&#xB97C; &#xD655;&#xC7A5;&#xD558;&#xB294; JavaScript &#xBC29;&#xBC95;&#xC5D0; &#xC775;&#xC219;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>TypeScript&#xB294; &#xC774;&#xB7EC;&#xD55C; &#xD0C0;&#xC785;&#xC744; &#xC548;&#xC804;&#xD55C;(type-safe) &#xBC29;&#xBC95;&#xC73C;&#xB85C; &#xC815;&#xC758;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC120;&#xC5B8; &#xBCD1;&#xD569;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">buildLabel</span>(<span class="cm-def">name</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable-3">string</span> {
     <span class="cm-keyword">return</span> <span class="cm-variable">buildLabel</span>.<span class="cm-property">prefix</span> <span class="cm-operator">+</span> <span class="cm-variable">name</span> <span class="cm-operator">+</span> <span class="cm-variable">buildLabel</span>.<span class="cm-property">suffix</span>;
 }
@@ -900,7 +893,7 @@ TypeScript uses declaration merging to build up definitions like this in a type-
 
 <span class="cm-variable">alert</span>(<span class="cm-variable">buildLabel</span>(<span class="cm-string">&quot;Sam Smith&quot;</span>));
 </code></pre>
-<p>Similarly, namespaces can be used to extend enums with static members:</p>
+<p>&#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC815;&#xC801; &#xBA64;&#xBC84;&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xB294; &#xC5F4;&#xAC70;&#xD615;&#xC744; &#xD655;&#xC7A5;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-variable">enum</span> <span class="cm-variable">Color</span> {
     <span class="cm-variable">red</span> <span class="cm-operator">=</span> <span class="cm-number">1</span>,
     <span class="cm-variable">green</span> <span class="cm-operator">=</span> <span class="cm-number">2</span>,
@@ -924,22 +917,19 @@ TypeScript uses declaration merging to build up definitions like this in a type-
     }
 }
 </code></pre>
-<h1 id="disallowed-merges">Disallowed Merges</h1>
-<p>Not all merges are allowed in TypeScript.
-Currently, classes can not merge with other classes or with variables.
-For information on mimicking class merging, see the <a href="Mixins.html">Mixins in TypeScript</a> section.</p>
+<h1 id="&#xD5C8;&#xC6A9;&#xB418;&#xC9C0;-&#xC54A;&#xB294;-&#xBCD1;&#xD569;-disallowed-merges">&#xD5C8;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xB294; &#xBCD1;&#xD569; (Disallowed Merges)</h1>
+<p>TypeScript&#xC5D0;&#xC11C;&#xB294; &#xC77C;&#xBD80; &#xBCD1;&#xD569;&#xC774; &#xD5C8;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xD604;&#xC7AC; &#xD074;&#xB798;&#xC2A4;&#xB294; &#xB2E4;&#xB978; &#xD074;&#xB798;&#xC2A4; &#xB610;&#xB294; &#xBCC0;&#xC218;&#xC640; &#xBCD1;&#xD569;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xD074;&#xB798;&#xC2A4; &#xBCD1;&#xD569;&#xC744; &#xBAA8;&#xBC29;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC5D0; &#xB300;&#xD55C; &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="Mixins.html">TypeScript&#xC758; Mixins</a> &#xC139;&#xC158;&#xC744; &#xCC38;&#xC870;&#xD558;&#xC138;&#xC694;.</p>
 <h1 id="module-augmentation">Module Augmentation</h1>
-<p>Although JavaScript modules do not support merging, you can patch existing objects by importing and then updating them.
-Let&apos;s look at a toy Observable example:</p>
+<p>JavaScript &#xBAA8;&#xB4C8;&#xC740; &#xBCD1;&#xD569;&#xC744; &#xC9C0;&#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xC9C0;&#xB9CC; &#xAE30;&#xC874; &#xAC1D;&#xCCB4;&#xB97C; &#xAC00;&#xC838; &#xC640;&#xC11C; &#xC5C5;&#xB370;&#xC774;&#xD2B8; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>Observable &#xC608;&#xC81C;&#xB97C; &#xC0B4;&#xD3B4;&#xBD05;&#xC2DC;&#xB2E4;:</p>
 <pre><code class="lang-js"><span class="cm-comment">// observable.js</span>
 <span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">Observable</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span> {
-    <span class="cm-comment">// ... implementation left as an exercise for the reader ...</span>
+    <span class="cm-comment">// ... &#xAD6C;&#xD604;&#xC740; &#xC219;&#xC81C;&#xB85C; &#xB0A8;&#xACA8;&#xB1A8;&#xC2B5;&#xB2C8;&#xB2E4; ...</span>
 }
 
 <span class="cm-comment">// map.js</span>
 <span class="cm-keyword">import</span> { <span class="cm-variable">Observable</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;./observable&quot;</span>;
 <span class="cm-variable">Observable</span>.<span class="cm-property">prototype</span>.<span class="cm-property">map</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span> (<span class="cm-def">f</span>) {
-    <span class="cm-comment">// ... another exercise for the reader</span>
+    <span class="cm-comment">// ... &#xB610; &#xB2E4;&#xB978; &#xC219;&#xC81C;</span>
 }
 </code></pre>
 <p>This works fine in TypeScript too, but the compiler doesn&apos;t know about <code>Observable.prototype.map</code>.
@@ -1028,7 +1018,7 @@ However, you can&apos;t declare new top-level declarations in the augmentation -
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"선언 병합","level":"3.17","depth":1,"next":{"title":"JSX","level":"3.18","depth":1,"path":"pages/JSX.md","ref":"pages/JSX.md","articles":[]},"previous":{"title":"모듈 해석","level":"3.16","depth":1,"path":"pages/Module Resolution.md","ref":"pages/Module Resolution.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-study.github.io"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-study/typescript-study.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Declaration Merging.md","mtime":"2018-03-25T04:22:50.509Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-25T20:15:30.499Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"선언 병합","level":"3.17","depth":1,"next":{"title":"JSX","level":"3.18","depth":1,"path":"pages/JSX.md","ref":"pages/JSX.md","articles":[]},"previous":{"title":"모듈 해석","level":"3.16","depth":1,"path":"pages/Module Resolution.md","ref":"pages/Module Resolution.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Declaration Merging.md","mtime":"2018-03-26T14:56:26.443Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-26T14:56:51.413Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
