@@ -247,9 +247,9 @@ TypeScript에서는 일부 병합이 허용되지 않습니다.
 현재 클래스는 다른 클래스 또는 변수와 병합할 수 없습니다.  
 클래스 병합을 모방하는 방법에 대한 자세한 내용은 [TypeScript의 Mixins](./Mixins.md) 섹션을 참조하세요.
 
-# Module Augmentation
+# 모듈 확대 (Module Augmentation)
 
-JavaScript 모듈은 병합을 지원하지 않지만 기존 객체를 가져 와서 업데이트 할 수 있습니다.  
+JavaScript 모듈은 병합을 지원하지 않지만 기존 객체를 가져 와서 업데이트할 수 있습니다.  
 Observable 예제를 살펴봅시다:
 
 ```js
@@ -265,11 +265,11 @@ Observable.prototype.map = function (f) {
 }
 ```
 
-This works fine in TypeScript too, but the compiler doesn't know about `Observable.prototype.map`.
-You can use module augmentation to tell the compiler about it:
+이것은 TypeScript에서도 잘 작동하지만 컴파일러는 `Observable.prototype.map`에 대해 알지 못합니다.  
+이런 경우 모듈 확대를 사용하여 컴파일러에 다음에 대해 알릴 수 있습니다:
 
 ```ts
-// observable.ts stays the same
+// observable.ts는 그대로 유지됩니다.
 // map.ts
 import { Observable } from "./observable";
 declare module "./observable" {
@@ -278,7 +278,7 @@ declare module "./observable" {
     }
 }
 Observable.prototype.map = function (f) {
-    // ... another exercise for the reader
+    // ... 또 다른 숙제
 }
 
 
@@ -289,19 +289,19 @@ let o: Observable<number>;
 o.map(x => x.toFixed());
 ```
 
-The module name is resolved the same way as module specifiers in `import`/`export`.
-See [Modules](./Modules.md) for more information.
-Then the declarations in an augmentation are merged as if they were declared in the same file as the original.
-However, you can't declare new top-level declarations in the augmentation -- just patches to existing declarations.
+모듈 이름은 `import`/`export`의 모듈 지정자와 동일한 방법으로 해석됩니다.  
+자세한 내용은 [모듈](./Modules.md)을 참조하세요.  
+확대되는 선언은 마치 원본과 같은 파일에 선언된 것처럼 병합됩니다.  
+그러나 확대에서 새로운 최상위 레벨 선언을 새롭게 할 수는 없습니다. -- 기존 선언에 패치 만하면됩니다.
 
-## Global augmentation
+## 전역 확대 (Global augmentation)
 
-You can also add declarations to the global scope from inside a module:
+모듈 내부에서 전역 스코프 선언을 추가할 수도 있습니다.
 
 ```ts
 // observable.ts
 export class Observable<T> {
-    // ... still no implementation ...
+    // ... 여전히 구현되지 않고 있습니다 ...
 }
 
 declare global {
@@ -315,4 +315,4 @@ Array.prototype.toObservable = function () {
 }
 ```
 
-Global augmentations have the same behavior and limits as module augmentations.
+전역 확대는 모듈 확대와 동일한 작동 및 제한 사항을 가집니다.

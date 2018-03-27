@@ -919,8 +919,8 @@
 </code></pre>
 <h1 id="&#xD5C8;&#xC6A9;&#xB418;&#xC9C0;-&#xC54A;&#xB294;-&#xBCD1;&#xD569;-disallowed-merges">&#xD5C8;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xB294; &#xBCD1;&#xD569; (Disallowed Merges)</h1>
 <p>TypeScript&#xC5D0;&#xC11C;&#xB294; &#xC77C;&#xBD80; &#xBCD1;&#xD569;&#xC774; &#xD5C8;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xD604;&#xC7AC; &#xD074;&#xB798;&#xC2A4;&#xB294; &#xB2E4;&#xB978; &#xD074;&#xB798;&#xC2A4; &#xB610;&#xB294; &#xBCC0;&#xC218;&#xC640; &#xBCD1;&#xD569;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xD074;&#xB798;&#xC2A4; &#xBCD1;&#xD569;&#xC744; &#xBAA8;&#xBC29;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC5D0; &#xB300;&#xD55C; &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="Mixins.html">TypeScript&#xC758; Mixins</a> &#xC139;&#xC158;&#xC744; &#xCC38;&#xC870;&#xD558;&#xC138;&#xC694;.</p>
-<h1 id="module-augmentation">Module Augmentation</h1>
-<p>JavaScript &#xBAA8;&#xB4C8;&#xC740; &#xBCD1;&#xD569;&#xC744; &#xC9C0;&#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xC9C0;&#xB9CC; &#xAE30;&#xC874; &#xAC1D;&#xCCB4;&#xB97C; &#xAC00;&#xC838; &#xC640;&#xC11C; &#xC5C5;&#xB370;&#xC774;&#xD2B8; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>Observable &#xC608;&#xC81C;&#xB97C; &#xC0B4;&#xD3B4;&#xBD05;&#xC2DC;&#xB2E4;:</p>
+<h1 id="&#xBAA8;&#xB4C8;-&#xD655;&#xB300;-module-augmentation">&#xBAA8;&#xB4C8; &#xD655;&#xB300; (Module Augmentation)</h1>
+<p>JavaScript &#xBAA8;&#xB4C8;&#xC740; &#xBCD1;&#xD569;&#xC744; &#xC9C0;&#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xC9C0;&#xB9CC; &#xAE30;&#xC874; &#xAC1D;&#xCCB4;&#xB97C; &#xAC00;&#xC838; &#xC640;&#xC11C; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>Observable &#xC608;&#xC81C;&#xB97C; &#xC0B4;&#xD3B4;&#xBD05;&#xC2DC;&#xB2E4;:</p>
 <pre><code class="lang-js"><span class="cm-comment">// observable.js</span>
 <span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">Observable</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span> {
     <span class="cm-comment">// ... &#xAD6C;&#xD604;&#xC740; &#xC219;&#xC81C;&#xB85C; &#xB0A8;&#xACA8;&#xB1A8;&#xC2B5;&#xB2C8;&#xB2E4; ...</span>
@@ -932,9 +932,8 @@
     <span class="cm-comment">// ... &#xB610; &#xB2E4;&#xB978; &#xC219;&#xC81C;</span>
 }
 </code></pre>
-<p>This works fine in TypeScript too, but the compiler doesn&apos;t know about <code>Observable.prototype.map</code>.
-You can use module augmentation to tell the compiler about it:</p>
-<pre><code class="lang-ts"><span class="cm-comment">// observable.ts stays the same</span>
+<p>&#xC774;&#xAC83;&#xC740; TypeScript&#xC5D0;&#xC11C;&#xB3C4; &#xC798; &#xC791;&#xB3D9;&#xD558;&#xC9C0;&#xB9CC; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; <code>Observable.prototype.map</code>&#xC5D0; &#xB300;&#xD574; &#xC54C;&#xC9C0; &#xBABB;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB7F0; &#xACBD;&#xC6B0; &#xBAA8;&#xB4C8; &#xD655;&#xB300;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xC5D0; &#xB2E4;&#xC74C;&#xC5D0; &#xB300;&#xD574; &#xC54C;&#xB9B4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-comment">// observable.ts&#xB294; &#xADF8;&#xB300;&#xB85C; &#xC720;&#xC9C0;&#xB429;&#xB2C8;&#xB2E4;.</span>
 <span class="cm-comment">// map.ts</span>
 <span class="cm-keyword">import</span> { <span class="cm-variable">Observable</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;./observable&quot;</span>;
 <span class="cm-variable">declare</span> <span class="cm-keyword">module</span> <span class="cm-string">&quot;./observable&quot;</span> {
@@ -943,7 +942,7 @@ You can use module augmentation to tell the compiler about it:</p>
     }
 }
 <span class="cm-variable">Observable</span>.<span class="cm-property">prototype</span>.<span class="cm-property">map</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span> (<span class="cm-def">f</span>) {
-    <span class="cm-comment">// ... another exercise for the reader</span>
+    <span class="cm-comment">// ... &#xB610; &#xB2E4;&#xB978; &#xC219;&#xC81C;</span>
 }
 
 
@@ -953,15 +952,12 @@ You can use module augmentation to tell the compiler about it:</p>
 <span class="cm-keyword">let</span> <span class="cm-variable">o</span>: <span class="cm-variable-3">Observable</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">number</span><span class="cm-operator">&gt;</span>;
 <span class="cm-variable">o</span>.<span class="cm-property">map</span>(<span class="cm-def">x</span> <span class="cm-operator">=&gt;</span> <span class="cm-variable-2">x</span>.<span class="cm-property">toFixed</span>());
 </code></pre>
-<p>The module name is resolved the same way as module specifiers in <code>import</code>/<code>export</code>.
-See <a href="Modules.html">Modules</a> for more information.
-Then the declarations in an augmentation are merged as if they were declared in the same file as the original.
-However, you can&apos;t declare new top-level declarations in the augmentation -- just patches to existing declarations.</p>
-<h2 id="global-augmentation">Global augmentation</h2>
-<p>You can also add declarations to the global scope from inside a module:</p>
+<p>&#xBAA8;&#xB4C8; &#xC774;&#xB984;&#xC740; <code>import</code>/<code>export</code>&#xC758; &#xBAA8;&#xB4C8; &#xC9C0;&#xC815;&#xC790;&#xC640; &#xB3D9;&#xC77C;&#xD55C; &#xBC29;&#xBC95;&#xC73C;&#xB85C; &#xD574;&#xC11D;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="Modules.html">&#xBAA8;&#xB4C8;</a>&#xC744; &#xCC38;&#xC870;&#xD558;&#xC138;&#xC694;.<br>&#xD655;&#xB300;&#xB418;&#xB294; &#xC120;&#xC5B8;&#xC740; &#xB9C8;&#xCE58; &#xC6D0;&#xBCF8;&#xACFC; &#xAC19;&#xC740; &#xD30C;&#xC77C;&#xC5D0; &#xC120;&#xC5B8;&#xB41C; &#xAC83;&#xCC98;&#xB7FC; &#xBCD1;&#xD569;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB7EC;&#xB098; &#xD655;&#xB300;&#xC5D0;&#xC11C; &#xC0C8;&#xB85C;&#xC6B4; &#xCD5C;&#xC0C1;&#xC704; &#xB808;&#xBCA8; &#xC120;&#xC5B8;&#xC744; &#xC0C8;&#xB86D;&#xAC8C; &#xD560; &#xC218;&#xB294; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. -- &#xAE30;&#xC874; &#xC120;&#xC5B8;&#xC5D0; &#xD328;&#xCE58; &#xB9CC;&#xD558;&#xBA74;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xC804;&#xC5ED;-&#xD655;&#xB300;-global-augmentation">&#xC804;&#xC5ED; &#xD655;&#xB300; (Global augmentation)</h2>
+<p>&#xBAA8;&#xB4C8; &#xB0B4;&#xBD80;&#xC5D0;&#xC11C; &#xC804;&#xC5ED; &#xC2A4;&#xCF54;&#xD504; &#xC120;&#xC5B8;&#xC744; &#xCD94;&#xAC00;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-comment">// observable.ts</span>
 <span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">Observable</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span> {
-    <span class="cm-comment">// ... still no implementation ...</span>
+    <span class="cm-comment">// ... &#xC5EC;&#xC804;&#xD788; &#xAD6C;&#xD604;&#xB418;&#xC9C0; &#xC54A;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; ...</span>
 }
 
 <span class="cm-variable">declare</span> <span class="cm-variable">global</span> {
@@ -974,7 +970,7 @@ However, you can&apos;t declare new top-level declarations in the augmentation -
     <span class="cm-comment">// ...</span>
 }
 </code></pre>
-<p>Global augmentations have the same behavior and limits as module augmentations.</p>
+<p>&#xC804;&#xC5ED; &#xD655;&#xB300;&#xB294; &#xBAA8;&#xB4C8; &#xD655;&#xB300;&#xC640; &#xB3D9;&#xC77C;&#xD55C; &#xC791;&#xB3D9; &#xBC0F; &#xC81C;&#xD55C; &#xC0AC;&#xD56D;&#xC744; &#xAC00;&#xC9D1;&#xB2C8;&#xB2E4;.</p>
 
                                 
                                 </section>
@@ -1018,7 +1014,7 @@ However, you can&apos;t declare new top-level declarations in the augmentation -
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"선언 병합","level":"3.17","depth":1,"next":{"title":"JSX","level":"3.18","depth":1,"path":"pages/JSX.md","ref":"pages/JSX.md","articles":[]},"previous":{"title":"모듈 해석","level":"3.16","depth":1,"path":"pages/Module Resolution.md","ref":"pages/Module Resolution.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Declaration Merging.md","mtime":"2018-03-26T14:56:26.443Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-26T14:56:51.413Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"선언 병합","level":"3.17","depth":1,"next":{"title":"JSX","level":"3.18","depth":1,"path":"pages/JSX.md","ref":"pages/JSX.md","articles":[]},"previous":{"title":"모듈 해석","level":"3.16","depth":1,"path":"pages/Module Resolution.md","ref":"pages/Module Resolution.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Declaration Merging.md","mtime":"2018-03-27T14:25:51.425Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-27T14:26:45.886Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
