@@ -1,73 +1,75 @@
-# Introduction
+# 소개
 
-[JSX](https://facebook.github.io/jsx/) is an embeddable XML-like syntax.
-It is meant to be transformed into valid JavaScript, though the semantics of that transformation are implementation-specific.
-JSX came to popularity with the [React](http://facebook.github.io/react/) framework, but has since seen other applications as well.
-TypeScript supports embedding, type checking, and compiling JSX directly into JavaScript.
+[JSX](https://facebook.github.io/jsx/)는 XML 같은 구문이 내장가능합니다.  
+의미는 구현에 따라 다르지만 유효한 JavaScript로 변형되어야합니다.  
+JSX는 [React](http://facebook.github.io/react/) 에서 인기를 얻었으나 이후 다른 애플리케이션도 볼 수 있습니다.  
+TypeScript는 JSX를 직접 JavaScript에 포함, 타입 검사 및 컴파일할 수 있도록 지원합니다.
+# 기본 사용 방법
 
-# Basic usage
+JSX를 사용하려면 두 가지 작업을 해야합니다.
 
-In order to use JSX you must do two things.
+1. 파일의 이름을 `.tsx` 확장자로 지정하세요
+2. `jsx` 옵션을 활성화하세요
 
-1. Name your files with a `.tsx` extension
-2. Enable the `jsx` option
+TypeScript에는 세 가지 JSX 모드가 있습니다: `preserve`, `react`, 그리고 `react-native`.  
+이 모드는 방출 단계에만 영향을 미칩니다 - 타입 검사에는 영향 받지 않습니다.  
+`preserve` 모드는 다른 변환 단계 (예: [Babel](https://babeljs.io/))에서 더 사용되도록 출력의 일부로 JSX를 계속 유지합니다.  
+추가적으로 출력에는 `.jsx` 파일 확장자가 지정되어 있습니다.  
+`react` 모드는 `React.createElement`를 내보내고 사용하기 전에 JSX 변환을 거칠 필요가 없으며 출력은 `.js` 파일 확장자를 갖습니다.  
+`react-native` 모드는 모든 JSX를 유지하고 있다는 점에서 `preserve`와 같지만 대신 출력은 `.js` 파일 확장자를 갖습니다.
 
-TypeScript ships with three JSX modes: `preserve`, `react`, and `react-native`.
-These modes only affect the emit stage - type checking is unaffected.
-The `preserve` mode will keep the JSX as part of the output to be further consumed by another transform step (e.g. [Babel](https://babeljs.io/)).
-Additionally the output will have a `.jsx` file extension.
-The `react` mode will emit `React.createElement`, does not need to go through a JSX transformation before use, and the output will have a `.js` file extension.
-The `react-native` mode is the equivalent of `preserve` in that it keeps all JSX, but the output will instead have a `.js` file extension.
-
-Mode           | Input     | Output                       | Output File Extension
+모드           | 입력      | 출력                         | 출력 파일 확장자
 ---------------|-----------|------------------------------|----------------------
 `preserve`     | `<div />` | `<div />`                    | `.jsx`
 `react`        | `<div />` | `React.createElement("div")` | `.js`
 `react-native` | `<div />` | `<div />`                    | `.js`
 
-You can specify this mode using either the `--jsx` command line flag or the corresponding option in your [tsconfig.json](./tsconfig.json.md) file.
+이 모드는 커맨드 라인의 `--jsx` 명령 또는 [tsconfig.json](./tsconfig.json.md) 파일의 해당 옵션을 사용하여 지정할 수 있습니다.
 
-> *Note: The identifier `React` is hard-coded, so you must make React available with an uppercase R.*
+> *주의사항: `React` 식별자는 하드 코딩되어 있으므로 대문자 R.*로 React를 사용할 수 있도록 해야 합니다.
 
-# The `as` operator
+# `as` 연산자 (The `as` operator)
 
-Recall how to write a type assertion:
+타입 표명 작성 방법을 회상해봅시다.
 
 ```ts
 var foo = <foo>bar;
 ```
 
-Here we are asserting the variable `bar` to have the type `foo`.
-Since TypeScript also uses angle brackets for type assertions, JSX's syntax introduces certain parsing difficulties. As a result, TypeScript disallows angle bracket type assertions in `.tsx` files.
+여기서 변수 `bar`의 타입을 `foo`라고 주장하고 있습니다.  
+TypeScript도 타입 표명을 위해 꺾쇠 괄호를 사용하기 때문에 JSX의 특정 구문 파싱에는 몇가지 어려움이 있습니다.   
+결과적으로 TypeScript는 `.tsx` 파일에 꺽쇠 괄호 타입 표명을 허용하지 않습니다.
 
-To make up for this loss of functionality in `.tsx` files, a new type assertion operator has been added: `as`.
-The above example can easily be rewritten with the `as` operator.
+이러한 `.tsx` 파일의 기능 손실을 채우기 위해 새로운 타입의 표명 연산자가  추가되었습니다: `as`.  
+위 예제는 쉽게 `as` 연산자로 다시 작성할 수 있습니다.
 
 ```ts
 var foo = bar as foo;
 ```
 
-The `as` operator is available in both `.ts` and `.tsx` files, and is identical in behavior to the other type assertion style.
+`as` 연산자는 `.ts`와 `.tsx` 파일 모두에서 사용할 수 있으며 다른 타입 표명 스타일과 똑같이 동작합니다.
 
-# Type Checking
+# 타입 검사 (Type Checking)
 
-In order to understand type checking with JSX, you must first understand the difference between intrinsic elements and value-based elements.
-Given a JSX expression `<expr />`, `expr` may either refer to something intrinsic to the environment (e.g. a `div` or `span` in a DOM environment) or to a custom component that you've created.
-This is important for two reasons:
+JSX 타입 검사를 이해하기 위해서는 먼저 내장 요소와 값-기반 요소 사이의 차이를 이해해야 합니다.  
+JSX 표현식 `<expr />`이 주어지면 `expr`은 원래 환경에 내장된 것을 참조할 수 있습니다 (예: DOM 환경의 `div` 또는 `span`) 또는 직접 작성한 사용자 정의 구성 요소를 참조할 수 있습니다.
 
-1. For React, intrinsic elements are emitted as strings (`React.createElement("div")`), whereas a component you've created is not (`React.createElement(MyComponent)`).
-2. The types of the attributes being passed in the JSX element should be looked up differently.
-  Intrinsic element attributes should be known *intrinsically* whereas components will likely want to specify their own set of attributes.
+이것이 중요한 두 가지 이유가 있습니다:
 
-TypeScript uses the [same convention that React does](http://facebook.github.io/react/docs/jsx-in-depth.html#html-tags-vs.-react-components) for distinguishing between these.
-An intrinsic element always begins with a lowercase letter, and a value-based element always begins with an uppercase letter.
+1. React의 경우, 내장 요소는 문자열 (`React.createElement("div")`)로 생성되는 반면 생성한 컴포넌트는 (`React.createElement(MyComponent)`)가 아닙니다.
+2. JSX 요소에서 전달되는 속성의 타입은 다르게 보여야합니다.  
+  내장 요소 속성은 *본질적으로* 알려져야 하는 반면에 컴포넌트는 자체 속성 집합을 지정하기를 원할 수 있습니다.
 
-## Intrinsic elements
+TypeScript는 이러한 것들을 구분하기 위해 [React와 동일한 컨벤션](http://facebook.github.io/react/docs/jsx-in-depth.html#html-tags-vs.-react-components)을 사용합니다.  
+내장 요소는 항상 소문자로 시작하고 값-기반 요소는 항상 대문자로 시작합니다.
 
-Intrinsic elements are looked up on the special interface `JSX.IntrinsicElements`.
-By default, if this interface is not specified, then anything goes and intrinsic elements will not be type checked.
-However, if this interface *is* present, then the name of the intrinsic element is looked up as a property on the `JSX.IntrinsicElements` interface.
-For example:
+## 내장 요소 (Intrinsic elements)
+
+내장 요소는 `JSX.IntrinsicElements`라는 특수한 인터페이스에서 볼 수 있습니다.
+기본적으로 이 인터페이스가 지정되지 않으면 모든 내장 요소에 타입 검사는 하지 않습니다.  
+다만 이 인터페이스가 *존재* 하는 경우, 내부 요소의 이름은 `JSX.IntrinsicElements` 인터페이스의 프로퍼티로서 참조됩니다.
+
+예를 들어:
 
 ```ts
 declare namespace JSX {
@@ -76,13 +78,13 @@ declare namespace JSX {
     }
 }
 
-<foo />; // ok
-<bar />; // error
+<foo />; // 좋아요
+<bar />; // 오류
 ```
 
-In the above example, `<foo />` will work fine but `<bar />` will result in an error since it has not been specified on `JSX.IntrinsicElements`.
+위의 예제에서 `<foo />`는 잘 동작하지만 `<bar />`는`JSX.IntrinsicElements`에 지정되지 않았기 때문에 오류가 발생합니다.
 
-> Note: You can also specify a catch-all string indexer on `JSX.IntrinsicElements` as follows:
+> 참고: `JSX.IntrinsicElements`에서 다음과 같이 catch-all 문자열 indexer를 지정할 수도 있습니다:
 >```ts
 >declare namespace JSX {
 >    interface IntrinsicElements {
@@ -91,28 +93,31 @@ In the above example, `<foo />` will work fine but `<bar />` will result in an e
 >}
 >```
 
-## Value-based elements
+## 값-기반 요소 (Value-based elements)
 
-Value based elements are simply looked up by identifiers that are in scope.
+값 기반 요소는 스코프에 있는 식별자로 간단히 조회됩니다.
 
 ```ts
 import MyComponent from "./myComponent";
 
-<MyComponent />; // ok
-<SomeOtherComponent />; // error
+<MyComponent />; // 좋아요
+<SomeOtherComponent />; // 오류
 ```
 
-There are two ways to define a value-based element:
+값 기반 요소를 정의하는 방법에는 두가지가 있습니다.:
 
-1. Stateless Functional Component (SFC)
-2. Class Component
+1. 무상태 함수형 컴포넌트 (SFC)
+2. 클래스 컴포넌트
 
-Because these two types of value-based elements are indistinguishable from each other in JSX expression, we first try to resolve the expression as Stateless Functional Component using overload resolution. If the process successes, then we are done resolving the expression to its declaration. If we fail to resolve as SFC, we will then try to resolve as a class component. If that fails, we will report an error.
+이 두가지 타입의 값 기반 요소는 JSX 표현식에서 구분할 수 없기 때문에 일단 오버로드 해석을 사용하여 무상태 함수형 컴포넌트로 표현식을 해결하려고합니다.    
+프로세스가 성공하면 선언에 대한 표현식을 해결합니다.  
+만약 SFC로 해결하지 못한다면 클래스 컴포넌트로 해결하려고합니다.  
+만약 실패한다면 오류를 보고합니다.
 
-### Stateless Functional Component
+### 무상태 함수형 컴포넌트(Stateless Functional Component)
 
-As the name suggested, the component is defined as JavaScript function where its first argument is a `props` object.
-We enforce that its return type must be assignable to `JSX.Element`
+이름에서 알 수 있듯이 컴포넌트는 첫 번째 인수가 `props` 객체인 JavaScript 함수로 정의됩니다.  
+반환 타입은 `JSX.Element`에 할당 가능하도록 강제합니다.
 
 ```ts
 interface FooProp {
@@ -129,7 +134,7 @@ function ComponentFoo(prop: FooProp) {
 const Button = (prop: {value: string}, context: { color: string }) => <button>
 ```
 
-Because SFC is simply a JavaScript function, we can utilize function overload here as well.
+SFC는 단순히 JavaScript 함수이기 때문에 여기서도 함수 오버로드를 활용할 수 있습니다.
 
 ```ts
 interface ClickableProps {

@@ -708,30 +708,22 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="introduction">Introduction</h1>
-<p><a href="https://facebook.github.io/jsx/" target="_blank">JSX</a> is an embeddable XML-like syntax.
-It is meant to be transformed into valid JavaScript, though the semantics of that transformation are implementation-specific.
-JSX came to popularity with the <a href="http://facebook.github.io/react/" target="_blank">React</a> framework, but has since seen other applications as well.
-TypeScript supports embedding, type checking, and compiling JSX directly into JavaScript.</p>
-<h1 id="basic-usage">Basic usage</h1>
-<p>In order to use JSX you must do two things.</p>
+                                <h1 id="&#xC18C;&#xAC1C;">&#xC18C;&#xAC1C;</h1>
+<p><a href="https://facebook.github.io/jsx/" target="_blank">JSX</a>&#xB294; XML &#xAC19;&#xC740; &#xAD6C;&#xBB38;&#xC774; &#xB0B4;&#xC7A5;&#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC758;&#xBBF8;&#xB294; &#xAD6C;&#xD604;&#xC5D0; &#xB530;&#xB77C; &#xB2E4;&#xB974;&#xC9C0;&#xB9CC; &#xC720;&#xD6A8;&#xD55C; JavaScript&#xB85C; &#xBCC0;&#xD615;&#xB418;&#xC5B4;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.<br>JSX&#xB294; <a href="http://facebook.github.io/react/" target="_blank">React</a> &#xC5D0;&#xC11C; &#xC778;&#xAE30;&#xB97C; &#xC5BB;&#xC5C8;&#xC73C;&#xB098; &#xC774;&#xD6C4; &#xB2E4;&#xB978; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xB3C4; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>TypeScript&#xB294; JSX&#xB97C; &#xC9C1;&#xC811; JavaScript&#xC5D0; &#xD3EC;&#xD568;, &#xD0C0;&#xC785; &#xAC80;&#xC0AC; &#xBC0F; &#xCEF4;&#xD30C;&#xC77C;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xAE30;&#xBCF8;-&#xC0AC;&#xC6A9;-&#xBC29;&#xBC95;">&#xAE30;&#xBCF8; &#xC0AC;&#xC6A9; &#xBC29;&#xBC95;</h1>
+<p>JSX&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; &#xB450; &#xAC00;&#xC9C0; &#xC791;&#xC5C5;&#xC744; &#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <ol>
-<li>Name your files with a <code>.tsx</code> extension</li>
-<li>Enable the <code>jsx</code> option</li>
+<li>&#xD30C;&#xC77C;&#xC758; &#xC774;&#xB984;&#xC744; <code>.tsx</code> &#xD655;&#xC7A5;&#xC790;&#xB85C; &#xC9C0;&#xC815;&#xD558;&#xC138;&#xC694;</li>
+<li><code>jsx</code> &#xC635;&#xC158;&#xC744; &#xD65C;&#xC131;&#xD654;&#xD558;&#xC138;&#xC694;</li>
 </ol>
-<p>TypeScript ships with three JSX modes: <code>preserve</code>, <code>react</code>, and <code>react-native</code>.
-These modes only affect the emit stage - type checking is unaffected.
-The <code>preserve</code> mode will keep the JSX as part of the output to be further consumed by another transform step (e.g. <a href="https://babeljs.io/" target="_blank">Babel</a>).
-Additionally the output will have a <code>.jsx</code> file extension.
-The <code>react</code> mode will emit <code>React.createElement</code>, does not need to go through a JSX transformation before use, and the output will have a <code>.js</code> file extension.
-The <code>react-native</code> mode is the equivalent of <code>preserve</code> in that it keeps all JSX, but the output will instead have a <code>.js</code> file extension.</p>
+<p>TypeScript&#xC5D0;&#xB294; &#xC138; &#xAC00;&#xC9C0; JSX &#xBAA8;&#xB4DC;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;: <code>preserve</code>, <code>react</code>, &#xADF8;&#xB9AC;&#xACE0; <code>react-native</code>.<br>&#xC774; &#xBAA8;&#xB4DC;&#xB294; &#xBC29;&#xCD9C; &#xB2E8;&#xACC4;&#xC5D0;&#xB9CC; &#xC601;&#xD5A5;&#xC744; &#xBBF8;&#xCE69;&#xB2C8;&#xB2E4; - &#xD0C0;&#xC785; &#xAC80;&#xC0AC;&#xC5D0;&#xB294; &#xC601;&#xD5A5; &#xBC1B;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.<br><code>preserve</code> &#xBAA8;&#xB4DC;&#xB294; &#xB2E4;&#xB978; &#xBCC0;&#xD658; &#xB2E8;&#xACC4; (&#xC608;: <a href="https://babeljs.io/" target="_blank">Babel</a>)&#xC5D0;&#xC11C; &#xB354; &#xC0AC;&#xC6A9;&#xB418;&#xB3C4;&#xB85D; &#xCD9C;&#xB825;&#xC758; &#xC77C;&#xBD80;&#xB85C; JSX&#xB97C; &#xACC4;&#xC18D; &#xC720;&#xC9C0;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xCD94;&#xAC00;&#xC801;&#xC73C;&#xB85C; &#xCD9C;&#xB825;&#xC5D0;&#xB294; <code>.jsx</code> &#xD30C;&#xC77C; &#xD655;&#xC7A5;&#xC790;&#xAC00; &#xC9C0;&#xC815;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br><code>react</code> &#xBAA8;&#xB4DC;&#xB294; <code>React.createElement</code>&#xB97C; &#xB0B4;&#xBCF4;&#xB0B4;&#xACE0; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC804;&#xC5D0; JSX &#xBCC0;&#xD658;&#xC744; &#xAC70;&#xCE60; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xC73C;&#xBA70; &#xCD9C;&#xB825;&#xC740; <code>.js</code> &#xD30C;&#xC77C; &#xD655;&#xC7A5;&#xC790;&#xB97C; &#xAC16;&#xC2B5;&#xB2C8;&#xB2E4;.<br><code>react-native</code> &#xBAA8;&#xB4DC;&#xB294; &#xBAA8;&#xB4E0; JSX&#xB97C; &#xC720;&#xC9C0;&#xD558;&#xACE0; &#xC788;&#xB2E4;&#xB294; &#xC810;&#xC5D0;&#xC11C; <code>preserve</code>&#xC640; &#xAC19;&#xC9C0;&#xB9CC; &#xB300;&#xC2E0; &#xCD9C;&#xB825;&#xC740; <code>.js</code> &#xD30C;&#xC77C; &#xD655;&#xC7A5;&#xC790;&#xB97C; &#xAC16;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <table>
 <thead>
 <tr>
-<th>Mode</th>
-<th>Input</th>
-<th>Output</th>
-<th>Output File Extension</th>
+<th>&#xBAA8;&#xB4DC;</th>
+<th>&#xC785;&#xB825;</th>
+<th>&#xCD9C;&#xB825;</th>
+<th>&#xCD9C;&#xB825; &#xD30C;&#xC77C; &#xD655;&#xC7A5;&#xC790;</th>
 </tr>
 </thead>
 <tbody>
@@ -755,49 +747,43 @@ The <code>react-native</code> mode is the equivalent of <code>preserve</code> in
 </tr>
 </tbody>
 </table>
-<p>You can specify this mode using either the <code>--jsx</code> command line flag or the corresponding option in your <a href="tsconfig.json.html">tsconfig.json</a> file.</p>
+<p>&#xC774; &#xBAA8;&#xB4DC;&#xB294; &#xCEE4;&#xB9E8;&#xB4DC; &#xB77C;&#xC778;&#xC758; <code>--jsx</code> &#xBA85;&#xB839; &#xB610;&#xB294; <a href="tsconfig.json.html">tsconfig.json</a> &#xD30C;&#xC77C;&#xC758; &#xD574;&#xB2F9; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <blockquote>
-<p><em>Note: The identifier <code>React</code> is hard-coded, so you must make React available with an uppercase R.</em></p>
+<p><em>&#xC8FC;&#xC758;&#xC0AC;&#xD56D;: <code>React</code> &#xC2DD;&#xBCC4;&#xC790;&#xB294; &#xD558;&#xB4DC; &#xCF54;&#xB529;&#xB418;&#xC5B4; &#xC788;&#xC73C;&#xBBC0;&#xB85C; &#xB300;&#xBB38;&#xC790; R.</em>&#xB85C; React&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
-<h1 id="the-as-operator">The <code>as</code> operator</h1>
-<p>Recall how to write a type assertion:</p>
+<h1 id="as-&#xC5F0;&#xC0B0;&#xC790;-the-as-operator"><code>as</code> &#xC5F0;&#xC0B0;&#xC790; (The <code>as</code> operator)</h1>
+<p>&#xD0C0;&#xC785; &#xD45C;&#xBA85; &#xC791;&#xC131; &#xBC29;&#xBC95;&#xC744; &#xD68C;&#xC0C1;&#xD574;&#xBD05;&#xC2DC;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">var</span> <span class="cm-variable">foo</span> <span class="cm-operator">=</span> <span class="cm-operator">&lt;</span><span class="cm-variable">foo</span><span class="cm-operator">&gt;</span><span class="cm-variable">bar</span>;
 </code></pre>
-<p>Here we are asserting the variable <code>bar</code> to have the type <code>foo</code>.
-Since TypeScript also uses angle brackets for type assertions, JSX&apos;s syntax introduces certain parsing difficulties. As a result, TypeScript disallows angle bracket type assertions in <code>.tsx</code> files.</p>
-<p>To make up for this loss of functionality in <code>.tsx</code> files, a new type assertion operator has been added: <code>as</code>.
-The above example can easily be rewritten with the <code>as</code> operator.</p>
+<p>&#xC5EC;&#xAE30;&#xC11C; &#xBCC0;&#xC218; <code>bar</code>&#xC758; &#xD0C0;&#xC785;&#xC744; <code>foo</code>&#xB77C;&#xACE0; &#xC8FC;&#xC7A5;&#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>TypeScript&#xB3C4; &#xD0C0;&#xC785; &#xD45C;&#xBA85;&#xC744; &#xC704;&#xD574; &#xAEBE;&#xC1E0; &#xAD04;&#xD638;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; JSX&#xC758; &#xD2B9;&#xC815; &#xAD6C;&#xBB38; &#xD30C;&#xC2F1;&#xC5D0;&#xB294; &#xBA87;&#xAC00;&#xC9C0; &#xC5B4;&#xB824;&#xC6C0;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xACB0;&#xACFC;&#xC801;&#xC73C;&#xB85C; TypeScript&#xB294; <code>.tsx</code> &#xD30C;&#xC77C;&#xC5D0; &#xAEBD;&#xC1E0; &#xAD04;&#xD638; &#xD0C0;&#xC785; &#xD45C;&#xBA85;&#xC744; &#xD5C8;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774;&#xB7EC;&#xD55C; <code>.tsx</code> &#xD30C;&#xC77C;&#xC758; &#xAE30;&#xB2A5; &#xC190;&#xC2E4;&#xC744; &#xCC44;&#xC6B0;&#xAE30; &#xC704;&#xD574; &#xC0C8;&#xB85C;&#xC6B4; &#xD0C0;&#xC785;&#xC758; &#xD45C;&#xBA85; &#xC5F0;&#xC0B0;&#xC790;&#xAC00;  &#xCD94;&#xAC00;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;: <code>as</code>.<br>&#xC704; &#xC608;&#xC81C;&#xB294; &#xC27D;&#xAC8C; <code>as</code> &#xC5F0;&#xC0B0;&#xC790;&#xB85C; &#xB2E4;&#xC2DC; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">var</span> <span class="cm-variable">foo</span> <span class="cm-operator">=</span> <span class="cm-variable">bar</span> <span class="cm-variable">as</span> <span class="cm-variable">foo</span>;
 </code></pre>
-<p>The <code>as</code> operator is available in both <code>.ts</code> and <code>.tsx</code> files, and is identical in behavior to the other type assertion style.</p>
-<h1 id="type-checking">Type Checking</h1>
-<p>In order to understand type checking with JSX, you must first understand the difference between intrinsic elements and value-based elements.
-Given a JSX expression <code>&lt;expr /&gt;</code>, <code>expr</code> may either refer to something intrinsic to the environment (e.g. a <code>div</code> or <code>span</code> in a DOM environment) or to a custom component that you&apos;ve created.
-This is important for two reasons:</p>
+<p><code>as</code> &#xC5F0;&#xC0B0;&#xC790;&#xB294; <code>.ts</code>&#xC640; <code>.tsx</code> &#xD30C;&#xC77C; &#xBAA8;&#xB450;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBA70; &#xB2E4;&#xB978; &#xD0C0;&#xC785; &#xD45C;&#xBA85; &#xC2A4;&#xD0C0;&#xC77C;&#xACFC; &#xB611;&#xAC19;&#xC774; &#xB3D9;&#xC791;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xD0C0;&#xC785;-&#xAC80;&#xC0AC;-type-checking">&#xD0C0;&#xC785; &#xAC80;&#xC0AC; (Type Checking)</h1>
+<p>JSX &#xD0C0;&#xC785; &#xAC80;&#xC0AC;&#xB97C; &#xC774;&#xD574;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB294; &#xBA3C;&#xC800; &#xB0B4;&#xC7A5; &#xC694;&#xC18C;&#xC640; &#xAC12;-&#xAE30;&#xBC18; &#xC694;&#xC18C; &#xC0AC;&#xC774;&#xC758; &#xCC28;&#xC774;&#xB97C; &#xC774;&#xD574;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>JSX &#xD45C;&#xD604;&#xC2DD; <code>&lt;expr /&gt;</code>&#xC774; &#xC8FC;&#xC5B4;&#xC9C0;&#xBA74; <code>expr</code>&#xC740; &#xC6D0;&#xB798; &#xD658;&#xACBD;&#xC5D0; &#xB0B4;&#xC7A5;&#xB41C; &#xAC83;&#xC744; &#xCC38;&#xC870;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; (&#xC608;: DOM &#xD658;&#xACBD;&#xC758; <code>div</code> &#xB610;&#xB294; <code>span</code>) &#xB610;&#xB294; &#xC9C1;&#xC811; &#xC791;&#xC131;&#xD55C; &#xC0AC;&#xC6A9;&#xC790; &#xC815;&#xC758; &#xAD6C;&#xC131; &#xC694;&#xC18C;&#xB97C; &#xCC38;&#xC870;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774;&#xAC83;&#xC774; &#xC911;&#xC694;&#xD55C; &#xB450; &#xAC00;&#xC9C0; &#xC774;&#xC720;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <ol>
-<li>For React, intrinsic elements are emitted as strings (<code>React.createElement(&quot;div&quot;)</code>), whereas a component you&apos;ve created is not (<code>React.createElement(MyComponent)</code>).</li>
-<li>The types of the attributes being passed in the JSX element should be looked up differently.
-Intrinsic element attributes should be known <em>intrinsically</em> whereas components will likely want to specify their own set of attributes.</li>
+<li>React&#xC758; &#xACBD;&#xC6B0;, &#xB0B4;&#xC7A5; &#xC694;&#xC18C;&#xB294; &#xBB38;&#xC790;&#xC5F4; (<code>React.createElement(&quot;div&quot;)</code>)&#xB85C; &#xC0DD;&#xC131;&#xB418;&#xB294; &#xBC18;&#xBA74; &#xC0DD;&#xC131;&#xD55C; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB294; (<code>React.createElement(MyComponent)</code>)&#xAC00; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;.</li>
+<li>JSX &#xC694;&#xC18C;&#xC5D0;&#xC11C; &#xC804;&#xB2EC;&#xB418;&#xB294; &#xC18D;&#xC131;&#xC758; &#xD0C0;&#xC785;&#xC740; &#xB2E4;&#xB974;&#xAC8C; &#xBCF4;&#xC5EC;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB0B4;&#xC7A5; &#xC694;&#xC18C; &#xC18D;&#xC131;&#xC740; <em>&#xBCF8;&#xC9C8;&#xC801;&#xC73C;&#xB85C;</em> &#xC54C;&#xB824;&#xC838;&#xC57C; &#xD558;&#xB294; &#xBC18;&#xBA74;&#xC5D0; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB294; &#xC790;&#xCCB4; &#xC18D;&#xC131; &#xC9D1;&#xD569;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xAE30;&#xB97C; &#xC6D0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
 </ol>
-<p>TypeScript uses the <a href="http://facebook.github.io/react/docs/jsx-in-depth.html#html-tags-vs.-react-components" target="_blank">same convention that React does</a> for distinguishing between these.
-An intrinsic element always begins with a lowercase letter, and a value-based element always begins with an uppercase letter.</p>
-<h2 id="intrinsic-elements">Intrinsic elements</h2>
-<p>Intrinsic elements are looked up on the special interface <code>JSX.IntrinsicElements</code>.
-By default, if this interface is not specified, then anything goes and intrinsic elements will not be type checked.
-However, if this interface <em>is</em> present, then the name of the intrinsic element is looked up as a property on the <code>JSX.IntrinsicElements</code> interface.
-For example:</p>
+<p>TypeScript&#xB294; &#xC774;&#xB7EC;&#xD55C; &#xAC83;&#xB4E4;&#xC744; &#xAD6C;&#xBD84;&#xD558;&#xAE30; &#xC704;&#xD574; <a href="http://facebook.github.io/react/docs/jsx-in-depth.html#html-tags-vs.-react-components" target="_blank">React&#xC640; &#xB3D9;&#xC77C;&#xD55C; &#xCEE8;&#xBCA4;&#xC158;</a>&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB0B4;&#xC7A5; &#xC694;&#xC18C;&#xB294; &#xD56D;&#xC0C1; &#xC18C;&#xBB38;&#xC790;&#xB85C; &#xC2DC;&#xC791;&#xD558;&#xACE0; &#xAC12;-&#xAE30;&#xBC18; &#xC694;&#xC18C;&#xB294; &#xD56D;&#xC0C1; &#xB300;&#xBB38;&#xC790;&#xB85C; &#xC2DC;&#xC791;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xB0B4;&#xC7A5;-&#xC694;&#xC18C;-intrinsic-elements">&#xB0B4;&#xC7A5; &#xC694;&#xC18C; (Intrinsic elements)</h2>
+<p>&#xB0B4;&#xC7A5; &#xC694;&#xC18C;&#xB294; <code>JSX.IntrinsicElements</code>&#xB77C;&#xB294; &#xD2B9;&#xC218;&#xD55C; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC774; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xAC00; &#xC9C0;&#xC815;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xBAA8;&#xB4E0; &#xB0B4;&#xC7A5; &#xC694;&#xC18C;&#xC5D0; &#xD0C0;&#xC785; &#xAC80;&#xC0AC;&#xB294; &#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xB9CC; &#xC774; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xAC00; <em>&#xC874;&#xC7AC;</em> &#xD558;&#xB294; &#xACBD;&#xC6B0;, &#xB0B4;&#xBD80; &#xC694;&#xC18C;&#xC758; &#xC774;&#xB984;&#xC740; <code>JSX.IntrinsicElements</code> &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB85C;&#xC11C; &#xCC38;&#xC870;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;:</p>
 <pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-variable">namespace</span> <span class="cm-variable">JSX</span> {
     <span class="cm-keyword">interface</span> <span class="cm-variable">IntrinsicElements</span> {
         <span class="cm-variable">foo</span>: <span class="cm-variable-3">any</span>
     }
 }
 
-<span class="cm-operator">&lt;</span><span class="cm-variable">foo</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// ok</span>
-<span class="cm-operator">&lt;</span><span class="cm-variable">bar</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// error</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">foo</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// &#xC88B;&#xC544;&#xC694;</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">bar</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// &#xC624;&#xB958;</span>
 </code></pre>
-<p>In the above example, <code>&lt;foo /&gt;</code> will work fine but <code>&lt;bar /&gt;</code> will result in an error since it has not been specified on <code>JSX.IntrinsicElements</code>.</p>
+<p>&#xC704;&#xC758; &#xC608;&#xC81C;&#xC5D0;&#xC11C; <code>&lt;foo /&gt;</code>&#xB294; &#xC798; &#xB3D9;&#xC791;&#xD558;&#xC9C0;&#xB9CC; <code>&lt;bar /&gt;</code>&#xB294;<code>JSX.IntrinsicElements</code>&#xC5D0; &#xC9C0;&#xC815;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <blockquote>
-<p>Note: You can also specify a catch-all string indexer on <code>JSX.IntrinsicElements</code> as follows:</p>
+<p>&#xCC38;&#xACE0;: <code>JSX.IntrinsicElements</code>&#xC5D0;&#xC11C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; catch-all &#xBB38;&#xC790;&#xC5F4; indexer&#xB97C; &#xC9C0;&#xC815;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-variable">namespace</span> <span class="cm-variable">JSX</span> {
    <span class="cm-keyword">interface</span> <span class="cm-variable">IntrinsicElements</span> {
        [<span class="cm-variable">elemName</span>: <span class="cm-variable-3">string</span>]: <span class="cm-variable-3">any</span>;
@@ -805,22 +791,21 @@ For example:</p>
 }
 </code></pre>
 </blockquote>
-<h2 id="value-based-elements">Value-based elements</h2>
-<p>Value based elements are simply looked up by identifiers that are in scope.</p>
+<h2 id="&#xAC12;-&#xAE30;&#xBC18;-&#xC694;&#xC18C;-value-based-elements">&#xAC12;-&#xAE30;&#xBC18; &#xC694;&#xC18C; (Value-based elements)</h2>
+<p>&#xAC12; &#xAE30;&#xBC18; &#xC694;&#xC18C;&#xB294; &#xC2A4;&#xCF54;&#xD504;&#xC5D0; &#xC788;&#xB294; &#xC2DD;&#xBCC4;&#xC790;&#xB85C; &#xAC04;&#xB2E8;&#xD788; &#xC870;&#xD68C;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-variable">MyComponent</span> <span class="cm-keyword">from</span> <span class="cm-string">&quot;./myComponent&quot;</span>;
 
-<span class="cm-operator">&lt;</span><span class="cm-variable">MyComponent</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// ok</span>
-<span class="cm-operator">&lt;</span><span class="cm-variable">SomeOtherComponent</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// error</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">MyComponent</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// &#xC88B;&#xC544;&#xC694;</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">SomeOtherComponent</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// &#xC624;&#xB958;</span>
 </code></pre>
-<p>There are two ways to define a value-based element:</p>
+<p>&#xAC12; &#xAE30;&#xBC18; &#xC694;&#xC18C;&#xB97C; &#xC815;&#xC758;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC5D0;&#xB294; &#xB450;&#xAC00;&#xC9C0;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.:</p>
 <ol>
-<li>Stateless Functional Component (SFC)</li>
-<li>Class Component</li>
+<li>&#xBB34;&#xC0C1;&#xD0DC; &#xD568;&#xC218;&#xD615; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8; (SFC)</li>
+<li>&#xD074;&#xB798;&#xC2A4; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;</li>
 </ol>
-<p>Because these two types of value-based elements are indistinguishable from each other in JSX expression, we first try to resolve the expression as Stateless Functional Component using overload resolution. If the process successes, then we are done resolving the expression to its declaration. If we fail to resolve as SFC, we will then try to resolve as a class component. If that fails, we will report an error.</p>
-<h3 id="stateless-functional-component">Stateless Functional Component</h3>
-<p>As the name suggested, the component is defined as JavaScript function where its first argument is a <code>props</code> object.
-We enforce that its return type must be assignable to <code>JSX.Element</code></p>
+<p>&#xC774; &#xB450;&#xAC00;&#xC9C0; &#xD0C0;&#xC785;&#xC758; &#xAC12; &#xAE30;&#xBC18; &#xC694;&#xC18C;&#xB294; JSX &#xD45C;&#xD604;&#xC2DD;&#xC5D0;&#xC11C; &#xAD6C;&#xBD84;&#xD560; &#xC218; &#xC5C6;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC77C;&#xB2E8; &#xC624;&#xBC84;&#xB85C;&#xB4DC; &#xD574;&#xC11D;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBB34;&#xC0C1;&#xD0DC; &#xD568;&#xC218;&#xD615; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB85C; &#xD45C;&#xD604;&#xC2DD;&#xC744; &#xD574;&#xACB0;&#xD558;&#xB824;&#xACE0;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xC131;&#xACF5;&#xD558;&#xBA74; &#xC120;&#xC5B8;&#xC5D0; &#xB300;&#xD55C; &#xD45C;&#xD604;&#xC2DD;&#xC744; &#xD574;&#xACB0;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB9CC;&#xC57D; SFC&#xB85C; &#xD574;&#xACB0;&#xD558;&#xC9C0; &#xBABB;&#xD55C;&#xB2E4;&#xBA74; &#xD074;&#xB798;&#xC2A4; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB85C; &#xD574;&#xACB0;&#xD558;&#xB824;&#xACE0;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB9CC;&#xC57D; &#xC2E4;&#xD328;&#xD55C;&#xB2E4;&#xBA74; &#xC624;&#xB958;&#xB97C; &#xBCF4;&#xACE0;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xBB34;&#xC0C1;&#xD0DC;-&#xD568;&#xC218;&#xD615;-&#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;stateless-functional-component">&#xBB34;&#xC0C1;&#xD0DC; &#xD568;&#xC218;&#xD615; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;(Stateless Functional Component)</h3>
+<p>&#xC774;&#xB984;&#xC5D0;&#xC11C; &#xC54C; &#xC218; &#xC788;&#xB4EF;&#xC774; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB294; &#xCCAB; &#xBC88;&#xC9F8; &#xC778;&#xC218;&#xAC00; <code>props</code> &#xAC1D;&#xCCB4;&#xC778; JavaScript &#xD568;&#xC218;&#xB85C; &#xC815;&#xC758;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xBC18;&#xD658; &#xD0C0;&#xC785;&#xC740; <code>JSX.Element</code>&#xC5D0; &#xD560;&#xB2F9; &#xAC00;&#xB2A5;&#xD558;&#xB3C4;&#xB85D; &#xAC15;&#xC81C;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">FooProp</span> {
   <span class="cm-variable">name</span>: <span class="cm-variable-3">string</span>;
   <span class="cm-variable">X</span>: <span class="cm-variable-3">number</span>;
@@ -834,7 +819,7 @@ We enforce that its return type must be assignable to <code>JSX.Element</code></
 
 <span class="cm-keyword">const</span> <span class="cm-variable">Button</span> <span class="cm-operator">=</span> (<span class="cm-def">prop</span>: {<span class="cm-variable">value</span>: <span class="cm-variable-3">string</span>}, <span class="cm-variable">context</span>: { <span class="cm-variable">color</span>: <span class="cm-variable-3">string</span> }) <span class="cm-operator">=&gt;</span> <span class="cm-operator">&lt;</span><span class="cm-variable">button</span><span class="cm-operator">&gt;</span>
 </code></pre>
-<p>Because SFC is simply a JavaScript function, we can utilize function overload here as well.</p>
+<p>SFC&#xB294; &#xB2E8;&#xC21C;&#xD788; JavaScript &#xD568;&#xC218;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC5EC;&#xAE30;&#xC11C;&#xB3C4; &#xD568;&#xC218; &#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xB97C; &#xD65C;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">ClickableProps</span> {
   <span class="cm-variable">children</span>: <span class="cm-variable">JSX</span>.<span class="cm-property">Element</span>[] <span class="cm-operator">|</span> <span class="cm-variable">JSX</span>.<span class="cm-property">Element</span>
 }
@@ -1105,7 +1090,7 @@ These typings define the <code>JSX</code> namespace appropriately for use with R
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"JSX","level":"3.18","depth":1,"next":{"title":"Decorators","level":"3.19","depth":1,"path":"pages/Decorators.md","ref":"pages/Decorators.md","articles":[]},"previous":{"title":"선언 병합","level":"3.17","depth":1,"path":"pages/Declaration Merging.md","ref":"pages/Declaration Merging.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/JSX.md","mtime":"2018-03-27T14:27:06.616Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-28T12:24:00.025Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"JSX","level":"3.18","depth":1,"next":{"title":"Decorators","level":"3.19","depth":1,"path":"pages/Decorators.md","ref":"pages/Decorators.md","articles":[]},"previous":{"title":"선언 병합","level":"3.17","depth":1,"path":"pages/Declaration Merging.md","ref":"pages/Declaration Merging.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/JSX.md","mtime":"2018-03-28T13:50:44.076Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-28T13:51:11.058Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
