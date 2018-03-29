@@ -155,28 +155,28 @@ function MainButton(prop: SideProps): JSX.Element {
 }
 ```
 
-### Class Component
+### 클래스 컴포넌트 (Class Component)
 
-It is possible to limit the type of a class component.
-However, for this we must introduce two new terms: the *element class type* and the *element instance type*.
+클래스 컴포넌트의 타입을 제한할 수 있습니다.  
+하지만 이를 위해 새로운 두가지를 도입해야 합니다: *요소 클래스 타입* 과 *요소 인스턴스 타입*
 
-Given `<Expr />`, the *element class type* is the type of `Expr`.
-So in the example above, if `MyComponent` was an ES6 class the class type would be that class.
-If `MyComponent` was a factory function, the class type would be that function.
+`<Expr />`에 주어진 *요소 클래스 타입* 은 `Expr`입니다.  
+따라서 위 예제의 `MyComponent`가 ES6 클래스라면 이 클래스가 그 클래스 타입이 될 것입니다.  
+만일 `MyComponent`가 팩토리 함수라면 클래스 타입이 그 함수가 될 것입니다.
 
-Once the class type is established, the instance type is determined by the union of the return types of the class type's call signatures and construct signatures.
-So again, in the case of an ES6 class, the instance type would be the type of an instance of that class, and in the case of a factory function, it would be the type of the value returned from the function.
+한 번 클래스 타입이 설정되면 인스턴스 타입은 클래스 타입의 호출 서명과 구조 서명의 반환 타입 유니온에 따라 결정됩니다.  
+다시 ES6클래스의 경우, 인스턴스 타입은 해당 클래스의 인스턴스 타입이 되고 팩토리 함수의 경우 해당 함수에서 반환되는 값의 타입이 됩니다.
 
 ```ts
 class MyComponent {
   render() {}
 }
 
-// use a construct signature
+// 구조 서명 사용
 var myComponent = new MyComponent();
 
-// element class type => MyComponent
-// element instance type => { render: () => void }
+// 요소 클래스 타입 => MyComponent
+// 요소 인스턴스 타입 => { render: () => void }
 
 function MyFactoryFunction() {
   return {
@@ -185,15 +185,15 @@ function MyFactoryFunction() {
   }
 }
 
-// use a call signature
+// 호출 서명 사용
 var myComponent = MyFactoryFunction();
 
-// element class type => FactoryFunction
-// element instance type => { render: () => void }
+// 요소 클래스 타입 => 팩토리 함수
+// 요소 인스턴스 타입 => { render: () => void }
 ```
 
-The element instance type is interesting because it must be assignable to `JSX.ElementClass` or it will result in an error.
-By default `JSX.ElementClass` is `{}`, but it can be augmented to limit the use of JSX to only those types that conform to the proper interface.
+요소 인스턴스 타입이 흥미로운 이유는 `JSX.ElementClass`에 할당되어야 하며 그렇지 않을 경우 오류가 발생하기 때문입니다.  
+기본적으로 `JSX.ElementClass`는 `{}`이지만 JSX의 사용을 적절한 인터페이스에 맞는 타입으로 제한하도록 확장할 수 있습니다.
 
 ```ts
 declare namespace JSX {
@@ -209,16 +209,16 @@ function MyFactoryFunction() {
   return { render: () => {} }
 }
 
-<MyComponent />; // ok
-<MyFactoryFunction />; // ok
+<MyComponent />; // 좋아요
+<MyFactoryFunction />; // 좋아요
 
 class NotAValidComponent {}
 function NotAValidFactoryFunction() {
   return {};
 }
 
-<NotAValidComponent />; // error
-<NotAValidFactoryFunction />; // error
+<NotAValidComponent />; // 오류
+<NotAValidFactoryFunction />; // 오류
 ```
 
 ## Attribute type checking
