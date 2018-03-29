@@ -837,23 +837,19 @@
   <span class="cm-meta">...</span>
 }
 </code></pre>
-<h3 id="class-component">Class Component</h3>
-<p>It is possible to limit the type of a class component.
-However, for this we must introduce two new terms: the <em>element class type</em> and the <em>element instance type</em>.</p>
-<p>Given <code>&lt;Expr /&gt;</code>, the <em>element class type</em> is the type of <code>Expr</code>.
-So in the example above, if <code>MyComponent</code> was an ES6 class the class type would be that class.
-If <code>MyComponent</code> was a factory function, the class type would be that function.</p>
-<p>Once the class type is established, the instance type is determined by the union of the return types of the class type&apos;s call signatures and construct signatures.
-So again, in the case of an ES6 class, the instance type would be the type of an instance of that class, and in the case of a factory function, it would be the type of the value returned from the function.</p>
+<h3 id="&#xD074;&#xB798;&#xC2A4;-&#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;-class-component">&#xD074;&#xB798;&#xC2A4; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8; (Class Component)</h3>
+<p>&#xD074;&#xB798;&#xC2A4; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xC81C;&#xD55C;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xD558;&#xC9C0;&#xB9CC; &#xC774;&#xB97C; &#xC704;&#xD574; &#xC0C8;&#xB85C;&#xC6B4; &#xB450;&#xAC00;&#xC9C0;&#xB97C; &#xB3C4;&#xC785;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;: <em>&#xC694;&#xC18C; &#xD074;&#xB798;&#xC2A4; &#xD0C0;&#xC785;</em> &#xACFC; <em>&#xC694;&#xC18C; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xD0C0;&#xC785;</em></p>
+<p><code>&lt;Expr /&gt;</code>&#xC5D0; &#xC8FC;&#xC5B4;&#xC9C4; <em>&#xC694;&#xC18C; &#xD074;&#xB798;&#xC2A4; &#xD0C0;&#xC785;</em> &#xC740; <code>Expr</code>&#xC785;&#xB2C8;&#xB2E4;.<br>&#xB530;&#xB77C;&#xC11C; &#xC704; &#xC608;&#xC81C;&#xC758; <code>MyComponent</code>&#xAC00; ES6 &#xD074;&#xB798;&#xC2A4;&#xB77C;&#xBA74; &#xC774; &#xD074;&#xB798;&#xC2A4;&#xAC00; &#xADF8; &#xD074;&#xB798;&#xC2A4; &#xD0C0;&#xC785;&#xC774; &#xB420; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xB9CC;&#xC77C; <code>MyComponent</code>&#xAC00; &#xD329;&#xD1A0;&#xB9AC; &#xD568;&#xC218;&#xB77C;&#xBA74; &#xD074;&#xB798;&#xC2A4; &#xD0C0;&#xC785;&#xC774; &#xADF8; &#xD568;&#xC218;&#xAC00; &#xB420; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD55C; &#xBC88; &#xD074;&#xB798;&#xC2A4; &#xD0C0;&#xC785;&#xC774; &#xC124;&#xC815;&#xB418;&#xBA74; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xD0C0;&#xC785;&#xC740; &#xD074;&#xB798;&#xC2A4; &#xD0C0;&#xC785;&#xC758; &#xD638;&#xCD9C; &#xC11C;&#xBA85;&#xACFC; &#xAD6C;&#xC870; &#xC11C;&#xBA85;&#xC758; &#xBC18;&#xD658; &#xD0C0;&#xC785; &#xC720;&#xB2C8;&#xC628;&#xC5D0; &#xB530;&#xB77C; &#xACB0;&#xC815;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xC2DC; ES6&#xD074;&#xB798;&#xC2A4;&#xC758; &#xACBD;&#xC6B0;, &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xD0C0;&#xC785;&#xC740; &#xD574;&#xB2F9; &#xD074;&#xB798;&#xC2A4;&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xD0C0;&#xC785;&#xC774; &#xB418;&#xACE0; &#xD329;&#xD1A0;&#xB9AC; &#xD568;&#xC218;&#xC758; &#xACBD;&#xC6B0; &#xD574;&#xB2F9; &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xBC18;&#xD658;&#xB418;&#xB294; &#xAC12;&#xC758; &#xD0C0;&#xC785;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">MyComponent</span> {
   <span class="cm-property">render</span>() {}
 }
 
-<span class="cm-comment">// use a construct signature</span>
+<span class="cm-comment">// &#xAD6C;&#xC870; &#xC11C;&#xBA85; &#xC0AC;&#xC6A9;</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">myComponent</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">MyComponent</span>();
 
-<span class="cm-comment">// element class type =&gt; MyComponent</span>
-<span class="cm-comment">// element instance type =&gt; { render: () =&gt; void }</span>
+<span class="cm-comment">// &#xC694;&#xC18C; &#xD074;&#xB798;&#xC2A4; &#xD0C0;&#xC785; =&gt; MyComponent</span>
+<span class="cm-comment">// &#xC694;&#xC18C; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xD0C0;&#xC785; =&gt; { render: () =&gt; void }</span>
 
 <span class="cm-keyword">function</span> <span class="cm-variable">MyFactoryFunction</span>() {
   <span class="cm-keyword">return</span> {
@@ -862,14 +858,13 @@ So again, in the case of an ES6 class, the instance type would be the type of an
   }
 }
 
-<span class="cm-comment">// use a call signature</span>
+<span class="cm-comment">// &#xD638;&#xCD9C; &#xC11C;&#xBA85; &#xC0AC;&#xC6A9;</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">myComponent</span> <span class="cm-operator">=</span> <span class="cm-variable">MyFactoryFunction</span>();
 
-<span class="cm-comment">// element class type =&gt; FactoryFunction</span>
-<span class="cm-comment">// element instance type =&gt; { render: () =&gt; void }</span>
+<span class="cm-comment">// &#xC694;&#xC18C; &#xD074;&#xB798;&#xC2A4; &#xD0C0;&#xC785; =&gt; &#xD329;&#xD1A0;&#xB9AC; &#xD568;&#xC218;</span>
+<span class="cm-comment">// &#xC694;&#xC18C; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xD0C0;&#xC785; =&gt; { render: () =&gt; void }</span>
 </code></pre>
-<p>The element instance type is interesting because it must be assignable to <code>JSX.ElementClass</code> or it will result in an error.
-By default <code>JSX.ElementClass</code> is <code>{}</code>, but it can be augmented to limit the use of JSX to only those types that conform to the proper interface.</p>
+<p>&#xC694;&#xC18C; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xD0C0;&#xC785;&#xC774; &#xD765;&#xBBF8;&#xB85C;&#xC6B4; &#xC774;&#xC720;&#xB294; <code>JSX.ElementClass</code>&#xC5D0; &#xD560;&#xB2F9;&#xB418;&#xC5B4;&#xC57C; &#xD558;&#xBA70; &#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xC744; &#xACBD;&#xC6B0; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; <code>JSX.ElementClass</code>&#xB294; <code>{}</code>&#xC774;&#xC9C0;&#xB9CC; JSX&#xC758; &#xC0AC;&#xC6A9;&#xC744; &#xC801;&#xC808;&#xD55C; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xB9DE;&#xB294; &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xC81C;&#xD55C;&#xD558;&#xB3C4;&#xB85D; &#xD655;&#xC7A5;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-variable">namespace</span> <span class="cm-variable">JSX</span> {
   <span class="cm-keyword">interface</span> <span class="cm-variable">ElementClass</span> {
     <span class="cm-variable">render</span>: <span class="cm-variable-3">any</span>;
@@ -883,16 +878,16 @@ By default <code>JSX.ElementClass</code> is <code>{}</code>, but it can be augme
   <span class="cm-keyword">return</span> { <span class="cm-property">render</span>: () <span class="cm-operator">=&gt;</span> {} }
 }
 
-<span class="cm-operator">&lt;</span><span class="cm-variable">MyComponent</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// ok</span>
-<span class="cm-operator">&lt;</span><span class="cm-variable">MyFactoryFunction</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// ok</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">MyComponent</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// &#xC88B;&#xC544;&#xC694;</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">MyFactoryFunction</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// &#xC88B;&#xC544;&#xC694;</span>
 
 <span class="cm-keyword">class</span> <span class="cm-variable">NotAValidComponent</span> {}
 <span class="cm-keyword">function</span> <span class="cm-variable">NotAValidFactoryFunction</span>() {
   <span class="cm-keyword">return</span> {};
 }
 
-<span class="cm-operator">&lt;</span><span class="cm-variable">NotAValidComponent</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// error</span>
-<span class="cm-operator">&lt;</span><span class="cm-variable">NotAValidFactoryFunction</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// error</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">NotAValidComponent</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// &#xC624;&#xB958;</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">NotAValidFactoryFunction</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// &#xC624;&#xB958;</span>
 </code></pre>
 <h2 id="attribute-type-checking">Attribute type checking</h2>
 <p>The first step to type checking attributes is to determine the <em>element attributes type</em>.
@@ -1090,7 +1085,7 @@ These typings define the <code>JSX</code> namespace appropriately for use with R
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"JSX","level":"3.18","depth":1,"next":{"title":"Decorators","level":"3.19","depth":1,"path":"pages/Decorators.md","ref":"pages/Decorators.md","articles":[]},"previous":{"title":"선언 병합","level":"3.17","depth":1,"path":"pages/Declaration Merging.md","ref":"pages/Declaration Merging.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/JSX.md","mtime":"2018-03-28T13:50:44.076Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-28T13:51:11.058Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"JSX","level":"3.18","depth":1,"next":{"title":"Decorators","level":"3.19","depth":1,"path":"pages/Decorators.md","ref":"pages/Decorators.md","articles":[]},"previous":{"title":"선언 병합","level":"3.17","depth":1,"path":"pages/Declaration Merging.md","ref":"pages/Declaration Merging.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/JSX.md","mtime":"2018-03-29T14:33:02.433Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-29T14:33:32.262Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
