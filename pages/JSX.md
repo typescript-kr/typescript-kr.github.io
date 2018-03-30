@@ -221,12 +221,12 @@ function NotAValidFactoryFunction() {
 <NotAValidFactoryFunction />; // 오류
 ```
 
-## Attribute type checking
+## 속성 타입 검사 (Attribute type checking)
 
-The first step to type checking attributes is to determine the *element attributes type*.
-This is slightly different between intrinsic and value-based elements.
+속성 타입 검사를 하는 첫번째 단계는 *요소 속성 타입*을 결정하는 것입니다.  
+이것은 내장 요소와 값 기반 요소간에 약간의 차이가 있습니다.
 
-For intrinsic elements, it is the type of the property on `JSX.IntrinsicElements`
+내장 요소의 경우 `JSX.IntrinsicElements` 프로퍼티의 타입입니다.
 
 ```ts
 declare namespace JSX {
@@ -235,36 +235,36 @@ declare namespace JSX {
   }
 }
 
-// element attributes type for 'foo' is '{bar?: boolean}'
+// 'foo'에 대한 요소 속성 타입은 '{bar?: boolean}'입니다.
 <foo bar />;
 ```
 
-For value-based elements, it is a bit more complex.
-It is determined by the type of a property on the *element instance type* that was previously determined.
-Which property to use is determined by `JSX.ElementAttributesProperty`.
-It should be declared with a single property.
-The name of that property is then used.
+값 기반 요소의 경우 조금 더 복잡합니다.  
+이전에 결정된 *요소 인스턴스 타입*의 프로퍼티 타입에 따라 결정됩니다.  
+사용할 프로퍼티는 `JSX.ElementAttributesProperty`에 의해 결정됩니다.  
+단일 프로퍼티로 선언해야합니다.  
+그런 다음 해당 프로퍼티의 이름이 사용됩니다.
 
 ```ts
 declare namespace JSX {
   interface ElementAttributesProperty {
-    props; // specify the property name to use
+    props; // 사용할 프로퍼티 이름을 지정합니다
   }
 }
 
 class MyComponent {
-  // specify the property on the element instance type
+  // 요소 인스턴스 타입에 대한 프로퍼티를 지정합니다
   props: {
     foo?: string;
   }
 }
 
-// element attributes type for 'MyComponent' is '{foo?: string}'
+// 'MyComponent'의 요소 속성 타입은 '{foo?: string}'입니다
 <MyComponent foo="bar" />
 ```
 
-The element attribute type is used to type check the attributes in the JSX.
-Optional and required properties are supported.
+요소 속성 타입은 JSX에서 속성을 타입을 확인하는 데 사용됩니다.  
+선택적 프로퍼티와 필수 프로퍼티가 지원됩니다.
 
 ```ts
 declare namespace JSX {
@@ -273,24 +273,25 @@ declare namespace JSX {
   }
 }
 
-<foo requiredProp="bar" />; // ok
-<foo requiredProp="bar" optionalProp={0} />; // ok
-<foo />; // error, requiredProp is missing
-<foo requiredProp={0} />; // error, requiredProp should be a string
-<foo requiredProp="bar" unknownProp />; // error, unknownProp does not exist
-<foo requiredProp="bar" some-unknown-prop />; // ok, because 'some-unknown-prop' is not a valid identifier
+<foo requiredProp="bar" />; // 좋아요
+<foo requiredProp="bar" optionalProp={0} />; // 좋아요
+<foo />; // 오류, requiredProp이 없습니다
+<foo requiredProp={0} />; // 오류, requiredProp이 문자열이어야 합니다.
+<foo requiredProp="bar" unknownProp />; // 오류, unknownProp이 존재하지 않습니다.
+<foo requiredProp="bar" some-unknown-prop />; // 좋아요, 'some-unknown-prop' 은 유효한 식별자가 아니기 때문입니다.
 ```
 
-> Note: If an attribute name is not a valid JS identifier (like a `data-*` attribute), it is not considered to be an error if it is not found in the element attributes type.
 
-The spread operator also works:
+> 참고: 속성 이름이 유효한 JS 식별자 (예 :`data- *`속성)가 아닌 경우 요소 속성 타입에서 속성 이름을 찾을 수 없으면 오류로 간주되지 않습니다.
+
+전개 연산자도 작동합니다:
 
 ```JSX
 var props = { requiredProp: "bar" };
-<foo {...props} />; // ok
+<foo {...props} />; // 좋아요
 
 var badProps = {};
-<foo {...badProps} />; // error
+<foo {...badProps} />; // 오류
 ```
 
 ## Children Type Checking
