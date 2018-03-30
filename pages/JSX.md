@@ -294,21 +294,21 @@ var badProps = {};
 <foo {...badProps} />; // 오류
 ```
 
-## Children Type Checking
+## 하위 타입 검사 (Children Type Checking)
 
-In 2.3, we introduce type checking of *children*. *children* is a property in an *element attributes type* which we have determined from type checking attributes.
-Similar to how we use `JSX.ElementAttributesProperty` to determine the name of *props*, we use `JSX.ElementChildrenAttribute` to determine the name of *children*.
-`JSX.ElementChildrenAttribute` should be declared with a single property.
+2.3 버전에서 *하위* 타입 검사를 도입했습니다.  
+*하위(children)*는 요소 타입 검사에서 결정된 *요소 속성 타입*의 프로퍼티 입니다.  
+`JSX.ElementAttributesProperty`를 사용하여 *props* 이름을 결정하는 것과 마찬가지로 `JSX.ElementChildrenAttribute`를 사용하여 하위 이름을 결정합니다.  `JSX.ElementChildrenAttribute`는 단일 프로퍼티로 선언해야합니다.
 
 ```ts
 declare namespace JSX {
   interface ElementChildrenAttribute {
-    children: {};  // specify children name to use
+    children: {};  // 사용할 하위 이름을 지정하세요
   }
 }
 ```
 
-Without explicitly specify type of children, we will use default type from [React typings](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react).
+하위의 타입을 명시적으로 지정하지 않는다면 [React typings](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react)의 기본 타입을 사용합니다.
 
 ```ts
 <div>
@@ -327,7 +327,8 @@ const CustomComp = (props) => <div>props.children</div>
 </CustomComp>
 ```
 
-You can specify type of *children* like any other attribute. This will overwritten default type from [React typings](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react).
+다른 속성과 마찬가지로 *하위* 타입을 지정할 수 있습니다.  
+이렇게 하면 [React typings](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react)에서 기본 타입을 덮어쓰게 됩니다.
 
 ```ts
 interface PropsType {
@@ -345,29 +346,29 @@ class Component extends React.Component<PropsType, {}> {
   }
 }
 
-// OK
+// 좋아요
 <Component>
   <h1>Hello World</h1>
 </Component>
 
-// Error: children is of type JSX.Element not array of JSX.Element
+// 오류: 하위 타입은 JSX.Element의 배열이 아닌 JSX.Element 타입입니다.
 <Component>
   <h1>Hello World</h1>
   <h2>Hello World</h2>
 </Component>
 
-// Error: children is of type JSX.Element not array of JSX.Element or string.
+// 오류: 하위 타입은 JSX.Element 또는 string의 배열이 아닌 JSX.Element 타입입니다.
 <Component>
   <h1>Hello</h1>
   World
 </Component>
 ```
 
-# The JSX result type
+# JSX 결과 타입 (The JSX result type)
 
-By default the result of a JSX expression is typed as `any`.
-You can customize the type by specifying the `JSX.Element` interface.
-However, it is not possible to retrieve type information about the element, attributes or children of the JSX from this interface.
+기본적으로 JSX 표현식의 결과 타입은는 `any`로 분류됩니다.  
+`JSX.Element` 인터페이스를 지정하여 사용자 정의 타입을 사용할 수 있습니다.  
+그러나 이 인터페이스에서 JSX의 요소, 속성 또는 하위 항목에 대한 타입 정보를 찾을 수 없습니다.  
 It is a black box.
 
 # Embedding Expressions
