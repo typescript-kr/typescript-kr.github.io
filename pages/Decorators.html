@@ -708,15 +708,13 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="introduction">Introduction</h1>
-<p>With the introduction of Classes in TypeScript and ES6, there now exist certain scenarios that require additional features to support annotating or modifying classes and class members.
-Decorators provide a way to add both annotations and a meta-programming syntax for class declarations and members.
-Decorators are a <a href="https://github.com/tc39/proposal-decorators" target="_blank">stage 2 proposal</a> for JavaScript and are available as an experimental feature of TypeScript.</p>
+                                <h1 id="&#xC18C;&#xAC1C;">&#xC18C;&#xAC1C;</h1>
+<p>TypeScript&#xC640; ES6&#xC758; &#xD074;&#xB798;&#xC2A4;&#xAC00; &#xB3C4;&#xC785;&#xB428;&#xC5D0; &#xB530;&#xB77C; &#xD074;&#xB798;&#xC2A4; &#xBC0F; &#xD074;&#xB798;&#xC2A4; &#xBA64;&#xBC84;&#xC5D0; &#xC5B4;&#xB178;&#xD14C;&#xC774;&#xC158; &#xB610;&#xB294; &#xBCC0;&#xACBD;&#xC744; &#xC9C0;&#xC6D0;&#xD558;&#xAE30; &#xC704;&#xD574; &#xCD94;&#xAC00;&#xC801;&#xC778; &#xAE30;&#xB2A5;&#xC774; &#xD544;&#xC694;&#xD55C; &#xC77C;&#xBD80; &#xC0C1;&#xD669;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; &#xD074;&#xB798;&#xC2A4; &#xC120;&#xC5B8;&#xACFC; &#xBA64;&#xBC84;&#xC5D0; &#xB300;&#xD55C; &#xC5B4;&#xB178;&#xD14C;&#xC774;&#xC158;&#xACFC; &#xBA54;&#xD0C0;-&#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D; &#xAD6C;&#xBB38;&#xC744; &#xBAA8;&#xB450; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xC788;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; JavaScript&#xC758; <a href="https://github.com/tc39/proposal-decorators" target="_blank">stage 2 &#xC81C;&#xC548;</a>&#xC774;&#xBA70; TypeScript&#xC758; &#xC2E4;&#xD5D8;&#xC801;&#xC778; &#xAE30;&#xB2A5;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <blockquote>
-<p>NOTE&#x2003; Decorators are an experimental feature that may change in future releases.</p>
+<p>&#xC8FC;&#xC758;&#xC0AC;&#xD56D;&#x2003; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; &#xD5A5;&#xD6C4; &#xBCC0;&#xACBD;&#xB420; &#xC218; &#xC788;&#xB294; &#xC2E4;&#xD5D8;&#xC801; &#xAE30;&#xB2A5;&#xC785;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
-<p>To enable experimental support for decorators, you must enable the <code>experimentalDecorators</code> compiler option either on the command line or in your <code>tsconfig.json</code>:</p>
-<p><strong>Command Line</strong>:</p>
+<p>&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xC5D0; &#xB300;&#xD55C; &#xC2E4;&#xD5D8;&#xC801;&#xC778; &#xC9C0;&#xC6D0;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; &#xCEE4;&#xB9E8;&#xB4DC; &#xB77C;&#xC778;&#xC774;&#xB098; <code>tsconfig.json</code>&#xC5D0;&#xC11C; <code>experimentalDecorators</code> &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB3C4;&#xB85D; &#xD65C;&#xC131;&#xD654;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;:</p>
+<p><strong>&#xCEE4;&#xB9E8;&#xB4DC; &#xB77C;&#xC778;</strong>:</p>
 <pre><code class="lang-shell">tsc --target ES5 --experimentalDecorators
 </code></pre>
 <p><strong>tsconfig.json</strong>:</p>
@@ -727,51 +725,49 @@ Decorators are a <a href="https://github.com/tc39/proposal-decorators" target="_
     }
 }
 </code></pre>
-<h1 id="decorators">Decorators</h1>
-<p>A <em>Decorator</em> is a special kind of declaration that can be attached to a <a href="#class-decorators">class declaration</a>, <a href="#method-decorators">method</a>, <a href="#accessor-decorators">accessor</a>, <a href="#property-decorators">property</a>, or <a href="#parameter-decorators">parameter</a>.
-Decorators use the form <code>@expression</code>, where <code>expression</code> must evaluate to a function that will be called at runtime with information about the decorated declaration.</p>
-<p>For example, given the decorator <code>@sealed</code> we might write the <code>sealed</code> function as follows:</p>
+<h1 id="&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;">&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;</h1>
+<p><em>&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;</em>&#xB294; <a href="#class-decorators">&#xD074;&#xB798;&#xC2A4; &#xC120;&#xC5B8;</a>, <a href="#method-decorators">&#xBA54;&#xC11C;&#xB4DC;</a>, <a href="#accessor-decorators">&#xC811;&#xADFC;&#xC81C;&#xC5B4;&#xC790;</a>, <a href="#property-decorators">&#xD504;&#xB85C;&#xD37C;&#xD2F0;</a> &#xB610;&#xB294; <a href="#parameter-decorators">&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;</a>&#xC5D0; &#xCCA8;&#xBD80;&#xB420; &#xC218; &#xC788;&#xB294; &#xD2B9;&#xBCC4;&#xD55C; &#xC885;&#xB958;&#xC758; &#xC120;&#xC5B8;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; <code>@&#xD45C;&#xD604;&#xC2DD;</code>&#xC758; &#xD615;&#xD0DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294;&#xB370;, &#xC5EC;&#xAE30;&#xC11C; &#xD45C;&#xD604;&#xC2DD;&#xC740; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD305;&#xB41C; &#xC120;&#xC5B8;&#xC5D0; &#xB300;&#xD55C; &#xC815;&#xBCF4;&#xC640; &#xD568;&#xAED8; &#xB7F0;&#xD0C0;&#xC784;&#xC5D0; &#xD638;&#xCD9C;&#xB420; &#xD568;&#xC218;&#xB85C; &#xD3C9;&#xAC00;&#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.  </p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; <code>@sealed</code>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; <code>sealed</code> &#xD568;&#xC218;&#xB97C; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">sealed</span>(<span class="cm-def">target</span>) {
-    <span class="cm-comment">// do something with &apos;target&apos; ...</span>
+    <span class="cm-comment">// &apos;target&apos;&#xC73C;&#xB85C; &#xBB50;&#xB4E0; &#xD574;&#xBCF4;&#xC138;&#xC694; ...</span>
 }
 </code></pre>
 <blockquote>
-<p>NOTE&#x2003; You can see a more detailed example of a decorator in <a href="#class-decorators">Class Decorators</a>, below.</p>
+<p>&#xC8FC;&#xC758;&#xC0AC;&#xD56D;&#x2003; &#xC544;&#xB798;&#xC758; <a href="#class-decorators">&#xD074;&#xB798;&#xC2A4; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;</a>&#xC5D0;&#xC11C; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xC5D0; &#xB300;&#xD55C; &#xB354;&#xC6B1; &#xC790;&#xC138;&#xD55C; &#xC608;&#xC81C;&#xB97C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
-<h2 id="decorator-factories">Decorator Factories</h2>
-<p>If we want to customize how a decorator is applied to a declaration, we can write a decorator factory.
-A <em>Decorator Factory</em> is simply a function that returns the expression that will be called by the decorator at runtime.</p>
-<p>We can write a decorator factory in the following fashion:</p>
-<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">color</span>(<span class="cm-def">value</span>: <span class="cm-variable-3">string</span>) { <span class="cm-comment">// this is the decorator factory</span>
-    <span class="cm-keyword">return</span> <span class="cm-keyword">function</span> (<span class="cm-def">target</span>) { <span class="cm-comment">// this is the decorator</span>
-        <span class="cm-comment">// do something with &apos;target&apos; and &apos;value&apos;...</span>
+<h2 id="&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;-&#xD329;&#xD1A0;&#xB9AC;">&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; &#xD329;&#xD1A0;&#xB9AC;</h2>
+<p>&#xC120;&#xC5B8;&#xC5D0; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB97C; &#xC801;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xCEE4;&#xC2A4;&#xD130;&#xB9C8;&#xC774;&#xC9D5;&#xD558;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; &#xD329;&#xD1A0;&#xB9AC;&#xB97C; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br><em>Decorator Factory</em>&#xB294; &#xAC04;&#xB2E8;&#xD788; &#xB7F0;&#xD0C0;&#xC784;&#xC5D0; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xC5D0; &#xC758;&#xD574; &#xD638;&#xCD9C;&#xB420; &#xD45C;&#xD604;&#xC2DD;&#xC744; &#xBC18;&#xD658;&#xD558;&#xB294; &#xD568;&#xC218;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; &#xD329;&#xD1A0;&#xB9AC;&#xB97C; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">color</span>(<span class="cm-def">value</span>: <span class="cm-variable-3">string</span>) { <span class="cm-comment">// &#xC774;&#xAC83;&#xC740; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; &#xD329;&#xD1A0;&#xB9AC;&#xC785;&#xB2C8;&#xB2E4;</span>
+    <span class="cm-keyword">return</span> <span class="cm-keyword">function</span> (<span class="cm-def">target</span>) { <span class="cm-comment">// &#xC774;&#xAC83;&#xC740; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xC785;&#xB2C8;&#xB2E4;</span>
+        <span class="cm-comment">// &apos;target&apos;&#xACFC; &apos;value&apos;&#xB85C; &#xBB50;&#xB4E0; &#xD574;&#xBCF4;&#xC138;&#xC694;...</span>
     }
 }
 </code></pre>
 <blockquote>
-<p>NOTE&#x2003; You can see a more detailed example of a decorator factory in <a href="#method-decorators">Method Decorators</a>, below.</p>
+<p>&#xC8FC;&#xC758;&#xC0AC;&#xD56D;&#x2003; &#xC544;&#xB798;&#xC758; <a href="#method-decorators">&#xBA54;&#xC11C;&#xB4DC; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;</a>&#xC5D0;&#xC11C; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; &#xD329;&#xD1A0;&#xB9AC;&#xC5D0; &#xB300;&#xD55C; &#xB354;&#xC6B1; &#xC790;&#xC138;&#xD55C; &#xC608;&#xC81C;&#xB97C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
-<h2 id="decorator-composition">Decorator Composition</h2>
-<p>Multiple decorators can be applied to a declaration, as in the following examples:</p>
+<h2 id="&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;-&#xAD6C;&#xC131;">&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; &#xAD6C;&#xC131;</h2>
+<p>&#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xCC98;&#xB7FC; &#xC5EC;&#xB7EC; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB97C; &#xC120;&#xC5B8;&#xC5D0; &#xC801;&#xC6A9; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <ul>
-<li><p>On a single line:</p>
+<li><p>&#xD55C; &#xC904;&#xC5D0;:</p>
 <pre><code class="lang-ts"><span class="cm-variable">@f</span> <span class="cm-variable">@g</span> <span class="cm-variable">x</span>
 </code></pre>
 </li>
-<li><p>On multiple lines:</p>
+<li><p>&#xC5EC;&#xB7EC; &#xC904;&#xC5D0;:</p>
 <pre><code class="lang-ts"><span class="cm-variable">@f</span>
 <span class="cm-variable">@g</span>
 <span class="cm-variable">x</span>
 </code></pre>
 </li>
 </ul>
-<p>When multiple decorators apply to a single declaration, their evaluation is similar to <a href="http://en.wikipedia.org/wiki/Function_composition" target="_blank">function composition in mathematics</a>. In this model, when composing functions <em>f</em> and <em>g</em>, the resulting composite (<em>f</em> &#x2218; <em>g</em>)(<em>x</em>) is equivalent to <em>f</em>(<em>g</em>(<em>x</em>)).</p>
-<p>As such, the following steps are performed when evaluating multiple decorators on a single declaration in TypeScript:</p>
+<p>&#xC5EC;&#xB7EC; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xAC00; &#xB2E8;&#xC77C; &#xC120;&#xC5B8;&#xC5D0; &#xC801;&#xC6A9;&#xB418;&#xB294; &#xACBD;&#xC6B0; &#xD3C9;&#xAC00;&#xB294; <a href="http://en.wikipedia.org/wiki/Function_composition" target="_blank">&#xC218;&#xD559;&#xC5D0;&#xC11C;&#xC758; &#xD568;&#xC218; &#xAD6C;&#xC131;</a>&#xACFC; &#xC720;&#xC0AC;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xBAA8;&#xB378;&#xC5D0;&#xC11C; &#xD568;&#xC218; <em>f</em>&#xC640; <em>g</em>&#xC744; &#xAD6C;&#xC131;&#xD560; &#xB54C;, &#xACB0;&#xACFC;&#xC801;&#xC778; &#xD569;&#xC131; (<em>f</em> &#x2218; <em>g</em>)(<em>x</em>)&#xC740;(&#xB294;) <em>f</em>(<em>g</em>(<em>x</em>))&#xC640; &#xB3D9;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB530;&#xB77C;&#xC11C; TypeScript&#xC758; &#xB2E8;&#xC77C; &#xC120;&#xC5B8;&#xC5D0;&#xC11C; &#xC5EC;&#xB7EC; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB97C; &#xD3C9;&#xAC00;&#xD560; &#xB54C; &#xB2E4;&#xC74C; &#xB2E8;&#xACC4;&#xB97C; &#xC218;&#xD589;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <ol>
-<li>The expressions for each decorator are evaluated top-to-bottom.</li>
-<li>The results are then called as functions from bottom-to-top.</li>
+<li>&#xAC01; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xC5D0; &#xB300;&#xD55C; &#xD45C;&#xD604;&#xC2DD;&#xC740; &#xC704;&#xC5D0;&#xC11C; &#xC544;&#xB798;&#xB85C; &#xD3C9;&#xAC00;&#xB429;&#xB2C8;&#xB2E4;.</li>
+<li>&#xADF8;&#xB7F0; &#xB2E4;&#xC74C; &#xACB0;&#xACFC;&#xB294; &#xC544;&#xB798;&#xC5D0;&#xC11C; &#xC704;&#xB85C; &#xD568;&#xC218;&#xB97C; &#xD638;&#xCD9C;&#xD569;&#xB2C8;&#xB2E4;.</li>
 </ol>
-<p>If we were to use <a href="#decorator-factories">decorator factories</a>, we can observe this evaluation order with the following example:</p>
+<p>&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; &#xD329;&#xD1A0;&#xB9AC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; &#xB2E4;&#xC74C; &#xC608;&#xC5D0;&#xC11C; &#xC774; &#xD3C9;&#xAC00; &#xC21C;&#xC11C;&#xB97C; &#xAD00;&#xCC30;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">f</span>() {
     <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">&quot;f(): evaluated&quot;</span>);
     <span class="cm-keyword">return</span> <span class="cm-keyword">function</span> (<span class="cm-def">target</span>, <span class="cm-def">propertyKey</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">descriptor</span>: <span class="cm-variable-3">PropertyDescriptor</span>) {
@@ -792,7 +788,7 @@ A <em>Decorator Factory</em> is simply a function that returns the expression th
     <span class="cm-variable">method</span>() {}
 }
 </code></pre>
-<p>Which would print this output to the console:</p>
+<p>&#xADF8;&#xB7EC;&#xBA74; &#xC774; &#xCD9C;&#xB825;&#xC744; &#xCF58;&#xC194;&#xC5D0; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-shell">f(): evaluated
 g(): evaluated
 g(): called
@@ -1163,7 +1159,7 @@ You could consider it the equivalent of the following TypeScript:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"데코레이터","level":"3.19","depth":1,"next":{"title":"Mixins","level":"3.20","depth":1,"path":"pages/Mixins.md","ref":"pages/Mixins.md","articles":[]},"previous":{"title":"JSX","level":"3.18","depth":1,"path":"pages/JSX.md","ref":"pages/JSX.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Decorators.md","mtime":"2018-03-29T14:33:49.334Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-31T09:53:36.966Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"데코레이터","level":"3.19","depth":1,"next":{"title":"Mixins","level":"3.20","depth":1,"path":"pages/Mixins.md","ref":"pages/Mixins.md","articles":[]},"previous":{"title":"JSX","level":"3.18","depth":1,"path":"pages/JSX.md","ref":"pages/JSX.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Decorators.md","mtime":"2018-03-31T16:17:26.484Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-31T16:18:42.572Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -1,14 +1,13 @@
-# Introduction
+# 소개
 
-With the introduction of Classes in TypeScript and ES6, there now exist certain scenarios that require additional features to support annotating or modifying classes and class members.
-Decorators provide a way to add both annotations and a meta-programming syntax for class declarations and members.
-Decorators are a [stage 2 proposal](https://github.com/tc39/proposal-decorators) for JavaScript and are available as an experimental feature of TypeScript.
+TypeScript와 ES6의 클래스가 도입됨에 따라 클래스 및 클래스 멤버에 어노테이션 또는 변경을 지원하기 위해 추가적인 기능이 필요한 일부 상황이 있습니다.  
+데코레이터는 클래스 선언과 멤버에 대한 어노테이션과 메타-프로그래밍 구문을 모두 추가할 수 있는 방법을 제공합니다.  
+데코레이터는 JavaScript의 [stage 2 제안](https://github.com/tc39/proposal-decorators)이며 TypeScript의 실험적인 기능으로 사용할 수 있습니다.
+> 주의사항&emsp; 데코레이터는 향후 변경될 수 있는 실험적 기능입니다.
 
-> NOTE&emsp; Decorators are an experimental feature that may change in future releases.
+데코레이터에 대한 실험적인 지원을 사용하려면 커맨드 라인이나 `tsconfig.json`에서 `experimentalDecorators` 컴파일러 옵션을 사용하도록 활성화해야 합니다:
 
-To enable experimental support for decorators, you must enable the `experimentalDecorators` compiler option either on the command line or in your `tsconfig.json`:
-
-**Command Line**:
+**커맨드 라인**:
 
 ```shell
 tsc --target ES5 --experimentalDecorators
@@ -25,49 +24,49 @@ tsc --target ES5 --experimentalDecorators
 }
 ```
 
-# Decorators
+# 데코레이터
 
-A *Decorator* is a special kind of declaration that can be attached to a [class declaration](#class-decorators), [method](#method-decorators), [accessor](#accessor-decorators), [property](#property-decorators), or [parameter](#parameter-decorators).
-Decorators use the form `@expression`, where `expression` must evaluate to a function that will be called at runtime with information about the decorated declaration.
+*데코레이터*는 [클래스 선언](#class-decorators), [메서드](#method-decorators), [접근제어자](#accessor-decorators), [프로퍼티](#property-decorators) 또는 [매개변수](#parameter-decorators)에 첨부될 수 있는 특별한 종류의 선언입니다.  
+데코레이터는 `@표현식`의 형태를 사용하는데, 여기서 표현식은 데코레이팅된 선언에 대한 정보와 함께 런타임에 호출될 함수로 평가되어야 합니다.  
 
-For example, given the decorator `@sealed` we might write the `sealed` function as follows:
+예를 들어, 데코레이터 `@sealed`을 사용하여 다음과 같이 `sealed` 함수를 작성할 수 있습니다:
 
 ```ts
 function sealed(target) {
-    // do something with 'target' ...
+    // 'target'으로 뭐든 해보세요 ...
 }
 ```
 
-> NOTE&emsp; You can see a more detailed example of a decorator in [Class Decorators](#class-decorators), below.
+> 주의사항&emsp; 아래의 [클래스 데코레이터](#class-decorators)에서 데코레이터에 대한 더욱 자세한 예제를 볼 수 있습니다.
 
-## Decorator Factories
+## 데코레이터 팩토리
 
-If we want to customize how a decorator is applied to a declaration, we can write a decorator factory.
-A *Decorator Factory* is simply a function that returns the expression that will be called by the decorator at runtime.
+선언에 데코레이터를 적용하는 방법을 커스터마이징하고 싶다면 데코레이터 팩토리를 작성할 수 있습니다.  
+*Decorator Factory*는 간단히 런타임에 데코레이터에 의해 호출될 표현식을 반환하는 함수입니다.
 
-We can write a decorator factory in the following fashion:
+다음과 같은 방식으로 데코레이터 팩토리를 작성할 수 있습니다:
 
 ```ts
-function color(value: string) { // this is the decorator factory
-    return function (target) { // this is the decorator
-        // do something with 'target' and 'value'...
+function color(value: string) { // 이것은 데코레이터 팩토리입니다
+    return function (target) { // 이것은 데코레이터입니다
+        // 'target'과 'value'로 뭐든 해보세요...
     }
 }
 ```
 
-> NOTE&emsp; You can see a more detailed example of a decorator factory in [Method Decorators](#method-decorators), below.
+> 주의사항&emsp; 아래의 [메서드 데코레이터](#method-decorators)에서 데코레이터 팩토리에 대한 더욱 자세한 예제를 볼 수 있습니다.
 
-## Decorator Composition
+## 데코레이터 구성
 
-Multiple decorators can be applied to a declaration, as in the following examples:
+다음 예제처럼 여러 데코레이터를 선언에 적용 할 수 있습니다:
 
-* On a single line:
+* 한 줄에:
 
   ```ts
   @f @g x
   ```
 
-* On multiple lines:
+* 여러 줄에:
 
   ```ts
   @f
@@ -75,14 +74,15 @@ Multiple decorators can be applied to a declaration, as in the following example
   x
   ```
 
-When multiple decorators apply to a single declaration, their evaluation is similar to [function composition in mathematics](http://en.wikipedia.org/wiki/Function_composition). In this model, when composing functions *f* and *g*, the resulting composite (*f* ∘ *g*)(*x*) is equivalent to *f*(*g*(*x*)).
+여러 데코레이터가 단일 선언에 적용되는 경우 평가는 [수학에서의 함수 구성](http://en.wikipedia.org/wiki/Function_composition)과 유사합니다.  
+이 모델에서 함수 *f*와 *g*을 구성할 때, 결과적인 합성 (*f* ∘ *g*)(*x*)은(는) *f*(*g*(*x*))와 동일합니다.
 
-As such, the following steps are performed when evaluating multiple decorators on a single declaration in TypeScript:
+따라서 TypeScript의 단일 선언에서 여러 데코레이터를 평가할 때 다음 단계를 수행합니다:
 
-1. The expressions for each decorator are evaluated top-to-bottom.
-2. The results are then called as functions from bottom-to-top.
+1.  각 데코레이터에 대한 표현식은 위에서 아래로 평가됩니다.
+2. 그런 다음 결과는 아래에서 위로 함수를 호출합니다.
 
-If we were to use [decorator factories](#decorator-factories), we can observe this evaluation order with the following example:
+데코레이터 팩토리를 사용하려면 다음 예에서 이 평가 순서를 관찰할 수 있습니다:
 
 ```ts
 function f() {
@@ -106,7 +106,7 @@ class C {
 }
 ```
 
-Which would print this output to the console:
+그러면 이 출력을 콘솔에 출력합니다:
 
 ```shell
 f(): evaluated
