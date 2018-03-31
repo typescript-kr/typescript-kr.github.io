@@ -371,9 +371,9 @@ class Component extends React.Component<PropsType, {}> {
 그러나 이 인터페이스에서 JSX의 요소, 속성 또는 하위 항목에 대한 타입 정보를 찾을 수 없습니다.  
 It is a black box.
 
-# Embedding Expressions
+# 표현식 포함하기 (Embedding Expressions)
 
-JSX allows you to embed expressions between tags by surrounding the expressions with curly braces (`{ }`).
+JSX는 중괄호 (`{ }`)로 표현식을 감싸고 태그 사이에 표현식을 삽입할 수 있게합니다.
 
 ```JSX
 var a = <div>
@@ -381,8 +381,9 @@ var a = <div>
 </div>
 ```
 
-The above code will result in an error since you cannot divide a string by a number.
-The output, when using the `preserve` option, looks like:
+위의 코드는 문자열을 숫자로 나눌 수 없으므로 오류가 발생합니다.
+
+출력은 `preserve` 옵션을 사용할 때 다음과 같습니다:
 
 ```JSX
 var a = <div>
@@ -390,10 +391,10 @@ var a = <div>
 </div>
 ```
 
-# React integration
+# 리액트 통합 (React integration)
 
-To use JSX with React you should use the [React typings](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react).
-These typings define the `JSX` namespace appropriately for use with React.
+React와 함께 JSX를 사용하려면 [React typings](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react)을 사용해야합니다.  
+이러한 typings은 React와 함께 사용하기에 적합하도록 `JSX` 네임스페이스를 적절하게 정의합니다.
 
 ```ts
 /// <reference path="react.d.ts" />
@@ -408,6 +409,6 @@ class MyComponent extends React.Component<Props, {}> {
   }
 }
 
-<MyComponent foo="bar" />; // ok
-<MyComponent foo={0} />; // error
+<MyComponent foo="bar" />; // 좋아요
+<MyComponent foo={0} />; // 오류
 ```
