@@ -30,7 +30,7 @@
 * [모듈 해석](pages/Module Resolution.md)
 * [선언 병합](pages/Declaration Merging.md)
 * [JSX](pages/JSX.md)
-* [Decorators](pages/Decorators.md)
+* [데코레이터](pages/Decorators.md)
 * [Mixins](pages/Mixins.md)
 * [Triple-Slash Directives](pages/Triple-Slash Directives.md)
 * [Type Checking JavaScript Files](pages/Type Checking JavaScript Files.md)
