@@ -221,12 +221,12 @@ function NotAValidFactoryFunction() {
 <NotAValidFactoryFunction />; // 오류
 ```
 
-## Attribute type checking
+## 속성 타입 검사 (Attribute type checking)
 
-The first step to type checking attributes is to determine the *element attributes type*.
-This is slightly different between intrinsic and value-based elements.
+속성 타입 검사를 하는 첫번째 단계는 *요소 속성 타입*을 결정하는 것입니다.  
+이것은 내장 요소와 값 기반 요소간에 약간의 차이가 있습니다.
 
-For intrinsic elements, it is the type of the property on `JSX.IntrinsicElements`
+내장 요소의 경우 `JSX.IntrinsicElements` 프로퍼티의 타입입니다.
 
 ```ts
 declare namespace JSX {
@@ -235,36 +235,36 @@ declare namespace JSX {
   }
 }
 
-// element attributes type for 'foo' is '{bar?: boolean}'
+// 'foo'에 대한 요소 속성 타입은 '{bar?: boolean}'입니다.
 <foo bar />;
 ```
 
-For value-based elements, it is a bit more complex.
-It is determined by the type of a property on the *element instance type* that was previously determined.
-Which property to use is determined by `JSX.ElementAttributesProperty`.
-It should be declared with a single property.
-The name of that property is then used.
+값 기반 요소의 경우 조금 더 복잡합니다.  
+이전에 결정된 *요소 인스턴스 타입*의 프로퍼티 타입에 따라 결정됩니다.  
+사용할 프로퍼티는 `JSX.ElementAttributesProperty`에 의해 결정됩니다.  
+단일 프로퍼티로 선언해야합니다.  
+그런 다음 해당 프로퍼티의 이름이 사용됩니다.
 
 ```ts
 declare namespace JSX {
   interface ElementAttributesProperty {
-    props; // specify the property name to use
+    props; // 사용할 프로퍼티 이름을 지정합니다
   }
 }
 
 class MyComponent {
-  // specify the property on the element instance type
+  // 요소 인스턴스 타입에 대한 프로퍼티를 지정합니다
   props: {
     foo?: string;
   }
 }
 
-// element attributes type for 'MyComponent' is '{foo?: string}'
+// 'MyComponent'의 요소 속성 타입은 '{foo?: string}'입니다
 <MyComponent foo="bar" />
 ```
 
-The element attribute type is used to type check the attributes in the JSX.
-Optional and required properties are supported.
+요소 속성 타입은 JSX에서 속성을 타입을 확인하는 데 사용됩니다.  
+선택적 프로퍼티와 필수 프로퍼티가 지원됩니다.
 
 ```ts
 declare namespace JSX {
@@ -273,41 +273,42 @@ declare namespace JSX {
   }
 }
 
-<foo requiredProp="bar" />; // ok
-<foo requiredProp="bar" optionalProp={0} />; // ok
-<foo />; // error, requiredProp is missing
-<foo requiredProp={0} />; // error, requiredProp should be a string
-<foo requiredProp="bar" unknownProp />; // error, unknownProp does not exist
-<foo requiredProp="bar" some-unknown-prop />; // ok, because 'some-unknown-prop' is not a valid identifier
+<foo requiredProp="bar" />; // 좋아요
+<foo requiredProp="bar" optionalProp={0} />; // 좋아요
+<foo />; // 오류, requiredProp이 없습니다
+<foo requiredProp={0} />; // 오류, requiredProp이 문자열이어야 합니다.
+<foo requiredProp="bar" unknownProp />; // 오류, unknownProp이 존재하지 않습니다.
+<foo requiredProp="bar" some-unknown-prop />; // 좋아요, 'some-unknown-prop' 은 유효한 식별자가 아니기 때문입니다.
 ```
 
-> Note: If an attribute name is not a valid JS identifier (like a `data-*` attribute), it is not considered to be an error if it is not found in the element attributes type.
 
-The spread operator also works:
+> 참고: 속성 이름이 유효한 JS 식별자 (예 :`data- *`속성)가 아닌 경우 요소 속성 타입에서 속성 이름을 찾을 수 없으면 오류로 간주되지 않습니다.
+
+전개 연산자도 작동합니다:
 
 ```JSX
 var props = { requiredProp: "bar" };
-<foo {...props} />; // ok
+<foo {...props} />; // 좋아요
 
 var badProps = {};
-<foo {...badProps} />; // error
+<foo {...badProps} />; // 오류
 ```
 
-## Children Type Checking
+## 하위 타입 검사 (Children Type Checking)
 
-In 2.3, we introduce type checking of *children*. *children* is a property in an *element attributes type* which we have determined from type checking attributes.
-Similar to how we use `JSX.ElementAttributesProperty` to determine the name of *props*, we use `JSX.ElementChildrenAttribute` to determine the name of *children*.
-`JSX.ElementChildrenAttribute` should be declared with a single property.
+2.3 버전에서 *하위* 타입 검사를 도입했습니다.  
+*하위(children)*는 요소 타입 검사에서 결정된 *요소 속성 타입*의 프로퍼티 입니다.  
+`JSX.ElementAttributesProperty`를 사용하여 *props* 이름을 결정하는 것과 마찬가지로 `JSX.ElementChildrenAttribute`를 사용하여 하위 이름을 결정합니다.  `JSX.ElementChildrenAttribute`는 단일 프로퍼티로 선언해야합니다.
 
 ```ts
 declare namespace JSX {
   interface ElementChildrenAttribute {
-    children: {};  // specify children name to use
+    children: {};  // 사용할 하위 이름을 지정하세요
   }
 }
 ```
 
-Without explicitly specify type of children, we will use default type from [React typings](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react).
+하위의 타입을 명시적으로 지정하지 않는다면 [React typings](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react)의 기본 타입을 사용합니다.
 
 ```ts
 <div>
@@ -326,7 +327,8 @@ const CustomComp = (props) => <div>props.children</div>
 </CustomComp>
 ```
 
-You can specify type of *children* like any other attribute. This will overwritten default type from [React typings](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react).
+다른 속성과 마찬가지로 *하위* 타입을 지정할 수 있습니다.  
+이렇게 하면 [React typings](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react)에서 기본 타입을 덮어쓰게 됩니다.
 
 ```ts
 interface PropsType {
@@ -344,34 +346,34 @@ class Component extends React.Component<PropsType, {}> {
   }
 }
 
-// OK
+// 좋아요
 <Component>
   <h1>Hello World</h1>
 </Component>
 
-// Error: children is of type JSX.Element not array of JSX.Element
+// 오류: 하위 타입은 JSX.Element의 배열이 아닌 JSX.Element 타입입니다.
 <Component>
   <h1>Hello World</h1>
   <h2>Hello World</h2>
 </Component>
 
-// Error: children is of type JSX.Element not array of JSX.Element or string.
+// 오류: 하위 타입은 JSX.Element 또는 string의 배열이 아닌 JSX.Element 타입입니다.
 <Component>
   <h1>Hello</h1>
   World
 </Component>
 ```
 
-# The JSX result type
+# JSX 결과 타입 (The JSX result type)
 
-By default the result of a JSX expression is typed as `any`.
-You can customize the type by specifying the `JSX.Element` interface.
-However, it is not possible to retrieve type information about the element, attributes or children of the JSX from this interface.
+기본적으로 JSX 표현식의 결과 타입은는 `any`로 분류됩니다.  
+`JSX.Element` 인터페이스를 지정하여 사용자 정의 타입을 사용할 수 있습니다.  
+그러나 이 인터페이스에서 JSX의 요소, 속성 또는 하위 항목에 대한 타입 정보를 찾을 수 없습니다.  
 It is a black box.
 
-# Embedding Expressions
+# 표현식 포함하기 (Embedding Expressions)
 
-JSX allows you to embed expressions between tags by surrounding the expressions with curly braces (`{ }`).
+JSX는 중괄호 (`{ }`)로 표현식을 감싸고 태그 사이에 표현식을 삽입할 수 있게합니다.
 
 ```JSX
 var a = <div>
@@ -379,8 +381,9 @@ var a = <div>
 </div>
 ```
 
-The above code will result in an error since you cannot divide a string by a number.
-The output, when using the `preserve` option, looks like:
+위의 코드는 문자열을 숫자로 나눌 수 없으므로 오류가 발생합니다.
+
+출력은 `preserve` 옵션을 사용할 때 다음과 같습니다:
 
 ```JSX
 var a = <div>
@@ -388,10 +391,10 @@ var a = <div>
 </div>
 ```
 
-# React integration
+# 리액트 통합 (React integration)
 
-To use JSX with React you should use the [React typings](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react).
-These typings define the `JSX` namespace appropriately for use with React.
+React와 함께 JSX를 사용하려면 [React typings](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react)을 사용해야합니다.  
+이러한 typings은 React와 함께 사용하기에 적합하도록 `JSX` 네임스페이스를 적절하게 정의합니다.
 
 ```ts
 /// <reference path="react.d.ts" />
@@ -406,6 +409,6 @@ class MyComponent extends React.Component<Props, {}> {
   }
 }
 
-<MyComponent foo="bar" />; // ok
-<MyComponent foo={0} />; // error
+<MyComponent foo="bar" />; // 좋아요
+<MyComponent foo={0} />; // 오류
 ```

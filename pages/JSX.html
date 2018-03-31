@@ -433,7 +433,7 @@
                 <a href="Decorators.html">
             
                     
-                    Decorators
+                    데코레이터
             
                 </a>
             
@@ -889,76 +889,68 @@
 <span class="cm-operator">&lt;</span><span class="cm-variable">NotAValidComponent</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// &#xC624;&#xB958;</span>
 <span class="cm-operator">&lt;</span><span class="cm-variable">NotAValidFactoryFunction</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// &#xC624;&#xB958;</span>
 </code></pre>
-<h2 id="attribute-type-checking">Attribute type checking</h2>
-<p>The first step to type checking attributes is to determine the <em>element attributes type</em>.
-This is slightly different between intrinsic and value-based elements.</p>
-<p>For intrinsic elements, it is the type of the property on <code>JSX.IntrinsicElements</code></p>
+<h2 id="&#xC18D;&#xC131;-&#xD0C0;&#xC785;-&#xAC80;&#xC0AC;-attribute-type-checking">&#xC18D;&#xC131; &#xD0C0;&#xC785; &#xAC80;&#xC0AC; (Attribute type checking)</h2>
+<p>&#xC18D;&#xC131; &#xD0C0;&#xC785; &#xAC80;&#xC0AC;&#xB97C; &#xD558;&#xB294; &#xCCAB;&#xBC88;&#xC9F8; &#xB2E8;&#xACC4;&#xB294; <em>&#xC694;&#xC18C; &#xC18D;&#xC131; &#xD0C0;&#xC785;</em>&#xC744; &#xACB0;&#xC815;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xAC83;&#xC740; &#xB0B4;&#xC7A5; &#xC694;&#xC18C;&#xC640; &#xAC12; &#xAE30;&#xBC18; &#xC694;&#xC18C;&#xAC04;&#xC5D0; &#xC57D;&#xAC04;&#xC758; &#xCC28;&#xC774;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB0B4;&#xC7A5; &#xC694;&#xC18C;&#xC758; &#xACBD;&#xC6B0; <code>JSX.IntrinsicElements</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC758; &#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-variable">namespace</span> <span class="cm-variable">JSX</span> {
   <span class="cm-keyword">interface</span> <span class="cm-variable">IntrinsicElements</span> {
     <span class="cm-variable">foo</span>: { <span class="cm-variable">bar</span><span class="cm-operator">?</span>: <span class="cm-variable">boolean</span> }
   }
 }
 
-<span class="cm-comment">// element attributes type for &apos;foo&apos; is &apos;{bar?: boolean}&apos;</span>
+<span class="cm-comment">// &apos;foo&apos;&#xC5D0; &#xB300;&#xD55C; &#xC694;&#xC18C; &#xC18D;&#xC131; &#xD0C0;&#xC785;&#xC740; &apos;{bar?: boolean}&apos;&#xC785;&#xB2C8;&#xB2E4;.</span>
 <span class="cm-operator">&lt;</span><span class="cm-variable">foo</span> <span class="cm-variable">bar</span> <span class="cm-operator">/&gt;</span>;
 </code></pre>
-<p>For value-based elements, it is a bit more complex.
-It is determined by the type of a property on the <em>element instance type</em> that was previously determined.
-Which property to use is determined by <code>JSX.ElementAttributesProperty</code>.
-It should be declared with a single property.
-The name of that property is then used.</p>
+<p>&#xAC12; &#xAE30;&#xBC18; &#xC694;&#xC18C;&#xC758; &#xACBD;&#xC6B0; &#xC870;&#xAE08; &#xB354; &#xBCF5;&#xC7A1;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xC804;&#xC5D0; &#xACB0;&#xC815;&#xB41C; <em>&#xC694;&#xC18C; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xD0C0;&#xC785;</em>&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xD0C0;&#xC785;&#xC5D0; &#xB530;&#xB77C; &#xACB0;&#xC815;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC0AC;&#xC6A9;&#xD560; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB294; <code>JSX.ElementAttributesProperty</code>&#xC5D0; &#xC758;&#xD574; &#xACB0;&#xC815;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xB2E8;&#xC77C; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB85C; &#xC120;&#xC5B8;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB7F0; &#xB2E4;&#xC74C; &#xD574;&#xB2F9; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC758; &#xC774;&#xB984;&#xC774; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-variable">namespace</span> <span class="cm-variable">JSX</span> {
   <span class="cm-keyword">interface</span> <span class="cm-variable">ElementAttributesProperty</span> {
-    <span class="cm-variable">props</span>; <span class="cm-comment">// specify the property name to use</span>
+    <span class="cm-variable">props</span>; <span class="cm-comment">// &#xC0AC;&#xC6A9;&#xD560; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xC774;&#xB984;&#xC744; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;</span>
   }
 }
 
 <span class="cm-keyword">class</span> <span class="cm-variable">MyComponent</span> {
-  <span class="cm-comment">// specify the property on the element instance type</span>
+  <span class="cm-comment">// &#xC694;&#xC18C; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xD0C0;&#xC785;&#xC5D0; &#xB300;&#xD55C; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;</span>
   <span class="cm-property">props</span>: {
     <span class="cm-property">foo</span><span class="cm-operator">?</span>: <span class="cm-variable-3">string</span>;
   }
 }
 
-<span class="cm-comment">// element attributes type for &apos;MyComponent&apos; is &apos;{foo?: string}&apos;</span>
+<span class="cm-comment">// &apos;MyComponent&apos;&#xC758; &#xC694;&#xC18C; &#xC18D;&#xC131; &#xD0C0;&#xC785;&#xC740; &apos;{foo?: string}&apos;&#xC785;&#xB2C8;&#xB2E4;</span>
 <span class="cm-operator">&lt;</span><span class="cm-variable">MyComponent</span> <span class="cm-variable">foo</span><span class="cm-operator">=</span><span class="cm-string">&quot;bar&quot;</span> <span class="cm-operator">/&gt;</span>
 </code></pre>
-<p>The element attribute type is used to type check the attributes in the JSX.
-Optional and required properties are supported.</p>
+<p>&#xC694;&#xC18C; &#xC18D;&#xC131; &#xD0C0;&#xC785;&#xC740; JSX&#xC5D0;&#xC11C; &#xC18D;&#xC131;&#xC744; &#xD0C0;&#xC785;&#xC744; &#xD655;&#xC778;&#xD558;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC120;&#xD0DD;&#xC801; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC640; &#xD544;&#xC218; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xAC00; &#xC9C0;&#xC6D0;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-variable">namespace</span> <span class="cm-variable">JSX</span> {
   <span class="cm-keyword">interface</span> <span class="cm-variable">IntrinsicElements</span> {
     <span class="cm-variable">foo</span>: { <span class="cm-variable">requiredProp</span>: <span class="cm-variable-3">string</span>; <span class="cm-variable">optionalProp</span><span class="cm-operator">?</span>: <span class="cm-variable-3">number</span> }
   }
 }
 
-<span class="cm-operator">&lt;</span><span class="cm-variable">foo</span> <span class="cm-variable">requiredProp</span><span class="cm-operator">=</span><span class="cm-string">&quot;bar&quot;</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// ok</span>
-<span class="cm-operator">&lt;</span><span class="cm-variable">foo</span> <span class="cm-variable">requiredProp</span><span class="cm-operator">=</span><span class="cm-string">&quot;bar&quot;</span> <span class="cm-variable">optionalProp</span><span class="cm-operator">=</span>{<span class="cm-number">0</span>} <span class="cm-string-2">/&gt;; /</span><span class="cm-operator">/</span> <span class="cm-variable">ok</span>
-<span class="cm-operator">&lt;</span><span class="cm-variable">foo</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// error, requiredProp is missing</span>
-<span class="cm-operator">&lt;</span><span class="cm-variable">foo</span> <span class="cm-variable">requiredProp</span><span class="cm-operator">=</span>{<span class="cm-number">0</span>} <span class="cm-string-2">/&gt;; /</span><span class="cm-operator">/</span> <span class="cm-variable">error</span>, <span class="cm-variable">requiredProp</span> <span class="cm-variable">should</span> <span class="cm-variable">be</span> <span class="cm-variable">a</span> <span class="cm-variable-3">string</span>
-<span class="cm-operator">&lt;</span><span class="cm-variable">foo</span> <span class="cm-variable">requiredProp</span><span class="cm-operator">=</span><span class="cm-string">&quot;bar&quot;</span> <span class="cm-variable">unknownProp</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// error, unknownProp does not exist</span>
-<span class="cm-operator">&lt;</span><span class="cm-variable">foo</span> <span class="cm-variable">requiredProp</span><span class="cm-operator">=</span><span class="cm-string">&quot;bar&quot;</span> <span class="cm-variable">some</span><span class="cm-operator">-</span><span class="cm-variable">unknown</span><span class="cm-operator">-</span><span class="cm-variable">prop</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// ok, because &apos;some-unknown-prop&apos; is not a valid identifier</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">foo</span> <span class="cm-variable">requiredProp</span><span class="cm-operator">=</span><span class="cm-string">&quot;bar&quot;</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// &#xC88B;&#xC544;&#xC694;</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">foo</span> <span class="cm-variable">requiredProp</span><span class="cm-operator">=</span><span class="cm-string">&quot;bar&quot;</span> <span class="cm-variable">optionalProp</span><span class="cm-operator">=</span>{<span class="cm-number">0</span>} <span class="cm-string-2">/&gt;; /</span><span class="cm-operator">/</span> <span class="cm-variable">&#xC88B;</span><span class="cm-variable">&#xC544;</span><span class="cm-variable">&#xC694;</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">foo</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// &#xC624;&#xB958;, requiredProp&#xC774; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">foo</span> <span class="cm-variable">requiredProp</span><span class="cm-operator">=</span>{<span class="cm-number">0</span>} <span class="cm-string-2">/&gt;; /</span><span class="cm-operator">/</span> <span class="cm-variable">&#xC624;</span><span class="cm-variable">&#xB958;</span>, <span class="cm-variable">requiredProp</span><span class="cm-variable">&#xC774;</span> <span class="cm-variable">&#xBB38;</span><span class="cm-variable">&#xC790;</span><span class="cm-variable">&#xC5F4;</span><span class="cm-variable">&#xC774;</span><span class="cm-variable">&#xC5B4;</span><span class="cm-variable">&#xC57C;</span> <span class="cm-variable">&#xD569;</span><span class="cm-variable">&#xB2C8;</span><span class="cm-variable">&#xB2E4;</span>.
+<span class="cm-operator">&lt;</span><span class="cm-variable">foo</span> <span class="cm-variable">requiredProp</span><span class="cm-operator">=</span><span class="cm-string">&quot;bar&quot;</span> <span class="cm-variable">unknownProp</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// &#xC624;&#xB958;, unknownProp&#xC774; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">foo</span> <span class="cm-variable">requiredProp</span><span class="cm-operator">=</span><span class="cm-string">&quot;bar&quot;</span> <span class="cm-variable">some</span><span class="cm-operator">-</span><span class="cm-variable">unknown</span><span class="cm-operator">-</span><span class="cm-variable">prop</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// &#xC88B;&#xC544;&#xC694;, &apos;some-unknown-prop&apos; &#xC740; &#xC720;&#xD6A8;&#xD55C; &#xC2DD;&#xBCC4;&#xC790;&#xAC00; &#xC544;&#xB2C8;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.</span>
 </code></pre>
 <blockquote>
-<p>Note: If an attribute name is not a valid JS identifier (like a <code>data-*</code> attribute), it is not considered to be an error if it is not found in the element attributes type.</p>
+<p>&#xCC38;&#xACE0;: &#xC18D;&#xC131; &#xC774;&#xB984;&#xC774; &#xC720;&#xD6A8;&#xD55C; JS &#xC2DD;&#xBCC4;&#xC790; (&#xC608; :<code>data- *</code>&#xC18D;&#xC131;)&#xAC00; &#xC544;&#xB2CC; &#xACBD;&#xC6B0; &#xC694;&#xC18C; &#xC18D;&#xC131; &#xD0C0;&#xC785;&#xC5D0;&#xC11C; &#xC18D;&#xC131; &#xC774;&#xB984;&#xC744; &#xCC3E;&#xC744; &#xC218; &#xC5C6;&#xC73C;&#xBA74; &#xC624;&#xB958;&#xB85C; &#xAC04;&#xC8FC;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
-<p>The spread operator also works:</p>
+<p>&#xC804;&#xAC1C; &#xC5F0;&#xC0B0;&#xC790;&#xB3C4; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-JSX">var props = { requiredProp: &quot;bar&quot; };
-&lt;foo {...props} /&gt;; // ok
+&lt;foo {...props} /&gt;; // &#xC88B;&#xC544;&#xC694;
 
 var badProps = {};
-&lt;foo {...badProps} /&gt;; // error
+&lt;foo {...badProps} /&gt;; // &#xC624;&#xB958;
 </code></pre>
-<h2 id="children-type-checking">Children Type Checking</h2>
-<p>In 2.3, we introduce type checking of <em>children</em>. <em>children</em> is a property in an <em>element attributes type</em> which we have determined from type checking attributes.
-Similar to how we use <code>JSX.ElementAttributesProperty</code> to determine the name of <em>props</em>, we use <code>JSX.ElementChildrenAttribute</code> to determine the name of <em>children</em>.
-<code>JSX.ElementChildrenAttribute</code> should be declared with a single property.</p>
+<h2 id="&#xD558;&#xC704;-&#xD0C0;&#xC785;-&#xAC80;&#xC0AC;-children-type-checking">&#xD558;&#xC704; &#xD0C0;&#xC785; &#xAC80;&#xC0AC; (Children Type Checking)</h2>
+<p>2.3 &#xBC84;&#xC804;&#xC5D0;&#xC11C; <em>&#xD558;&#xC704;</em> &#xD0C0;&#xC785; &#xAC80;&#xC0AC;&#xB97C; &#xB3C4;&#xC785;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.<br><em>&#xD558;&#xC704;(children)</em>&#xB294; &#xC694;&#xC18C; &#xD0C0;&#xC785; &#xAC80;&#xC0AC;&#xC5D0;&#xC11C; &#xACB0;&#xC815;&#xB41C; <em>&#xC694;&#xC18C; &#xC18D;&#xC131; &#xD0C0;&#xC785;</em>&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xC785;&#xB2C8;&#xB2E4;.<br><code>JSX.ElementAttributesProperty</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; <em>props</em> &#xC774;&#xB984;&#xC744; &#xACB0;&#xC815;&#xD558;&#xB294; &#xAC83;&#xACFC; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; <code>JSX.ElementChildrenAttribute</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD558;&#xC704; &#xC774;&#xB984;&#xC744; &#xACB0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.  <code>JSX.ElementChildrenAttribute</code>&#xB294; &#xB2E8;&#xC77C; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB85C; &#xC120;&#xC5B8;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-variable">namespace</span> <span class="cm-variable">JSX</span> {
   <span class="cm-keyword">interface</span> <span class="cm-variable">ElementChildrenAttribute</span> {
-    <span class="cm-variable">children</span>: {};  <span class="cm-comment">// specify children name to use</span>
+    <span class="cm-variable">children</span>: {};  <span class="cm-comment">// &#xC0AC;&#xC6A9;&#xD560; &#xD558;&#xC704; &#xC774;&#xB984;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xC138;&#xC694;</span>
   }
 }
 </code></pre>
-<p>Without explicitly specify type of children, we will use default type from <a href="https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react" target="_blank">React typings</a>.</p>
+<p>&#xD558;&#xC704;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xC9C0;&#xC815;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;&#xBA74; <a href="https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react" target="_blank">React typings</a>&#xC758; &#xAE30;&#xBCF8; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-operator">&lt;</span><span class="cm-variable">div</span><span class="cm-operator">&gt;</span>
   <span class="cm-operator">&lt;</span><span class="cm-variable">h1</span><span class="cm-operator">&gt;</span><span class="cm-variable">Hello</span><span class="cm-operator">&lt;</span><span class="cm-string-2">/h1&gt;</span>
 <span class="cm-operator">&lt;</span><span class="cm-string-2">/div&gt;;</span>
@@ -974,7 +966,7 @@ Similar to how we use <code>JSX.ElementAttributesProperty</code> to determine th
   {<span class="cm-string">&quot;This is just a JS expression...&quot;</span> <span class="cm-operator">+</span> <span class="cm-number">1000</span>}
 <span class="cm-operator">&lt;</span><span class="cm-string-2">/CustomComp&gt;</span>
 </code></pre>
-<p>You can specify type of <em>children</em> like any other attribute. This will overwritten default type from <a href="https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react" target="_blank">React typings</a>.</p>
+<p>&#xB2E4;&#xB978; &#xC18D;&#xC131;&#xACFC; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; <em>&#xD558;&#xC704;</em> &#xD0C0;&#xC785;&#xC744; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB807;&#xAC8C; &#xD558;&#xBA74; <a href="https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react" target="_blank">React typings</a>&#xC5D0;&#xC11C; &#xAE30;&#xBCF8; &#xD0C0;&#xC785;&#xC744; &#xB36E;&#xC5B4;&#xC4F0;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">PropsType</span> {
   <span class="cm-variable">children</span>: <span class="cm-variable">JSX</span>.<span class="cm-property">Element</span>
   <span class="cm-variable">name</span>: <span class="cm-variable-3">string</span>
@@ -990,43 +982,39 @@ Similar to how we use <code>JSX.ElementAttributesProperty</code> to determine th
   }
 }
 
-<span class="cm-comment">// OK</span>
+<span class="cm-comment">// &#xC88B;&#xC544;&#xC694;</span>
 <span class="cm-operator">&lt;</span><span class="cm-variable">Component</span><span class="cm-operator">&gt;</span>
   <span class="cm-operator">&lt;</span><span class="cm-variable">h1</span><span class="cm-operator">&gt;</span><span class="cm-variable">Hello</span> <span class="cm-variable">World</span><span class="cm-operator">&lt;</span><span class="cm-string-2">/h1&gt;</span>
 <span class="cm-operator">&lt;</span><span class="cm-string-2">/Component&gt;</span>
 
-<span class="cm-comment">// Error: children is of type JSX.Element not array of JSX.Element</span>
+<span class="cm-comment">// &#xC624;&#xB958;: &#xD558;&#xC704; &#xD0C0;&#xC785;&#xC740; JSX.Element&#xC758; &#xBC30;&#xC5F4;&#xC774; &#xC544;&#xB2CC; JSX.Element &#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;.</span>
 <span class="cm-operator">&lt;</span><span class="cm-variable">Component</span><span class="cm-operator">&gt;</span>
   <span class="cm-operator">&lt;</span><span class="cm-variable">h1</span><span class="cm-operator">&gt;</span><span class="cm-variable">Hello</span> <span class="cm-variable">World</span><span class="cm-operator">&lt;</span><span class="cm-string-2">/h1&gt;</span>
   <span class="cm-operator">&lt;</span><span class="cm-variable">h2</span><span class="cm-operator">&gt;</span><span class="cm-variable">Hello</span> <span class="cm-variable">World</span><span class="cm-operator">&lt;</span><span class="cm-string-2">/h2&gt;</span>
 <span class="cm-operator">&lt;</span><span class="cm-string-2">/Component&gt;</span>
 
-<span class="cm-comment">// Error: children is of type JSX.Element not array of JSX.Element or string.</span>
+<span class="cm-comment">// &#xC624;&#xB958;: &#xD558;&#xC704; &#xD0C0;&#xC785;&#xC740; JSX.Element &#xB610;&#xB294; string&#xC758; &#xBC30;&#xC5F4;&#xC774; &#xC544;&#xB2CC; JSX.Element &#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;.</span>
 <span class="cm-operator">&lt;</span><span class="cm-variable">Component</span><span class="cm-operator">&gt;</span>
   <span class="cm-operator">&lt;</span><span class="cm-variable">h1</span><span class="cm-operator">&gt;</span><span class="cm-variable">Hello</span><span class="cm-operator">&lt;</span><span class="cm-string-2">/h1&gt;</span>
   <span class="cm-variable">World</span>
 <span class="cm-operator">&lt;</span><span class="cm-string-2">/Component&gt;</span>
 </code></pre>
-<h1 id="the-jsx-result-type">The JSX result type</h1>
-<p>By default the result of a JSX expression is typed as <code>any</code>.
-You can customize the type by specifying the <code>JSX.Element</code> interface.
-However, it is not possible to retrieve type information about the element, attributes or children of the JSX from this interface.
-It is a black box.</p>
-<h1 id="embedding-expressions">Embedding Expressions</h1>
-<p>JSX allows you to embed expressions between tags by surrounding the expressions with curly braces (<code>{ }</code>).</p>
+<h1 id="jsx-&#xACB0;&#xACFC;-&#xD0C0;&#xC785;-the-jsx-result-type">JSX &#xACB0;&#xACFC; &#xD0C0;&#xC785; (The JSX result type)</h1>
+<p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; JSX &#xD45C;&#xD604;&#xC2DD;&#xC758; &#xACB0;&#xACFC; &#xD0C0;&#xC785;&#xC740;&#xB294; <code>any</code>&#xB85C; &#xBD84;&#xB958;&#xB429;&#xB2C8;&#xB2E4;.<br><code>JSX.Element</code> &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xC9C0;&#xC815;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xC790; &#xC815;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB7EC;&#xB098; &#xC774; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC5D0;&#xC11C; JSX&#xC758; &#xC694;&#xC18C;, &#xC18D;&#xC131; &#xB610;&#xB294; &#xD558;&#xC704; &#xD56D;&#xBAA9;&#xC5D0; &#xB300;&#xD55C; &#xD0C0;&#xC785; &#xC815;&#xBCF4;&#xB97C; &#xCC3E;&#xC744; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.<br>It is a black box.</p>
+<h1 id="&#xD45C;&#xD604;&#xC2DD;-&#xD3EC;&#xD568;&#xD558;&#xAE30;-embedding-expressions">&#xD45C;&#xD604;&#xC2DD; &#xD3EC;&#xD568;&#xD558;&#xAE30; (Embedding Expressions)</h1>
+<p>JSX&#xB294; &#xC911;&#xAD04;&#xD638; (<code>{ }</code>)&#xB85C; &#xD45C;&#xD604;&#xC2DD;&#xC744; &#xAC10;&#xC2F8;&#xACE0; &#xD0DC;&#xADF8; &#xC0AC;&#xC774;&#xC5D0; &#xD45C;&#xD604;&#xC2DD;&#xC744; &#xC0BD;&#xC785;&#xD560; &#xC218; &#xC788;&#xAC8C;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-JSX">var a = &lt;div&gt;
   {[&quot;foo&quot;, &quot;bar&quot;].map(i =&gt; &lt;span&gt;{i / 2}&lt;/span&gt;)}
 &lt;/div&gt;
 </code></pre>
-<p>The above code will result in an error since you cannot divide a string by a number.
-The output, when using the <code>preserve</code> option, looks like:</p>
+<p>&#xC704;&#xC758; &#xCF54;&#xB4DC;&#xB294; &#xBB38;&#xC790;&#xC5F4;&#xC744; &#xC22B;&#xC790;&#xB85C; &#xB098;&#xB20C; &#xC218; &#xC5C6;&#xC73C;&#xBBC0;&#xB85C; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xCD9C;&#xB825;&#xC740; <code>preserve</code> &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-JSX">var a = &lt;div&gt;
   {[&quot;foo&quot;, &quot;bar&quot;].map(function (i) { return &lt;span&gt;{i / 2}&lt;/span&gt;; })}
 &lt;/div&gt;
 </code></pre>
-<h1 id="react-integration">React integration</h1>
-<p>To use JSX with React you should use the <a href="https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react" target="_blank">React typings</a>.
-These typings define the <code>JSX</code> namespace appropriately for use with React.</p>
+<h1 id="&#xB9AC;&#xC561;&#xD2B8;-&#xD1B5;&#xD569;-react-integration">&#xB9AC;&#xC561;&#xD2B8; &#xD1B5;&#xD569; (React integration)</h1>
+<p>React&#xC640; &#xD568;&#xAED8; JSX&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; <a href="https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react" target="_blank">React typings</a>&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB7EC;&#xD55C; typings&#xC740; React&#xC640; &#xD568;&#xAED8; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;&#xC5D0; &#xC801;&#xD569;&#xD558;&#xB3C4;&#xB85D; <code>JSX</code> &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xC801;&#xC808;&#xD558;&#xAC8C; &#xC815;&#xC758;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-comment">/// &lt;reference path=&quot;react.d.ts&quot; /&gt;</span>
 
 <span class="cm-keyword">interface</span> <span class="cm-variable">Props</span> {
@@ -1039,8 +1027,8 @@ These typings define the <code>JSX</code> namespace appropriately for use with R
   }
 }
 
-<span class="cm-operator">&lt;</span><span class="cm-variable">MyComponent</span> <span class="cm-variable">foo</span><span class="cm-operator">=</span><span class="cm-string">&quot;bar&quot;</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// ok</span>
-<span class="cm-operator">&lt;</span><span class="cm-variable">MyComponent</span> <span class="cm-variable">foo</span><span class="cm-operator">=</span>{<span class="cm-numbercm-property">0</span>} <span class="cm-string-2">/&gt;; /</span><span class="cm-operator">/</span> <span class="cm-variable">error</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">MyComponent</span> <span class="cm-variable">foo</span><span class="cm-operator">=</span><span class="cm-string">&quot;bar&quot;</span> <span class="cm-operator">/&gt;</span>; <span class="cm-comment">// &#xC88B;&#xC544;&#xC694;</span>
+<span class="cm-operator">&lt;</span><span class="cm-variable">MyComponent</span> <span class="cm-variable">foo</span><span class="cm-operator">=</span>{<span class="cm-numbercm-property">0</span>} <span class="cm-string-2">/&gt;; /</span><span class="cm-operator">/</span> <span class="cm-variable">&#xC624;</span><span class="cm-variable">&#xB958;</span>
 </code></pre>
 
                                 
@@ -1074,7 +1062,7 @@ These typings define the <code>JSX</code> namespace appropriately for use with R
                 </a>
                 
                 
-                <a href="Decorators.html" class="navigation navigation-next " aria-label="Next page: Decorators">
+                <a href="Decorators.html" class="navigation navigation-next " aria-label="Next page: 데코레이터">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1085,7 +1073,7 @@ These typings define the <code>JSX</code> namespace appropriately for use with R
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"JSX","level":"3.18","depth":1,"next":{"title":"Decorators","level":"3.19","depth":1,"path":"pages/Decorators.md","ref":"pages/Decorators.md","articles":[]},"previous":{"title":"선언 병합","level":"3.17","depth":1,"path":"pages/Declaration Merging.md","ref":"pages/Declaration Merging.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/JSX.md","mtime":"2018-03-29T14:33:02.433Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-29T14:33:32.262Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"JSX","level":"3.18","depth":1,"next":{"title":"데코레이터","level":"3.19","depth":1,"path":"pages/Decorators.md","ref":"pages/Decorators.md","articles":[]},"previous":{"title":"선언 병합","level":"3.17","depth":1,"path":"pages/Declaration Merging.md","ref":"pages/Declaration Merging.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/JSX.md","mtime":"2018-03-31T09:53:04.115Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-31T09:53:36.966Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
