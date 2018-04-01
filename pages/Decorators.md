@@ -115,14 +115,17 @@ g(): called
 f(): called
 ```
 
-## Decorator Evaluation
+## 데코레이터 평가 (Decorator Evaluation)
 
-There is a well defined order to how decorators applied to various declarations inside of a class are applied:
+클래스 내의 다양한 선언에 데코레이터를 적용하는 방법에는 잘 정의된 순서가 있습니다:
 
-1. *Parameter Decorators*, followed by *Method*, *Accessor*, or *Property Decorators* are applied for each instance member.
-2. *Parameter Decorators*, followed by *Method*, *Accessor*, or *Property Decorators* are applied for each static member.
-3. *Parameter Decorators* are applied for the constructor.
-4. *Class Decorators* are applied for the class.
+매개 변수 Decorator, 메서드, 접근 자 또는 속성 Decorator가 각 정적 멤버에 적용됩니다.
+Method, Accessor, PropertiesDecorator등에 의한 파라미터 Decorator는 각 정적 멤버에 대해 적용된다.
+
+1. *메서드*, *접근제어자* 또는 *프로퍼티 데코레이터*에 이어지는 *매개변수 데코레이터*는 각 인스턴스 멤버에 적용됩니다.
+2. *메서드*, *접근제어자* 또는 *프로퍼티 데코레이터*에 이어지는 *매개변수 데코레이터*는 각 정적 멤버에 적용됩니다.
+3. *매개변수* 데코레이터는 생성자에 적용됩니다.
+4. *클래스* 데코레이터는 클래스에 적용됩니다.
 
 ## Class Decorators
 
