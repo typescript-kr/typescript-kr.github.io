@@ -127,20 +127,19 @@ Method, Accessor, PropertiesDecorator등에 의한 파라미터 Decorator는 각
 3. *매개변수* 데코레이터는 생성자에 적용됩니다.
 4. *클래스* 데코레이터는 클래스에 적용됩니다.
 
-## Class Decorators
+## 클래스 데코레이터 (Class Decorators)
 
-A *Class Decorator* is declared just before a class declaration.
-The class decorator is applied to the constructor of the class and can be used to observe, modify, or replace a class definition.
-A class decorator cannot be used in a declaration file, or in any other ambient context (such as on a `declare` class).
+*클래스 데코레이터*는 클래스 선언 바로 직전에 선언됩니다.  
+클래스 데토레이터는 클래스 정의를 관찰, 수정하거나 대체하는 데 사용할 수 있는 클래스 생성자에 적용됩니다.  
+클래스 데코레이터는 선언 파일이나 다른 ambient 컨텍스트(예: `선언` 클래스)에서 사용할 수 없습니다.
 
-The expression for the class decorator will be called as a function at runtime, with the constructor of the decorated class as its only argument.
+클래스 데코레이터에 대한 표현식은 런타임에 함수로 호출되며 데코레이팅 클래스의 생성자는는 그것의 유일한 인수로 호출됩니다.
 
-If the class decorator returns a value, it will replace the class declaration with the provided constructor function.
+클래스 데코레이터가 값을 반환하는 경우, 클래스 선언을 제공된 생성자 함수로 대체합니다.
 
-> NOTE&nbsp; Should you chose to return a new constructor function, you must take care to maintain the original prototype.
-The logic that applies decorators at runtime will **not** do this for you.
+> 주의사항&nbsp; 새 생성자 함수를 반환하도록 선택해야하는 경우 원본 프로토타입을 유지하도록 관리해야합니다. 런타임에 데코레이터를 적용하는 로직은 이 작업을 수행하지 **않습니다.**
 
-The following is an example of a class decorator (`@sealed`) applied to the `Greeter` class:
+다음은 `Greeter` 클래스에 적용된 클래스 데코레이터(`@sealed`)의 예입니다:
 
 ```ts
 @sealed
@@ -155,7 +154,7 @@ class Greeter {
 }
 ```
 
-We can define the `@sealed` decorator using the following function declaration:
+다음 함수 선언을 사용하여 `@sealed` 데코레이터를 정의할 수 있습니다:
 
 ```ts
 function sealed(constructor: Function) {
@@ -164,9 +163,8 @@ function sealed(constructor: Function) {
 }
 ```
 
-When `@sealed` is executed, it will seal both the constructor and its prototype.
-
-Next we have an example of how to override the constructor.
+`@sealed`가 실행되면 생성자와 프로토타입 모두를 봉인합니다.
+다음은 생성자를 재정의하는 방법에 대한 예제입니다.
 
 ```ts
 function classDecorator<T extends {new(...args:any[]):{}}>(constructor:T) {
