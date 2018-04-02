@@ -130,7 +130,7 @@ Method, Accessor, PropertiesDecorator등에 의한 파라미터 Decorator는 각
 ## 클래스 데코레이터 (Class Decorators)
 
 *클래스 데코레이터*는 클래스 선언 바로 직전에 선언됩니다.  
-클래스 데토레이터는 클래스 정의를 관찰, 수정하거나 대체하는 데 사용할 수 있는 클래스 생성자에 적용됩니다.  
+클래스 데코레이터는 클래스 정의를 관찰, 수정 또는 바꾸는 데 사용할 수 있는 클래스 생성자에 적용됩니다.  
 클래스 데코레이터는 선언 파일이나 다른 ambient 컨텍스트(예: `선언` 클래스)에서 사용할 수 없습니다.
 
 클래스 데코레이터에 대한 표현식은 런타임에 함수로 호출되며 데코레이팅 클래스의 생성자는는 그것의 유일한 인수로 호출됩니다.
@@ -186,25 +186,25 @@ class Greeter {
 console.log(new Greeter("world"));
 ```
 
-## Method Decorators
+## 메서드 데코레이터 (Method Decorators)
 
-A *Method Decorator* is declared just before a method declaration.
-The decorator is applied to the *Property Descriptor* for the method, and can be used to observe, modify, or replace a method definition.
-A method decorator cannot be used in a declaration file, on an overload, or in any other ambient context (such as in a `declare` class).
+*메서드 데코레이터*는 메서드 선언 바로 직전에 선언됩니다.  
+데코레이터는 메서드의 *프로퍼티 Descriptor*에 적용되며 메서드 정의를 관찰, 수정 또는 바꾸는 데 사용할 수 있습니다.  
+메서드 데코레이터는 선언 파일, 오버로드 또는 기타 ambient 컨텍스트 (예: `선언` 클래스)에서 사용할 수 없습니다.
 
-The expression for the method decorator will be called as a function at runtime, with the following three arguments:
+메서드 데코레이터의 표현식은 런타임에 다음 세 가지 인수와 함께 함수로 호출됩니다:
 
-1. Either the constructor function of the class for a static member, or the prototype of the class for an instance member.
-2. The name of the member.
-3. The *Property Descriptor* for the member.
+1. 정적 멤버에 대한 클래스의 생성자 함수거나 인스턴스 멤버에 대한 클래스의 프로토타입.
+2. 멤버의 이름.
+3. 멤버의 *프로퍼티 Descriptor*.
 
-> NOTE&emsp; The *Property Descriptor* will be `undefined` if your script target is less than `ES5`.
+> 주의사항&emsp; 스크립트 타겟이 `ES5`보다 작으면 *프로퍼티 Descriptor*는 `undefined`가 됩니다.
 
-If the method decorator returns a value, it will be used as the *Property Descriptor* for the method.
+메서드 데코레이터가 값을 반환하는 경우 해당 메서드에 대해 *프로퍼티 Descriptor*로 사용됩니다.
 
-> NOTE&emsp; The return value is ignored if your script target is less than `ES5`.
+> 주의사항&emsp; 스크립트 타겟이 `ES5`보다 작으면 반환 값은 무시됩니다..
 
-The following is an example of a method decorator (`@enumerable`) applied to a method on the `Greeter` class:
+다음은 `Greeter`클래스의 메서드에 적용된 메서드 데코레이터 (`@enumerable`)의 예입니다:
 
 ```ts
 class Greeter {
@@ -220,7 +220,7 @@ class Greeter {
 }
 ```
 
-We can define the `@enumerable` decorator using the following function declaration:
+다음 함수 선언을 사용하여 `@enumerable` 데코레이터를 정의할 수 있습니다:
 
 ```ts
 function enumerable(value: boolean) {
@@ -230,8 +230,8 @@ function enumerable(value: boolean) {
 }
 ```
 
-The `@enumerable(false)` decorator here is a [decorator factory](#decorator-factories).
-When the `@enumerable(false)` decorator is called, it modifies the `enumerable` property of the property descriptor.
+`@enumerable(false)` 데코레이터는 [데코레이터 팩토리](#decorator-factories)입니다.  
+`@enumerable(false)` 데코레이터가 호출되면 프로퍼티 Descriptor의 `enumerable` 프로퍼티를 수정합니다.
 
 ## Accessor Decorators
 
