@@ -198,11 +198,11 @@ console.log(new Greeter("world"));
 2. 멤버의 이름.
 3. 멤버의 *프로퍼티 Descriptor*.
 
-> 주의사항&emsp; 스크립트 타겟이 `ES5`보다 작으면 *프로퍼티 Descriptor*는 `undefined`가 됩니다.
+> 주의사항&emsp; 스크립트 타겟이 `ES5`보다 작은 경우 *프로퍼티 Descriptor*는 `undefined`가 됩니다.
 
 메서드 데코레이터가 값을 반환하는 경우 해당 메서드에 대해 *프로퍼티 Descriptor*로 사용됩니다.
 
-> 주의사항&emsp; 스크립트 타겟이 `ES5`보다 작으면 반환 값은 무시됩니다..
+> 주의사항&emsp; 스크립트 타겟이 `ES5`보다 작은 경우 반환 값은 무시됩니다.
 
 다음은 `Greeter`클래스의 메서드에 적용된 메서드 데코레이터 (`@enumerable`)의 예입니다:
 
@@ -233,25 +233,25 @@ function enumerable(value: boolean) {
 `@enumerable(false)` 데코레이터는 [데코레이터 팩토리](#decorator-factories)입니다.  
 `@enumerable(false)` 데코레이터가 호출되면 프로퍼티 Descriptor의 `enumerable` 프로퍼티를 수정합니다.
 
-## Accessor Decorators
+## 접근제어자 데코레이터 (Accessor Decorators)
 
-An *Accessor Decorator* is declared just before an accessor declaration.
-The accessor decorator is applied to the *Property Descriptor* for the accessor and can be used to observe, modify, or replace an accessor's definitions.
-An accessor decorator cannot be used in a declaration file, or in any other ambient context (such as in a `declare` class).
+*접근제어자 데코레이터*는 접근제어자 선언 바로 직전에 선언됩니다.  
+접근제어자 데코레이터는 접근제어자에 대한 프로퍼티 Descriptor에 적용되며 접근제어자 정의를 관찰, 수정 또는 바꾸는 데 사용할 수 있습니다.  
+데코레이터는 메서드의 *프로퍼티 Descriptor*에 적용되며 메서드 정의를 관찰, 수정 또는 바꾸는 데 사용할 수 있습니다.  
+접근제어자 데코레이터는 선언 파일이나 다른 ambient 컨텍스트 (예: `선언` 클래스)에서 사용할 수 없습니다.
 
-> NOTE&emsp; TypeScript disallows decorating both the `get` and `set` accessor for a single member.
-Instead, all decorators for the member must be applied to the first accessor specified in document order.
-This is because decorators apply to a *Property Descriptor*, which combines both the `get` and `set` accessor, not each declaration separately.
+> 주의사항&emsp; TypeScript는 단일 멤버에 대한 접근제어자 `get`과 `set` 모두 데코레이팅하는 것을 허용하지 않습니다.
+대신 멤버의 모든 데코레이터가 순서를 따라 첫 번째 접근제어자에게 적용되어야 합니다. 왜냐하면 데코레이터가 *프로퍼티 Descriptor*에 적용되기 때문입니다. 그리고 각 선언을 별도로 구분하지 않고 `get`과 `set` 접근제어자를 결합합니다.
 
-The expression for the accessor decorator will be called as a function at runtime, with the following three arguments:
+접근제어자 데코레이터 표현식은 런타임시 다음 세 가지 인수와 함께 함수로 호출됩니다:
 
-1. Either the constructor function of the class for a static member, or the prototype of the class for an instance member.
-2. The name of the member.
-3. The *Property Descriptor* for the member.
+1. 정적 멤버에 대한 클래스의 생성자 함수나 인스턴스 멤버에 대한 클래스의 프로토타입이 있습니다.
+2. 멤버의 이름.
+3. 멤버에 *프로퍼티 Descriptor*.
 
-> NOTE&emsp; The *Property Descriptor* will be `undefined` if your script target is less than `ES5`.
+> 주의사항&emsp; 스크립트 타겟이 `ES5`보다 작은 경우 *프로퍼티 Descriptor*는 `undefined`가 됩니다.
 
-If the accessor decorator returns a value, it will be used as the *Property Descriptor* for the member.
+접근자 데코레이터가 값을 반환하면 경우 해당 멤버에 대한 *프로퍼티 Descriptor*로 사용됩니다.
 
 > NOTE&emsp; The return value is ignored if your script target is less than `ES5`.
 
