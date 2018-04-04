@@ -133,7 +133,7 @@ Method, Accessor, PropertiesDecorator등에 의한 파라미터 Decorator는 각
 클래스 데코레이터는 클래스 정의를 관찰, 수정 또는 바꾸는 데 사용할 수 있는 클래스 생성자에 적용됩니다.  
 클래스 데코레이터는 선언 파일이나 다른 ambient 컨텍스트(예: `선언` 클래스)에서 사용할 수 없습니다.
 
-클래스 데코레이터에 대한 표현식은 런타임에 함수로 호출되며 데코레이팅 클래스의 생성자는는 그것의 유일한 인수로 호출됩니다.
+클래스 데코레이터에 대한 표현식은 런타임에 함수로 호출되며 데코레이팅 클래스의 생성자는 대상을 유일한 인수로 호출됩니다.
 
 클래스 데코레이터가 값을 반환하는 경우, 클래스 선언을 제공된 생성자 함수로 대체합니다.
 
@@ -194,9 +194,9 @@ console.log(new Greeter("world"));
 
 메서드 데코레이터의 표현식은 런타임에 다음 세 가지 인수와 함께 함수로 호출됩니다:
 
-1. 정적 멤버에 대한 클래스의 생성자 함수거나 인스턴스 멤버에 대한 클래스의 프로토타입.
-2. 멤버의 이름.
-3. 멤버의 *프로퍼티 Descriptor*.
+1. 정적 멤버에 대한 클래스의 생성자 함수거나 인스턴스 멤버에 대한 클래스의 프로토타입
+2. 멤버의 이름
+3. 멤버의 *프로퍼티 Descriptor*
 
 > 주의사항&emsp; 스크립트 타겟이 `ES5`보다 작은 경우 *프로퍼티 Descriptor*는 `undefined`가 됩니다.
 
@@ -251,11 +251,11 @@ function enumerable(value: boolean) {
 
 > 주의사항&emsp; 스크립트 타겟이 `ES5`보다 작은 경우 *프로퍼티 Descriptor*는 `undefined`가 됩니다.
 
-접근자 데코레이터가 값을 반환하면 경우 해당 멤버에 대한 *프로퍼티 Descriptor*로 사용됩니다.
+접근제어자 데코레이터가 값을 반환하면 경우 해당 멤버에 대한 *프로퍼티 Descriptor*로 사용됩니다.
 
-> NOTE&emsp; The return value is ignored if your script target is less than `ES5`.
+> 주의사항&emsp; 스크립트 타겟이 `ES5`보다 작은 경우 반환 값은 무시됩니다.
 
-The following is an example of an accessor decorator (`@configurable`) applied to a member of the `Point` class:
+다음은 `Point` 클래스의 멤버에 적용된 접근제어자 데코레이터 (`@configurable`)의 예입니다:
 
 ```ts
 class Point {
@@ -274,7 +274,7 @@ class Point {
 }
 ```
 
-We can define the `@configurable` decorator using the following function declaration:
+다음 함수 선언을 사용하여 `@configurable` 데코레이터를 정의할 수 있습니다:
 
 ```ts
 function configurable(value: boolean) {
@@ -284,21 +284,21 @@ function configurable(value: boolean) {
 }
 ```
 
-## Property Decorators
+## 프로퍼티 데코레이터 (Property Decorators)
 
-A *Property Decorator* is declared just before a property declaration.
-A property decorator cannot be used in a declaration file, or in any other ambient context (such as in a `declare` class).
+*프로퍼티 데코레이터*는 프로퍼티 선언 바로 직전에 선언됩니다.  
+프로퍼티 데코레이터는 선언 파일이나 기타 ambient 컨텍스트 (예: `선언` 클래스)에서 사용할 수 없습니다.
 
-The expression for the property decorator will be called as a function at runtime, with the following two arguments:
+프로퍼티 데코레이터의 표현식은 런타임에 다음 두 인수와 함께 함수로 호출됩니다:
 
-1. Either the constructor function of the class for a static member, or the prototype of the class for an instance member.
-2. The name of the member.
+1. 정적 멤버에 대한 클래스의 생성자 함수 또는 인스턴스 멤버에 대한 클래스의 프로토타입
+2. 멤버의 이름
 
-> NOTE&emsp; A *Property Descriptor* is not provided as an argument to a property decorator due to how property decorators are initialized in TypeScript.
-This is because there is currently no mechanism to describe an instance property when defining members of a prototype, and no way to observe or modify the initializer for a property. The return value is ignored too.
-As such, a property decorator can only be used to observe that a property of a specific name has been declared for a class.
+> 주의사항&emsp; *프로퍼티 Descriptor*는 프로퍼티 Descriptor가 TypeScript에서 초기화되는 방법으로 인해 프로퍼티 Descriptor에 대한 인수로 제공되지 않습니다.
+이는 현재 프로토타입의 멤버을 정의할 때 인스턴스 프로퍼티를 설명하는 메커니즘이 없고, 프로퍼티에 대한 이니셜라이저를 관찰하거나 수정할 방법이 없기 때문이다. 반환 값도 무시됩니다.
+따라서 프로퍼티 데코레이터는 특정 이름의 프로퍼티가 클래스에 대해 선언되는 것을 관찰하는 데만 사용할 수 있습니다.
 
-We can use this information to record metadata about the property, as in the following example:
+다음 예와 같이 이 정보를 사용하여 프로퍼티에 대한 메타 데이터를 기록할 수 있습니다:
 
 ```ts
 class Greeter {
@@ -315,7 +315,7 @@ class Greeter {
 }
 ```
 
-We can then define the `@format` decorator and `getFormat` functions using the following function declarations:
+그 다음 함수 선언을 사용하여 `@format` 데코레이터와 `getFormat` 함수를 정의 할 수 있습니다:
 
 ```ts
 import "reflect-metadata";
@@ -331,12 +331,11 @@ function getFormat(target: any, propertyKey: string) {
 }
 ```
 
-The `@format("Hello, %s")` decorator here is a [decorator factory](#decorator-factories).
-When `@format("Hello, %s")` is called, it adds a metadata entry for the property using the `Reflect.metadata` function from the `reflect-metadata` library.
-When `getFormat` is called, it reads the metadata value for the format.
+`@format("Hello, %s")` 데코레이터는 [데코레이터 팩토리](#decorator-factories)입니다.  
+`@format("Hello, %s")`이 호출되면 `reflect-metadata` 라이브러리의 `Reflect.metadata` 함수를 사용하여 프로퍼티에 대한 메타 데이터 항목을 추가합니다.  
+`getFormat`를 호출하면 포맷에 대한 메타 데이터를 읽습니다.
 
-> NOTE&emsp; This example requires the `reflect-metadata` library.
-See [Metadata](#metadata) for more information about the `reflect-metadata` library.
+> 참고&emsp; 이 예제에는 `reflect-metadata` 라이브러리가 필요합니다. `reflect-metadata` 라이브러리에 대한 자세한 정보는 [메타 데이터](#metadata)를 참조하세요.
 
 ## Parameter Decorators
 
