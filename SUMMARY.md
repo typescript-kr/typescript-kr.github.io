@@ -31,7 +31,7 @@
 * [선언 병합](pages/Declaration Merging.md)
 * [JSX](pages/JSX.md)
 * [데코레이터](pages/Decorators.md)
-* [Mixins](pages/Mixins.md)
+* [믹스인](pages/Mixins.md)
 * [Triple-Slash Directives](pages/Triple-Slash Directives.md)
 * [Type Checking JavaScript Files](pages/Type Checking JavaScript Files.md)
 
