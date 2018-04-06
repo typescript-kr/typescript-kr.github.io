@@ -32,7 +32,7 @@
 * [JSX](pages/JSX.md)
 * [데코레이터](pages/Decorators.md)
 * [믹스인](pages/Mixins.md)
-* [Triple-Slash Directives](pages/Triple-Slash Directives.md)
+* [트리플-슬래시 지시자](pages/Triple-Slash Directives.md)
 * [Type Checking JavaScript Files](pages/Type Checking JavaScript Files.md)
 
 ## Declaration Files

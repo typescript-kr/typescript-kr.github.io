@@ -23,10 +23,10 @@
 - [x] 네임스페이스
 - [x] 네임스페이스와 모듈
 - [x] 모듈 해석
-- [ ] 선언 병합
-- [ ] JSX
-- [ ] Decorators
-- [ ] Mixins
+- [X] 선언 병합
+- [X] JSX
+- [X] Decorators
+- [X] Mixins
 - [ ] Triple-Slash Directives
 - [ ] Type Checking JavaScript Files
 ## Declaration Files
