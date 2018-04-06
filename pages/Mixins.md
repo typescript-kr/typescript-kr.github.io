@@ -9,7 +9,7 @@
 코드가 끝나면 어떻게 작동하는지 분석해보겠습니다.
 
 ```ts
-// 이용 가능한 (일회성) 믹스인
+// Disposable 믹스인
 class Disposable {
     isDisposed: boolean;
     dispose() {
@@ -18,7 +18,7 @@ class Disposable {
 
 }
 
-// 활성 가능한 믹스인
+// Activatable 믹스인
 class Activatable {
     isActive: boolean;
     activate() {
@@ -38,10 +38,10 @@ class SmartObject implements Disposable, Activatable {
         this.activate();
     }
 
-    // 이용 가능한 (일회성) 믹스인
+    // Disposable
     isDisposed: boolean = false;
     dispose: () => void;
-    // 활성 가능한 믹스인
+    // Activatable
     isActive: boolean = false;
     activate: () => void;
     deactivate: () => void;
@@ -68,10 +68,10 @@ function applyMixins(derivedCtor: any, baseCtors: any[]) {
 
 믹스인으로 작동할 코드 샘플은 두 클래스로 시작합니다.  
 각각의 개체가 특정 활동이나 능력에 초점을 맞추고 있다는 것을 볼 수 있습니다.  
-나중에는 이 두가지를 결합하여 새로운 클래스를 만들겠습니다.
+나중에는 이 두 가지를 결합하여 새로운 클래스를 만들겠습니다.
 
 ```ts
-// 이용 가능한(일회성)
+// Disposable
 class Disposable {
     isDisposed: boolean;
     dispose() {
@@ -80,7 +80,7 @@ class Disposable {
 
 }
 
-// 활성 가능한
+// Activatable
 class Activatable {
     isActive: boolean;
     activate() {
@@ -99,20 +99,20 @@ class Activatable {
 class SmartObject implements Disposable, Activatable {
 ```
 
-위에서 첫번째로 주목할 점은 `extends` 대신 `implements`를 사용한다는 것입니다.  
+위에서 첫 번째로 주목할 점은 `extends` 대신 `implements`를 사용한다는 것입니다.  
 이것은 클래스를 인터페이스로 다루고 구현이 아닌 Disposable과 Activatable 타입만 사용합니다.  
-즉, 클래스에서 구현을 제공해야합니다.  
+즉, 클래스에서 구현을 제공해야 합니다.  
 이외에 정확하게는 믹스인 사용하여 회피하고 싶은 것입니다.
 
 이 요구 사항을 충족시키기 위해 믹스인에서 가져올 멤버에 대해 stand-in 프로퍼티과 그 타입을 생성합니다.  
 이것은 컴파일러가 런타임에 이러한 멤버를 사용할 수 있음을 충족시킵니다.  
-비록 약간의 bookkeeping  오버헤드가 있기는 하지만 여전히 믹스인의 이점을 얻을 수 있습니다.
+비록 약간의 bookkeeping 오버헤드가 있기는 하지만 여전히 믹스인의 이점을 얻을 수 있습니다.
 
 ```ts
-// 이용 가능한(일회성)
+// Disposable
 isDisposed: boolean = false;
 dispose: () => void;
-// 활성 가능한 믹스인
+// Activatable
 isActive: boolean = false;
 activate: () => void;
 deactivate: () => void;
@@ -125,8 +125,7 @@ applyMixins(SmartObject, [Disposable, Activatable]);
 ```
 
 마지막으로 믹스인을 하기 위한 헬퍼 함수를 만듭니다.  
-This will run through the properties of each of the mixins and copy them over to the target of the mixins, filling out the stand-in properties with their implementations.  
-이것은 각 믹스인의 프로퍼티를 거쳐 믹스인의 타겟으로 복사하고 stand-in 프로퍼티를 구현체로 채 웁니다.
+이것은 각 믹스인의 프로퍼티를 거쳐 실행되며 믹스인의 타겟으로 복사하고 구현된 stand-in 프로퍼티로 채우게 됩니다.
 
 ```ts
 function applyMixins(derivedCtor: any, baseCtors: any[]) {
