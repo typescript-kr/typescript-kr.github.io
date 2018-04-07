@@ -27,7 +27,7 @@
 - [X] JSX
 - [X] Decorators
 - [X] Mixins
-- [ ] Triple-Slash Directives
+- [x] Triple-Slash Directives
 - [ ] Type Checking JavaScript Files
 ## Declaration Files
 - [ ] Introduction

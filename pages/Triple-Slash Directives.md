@@ -3,7 +3,7 @@
 
 트리플-슬래시 지시자는 포함된 파일의 **상단에서만** 유효합니다.   
 트리플-슬래시 지시자는 다른 트리플-슬래시 지시자를 포함하여 한 줄 또는 여러 줄 주석 앞에 붙을 수 있습니다.  
-문 또는 선언 뒤에 나오는 경우 보통의 한 줄 주석으로 간주되며 특별한 의미는 없습니다.
+문 또는 선언 뒤에 나오는 경우 보통의 한 줄 주석으로 간주하며 특별한 의미는 없습니다.
 
 ## `/// <reference path="..." />`
 
@@ -12,8 +12,7 @@
 
 트리플-슬래시 참조는 컴파일 프로세스에서 추가적인 파일을 포함하도록 컴파일러에 지시합니다.
 
-They also serve as a method to order the output when using `--out` or `--outFile`.
-파일은 전처리 통과 후 입력과 동일한 순서에 출력 파일 위치로 방출됩니다.
+파일은 전처리 통과 후 입력과 같은 순서의 출력 파일 위치로 방출됩니다.
 
 ### 전처리 입력 파일 (Preprocessing input files)
 
@@ -53,8 +52,9 @@ They also serve as a method to order the output when using `--out` or `--outFile
 컴파일 시 생성된 선언 파일에 대해서는 컴파일러가 `/// <reference types="..." />`을 자동으로 추가합니다.  
 생성된 선언 파일에서 `/// <reference types="..." />`은 결과 파일이 참조 패키지의 선언을 사용하는 *경우에만* 추가됩니다.
 
-For declaring a dependency on an `@types` package in a `.ts` file, use `--types` on the command line or in your `tsconfig.json` instead.
-See [using `@types`, `typeRoots` and `types` in `tsconfig.json` files](./tsconfig.json.md#types-typeroots-and-types) for more details.
+`.ts` 파일에 대한 `@types` 패키지에 의존성을 선언하려면 커맨드 라인이나 `tsconfig.json`에서 `--types`를 사용하세요.
+
+더 자세한 내용은 [`tsconfig.json` 파일에서 `@types`, `typeRoots`와 `types` 사용하기](./tsconfig.json.md#types-typeroots-and-types)를 보세요.
 
 ## `/// <reference no-default-lib="true"/>`
 
@@ -71,7 +71,7 @@ See [using `@types`, `typeRoots` and `types` in `tsconfig.json` files](./tsconfi
 기본적으로 AMD모듈은 익명으로 생성됩니다.  
 이로 인해 번들(예: `r.js`)과 같은 결과적인 모듈을 처리하는 데 다른 도구를 사용할 경우 문제가 발생할 수 있습니다.
 
-The `amd-module` directive allows passing an optional module name to the compiler:
+`amd-module` 지시자는 선택적 모듈 이름을 컴파일러에 전달하는 것을 허용합니다:
 
 ##### amdModule.ts
 
@@ -81,7 +81,7 @@ export class C {
 }
 ```
 
-Will result in assigning the name `NamedModule` to the module as part of calling the AMD `define`:
+AMD `define`을 호출할 때 `NamedModule`이라는 이름을 모듈에 할당할 것입니다:
 
 ##### amdModule.js
 
@@ -98,11 +98,12 @@ define("NamedModule", ["require", "exports"], function (require, exports) {
 
 ## `/// <amd-dependency />`
 
-> **Note**: this directive has been deprecated. Use `import "moduleName";` statements instead.
+> **주의사항**: 이 지시자는 더 이상 사용되지 않습니다(deprecated). 대신 `import "moduleName";`문을 사용하세요.
 
-`/// <amd-dependency path="x" />` informs the compiler about a non-TS module dependency that needs to be injected in the resulting module's require call.
+`/// <amd-dependency path="x" />` 결과 모듈의 require 호출에 주입해야하는 non-TS 모듈 의존성에 대해 컴파일러에 알려줍니다.
 
-The `amd-dependency` directive can also have an optional `name` property; this allows passing an optional name for an amd-dependency:
+`amd-dependency` 지시자는 선택적 `name` 프로퍼티을 가질 수도 있습니다.  
+이것은 amd-dependency에 선택적 이름을 전달할 수 있습니다:
 
 ```ts
 /// <amd-dependency path="legacy/moduleA" name="moduleA"/>
@@ -110,7 +111,7 @@ declare var moduleA:MyType
 moduleA.callStuff()
 ```
 
-Generated JS code:
+생성된 JS 코드:
 
 ```js
 define(["require", "exports", "legacy/moduleA"], function (require, exports, moduleA) {
