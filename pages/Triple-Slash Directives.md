@@ -1,77 +1,77 @@
-Triple-slash directives are single-line comments containing a single XML tag.
-The contents of the comment are used as compiler directives.
+트리플-슬래시 지시자는 단일 XML 태그가 포함된 한 줄 주석입니다.  
+주석의 내용은 컴파일러 지시자로 사용됩니다.
 
-Triple-slash directives are **only** valid at the top of their containing file.
-A triple-slash directive can only be preceded by single or multi-line comments, including other triple-slash directives.
-If they are encountered following a statement or a declaration they are treated as regular single-line comments, and hold no special meaning.
+트리플-슬래시 지시자는 포함된 파일의 **상단에서만** 유효합니다.   
+트리플-슬래시 지시자는 다른 트리플-슬래시 지시자를 포함하여 한 줄 또는 여러 줄 주석 앞에 붙을 수 있습니다.  
+문 또는 선언 뒤에 나오는 경우 보통의 한 줄 주석으로 간주하며 특별한 의미는 없습니다.
 
 ## `/// <reference path="..." />`
 
-The `/// <reference path="..." />` directive is the most common of this group.
-It serves as a declaration of *dependency* between files.
+이 중 가장 일반적인 것은 `/// <reference path="..." />` 지시자입니다.  
+파일 간에 *의존성* 선언의 역할을 합니다.
 
-Triple-slash references instruct the compiler to include additional files in the compilation process.
+트리플-슬래시 참조는 컴파일 프로세스에서 추가적인 파일을 포함하도록 컴파일러에 지시합니다.
 
-They also serve as a method to order the output when using `--out` or `--outFile`.
-Files are emitted to the output file location in the same order as the input after preprocessing pass.
+파일은 전처리 통과 후 입력과 같은 순서의 출력 파일 위치로 방출됩니다.
 
-### Preprocessing input files
+### 전처리 입력 파일 (Preprocessing input files)
 
-The compiler performs a preprocessing pass on input files to resolve all triple-slash reference directives.
-During this process, additional files are added to the compilation.
+컴파일러는 모든 트리플-슬래시 참조 지시자를 해석하기 위해 입력 파일에 대한 전처리 단계를 수행합니다.  
+이러한 프로세스 중 컴파일에 추가 파일이 추가됩니다.
 
-The process starts with a set of *root files*;
-these are the file names specified on the command-line or in the `"files"` list in the `tsconfig.json` file.
-These root files are preprocessed in the same order they are specified.
-Before a file is added to the list, all triple-slash references in it are processed, and their targets included.
-Triple-slash references are resolved in a depth first manner, in the order they have been seen in the file.
+프로세스는 *root files* 집합으로 시작합니다.  
+이것은 커맨드 라인이나 `tsconfig.json` 파일의 `"files"` 리스트에 지정된 파일 이름입니다.  
+이러한 루트 파일은 지정된 순서대로 전처리됩니다.  
+파일이 목록에 추가되기 전에 파일에 있는 모든 트리플-슬래시 참조가 처리되고 대상이 포함됩니다.
+트리플-슬래시 참조는 파일에서 본 순서대로 우선으로 깊숙하게 분석됩니다.
 
-A triple-slash reference path is resolved relative to the containing file, if unrooted.
+루트가 없는 경우 트리플-슬래시는 포함된 파일에 대한 기준으로 경로를 해석합니다.
 
-### Errors
+### 오류
 
-It is an error to reference a file that does not exist.
-It is an error for a file to have a triple-slash reference to itself.
+존재하지 않는 파일을 참조하는 것은 오류입니다.  
+파일에 자체에 대한 트리플-슬래시 참조가 있는 것은 오류입니다.
+### `--noResolve` 사용
 
-### Using `--noResolve`
-
-If the compiler flag `--noResolve` is specified, triple-slash references are ignored; they neither result in adding new files, nor change the order of the files provided.
+컴파일러 옵션 `--noResolve`가 지정되면 트리플-슬래시 참조는 무시됩니다.  
+새 파일을 추가하거나 제공된 파일의 순서를 변경하지도 않습니다.
 
 ## `/// <reference types="..." />`
 
-Similar to a `/// <reference path="..." />` directive,  this directive serves as a declaration of *dependency*;
-a `/// <reference types="..." />` directive, however, declares a dependency on a package.
+`/// <reference path="..." />` 지시자와 마찬가지로 이 지시자도 *의존성* 선언의 역할을 합니다.  
+하지만 `/// <reference types="..." />`지시자는 패키지에 대한 의존성을 선언합니다.
 
-The process of resolving these package names is similar to the process of resolving module names in an `import` statement.
-An easy way to think of triple-slash-reference-types directives are as an `import` for declaration packages.
+이런 패키지 이름을 해석하는 프로세스는 `import`문에서 모듈 이름을 해석하는 프로세스와 유사합니다.  
+트리플-슬래시 참조 타입 지시자를 생각하는 쉬운 방법은 선언 패키지의 `import` 입니다.
 
-For example, including `/// <reference types="node" />` in a declaration file declares that this file uses names declared in `@types/node/index.d.ts`;
-and thus, this package needs to be included in the compilation along with the declaration file.
+예를 들어 선언 파일에 `/// <reference types="node" />`를 포함하면 이 파일은 `@types/node/index.d.ts`에 선언된 이름을 사용합니다.  
+따라서 선언 파일과 함께 이 패키지를 컴파일에 포함해야 합니다.
 
-Use these directives only when you're authoring a `d.ts` file by hand.
+이 지시자는 `d.ts` 파일을 직접 작성할 때만 사용하도록 하세요.
 
-For declaration files generated during compilation, the compiler will automatically add `/// <reference types="..." />` for you;
-A `/// <reference types="..." />` in a generated declaration file is added *if and only if* the resulting file uses any declarations from the referenced package.
+컴파일 시 생성된 선언 파일에 대해서는 컴파일러가 `/// <reference types="..." />`을 자동으로 추가합니다.  
+생성된 선언 파일에서 `/// <reference types="..." />`은 결과 파일이 참조 패키지의 선언을 사용하는 *경우에만* 추가됩니다.
 
-For declaring a dependency on an `@types` package in a `.ts` file, use `--types` on the command line or in your `tsconfig.json` instead.
-See [using `@types`, `typeRoots` and `types` in `tsconfig.json` files](./tsconfig.json.md#types-typeroots-and-types) for more details.
+`.ts` 파일에 대한 `@types` 패키지에 의존성을 선언하려면 커맨드 라인이나 `tsconfig.json`에서 `--types`를 사용하세요.
+
+더 자세한 내용은 [`tsconfig.json` 파일에서 `@types`, `typeRoots`와 `types` 사용하기](./tsconfig.json.md#types-typeroots-and-types)를 보세요.
 
 ## `/// <reference no-default-lib="true"/>`
 
-This directive marks a file as a *default library*.
-You will see this comment at the top of `lib.d.ts` and its different variants.
+이 지시자는 파일을 *기본 라이브러리*로 표시합니다.  
+이 주석은 `lib.d.ts`와 다른 변이들의 맨 위에서 볼 수 있습니다.
 
-This directive instructs the compiler to *not* include the default library (i.e. `lib.d.ts`) in the compilation.
-The impact here is similar to passing `--noLib` on the command line.
+이 지시자는 컴파일러에 기본 라이브러리 (예: `lib.d.ts`)를 포함하지 *않도록* 지시합니다.  
+여기에 미치는 영향은 커맨드 라인에 `--noLib`를 전달하는 것과 비슷합니다.
 
-Also note that when passing `--skipDefaultLibCheck`, the compiler will only skip checking files with `/// <reference no-default-lib="true"/>`.
+또한 `--skipDefaultLibCheck`를 넘길 때 컴파일러는 `/// <reference no-default-lib="true"/>`를 가진 파일 검사만 건너뜁니다.
 
 ## `/// <amd-module />`
 
-By default AMD modules are generated anonymous.
-This can lead to problems when other tools are used to process the resulting modules, such as bundlers (e.g. `r.js`).
+기본적으로 AMD모듈은 익명으로 생성됩니다.  
+이로 인해 번들(예: `r.js`)과 같은 결과적인 모듈을 처리하는 데 다른 도구를 사용할 경우 문제가 발생할 수 있습니다.
 
-The `amd-module` directive allows passing an optional module name to the compiler:
+`amd-module` 지시자는 선택적 모듈 이름을 컴파일러에 전달하는 것을 허용합니다:
 
 ##### amdModule.ts
 
@@ -81,7 +81,7 @@ export class C {
 }
 ```
 
-Will result in assigning the name `NamedModule` to the module as part of calling the AMD `define`:
+AMD `define`을 호출할 때 `NamedModule`이라는 이름을 모듈에 할당할 것입니다:
 
 ##### amdModule.js
 
@@ -98,11 +98,12 @@ define("NamedModule", ["require", "exports"], function (require, exports) {
 
 ## `/// <amd-dependency />`
 
-> **Note**: this directive has been deprecated. Use `import "moduleName";` statements instead.
+> **주의사항**: 이 지시자는 더 이상 사용되지 않습니다(deprecated). 대신 `import "moduleName";`문을 사용하세요.
 
-`/// <amd-dependency path="x" />` informs the compiler about a non-TS module dependency that needs to be injected in the resulting module's require call.
+`/// <amd-dependency path="x" />` 결과 모듈의 require 호출에 주입해야하는 non-TS 모듈 의존성에 대해 컴파일러에 알려줍니다.
 
-The `amd-dependency` directive can also have an optional `name` property; this allows passing an optional name for an amd-dependency:
+`amd-dependency` 지시자는 선택적 `name` 프로퍼티을 가질 수도 있습니다.  
+이것은 amd-dependency에 선택적 이름을 전달할 수 있습니다:
 
 ```ts
 /// <amd-dependency path="legacy/moduleA" name="moduleA"/>
@@ -110,7 +111,7 @@ declare var moduleA:MyType
 moduleA.callStuff()
 ```
 
-Generated JS code:
+생성된 JS 코드:
 
 ```js
 define(["require", "exports", "legacy/moduleA"], function (require, exports, moduleA) {
