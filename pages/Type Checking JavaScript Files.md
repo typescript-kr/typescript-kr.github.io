@@ -1,11 +1,12 @@
-TypeScript 2.3 and later support a mode of type-checking and reporting errors in `.js` files with `--checkJs`.
+TypeScript 2.3 및 이후 버전에서는 `--checkJs`를 사용하여 `.js` 파일에서 타입 검사 및 오류 보고 모드를 지원합니다.
 
-You can skip checking some files by adding `// @ts-nocheck` comment to them; conversely you can choose to check only a few `.js` files by adding `// @ts-check` comment to them without setting `--checkJs`.
-You can also ignore errors on specific lines by adding `// @ts-ignore` on the preceding line.
+일부 파일에 `// @ts-nocheck` 주석을 추가하여 검사하는 것을 건너뛸 수 있습니다.  
+반대로 `--checkJs`를 설정하지 않고 `// @ts-check` 주석을 추가하여 몇개의 `.js` 파일 만 검사하도록 선택할 수 있습니다.  
+앞 줄에 `// @ts-ignore`를 추가하여 특정 라인의 오류를 무시할 수도 있습니다.
 
-Here are some notable differences on how checking work in `.js` file from `.ts` file:
+다음은 `.ts` 파일에서 `.js` 파일로 작업하는 방법에 주목할만한 차이점입니다:
 
-## Using types in JSDoc
+## JSDoc에서 타입 사용 (Using types in JSDoc)
 
 In a `.js` file, types can often be inferred just like in `.ts` files.
 Likewise, when types can't be inferred, they can be specified using JSDoc the same way that type annotations do in a `.ts` file. 
