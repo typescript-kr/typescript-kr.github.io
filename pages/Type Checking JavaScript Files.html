@@ -708,25 +708,23 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>TypeScript 2.3 and later support a mode of type-checking and reporting errors in <code>.js</code> files with <code>--checkJs</code>.</p>
-<p>You can skip checking some files by adding <code>// @ts-nocheck</code> comment to them; conversely you can choose to check only a few <code>.js</code> files by adding <code>// @ts-check</code> comment to them without setting <code>--checkJs</code>.
-You can also ignore errors on specific lines by adding <code>// @ts-ignore</code> on the preceding line.</p>
-<p>Here are some notable differences on how checking work in <code>.js</code> file from <code>.ts</code> file:</p>
-<h2 id="using-types-in-jsdoc">Using types in JSDoc</h2>
-<p>In a <code>.js</code> file, types can often be inferred just like in <code>.ts</code> files.
-Likewise, when types can&apos;t be inferred, they can be specified using JSDoc the same way that type annotations do in a <code>.ts</code> file. </p>
-<p>JSDoc annotations adorning a declaration will be used to set the type of that declaration. For example:</p>
+                                <p>TypeScript 2.3 &#xBC0F; &#xC774;&#xD6C4; &#xBC84;&#xC804;&#xC5D0;&#xC11C;&#xB294; <code>--checkJs</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; <code>.js</code> &#xD30C;&#xC77C;&#xC5D0;&#xC11C; &#xD0C0;&#xC785; &#xAC80;&#xC0AC; &#xBC0F; &#xC624;&#xB958; &#xBCF4;&#xACE0; &#xBAA8;&#xB4DC;&#xB97C; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC77C;&#xBD80; &#xD30C;&#xC77C;&#xC5D0; <code>// @ts-nocheck</code> &#xC8FC;&#xC11D;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xAC80;&#xC0AC;&#xD558;&#xB294; &#xAC83;&#xC744; &#xAC74;&#xB108;&#xB6F8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xBC18;&#xB300;&#xB85C; <code>--checkJs</code>&#xB97C; &#xC124;&#xC815;&#xD558;&#xC9C0; &#xC54A;&#xACE0; <code>// @ts-check</code> &#xC8FC;&#xC11D;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xBA87;&#xAC1C;&#xC758; <code>.js</code> &#xD30C;&#xC77C; &#xB9CC; &#xAC80;&#xC0AC;&#xD558;&#xB3C4;&#xB85D; &#xC120;&#xD0DD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC55E; &#xC904;&#xC5D0; <code>// @ts-ignore</code>&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xD2B9;&#xC815; &#xB77C;&#xC778;&#xC758; &#xC624;&#xB958;&#xB97C; &#xBB34;&#xC2DC;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C;&#xC740; <code>.ts</code> &#xD30C;&#xC77C;&#xC5D0;&#xC11C; <code>.js</code> &#xD30C;&#xC77C;&#xB85C; &#xC791;&#xC5C5;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC5D0; &#xC8FC;&#xBAA9;&#xD560;&#xB9CC;&#xD55C; &#xCC28;&#xC774;&#xC810;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<h2 id="jsdoc&#xC5D0;&#xC11C;-&#xD0C0;&#xC785;-&#xC0AC;&#xC6A9;-using-types-in-jsdoc">JSDoc&#xC5D0;&#xC11C; &#xD0C0;&#xC785; &#xC0AC;&#xC6A9; (Using types in JSDoc)</h2>
+<p>&#xD754;&#xD788; <code>.js</code> &#xD30C;&#xC77C;&#xC5D0;&#xC11C; <code>.ts</code> &#xD30C;&#xC77C;&#xCC98;&#xB7FC; &#xD0C0;&#xC785;&#xC744; &#xCD94;&#xB860;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xD0C0;&#xC785;&#xC744; &#xCD94;&#xB860;&#xD560; &#xC218; &#xC5C6;&#xB294; &#xACBD;&#xC6B0; &#xD0C0;&#xC785; &#xC8FC;&#xC11D;&#xC744; <code>.ts</code> &#xD30C;&#xC77C;&#xC5D0;&#xC11C;&#xC640; &#xAC19;&#xC740; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; JSDoc&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>JSDoc &#xC8FC;&#xC11D;&#xC740; &#xC120;&#xC5B8;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xD574;&#xB2F9; &#xC120;&#xC5B8;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xC124;&#xC815;&#xD558;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;:</p>
 <pre><code class="lang-js"><span class="cm-comment">/** @type {number} */</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">x</span>;
 
-<span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;      <span class="cm-comment">// OK</span>
-<span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-atom">false</span>;  <span class="cm-comment">// Error: boolean is not assignable to number</span>
+<span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;      <span class="cm-comment">// &#xC88B;&#xC544;&#xC694;</span>
+<span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-atom">false</span>;  <span class="cm-comment">// &#xC624;&#xB958;: number&#xC5D0; boolean&#xC744; &#xD560;&#xB2F9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;</span>
 </code></pre>
-<p>You can find the full list of supported JSDoc patterns in the <a href="https://github.com/Microsoft/TypeScript/wiki/JSDoc-support-in-JavaScript" target="_blank">JSDoc support in JavaScript documentation</a>.</p>
-<h2 id="property-declaration-inferred-from-assignments-in-class-bodies">Property declaration inferred from assignments in class bodies</h2>
-<p>ES2015/ES6 does not have a means for declaring properties on classes. Properties are dynamically assigned, just like in the case of object literals. </p>
-<p>In a <code>.js</code> file property declarations are inferred from assignments to the properties inside the class body. The type of properties is the union of the types of all the right-hand values in these assignments. Properties defined in the constructor are always assumed to exist, where as ones defined in methods, getters, or setters are considered optional.</p>
-<p>Adorn property assignments with JSDoc to specify the type of the property as needed. For instance:</p>
+<p><a href="https://github.com/Microsoft/TypeScript/wiki/JSDoc-support-in-JavaScript" target="_blank">JavaScript &#xBB38;&#xC11C;&#xC5D0;&#xC11C; JSDoc &#xC9C0;&#xC6D0;</a>&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xB418;&#xB294; JSDoc &#xD328;&#xD134;&#xC758; &#xC804;&#xCCB4; &#xBAA9;&#xB85D;&#xC744; &#xCC3E;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xD074;&#xB798;&#xC2A4;-&#xBCF8;&#xBB38;-&#xD560;&#xB2F9;&#xC5D0;&#xC11C;-&#xCD94;&#xB860;&#xB41C;-&#xD504;&#xB85C;&#xD37C;&#xD2F0;-&#xC120;&#xC5B8;">&#xD074;&#xB798;&#xC2A4; &#xBCF8;&#xBB38; &#xD560;&#xB2F9;&#xC5D0;&#xC11C; &#xCD94;&#xB860;&#xB41C; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xC120;&#xC5B8;</h2>
+<p>ES2015/ES6&#xB294; &#xD074;&#xB798;&#xC2A4;&#xC5D0; &#xC18D;&#xC131;&#xC744; &#xC120;&#xC5B8;&#xD558;&#xB294; &#xC218;&#xB2E8;&#xC774; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB294; &#xAC1D;&#xCCB4; &#xB9AC;&#xD130;&#xB7F4;&#xCC98;&#xB7FC; &#xB3D9;&#xC801;&#xC73C;&#xB85C; &#xD560;&#xB2F9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p><code>.js</code> &#xD30C;&#xC77C;&#xC5D0;&#xC11C; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xC120;&#xC5B8;&#xC740; &#xD074;&#xB798;&#xC2A4; &#xBCF8;&#xBB38; &#xB0B4;&#xBD80;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0; &#xB300;&#xD55C; &#xD560;&#xB2F9;&#xC5D0;&#xC11C; &#xC720;&#xCD94;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xD0C0;&#xC785;&#xC740; &#xC774;&#xB7EC;&#xD55C; &#xD560;&#xB2F9;&#xC5D0;&#xC11C; &#xBAA8;&#xB4E0; &#xC624;&#xB978;&#xCABD; &#xAC12;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xACB0;&#xD569;&#xD55C; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC0DD;&#xC131;&#xC790;&#xC5D0; &#xC815;&#xC758;&#xB41C; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB294; &#xD56D;&#xC0C1; &#xC874;&#xC7AC;&#xD55C;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD558;&#xBA70; &#xBA54;&#xC11C;&#xB4DC;, getter &#xB610;&#xB294; setter&#xC5D0; &#xC815;&#xC758;&#xB41C; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB294; &#xC120;&#xD0DD;&#xC801;&#xC73C;&#xB85C; &#xAC04;&#xC8FC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD544;&#xC694;&#xC5D0; &#xB530;&#xB77C; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xD0C0;&#xC785;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xAE30; &#xC704;&#xD574; JSDoc&#xC73C;&#xB85C; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xD560;&#xB2F9;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;:</p>
 <pre><code class="lang-js"><span class="cm-keyword">class</span> <span class="cm-variable">C</span> {
     <span class="cm-property">constructor</span>() {
         <span class="cm-comment">/** @type {number | undefined} */</span>
@@ -736,12 +734,14 @@ Likewise, when types can&apos;t be inferred, they can be specified using JSDoc t
 
 
 <span class="cm-keyword">let</span> <span class="cm-variable">c</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">C</span>();
-<span class="cm-variable">c</span>.<span class="cm-property">prop</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;         <span class="cm-comment">// OK</span>
-<span class="cm-variable">c</span>.<span class="cm-property">prop</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;string&quot;</span>;  <span class="cm-comment">// Error: string is not assignable to number|undefined</span>
+<span class="cm-variable">c</span>.<span class="cm-property">prop</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;         <span class="cm-comment">// &#xC88B;&#xC544;&#xC694;</span>
+<span class="cm-variable">c</span>.<span class="cm-property">prop</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;string&quot;</span>;  <span class="cm-comment">// &#xC624;&#xB958;: number|undefined&#xC5D0; string&#xC744; &#xD560;&#xB2F9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;</span>
 </code></pre>
-<p>If properties are never set in the class body, they are considered unknown. If your class has properties that are only read from, consider adding an initialization in the constructor to undefined, e.g. <code>this.prop = undefined;</code>.</p>
-<h2 id="commonjs-module-input-support">CommonJS module input support</h2>
-<p>In a <code>.js</code> files CommonJS module format is allowed as an input module format. Assignments to <code>exports</code>, and <code>module.exports</code> are recognized as export declarations. Similarly, <code>require</code> function calls are recognized as module imports. For example:</p>
+<p>&#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xAC00; &#xD074;&#xB798;&#xC2A4; &#xBCF8;&#xBB38;&#xC5D0; &#xC124;&#xC815;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xC54C; &#xC218; &#xC5C6;&#xB294; &#xAC83;&#xC73C;&#xB85C; &#xAC04;&#xC8FC;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xD074;&#xB798;&#xC2A4;&#xC5D0; &#xC77D;&#xAE30; &#xC804;&#xC6A9; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xAC00; &#xC788;&#xB294; &#xACBD;&#xC6B0; &#xC0DD;&#xC131;&#xC790;&#xC5D0;&#xC11C; &#xCD08;&#xAE30;&#xD654;&#xB85C; undefined&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC608;. <code>this.prop = undefined;</code></p>
+<h2 id="commonjs-&#xBAA8;&#xB4C8;-&#xC785;&#xB825;-&#xC9C0;&#xC6D0;-commonjs-module-input-support">CommonJS &#xBAA8;&#xB4C8; &#xC785;&#xB825; &#xC9C0;&#xC6D0; (CommonJS module input support)</h2>
+<p><code>.js</code> &#xD30C;&#xC77C;&#xC5D0;&#xC11C; CommonJS &#xBAA8;&#xB4C8; &#xD3EC;&#xB9F7;&#xC740; &#xC785;&#xB825; &#xBAA8;&#xB4C8; &#xD3EC;&#xB9F7;&#xC73C;&#xB85C; &#xD5C8;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.<br><code>exports</code>&#xC640; <code>module.exports</code>&#xC5D0; &#xB300;&#xD55C; &#xD560;&#xB2F9;&#xC740; export &#xC120;&#xC5B8;&#xC73C;&#xB85C; &#xC778;&#xC2DD;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xBE44;&#xC2B7;&#xD558;&#xAC8C;, <code>require</code> &#xD568;&#xC218; &#xD638;&#xCD9C;&#xC740; &#xBAA8;&#xB4C8; imports&#xB85C; &#xC778;&#xC2DD;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;:</p>
 <pre><code class="lang-ts"><span class="cm-comment">// import module &quot;fs&quot;</span>
 <span class="cm-keyword">const</span> <span class="cm-variable">fs</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;fs&quot;</span>);
 
@@ -751,32 +751,35 @@ Likewise, when types can&apos;t be inferred, they can be specified using JSDoc t
     <span class="cm-keyword">return</span> <span class="cm-variable">fs</span>.<span class="cm-property">readFileSync</span>(<span class="cm-variable-2">f</span>);    
 }
 </code></pre>
-<h2 id="object-literals-are-open-ended">Object literals are open-ended</h2>
-<p>By default object literals in variable declarations provide the type of a declaration. No new members can be added that were not specified in the original initialization. This rule is relaxed in a <code>.js</code> file; object literals have an open-ended type, allowing adding and looking up properties that were not defined originally. For instance:</p>
+<h2 id="&#xAC1D;&#xCCB4;-&#xB9AC;&#xD130;&#xB7F4;&#xC5D0;&#xB294;-&#xC81C;&#xD55C;&#xC774;-&#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;">&#xAC1D;&#xCCB4; &#xB9AC;&#xD130;&#xB7F4;&#xC5D0;&#xB294; &#xC81C;&#xD55C;&#xC774; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;</h2>
+<p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xBCC0;&#xC218; &#xC120;&#xC5B8;&#xC5D0; &#xAC1D;&#xCCB4; &#xB9AC;&#xD130;&#xB7F4;&#xC740; &#xC120;&#xC5B8;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC6D0;&#xB798; &#xCD08;&#xAE30;&#xD654; &#xC2DC;&#xC5D0;&#xB294; &#xC9C0;&#xC815;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xC0C8; &#xBA64;&#xBC84;&#xB97C; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xADDC;&#xCE59;&#xC740; <code>.js</code> &#xD30C;&#xC77C;&#xC5D0;&#xC11C; &#xAD00;&#xB300;&#xD55C; &#xD3B8;&#xC785;&#xB2C8;&#xB2E4;. &#xAC1D;&#xCCB4; &#xB9AC;&#xD130;&#xB7F4;&#xC740; &#xC6D0;&#xB798; &#xC815;&#xC758;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xC18D;&#xC131;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xACE0; &#xC870;&#xD68C;&#xD560; &#xC218; &#xC788;&#xB294; &#xD655;&#xC7A5; &#xAC00;&#xB2A5;&#xD55C;(open-ended) &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;:</p>
 <pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">obj</span> <span class="cm-operator">=</span> { <span class="cm-property">a</span>: <span class="cm-number">1</span> };
-<span class="cm-variable">obj</span>.<span class="cm-property">b</span> <span class="cm-operator">=</span> <span class="cm-number">2</span>;  <span class="cm-comment">// Allowed</span>
+<span class="cm-variable">obj</span>.<span class="cm-property">b</span> <span class="cm-operator">=</span> <span class="cm-number">2</span>;  <span class="cm-comment">// &#xD5C8;&#xC6A9;&#xB428;</span>
 </code></pre>
-<p>Object literals get a default index signature <code>[x:string]: any</code> that allows them to be treated as open maps instead of closed objects.</p>
-<p>Similar to other special JS checking behaviors, this behavior can be changed by specifying a JSDoc type for the variable. For example:</p>
+<p>&#xAC1D;&#xCCB4; &#xB9AC;&#xD130;&#xB7F4;&#xC740; &#xB2EB;&#xD78C; &#xAC1D;&#xCCB4;&#xAC00; &#xC544;&#xB2CC; &#xC624;&#xD508; maps&#xC73C;&#xB85C; &#xCC98;&#xB9AC;&#xB420; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD558;&#xB294; &#xAE30;&#xBCF8; &#xC778;&#xB371;&#xC2A4; &#xC2DC;&#xADF8;&#xB2C8;&#xCC98; <code>[x:string]: any</code>&#xC744; &#xAC16;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xB978; &#xD2B9;&#xBCC4;&#xD55C; JS &#xAC80;&#xC0AC;&#xC640; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C;, &#xC774; &#xB3D9;&#xC791;&#xC740; &#xBCC0;&#xC218;&#xC5D0; &#xB300;&#xD55C; JSDoc &#xD0C0;&#xC785;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xC5EC; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;:</p>
 <pre><code class="lang-js"><span class="cm-comment">/** @type {{a: number}} */</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">obj</span> <span class="cm-operator">=</span> { <span class="cm-property">a</span>: <span class="cm-number">1</span> };
-<span class="cm-variable">obj</span>.<span class="cm-property">b</span> <span class="cm-operator">=</span> <span class="cm-number">2</span>;  <span class="cm-comment">// Error, type {a: number} does not have property b</span>
+<span class="cm-variable">obj</span>.<span class="cm-property">b</span> <span class="cm-operator">=</span> <span class="cm-number">2</span>;  <span class="cm-comment">// &#xC624;&#xB958;, {a: number} &#xD0C0;&#xC785;&#xC740; b &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
 </code></pre>
-<h2 id="function-parameters-are-optional-by-default">Function parameters are optional by default</h2>
-<p>Since there is no way to specify optionality on parameters in JS (without specifying a default value), all function parameters in <code>.js</code> file are considered optional. Calls with fewer arguments are allowed. </p>
-<p>It is important to note that it is an error to call a function with too many arguments.</p>
-<p>For instance:</p>
+<h2 id="&#xD568;&#xC218;-&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB294;-&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C;-&#xC120;&#xD0DD;&#xC801;&#xC785;&#xB2C8;&#xB2E4;-function-parameters-are-optional-by-default">&#xD568;&#xC218; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC120;&#xD0DD;&#xC801;&#xC785;&#xB2C8;&#xB2E4;. (Function parameters are optional by default)</h2>
+<p>JS&#xC5D0;&#xC11C; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xB97C; &#xC120;&#xD0DD;&#xC801;&#xC73C;&#xB85C; &#xC9C0;&#xC815;&#xD560; &#xBC29;&#xBC95;&#xC774; &#xC5C6;&#xAE30;&#xB54C;&#xBB38;&#xC5D0;(&#xAE30;&#xBCF8;&#xAC12;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xC9C0; &#xC54A;&#xACE0;)<code>.js</code> &#xD30C;&#xC77C;&#xC758; &#xBAA8;&#xB4E0; &#xD568;&#xC218; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xB294; &#xC120;&#xD0DD;&#xC0AC;&#xD56D;&#xC73C;&#xB85C; &#xAC04;&#xC8FC;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC18C;&#xC218;&#xC758; &#xC778;&#xC218; &#xD638;&#xCD9C;&#xC740; &#xD5C8;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. </p>
+<p>&#xC778;&#xC218;&#xAC00; &#xB108;&#xBB34; &#xB9CE;&#xC740; &#xD568;&#xC218;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC624;&#xB958;&#xB77C;&#xB294; &#xC810;&#xC744; &#xC8FC;&#xBAA9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC911;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;:</p>
 <pre><code class="lang-js"><span class="cm-keyword">function</span> <span class="cm-variable">bar</span>(<span class="cm-def">a</span>, <span class="cm-def">b</span>){
     <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable-2">a</span> <span class="cm-operator">+</span> <span class="cm-string">&quot; &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable-2">b</span>);
 }
 
-<span class="cm-variable">bar</span>(<span class="cm-number">1</span>);       <span class="cm-comment">// OK, second argument considered optional</span>
+<span class="cm-variable">bar</span>(<span class="cm-number">1</span>);       <span class="cm-comment">// &#xC88B;&#xC544;&#xC694;, &#xB450;&#xBC88;&#xC9F8; &#xC778;&#xC218;&#xB294; &#xC120;&#xD0DD;&#xC0AC;&#xD56D;&#xC73C;&#xB85C; &#xAC04;&#xC8FC;&#xB429;&#xB2C8;&#xB2E4;</span>
 <span class="cm-variable">bar</span>(<span class="cm-number">1</span>, <span class="cm-number">2</span>);
-<span class="cm-variable">bar</span>(<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>); <span class="cm-comment">// Error, too many arguments</span>
+<span class="cm-variable">bar</span>(<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>); <span class="cm-comment">// &#xC624;&#xB958;, &#xC778;&#xC218;&#xAC00; &#xB108;&#xBB34; &#xB9CE;&#xC2B5;&#xB2C8;&#xB2E4;</span>
 </code></pre>
-<p>JSDoc annotated functions are excluded from this rule. Use JSDoc optional parameter syntax to express optionality. e.g.:</p>
+<p>JSDoc &#xC8FC;&#xC11D;&#xC774; &#xC801;&#xC6A9;&#xB41C; &#xD568;&#xC218;&#xB294; &#xC774; &#xADDC;&#xCE59;&#xC5D0;&#xC11C; &#xC81C;&#xC678;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC120;&#xD0DD;&#xC0AC;&#xD56D;&#xC744; &#xBA85;&#xC2DC;&#xD558;&#xAE30; &#xC704;&#xD574; JSDoc &#xC120;&#xD0DD;&#xC801; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218; &#xAD6C;&#xBB38;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;.</p>
+<p>&#xC608;:</p>
 <pre><code class="lang-js"><span class="cm-comment">/**</span>
-<span class="cm-comment"> * @param {string} [somebody] - Somebody&apos;s name.</span>
+<span class="cm-comment"> * @param {string} [somebody] - Somebody&#xC758; &#xC774;&#xB984;</span>
 <span class="cm-comment"> */</span>
 <span class="cm-keyword">function</span> <span class="cm-variable">sayHello</span>(<span class="cm-def">somebody</span>) {
     <span class="cm-keyword">if</span> (<span class="cm-operator">!</span><span class="cm-variable-2">somebody</span>) {
@@ -787,22 +790,25 @@ Likewise, when types can&apos;t be inferred, they can be specified using JSDoc t
 
 <span class="cm-variable">sayHello</span>();
 </code></pre>
-<h2 id="var-args-parameter-declaration-inferred-from-use-of-arguments">Var-args parameter declaration inferred from use of <code>arguments</code></h2>
-<p>A function whose body has a reference to the <code>arguments</code> reference is implicitly considered to have a var-arg parameter (i.e. <code>(...arg: any[]) =&gt; any</code>). Use JSDoc var-arg syntax to specify the type of the arguments.</p>
-<h2 id="unspecified-type-parameters-default-to-any">Unspecified type parameters default to <code>any</code></h2>
-<p>An unspecified generic type parameter defaults to <code>any</code>. There are few places where this happens:</p>
-<h4 id="in-extends-clause">In extends clause:</h4>
-<p>For instance, <code>React.Component</code> is defined to have two generic type parameters, <code>Props</code> and <code>State</code>. 
-In a <code>.js</code> file, there is no legal way to specify these in the extends clause. By default the type arguments will be <code>any</code>:</p>
+<h2 id="arguments&#xC758;-&#xC0AC;&#xC6A9;&#xC73C;&#xB85C;-&#xCD94;&#xB860;&#xB41C;-var-args-&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;-var-args-parameter-declaration-inferred-from-use-of-arguments"><code>arguments</code>&#xC758; &#xC0AC;&#xC6A9;&#xC73C;&#xB85C; &#xCD94;&#xB860;&#xB41C; Var-args &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; (Var-args parameter declaration inferred from use of <code>arguments</code>)</h2>
+<p>&#xBCF8;&#xBB38;&#xC774; <code>arguments</code> &#xCC38;&#xC870;&#xC5D0; &#xB300;&#xD55C; &#xCC38;&#xC870;&#xB97C; &#xAC16;&#xB294; &#xD568;&#xC218;&#xB294; var-arg &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; (&#xC989;,  <code>(...arg: any[]) =&gt; any</code>)&#xAC00; &#xC788;&#xC74C;&#xC744; &#xC554;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xAC04;&#xC8FC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>JSDoc var-arg &#xAD6C;&#xBB38;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC778;&#xC218;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xC138;&#xC694;.</p>
+<h2 id="&#xC9C0;&#xC815;&#xB418;&#xC9C0;-&#xC54A;&#xC740;-&#xD0C0;&#xC785;-&#xB9E4;&#xAC1C;-&#xBCC0;&#xC218;&#xC758;-&#xAE30;&#xBCF8;&#xAC12;&#xC740;any&#xC785;&#xB2C8;&#xB2E4;-unspecified-type-parameters-default-to-any">&#xC9C0;&#xC815;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xD0C0;&#xC785; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xC758; &#xAE30;&#xBCF8;&#xAC12;&#xC740;<code>any</code>&#xC785;&#xB2C8;&#xB2E4;. (Unspecified type parameters default to <code>any</code>)</h2>
+<p>&#xC9C0;&#xC815;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xC81C;&#xB124;&#xB9AD; &#xD0C0;&#xC785; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; <code>any</code>&#xB85C; &#xC124;&#xC815;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB7F0; &#xC77C;&#xC774; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xACF3;&#xC740; &#xAC70;&#xC758; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<h4 id="extends&#xC5D0;&#xC11C;-in-extends-clause">extends&#xC5D0;&#xC11C; (In extends clause):</h4>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, <code>React.Component</code>&#xB294; <code>Props</code>&#xC640; <code>State</code>&#xC758; &#xB450; &#xAC00;&#xC9C0; &#xC81C;&#xB124;&#xB9AD; &#xD0C0;&#xC785; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xB97C; &#xAC16;&#xB3C4;&#xB85D; &#xC815;&#xC758;&#xB429;&#xB2C8;&#xB2E4;.
+.js<code>&#xD30C;&#xC77C;&#xC5D0;&#xB294; extend &#xC808;&#xC5D0; &#xC774;&#xB4E4;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xB294; &#xD569;&#xBC95;&#xC801; &#xC778; &#xBC29;&#xBC95;&#xC774; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</code>.js` &#xD30C;&#xC77C;&#xC5D0;&#xB294; extend&#xC5D0; &#xC774;&#xAC83;&#xB4E4;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xB294; &#xC815;&#xB2F9;&#xD55C; &#xBC29;&#xBC95;&#xC774; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xD0C0;&#xC785; &#xC778;&#xC218;&#xB294; <code>any</code>&#xC785;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-js"><span class="cm-keyword">import</span> { <span class="cm-variable">Component</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;react&quot;</span>;
 
 <span class="cm-keyword">class</span> <span class="cm-variable">MyComponent</span> <span class="cm-keyword">extends</span> <span class="cm-variable">Component</span> {
     <span class="cm-property">render</span>() {
-       <span class="cm-keyword">this</span>.<span class="cm-property">props</span>.<span class="cm-property">b</span>; <span class="cm-comment">// Allowed, since this.props is of type any</span>
+       <span class="cm-keyword">this</span>.<span class="cm-property">props</span>.<span class="cm-property">b</span>; <span class="cm-comment">// &#xD5C8;&#xC6A9;&#xB428;, this.props&#xB294; any &#xD0C0;&#xC785;&#xC774;&#xBBC0;&#xB85C;</span>
     }
 }
 </code></pre>
-<p>Use JSDoc <code>@augments</code> to specify the types explicitly. for instance:</p>
+<p>JSDoc<code>@augments</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD0C0;&#xC785;&#xC744; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;:</p>
 <pre><code class="lang-js"><span class="cm-keyword">import</span> { <span class="cm-variable">Component</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;react&quot;</span>;
 
 <span class="cm-comment">/**</span>
@@ -810,27 +816,28 @@ In a <code>.js</code> file, there is no legal way to specify these in the extend
 <span class="cm-comment"> */</span>
 <span class="cm-keyword">class</span> <span class="cm-variable">MyComponent</span> <span class="cm-keyword">extends</span> <span class="cm-variable">Component</span> {
     <span class="cm-property">render</span>() {
-        <span class="cm-keyword">this</span>.<span class="cm-property">props</span>.<span class="cm-property">b</span>; <span class="cm-comment">// Error: b does not exist on {a:number}</span>
+        <span class="cm-keyword">this</span>.<span class="cm-property">props</span>.<span class="cm-property">b</span>; <span class="cm-comment">// &#xC624;&#xB958;: b&#xB294; {a:number}&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;</span>
     }
 }
 </code></pre>
-<h4 id="in-jsdoc-references">In JSDoc references</h4>
-<p>An unspecified generic type argument in JSDoc defaults to any:</p>
+<h4 id="jsdoc-&#xCC38;&#xC870;&#xC5D0;&#xC11C;-in-jsdoc-references">JSDoc &#xCC38;&#xC870;&#xC5D0;&#xC11C; (In JSDoc references)</h4>
+<p>JSDoc&#xC758; &#xC9C0;&#xC815;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xC81C;&#xB124;&#xB9AD; &#xD0C0;&#xC785; &#xC778;&#xC218;&#xC758; &#xAE30;&#xBCF8;&#xAC12;&#xC740; any&#xC785;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-js"><span class="cm-comment">/** @type{Array} */</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">x</span> <span class="cm-operator">=</span> [];
 
-<span class="cm-variable">x</span>.<span class="cm-property">push</span>(<span class="cm-number">1</span>);        <span class="cm-comment">// OK</span>
-<span class="cm-variable">x</span>.<span class="cm-property">push</span>(<span class="cm-string">&quot;string&quot;</span>); <span class="cm-comment">// OK, x is of type Array&lt;any&gt;</span>
+<span class="cm-variable">x</span>.<span class="cm-property">push</span>(<span class="cm-number">1</span>);        <span class="cm-comment">// &#xC88B;&#xC544;&#xC694;</span>
+<span class="cm-variable">x</span>.<span class="cm-property">push</span>(<span class="cm-string">&quot;string&quot;</span>); <span class="cm-comment">// &#xC88B;&#xC544;&#xC694;, x&#xB294; Array&lt;any&gt;&#xC758; &#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;</span>
 
 
 <span class="cm-comment">/** @type{Array.&lt;number&gt;} */</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">y</span> <span class="cm-operator">=</span> [];
 
-<span class="cm-variable">y</span>.<span class="cm-property">push</span>(<span class="cm-number">1</span>);        <span class="cm-comment">// OK</span>
-<span class="cm-variable">y</span>.<span class="cm-property">push</span>(<span class="cm-string">&quot;string&quot;</span>); <span class="cm-comment">// Error, string is not assignable to number</span>
+<span class="cm-variable">y</span>.<span class="cm-property">push</span>(<span class="cm-number">1</span>);        <span class="cm-comment">// &#xC88B;&#xC544;&#xC694;</span>
+<span class="cm-variable">y</span>.<span class="cm-property">push</span>(<span class="cm-string">&quot;string&quot;</span>); <span class="cm-comment">// &#xC624;&#xB958;, string&#xC740; number&#xC5D0; &#xD560;&#xB2F9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;</span>
 </code></pre>
-<h4 id="in-function-calls">In function calls</h4>
-<p>A call to generic functions uses arguments to infer the generic type parameters. Sometimes this process fails to infer any types, mainly because of lack on inference sources; in these cases, the generic type parameters will default to <code>any</code>. For example:</p>
+<h4 id="&#xD568;&#xC218;-&#xD638;&#xCD9C;&#xC5D0;&#xC11C;-in-function-calls">&#xD568;&#xC218; &#xD638;&#xCD9C;&#xC5D0;&#xC11C; (In function calls)</h4>
+<p>&#xC81C;&#xB124;&#xB9AD; &#xD568;&#xC218; &#xD638;&#xCD9C;&#xC740; &#xC81C;&#xB124;&#xB9AD; &#xD0C0;&#xC785; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xB97C; &#xCD94;&#xB860;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xC778;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB54C;&#xB54C;&#xB85C; &#xC774; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB294; &#xCD94;&#xB860; &#xC18C;&#xC2A4;&#xAC00; &#xBD80;&#xC871;&#xD558;&#xC5EC; &#xC5B4;&#xB5A4; &#xD0C0;&#xC785;&#xB3C4; &#xCD94;&#xB860;&#xD558;&#xC9C0; &#xBABB;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xACBD;&#xC6B0; &#xC81C;&#xB124;&#xB9AD; &#xD0C0;&#xC785; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xB294; <code>any</code>&#xB85C; &#xAE30;&#xBCF8; &#xC124;&#xC815;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;:</p>
 <pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">p</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Promise</span>((<span class="cm-def">resolve</span>, <span class="cm-def">reject</span>) <span class="cm-operator">=&gt;</span> { <span class="cm-variable-2">reject</span>() });
 
 <span class="cm-variable">p</span>; <span class="cm-comment">// Promise&lt;any&gt;;</span>
@@ -878,7 +885,7 @@ In a <code>.js</code> file, there is no legal way to specify these in the extend
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"JavaScript 파일 타입 검사","level":"3.22","depth":1,"next":{"title":"Introduction","level":"4.1","depth":1,"path":"pages/declaration files/Introduction.md","ref":"pages/declaration files/Introduction.md","articles":[]},"previous":{"title":"트리플-슬래시 지시자","level":"3.21","depth":1,"path":"pages/Triple-Slash Directives.md","ref":"pages/Triple-Slash Directives.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Type Checking JavaScript Files.md","mtime":"2018-04-05T20:29:49.923Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-07T06:36:18.487Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"JavaScript 파일 타입 검사","level":"3.22","depth":1,"next":{"title":"Introduction","level":"4.1","depth":1,"path":"pages/declaration files/Introduction.md","ref":"pages/declaration files/Introduction.md","articles":[]},"previous":{"title":"트리플-슬래시 지시자","level":"3.21","depth":1,"path":"pages/Triple-Slash Directives.md","ref":"pages/Triple-Slash Directives.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Type Checking JavaScript Files.md","mtime":"2018-04-09T13:16:20.037Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-09T13:21:40.291Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

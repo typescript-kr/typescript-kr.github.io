@@ -195,7 +195,7 @@ tsc --outFile sample.js Validation.ts LettersOnlyValidator.ts ZipCodeValidator.t
 또는 파일별 컴파일(기본값)을 사용하여 각 입력 파일에 대한 JavaScript 파일을 하나씩 내보낼 수 있습니다.  
 만약 여러 개의 JS 파일이 생성되면 웹 페이지에 있는 `<script>`태그를 사용하여 출력된 각 파일을 적절한 순서대로 로드해야 합니다.
 
-예를 들면:
+예를 들어:
 
 ##### MyTestPage.html (excerpt)
 

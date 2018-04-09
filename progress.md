@@ -25,10 +25,10 @@
 - [x] 모듈 해석
 - [X] 선언 병합
 - [X] JSX
-- [X] 데코레이터
-- [X] 믹스인
-- [x] 트리플-슬래시 지시자
-- [ ] JavaScript 파일 타입 검사
+- [X] Decorators
+- [X] Mixins
+- [x] Triple-Slash Directives
+- [x] Type Checking JavaScript Files
 ## Declaration Files
 - [ ] Introduction
 - [ ] Library Structures
