@@ -28,7 +28,7 @@
 - [X] Decorators
 - [X] Mixins
 - [x] Triple-Slash Directives
-- [ ] Type Checking JavaScript Files
+- [x] Type Checking JavaScript Files
 ## Declaration Files
 - [ ] Introduction
 - [ ] Library Structures

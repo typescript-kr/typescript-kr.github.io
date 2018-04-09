@@ -95,7 +95,7 @@ obj.b = 2;  // 허용됨
 ```js
 /** @type {{a: number}} */
 var obj = { a: 1 };
-obj.b = 2;  // Error, type {a: number} does not have property b
+obj.b = 2;  // 오류, {a: number} 타입은 b 프로퍼티를 가지고 있지 않습니다.
 ```
 
 
