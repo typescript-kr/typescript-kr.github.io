@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>데코레이터 · GitBook</title>
+        <title>Decorators · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -19,10 +19,6 @@
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight-1/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-forkmegithub/plugin.css">
                 
             
                 
@@ -433,7 +429,7 @@
                 <a href="Decorators.html">
             
                     
-                    데코레이터
+                    Decorators
             
                 </a>
             
@@ -446,7 +442,7 @@
                 <a href="Mixins.html">
             
                     
-                    믹스인
+                    Mixins
             
                 </a>
             
@@ -459,7 +455,7 @@
                 <a href="Triple-Slash Directives.html">
             
                     
-                    트리플-슬래시 지시자
+                    Triple-Slash Directives
             
                 </a>
             
@@ -472,7 +468,7 @@
                 <a href="Type Checking JavaScript Files.html">
             
                     
-                    JavaScript 파일 타입 검사
+                    Type Checking JavaScript Files
             
                 </a>
             
@@ -693,7 +689,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >데코레이터</a>
+        <a href=".." >Decorators</a>
     </h1>
 </div>
 
@@ -708,13 +704,15 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#xC18C;&#xAC1C;">&#xC18C;&#xAC1C;</h1>
-<p>TypeScript&#xC640; ES6&#xC758; &#xD074;&#xB798;&#xC2A4;&#xAC00; &#xB3C4;&#xC785;&#xB428;&#xC5D0; &#xB530;&#xB77C; &#xD074;&#xB798;&#xC2A4; &#xBC0F; &#xD074;&#xB798;&#xC2A4; &#xBA64;&#xBC84;&#xC5D0; &#xC5B4;&#xB178;&#xD14C;&#xC774;&#xC158; &#xB610;&#xB294; &#xBCC0;&#xACBD;&#xC744; &#xC9C0;&#xC6D0;&#xD558;&#xAE30; &#xC704;&#xD574; &#xCD94;&#xAC00;&#xC801;&#xC778; &#xAE30;&#xB2A5;&#xC774; &#xD544;&#xC694;&#xD55C; &#xC77C;&#xBD80; &#xC0C1;&#xD669;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; &#xD074;&#xB798;&#xC2A4; &#xC120;&#xC5B8;&#xACFC; &#xBA64;&#xBC84;&#xC5D0; &#xB300;&#xD55C; &#xC5B4;&#xB178;&#xD14C;&#xC774;&#xC158;&#xACFC; &#xBA54;&#xD0C0;-&#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D; &#xAD6C;&#xBB38;&#xC744; &#xBAA8;&#xB450; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xC788;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; JavaScript&#xC758; <a href="https://github.com/tc39/proposal-decorators" target="_blank">stage 2 &#xC81C;&#xC548;</a>&#xC774;&#xBA70; TypeScript&#xC758; &#xC2E4;&#xD5D8;&#xC801;&#xC778; &#xAE30;&#xB2A5;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+                                <h1 id="introduction">Introduction</h1>
+<p>With the introduction of Classes in TypeScript and ES6, there now exist certain scenarios that require additional features to support annotating or modifying classes and class members.
+Decorators provide a way to add both annotations and a meta-programming syntax for class declarations and members.
+Decorators are a <a href="https://github.com/tc39/proposal-decorators" target="_blank">stage 2 proposal</a> for JavaScript and are available as an experimental feature of TypeScript.</p>
 <blockquote>
-<p>&#xC8FC;&#xC758;&#xC0AC;&#xD56D;&#x2003; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; &#xD5A5;&#xD6C4; &#xBCC0;&#xACBD;&#xB420; &#xC218; &#xC788;&#xB294; &#xC2E4;&#xD5D8;&#xC801; &#xAE30;&#xB2A5;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>NOTE&#x2003; Decorators are an experimental feature that may change in future releases.</p>
 </blockquote>
-<p>&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xC5D0; &#xB300;&#xD55C; &#xC2E4;&#xD5D8;&#xC801;&#xC778; &#xC9C0;&#xC6D0;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; &#xCEE4;&#xB9E8;&#xB4DC; &#xB77C;&#xC778;&#xC774;&#xB098; <code>tsconfig.json</code>&#xC5D0;&#xC11C; <code>experimentalDecorators</code> &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB3C4;&#xB85D; &#xD65C;&#xC131;&#xD654;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;:</p>
-<p><strong>&#xCEE4;&#xB9E8;&#xB4DC; &#xB77C;&#xC778;</strong>:</p>
+<p>To enable experimental support for decorators, you must enable the <code>experimentalDecorators</code> compiler option either on the command line or in your <code>tsconfig.json</code>:</p>
+<p><strong>Command Line</strong>:</p>
 <pre><code class="lang-shell">tsc --target ES5 --experimentalDecorators
 </code></pre>
 <p><strong>tsconfig.json</strong>:</p>
@@ -725,49 +723,51 @@
     }
 }
 </code></pre>
-<h1 id="&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;">&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;</h1>
-<p><em>&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;</em>&#xB294; <a href="#class-decorators">&#xD074;&#xB798;&#xC2A4; &#xC120;&#xC5B8;</a>, <a href="#method-decorators">&#xBA54;&#xC11C;&#xB4DC;</a>, <a href="#accessor-decorators">&#xC811;&#xADFC;&#xC81C;&#xC5B4;&#xC790;</a>, <a href="#property-decorators">&#xD504;&#xB85C;&#xD37C;&#xD2F0;</a> &#xB610;&#xB294; <a href="#parameter-decorators">&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;</a>&#xC5D0; &#xCCA8;&#xBD80;&#xB420; &#xC218; &#xC788;&#xB294; &#xD2B9;&#xBCC4;&#xD55C; &#xC885;&#xB958;&#xC758; &#xC120;&#xC5B8;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; <code>@&#xD45C;&#xD604;&#xC2DD;</code>&#xC758; &#xD615;&#xD0DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294;&#xB370;, &#xC5EC;&#xAE30;&#xC11C; &#xD45C;&#xD604;&#xC2DD;&#xC740; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD305;&#xB41C; &#xC120;&#xC5B8;&#xC5D0; &#xB300;&#xD55C; &#xC815;&#xBCF4;&#xC640; &#xD568;&#xAED8; &#xB7F0;&#xD0C0;&#xC784;&#xC5D0; &#xD638;&#xCD9C;&#xB420; &#xD568;&#xC218;&#xB85C; &#xD3C9;&#xAC00;&#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.  </p>
-<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; <code>@sealed</code>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; <code>sealed</code> &#xD568;&#xC218;&#xB97C; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<h1 id="decorators">Decorators</h1>
+<p>A <em>Decorator</em> is a special kind of declaration that can be attached to a <a href="#class-decorators">class declaration</a>, <a href="#method-decorators">method</a>, <a href="#accessor-decorators">accessor</a>, <a href="#property-decorators">property</a>, or <a href="#parameter-decorators">parameter</a>.
+Decorators use the form <code>@expression</code>, where <code>expression</code> must evaluate to a function that will be called at runtime with information about the decorated declaration.</p>
+<p>For example, given the decorator <code>@sealed</code> we might write the <code>sealed</code> function as follows:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">sealed</span>(<span class="cm-def">target</span>) {
-    <span class="cm-comment">// &apos;target&apos;&#xC73C;&#xB85C; &#xBB50;&#xB4E0; &#xD574;&#xBCF4;&#xC138;&#xC694; ...</span>
+    <span class="cm-comment">// do something with &apos;target&apos; ...</span>
 }
 </code></pre>
 <blockquote>
-<p>&#xC8FC;&#xC758;&#xC0AC;&#xD56D;&#x2003; &#xC544;&#xB798;&#xC758; <a href="#class-decorators">&#xD074;&#xB798;&#xC2A4; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;</a>&#xC5D0;&#xC11C; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xC5D0; &#xB300;&#xD55C; &#xB354;&#xC6B1; &#xC790;&#xC138;&#xD55C; &#xC608;&#xC81C;&#xB97C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>NOTE&#x2003; You can see a more detailed example of a decorator in <a href="#class-decorators">Class Decorators</a>, below.</p>
 </blockquote>
-<h2 id="&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;-&#xD329;&#xD1A0;&#xB9AC;">&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; &#xD329;&#xD1A0;&#xB9AC;</h2>
-<p>&#xC120;&#xC5B8;&#xC5D0; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB97C; &#xC801;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xCEE4;&#xC2A4;&#xD130;&#xB9C8;&#xC774;&#xC9D5;&#xD558;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; &#xD329;&#xD1A0;&#xB9AC;&#xB97C; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br><em>Decorator Factory</em>&#xB294; &#xAC04;&#xB2E8;&#xD788; &#xB7F0;&#xD0C0;&#xC784;&#xC5D0; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xC5D0; &#xC758;&#xD574; &#xD638;&#xCD9C;&#xB420; &#xD45C;&#xD604;&#xC2DD;&#xC744; &#xBC18;&#xD658;&#xD558;&#xB294; &#xD568;&#xC218;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; &#xD329;&#xD1A0;&#xB9AC;&#xB97C; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">color</span>(<span class="cm-def">value</span>: <span class="cm-variable-3">string</span>) { <span class="cm-comment">// &#xC774;&#xAC83;&#xC740; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; &#xD329;&#xD1A0;&#xB9AC;&#xC785;&#xB2C8;&#xB2E4;</span>
-    <span class="cm-keyword">return</span> <span class="cm-keyword">function</span> (<span class="cm-def">target</span>) { <span class="cm-comment">// &#xC774;&#xAC83;&#xC740; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xC785;&#xB2C8;&#xB2E4;</span>
-        <span class="cm-comment">// &apos;target&apos;&#xACFC; &apos;value&apos;&#xB85C; &#xBB50;&#xB4E0; &#xD574;&#xBCF4;&#xC138;&#xC694;...</span>
+<h2 id="decorator-factories">Decorator Factories</h2>
+<p>If we want to customize how a decorator is applied to a declaration, we can write a decorator factory.
+A <em>Decorator Factory</em> is simply a function that returns the expression that will be called by the decorator at runtime.</p>
+<p>We can write a decorator factory in the following fashion:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">color</span>(<span class="cm-def">value</span>: <span class="cm-variable-3">string</span>) { <span class="cm-comment">// this is the decorator factory</span>
+    <span class="cm-keyword">return</span> <span class="cm-keyword">function</span> (<span class="cm-def">target</span>) { <span class="cm-comment">// this is the decorator</span>
+        <span class="cm-comment">// do something with &apos;target&apos; and &apos;value&apos;...</span>
     }
 }
 </code></pre>
 <blockquote>
-<p>&#xC8FC;&#xC758;&#xC0AC;&#xD56D;&#x2003; &#xC544;&#xB798;&#xC758; <a href="#method-decorators">&#xBA54;&#xC11C;&#xB4DC; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;</a>&#xC5D0;&#xC11C; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; &#xD329;&#xD1A0;&#xB9AC;&#xC5D0; &#xB300;&#xD55C; &#xB354;&#xC6B1; &#xC790;&#xC138;&#xD55C; &#xC608;&#xC81C;&#xB97C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>NOTE&#x2003; You can see a more detailed example of a decorator factory in <a href="#method-decorators">Method Decorators</a>, below.</p>
 </blockquote>
-<h2 id="&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;-&#xAD6C;&#xC131;">&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; &#xAD6C;&#xC131;</h2>
-<p>&#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xCC98;&#xB7FC; &#xC5EC;&#xB7EC; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB97C; &#xC120;&#xC5B8;&#xC5D0; &#xC801;&#xC6A9; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<h2 id="decorator-composition">Decorator Composition</h2>
+<p>Multiple decorators can be applied to a declaration, as in the following examples:</p>
 <ul>
-<li><p>&#xD55C; &#xC904;&#xC5D0;:</p>
+<li><p>On a single line:</p>
 <pre><code class="lang-ts"><span class="cm-variable">@f</span> <span class="cm-variable">@g</span> <span class="cm-variable">x</span>
 </code></pre>
 </li>
-<li><p>&#xC5EC;&#xB7EC; &#xC904;&#xC5D0;:</p>
+<li><p>On multiple lines:</p>
 <pre><code class="lang-ts"><span class="cm-variable">@f</span>
 <span class="cm-variable">@g</span>
 <span class="cm-variable">x</span>
 </code></pre>
 </li>
 </ul>
-<p>&#xC5EC;&#xB7EC; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xAC00; &#xB2E8;&#xC77C; &#xC120;&#xC5B8;&#xC5D0; &#xC801;&#xC6A9;&#xB418;&#xB294; &#xACBD;&#xC6B0; &#xD3C9;&#xAC00;&#xB294; <a href="http://en.wikipedia.org/wiki/Function_composition" target="_blank">&#xC218;&#xD559;&#xC5D0;&#xC11C;&#xC758; &#xD568;&#xC218; &#xAD6C;&#xC131;</a>&#xACFC; &#xC720;&#xC0AC;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xBAA8;&#xB378;&#xC5D0;&#xC11C; &#xD568;&#xC218; <em>f</em>&#xC640; <em>g</em>&#xC744; &#xAD6C;&#xC131;&#xD560; &#xB54C;, &#xACB0;&#xACFC;&#xC801;&#xC778; &#xD569;&#xC131; (<em>f</em> &#x2218; <em>g</em>)(<em>x</em>)&#xC740;(&#xB294;) <em>f</em>(<em>g</em>(<em>x</em>))&#xC640; &#xB3D9;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB530;&#xB77C;&#xC11C; TypeScript&#xC758; &#xB2E8;&#xC77C; &#xC120;&#xC5B8;&#xC5D0;&#xC11C; &#xC5EC;&#xB7EC; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB97C; &#xD3C9;&#xAC00;&#xD560; &#xB54C; &#xB2E4;&#xC74C; &#xB2E8;&#xACC4;&#xB97C; &#xC218;&#xD589;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<p>When multiple decorators apply to a single declaration, their evaluation is similar to <a href="http://en.wikipedia.org/wiki/Function_composition" target="_blank">function composition in mathematics</a>. In this model, when composing functions <em>f</em> and <em>g</em>, the resulting composite (<em>f</em> &#x2218; <em>g</em>)(<em>x</em>) is equivalent to <em>f</em>(<em>g</em>(<em>x</em>)).</p>
+<p>As such, the following steps are performed when evaluating multiple decorators on a single declaration in TypeScript:</p>
 <ol>
-<li>&#xAC01; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xC5D0; &#xB300;&#xD55C; &#xD45C;&#xD604;&#xC2DD;&#xC740; &#xC704;&#xC5D0;&#xC11C; &#xC544;&#xB798;&#xB85C; &#xD3C9;&#xAC00;&#xB429;&#xB2C8;&#xB2E4;.</li>
-<li>&#xADF8;&#xB7F0; &#xB2E4;&#xC74C; &#xACB0;&#xACFC;&#xB294; &#xC544;&#xB798;&#xC5D0;&#xC11C; &#xC704;&#xB85C; &#xD568;&#xC218;&#xB97C; &#xD638;&#xCD9C;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>The expressions for each decorator are evaluated top-to-bottom.</li>
+<li>The results are then called as functions from bottom-to-top.</li>
 </ol>
-<p>&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; &#xD329;&#xD1A0;&#xB9AC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; &#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xC5D0;&#xC11C; &#xC774; &#xD3C9;&#xAC00; &#xC21C;&#xC11C;&#xB97C; &#xAD00;&#xCC30;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<p>If we were to use <a href="#decorator-factories">decorator factories</a>, we can observe this evaluation order with the following example:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">f</span>() {
     <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">&quot;f(): evaluated&quot;</span>);
     <span class="cm-keyword">return</span> <span class="cm-keyword">function</span> (<span class="cm-def">target</span>, <span class="cm-def">propertyKey</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">descriptor</span>: <span class="cm-variable-3">PropertyDescriptor</span>) {
@@ -788,30 +788,31 @@
     <span class="cm-variable">method</span>() {}
 }
 </code></pre>
-<p>&#xADF8;&#xB7EC;&#xBA74; &#xC774; &#xCD9C;&#xB825;&#xC744; &#xCF58;&#xC194;&#xC5D0; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<p>Which would print this output to the console:</p>
 <pre><code class="lang-shell">f(): evaluated
 g(): evaluated
 g(): called
 f(): called
 </code></pre>
-<h2 id="&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;-&#xD3C9;&#xAC00;-decorator-evaluation">&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; &#xD3C9;&#xAC00; (Decorator Evaluation)</h2>
-<p>&#xD074;&#xB798;&#xC2A4; &#xB0B4;&#xC758; &#xB2E4;&#xC591;&#xD55C; &#xC120;&#xC5B8;&#xC5D0; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB97C; &#xC801;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC5D0;&#xB294; &#xC798; &#xC815;&#xC758;&#xB41C; &#xC21C;&#xC11C;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
-<p>&#xB9E4;&#xAC1C; &#xBCC0;&#xC218; Decorator, &#xBA54;&#xC11C;&#xB4DC;, &#xC811;&#xADFC;&#xC81C;&#xC5B4;&#xC790; &#xB610;&#xB294; &#xC18D;&#xC131; Decorator&#xAC00; &#xAC01; &#xC815;&#xC801; &#xBA64;&#xBC84;&#xC5D0; &#xC801;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.
-Method, Accessor, PropertiesDecorator&#xB4F1;&#xC5D0; &#xC758;&#xD55C; &#xD30C;&#xB77C;&#xBBF8;&#xD130; Decorator&#xB294; &#xAC01; &#xC815;&#xC801; &#xBA64;&#xBC84;&#xC5D0; &#xB300;&#xD574; &#xC801;&#xC6A9;&#xB41C;&#xB2E4;.</p>
+<h2 id="decorator-evaluation">Decorator Evaluation</h2>
+<p>There is a well defined order to how decorators applied to various declarations inside of a class are applied:</p>
 <ol>
-<li><em>&#xBA54;&#xC11C;&#xB4DC;</em>, <em>&#xC811;&#xADFC;&#xC81C;&#xC5B4;&#xC790;</em> &#xB610;&#xB294; <em>&#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;</em>&#xC5D0; &#xC774;&#xC5B4;&#xC9C0;&#xB294; <em>&#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;</em>&#xB294; &#xAC01; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xBA64;&#xBC84;&#xC5D0; &#xC801;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</li>
-<li><em>&#xBA54;&#xC11C;&#xB4DC;</em>, <em>&#xC811;&#xADFC;&#xC81C;&#xC5B4;&#xC790;</em> &#xB610;&#xB294; <em>&#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;</em>&#xC5D0; &#xC774;&#xC5B4;&#xC9C0;&#xB294; <em>&#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;</em>&#xB294; &#xAC01; &#xC815;&#xC801; &#xBA64;&#xBC84;&#xC5D0; &#xC801;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</li>
-<li><em>&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;</em> &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; &#xC0DD;&#xC131;&#xC790;&#xC5D0; &#xC801;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</li>
-<li><em>&#xD074;&#xB798;&#xC2A4;</em> &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; &#xD074;&#xB798;&#xC2A4;&#xC5D0; &#xC801;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</li>
+<li><em>Parameter Decorators</em>, followed by <em>Method</em>, <em>Accessor</em>, or <em>Property Decorators</em> are applied for each instance member.</li>
+<li><em>Parameter Decorators</em>, followed by <em>Method</em>, <em>Accessor</em>, or <em>Property Decorators</em> are applied for each static member.</li>
+<li><em>Parameter Decorators</em> are applied for the constructor.</li>
+<li><em>Class Decorators</em> are applied for the class.</li>
 </ol>
-<h2 id="&#xD074;&#xB798;&#xC2A4;-&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;-class-decorators">&#xD074;&#xB798;&#xC2A4; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; (Class Decorators)</h2>
-<p><em>&#xD074;&#xB798;&#xC2A4; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;</em>&#xB294; &#xD074;&#xB798;&#xC2A4; &#xC120;&#xC5B8; &#xBC14;&#xB85C; &#xC9C1;&#xC804;&#xC5D0; &#xC120;&#xC5B8;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xD074;&#xB798;&#xC2A4; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; &#xD074;&#xB798;&#xC2A4; &#xC815;&#xC758;&#xB97C; &#xAD00;&#xCC30;, &#xC218;&#xC815; &#xB610;&#xB294; &#xBC14;&#xAFB8;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; &#xD074;&#xB798;&#xC2A4; &#xC0DD;&#xC131;&#xC790;&#xC5D0; &#xC801;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xD074;&#xB798;&#xC2A4; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC774;&#xB098; &#xB2E4;&#xB978; ambient &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;(&#xC608;: <code>&#xC120;&#xC5B8;</code> &#xD074;&#xB798;&#xC2A4;)&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p>&#xD074;&#xB798;&#xC2A4; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xC5D0; &#xB300;&#xD55C; &#xD45C;&#xD604;&#xC2DD;&#xC740; &#xB7F0;&#xD0C0;&#xC784;&#xC5D0; &#xD568;&#xC218;&#xB85C; &#xD638;&#xCD9C;&#xB418;&#xBA70; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD305; &#xD074;&#xB798;&#xC2A4;&#xC758; &#xC0DD;&#xC131;&#xC790;&#xB294; &#xB300;&#xC0C1;&#xC744; &#xC720;&#xC77C;&#xD55C; &#xC778;&#xC218;&#xB85C; &#xD638;&#xCD9C;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<p>&#xD074;&#xB798;&#xC2A4; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xAC00; &#xAC12;&#xC744; &#xBC18;&#xD658;&#xD558;&#xB294; &#xACBD;&#xC6B0;, &#xD074;&#xB798;&#xC2A4; &#xC120;&#xC5B8;&#xC744; &#xC81C;&#xACF5;&#xB41C; &#xC0DD;&#xC131;&#xC790; &#xD568;&#xC218;&#xB85C; &#xB300;&#xCCB4;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="class-decorators">Class Decorators</h2>
+<p>A <em>Class Decorator</em> is declared just before a class declaration.
+The class decorator is applied to the constructor of the class and can be used to observe, modify, or replace a class definition.
+A class decorator cannot be used in a declaration file, or in any other ambient context (such as on a <code>declare</code> class).</p>
+<p>The expression for the class decorator will be called as a function at runtime, with the constructor of the decorated class as its only argument.</p>
+<p>If the class decorator returns a value, it will replace the class declaration with the provided constructor function.</p>
 <blockquote>
-<p>&#xC8FC;&#xC758;&#xC0AC;&#xD56D;&#xA0; &#xC0C8; &#xC0DD;&#xC131;&#xC790; &#xD568;&#xC218;&#xB97C; &#xBC18;&#xD658;&#xD558;&#xB3C4;&#xB85D; &#xC120;&#xD0DD;&#xD574;&#xC57C;&#xD558;&#xB294; &#xACBD;&#xC6B0; &#xC6D0;&#xBCF8; &#xD504;&#xB85C;&#xD1A0;&#xD0C0;&#xC785;&#xC744; &#xC720;&#xC9C0;&#xD558;&#xB3C4;&#xB85D; &#xAD00;&#xB9AC;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;. &#xB7F0;&#xD0C0;&#xC784;&#xC5D0; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB97C; &#xC801;&#xC6A9;&#xD558;&#xB294; &#xB85C;&#xC9C1;&#xC740; &#xC774; &#xC791;&#xC5C5;&#xC744; &#xC218;&#xD589;&#xD558;&#xC9C0; <strong>&#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</strong></p>
+<p>NOTE&#xA0; Should you chose to return a new constructor function, you must take care to maintain the original prototype.
+The logic that applies decorators at runtime will <strong>not</strong> do this for you.</p>
 </blockquote>
-<p>&#xB2E4;&#xC74C;&#xC740; <code>Greeter</code> &#xD074;&#xB798;&#xC2A4;&#xC5D0; &#xC801;&#xC6A9;&#xB41C; &#xD074;&#xB798;&#xC2A4; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;(<code>@sealed</code>)&#xC758; &#xC608;&#xC81C;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<p>The following is an example of a class decorator (<code>@sealed</code>) applied to the <code>Greeter</code> class:</p>
 <pre><code class="lang-ts"><span class="cm-variable">@sealed</span>
 <span class="cm-keyword">class</span> <span class="cm-variable">Greeter</span> {
     <span class="cm-property">greeting</span>: <span class="cm-variable-3">string</span>;
@@ -823,13 +824,14 @@ Method, Accessor, PropertiesDecorator&#xB4F1;&#xC5D0; &#xC758;&#xD55C; &#xD30C;&
     }
 }
 </code></pre>
-<p>&#xB2E4;&#xC74C; &#xD568;&#xC218; &#xC120;&#xC5B8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; <code>@sealed</code> &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB97C; &#xC815;&#xC758;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<p>We can define the <code>@sealed</code> decorator using the following function declaration:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">sealed</span>(<span class="cm-keyword">constructor</span>: <span class="cm-variable">Function</span>) {
     <span class="cm-variable">Object</span>.<span class="cm-property">seal</span>(<span class="cm-keyword">constructor</span>);
     <span class="cm-variable">Object</span>.<span class="cm-property">seal</span>(<span class="cm-keyword">constructor</span>.<span class="cm-variable">prototype</span>);
 }
 </code></pre>
-<p><code>@sealed</code>&#xAC00; &#xC2E4;&#xD589;&#xB418;&#xBA74; &#xC0DD;&#xC131;&#xC790;&#xC640; &#xD504;&#xB85C;&#xD1A0;&#xD0C0;&#xC785; &#xBAA8;&#xB450;&#xB97C; &#xBD09;&#xC778;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xC74C;&#xC740; &#xC0DD;&#xC131;&#xC790;&#xB97C; &#xC7AC;&#xC815;&#xC758;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC5D0; &#xB300;&#xD55C; &#xC608;&#xC81C;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>When <code>@sealed</code> is executed, it will seal both the constructor and its prototype.</p>
+<p>Next we have an example of how to override the constructor.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">classDecorator</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span> <span class="cm-keyword">extends</span> {<span class="cm-keyword">new</span>(<span class="cm-meta">...</span><span class="cm-variable">args</span>:<span class="cm-variable-3">any</span>[]):{}}<span class="cm-operator">&gt;</span>(<span class="cm-keyword">constructor</span>:<span class="cm-variable">T</span>) {
     <span class="cm-keyword">return</span> <span class="cm-keyword">class</span> <span class="cm-keyword">extends</span> <span class="cm-keyword">constructor</span> {
         <span class="cm-variable">newProperty</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;new property&quot;</span>;
@@ -848,22 +850,24 @@ Method, Accessor, PropertiesDecorator&#xB4F1;&#xC5D0; &#xC758;&#xD55C; &#xD30C;&
 
 <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-keyword">new</span> <span class="cm-variable">Greeter</span>(<span class="cm-string">&quot;world&quot;</span>));
 </code></pre>
-<h2 id="&#xBA54;&#xC11C;&#xB4DC;-&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;-method-decorators">&#xBA54;&#xC11C;&#xB4DC; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; (Method Decorators)</h2>
-<p><em>&#xBA54;&#xC11C;&#xB4DC; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;</em>&#xB294; &#xBA54;&#xC11C;&#xB4DC; &#xC120;&#xC5B8; &#xBC14;&#xB85C; &#xC9C1;&#xC804;&#xC5D0; &#xC120;&#xC5B8;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; &#xBA54;&#xC11C;&#xB4DC;&#xC758; <em>&#xD504;&#xB85C;&#xD37C;&#xD2F0; Descriptor</em>&#xC5D0; &#xC801;&#xC6A9;&#xB418;&#xBA70; &#xBA54;&#xC11C;&#xB4DC; &#xC815;&#xC758;&#xB97C; &#xAD00;&#xCC30;, &#xC218;&#xC815; &#xB610;&#xB294; &#xBC14;&#xAFB8;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xBA54;&#xC11C;&#xB4DC; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; &#xC120;&#xC5B8; &#xD30C;&#xC77C;, &#xC624;&#xBC84;&#xB85C;&#xB4DC; &#xB610;&#xB294; &#xAE30;&#xD0C0; ambient &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; (&#xC608;: <code>&#xC120;&#xC5B8;</code> &#xD074;&#xB798;&#xC2A4;)&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p>&#xBA54;&#xC11C;&#xB4DC; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xC758; &#xD45C;&#xD604;&#xC2DD;&#xC740; &#xB7F0;&#xD0C0;&#xC784;&#xC5D0; &#xB2E4;&#xC74C; &#xC138; &#xAC00;&#xC9C0; &#xC778;&#xC218;&#xC640; &#xD568;&#xAED8; &#xD568;&#xC218;&#xB85C; &#xD638;&#xCD9C;&#xB429;&#xB2C8;&#xB2E4;:</p>
+<h2 id="method-decorators">Method Decorators</h2>
+<p>A <em>Method Decorator</em> is declared just before a method declaration.
+The decorator is applied to the <em>Property Descriptor</em> for the method, and can be used to observe, modify, or replace a method definition.
+A method decorator cannot be used in a declaration file, on an overload, or in any other ambient context (such as in a <code>declare</code> class).</p>
+<p>The expression for the method decorator will be called as a function at runtime, with the following three arguments:</p>
 <ol>
-<li>&#xC815;&#xC801; &#xBA64;&#xBC84;&#xC5D0; &#xB300;&#xD55C; &#xD074;&#xB798;&#xC2A4;&#xC758; &#xC0DD;&#xC131;&#xC790; &#xD568;&#xC218;&#xAC70;&#xB098; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xBA64;&#xBC84;&#xC5D0; &#xB300;&#xD55C; &#xD074;&#xB798;&#xC2A4;&#xC758; &#xD504;&#xB85C;&#xD1A0;&#xD0C0;&#xC785;</li>
-<li>&#xBA64;&#xBC84;&#xC758; &#xC774;&#xB984;</li>
-<li>&#xBA64;&#xBC84;&#xC758; <em>&#xD504;&#xB85C;&#xD37C;&#xD2F0; Descriptor</em></li>
+<li>Either the constructor function of the class for a static member, or the prototype of the class for an instance member.</li>
+<li>The name of the member.</li>
+<li>The <em>Property Descriptor</em> for the member.</li>
 </ol>
 <blockquote>
-<p>&#xC8FC;&#xC758;&#xC0AC;&#xD56D;&#x2003; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xD0C0;&#xAC9F;&#xC774; <code>ES5</code>&#xBCF4;&#xB2E4; &#xC791;&#xC740; &#xACBD;&#xC6B0; <em>&#xD504;&#xB85C;&#xD37C;&#xD2F0; Descriptor</em>&#xB294; <code>undefined</code>&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>NOTE&#x2003; The <em>Property Descriptor</em> will be <code>undefined</code> if your script target is less than <code>ES5</code>.</p>
 </blockquote>
-<p>&#xBA54;&#xC11C;&#xB4DC; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xAC00; &#xAC12;&#xC744; &#xBC18;&#xD658;&#xD558;&#xB294; &#xACBD;&#xC6B0; &#xD574;&#xB2F9; &#xBA54;&#xC11C;&#xB4DC;&#xC5D0; &#xB300;&#xD574; <em>&#xD504;&#xB85C;&#xD37C;&#xD2F0; Descriptor</em>&#xB85C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>If the method decorator returns a value, it will be used as the <em>Property Descriptor</em> for the method.</p>
 <blockquote>
-<p>&#xC8FC;&#xC758;&#xC0AC;&#xD56D;&#x2003; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xD0C0;&#xAC9F;&#xC774; <code>ES5</code>&#xBCF4;&#xB2E4; &#xC791;&#xC740; &#xACBD;&#xC6B0; &#xBC18;&#xD658; &#xAC12;&#xC740; &#xBB34;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>NOTE&#x2003; The return value is ignored if your script target is less than <code>ES5</code>.</p>
 </blockquote>
-<p>&#xB2E4;&#xC74C;&#xC740; <code>Greeter</code>&#xD074;&#xB798;&#xC2A4;&#xC758; &#xBA54;&#xC11C;&#xB4DC;&#xC5D0; &#xC801;&#xC6A9;&#xB41C; &#xBA54;&#xC11C;&#xB4DC; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; (<code>@enumerable</code>)&#xC758; &#xC608;&#xC81C;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<p>The following is an example of a method decorator (<code>@enumerable</code>) applied to a method on the <code>Greeter</code> class:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">Greeter</span> {
     <span class="cm-property">greeting</span>: <span class="cm-variable-3">string</span>;
     <span class="cm-keyword">constructor</span>(<span class="cm-variable">message</span>: <span class="cm-variable-3">string</span>) {
@@ -876,34 +880,38 @@ Method, Accessor, PropertiesDecorator&#xB4F1;&#xC5D0; &#xC758;&#xD55C; &#xD30C;&
     }
 }
 </code></pre>
-<p>&#xB2E4;&#xC74C; &#xD568;&#xC218; &#xC120;&#xC5B8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; <code>@enumerable</code> &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB97C; &#xC815;&#xC758;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<p>We can define the <code>@enumerable</code> decorator using the following function declaration:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">enumerable</span>(<span class="cm-def">value</span>: <span class="cm-variable-3">boolean</span>) {
     <span class="cm-keyword">return</span> <span class="cm-keyword">function</span> (<span class="cm-def">target</span>: <span class="cm-variable-3">any</span>, <span class="cm-def">propertyKey</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">descriptor</span>: <span class="cm-variable-3">PropertyDescriptor</span>) {
         <span class="cm-variable-2">descriptor</span>.<span class="cm-property">enumerable</span> <span class="cm-operator">=</span> <span class="cm-variable-2">value</span>;
     };
 }
 </code></pre>
-<p><code>@enumerable(false)</code> &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; <a href="#decorator-factories">&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; &#xD329;&#xD1A0;&#xB9AC;</a>&#xC785;&#xB2C8;&#xB2E4;.<br><code>@enumerable(false)</code> &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xAC00; &#xD638;&#xCD9C;&#xB418;&#xBA74; &#xD504;&#xB85C;&#xD37C;&#xD2F0; Descriptor&#xC758; <code>enumerable</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xC218;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h2 id="&#xC811;&#xADFC;&#xC81C;&#xC5B4;&#xC790;-&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;-accessor-decorators">&#xC811;&#xADFC;&#xC81C;&#xC5B4;&#xC790; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; (Accessor Decorators)</h2>
-<p><em>&#xC811;&#xADFC;&#xC81C;&#xC5B4;&#xC790; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;</em>&#xB294; &#xC811;&#xADFC;&#xC81C;&#xC5B4;&#xC790; &#xC120;&#xC5B8; &#xBC14;&#xB85C; &#xC9C1;&#xC804;&#xC5D0; &#xC120;&#xC5B8;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC811;&#xADFC;&#xC81C;&#xC5B4;&#xC790; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; &#xC811;&#xADFC;&#xC81C;&#xC5B4;&#xC790;&#xC5D0; &#xB300;&#xD55C; &#xD504;&#xB85C;&#xD37C;&#xD2F0; Descriptor&#xC5D0; &#xC801;&#xC6A9;&#xB418;&#xBA70; &#xC811;&#xADFC;&#xC81C;&#xC5B4;&#xC790; &#xC815;&#xC758;&#xB97C; &#xAD00;&#xCC30;, &#xC218;&#xC815; &#xB610;&#xB294; &#xBC14;&#xAFB8;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; &#xBA54;&#xC11C;&#xB4DC;&#xC758; <em>&#xD504;&#xB85C;&#xD37C;&#xD2F0; Descriptor</em>&#xC5D0; &#xC801;&#xC6A9;&#xB418;&#xBA70; &#xBA54;&#xC11C;&#xB4DC; &#xC815;&#xC758;&#xB97C; &#xAD00;&#xCC30;, &#xC218;&#xC815; &#xB610;&#xB294; &#xBC14;&#xAFB8;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC811;&#xADFC;&#xC81C;&#xC5B4;&#xC790; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC774;&#xB098; &#xB2E4;&#xB978; ambient &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; (&#xC608;: <code>&#xC120;&#xC5B8;</code> &#xD074;&#xB798;&#xC2A4;)&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>The <code>@enumerable(false)</code> decorator here is a <a href="#decorator-factories">decorator factory</a>.
+When the <code>@enumerable(false)</code> decorator is called, it modifies the <code>enumerable</code> property of the property descriptor.</p>
+<h2 id="accessor-decorators">Accessor Decorators</h2>
+<p>An <em>Accessor Decorator</em> is declared just before an accessor declaration.
+The accessor decorator is applied to the <em>Property Descriptor</em> for the accessor and can be used to observe, modify, or replace an accessor&apos;s definitions.
+An accessor decorator cannot be used in a declaration file, or in any other ambient context (such as in a <code>declare</code> class).</p>
 <blockquote>
-<p>&#xC8FC;&#xC758;&#xC0AC;&#xD56D;&#x2003; TypeScript&#xB294; &#xB2E8;&#xC77C; &#xBA64;&#xBC84;&#xC5D0; &#xB300;&#xD55C; &#xC811;&#xADFC;&#xC81C;&#xC5B4;&#xC790; <code>get</code>&#xACFC; <code>set</code> &#xBAA8;&#xB450; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD305;&#xD558;&#xB294; &#xAC83;&#xC744; &#xD5C8;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
-&#xB300;&#xC2E0; &#xBA64;&#xBC84;&#xC758; &#xBAA8;&#xB4E0; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xAC00; &#xC21C;&#xC11C;&#xB97C; &#xB530;&#xB77C; &#xCCAB; &#xBC88;&#xC9F8; &#xC811;&#xADFC;&#xC81C;&#xC5B4;&#xC790;&#xC5D0;&#xAC8C; &#xC801;&#xC6A9;&#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC65C;&#xB0D0;&#xD558;&#xBA74; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xAC00; <em>&#xD504;&#xB85C;&#xD37C;&#xD2F0; Descriptor</em>&#xC5D0; &#xC801;&#xC6A9;&#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xAC01; &#xC120;&#xC5B8;&#xC744; &#xBCC4;&#xB3C4;&#xB85C; &#xAD6C;&#xBD84;&#xD558;&#xC9C0; &#xC54A;&#xACE0; <code>get</code>&#xACFC; <code>set</code> &#xC811;&#xADFC;&#xC81C;&#xC5B4;&#xC790;&#xB97C; &#xACB0;&#xD569;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>NOTE&#x2003; TypeScript disallows decorating both the <code>get</code> and <code>set</code> accessor for a single member.
+Instead, all decorators for the member must be applied to the first accessor specified in document order.
+This is because decorators apply to a <em>Property Descriptor</em>, which combines both the <code>get</code> and <code>set</code> accessor, not each declaration separately.</p>
 </blockquote>
-<p>&#xC811;&#xADFC;&#xC81C;&#xC5B4;&#xC790; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; &#xD45C;&#xD604;&#xC2DD;&#xC740; &#xB7F0;&#xD0C0;&#xC784;&#xC2DC; &#xB2E4;&#xC74C; &#xC138; &#xAC00;&#xC9C0; &#xC778;&#xC218;&#xC640; &#xD568;&#xAED8; &#xD568;&#xC218;&#xB85C; &#xD638;&#xCD9C;&#xB429;&#xB2C8;&#xB2E4;:</p>
+<p>The expression for the accessor decorator will be called as a function at runtime, with the following three arguments:</p>
 <ol>
-<li>&#xC815;&#xC801; &#xBA64;&#xBC84;&#xC5D0; &#xB300;&#xD55C; &#xD074;&#xB798;&#xC2A4;&#xC758; &#xC0DD;&#xC131;&#xC790; &#xD568;&#xC218;&#xB098; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xBA64;&#xBC84;&#xC5D0; &#xB300;&#xD55C; &#xD074;&#xB798;&#xC2A4;&#xC758; &#xD504;&#xB85C;&#xD1A0;&#xD0C0;&#xC785;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;</li>
-<li>&#xBA64;&#xBC84;&#xC758; &#xC774;&#xB984;</li>
-<li>&#xBA64;&#xBC84;&#xC5D0; <em>&#xD504;&#xB85C;&#xD37C;&#xD2F0; Descriptor</em></li>
+<li>Either the constructor function of the class for a static member, or the prototype of the class for an instance member.</li>
+<li>The name of the member.</li>
+<li>The <em>Property Descriptor</em> for the member.</li>
 </ol>
 <blockquote>
-<p>&#xC8FC;&#xC758;&#xC0AC;&#xD56D;&#x2003; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xD0C0;&#xAC9F;&#xC774; <code>ES5</code>&#xBCF4;&#xB2E4; &#xC791;&#xC740; &#xACBD;&#xC6B0; <em>&#xD504;&#xB85C;&#xD37C;&#xD2F0; Descriptor</em>&#xB294; <code>undefined</code>&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>NOTE&#x2003; The <em>Property Descriptor</em> will be <code>undefined</code> if your script target is less than <code>ES5</code>.</p>
 </blockquote>
-<p>&#xC811;&#xADFC;&#xC81C;&#xC5B4;&#xC790; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xAC00; &#xAC12;&#xC744; &#xBC18;&#xD658;&#xD558;&#xBA74; &#xACBD;&#xC6B0; &#xD574;&#xB2F9; &#xBA64;&#xBC84;&#xC5D0; &#xB300;&#xD55C; <em>&#xD504;&#xB85C;&#xD37C;&#xD2F0; Descriptor</em>&#xB85C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>If the accessor decorator returns a value, it will be used as the <em>Property Descriptor</em> for the member.</p>
 <blockquote>
-<p>&#xC8FC;&#xC758;&#xC0AC;&#xD56D;&#x2003; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xD0C0;&#xAC9F;&#xC774; <code>ES5</code>&#xBCF4;&#xB2E4; &#xC791;&#xC740; &#xACBD;&#xC6B0; &#xBC18;&#xD658; &#xAC12;&#xC740; &#xBB34;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>NOTE&#x2003; The return value is ignored if your script target is less than <code>ES5</code>.</p>
 </blockquote>
-<p>&#xB2E4;&#xC74C;&#xC740; <code>Point</code> &#xD074;&#xB798;&#xC2A4;&#xC758; &#xBA64;&#xBC84;&#xC5D0; &#xC801;&#xC6A9;&#xB41C; &#xC811;&#xADFC;&#xC81C;&#xC5B4;&#xC790; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; (<code>@configurable</code>)&#xC758; &#xC608;&#xC81C;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<p>The following is an example of an accessor decorator (<code>@configurable</code>) applied to a member of the <code>Point</code> class:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">Point</span> {
     <span class="cm-keyword">private</span> <span class="cm-variable">_x</span>: <span class="cm-variable-3">number</span>;
     <span class="cm-keyword">private</span> <span class="cm-variable">_y</span>: <span class="cm-variable-3">number</span>;
@@ -919,26 +927,27 @@ Method, Accessor, PropertiesDecorator&#xB4F1;&#xC5D0; &#xC758;&#xD55C; &#xD30C;&
     <span class="cm-variable">get</span> <span class="cm-variable">y</span>() { <span class="cm-keyword">return</span> <span class="cm-keyword">this</span>.<span class="cm-property">_y</span>; }
 }
 </code></pre>
-<p>&#xB2E4;&#xC74C; &#xD568;&#xC218; &#xC120;&#xC5B8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; <code>@configurable</code> &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB97C; &#xC815;&#xC758;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<p>We can define the <code>@configurable</code> decorator using the following function declaration:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">configurable</span>(<span class="cm-def">value</span>: <span class="cm-variable-3">boolean</span>) {
     <span class="cm-keyword">return</span> <span class="cm-keyword">function</span> (<span class="cm-def">target</span>: <span class="cm-variable-3">any</span>, <span class="cm-def">propertyKey</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">descriptor</span>: <span class="cm-variable-3">PropertyDescriptor</span>) {
         <span class="cm-variable-2">descriptor</span>.<span class="cm-property">configurable</span> <span class="cm-operator">=</span> <span class="cm-variable-2">value</span>;
     };
 }
 </code></pre>
-<h2 id="&#xD504;&#xB85C;&#xD37C;&#xD2F0;-&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;-property-decorators">&#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; (Property Decorators)</h2>
-<p><em>&#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;</em>&#xB294; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xC120;&#xC5B8; &#xBC14;&#xB85C; &#xC9C1;&#xC804;&#xC5D0; &#xC120;&#xC5B8;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC774;&#xB098; &#xAE30;&#xD0C0; ambient &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; (&#xC608;: <code>&#xC120;&#xC5B8;</code> &#xD074;&#xB798;&#xC2A4;)&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p>&#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xC758; &#xD45C;&#xD604;&#xC2DD;&#xC740; &#xB7F0;&#xD0C0;&#xC784;&#xC5D0; &#xB2E4;&#xC74C; &#xB450; &#xAC00;&#xC9C0; &#xC778;&#xC218;&#xC640; &#xD568;&#xAED8; &#xD568;&#xC218;&#xB85C; &#xD638;&#xCD9C;&#xB429;&#xB2C8;&#xB2E4;:</p>
+<h2 id="property-decorators">Property Decorators</h2>
+<p>A <em>Property Decorator</em> is declared just before a property declaration.
+A property decorator cannot be used in a declaration file, or in any other ambient context (such as in a <code>declare</code> class).</p>
+<p>The expression for the property decorator will be called as a function at runtime, with the following two arguments:</p>
 <ol>
-<li>&#xC815;&#xC801; &#xBA64;&#xBC84;&#xC5D0; &#xB300;&#xD55C; &#xD074;&#xB798;&#xC2A4;&#xC758; &#xC0DD;&#xC131;&#xC790; &#xD568;&#xC218; &#xB610;&#xB294; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xBA64;&#xBC84;&#xC5D0; &#xB300;&#xD55C; &#xD074;&#xB798;&#xC2A4;&#xC758; &#xD504;&#xB85C;&#xD1A0;&#xD0C0;&#xC785;</li>
-<li>&#xBA64;&#xBC84;&#xC758; &#xC774;&#xB984;</li>
+<li>Either the constructor function of the class for a static member, or the prototype of the class for an instance member.</li>
+<li>The name of the member.</li>
 </ol>
 <blockquote>
-<p>&#xC8FC;&#xC758;&#xC0AC;&#xD56D;&#x2003; <em>&#xD504;&#xB85C;&#xD37C;&#xD2F0; Descriptor</em>&#xB294; &#xD504;&#xB85C;&#xD37C;&#xD2F0; Descriptor&#xAC00; TypeScript&#xC5D0;&#xC11C; &#xCD08;&#xAE30;&#xD654;&#xB418;&#xB294; &#xBC29;&#xBC95;&#xC73C;&#xB85C; &#xC778;&#xD574; &#xD504;&#xB85C;&#xD37C;&#xD2F0; Descriptor&#xC5D0; &#xB300;&#xD55C; &#xC778;&#xC218;&#xB85C; &#xC81C;&#xACF5;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
-&#xC774;&#xB294; &#xD604;&#xC7AC; &#xD504;&#xB85C;&#xD1A0;&#xD0C0;&#xC785;&#xC758; &#xBA64;&#xBC84;&#xC744; &#xC815;&#xC758;&#xD560; &#xB54C; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xC124;&#xBA85;&#xD558;&#xB294; &#xBA54;&#xCEE4;&#xB2C8;&#xC998;&#xC774; &#xC5C6;&#xACE0;, &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0; &#xB300;&#xD55C; &#xC774;&#xB2C8;&#xC15C;&#xB77C;&#xC774;&#xC800;&#xB97C; &#xAD00;&#xCC30;&#xD558;&#xAC70;&#xB098; &#xC218;&#xC815;&#xD560; &#xBC29;&#xBC95;&#xC774; &#xC5C6;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xB2E4;. &#xBC18;&#xD658; &#xAC12;&#xB3C4; &#xBB34;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.
-&#xB530;&#xB77C;&#xC11C; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; &#xD2B9;&#xC815; &#xC774;&#xB984;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xAC00; &#xD074;&#xB798;&#xC2A4;&#xC5D0; &#xB300;&#xD574; &#xC120;&#xC5B8;&#xB418;&#xB294; &#xAC83;&#xC744; &#xAD00;&#xCC30;&#xD558;&#xB294; &#xB370;&#xB9CC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>NOTE&#x2003; A <em>Property Descriptor</em> is not provided as an argument to a property decorator due to how property decorators are initialized in TypeScript.
+This is because there is currently no mechanism to describe an instance property when defining members of a prototype, and no way to observe or modify the initializer for a property. The return value is ignored too.
+As such, a property decorator can only be used to observe that a property of a specific name has been declared for a class.</p>
 </blockquote>
-<p>&#xB2E4;&#xC74C; &#xC608;&#xC640; &#xAC19;&#xC774; &#xC774; &#xC815;&#xBCF4;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0; &#xB300;&#xD55C; &#xBA54;&#xD0C0; &#xB370;&#xC774;&#xD130;&#xB97C; &#xAE30;&#xB85D;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<p>We can use this information to record metadata about the property, as in the following example:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">Greeter</span> {
     <span class="cm-property">@format</span>(<span class="cm-string">&quot;Hello, %s&quot;</span>)
     <span class="cm-variable">greeting</span>: <span class="cm-variable-3">string</span>;
@@ -952,7 +961,7 @@ Method, Accessor, PropertiesDecorator&#xB4F1;&#xC5D0; &#xC758;&#xD55C; &#xD30C;&
     }
 }
 </code></pre>
-<p>&#xADF8; &#xB2E4;&#xC74C; &#xD568;&#xC218; &#xC120;&#xC5B8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; <code>@format</code> &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xC640; <code>getFormat</code> &#xD568;&#xC218;&#xB97C; &#xC815;&#xC758; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<p>We can then define the <code>@format</code> decorator and <code>getFormat</code> functions using the following function declarations:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-string">&quot;reflect-metadata&quot;</span>;
 
 <span class="cm-keyword">const</span> <span class="cm-variable">formatMetadataKey</span> <span class="cm-operator">=</span> <span class="cm-variable">Symbol</span>(<span class="cm-string">&quot;format&quot;</span>);
@@ -965,23 +974,28 @@ Method, Accessor, PropertiesDecorator&#xB4F1;&#xC5D0; &#xC758;&#xD55C; &#xD30C;&
     <span class="cm-keyword">return</span> <span class="cm-variable">Reflect</span>.<span class="cm-property">getMetadata</span>(<span class="cm-variable">formatMetadataKey</span>, <span class="cm-variable-2">target</span>, <span class="cm-variable-2">propertyKey</span>);
 }
 </code></pre>
-<p><code>@format(&quot;Hello, %s&quot;)</code> &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; <a href="#decorator-factories">&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; &#xD329;&#xD1A0;&#xB9AC;</a>&#xC785;&#xB2C8;&#xB2E4;.<br><code>@format(&quot;Hello, %s&quot;)</code>&#xC774; &#xD638;&#xCD9C;&#xB418;&#xBA74; <code>reflect-metadata</code> &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC758; <code>Reflect.metadata</code> &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0; &#xB300;&#xD55C; &#xBA54;&#xD0C0; &#xB370;&#xC774;&#xD130; &#xD56D;&#xBAA9;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.<br><code>getFormat</code>&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xBA74; &#xD3EC;&#xB9F7;&#xC5D0; &#xB300;&#xD55C; &#xBA54;&#xD0C0; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>The <code>@format(&quot;Hello, %s&quot;)</code> decorator here is a <a href="#decorator-factories">decorator factory</a>.
+When <code>@format(&quot;Hello, %s&quot;)</code> is called, it adds a metadata entry for the property using the <code>Reflect.metadata</code> function from the <code>reflect-metadata</code> library.
+When <code>getFormat</code> is called, it reads the metadata value for the format.</p>
 <blockquote>
-<p>&#xCC38;&#xACE0;&#x2003; &#xC774; &#xC608;&#xC81C;&#xC5D0;&#xB294; <code>reflect-metadata</code> &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xAC00; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;. <code>reflect-metadata</code> &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC5D0; &#xB300;&#xD55C; &#xC790;&#xC138;&#xD55C; &#xC815;&#xBCF4;&#xB294; <a href="#metadata">&#xBA54;&#xD0C0; &#xB370;&#xC774;&#xD130;</a>&#xB97C; &#xCC38;&#xC870;&#xD558;&#xC138;&#xC694;.</p>
+<p>NOTE&#x2003; This example requires the <code>reflect-metadata</code> library.
+See <a href="#metadata">Metadata</a> for more information about the <code>reflect-metadata</code> library.</p>
 </blockquote>
-<h2 id="&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;-&#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;-parameter-decorators">&#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; (Parameter Decorators)</h2>
-<p><em>&#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;</em>&#xB294; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xC120;&#xC5B8; &#xBC14;&#xB85C; &#xC9C1;&#xC804;&#xC5D0; &#xC120;&#xC5B8;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; &#xD074;&#xB798;&#xC2A4; &#xC0DD;&#xC131;&#xC790; &#xB610;&#xB294; &#xBA54;&#xC11C;&#xB4DC; &#xC120;&#xC5B8;&#xC758; &#xD568;&#xC218;&#xC5D0; &#xC801;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; &#xC120;&#xC5B8; &#xD30C;&#xC77C;, &#xC624;&#xBC84;&#xB85C;&#xB4DC; &#xB610;&#xB294; &#xAE30;&#xD0C0; ambient &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; (&#xC608;: <code>&#xC120;&#xC5B8;</code> &#xD074;&#xB798;&#xC2A4;)&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xC758; &#xD45C;&#xD604;&#xC2DD;&#xC740; &#xB7F0;&#xD0C0;&#xC784;&#xC5D0; &#xB2E4;&#xC74C; &#xC138; &#xAC00;&#xC9C0; &#xC778;&#xC218;&#xC640; &#xD568;&#xAED8; &#xD568;&#xC218;&#xB85C; &#xD638;&#xCD9C;&#xB429;&#xB2C8;&#xB2E4;:</p>
+<h2 id="parameter-decorators">Parameter Decorators</h2>
+<p>A <em>Parameter Decorator</em> is declared just before a parameter declaration.
+The parameter decorator is applied to the function for a class constructor or method declaration.
+A parameter decorator cannot be used in a declaration file, an overload, or in any other ambient context (such as in a <code>declare</code> class).</p>
+<p>The expression for the parameter decorator will be called as a function at runtime, with the following three arguments:</p>
 <ol>
-<li>&#xC815;&#xC801; &#xBA64;&#xBC84;&#xC5D0; &#xB300;&#xD55C; &#xD074;&#xB798;&#xC2A4;&#xC758; &#xC0DD;&#xC131;&#xC790; &#xD568;&#xC218; &#xB610;&#xB294; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xBA64;&#xBC84;&#xC5D0; &#xB300;&#xD55C; &#xD074;&#xB798;&#xC2A4;&#xC758; &#xD504;&#xB85C;&#xD1A0;&#xD0C0;&#xC785;</li>
-<li>&#xBA64;&#xBC84;&#xC758; &#xC774;&#xB984;</li>
-<li>&#xD568;&#xC218;&#xC758; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218; &#xBAA9;&#xB85D;&#xB0B4;&#xC5D0; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xC758; &#xC11C;&#xC218;(&#xC21C;&#xC11C;&#xAC00; &#xC788;&#xB294;) &#xC778;&#xB371;&#xC2A4;</li>
+<li>Either the constructor function of the class for a static member, or the prototype of the class for an instance member.</li>
+<li>The name of the member.</li>
+<li>The ordinal index of the parameter in the function&apos;s parameter list.</li>
 </ol>
 <blockquote>
-<p>&#xC8FC;&#xC758;&#xC0AC;&#xD56D;&#x2003; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xAC00; &#xBA54;&#xC11C;&#xB4DC;&#xC5D0; &#xC120;&#xC5B8;&#xB418;&#xC5C8;&#xC74C;&#xC744; &#xAD00;&#xCC30;&#xD558;&#xB294; &#xB370;&#xB9CC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>NOTE&#x2003; A parameter decorator can only be used to observe that a parameter has been declared on a method.</p>
 </blockquote>
-<p>&#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xC758; &#xBC18;&#xD658; &#xAC12;&#xC740; &#xBB34;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB2E4;&#xC74C;&#xC740; <code>Greeter</code> &#xD074;&#xB798;&#xC2A4; &#xBA64;&#xBC84;&#xC758; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xC5D0; &#xC801;&#xC6A9;&#xB41C; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; (<code>@required</code>)&#xC758; &#xC608;&#xC81C;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<p>The return value of the parameter decorator is ignored.</p>
+<p>The following is an example of a parameter decorator (<code>@required</code>) applied to parameter of a member of the <code>Greeter</code> class:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">Greeter</span> {
     <span class="cm-property">greeting</span>: <span class="cm-variable-3">string</span>;
 
@@ -995,7 +1009,7 @@ Method, Accessor, PropertiesDecorator&#xB4F1;&#xC5D0; &#xC758;&#xD55C; &#xD30C;&
     }
 }
 </code></pre>
-<p>&#xADF8; &#xB2E4;&#xC74C; &#xD568;&#xC218; &#xC120;&#xC5B8;&#xC744; &#xC0AC;&#xC6A9;&#xD574; <code>@required</code>&#xC640; <code>@validate</code> &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB97C; &#xC815;&#xC758;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<p>We can then define the <code>@required</code> and <code>@validate</code> decorators using the following function declarations:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-string">&quot;reflect-metadata&quot;</span>;
 
 <span class="cm-keyword">const</span> <span class="cm-variable">requiredMetadataKey</span> <span class="cm-operator">=</span> <span class="cm-variable">Symbol</span>(<span class="cm-string">&quot;required&quot;</span>);
@@ -1022,17 +1036,22 @@ Method, Accessor, PropertiesDecorator&#xB4F1;&#xC5D0; &#xC758;&#xD55C; &#xD30C;&
     }
 }
 </code></pre>
-<p><code>@required</code> &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; &#xD544;&#xC694;&#xC5D0; &#xB530;&#xB77C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xD45C;&#xC2DC;&#xD558;&#xB294; &#xBA54;&#xD0C0; &#xB370;&#xC774;&#xD130; &#xD56D;&#xBAA9;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.<br><code>@validate</code> &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB294; &#xAE30;&#xC874; &#xBA54;&#xC11C;&#xB4DC;&#xC744; &#xD638;&#xCD9C;&#xD558;&#xAE30; &#xC804;&#xC5D0; &#xAE30;&#xC874;&#xC758; <code>greet</code> &#xBA54;&#xC11C;&#xB4DC;&#xB97C;  validates &#xD568;&#xC218;&#xB85C; &#xB798;&#xD551;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>The <code>@required</code> decorator adds a metadata entry that marks the parameter as required.
+The <code>@validate</code> decorator then wraps the existing <code>greet</code> method in a function that validates the arguments before invoking the original method.</p>
 <blockquote>
-<p>&#xC8FC;&#xC758;&#xC0AC;&#xD56D;&#x2003; &#xC774; &#xC608;&#xC81C;&#xC5D0;&#xB294; <code>reflect-metadata</code> &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xAC00; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;. <code>reflect-metadata</code> &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC5D0; &#xB300;&#xD55C; &#xC790;&#xC138;&#xD55C; &#xC815;&#xBCF4;&#xB294; <a href="#metadata">&#xBA54;&#xD0C0; &#xB370;&#xC774;&#xD130;</a>&#xB97C; &#xCC38;&#xC870;&#xD558;&#xC138;&#xC694;.</p>
+<p>NOTE&#x2003; This example requires the <code>reflect-metadata</code> library.
+See <a href="#metadata">Metadata</a> for more information about the <code>reflect-metadata</code> library.</p>
 </blockquote>
-<h2 id="&#xBA54;&#xD0C0;-&#xB370;&#xC774;&#xD130;">&#xBA54;&#xD0C0; &#xB370;&#xC774;&#xD130;</h2>
-<p>&#xC77C;&#xBD80; &#xC608;&#xC81C;&#xC5D0;&#xC11C;&#xB294; <a href="https://github.com/rbuckton/ReflectDecorators" target="_blank">&#xC2E4;&#xD5D8;&#xC801;&#xC778; &#xBA54;&#xD0C0; &#xB370;&#xC774;&#xD130; API</a>&#xC5D0; &#xB300;&#xD55C; polyfill&#xC744; &#xCD94;&#xAC00;&#xD558;&#xB294; <code>reflect-metadata</code> &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB294; &#xC544;&#xC9C1; ECMAScript (JavaScript) &#xD45C;&#xC900;&#xC5D0; &#xC18D;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xD558;&#xC9C0;&#xB9CC; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xAC00; &#xACF5;&#xC2DD;&#xC801;&#xC73C;&#xB85C; ECMAScript &#xD45C;&#xC900;&#xC758; &#xC77C;&#xBD80;&#xB85C; &#xCC44;&#xD0DD;&#xB418;&#xBA74; &#xC774;&#xB7EC;&#xD55C; &#xD655;&#xC7A5; &#xAE30;&#xB2A5;&#xC774; &#xCC44;&#xD0DD;&#xB418;&#xB3C4;&#xB85D; &#xC81C;&#xC548;&#xB420; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC774; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB294; npm&#xC744; &#xD1B5;&#xD574; &#xC124;&#xCE58;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<h2 id="metadata">Metadata</h2>
+<p>Some examples use the <code>reflect-metadata</code> library which adds a polyfill for an <a href="https://github.com/rbuckton/ReflectDecorators" target="_blank">experimental metadata API</a>.
+This library is not yet part of the ECMAScript (JavaScript) standard.
+However, once decorators are officially adopted as part of the ECMAScript standard these extensions will be proposed for adoption.</p>
+<p>You can install this library via npm:</p>
 <pre><code class="lang-shell">npm i reflect-metadata --save
 </code></pre>
-<p>TypeScript&#xB294; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xAC00; &#xC788;&#xB294; &#xC120;&#xC5B8;&#xC5D0; &#xB300;&#xD55C; &#xD2B9;&#xC815; &#xD0C0;&#xC785;&#xC758; &#xBA54;&#xD0C0; &#xB370;&#xC774;&#xD130;&#xB97C; &#xBC29;&#xCD9C;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xC2E4;&#xD5D8;&#xC801;&#xC778; &#xC9C0;&#xC6D0;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xC2E4;&#xD5D8;&#xC801;&#xC778; &#xC9C0;&#xC6D0;&#xC744; &#xD65C;&#xC131;&#xD654;&#xD558;&#xB824;&#xBA74; &#xCEE4;&#xB9E8;&#xB4DC; &#xB77C;&#xC778; &#xB610;&#xB294; <code>tsconfig.json</code>&#xC5D0;&#xC11C;  &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC635;&#xC158; <code>emitDecoratorMetadata</code>&#xC744; &#xC124;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;:</p>
-<p><strong>&#xCEE4;&#xB9E8;&#xB4DC; &#xB77C;&#xC778;</strong>:</p>
+<p>TypeScript includes experimental support for emitting certain types of metadata for declarations that have decorators.
+To enable this experimental support, you must set the <code>emitDecoratorMetadata</code> compiler option either on the command line or in your <code>tsconfig.json</code>:</p>
+<p><strong>Command Line</strong>:</p>
 <pre><code class="lang-shell">tsc --target ES5 --experimentalDecorators --emitDecoratorMetadata
 </code></pre>
 <p><strong>tsconfig.json</strong>:</p>
@@ -1044,8 +1063,8 @@ Method, Accessor, PropertiesDecorator&#xB4F1;&#xC5D0; &#xC758;&#xD55C; &#xD30C;&
     }
 }
 </code></pre>
-<p>&#xD65C;&#xC131;&#xD654;&#xAC00; &#xB420; &#xB54C; <code>reflect-metadata</code> &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xC784;&#xD3EC;&#xD2B8; &#xD55C; &#xCD94;&#xAC00;&#xC801;&#xC778; design-time &#xD0C0;&#xC785; &#xC815;&#xBCF4;&#xB294; &#xB7F0;&#xD0C0;&#xC784;&#xC5D0; &#xB178;&#xCD9C;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xC5D0;&#xC11C;&#xB294; &#xC774;&#xB7EC;&#xD55C; &#xAE30;&#xB2A5;&#xC774; &#xC2E4;&#xC81C;&#xB85C; &#xC791;&#xB3D9;&#xD558;&#xB294; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<p>When enabled, as long as the <code>reflect-metadata</code> library has been imported, additional design-time type information will be exposed at runtime.</p>
+<p>We can see this in action in the following example:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-string">&quot;reflect-metadata&quot;</span>;
 
 <span class="cm-keyword">class</span> <span class="cm-variable">Point</span> {
@@ -1077,8 +1096,8 @@ Method, Accessor, PropertiesDecorator&#xB4F1;&#xC5D0; &#xC758;&#xD55C; &#xD30C;&
     }
 }
 </code></pre>
-<p>TypeScript &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; <code>@Reflect.metadata</code> &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; design-time &#xD0C0;&#xC785; &#xC815;&#xBCF4;&#xB97C; &#xC8FC;&#xC785;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; TypeScript&#xC640; &#xB3D9;&#xC77C;&#xD55C; &#xAC83;&#xC73C;&#xB85C; &#xAC04;&#xC8FC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<p>The TypeScript compiler will inject design-time type information using the <code>@Reflect.metadata</code> decorator.
+You could consider it the equivalent of the following TypeScript:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">Line</span> {
     <span class="cm-keyword">private</span> <span class="cm-variable">_p0</span>: <span class="cm-variable">Point</span>;
     <span class="cm-keyword">private</span> <span class="cm-variable">_p1</span>: <span class="cm-variable">Point</span>;
@@ -1095,7 +1114,7 @@ Method, Accessor, PropertiesDecorator&#xB4F1;&#xC5D0; &#xC758;&#xD55C; &#xD30C;&
 }
 </code></pre>
 <blockquote>
-<p>&#xCC38;&#xACE0;&#x2003; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; &#xBA54;&#xD0C0; &#xB370;&#xC774;&#xD130;&#xB294; &#xC2DC;&#xD5D8;&#xC801;&#xC778; &#xAE30;&#xB2A5;&#xC774;&#xBA70; &#xD5A5;&#xD6C4; &#xACF5;&#xAC1C;&#xC5D0;&#xC11C; &#xC911;&#xC694;&#xD55C; &#xBCC0;&#xACBD; &#xC0AC;&#xD56D;&#xC744; &#xB3C4;&#xC785;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>NOTE&#x2003; Decorator metadata is an experimental feature and may introduce breaking changes in future releases.</p>
 </blockquote>
 
                                 
@@ -1129,7 +1148,7 @@ Method, Accessor, PropertiesDecorator&#xB4F1;&#xC5D0; &#xC758;&#xD55C; &#xD30C;&
                 </a>
                 
                 
-                <a href="Mixins.html" class="navigation navigation-next " aria-label="Next page: 믹스인">
+                <a href="Mixins.html" class="navigation navigation-next " aria-label="Next page: Mixins">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1140,7 +1159,7 @@ Method, Accessor, PropertiesDecorator&#xB4F1;&#xC5D0; &#xC758;&#xD55C; &#xD30C;&
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"데코레이터","level":"3.19","depth":1,"next":{"title":"믹스인","level":"3.20","depth":1,"path":"pages/Mixins.md","ref":"pages/Mixins.md","articles":[]},"previous":{"title":"JSX","level":"3.18","depth":1,"path":"pages/JSX.md","ref":"pages/JSX.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Decorators.md","mtime":"2018-04-07T06:36:38.719Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-09T13:21:40.291Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Decorators","level":"3.19","depth":1,"next":{"title":"Mixins","level":"3.20","depth":1,"path":"pages/Mixins.md","ref":"pages/Mixins.md","articles":[]},"previous":{"title":"JSX","level":"3.18","depth":1,"path":"pages/JSX.md","ref":"pages/JSX.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Decorators.md","mtime":"2018-04-10T01:42:20.305Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-10T01:48:44.756Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1149,10 +1168,6 @@ Method, Accessor, PropertiesDecorator&#xB4F1;&#xC5D0; &#xC758;&#xD55C; &#xD30C;&
     
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-forkmegithub/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

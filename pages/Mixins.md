@@ -1,15 +1,15 @@
-# 소개
+# Introduction
 
-전통적인 OO 계층 구조와 함께 재사용 가능한 컴포넌트로 클래스를 구축하는 또 다른 보편적인 방법은 더 간단한 부분의 클래스를 결합하여 클래스를 구축하는 것입니다.  
-여러분은 스칼라와 같은 언어에서의 믹스인이나 특성에 대한 사상에 익숙할 수 있으며 이 패턴은 JavaScript 커뮤니티에서도 인기를 얻고 있습니다.
+Along with traditional OO hierarchies, another popular way of building up classes from reusable components is to build them by combining simpler partial classes.
+You may be familiar with the idea of mixins or traits for languages like Scala, and the pattern has also reached some popularity in the JavaScript community.
 
-# 믹스인 샘플
+# Mixin sample
 
-아래 코드에서는 TypeScript에서 믹스인을 모델링하는 방법을 보여줍니다.  
-코드가 끝나면 어떻게 작동하는지 분석해보겠습니다.
+In the code below, we show how you can model mixins in TypeScript.
+After the code, we'll break down how it works.
 
 ```ts
-// Disposable 믹스인
+// Disposable Mixin
 class Disposable {
     isDisposed: boolean;
     dispose() {
@@ -18,7 +18,7 @@ class Disposable {
 
 }
 
-// Activatable 믹스인
+// Activatable Mixin
 class Activatable {
     isActive: boolean;
     activate() {
@@ -52,7 +52,7 @@ let smartObj = new SmartObject();
 setTimeout(() => smartObj.interact(), 1000);
 
 ////////////////////////////////////////
-// 런타임 라이브러리 어딘가에
+// In your runtime library somewhere
 ////////////////////////////////////////
 
 function applyMixins(derivedCtor: any, baseCtors: any[]) {
@@ -64,14 +64,14 @@ function applyMixins(derivedCtor: any, baseCtors: any[]) {
 }
 ```
 
-# 샘플 이해하기
+# Understanding the sample
 
-믹스인으로 작동할 코드 샘플은 두 클래스로 시작합니다.  
-각각의 개체가 특정 활동이나 능력에 초점을 맞추고 있다는 것을 볼 수 있습니다.  
-나중에는 이 두 가지를 결합하여 새로운 클래스를 만들겠습니다.
+The code sample starts with the two classes that will act as our mixins.
+You can see each one is focused on a particular activity or capability.
+We'll later mix these together to form a new class from both capabilities.
 
 ```ts
-// Disposable
+// Disposable Mixin
 class Disposable {
     isDisposed: boolean;
     dispose() {
@@ -80,7 +80,7 @@ class Disposable {
 
 }
 
-// Activatable
+// Activatable Mixin
 class Activatable {
     isActive: boolean;
     activate() {
@@ -92,21 +92,21 @@ class Activatable {
 }
 ```
 
-다음으로 두 믹스인의 결합을 처리할 클래스를 만들 것입니다.  
-이 기능에 대해 자세히 살펴보겠습니다:
+Next, we'll create the class that will handle the combination of the two mixins.
+Let's look at this in more detail to see how it does this:
 
 ```ts
 class SmartObject implements Disposable, Activatable {
 ```
 
-위에서 첫 번째로 주목할 점은 `extends` 대신 `implements`를 사용한다는 것입니다.  
-이것은 클래스를 인터페이스로 다루고 구현이 아닌 Disposable과 Activatable 타입만 사용합니다.  
-즉, 클래스에서 구현을 제공해야 합니다.  
-이외에 정확하게는 믹스인 사용하여 회피하고 싶은 것입니다.
+The first thing you may notice in the above is that instead of using `extends`, we use `implements`.
+This treats the classes as interfaces, and only uses the types behind Disposable and Activatable rather than the implementation.
+This means that we'll have to provide the implementation in class.
+Except, that's exactly what we want to avoid by using mixins.
 
-이 요구 사항을 충족시키기 위해 믹스인에서 가져올 멤버에 대해 stand-in 프로퍼티과 그 타입을 생성합니다.  
-이것은 컴파일러가 런타임에 이러한 멤버를 사용할 수 있음을 충족시킵니다.  
-비록 약간의 bookkeeping 오버헤드가 있기는 하지만 여전히 믹스인의 이점을 얻을 수 있습니다.
+To satisfy this requirement, we create stand-in properties and their types for the members that will come from our mixins.
+This satisfies the compiler that these members will be available at runtime.
+This lets us still get the benefit of the mixins, albeit with some bookkeeping overhead.
 
 ```ts
 // Disposable
@@ -118,14 +118,14 @@ activate: () => void;
 deactivate: () => void;
 ```
 
-마지막으로, 믹스인을 클래스에 믹싱하여 완벽한 구현을 만들어냅니다.
+Finally, we mix our mixins into the class, creating the full implementation.
 
 ```ts
 applyMixins(SmartObject, [Disposable, Activatable]);
 ```
 
-마지막으로 믹스인을 하기 위한 헬퍼 함수를 만듭니다.  
-이것은 각 믹스인의 프로퍼티를 거쳐 실행되며 믹스인의 타겟으로 복사하고 구현된 stand-in 프로퍼티로 채우게 됩니다.
+Lastly, we create a helper function that will do the mixing for us.
+This will run through the properties of each of the mixins and copy them over to the target of the mixins, filling out the stand-in properties with their implementations.
 
 ```ts
 function applyMixins(derivedCtor: any, baseCtors: any[]) {

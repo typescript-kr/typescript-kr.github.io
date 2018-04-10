@@ -85,7 +85,7 @@ let myAdd: (baseValue: number, increment: number) => number =
 
 ## 타입 추론 (Inferring the types)
 
-예를 들어 TypeScript 컴파일러는 한쪽에는 타입이 있지만 다른 한쪽에 타입이 없는 경우 그 타입을 이해할 수 없다는 것을 알게 됩니다:
+예를 들면 TypeScript 컴파일러는 한쪽에는 타입이 있지만 다른 한쪽에 타입이 없는 경우 그 타입을 이해할 수 없다는 것을 알게 됩니다:
 
 ```ts
 // myAdd는 완벽하게 함수 타입을 가지고 있습니다.

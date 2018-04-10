@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>트리플-슬래시 지시자 · GitBook</title>
+        <title>Triple-Slash Directives · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -19,10 +19,6 @@
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight-1/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-forkmegithub/plugin.css">
                 
             
                 
@@ -433,7 +429,7 @@
                 <a href="Decorators.html">
             
                     
-                    데코레이터
+                    Decorators
             
                 </a>
             
@@ -446,7 +442,7 @@
                 <a href="Mixins.html">
             
                     
-                    믹스인
+                    Mixins
             
                 </a>
             
@@ -459,7 +455,7 @@
                 <a href="Triple-Slash Directives.html">
             
                     
-                    트리플-슬래시 지시자
+                    Triple-Slash Directives
             
                 </a>
             
@@ -472,7 +468,7 @@
                 <a href="Type Checking JavaScript Files.html">
             
                     
-                    JavaScript 파일 타입 검사
+                    Type Checking JavaScript Files
             
                 </a>
             
@@ -693,7 +689,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >트리플-슬래시 지시자</a>
+        <a href=".." >Triple-Slash Directives</a>
     </h1>
 </div>
 
@@ -708,41 +704,59 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>&#xD2B8;&#xB9AC;&#xD50C;-&#xC2AC;&#xB798;&#xC2DC; &#xC9C0;&#xC2DC;&#xC790;&#xB294; &#xB2E8;&#xC77C; XML &#xD0DC;&#xADF8;&#xAC00; &#xD3EC;&#xD568;&#xB41C; &#xD55C; &#xC904; &#xC8FC;&#xC11D;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC8FC;&#xC11D;&#xC758; &#xB0B4;&#xC6A9;&#xC740; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC9C0;&#xC2DC;&#xC790;&#xB85C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<p>&#xD2B8;&#xB9AC;&#xD50C;-&#xC2AC;&#xB798;&#xC2DC; &#xC9C0;&#xC2DC;&#xC790;&#xB294; &#xD3EC;&#xD568;&#xB41C; &#xD30C;&#xC77C;&#xC758; <strong>&#xC0C1;&#xB2E8;&#xC5D0;&#xC11C;&#xB9CC;</strong> &#xC720;&#xD6A8;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xD2B8;&#xB9AC;&#xD50C;-&#xC2AC;&#xB798;&#xC2DC; &#xC9C0;&#xC2DC;&#xC790;&#xB294; &#xB2E4;&#xB978; &#xD2B8;&#xB9AC;&#xD50C;-&#xC2AC;&#xB798;&#xC2DC; &#xC9C0;&#xC2DC;&#xC790;&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xC5EC; &#xD55C; &#xC904; &#xB610;&#xB294; &#xC5EC;&#xB7EC; &#xC904; &#xC8FC;&#xC11D; &#xC55E;&#xC5D0; &#xBD99;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xBB38; &#xB610;&#xB294; &#xC120;&#xC5B8; &#xB4A4;&#xC5D0; &#xB098;&#xC624;&#xB294; &#xACBD;&#xC6B0; &#xBCF4;&#xD1B5;&#xC758; &#xD55C; &#xC904; &#xC8FC;&#xC11D;&#xC73C;&#xB85C; &#xAC04;&#xC8FC;&#xD558;&#xBA70; &#xD2B9;&#xBCC4;&#xD55C; &#xC758;&#xBBF8;&#xB294; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+                                <p>Triple-slash directives are single-line comments containing a single XML tag.
+The contents of the comment are used as compiler directives.</p>
+<p>Triple-slash directives are <strong>only</strong> valid at the top of their containing file.
+A triple-slash directive can only be preceded by single or multi-line comments, including other triple-slash directives.
+If they are encountered following a statement or a declaration they are treated as regular single-line comments, and hold no special meaning.</p>
 <h2 id="reference-path-"><code>/// &lt;reference path=&quot;...&quot; /&gt;</code></h2>
-<p>&#xC774; &#xC911; &#xAC00;&#xC7A5; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xAC83;&#xC740; <code>/// &lt;reference path=&quot;...&quot; /&gt;</code> &#xC9C0;&#xC2DC;&#xC790;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xD30C;&#xC77C; &#xAC04;&#xC5D0; <em>&#xC758;&#xC874;&#xC131;</em> &#xC120;&#xC5B8;&#xC758; &#xC5ED;&#xD560;&#xC744; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xD2B8;&#xB9AC;&#xD50C;-&#xC2AC;&#xB798;&#xC2DC; &#xCC38;&#xC870;&#xB294; &#xCEF4;&#xD30C;&#xC77C; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xCD94;&#xAC00;&#xC801;&#xC778; &#xD30C;&#xC77C;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xB3C4;&#xB85D; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xC5D0; &#xC9C0;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xD30C;&#xC77C;&#xC740; &#xC804;&#xCC98;&#xB9AC; &#xD1B5;&#xACFC; &#xD6C4; &#xC785;&#xB825;&#xACFC; &#xAC19;&#xC740; &#xC21C;&#xC11C;&#xC758; &#xCD9C;&#xB825; &#xD30C;&#xC77C; &#xC704;&#xCE58;&#xB85C; &#xBC29;&#xCD9C;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<h3 id="&#xC804;&#xCC98;&#xB9AC;-&#xC785;&#xB825;-&#xD30C;&#xC77C;-preprocessing-input-files">&#xC804;&#xCC98;&#xB9AC; &#xC785;&#xB825; &#xD30C;&#xC77C; (Preprocessing input files)</h3>
-<p>&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; &#xBAA8;&#xB4E0; &#xD2B8;&#xB9AC;&#xD50C;-&#xC2AC;&#xB798;&#xC2DC; &#xCC38;&#xC870; &#xC9C0;&#xC2DC;&#xC790;&#xB97C; &#xD574;&#xC11D;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC785;&#xB825; &#xD30C;&#xC77C;&#xC5D0; &#xB300;&#xD55C; &#xC804;&#xCC98;&#xB9AC; &#xB2E8;&#xACC4;&#xB97C; &#xC218;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB7EC;&#xD55C; &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xC911; &#xCEF4;&#xD30C;&#xC77C;&#xC5D0; &#xCD94;&#xAC00; &#xD30C;&#xC77C;&#xC774; &#xCD94;&#xAC00;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<p>&#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB294; <em>root files</em> &#xC9D1;&#xD569;&#xC73C;&#xB85C; &#xC2DC;&#xC791;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xAC83;&#xC740; &#xCEE4;&#xB9E8;&#xB4DC; &#xB77C;&#xC778;&#xC774;&#xB098; <code>tsconfig.json</code> &#xD30C;&#xC77C;&#xC758; <code>&quot;files&quot;</code> &#xB9AC;&#xC2A4;&#xD2B8;&#xC5D0; &#xC9C0;&#xC815;&#xB41C; &#xD30C;&#xC77C; &#xC774;&#xB984;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB7EC;&#xD55C; &#xB8E8;&#xD2B8; &#xD30C;&#xC77C;&#xC740; &#xC9C0;&#xC815;&#xB41C; &#xC21C;&#xC11C;&#xB300;&#xB85C; &#xC804;&#xCC98;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xD30C;&#xC77C;&#xC774; &#xBAA9;&#xB85D;&#xC5D0; &#xCD94;&#xAC00;&#xB418;&#xAE30; &#xC804;&#xC5D0; &#xD30C;&#xC77C;&#xC5D0; &#xC788;&#xB294; &#xBAA8;&#xB4E0; &#xD2B8;&#xB9AC;&#xD50C;-&#xC2AC;&#xB798;&#xC2DC; &#xCC38;&#xC870;&#xAC00; &#xCC98;&#xB9AC;&#xB418;&#xACE0; &#xB300;&#xC0C1;&#xC774; &#xD3EC;&#xD568;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xD2B8;&#xB9AC;&#xD50C;-&#xC2AC;&#xB798;&#xC2DC; &#xCC38;&#xC870;&#xB294; &#xD30C;&#xC77C;&#xC5D0;&#xC11C; &#xBCF8; &#xC21C;&#xC11C;&#xB300;&#xB85C; &#xC6B0;&#xC120;&#xC73C;&#xB85C; &#xAE4A;&#xC219;&#xD558;&#xAC8C; &#xBD84;&#xC11D;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB8E8;&#xD2B8;&#xAC00; &#xC5C6;&#xB294; &#xACBD;&#xC6B0; &#xD2B8;&#xB9AC;&#xD50C;-&#xC2AC;&#xB798;&#xC2DC;&#xB294; &#xD3EC;&#xD568;&#xB41C; &#xD30C;&#xC77C;&#xC5D0; &#xB300;&#xD55C; &#xAE30;&#xC900;&#xC73C;&#xB85C; &#xACBD;&#xB85C;&#xB97C; &#xD574;&#xC11D;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h3 id="&#xC624;&#xB958;">&#xC624;&#xB958;</h3>
-<p>&#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xD30C;&#xC77C;&#xC744; &#xCC38;&#xC870;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC624;&#xB958;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xD30C;&#xC77C;&#xC5D0; &#xC790;&#xCCB4;&#xC5D0; &#xB300;&#xD55C; &#xD2B8;&#xB9AC;&#xD50C;-&#xC2AC;&#xB798;&#xC2DC; &#xCC38;&#xC870;&#xAC00; &#xC788;&#xB294; &#xAC83;&#xC740; &#xC624;&#xB958;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<h3 id="-noresolve-&#xC0AC;&#xC6A9;"><code>--noResolve</code> &#xC0AC;&#xC6A9;</h3>
-<p>&#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC635;&#xC158; <code>--noResolve</code>&#xAC00; &#xC9C0;&#xC815;&#xB418;&#xBA74; &#xD2B8;&#xB9AC;&#xD50C;-&#xC2AC;&#xB798;&#xC2DC; &#xCC38;&#xC870;&#xB294; &#xBB34;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC0C8; &#xD30C;&#xC77C;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xAC70;&#xB098; &#xC81C;&#xACF5;&#xB41C; &#xD30C;&#xC77C;&#xC758; &#xC21C;&#xC11C;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xC9C0;&#xB3C4; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>The <code>/// &lt;reference path=&quot;...&quot; /&gt;</code> directive is the most common of this group.
+It serves as a declaration of <em>dependency</em> between files.</p>
+<p>Triple-slash references instruct the compiler to include additional files in the compilation process.</p>
+<p>They also serve as a method to order the output when using <code>--out</code> or <code>--outFile</code>.
+Files are emitted to the output file location in the same order as the input after preprocessing pass.</p>
+<h3 id="preprocessing-input-files">Preprocessing input files</h3>
+<p>The compiler performs a preprocessing pass on input files to resolve all triple-slash reference directives.
+During this process, additional files are added to the compilation.</p>
+<p>The process starts with a set of <em>root files</em>;
+these are the file names specified on the command-line or in the <code>&quot;files&quot;</code> list in the <code>tsconfig.json</code> file.
+These root files are preprocessed in the same order they are specified.
+Before a file is added to the list, all triple-slash references in it are processed, and their targets included.
+Triple-slash references are resolved in a depth first manner, in the order they have been seen in the file.</p>
+<p>A triple-slash reference path is resolved relative to the containing file, if unrooted.</p>
+<h3 id="errors">Errors</h3>
+<p>It is an error to reference a file that does not exist.
+It is an error for a file to have a triple-slash reference to itself.</p>
+<h3 id="using---noresolve">Using <code>--noResolve</code></h3>
+<p>If the compiler flag <code>--noResolve</code> is specified, triple-slash references are ignored; they neither result in adding new files, nor change the order of the files provided.</p>
 <h2 id="reference-types-"><code>/// &lt;reference types=&quot;...&quot; /&gt;</code></h2>
-<p><code>/// &lt;reference path=&quot;...&quot; /&gt;</code> &#xC9C0;&#xC2DC;&#xC790;&#xC640; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xC774; &#xC9C0;&#xC2DC;&#xC790;&#xB3C4; <em>&#xC758;&#xC874;&#xC131;</em> &#xC120;&#xC5B8;&#xC758; &#xC5ED;&#xD560;&#xC744; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xD558;&#xC9C0;&#xB9CC; <code>/// &lt;reference types=&quot;...&quot; /&gt;</code>&#xC9C0;&#xC2DC;&#xC790;&#xB294; &#xD328;&#xD0A4;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC758;&#xC874;&#xC131;&#xC744; &#xC120;&#xC5B8;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC774;&#xB7F0; &#xD328;&#xD0A4;&#xC9C0; &#xC774;&#xB984;&#xC744; &#xD574;&#xC11D;&#xD558;&#xB294; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB294; <code>import</code>&#xBB38;&#xC5D0;&#xC11C; &#xBAA8;&#xB4C8; &#xC774;&#xB984;&#xC744; &#xD574;&#xC11D;&#xD558;&#xB294; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC640; &#xC720;&#xC0AC;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xD2B8;&#xB9AC;&#xD50C;-&#xC2AC;&#xB798;&#xC2DC; &#xCC38;&#xC870; &#xD0C0;&#xC785; &#xC9C0;&#xC2DC;&#xC790;&#xB97C; &#xC0DD;&#xAC01;&#xD558;&#xB294; &#xC26C;&#xC6B4; &#xBC29;&#xBC95;&#xC740; &#xC120;&#xC5B8; &#xD328;&#xD0A4;&#xC9C0;&#xC758; <code>import</code> &#xC785;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC5D0; <code>/// &lt;reference types=&quot;node&quot; /&gt;</code>&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xBA74; &#xC774; &#xD30C;&#xC77C;&#xC740; <code>@types/node/index.d.ts</code>&#xC5D0; &#xC120;&#xC5B8;&#xB41C; &#xC774;&#xB984;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB530;&#xB77C;&#xC11C; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xACFC; &#xD568;&#xAED8; &#xC774; &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xCEF4;&#xD30C;&#xC77C;&#xC5D0; &#xD3EC;&#xD568;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC774; &#xC9C0;&#xC2DC;&#xC790;&#xB294; <code>d.ts</code> &#xD30C;&#xC77C;&#xC744; &#xC9C1;&#xC811; &#xC791;&#xC131;&#xD560; &#xB54C;&#xB9CC; &#xC0AC;&#xC6A9;&#xD558;&#xB3C4;&#xB85D; &#xD558;&#xC138;&#xC694;.</p>
-<p>&#xCEF4;&#xD30C;&#xC77C; &#xC2DC; &#xC0DD;&#xC131;&#xB41C; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC5D0; &#xB300;&#xD574;&#xC11C;&#xB294; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xAC00; <code>/// &lt;reference types=&quot;...&quot; /&gt;</code>&#xC744; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC0DD;&#xC131;&#xB41C; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC5D0;&#xC11C; <code>/// &lt;reference types=&quot;...&quot; /&gt;</code>&#xC740; &#xACB0;&#xACFC; &#xD30C;&#xC77C;&#xC774; &#xCC38;&#xC870; &#xD328;&#xD0A4;&#xC9C0;&#xC758; &#xC120;&#xC5B8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; <em>&#xACBD;&#xC6B0;&#xC5D0;&#xB9CC;</em> &#xCD94;&#xAC00;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<p><code>.ts</code> &#xD30C;&#xC77C;&#xC5D0; &#xB300;&#xD55C; <code>@types</code> &#xD328;&#xD0A4;&#xC9C0;&#xC5D0; &#xC758;&#xC874;&#xC131;&#xC744; &#xC120;&#xC5B8;&#xD558;&#xB824;&#xBA74; &#xCEE4;&#xB9E8;&#xB4DC; &#xB77C;&#xC778;&#xC774;&#xB098; <code>tsconfig.json</code>&#xC5D0;&#xC11C; <code>--types</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;.</p>
-<p>&#xB354; &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="tsconfig.json.html#types-typeroots-and-types"><code>tsconfig.json</code> &#xD30C;&#xC77C;&#xC5D0;&#xC11C; <code>@types</code>, <code>typeRoots</code>&#xC640; <code>types</code> &#xC0AC;&#xC6A9;&#xD558;&#xAE30;</a>&#xB97C; &#xBCF4;&#xC138;&#xC694;.</p>
+<p>Similar to a <code>/// &lt;reference path=&quot;...&quot; /&gt;</code> directive,  this directive serves as a declaration of <em>dependency</em>;
+a <code>/// &lt;reference types=&quot;...&quot; /&gt;</code> directive, however, declares a dependency on a package.</p>
+<p>The process of resolving these package names is similar to the process of resolving module names in an <code>import</code> statement.
+An easy way to think of triple-slash-reference-types directives are as an <code>import</code> for declaration packages.</p>
+<p>For example, including <code>/// &lt;reference types=&quot;node&quot; /&gt;</code> in a declaration file declares that this file uses names declared in <code>@types/node/index.d.ts</code>;
+and thus, this package needs to be included in the compilation along with the declaration file.</p>
+<p>Use these directives only when you&apos;re authoring a <code>d.ts</code> file by hand.</p>
+<p>For declaration files generated during compilation, the compiler will automatically add <code>/// &lt;reference types=&quot;...&quot; /&gt;</code> for you;
+A <code>/// &lt;reference types=&quot;...&quot; /&gt;</code> in a generated declaration file is added <em>if and only if</em> the resulting file uses any declarations from the referenced package.</p>
+<p>For declaring a dependency on an <code>@types</code> package in a <code>.ts</code> file, use <code>--types</code> on the command line or in your <code>tsconfig.json</code> instead.
+See <a href="tsconfig.json.html#types-typeroots-and-types">using <code>@types</code>, <code>typeRoots</code> and <code>types</code> in <code>tsconfig.json</code> files</a> for more details.</p>
 <h2 id="reference-no-default-libtrue"><code>/// &lt;reference no-default-lib=&quot;true&quot;/&gt;</code></h2>
-<p>&#xC774; &#xC9C0;&#xC2DC;&#xC790;&#xB294; &#xD30C;&#xC77C;&#xC744; <em>&#xAE30;&#xBCF8; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;</em>&#xB85C; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xC8FC;&#xC11D;&#xC740; <code>lib.d.ts</code>&#xC640; &#xB2E4;&#xB978; &#xBCC0;&#xC774;&#xB4E4;&#xC758; &#xB9E8; &#xC704;&#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC774; &#xC9C0;&#xC2DC;&#xC790;&#xB294; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xC5D0; &#xAE30;&#xBCF8; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; (&#xC608;: <code>lib.d.ts</code>)&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xC9C0; <em>&#xC54A;&#xB3C4;&#xB85D;</em> &#xC9C0;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC5EC;&#xAE30;&#xC5D0; &#xBBF8;&#xCE58;&#xB294; &#xC601;&#xD5A5;&#xC740; &#xCEE4;&#xB9E8;&#xB4DC; &#xB77C;&#xC778;&#xC5D0; <code>--noLib</code>&#xB97C; &#xC804;&#xB2EC;&#xD558;&#xB294; &#xAC83;&#xACFC; &#xBE44;&#xC2B7;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB610;&#xD55C; <code>--skipDefaultLibCheck</code>&#xB97C; &#xB118;&#xAE38; &#xB54C; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; <code>/// &lt;reference no-default-lib=&quot;true&quot;/&gt;</code>&#xB97C; &#xAC00;&#xC9C4; &#xD30C;&#xC77C; &#xAC80;&#xC0AC;&#xB9CC; &#xAC74;&#xB108;&#xB701;&#xB2C8;&#xB2E4;.</p>
+<p>This directive marks a file as a <em>default library</em>.
+You will see this comment at the top of <code>lib.d.ts</code> and its different variants.</p>
+<p>This directive instructs the compiler to <em>not</em> include the default library (i.e. <code>lib.d.ts</code>) in the compilation.
+The impact here is similar to passing <code>--noLib</code> on the command line.</p>
+<p>Also note that when passing <code>--skipDefaultLibCheck</code>, the compiler will only skip checking files with <code>/// &lt;reference no-default-lib=&quot;true&quot;/&gt;</code>.</p>
 <h2 id="amd-module-"><code>/// &lt;amd-module /&gt;</code></h2>
-<p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; AMD&#xBAA8;&#xB4C8;&#xC740; &#xC775;&#xBA85;&#xC73C;&#xB85C; &#xC0DD;&#xC131;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB85C; &#xC778;&#xD574; &#xBC88;&#xB4E4;(&#xC608;: <code>r.js</code>)&#xACFC; &#xAC19;&#xC740; &#xACB0;&#xACFC;&#xC801;&#xC778; &#xBAA8;&#xB4C8;&#xC744; &#xCC98;&#xB9AC;&#xD558;&#xB294; &#xB370; &#xB2E4;&#xB978; &#xB3C4;&#xAD6C;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xACBD;&#xC6B0; &#xBB38;&#xC81C;&#xAC00; &#xBC1C;&#xC0DD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p><code>amd-module</code> &#xC9C0;&#xC2DC;&#xC790;&#xB294; &#xC120;&#xD0DD;&#xC801; &#xBAA8;&#xB4C8; &#xC774;&#xB984;&#xC744; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; &#xAC83;&#xC744; &#xD5C8;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<p>By default AMD modules are generated anonymous.
+This can lead to problems when other tools are used to process the resulting modules, such as bundlers (e.g. <code>r.js</code>).</p>
+<p>The <code>amd-module</code> directive allows passing an optional module name to the compiler:</p>
 <h5 id="amdmodulets">amdModule.ts</h5>
 <pre><code class="lang-ts"><span class="cm-comment">///&lt;amd-module name=&quot;NamedModule&quot;/&gt;</span>
 <span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">C</span> {
 }
 </code></pre>
-<p>AMD <code>define</code>&#xC744; &#xD638;&#xCD9C;&#xD560; &#xB54C; <code>NamedModule</code>&#xC774;&#xB77C;&#xB294; &#xC774;&#xB984;&#xC744; &#xBAA8;&#xB4C8;&#xC5D0; &#xD560;&#xB2F9;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<p>Will result in assigning the name <code>NamedModule</code> to the module as part of calling the AMD <code>define</code>:</p>
 <h5 id="amdmodulejs">amdModule.js</h5>
 <pre><code class="lang-js"><span class="cm-variable">define</span>(<span class="cm-string">&quot;NamedModule&quot;</span>, [<span class="cm-string">&quot;require&quot;</span>, <span class="cm-string">&quot;exports&quot;</span>], <span class="cm-keyword">function</span> (<span class="cm-def">require</span>, <span class="cm-def">exports</span>) {
     <span class="cm-keyword">var</span> <span class="cm-def">C</span> <span class="cm-operator">=</span> (<span class="cm-keyword">function</span> () {
@@ -755,15 +769,15 @@
 </code></pre>
 <h2 id="amd-dependency-"><code>/// &lt;amd-dependency /&gt;</code></h2>
 <blockquote>
-<p><strong>&#xC8FC;&#xC758;&#xC0AC;&#xD56D;</strong>: &#xC774; &#xC9C0;&#xC2DC;&#xC790;&#xB294; &#xB354; &#xC774;&#xC0C1; &#xC0AC;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;(deprecated). &#xB300;&#xC2E0; <code>import &quot;moduleName&quot;;</code>&#xBB38;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;.</p>
+<p><strong>Note</strong>: this directive has been deprecated. Use <code>import &quot;moduleName&quot;;</code> statements instead.</p>
 </blockquote>
-<p><code>/// &lt;amd-dependency path=&quot;x&quot; /&gt;</code> &#xACB0;&#xACFC; &#xBAA8;&#xB4C8;&#xC758; require &#xD638;&#xCD9C;&#xC5D0; &#xC8FC;&#xC785;&#xD574;&#xC57C;&#xD558;&#xB294; non-TS &#xBAA8;&#xB4C8; &#xC758;&#xC874;&#xC131;&#xC5D0; &#xB300;&#xD574; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xC5D0; &#xC54C;&#xB824;&#xC90D;&#xB2C8;&#xB2E4;.</p>
-<p><code>amd-dependency</code> &#xC9C0;&#xC2DC;&#xC790;&#xB294; &#xC120;&#xD0DD;&#xC801; <code>name</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC744; &#xAC00;&#xC9C8; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xAC83;&#xC740; amd-dependency&#xC5D0; &#xC120;&#xD0DD;&#xC801; &#xC774;&#xB984;&#xC744; &#xC804;&#xB2EC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<p><code>/// &lt;amd-dependency path=&quot;x&quot; /&gt;</code> informs the compiler about a non-TS module dependency that needs to be injected in the resulting module&apos;s require call.</p>
+<p>The <code>amd-dependency</code> directive can also have an optional <code>name</code> property; this allows passing an optional name for an amd-dependency:</p>
 <pre><code class="lang-ts"><span class="cm-comment">/// &lt;amd-dependency path=&quot;legacy/moduleA&quot; name=&quot;moduleA&quot;/&gt;</span>
 <span class="cm-variable">declare</span> <span class="cm-keyword">var</span> <span class="cm-variable">moduleA</span>:<span class="cm-variable-3">MyType</span>
 <span class="cm-variable">moduleA</span>.<span class="cm-property">callStuff</span>()
 </code></pre>
-<p>&#xC0DD;&#xC131;&#xB41C; JS &#xCF54;&#xB4DC;:</p>
+<p>Generated JS code:</p>
 <pre><code class="lang-js"><span class="cm-variable">define</span>([<span class="cm-string">&quot;require&quot;</span>, <span class="cm-string">&quot;exports&quot;</span>, <span class="cm-string">&quot;legacy/moduleA&quot;</span>], <span class="cm-keyword">function</span> (<span class="cm-def">require</span>, <span class="cm-def">exports</span>, <span class="cm-def">moduleA</span>) {
     <span class="cm-variable-2">moduleA</span>.<span class="cm-property">callStuff</span>()
 });
@@ -795,12 +809,12 @@
 
             
                 
-                <a href="Mixins.html" class="navigation navigation-prev " aria-label="Previous page: 믹스인">
+                <a href="Mixins.html" class="navigation navigation-prev " aria-label="Previous page: Mixins">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="Type Checking JavaScript Files.html" class="navigation navigation-next " aria-label="Next page: JavaScript 파일 타입 검사">
+                <a href="Type Checking JavaScript Files.html" class="navigation navigation-next " aria-label="Next page: Type Checking JavaScript Files">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -811,7 +825,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"트리플-슬래시 지시자","level":"3.21","depth":1,"next":{"title":"JavaScript 파일 타입 검사","level":"3.22","depth":1,"path":"pages/Type Checking JavaScript Files.md","ref":"pages/Type Checking JavaScript Files.md","articles":[]},"previous":{"title":"믹스인","level":"3.20","depth":1,"path":"pages/Mixins.md","ref":"pages/Mixins.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Triple-Slash Directives.md","mtime":"2018-04-07T06:50:32.100Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-09T13:21:40.291Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Triple-Slash Directives","level":"3.21","depth":1,"next":{"title":"Type Checking JavaScript Files","level":"3.22","depth":1,"path":"pages/Type Checking JavaScript Files.md","ref":"pages/Type Checking JavaScript Files.md","articles":[]},"previous":{"title":"Mixins","level":"3.20","depth":1,"path":"pages/Mixins.md","ref":"pages/Mixins.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Triple-Slash Directives.md","mtime":"2018-04-10T01:42:20.368Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-10T01:48:44.756Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -820,10 +834,6 @@
     
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-forkmegithub/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
