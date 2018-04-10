@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url> <loc>https://typescript-kr.github.io/./</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/tutorials/TypeScript in 5 minutes.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/tutorials/ASP.NET Core.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/tutorials/Gulp.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/tutorials/Migrating from JavaScript.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/tutorials/React &amp; Webpack.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Basic Types.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Variable Declarations.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Interfaces.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Classes.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Functions.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Generics.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Enums.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Type Inference.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Type Compatibility.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Advanced Types.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Symbols.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Iterators and Generators.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Modules.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Namespaces.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Namespaces and Modules.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Module Resolution.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Declaration Merging.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/JSX.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Decorators.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Mixins.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Triple-Slash Directives.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Type Checking JavaScript Files.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/declaration files/Introduction.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/declaration files/Library Structures.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/declaration files/By Example.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/declaration files/Do&#039;s and Don&#039;ts.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/declaration files/Deep Dive.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/declaration files/Templates.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/declaration files/Publishing.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/declaration files/Consumption.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/tsconfig.json.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Compiler Options.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Compiler Options in MSBuild.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Integrating with Build Tools.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Nightly Builds.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+</urlset>
