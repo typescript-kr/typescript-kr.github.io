@@ -1,5 +1,5 @@
 {
-	"plugins": ["theme-darkblue", "addcssjs", "highlight-1", "custom-favicon", "forkmegithub", "sitemap", "header"],
+	"plugins": ["theme-darkblue", "addcssjs", "highlight-1", "custom-favicon", "forkmegithub", "sitemap"],
 	"pluginsConfig": {
 		"addcssjs": {
 			"css": ["assets/css/atom-one-dark.css"]
