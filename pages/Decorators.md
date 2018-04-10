@@ -1,14 +1,13 @@
-# Introduction
+# 소개
 
-With the introduction of Classes in TypeScript and ES6, there now exist certain scenarios that require additional features to support annotating or modifying classes and class members.
-Decorators provide a way to add both annotations and a meta-programming syntax for class declarations and members.
-Decorators are a [stage 2 proposal](https://github.com/tc39/proposal-decorators) for JavaScript and are available as an experimental feature of TypeScript.
+TypeScript와 ES6의 클래스가 도입됨에 따라 클래스 및 클래스 멤버에 어노테이션 또는 변경을 지원하기 위해 추가적인 기능이 필요한 일부 상황이 있습니다.  
+데코레이터는 클래스 선언과 멤버에 대한 어노테이션과 메타-프로그래밍 구문을 모두 추가할 수 있는 방법을 제공합니다.  
+데코레이터는 JavaScript의 [stage 2 제안](https://github.com/tc39/proposal-decorators)이며 TypeScript의 실험적인 기능으로 사용할 수 있습니다.
+> 주의사항&emsp; 데코레이터는 향후 변경될 수 있는 실험적 기능입니다.
 
-> NOTE&emsp; Decorators are an experimental feature that may change in future releases.
+데코레이터에 대한 실험적인 지원을 사용하려면 커맨드 라인이나 `tsconfig.json`에서 `experimentalDecorators` 컴파일러 옵션을 사용하도록 활성화해야 합니다:
 
-To enable experimental support for decorators, you must enable the `experimentalDecorators` compiler option either on the command line or in your `tsconfig.json`:
-
-**Command Line**:
+**커맨드 라인**:
 
 ```shell
 tsc --target ES5 --experimentalDecorators
@@ -25,49 +24,49 @@ tsc --target ES5 --experimentalDecorators
 }
 ```
 
-# Decorators
+# 데코레이터
 
-A *Decorator* is a special kind of declaration that can be attached to a [class declaration](#class-decorators), [method](#method-decorators), [accessor](#accessor-decorators), [property](#property-decorators), or [parameter](#parameter-decorators).
-Decorators use the form `@expression`, where `expression` must evaluate to a function that will be called at runtime with information about the decorated declaration.
+*데코레이터*는 [클래스 선언](#class-decorators), [메서드](#method-decorators), [접근제어자](#accessor-decorators), [프로퍼티](#property-decorators) 또는 [매개변수](#parameter-decorators)에 첨부될 수 있는 특별한 종류의 선언입니다.  
+데코레이터는 `@표현식`의 형태를 사용하는데, 여기서 표현식은 데코레이팅된 선언에 대한 정보와 함께 런타임에 호출될 함수로 평가되어야 합니다.  
 
-For example, given the decorator `@sealed` we might write the `sealed` function as follows:
+예를 들어, 데코레이터 `@sealed`을 사용하여 다음과 같이 `sealed` 함수를 작성할 수 있습니다:
 
 ```ts
 function sealed(target) {
-    // do something with 'target' ...
+    // 'target'으로 뭐든 해보세요 ...
 }
 ```
 
-> NOTE&emsp; You can see a more detailed example of a decorator in [Class Decorators](#class-decorators), below.
+> 주의사항&emsp; 아래의 [클래스 데코레이터](#class-decorators)에서 데코레이터에 대한 더욱 자세한 예제를 볼 수 있습니다.
 
-## Decorator Factories
+## 데코레이터 팩토리
 
-If we want to customize how a decorator is applied to a declaration, we can write a decorator factory.
-A *Decorator Factory* is simply a function that returns the expression that will be called by the decorator at runtime.
+선언에 데코레이터를 적용하는 방법을 커스터마이징하고 싶다면 데코레이터 팩토리를 작성할 수 있습니다.  
+*Decorator Factory*는 간단히 런타임에 데코레이터에 의해 호출될 표현식을 반환하는 함수입니다.
 
-We can write a decorator factory in the following fashion:
+다음과 같은 방식으로 데코레이터 팩토리를 작성할 수 있습니다:
 
 ```ts
-function color(value: string) { // this is the decorator factory
-    return function (target) { // this is the decorator
-        // do something with 'target' and 'value'...
+function color(value: string) { // 이것은 데코레이터 팩토리입니다
+    return function (target) { // 이것은 데코레이터입니다
+        // 'target'과 'value'로 뭐든 해보세요...
     }
 }
 ```
 
-> NOTE&emsp; You can see a more detailed example of a decorator factory in [Method Decorators](#method-decorators), below.
+> 주의사항&emsp; 아래의 [메서드 데코레이터](#method-decorators)에서 데코레이터 팩토리에 대한 더욱 자세한 예제를 볼 수 있습니다.
 
-## Decorator Composition
+## 데코레이터 구성
 
-Multiple decorators can be applied to a declaration, as in the following examples:
+다음 예제처럼 여러 데코레이터를 선언에 적용 할 수 있습니다:
 
-* On a single line:
+* 한 줄에:
 
   ```ts
   @f @g x
   ```
 
-* On multiple lines:
+* 여러 줄에:
 
   ```ts
   @f
@@ -75,14 +74,15 @@ Multiple decorators can be applied to a declaration, as in the following example
   x
   ```
 
-When multiple decorators apply to a single declaration, their evaluation is similar to [function composition in mathematics](http://en.wikipedia.org/wiki/Function_composition). In this model, when composing functions *f* and *g*, the resulting composite (*f* ∘ *g*)(*x*) is equivalent to *f*(*g*(*x*)).
+여러 데코레이터가 단일 선언에 적용되는 경우 평가는 [수학에서의 함수 구성](http://en.wikipedia.org/wiki/Function_composition)과 유사합니다.  
+이 모델에서 함수 *f*와 *g*을 구성할 때, 결과적인 합성 (*f* ∘ *g*)(*x*)은(는) *f*(*g*(*x*))와 동일합니다.
 
-As such, the following steps are performed when evaluating multiple decorators on a single declaration in TypeScript:
+따라서 TypeScript의 단일 선언에서 여러 데코레이터를 평가할 때 다음 단계를 수행합니다:
 
-1. The expressions for each decorator are evaluated top-to-bottom.
-2. The results are then called as functions from bottom-to-top.
+1.  각 데코레이터에 대한 표현식은 위에서 아래로 평가됩니다.
+2. 그런 다음 결과는 아래에서 위로 함수를 호출합니다.
 
-If we were to use [decorator factories](#decorator-factories), we can observe this evaluation order with the following example:
+데코레이터 팩토리를 사용하려면 다음 예제에서 이 평가 순서를 관찰할 수 있습니다:
 
 ```ts
 function f() {
@@ -106,7 +106,7 @@ class C {
 }
 ```
 
-Which would print this output to the console:
+그러면 이 출력을 콘솔에 출력합니다:
 
 ```shell
 f(): evaluated
@@ -115,29 +115,31 @@ g(): called
 f(): called
 ```
 
-## Decorator Evaluation
+## 데코레이터 평가 (Decorator Evaluation)
 
-There is a well defined order to how decorators applied to various declarations inside of a class are applied:
+클래스 내의 다양한 선언에 데코레이터를 적용하는 방법에는 잘 정의된 순서가 있습니다:
 
-1. *Parameter Decorators*, followed by *Method*, *Accessor*, or *Property Decorators* are applied for each instance member.
-2. *Parameter Decorators*, followed by *Method*, *Accessor*, or *Property Decorators* are applied for each static member.
-3. *Parameter Decorators* are applied for the constructor.
-4. *Class Decorators* are applied for the class.
+매개 변수 Decorator, 메서드, 접근제어자 또는 속성 Decorator가 각 정적 멤버에 적용됩니다.
+Method, Accessor, PropertiesDecorator등에 의한 파라미터 Decorator는 각 정적 멤버에 대해 적용된다.
 
-## Class Decorators
+1. *메서드*, *접근제어자* 또는 *프로퍼티 데코레이터*에 이어지는 *매개변수 데코레이터*는 각 인스턴스 멤버에 적용됩니다.
+2. *메서드*, *접근제어자* 또는 *프로퍼티 데코레이터*에 이어지는 *매개변수 데코레이터*는 각 정적 멤버에 적용됩니다.
+3. *매개변수* 데코레이터는 생성자에 적용됩니다.
+4. *클래스* 데코레이터는 클래스에 적용됩니다.
 
-A *Class Decorator* is declared just before a class declaration.
-The class decorator is applied to the constructor of the class and can be used to observe, modify, or replace a class definition.
-A class decorator cannot be used in a declaration file, or in any other ambient context (such as on a `declare` class).
+## 클래스 데코레이터 (Class Decorators)
 
-The expression for the class decorator will be called as a function at runtime, with the constructor of the decorated class as its only argument.
+*클래스 데코레이터*는 클래스 선언 바로 직전에 선언됩니다.  
+클래스 데코레이터는 클래스 정의를 관찰, 수정 또는 바꾸는 데 사용할 수 있는 클래스 생성자에 적용됩니다.  
+클래스 데코레이터는 선언 파일이나 다른 ambient 컨텍스트(예: `선언` 클래스)에서 사용할 수 없습니다.
 
-If the class decorator returns a value, it will replace the class declaration with the provided constructor function.
+클래스 데코레이터에 대한 표현식은 런타임에 함수로 호출되며 데코레이팅 클래스의 생성자는 대상을 유일한 인수로 호출됩니다.
 
-> NOTE&nbsp; Should you chose to return a new constructor function, you must take care to maintain the original prototype.
-The logic that applies decorators at runtime will **not** do this for you.
+클래스 데코레이터가 값을 반환하는 경우, 클래스 선언을 제공된 생성자 함수로 대체합니다.
 
-The following is an example of a class decorator (`@sealed`) applied to the `Greeter` class:
+> 주의사항&nbsp; 새 생성자 함수를 반환하도록 선택해야하는 경우 원본 프로토타입을 유지하도록 관리해야합니다. 런타임에 데코레이터를 적용하는 로직은 이 작업을 수행하지 **않습니다.**
+
+다음은 `Greeter` 클래스에 적용된 클래스 데코레이터(`@sealed`)의 예제입니다:
 
 ```ts
 @sealed
@@ -152,7 +154,7 @@ class Greeter {
 }
 ```
 
-We can define the `@sealed` decorator using the following function declaration:
+다음 함수 선언을 사용하여 `@sealed` 데코레이터를 정의할 수 있습니다:
 
 ```ts
 function sealed(constructor: Function) {
@@ -161,9 +163,8 @@ function sealed(constructor: Function) {
 }
 ```
 
-When `@sealed` is executed, it will seal both the constructor and its prototype.
-
-Next we have an example of how to override the constructor.
+`@sealed`가 실행되면 생성자와 프로토타입 모두를 봉인합니다.  
+다음은 생성자를 재정의하는 방법에 대한 예제입니다.
 
 ```ts
 function classDecorator<T extends {new(...args:any[]):{}}>(constructor:T) {
@@ -185,25 +186,25 @@ class Greeter {
 console.log(new Greeter("world"));
 ```
 
-## Method Decorators
+## 메서드 데코레이터 (Method Decorators)
 
-A *Method Decorator* is declared just before a method declaration.
-The decorator is applied to the *Property Descriptor* for the method, and can be used to observe, modify, or replace a method definition.
-A method decorator cannot be used in a declaration file, on an overload, or in any other ambient context (such as in a `declare` class).
+*메서드 데코레이터*는 메서드 선언 바로 직전에 선언됩니다.  
+데코레이터는 메서드의 *프로퍼티 Descriptor*에 적용되며 메서드 정의를 관찰, 수정 또는 바꾸는 데 사용할 수 있습니다.  
+메서드 데코레이터는 선언 파일, 오버로드 또는 기타 ambient 컨텍스트 (예: `선언` 클래스)에서 사용할 수 없습니다.
 
-The expression for the method decorator will be called as a function at runtime, with the following three arguments:
+메서드 데코레이터의 표현식은 런타임에 다음 세 가지 인수와 함께 함수로 호출됩니다:
 
-1. Either the constructor function of the class for a static member, or the prototype of the class for an instance member.
-2. The name of the member.
-3. The *Property Descriptor* for the member.
+1. 정적 멤버에 대한 클래스의 생성자 함수거나 인스턴스 멤버에 대한 클래스의 프로토타입
+2. 멤버의 이름
+3. 멤버의 *프로퍼티 Descriptor*
 
-> NOTE&emsp; The *Property Descriptor* will be `undefined` if your script target is less than `ES5`.
+> 주의사항&emsp; 스크립트 타겟이 `ES5`보다 작은 경우 *프로퍼티 Descriptor*는 `undefined`가 됩니다.
 
-If the method decorator returns a value, it will be used as the *Property Descriptor* for the method.
+메서드 데코레이터가 값을 반환하는 경우 해당 메서드에 대해 *프로퍼티 Descriptor*로 사용됩니다.
 
-> NOTE&emsp; The return value is ignored if your script target is less than `ES5`.
+> 주의사항&emsp; 스크립트 타겟이 `ES5`보다 작은 경우 반환 값은 무시됩니다.
 
-The following is an example of a method decorator (`@enumerable`) applied to a method on the `Greeter` class:
+다음은 `Greeter`클래스의 메서드에 적용된 메서드 데코레이터 (`@enumerable`)의 예제입니다:
 
 ```ts
 class Greeter {
@@ -219,7 +220,7 @@ class Greeter {
 }
 ```
 
-We can define the `@enumerable` decorator using the following function declaration:
+다음 함수 선언을 사용하여 `@enumerable` 데코레이터를 정의할 수 있습니다:
 
 ```ts
 function enumerable(value: boolean) {
@@ -229,32 +230,32 @@ function enumerable(value: boolean) {
 }
 ```
 
-The `@enumerable(false)` decorator here is a [decorator factory](#decorator-factories).
-When the `@enumerable(false)` decorator is called, it modifies the `enumerable` property of the property descriptor.
+`@enumerable(false)` 데코레이터는 [데코레이터 팩토리](#decorator-factories)입니다.  
+`@enumerable(false)` 데코레이터가 호출되면 프로퍼티 Descriptor의 `enumerable` 프로퍼티를 수정합니다.
 
-## Accessor Decorators
+## 접근제어자 데코레이터 (Accessor Decorators)
 
-An *Accessor Decorator* is declared just before an accessor declaration.
-The accessor decorator is applied to the *Property Descriptor* for the accessor and can be used to observe, modify, or replace an accessor's definitions.
-An accessor decorator cannot be used in a declaration file, or in any other ambient context (such as in a `declare` class).
+*접근제어자 데코레이터*는 접근제어자 선언 바로 직전에 선언됩니다.  
+접근제어자 데코레이터는 접근제어자에 대한 프로퍼티 Descriptor에 적용되며 접근제어자 정의를 관찰, 수정 또는 바꾸는 데 사용할 수 있습니다.  
+데코레이터는 메서드의 *프로퍼티 Descriptor*에 적용되며 메서드 정의를 관찰, 수정 또는 바꾸는 데 사용할 수 있습니다.  
+접근제어자 데코레이터는 선언 파일이나 다른 ambient 컨텍스트 (예: `선언` 클래스)에서 사용할 수 없습니다.
 
-> NOTE&emsp; TypeScript disallows decorating both the `get` and `set` accessor for a single member.
-Instead, all decorators for the member must be applied to the first accessor specified in document order.
-This is because decorators apply to a *Property Descriptor*, which combines both the `get` and `set` accessor, not each declaration separately.
+> 주의사항&emsp; TypeScript는 단일 멤버에 대한 접근제어자 `get`과 `set` 모두 데코레이팅하는 것을 허용하지 않습니다.
+대신 멤버의 모든 데코레이터가 순서를 따라 첫 번째 접근제어자에게 적용되어야 합니다. 왜냐하면 데코레이터가 *프로퍼티 Descriptor*에 적용되기 때문입니다. 그리고 각 선언을 별도로 구분하지 않고 `get`과 `set` 접근제어자를 결합합니다.
 
-The expression for the accessor decorator will be called as a function at runtime, with the following three arguments:
+접근제어자 데코레이터 표현식은 런타임시 다음 세 가지 인수와 함께 함수로 호출됩니다:
 
-1. Either the constructor function of the class for a static member, or the prototype of the class for an instance member.
-2. The name of the member.
-3. The *Property Descriptor* for the member.
+1. 정적 멤버에 대한 클래스의 생성자 함수나 인스턴스 멤버에 대한 클래스의 프로토타입이 있습니다
+2. 멤버의 이름
+3. 멤버에 *프로퍼티 Descriptor*
 
-> NOTE&emsp; The *Property Descriptor* will be `undefined` if your script target is less than `ES5`.
+> 주의사항&emsp; 스크립트 타겟이 `ES5`보다 작은 경우 *프로퍼티 Descriptor*는 `undefined`가 됩니다.
 
-If the accessor decorator returns a value, it will be used as the *Property Descriptor* for the member.
+접근제어자 데코레이터가 값을 반환하면 경우 해당 멤버에 대한 *프로퍼티 Descriptor*로 사용됩니다.
 
-> NOTE&emsp; The return value is ignored if your script target is less than `ES5`.
+> 주의사항&emsp; 스크립트 타겟이 `ES5`보다 작은 경우 반환 값은 무시됩니다.
 
-The following is an example of an accessor decorator (`@configurable`) applied to a member of the `Point` class:
+다음은 `Point` 클래스의 멤버에 적용된 접근제어자 데코레이터 (`@configurable`)의 예제입니다:
 
 ```ts
 class Point {
@@ -273,7 +274,7 @@ class Point {
 }
 ```
 
-We can define the `@configurable` decorator using the following function declaration:
+다음 함수 선언을 사용하여 `@configurable` 데코레이터를 정의할 수 있습니다:
 
 ```ts
 function configurable(value: boolean) {
@@ -283,21 +284,21 @@ function configurable(value: boolean) {
 }
 ```
 
-## Property Decorators
+## 프로퍼티 데코레이터 (Property Decorators)
 
-A *Property Decorator* is declared just before a property declaration.
-A property decorator cannot be used in a declaration file, or in any other ambient context (such as in a `declare` class).
+*프로퍼티 데코레이터*는 프로퍼티 선언 바로 직전에 선언됩니다.  
+프로퍼티 데코레이터는 선언 파일이나 기타 ambient 컨텍스트 (예: `선언` 클래스)에서 사용할 수 없습니다.
 
-The expression for the property decorator will be called as a function at runtime, with the following two arguments:
+프로퍼티 데코레이터의 표현식은 런타임에 다음 두 가지 인수와 함께 함수로 호출됩니다:
 
-1. Either the constructor function of the class for a static member, or the prototype of the class for an instance member.
-2. The name of the member.
+1. 정적 멤버에 대한 클래스의 생성자 함수 또는 인스턴스 멤버에 대한 클래스의 프로토타입
+2. 멤버의 이름
 
-> NOTE&emsp; A *Property Descriptor* is not provided as an argument to a property decorator due to how property decorators are initialized in TypeScript.
-This is because there is currently no mechanism to describe an instance property when defining members of a prototype, and no way to observe or modify the initializer for a property. The return value is ignored too.
-As such, a property decorator can only be used to observe that a property of a specific name has been declared for a class.
+> 주의사항&emsp; *프로퍼티 Descriptor*는 프로퍼티 Descriptor가 TypeScript에서 초기화되는 방법으로 인해 프로퍼티 Descriptor에 대한 인수로 제공되지 않습니다.
+이는 현재 프로토타입의 멤버을 정의할 때 인스턴스 프로퍼티를 설명하는 메커니즘이 없고, 프로퍼티에 대한 이니셜라이저를 관찰하거나 수정할 방법이 없기 때문이다. 반환 값도 무시됩니다.
+따라서 프로퍼티 데코레이터는 특정 이름의 프로퍼티가 클래스에 대해 선언되는 것을 관찰하는 데만 사용할 수 있습니다.
 
-We can use this information to record metadata about the property, as in the following example:
+다음 예와 같이 이 정보를 사용하여 프로퍼티에 대한 메타 데이터를 기록할 수 있습니다:
 
 ```ts
 class Greeter {
@@ -314,7 +315,7 @@ class Greeter {
 }
 ```
 
-We can then define the `@format` decorator and `getFormat` functions using the following function declarations:
+그 다음 함수 선언을 사용하여 `@format` 데코레이터와 `getFormat` 함수를 정의 할 수 있습니다:
 
 ```ts
 import "reflect-metadata";
@@ -330,30 +331,29 @@ function getFormat(target: any, propertyKey: string) {
 }
 ```
 
-The `@format("Hello, %s")` decorator here is a [decorator factory](#decorator-factories).
-When `@format("Hello, %s")` is called, it adds a metadata entry for the property using the `Reflect.metadata` function from the `reflect-metadata` library.
-When `getFormat` is called, it reads the metadata value for the format.
+`@format("Hello, %s")` 데코레이터는 [데코레이터 팩토리](#decorator-factories)입니다.  
+`@format("Hello, %s")`이 호출되면 `reflect-metadata` 라이브러리의 `Reflect.metadata` 함수를 사용하여 프로퍼티에 대한 메타 데이터 항목을 추가합니다.  
+`getFormat`를 호출하면 포맷에 대한 메타 데이터를 읽습니다.
 
-> NOTE&emsp; This example requires the `reflect-metadata` library.
-See [Metadata](#metadata) for more information about the `reflect-metadata` library.
+> 참고&emsp; 이 예제에는 `reflect-metadata` 라이브러리가 필요합니다. `reflect-metadata` 라이브러리에 대한 자세한 정보는 [메타 데이터](#metadata)를 참조하세요.
 
-## Parameter Decorators
+## 매개변수 데코레이터 (Parameter Decorators)
 
-A *Parameter Decorator* is declared just before a parameter declaration.
-The parameter decorator is applied to the function for a class constructor or method declaration.
-A parameter decorator cannot be used in a declaration file, an overload, or in any other ambient context (such as in a `declare` class).
+*매개변수 데코레이터*는 매개변수 선언 바로 직전에 선언됩니다.  
+매개변수 데코레이터는 클래스 생성자 또는 메서드 선언의 함수에 적용됩니다.  
+매개변수 데코레이터는 선언 파일, 오버로드 또는 기타 ambient 컨텍스트 (예: `선언` 클래스)에서 사용할 수 없습니다.
 
-The expression for the parameter decorator will be called as a function at runtime, with the following three arguments:
+매개변수 데코레이터의 표현식은 런타임에 다음 세 가지 인수와 함께 함수로 호출됩니다:
 
-1. Either the constructor function of the class for a static member, or the prototype of the class for an instance member.
-2. The name of the member.
-3. The ordinal index of the parameter in the function's parameter list.
+1. 정적 멤버에 대한 클래스의 생성자 함수 또는 인스턴스 멤버에 대한 클래스의 프로토타입
+2. 멤버의 이름
+3. 함수의 매개 변수 목록내에 매개 변수의 서수(순서가 있는) 인덱스
 
-> NOTE&emsp; A parameter decorator can only be used to observe that a parameter has been declared on a method.
+> 주의사항&emsp; 매개변수 데코레이터는 매개변수가 메서드에 선언되었음을 관찰하는 데만 사용할 수 있습니다.
 
-The return value of the parameter decorator is ignored.
+매개변수 데코레이터의 반환 값은 무시됩니다.
 
-The following is an example of a parameter decorator (`@required`) applied to parameter of a member of the `Greeter` class:
+다음은 `Greeter` 클래스 멤버의 매개 변수에 적용된 매개 변수 데코레이터 (`@required`)의 예제입니다:
 
 ```ts
 class Greeter {
@@ -370,7 +370,7 @@ class Greeter {
 }
 ```
 
-We can then define the `@required` and `@validate` decorators using the following function declarations:
+그 다음 함수 선언을 사용해 `@required`와 `@validate` 데코레이터를 정의할 수 있습니다:
 
 ```ts
 import "reflect-metadata";
@@ -400,28 +400,27 @@ function validate(target: any, propertyName: string, descriptor: TypedPropertyDe
 }
 ```
 
-The `@required` decorator adds a metadata entry that marks the parameter as required.
-The `@validate` decorator then wraps the existing `greet` method in a function that validates the arguments before invoking the original method.
+`@required` 데코레이터는 필요에 따라 매개변수를 표시하는 메타 데이터 항목을 추가합니다.   
+`@validate` 데코레이터는 기존 메서드을 호출하기 전에 기존의 `greet` 메서드를  validates 함수로 래핑합니다.
 
-> NOTE&emsp; This example requires the `reflect-metadata` library.
-See [Metadata](#metadata) for more information about the `reflect-metadata` library.
+> 주의사항&emsp; 이 예제에는 `reflect-metadata` 라이브러리가 필요합니다. `reflect-metadata` 라이브러리에 대한 자세한 정보는 [메타 데이터](#metadata)를 참조하세요.
 
-## Metadata
+## 메타 데이터
 
-Some examples use the `reflect-metadata` library which adds a polyfill for an [experimental metadata API](https://github.com/rbuckton/ReflectDecorators).
-This library is not yet part of the ECMAScript (JavaScript) standard.
-However, once decorators are officially adopted as part of the ECMAScript standard these extensions will be proposed for adoption.
+일부 예제에서는 [실험적인 메타 데이터 API](https://github.com/rbuckton/ReflectDecorators)에 대한 polyfill을 추가하는 `reflect-metadata` 라이브러리를 사용합니다.  
+이 라이브러리는 아직 ECMAScript (JavaScript) 표준에 속하지 않습니다.  
+하지만 데코레이터가 공식적으로 ECMAScript 표준의 일부로 채택되면 이러한 확장 기능이 채택되도록 제안될 것입니다.
 
-You can install this library via npm:
+이 라이브러리는 npm을 통해 설치할 수 있습니다:
 
 ```shell
 npm i reflect-metadata --save
 ```
 
-TypeScript includes experimental support for emitting certain types of metadata for declarations that have decorators.
-To enable this experimental support, you must set the `emitDecoratorMetadata` compiler option either on the command line or in your `tsconfig.json`:
+TypeScript는 데코레이터가 있는 선언에 대한 특정 타입의 메타 데이터를 방출하기 위한 실험적인 지원을 포함하고 있습니다.  
+이 실험적인 지원을 활성화하려면 커맨드 라인 또는 `tsconfig.json`에서  컴파일러 옵션 `emitDecoratorMetadata`을 설정해야 합니다:
 
-**Command Line**:
+**커맨드 라인**:
 
 ```shell
 tsc --target ES5 --experimentalDecorators --emitDecoratorMetadata
@@ -439,9 +438,9 @@ tsc --target ES5 --experimentalDecorators --emitDecoratorMetadata
 }
 ```
 
-When enabled, as long as the `reflect-metadata` library has been imported, additional design-time type information will be exposed at runtime.
+활성화가 될 때 `reflect-metadata` 라이브러리를 임포트 한 추가적인 design-time 타입 정보는 런타임에 노출됩니다.
 
-We can see this in action in the following example:
+다음 예제에서는 이러한 기능이 실제로 작동하는 것을 볼 수 있습니다:
 
 ```ts
 import "reflect-metadata";
@@ -476,8 +475,9 @@ function validate<T>(target: any, propertyKey: string, descriptor: TypedProperty
 }
 ```
 
-The TypeScript compiler will inject design-time type information using the `@Reflect.metadata` decorator.
-You could consider it the equivalent of the following TypeScript:
+TypeScript 컴파일러는 `@Reflect.metadata` 데코레이터를 사용하여 design-time 타입 정보를 주입합니다.
+
+다음과 같은 TypeScript와 동일한 것으로 간주할 수 있습니다:
 
 ```ts
 class Line {
@@ -497,4 +497,4 @@ class Line {
 
 ```
 
-> NOTE&emsp; Decorator metadata is an experimental feature and may introduce breaking changes in future releases.
+> 참고&emsp; 데코레이터 메타 데이터는 시험적인 기능이며 향후 공개에서 중요한 변경 사항을 도입할 수 있습니다.

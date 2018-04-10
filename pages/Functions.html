@@ -22,6 +22,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-forkmegithub/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -429,7 +433,7 @@
                 <a href="Decorators.html">
             
                     
-                    Decorators
+                    데코레이터
             
                 </a>
             
@@ -442,7 +446,7 @@
                 <a href="Mixins.html">
             
                     
-                    Mixins
+                    믹스인
             
                 </a>
             
@@ -455,7 +459,7 @@
                 <a href="Triple-Slash Directives.html">
             
                     
-                    Triple-Slash Directives
+                    트리플-슬래시 지시자
             
                 </a>
             
@@ -468,7 +472,7 @@
                 <a href="Type Checking JavaScript Files.html">
             
                     
-                    Type Checking JavaScript Files
+                    JavaScript 파일 타입 검사
             
                 </a>
             
@@ -748,7 +752,24 @@
 <p>&#xB450; &#xBC88;&#xC9F8; &#xD30C;&#xD2B8;&#xB294; &#xBC18;&#xD658; &#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC640; &#xBC18;&#xD658; &#xD0C0;&#xC785; &#xC0AC;&#xC774;&#xC5D0; &#xAD75;&#xC740; &#xD654;&#xC0B4;&#xD45C;(=&gt;)&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBC18;&#xD658; &#xD0C0;&#xC785;&#xC744; &#xBA85;&#xD655;&#xD558;&#xAC8C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xC55E;&#xC11C; &#xC5B8;&#xAE09;&#xD55C; &#xAC83;&#xCC98;&#xB7FC; &#xC774;&#xAC83;&#xC740; &#xD568;&#xC218; &#xD0C0;&#xC785;&#xC758; &#xD544;&#xC218;&#xC801;&#xC778; &#xBD80;&#xBD84;&#xC774;&#xBBC0;&#xB85C; &#xD568;&#xC218;&#xAC00; &#xAC12;&#xC744; &#xBC18;&#xD658;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xBC18;&#xD658; &#xAC12;&#xC744; &#xB0A8;&#xACA8; &#xB450;&#xC9C0; &#xC54A;&#xACE0; <code>void</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC8FC;&#xC758;&#xC0AC;&#xD56D;, &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC640; &#xBC18;&#xD658; &#xD0C0;&#xC785;&#xB9CC; &#xD568;&#xC218; &#xD0C0;&#xC785;&#xC744; &#xAD6C;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xCEA1;&#xCC98;&#xB41C; &#xBCC0;&#xC218;&#xB294; &#xD0C0;&#xC785;&#xC5D0; &#xBC18;&#xC601;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC2E4;&#xC81C;&#xB85C; &#xCEA1;&#xCC98;&#xB41C; &#xBCC0;&#xC218;&#xB294; &#xD568;&#xC218;&#xC758; &quot;&#xC228;&#xACA8;&#xC9C4; &#xC0C1;&#xD0DC;&quot;&#xC758; &#xC77C;&#xBD80;&#xC774;&#xBA70; &#xD574;&#xB2F9; API&#xB97C; &#xAD6C;&#xC131;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h2 id="&#xD0C0;&#xC785;-&#xCD94;&#xB860;-inferring-the-types">&#xD0C0;&#xC785; &#xCD94;&#xB860; (Inferring the types)</h2>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<h1 id="&#xC608;&#xB97C;-&#xB4E4;&#xC5B4;-typescript-&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294;-&#xD55C;&#xCABD;&#xC5D0;&#xB294;-&#xD0C0;&#xC785;&#xC774;-&#xC788;&#xC9C0;&#xB9CC;-&#xB2E4;&#xB978;-&#xD55C;&#xCABD;&#xC5D0;-&#xD0C0;&#xC785;&#xC774;-&#xC5C6;&#xB294;-&#xACBD;&#xC6B0;-&#xADF8;-&#xD0C0;&#xC785;&#xC744;-&#xC774;&#xD574;&#xD560;-&#xC218;-&#xC5C6;&#xB2E4;&#xB294;-&#xAC83;&#xC744;-&#xC54C;&#xAC8C;-&#xB429;&#xB2C8;&#xB2E4;">&#xC608;&#xB97C; &#xB4E4;&#xC5B4; TypeScript &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; &#xD55C;&#xCABD;&#xC5D0;&#xB294; &#xD0C0;&#xC785;&#xC774; &#xC788;&#xC9C0;&#xB9CC; &#xB2E4;&#xB978; &#xD55C;&#xCABD;&#xC5D0; &#xD0C0;&#xC785;&#xC774; &#xC5C6;&#xB294; &#xACBD;&#xC6B0; &#xADF8; &#xD0C0;&#xC785;&#xC744; &#xC774;&#xD574;&#xD560; &#xC218; &#xC5C6;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC54C;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;:</h1>
 <p>&#xC608;&#xB97C; &#xB4E4;&#xBA74; TypeScript &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; &#xD55C;&#xCABD;&#xC5D0;&#xB294; &#xD0C0;&#xC785;&#xC774; &#xC788;&#xC9C0;&#xB9CC; &#xB2E4;&#xB978; &#xD55C;&#xCABD;&#xC5D0; &#xD0C0;&#xC785;&#xC774; &#xC5C6;&#xB294; &#xACBD;&#xC6B0; &#xADF8; &#xD0C0;&#xC785;&#xC744; &#xC774;&#xD574;&#xD560; &#xC218; &#xC5C6;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC54C;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>764cb472fb0987a1c9354cebc6699cc41293004c</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <pre><code class="lang-ts"><span class="cm-comment">// myAdd&#xB294; &#xC644;&#xBCBD;&#xD558;&#xAC8C; &#xD568;&#xC218; &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
 <span class="cm-keyword">let</span> <span class="cm-variable">myAdd</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">x</span>: <span class="cm-variable-3">number</span>, <span class="cm-def">y</span>: <span class="cm-variable-3">number</span>): <span class="cm-variable-3">number</span> { <span class="cm-keyword">return</span>  <span class="cm-variable">x</span> <span class="cm-operator">+</span> <span class="cm-variable">y</span>; };
 
@@ -1054,7 +1075,7 @@ TypeScript&#xC5D0;&#xC11C; &#xC120;&#xD0DD;&#xC801;&#xC778; &#xB9E4;&#xAC1C;&#xB
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"함수","level":"3.5","depth":1,"next":{"title":"제네릭","level":"3.6","depth":1,"path":"pages/Generics.md","ref":"pages/Generics.md","articles":[]},"previous":{"title":"클래스","level":"3.4","depth":1,"path":"pages/Classes.md","ref":"pages/Classes.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Functions.md","mtime":"2018-04-10T01:42:20.313Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-10T01:48:44.756Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"함수","level":"3.5","depth":1,"next":{"title":"제네릭","level":"3.6","depth":1,"path":"pages/Generics.md","ref":"pages/Generics.md","articles":[]},"previous":{"title":"클래스","level":"3.4","depth":1,"path":"pages/Classes.md","ref":"pages/Classes.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Functions.md","mtime":"2018-04-10T07:01:22.937Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-10T07:07:23.049Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1063,6 +1084,10 @@ TypeScript&#xC5D0;&#xC11C; &#xC120;&#xD0DD;&#xC801;&#xC778; &#xB9E4;&#xAC1C;&#xB
     
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-forkmegithub/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

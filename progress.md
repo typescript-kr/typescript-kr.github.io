@@ -23,12 +23,21 @@
 - [x] 네임스페이스
 - [x] 네임스페이스와 모듈
 - [x] 모듈 해석
+<<<<<<< HEAD
+- [X] 선언 병합
+- [X] JSX
+- [X] Decorators
+- [X] Mixins
+- [x] Triple-Slash Directives
+- [x] Type Checking JavaScript Files
+=======
 - [ ] 선언 병합
 - [ ] JSX
 - [ ] Decorators
 - [ ] Mixins
 - [ ] Triple-Slash Directives
 - [ ] Type Checking JavaScript Files
+>>>>>>> 764cb472fb0987a1c9354cebc6699cc41293004c
 ## Declaration Files
 - [ ] Introduction
 - [ ] Library Structures

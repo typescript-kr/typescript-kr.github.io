@@ -1,6 +1,10 @@
 # 소개
 
+<<<<<<< HEAD
+TypeScript의 고유한 개념 중 일부는 타입 수준에서 JavaScript 객체의 형태를 설명합니다.  
+=======
 TypeScript의 고유한 개념 중 일부는 타입 레벨에서 JavaScript 객체의 형태를 설명합니다.  
+>>>>>>> 764cb472fb0987a1c9354cebc6699cc41293004c
 특히 TypeScript에서의 고유한 예로는 '선언 병합'이라는 개념이 있습니다.  
 이 개념을 이해하는 것은 기존 JavaScript를 사용할 때 이점을 제공할 것입니다.   
 또한 고급 추상화 개념에 대한 문을 열어줍니다.
@@ -11,13 +15,28 @@ TypeScript의 고유한 개념 중 일부는 타입 레벨에서 JavaScript 객�
 
 # 기본 개념 (Basic Concepts)
 
+<<<<<<< HEAD
+TypeScript에서 선언은 다음 세 가지 중 하나 이상의 엔티티를 생성합니다: 네임스페이스, 타입 또는 값  
+네임스페이스-생성 선언은 점 표기법을 사용하여 접근하는 이름이 포함된 네임스페이스를 생성합니다.  
+타입-생성 선언은 다음과 같습니다: 선언된 형태로 표시되고 주어진 이름에 바인딩 되는 타입을 작성합니다.  
+=======
 TypeScript에서 선언은 다음 세 가지중 중 하나 이상의 엔티티를 생성합니다: 네임스페이스, 타입 또는 값  
 네임스페이스-생성 선언은 점 표기법을 사용하여 접근하는 이름이 포함된 네임스페이스를 생성합니다.  
 타입-생성 선언은 다음과 같습니다: 선언된 형태로 표시되고 주어진 이름에 바인딩되는 타입을 작성합니다.  
+>>>>>>> 764cb472fb0987a1c9354cebc6699cc41293004c
 마지막으로, 값-생성 선언은 출력된 JavaScript에서 볼 수 있는 값을 만듭니다.
 
 |   선언 타입   | 네임스페이스 | 타입 |  값  |
 |---------------|:------------:|:----:|:----:|
+<<<<<<< HEAD
+| 네임스페이스  |     X        |      |   X  |
+| 클래스        |              |   X  |   X  |
+| 열거형        |              |   X  |   X  |
+| 인터페이스    |              |   X  |      |
+| 타입 별칭     |              |   X  |      |
+| 함수          |              |      |   X  |
+| 변수          |              |      |   X  |
+=======
 | Namespace     |     X        |      |   X  |
 | Class         |              |   X  |   X  |
 | Enum          |              |   X  |   X  |
@@ -25,13 +44,18 @@ TypeScript에서 선언은 다음 세 가지중 중 하나 이상의 엔티티�
 | Type Alias    |              |   X  |      |
 | Function      |              |      |   X  |
 | Variable      |              |      |   X  |
+>>>>>>> 764cb472fb0987a1c9354cebc6699cc41293004c
 
 각 선언으로 생성된 내용을 이해하면 선언 병합을 수행할 때 병합되는 내용을 이해하는 데 도움이 됩니다.
 
 # 인터페이스 병합 (Merging Interfaces)
 
 가장 단순하고 아마도 가장 일반적인 타입의 선언 병합은 인터페이스 병합입니다.  
+<<<<<<< HEAD
+가장 기본적인 수준에서 이 병합은 두 선언의 멤버를 기계적으로 같은 이름의 단일 인터페이스에 결합합니다.
+=======
 가장 기본적인 수준에서 이 병합은 두 선언의 멤버를 기계적으로 같은 이름의 단일 인터페이스에 결합시킵니다.
+>>>>>>> 764cb472fb0987a1c9354cebc6699cc41293004c
 
 ```ts
 interface Box {
@@ -46,12 +70,21 @@ interface Box {
 let box: Box = {height: 5, width: 6, scale: 10};
 ```
 
+<<<<<<< HEAD
+인터페이스의 비-함수 멤버는 고유해야 합니다.  
+고유하지 않다면 같은 타입이어야 합니다.  
+컴파일러는 인터페이스가 모두 같은 이름이지만 다른 타입의 비-함수 멤버를 선언하는 경우 오류를 발생시킵니다.
+
+함수 멤버의 경우 같은 이름의 각 함수 멤버가 같은 함수의 오버로드를 설명하는 것으로 간주합니다.  
+또한 후위의 인터페이스 `A`와 인터페이스 `A`를 병합하는 경우에는 두 번째 인터페이스가 첫 번째 인터페이스보다 우선순위가 더 높다는 점이 주목됩니다.
+=======
 인터페이스의 비-함수 멤버는 고유해야합니다.  
 고유하지 않다면 동일한 타입이어야합니다.  
 컴파일러는 인터페이스가 모두 같은 이름이지만 다른 타입의 비-함수 멤버를 선언하는 경우 오류를 발생시킵니다.
 
 함수 멤버의 경우 동일한 이름의 각 함수 멤버가 동일한 함수의 오버로드를 설명하는 것으로 간주됩니다.  
 또한 후위의 인터페이스 `A`와 인터페이스 `A`를 병합하는 경우에는 두번째 인터페이스가 첫번째 인터페이스보다 우선 순위가 더 높다는 점이 주목됩니다.
+>>>>>>> 764cb472fb0987a1c9354cebc6699cc41293004c
 
 예를 들어 다음과 같습니다:
 
@@ -81,7 +114,11 @@ interface Cloner {
 }
 ```
 
+<<<<<<< HEAD
+각 그룹의 요소는 같은 순서를 유지하지만 그룹 자체는 나중에 오버로드가 발생한 것이 가장 먼저 병합됩니다.
+=======
 각 그룹의 요소는 동일한 순서를 유지하지만 그룹 자체는 나중에 오버로드가 발생된 것이 가장 먼저 병합됩니다.
+>>>>>>> 764cb472fb0987a1c9354cebc6699cc41293004c
 
 이 규칙에 대한 한가지 예외는 특수한 서명(specialized signatures)입니다.  
 서명의 타입이 *단일* 문자열 리터럴 타입(예 : 문자열 리터럴의 유니온이 아닌)인 매개 변수가 있는 경우 병합된 오버로드 목록의 맨 위로 버블링됩니다.
@@ -114,16 +151,16 @@ interface Document {
 }
 ```
 
-# Merging Namespaces
+# 네임스페이스 병합 (Merging Namespaces)
 
-Similarly to interfaces, namespaces of the same name will also merge their members.
-Since namespaces create both a namespace and a value, we need to understand how both merge.
+인터페이스와 마찬가지로 같은 이름의 네임 스페이스도 해당 멤버를 병합합니다.  
+네임 스페이스는 네임 스페이스와 값을 모두 생성하기 때문에 두 네임 스페이스가 어떻게 병합되는지 이해해야 합니다.
 
-To merge the namespaces, type definitions from exported interfaces declared in each namespace are themselves merged, forming a single namespace with merged interface definitions inside.
+네임 스페이스를 병합하기 위해 각 네임스페이스에 선언된 exported 인터페이스의 타입 정의 자체가 병합되며 내부에 병합된 인터페이스 정의가 있는 단일 네임스페이스를 형성합니다.
 
-To merge the namespace value, at each declaration site, if a namespace already exists with the given name, it is further extended by taking the existing namespace and adding the exported members of the second namespace to the first.
+네임 스페이스 값을 병합하려면 각 선언 사이트에 지정된 이름의 네임 스페이스가 이미 있는 경우 기존 네임 스페이스를 가져와 두 번째 네임 스페이스의 내보낸 멤버를 첫 번째 네임스페이스에 추가하여 네임 스페이스를 확장합니다.
 
-The declaration merge of `Animals` in this example:
+이 예에서는 `Animals`의 병합을 선언합니다:
 
 ```ts
 namespace Animals {
@@ -136,7 +173,7 @@ namespace Animals {
 }
 ```
 
-is equivalent to:
+다음과 같습니다.
 
 ```ts
 namespace Animals {
@@ -147,10 +184,13 @@ namespace Animals {
 }
 ```
 
-This model of namespace merging is a helpful starting place, but we also need to understand what happens with non-exported members.
-Non-exported members are only visible in the original (un-merged) namespace. This means that after merging, merged members that came from other declarations cannot see non-exported members.
+병합된 네임스페이스의 모델은 유용한 출발점이지만 내보내지 않은(non-exported) 멤버에 무슨 일이 일어나는지 이해할 필요가 있습니다.  
+내보낼 수 없는 멤버는 원래 (병합되지 않은) 네임 스페이스에서만 볼 수 있습니다.  
+즉 병합 후에는 다른 선언에서 가져온 병합된 멤버는 내보낼 수 없는 멤버를 볼 수 없습니다.
+내보내지 않은 멤버는 원래 네임스페이스에서만 볼 수 있습니다(병합되지 않음).  
+즉 병합 후에 다른 선언에서 가져온 병합된 멤버는 내보내지 않은 멤버를 볼 수 없습니다.
 
-We can see this more clearly in this example:
+이 예제에서 이것을 더 명확하게 볼 수 있습니다:
 
 ```ts
 namespace Animal {
@@ -163,23 +203,24 @@ namespace Animal {
 
 namespace Animal {
     export function doAnimalsHaveMuscles() {
-        return haveMuscles;  // <-- error, haveMuscles is not visible here
+        return haveMuscles;  // <-- 오류, haveMuscles는 여기에 표시되지 않습니다.
     }
 }
 ```
 
-Because `haveMuscles` is not exported, only the `animalsHaveMuscles` function that shares the same un-merged namespace can see the symbol.
-The `doAnimalsHaveMuscles` function, even though it's part of the merged `Animal` namespace can not see this un-exported member.
+`haveMuscles`가 exported되지 않았기 때문에 동일하게 병합되지 않은 네임스페이스를 공유하는 `animalsHaveMuscles` 함수만 이 심볼을 볼 수 있습니다.  
+`doAnimalsHaveMuscles` 함수는 병합된 `Animal` 네임스페이스의 일부임에도 불구하고 exported 되지 않은 멤버를 볼 수 없습니다.
 
-# Merging Namespaces with Classes, Functions, and Enums
+# 클래스, 함수 그리고 열거형 병합 (Merging Namespaces with Classes, Functions, and Enums)
 
-Namespaces are flexible enough to also merge with other types of declarations.
-To do so, the namespace declaration must follow the declaration it will merge with. The resulting declaration has properties of both declaration types.
-TypeScript uses this capability to model some of the patterns in JavaScript as well as other programming languages.
+네임스페이스는 다른 타입의 선언과도 통합이 가능할 정도로 유연합니다.  
+이렇게 하려면 네임스페이스 선언이 병합할 선언을 따라야 합니다.  
+결과 선언에는 두 선언 타입의 프로퍼티가 있습니다.  
+TypeScript는 이 기능을 사용하여 JavaScript의 일부 패턴과 다른 프로그래밍 언어를 모델링 합니다.
 
-## Merging Namespaces with Classes
+## 클래스와 네임스페이스 병합 (Merging Namespaces with Classes)
 
-This gives the user a way of describing inner classes.
+이는 사용자에게 내부(inner) 클래스를 설명하는 방법을 제공합니다.
 
 ```ts
 class Album {
@@ -190,12 +231,12 @@ namespace Album {
 }
 ```
 
-The visibility rules for merged members is the same as described in the 'Merging Namespaces' section, so we must export the `AlbumLabel` class for the merged class to see it.
-The end result is a class managed inside of another class.
-You can also use namespaces to add more static members to an existing class.
+병합된 멤버의 가시성 규칙은 '네임스페이스 병합' 섹션에 설명된 것과 같으므로 병합된 클래스를 보려면 `AlbumLabel` 클래스를 export 해야 합니다.  
+최종 결과는 다른 클래스 내부에서 관리되는 클래스입니다.  
+네임스페이스를 사용하여 기존 클래스에 더 많은 정적 멤버를 추가할 수도 있습니다.
 
-In addition to the pattern of inner classes, you may also be familiar with JavaScript practice of creating a function and then extending the function further by adding properties onto the function.
-TypeScript uses declaration merging to build up definitions like this in a type-safe way.
+내부 클래스 패턴 외에도 함수를 생성한 다음 함수에 프로퍼티를 추가하여 함수를 확장하는 JavaScript 방법에 익숙할 수도 있습니다.  
+TypeScript는 이러한 타입을 안전한(type-safe) 방법으로 정의하기 위해 선언 병합을 사용합니다.
 
 ```ts
 function buildLabel(name: string): string {
@@ -210,7 +251,7 @@ namespace buildLabel {
 alert(buildLabel("Sam Smith"));
 ```
 
-Similarly, namespaces can be used to extend enums with static members:
+마찬가지로 네임스페이스를 사용하여 정적 멤버를 포함하는 열거형을 확장할 수 있습니다:
 
 ```ts
 enum Color {
@@ -237,35 +278,35 @@ namespace Color {
 }
 ```
 
-# Disallowed Merges
+# 허용되지 않는 병합 (Disallowed Merges)
 
-Not all merges are allowed in TypeScript.
-Currently, classes can not merge with other classes or with variables.
-For information on mimicking class merging, see the [Mixins in TypeScript](./Mixins.md) section.
+TypeScript에서는 일부 병합이 허용되지 않습니다.  
+현재 클래스는 다른 클래스 또는 변수와 병합할 수 없습니다.  
+클래스 병합을 모방하는 방법에 대한 자세한 내용은 [TypeScript의 Mixins](./Mixins.md) 섹션을 참조하세요.
 
-# Module Augmentation
+# 모듈 확대 (Module Augmentation)
 
-Although JavaScript modules do not support merging, you can patch existing objects by importing and then updating them.
-Let's look at a toy Observable example:
+JavaScript 모듈은 병합을 지원하지 않지만 기존 객체를 가져와서 업데이트할 수 있습니다.  
+Observable 예제를 살펴봅시다:
 
 ```js
 // observable.js
 export class Observable<T> {
-    // ... implementation left as an exercise for the reader ...
+    // ... 구현은 숙제로 남겨놨습니다 ...
 }
 
 // map.js
 import { Observable } from "./observable";
 Observable.prototype.map = function (f) {
-    // ... another exercise for the reader
+    // ... 또 다른 숙제
 }
 ```
 
-This works fine in TypeScript too, but the compiler doesn't know about `Observable.prototype.map`.
-You can use module augmentation to tell the compiler about it:
+이것은 TypeScript에서도 잘 작동하지만 컴파일러는 `Observable.prototype.map`에 대해 알지 못합니다.  
+이런 경우 모듈 확대를 사용하여 컴파일러에 다음에 대해 알릴 수 있습니다:
 
 ```ts
-// observable.ts stays the same
+// observable.ts는 그대로 유지됩니다.
 // map.ts
 import { Observable } from "./observable";
 declare module "./observable" {
@@ -274,7 +315,7 @@ declare module "./observable" {
     }
 }
 Observable.prototype.map = function (f) {
-    // ... another exercise for the reader
+    // ... 또 다른 숙제
 }
 
 
@@ -285,19 +326,19 @@ let o: Observable<number>;
 o.map(x => x.toFixed());
 ```
 
-The module name is resolved the same way as module specifiers in `import`/`export`.
-See [Modules](./Modules.md) for more information.
-Then the declarations in an augmentation are merged as if they were declared in the same file as the original.
-However, you can't declare new top-level declarations in the augmentation -- just patches to existing declarations.
+모듈 이름은 `import`/`export`의 모듈 지정자와 같은 방법으로 해석됩니다.  
+자세한 내용은 [모듈](./Modules.md)을 참조하세요.  
+확대되는 선언은 마치 원본과 같은 파일에 선언된 것처럼 병합됩니다.  
+그러나 확대에서 새로운 최상위 레벨 선언을 새롭게 할 수는 없습니다. -- 기존 선언에 패치 만하면 됩니다.
 
-## Global augmentation
+## 전역 확대 (Global augmentation)
 
-You can also add declarations to the global scope from inside a module:
+모듈 내부에서 전역 스코프 선언을 추가할 수도 있습니다.
 
 ```ts
 // observable.ts
 export class Observable<T> {
-    // ... still no implementation ...
+    // ... 여전히 구현되지 않고 있습니다 ...
 }
 
 declare global {
@@ -311,4 +352,4 @@ Array.prototype.toObservable = function () {
 }
 ```
 
-Global augmentations have the same behavior and limits as module augmentations.
+전역 확대는 모듈 확대와 같은 작동 및 제한 사항을 가집니다.
