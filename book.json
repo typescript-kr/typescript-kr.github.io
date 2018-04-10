@@ -1,6 +1,9 @@
 {
-	"plugins": ["theme-darkblue", "addcssjs", "highlight-1", "custom-favicon", "forkmegithub", "sitemap"],
+	"plugins": ["theme-darkblue", "addcssjs", "highlight-1", "custom-favicon", "forkmegithub", "sitemap-general", "sitemap"],
 	"pluginsConfig": {
+    "sitemap-general": {
+      "prefix": "https://typescript-kr.gitbooks.io/"
+    },
 		"addcssjs": {
 			"css": ["assets/css/atom-one-dark.css"]
 		},
