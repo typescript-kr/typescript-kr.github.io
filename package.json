@@ -10,6 +10,7 @@
     "gitbook-plugin-forkmegithub": "^2.2.0",
     "gitbook-plugin-highlight-1": "^2.0.3",
     "gitbook-plugin-sitemap": "^1.2.0",
+    "gitbook-plugin-sitemap-general": "^0.1.1",
     "gitbook-plugin-theme-darkblue": "^1.0.1"
   },
   "devDependencies": {},
