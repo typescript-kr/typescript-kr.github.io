@@ -1,6 +1,9 @@
 {
-	"plugins": ["theme-darkblue", "addcssjs", "highlight-1", "custom-favicon", "forkmegithub", "sitemap", "header"],
+	"plugins": ["theme-darkblue", "addcssjs", "highlight-1", "custom-favicon", "forkmegithub", "sitemap", "header", "sitemap-general"],
 	"pluginsConfig": {
+    "sitemap-general": {
+      "prefix": "https://cyberzhg.gitbooks.io/clrs/content/"
+    },
 		"addcssjs": {
 			"css": ["assets/css/atom-one-dark.css"]
 		},
