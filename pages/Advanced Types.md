@@ -677,7 +677,7 @@ let v = new BasicCalculator(2)
             .currentValue();
 ```
 
-클래스는 `this` 타입을 사용하기 때문에 확장할 수 있으며 새로운 클래스는 변경 없이 이전 메소드를 사용할 수 있습니다.
+클래스는 `this` 타입을 사용하기 때문에 확장할 수 있으며 새로운 클래스는 변경 없이 이전 메서드를 사용할 수 있습니다.
 
 ```ts
 class ScientificCalculator extends BasicCalculator {

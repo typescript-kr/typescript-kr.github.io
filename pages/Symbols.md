@@ -66,7 +66,7 @@ let className = c[getClassNameSymbol](); // "C"
 
 ## `Symbol.match`
 
-정규 표현식을 문자열과 비교하는 정규 표현식 메소드입니다. `String.prototype.match` 메서드로 호출 됩니다.
+정규 표현식을 문자열과 비교하는 정규 표현식 메서드입니다. `String.prototype.match` 메서드로 호출 됩니다.
 
 ## `Symbol.replace`
 
@@ -93,7 +93,7 @@ let className = c[getClassNameSymbol](); // "C"
 ## `Symbol.toStringTag`
 
 객체의 기본 문자열 설명을 만드는 데 사용되는 String 값입니다.
-내장 메소드`Object.prototype.toString`로 호출 합니다.
+내장 메서드`Object.prototype.toString`로 호출 합니다.
 
 ## `Symbol.unscopables`
 
