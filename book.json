@@ -2,7 +2,7 @@
 	"plugins": ["theme-darkblue", "addcssjs", "highlight-1", "custom-favicon", "forkmegithub", "sitemap", "header", "sitemap-general"],
 	"pluginsConfig": {
     "sitemap-general": {
-      "prefix": "https://cyberzhg.gitbooks.io/clrs/content/"
+      "prefix": "https://typescript-kr.gitbooks.io/"
     },
 		"addcssjs": {
 			"css": ["assets/css/atom-one-dark.css"]
