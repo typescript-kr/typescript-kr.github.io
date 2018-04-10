@@ -1,10 +1,5 @@
 _book
 .DS_Store
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 764cb472fb0987a1c9354cebc6699cc41293004c
-.idea/vcs.xml
 
 # Created by https://www.gitignore.io/api/node,macos,windows,intellij,sublimetext,visualstudiocode
 
@@ -231,12 +226,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-<<<<<<< HEAD
 # End of https://www.gitignore.io/api/node,macos,windows,intellij,sublimetext,visualstudiocode
-=======
-# End of https://www.gitignore.io/api/node,macos,windows,intellij,sublimetext,visualstudiocode
-=======
-.idea
-node_modules
->>>>>>> master
->>>>>>> 764cb472fb0987a1c9354cebc6699cc41293004c
