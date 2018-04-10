@@ -1,0 +1,867 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Triple-Slash Directives · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight-1/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/atom-one-dark.css" />
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Type Checking JavaScript Files.html" />
+    
+    
+    <link rel="prev" href="Mixins.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">튜토리얼</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="tutorials/TypeScript in 5 minutes.html">
+            
+                <a href="tutorials/TypeScript in 5 minutes.html">
+            
+                    
+                    5분 안에 보는 TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="tutorials/ASP.NET Core.html">
+            
+                <a href="tutorials/ASP.NET Core.html">
+            
+                    
+                    ASP.NET Core
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="tutorials/Gulp.html">
+            
+                <a href="tutorials/Gulp.html">
+            
+                    
+                    걸프
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="tutorials/Migrating from JavaScript.html">
+            
+                <a href="tutorials/Migrating from JavaScript.html">
+            
+                    
+                    JavaScript에서 마이그레이션
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="tutorials/React & Webpack.html">
+            
+                <a href="tutorials/React & Webpack.html">
+            
+                    
+                    리액트 & 웹팩
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">핸드북</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="Basic Types.html">
+            
+                <a href="Basic Types.html">
+            
+                    
+                    기본 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="Variable Declarations.html">
+            
+                <a href="Variable Declarations.html">
+            
+                    
+                    변수 선언
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="Interfaces.html">
+            
+                <a href="Interfaces.html">
+            
+                    
+                    인터페이스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="Classes.html">
+            
+                <a href="Classes.html">
+            
+                    
+                    클래스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="Functions.html">
+            
+                <a href="Functions.html">
+            
+                    
+                    함수
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="Generics.html">
+            
+                <a href="Generics.html">
+            
+                    
+                    제네릭
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="Enums.html">
+            
+                <a href="Enums.html">
+            
+                    
+                    열거형
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="Type Inference.html">
+            
+                <a href="Type Inference.html">
+            
+                    
+                    타입 추론
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="Type Compatibility.html">
+            
+                <a href="Type Compatibility.html">
+            
+                    
+                    타입 호환성
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="Advanced Types.html">
+            
+                <a href="Advanced Types.html">
+            
+                    
+                    고급 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="Symbols.html">
+            
+                <a href="Symbols.html">
+            
+                    
+                    심볼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="Iterators and Generators.html">
+            
+                <a href="Iterators and Generators.html">
+            
+                    
+                    이터레이터와 제네레이터
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="Modules.html">
+            
+                <a href="Modules.html">
+            
+                    
+                    모듈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="Namespaces.html">
+            
+                <a href="Namespaces.html">
+            
+                    
+                    네임스페이스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15" data-path="Namespaces and Modules.html">
+            
+                <a href="Namespaces and Modules.html">
+            
+                    
+                    네임스페이스와 모듈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.16" data-path="Module Resolution.html">
+            
+                <a href="Module Resolution.html">
+            
+                    
+                    모듈 해석
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.17" data-path="Declaration Merging.html">
+            
+                <a href="Declaration Merging.html">
+            
+                    
+                    선언 병합
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.18" data-path="JSX.html">
+            
+                <a href="JSX.html">
+            
+                    
+                    JSX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.19" data-path="Decorators.html">
+            
+                <a href="Decorators.html">
+            
+                    
+                    Decorators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.20" data-path="Mixins.html">
+            
+                <a href="Mixins.html">
+            
+                    
+                    Mixins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.21" data-path="Triple-Slash Directives.html">
+            
+                <a href="Triple-Slash Directives.html">
+            
+                    
+                    Triple-Slash Directives
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.22" data-path="Type Checking JavaScript Files.html">
+            
+                <a href="Type Checking JavaScript Files.html">
+            
+                    
+                    Type Checking JavaScript Files
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Declaration Files</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="declaration files/Introduction.html">
+            
+                <a href="declaration files/Introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="declaration files/Library Structures.html">
+            
+                <a href="declaration files/Library Structures.html">
+            
+                    
+                    Library Structures
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="declaration files/By Example.html">
+            
+                <a href="declaration files/By Example.html">
+            
+                    
+                    By Example
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="declaration files/Do's and Don'ts.html">
+            
+                <a href="declaration files/Do's and Don'ts.html">
+            
+                    
+                    Do's and Don'ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="declaration files/Deep Dive.html">
+            
+                <a href="declaration files/Deep Dive.html">
+            
+                    
+                    Deep Dive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="declaration files/Templates.html">
+            
+                <a href="declaration files/Templates.html">
+            
+                    
+                    Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="declaration files/Publishing.html">
+            
+                <a href="declaration files/Publishing.html">
+            
+                    
+                    Publishing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="declaration files/Consumption.html">
+            
+                <a href="declaration files/Consumption.html">
+            
+                    
+                    Consumption
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Project Configuration</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="tsconfig.json.html">
+            
+                <a href="tsconfig.json.html">
+            
+                    
+                    tsconfig.json
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="Compiler Options.html">
+            
+                <a href="Compiler Options.html">
+            
+                    
+                    Compiler Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="Compiler Options in MSBuild.html">
+            
+                <a href="Compiler Options in MSBuild.html">
+            
+                    
+                    Compiler Options in MSBuild
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="Integrating with Build Tools.html">
+            
+                <a href="Integrating with Build Tools.html">
+            
+                    
+                    Integrating with Build Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="Nightly Builds.html">
+            
+                <a href="Nightly Builds.html">
+            
+                    
+                    Nightly Builds
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Triple-Slash Directives</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>Triple-slash directives are single-line comments containing a single XML tag.
+The contents of the comment are used as compiler directives.</p>
+<p>Triple-slash directives are <strong>only</strong> valid at the top of their containing file.
+A triple-slash directive can only be preceded by single or multi-line comments, including other triple-slash directives.
+If they are encountered following a statement or a declaration they are treated as regular single-line comments, and hold no special meaning.</p>
+<h2 id="reference-path-"><code>/// &lt;reference path=&quot;...&quot; /&gt;</code></h2>
+<p>The <code>/// &lt;reference path=&quot;...&quot; /&gt;</code> directive is the most common of this group.
+It serves as a declaration of <em>dependency</em> between files.</p>
+<p>Triple-slash references instruct the compiler to include additional files in the compilation process.</p>
+<p>They also serve as a method to order the output when using <code>--out</code> or <code>--outFile</code>.
+Files are emitted to the output file location in the same order as the input after preprocessing pass.</p>
+<h3 id="preprocessing-input-files">Preprocessing input files</h3>
+<p>The compiler performs a preprocessing pass on input files to resolve all triple-slash reference directives.
+During this process, additional files are added to the compilation.</p>
+<p>The process starts with a set of <em>root files</em>;
+these are the file names specified on the command-line or in the <code>&quot;files&quot;</code> list in the <code>tsconfig.json</code> file.
+These root files are preprocessed in the same order they are specified.
+Before a file is added to the list, all triple-slash references in it are processed, and their targets included.
+Triple-slash references are resolved in a depth first manner, in the order they have been seen in the file.</p>
+<p>A triple-slash reference path is resolved relative to the containing file, if unrooted.</p>
+<h3 id="errors">Errors</h3>
+<p>It is an error to reference a file that does not exist.
+It is an error for a file to have a triple-slash reference to itself.</p>
+<h3 id="using---noresolve">Using <code>--noResolve</code></h3>
+<p>If the compiler flag <code>--noResolve</code> is specified, triple-slash references are ignored; they neither result in adding new files, nor change the order of the files provided.</p>
+<h2 id="reference-types-"><code>/// &lt;reference types=&quot;...&quot; /&gt;</code></h2>
+<p>Similar to a <code>/// &lt;reference path=&quot;...&quot; /&gt;</code> directive,  this directive serves as a declaration of <em>dependency</em>;
+a <code>/// &lt;reference types=&quot;...&quot; /&gt;</code> directive, however, declares a dependency on a package.</p>
+<p>The process of resolving these package names is similar to the process of resolving module names in an <code>import</code> statement.
+An easy way to think of triple-slash-reference-types directives are as an <code>import</code> for declaration packages.</p>
+<p>For example, including <code>/// &lt;reference types=&quot;node&quot; /&gt;</code> in a declaration file declares that this file uses names declared in <code>@types/node/index.d.ts</code>;
+and thus, this package needs to be included in the compilation along with the declaration file.</p>
+<p>Use these directives only when you&apos;re authoring a <code>d.ts</code> file by hand.</p>
+<p>For declaration files generated during compilation, the compiler will automatically add <code>/// &lt;reference types=&quot;...&quot; /&gt;</code> for you;
+A <code>/// &lt;reference types=&quot;...&quot; /&gt;</code> in a generated declaration file is added <em>if and only if</em> the resulting file uses any declarations from the referenced package.</p>
+<p>For declaring a dependency on an <code>@types</code> package in a <code>.ts</code> file, use <code>--types</code> on the command line or in your <code>tsconfig.json</code> instead.
+See <a href="tsconfig.json.html#types-typeroots-and-types">using <code>@types</code>, <code>typeRoots</code> and <code>types</code> in <code>tsconfig.json</code> files</a> for more details.</p>
+<h2 id="reference-no-default-libtrue"><code>/// &lt;reference no-default-lib=&quot;true&quot;/&gt;</code></h2>
+<p>This directive marks a file as a <em>default library</em>.
+You will see this comment at the top of <code>lib.d.ts</code> and its different variants.</p>
+<p>This directive instructs the compiler to <em>not</em> include the default library (i.e. <code>lib.d.ts</code>) in the compilation.
+The impact here is similar to passing <code>--noLib</code> on the command line.</p>
+<p>Also note that when passing <code>--skipDefaultLibCheck</code>, the compiler will only skip checking files with <code>/// &lt;reference no-default-lib=&quot;true&quot;/&gt;</code>.</p>
+<h2 id="amd-module-"><code>/// &lt;amd-module /&gt;</code></h2>
+<p>By default AMD modules are generated anonymous.
+This can lead to problems when other tools are used to process the resulting modules, such as bundlers (e.g. <code>r.js</code>).</p>
+<p>The <code>amd-module</code> directive allows passing an optional module name to the compiler:</p>
+<h5 id="amdmodulets">amdModule.ts</h5>
+<pre><code class="lang-ts"><span class="cm-comment">///&lt;amd-module name=&quot;NamedModule&quot;/&gt;</span>
+<span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">C</span> {
+}
+</code></pre>
+<p>Will result in assigning the name <code>NamedModule</code> to the module as part of calling the AMD <code>define</code>:</p>
+<h5 id="amdmodulejs">amdModule.js</h5>
+<pre><code class="lang-js"><span class="cm-variable">define</span>(<span class="cm-string">&quot;NamedModule&quot;</span>, [<span class="cm-string">&quot;require&quot;</span>, <span class="cm-string">&quot;exports&quot;</span>], <span class="cm-keyword">function</span> (<span class="cm-def">require</span>, <span class="cm-def">exports</span>) {
+    <span class="cm-keyword">var</span> <span class="cm-def">C</span> <span class="cm-operator">=</span> (<span class="cm-keyword">function</span> () {
+        <span class="cm-keyword">function</span> <span class="cm-def">C</span>() {
+        }
+        <span class="cm-keyword">return</span> <span class="cm-variable-2">C</span>;
+    })();
+    <span class="cm-variable-2">exports</span>.<span class="cm-property">C</span> <span class="cm-operator">=</span> <span class="cm-variable-2">C</span>;
+});
+</code></pre>
+<h2 id="amd-dependency-"><code>/// &lt;amd-dependency /&gt;</code></h2>
+<blockquote>
+<p><strong>Note</strong>: this directive has been deprecated. Use <code>import &quot;moduleName&quot;;</code> statements instead.</p>
+</blockquote>
+<p><code>/// &lt;amd-dependency path=&quot;x&quot; /&gt;</code> informs the compiler about a non-TS module dependency that needs to be injected in the resulting module&apos;s require call.</p>
+<p>The <code>amd-dependency</code> directive can also have an optional <code>name</code> property; this allows passing an optional name for an amd-dependency:</p>
+<pre><code class="lang-ts"><span class="cm-comment">/// &lt;amd-dependency path=&quot;legacy/moduleA&quot; name=&quot;moduleA&quot;/&gt;</span>
+<span class="cm-variable">declare</span> <span class="cm-keyword">var</span> <span class="cm-variable">moduleA</span>:<span class="cm-variable-3">MyType</span>
+<span class="cm-variable">moduleA</span>.<span class="cm-property">callStuff</span>()
+</code></pre>
+<p>Generated JS code:</p>
+<pre><code class="lang-js"><span class="cm-variable">define</span>([<span class="cm-string">&quot;require&quot;</span>, <span class="cm-string">&quot;exports&quot;</span>, <span class="cm-string">&quot;legacy/moduleA&quot;</span>], <span class="cm-keyword">function</span> (<span class="cm-def">require</span>, <span class="cm-def">exports</span>, <span class="cm-def">moduleA</span>) {
+    <span class="cm-variable-2">moduleA</span>.<span class="cm-property">callStuff</span>()
+});
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Mixins.html" class="navigation navigation-prev " aria-label="Previous page: Mixins">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Type Checking JavaScript Files.html" class="navigation navigation-next " aria-label="Next page: Type Checking JavaScript Files">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Triple-Slash Directives","level":"3.21","depth":1,"next":{"title":"Type Checking JavaScript Files","level":"3.22","depth":1,"path":"pages/Type Checking JavaScript Files.md","ref":"pages/Type Checking JavaScript Files.md","articles":[]},"previous":{"title":"Mixins","level":"3.20","depth":1,"path":"pages/Mixins.md","ref":"pages/Mixins.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Triple-Slash Directives.md","mtime":"2018-04-10T01:42:20.368Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-10T01:48:44.756Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    
+
+    </body>
+</html>
+

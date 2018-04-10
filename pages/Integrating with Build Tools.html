@@ -1,0 +1,946 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Integrating with Build Tools · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight-1/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/atom-one-dark.css" />
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Nightly Builds.html" />
+    
+    
+    <link rel="prev" href="Compiler Options in MSBuild.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">튜토리얼</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="tutorials/TypeScript in 5 minutes.html">
+            
+                <a href="tutorials/TypeScript in 5 minutes.html">
+            
+                    
+                    5분 안에 보는 TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="tutorials/ASP.NET Core.html">
+            
+                <a href="tutorials/ASP.NET Core.html">
+            
+                    
+                    ASP.NET Core
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="tutorials/Gulp.html">
+            
+                <a href="tutorials/Gulp.html">
+            
+                    
+                    걸프
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="tutorials/Migrating from JavaScript.html">
+            
+                <a href="tutorials/Migrating from JavaScript.html">
+            
+                    
+                    JavaScript에서 마이그레이션
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="tutorials/React & Webpack.html">
+            
+                <a href="tutorials/React & Webpack.html">
+            
+                    
+                    리액트 & 웹팩
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">핸드북</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="Basic Types.html">
+            
+                <a href="Basic Types.html">
+            
+                    
+                    기본 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="Variable Declarations.html">
+            
+                <a href="Variable Declarations.html">
+            
+                    
+                    변수 선언
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="Interfaces.html">
+            
+                <a href="Interfaces.html">
+            
+                    
+                    인터페이스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="Classes.html">
+            
+                <a href="Classes.html">
+            
+                    
+                    클래스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="Functions.html">
+            
+                <a href="Functions.html">
+            
+                    
+                    함수
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="Generics.html">
+            
+                <a href="Generics.html">
+            
+                    
+                    제네릭
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="Enums.html">
+            
+                <a href="Enums.html">
+            
+                    
+                    열거형
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="Type Inference.html">
+            
+                <a href="Type Inference.html">
+            
+                    
+                    타입 추론
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="Type Compatibility.html">
+            
+                <a href="Type Compatibility.html">
+            
+                    
+                    타입 호환성
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="Advanced Types.html">
+            
+                <a href="Advanced Types.html">
+            
+                    
+                    고급 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="Symbols.html">
+            
+                <a href="Symbols.html">
+            
+                    
+                    심볼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="Iterators and Generators.html">
+            
+                <a href="Iterators and Generators.html">
+            
+                    
+                    이터레이터와 제네레이터
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="Modules.html">
+            
+                <a href="Modules.html">
+            
+                    
+                    모듈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="Namespaces.html">
+            
+                <a href="Namespaces.html">
+            
+                    
+                    네임스페이스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15" data-path="Namespaces and Modules.html">
+            
+                <a href="Namespaces and Modules.html">
+            
+                    
+                    네임스페이스와 모듈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.16" data-path="Module Resolution.html">
+            
+                <a href="Module Resolution.html">
+            
+                    
+                    모듈 해석
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.17" data-path="Declaration Merging.html">
+            
+                <a href="Declaration Merging.html">
+            
+                    
+                    선언 병합
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.18" data-path="JSX.html">
+            
+                <a href="JSX.html">
+            
+                    
+                    JSX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.19" data-path="Decorators.html">
+            
+                <a href="Decorators.html">
+            
+                    
+                    Decorators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.20" data-path="Mixins.html">
+            
+                <a href="Mixins.html">
+            
+                    
+                    Mixins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.21" data-path="Triple-Slash Directives.html">
+            
+                <a href="Triple-Slash Directives.html">
+            
+                    
+                    Triple-Slash Directives
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.22" data-path="Type Checking JavaScript Files.html">
+            
+                <a href="Type Checking JavaScript Files.html">
+            
+                    
+                    Type Checking JavaScript Files
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Declaration Files</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="declaration files/Introduction.html">
+            
+                <a href="declaration files/Introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="declaration files/Library Structures.html">
+            
+                <a href="declaration files/Library Structures.html">
+            
+                    
+                    Library Structures
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="declaration files/By Example.html">
+            
+                <a href="declaration files/By Example.html">
+            
+                    
+                    By Example
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="declaration files/Do's and Don'ts.html">
+            
+                <a href="declaration files/Do's and Don'ts.html">
+            
+                    
+                    Do's and Don'ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="declaration files/Deep Dive.html">
+            
+                <a href="declaration files/Deep Dive.html">
+            
+                    
+                    Deep Dive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="declaration files/Templates.html">
+            
+                <a href="declaration files/Templates.html">
+            
+                    
+                    Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="declaration files/Publishing.html">
+            
+                <a href="declaration files/Publishing.html">
+            
+                    
+                    Publishing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="declaration files/Consumption.html">
+            
+                <a href="declaration files/Consumption.html">
+            
+                    
+                    Consumption
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Project Configuration</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="tsconfig.json.html">
+            
+                <a href="tsconfig.json.html">
+            
+                    
+                    tsconfig.json
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="Compiler Options.html">
+            
+                <a href="Compiler Options.html">
+            
+                    
+                    Compiler Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="Compiler Options in MSBuild.html">
+            
+                <a href="Compiler Options in MSBuild.html">
+            
+                    
+                    Compiler Options in MSBuild
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.4" data-path="Integrating with Build Tools.html">
+            
+                <a href="Integrating with Build Tools.html">
+            
+                    
+                    Integrating with Build Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="Nightly Builds.html">
+            
+                <a href="Nightly Builds.html">
+            
+                    
+                    Nightly Builds
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Integrating with Build Tools</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>Build tools</p>
+<ul>
+<li><a href="#browserify">Browserify</a></li>
+<li><a href="#duo">Duo</a></li>
+<li><a href="#grunt">Grunt</a></li>
+<li><a href="#gulp">Gulp</a></li>
+<li><a href="#jspm">Jspm</a></li>
+<li><a href="#webpack">Webpack</a></li>
+<li><a href="#msbuild">MSBuild</a></li>
+<li><a href="#nuget">NuGet</a></li>
+</ul>
+<h1 id="browserify">Browserify</h1>
+<h3 id="install">Install</h3>
+<pre><code class="lang-sh"><span class="cm-builtin">npm</span> install tsify
+</code></pre>
+<h3 id="using-command-line-interface">Using Command Line Interface</h3>
+<pre><code class="lang-sh">browserify main.ts <span class="cm-attribute">-p</span> [ tsify <span class="cm-attribute">--noImplicitAny</span> ] &gt; bundle.js
+</code></pre>
+<h3 id="using-api">Using API</h3>
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">browserify</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;browserify&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">tsify</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;tsify&quot;</span>);
+
+<span class="cm-variable">browserify</span>()
+    .<span class="cm-property">add</span>(<span class="cm-string">&quot;main.ts&quot;</span>)
+    .<span class="cm-property">plugin</span>(<span class="cm-string">&quot;tsify&quot;</span>, { <span class="cm-property">noImplicitAny</span>: <span class="cm-atom">true</span> })
+    .<span class="cm-property">bundle</span>()
+    .<span class="cm-property">pipe</span>(<span class="cm-variable">process</span>.<span class="cm-property">stdout</span>);
+</code></pre>
+<p>More details: <a href="https://github.com/smrq/tsify" target="_blank">smrq/tsify</a></p>
+<h1 id="duo">Duo</h1>
+<h3 id="install">Install</h3>
+<pre><code class="lang-sh"><span class="cm-builtin">npm</span> install duo-typescript
+</code></pre>
+<h3 id="using-command-line-interface">Using Command Line Interface</h3>
+<pre><code class="lang-sh">duo <span class="cm-attribute">--use</span> duo-typescript entry.ts
+</code></pre>
+<h3 id="using-api">Using API</h3>
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">Duo</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;duo&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">fs</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;fs&quot;</span>)
+<span class="cm-keyword">var</span> <span class="cm-variable">path</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;path&quot;</span>)
+<span class="cm-keyword">var</span> <span class="cm-variable">typescript</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;duo-typescript&quot;</span>);
+
+<span class="cm-keyword">var</span> <span class="cm-variable">out</span> <span class="cm-operator">=</span> <span class="cm-variable">path</span>.<span class="cm-property">join</span>(<span class="cm-variable">__dirname</span>, <span class="cm-string">&quot;output.js&quot;</span>)
+
+<span class="cm-variable">Duo</span>(<span class="cm-variable">__dirname</span>)
+    .<span class="cm-property">entry</span>(<span class="cm-string">&quot;entry.ts&quot;</span>)
+    .<span class="cm-property">use</span>(<span class="cm-variable">typescript</span>())
+    .<span class="cm-property">run</span>(<span class="cm-keyword">function</span> (<span class="cm-def">err</span>, <span class="cm-def">results</span>) {
+        <span class="cm-keyword">if</span> (<span class="cm-variable-2">err</span>) <span class="cm-keyword">throw</span> <span class="cm-variable-2">err</span>;
+        <span class="cm-comment">// Write compiled result to output file</span>
+        <span class="cm-variable">fs</span>.<span class="cm-property">writeFileSync</span>(<span class="cm-variable">out</span>, <span class="cm-variable-2">results</span>.<span class="cm-property">code</span>);
+    });
+</code></pre>
+<p>More details: <a href="https://github.com/frankwallis/duo-typescript" target="_blank">frankwallis/duo-typescript</a></p>
+<h1 id="grunt">Grunt</h1>
+<h3 id="install">Install</h3>
+<pre><code class="lang-sh"><span class="cm-builtin">npm</span> install grunt-ts
+</code></pre>
+<h3 id="basic-gruntfilejs">Basic Gruntfile.js</h3>
+<pre><code class="lang-js"><span class="cm-keyword">module</span>.<span class="cm-variable">exports</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">grunt</span>) {
+    <span class="cm-variable-2">grunt</span>.<span class="cm-property">initConfig</span>({
+        <span class="cm-property">ts</span>: {
+            <span class="cm-keyword">default</span> : {
+                <span class="cm-variable">src</span>: [<span class="cm-string">&quot;**/*.ts&quot;</span>, <span class="cm-string">&quot;!node_modules/**/*.ts&quot;</span>]
+            }
+        }
+    });
+    <span class="cm-variable-2">grunt</span>.<span class="cm-property">loadNpmTasks</span>(<span class="cm-string">&quot;grunt-ts&quot;</span>);
+    <span class="cm-variable-2">grunt</span>.<span class="cm-property">registerTask</span>(<span class="cm-string">&quot;default&quot;</span>, [<span class="cm-string">&quot;ts&quot;</span>]);
+};
+</code></pre>
+<p>More details: <a href="https://github.com/TypeStrong/grunt-ts" target="_blank">TypeStrong/grunt-ts</a></p>
+<h1 id="gulp">Gulp</h1>
+<h3 id="install">Install</h3>
+<pre><code class="lang-sh"><span class="cm-builtin">npm</span> install gulp-typescript
+</code></pre>
+<h3 id="basic-gulpfilejs">Basic gulpfile.js</h3>
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">gulp</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;gulp&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">ts</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;gulp-typescript&quot;</span>);
+
+<span class="cm-variable">gulp</span>.<span class="cm-property">task</span>(<span class="cm-string">&quot;default&quot;</span>, <span class="cm-keyword">function</span> () {
+    <span class="cm-keyword">var</span> <span class="cm-def">tsResult</span> <span class="cm-operator">=</span> <span class="cm-variable">gulp</span>.<span class="cm-property">src</span>(<span class="cm-string">&quot;src/*.ts&quot;</span>)
+        .<span class="cm-property">pipe</span>(<span class="cm-variable">ts</span>({
+              <span class="cm-property">noImplicitAny</span>: <span class="cm-atom">true</span>,
+              <span class="cm-property">out</span>: <span class="cm-string">&quot;output.js&quot;</span>
+        }));
+    <span class="cm-keyword">return</span> <span class="cm-variable-2">tsResult</span>.<span class="cm-property">js</span>.<span class="cm-property">pipe</span>(<span class="cm-variable">gulp</span>.<span class="cm-property">dest</span>(<span class="cm-string">&quot;built/local&quot;</span>));
+});
+</code></pre>
+<p>More details: <a href="https://github.com/ivogabe/gulp-typescript" target="_blank">ivogabe/gulp-typescript</a></p>
+<h1 id="jspm">Jspm</h1>
+<h3 id="install">Install</h3>
+<pre><code class="lang-sh"><span class="cm-builtin">npm</span> install <span class="cm-attribute">-g</span> jspm@beta
+</code></pre>
+<p><em>Note: Currently TypeScript support in jspm is in 0.16beta</em></p>
+<p>More details: <a href="https://github.com/Microsoft/TypeScriptSamples/tree/master/jspm" target="_blank">TypeScriptSamples/jspm</a></p>
+<h1 id="webpack">Webpack</h1>
+<h3 id="install">Install</h3>
+<pre><code class="lang-sh"><span class="cm-builtin">npm</span> install ts-loader <span class="cm-attribute">--save</span><span class="cm-attribute">-dev</span>
+</code></pre>
+<h3 id="basic-webpackconfigjs">Basic webpack.config.js</h3>
+<pre><code class="lang-js"><span class="cm-keyword">module</span>.<span class="cm-variable">exports</span> <span class="cm-operator">=</span> {
+    <span class="cm-property">entry</span>: <span class="cm-string">&quot;./src/index.tsx&quot;</span>,
+    <span class="cm-property">output</span>: {
+        <span class="cm-property">filename</span>: <span class="cm-string">&quot;bundle.js&quot;</span>
+    },
+    <span class="cm-property">resolve</span>: {
+        <span class="cm-comment">// Add &apos;.ts&apos; and &apos;.tsx&apos; as a resolvable extension.</span>
+        <span class="cm-property">extensions</span>: [<span class="cm-string">&quot;&quot;</span>, <span class="cm-string">&quot;.webpack.js&quot;</span>, <span class="cm-string">&quot;.web.js&quot;</span>, <span class="cm-string">&quot;.ts&quot;</span>, <span class="cm-string">&quot;.tsx&quot;</span>, <span class="cm-string">&quot;.js&quot;</span>]
+    },
+    <span class="cm-keyword">module</span>: {
+        <span class="cm-variable">loaders</span>: [
+            <span class="cm-comment">// all files with a &apos;.ts&apos; or &apos;.tsx&apos; extension will be handled by &apos;ts-loader&apos;</span>
+            { <span class="cm-variable">test</span>: <span class="cm-string-2">/\.tsx?$/</span>, <span class="cm-variable">loader</span>: <span class="cm-string">&quot;ts-loader&quot;</span> }
+        ]
+    }
+}
+</code></pre>
+<p>See <a href="https://www.npmjs.com/package/ts-loader" target="_blank">more details on ts-loader here</a>.</p>
+<p>Alternatives:</p>
+<ul>
+<li><a href="https://www.npmjs.com/package/awesome-typescript-loader" target="_blank">awesome-typescript-loader</a></li>
+</ul>
+<h1 id="msbuild">MSBuild</h1>
+<p>Update project file to include locally installed <code>Microsoft.TypeScript.Default.props</code> (at the top) and <code>Microsoft.TypeScript.targets</code> (at the bottom) files:</p>
+<pre><code class="lang-xml"><span class="cm-meta">&lt;?xml</span> <span class="cm-meta">version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">Project</span> <span class="cm-attribute">ToolsVersion</span>=<span class="cm-string">&quot;4.0&quot;</span> <span class="cm-attribute">DefaultTargets</span>=<span class="cm-string">&quot;Build&quot;</span> <span class="cm-attribute">xmlns</span>=<span class="cm-string">&quot;http://schemas.microsoft.com/developer/msbuild/2003&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
+  <span class="cm-comment">&lt;!-- Include default props at the bottom --&gt;</span>
+  <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">Import</span>
+      <span class="cm-attribute">Project</span>=<span class="cm-string">&quot;$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props&quot;</span>
+      <span class="cm-attribute">Condition</span>=<span class="cm-string">&quot;Exists(&apos;$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props&apos;)&quot;</span> <span class="cm-tagcm-bracket">/&gt;</span>
+
+  <span class="cm-comment">&lt;!-- TypeScript configurations go here --&gt;</span>
+  <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">PropertyGroup</span> <span class="cm-attribute">Condition</span>=<span class="cm-string">&quot;&apos;$(Configuration)&apos; == &apos;Debug&apos;&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">TypeScriptRemoveComments</span><span class="cm-tagcm-bracket">&gt;</span>false<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">TypeScriptRemoveComments</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">TypeScriptSourceMap</span><span class="cm-tagcm-bracket">&gt;</span>true<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">TypeScriptSourceMap</span><span class="cm-tagcm-bracket">&gt;</span>
+  <span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">PropertyGroup</span><span class="cm-tagcm-bracket">&gt;</span>
+  <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">PropertyGroup</span> <span class="cm-attribute">Condition</span>=<span class="cm-string">&quot;&apos;$(Configuration)&apos; == &apos;Release&apos;&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">TypeScriptRemoveComments</span><span class="cm-tagcm-bracket">&gt;</span>true<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">TypeScriptRemoveComments</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">TypeScriptSourceMap</span><span class="cm-tagcm-bracket">&gt;</span>false<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">TypeScriptSourceMap</span><span class="cm-tagcm-bracket">&gt;</span>
+  <span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">PropertyGroup</span><span class="cm-tagcm-bracket">&gt;</span>
+
+  <span class="cm-comment">&lt;!-- Include default targets at the bottom --&gt;</span>
+  <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">Import</span>
+      <span class="cm-attribute">Project</span>=<span class="cm-string">&quot;$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets&quot;</span>
+      <span class="cm-attribute">Condition</span>=<span class="cm-string">&quot;Exists(&apos;$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets&apos;)&quot;</span> <span class="cm-tagcm-bracket">/&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">Project</span><span class="cm-tagcm-bracket">&gt;</span>
+</code></pre>
+<p>More details about defining MSBuild compiler options: <a href="Compiler%20Options%20in%20MSBuild.md">Setting Compiler Options in MSBuild projects</a></p>
+<h1 id="nuget">NuGet</h1>
+<ul>
+<li>Right-Click -&gt; Manage NuGet Packages</li>
+<li>Search for <code>Microsoft.TypeScript.MSBuild</code></li>
+<li>Hit <code>Install</code></li>
+<li>When install is complete, rebuild!</li>
+</ul>
+<p>More details can be found at <a href="http://docs.nuget.org/Consume/Package-Manager-Dialog" target="_blank">Package Manager Dialog</a> and <a href="https://github.com/Microsoft/TypeScript/wiki/Nightly-drops#using-nuget-with-msbuild" target="_blank">using nightly builds with NuGet</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Compiler Options in MSBuild.html" class="navigation navigation-prev " aria-label="Previous page: Compiler Options in MSBuild">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Nightly Builds.html" class="navigation navigation-next " aria-label="Next page: Nightly Builds">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Integrating with Build Tools","level":"5.4","depth":1,"next":{"title":"Nightly Builds","level":"5.5","depth":1,"path":"pages/Nightly Builds.md","ref":"pages/Nightly Builds.md","articles":[]},"previous":{"title":"Compiler Options in MSBuild","level":"5.3","depth":1,"path":"pages/Compiler Options in MSBuild.md","ref":"pages/Compiler Options in MSBuild.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Integrating with Build Tools.md","mtime":"2018-03-25T23:54:05.964Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-10T01:48:44.756Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    
+
+    </body>
+</html>
+

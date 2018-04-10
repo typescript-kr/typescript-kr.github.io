@@ -1,0 +1,1044 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>JavaScript에서 마이그레이션 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight-1/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../../assets/css/atom-one-dark.css" />
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="React & Webpack.html" />
+    
+    
+    <link rel="prev" href="Gulp.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">튜토리얼</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="TypeScript in 5 minutes.html">
+            
+                <a href="TypeScript in 5 minutes.html">
+            
+                    
+                    5분 안에 보는 TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="ASP.NET Core.html">
+            
+                <a href="ASP.NET Core.html">
+            
+                    
+                    ASP.NET Core
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="Gulp.html">
+            
+                <a href="Gulp.html">
+            
+                    
+                    걸프
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.4" data-path="Migrating from JavaScript.html">
+            
+                <a href="Migrating from JavaScript.html">
+            
+                    
+                    JavaScript에서 마이그레이션
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="React & Webpack.html">
+            
+                <a href="React & Webpack.html">
+            
+                    
+                    리액트 & 웹팩
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">핸드북</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../Basic Types.html">
+            
+                <a href="../Basic Types.html">
+            
+                    
+                    기본 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../Variable Declarations.html">
+            
+                <a href="../Variable Declarations.html">
+            
+                    
+                    변수 선언
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../Interfaces.html">
+            
+                <a href="../Interfaces.html">
+            
+                    
+                    인터페이스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../Classes.html">
+            
+                <a href="../Classes.html">
+            
+                    
+                    클래스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../Functions.html">
+            
+                <a href="../Functions.html">
+            
+                    
+                    함수
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../Generics.html">
+            
+                <a href="../Generics.html">
+            
+                    
+                    제네릭
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../Enums.html">
+            
+                <a href="../Enums.html">
+            
+                    
+                    열거형
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../Type Inference.html">
+            
+                <a href="../Type Inference.html">
+            
+                    
+                    타입 추론
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="../Type Compatibility.html">
+            
+                <a href="../Type Compatibility.html">
+            
+                    
+                    타입 호환성
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="../Advanced Types.html">
+            
+                <a href="../Advanced Types.html">
+            
+                    
+                    고급 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="../Symbols.html">
+            
+                <a href="../Symbols.html">
+            
+                    
+                    심볼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="../Iterators and Generators.html">
+            
+                <a href="../Iterators and Generators.html">
+            
+                    
+                    이터레이터와 제네레이터
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="../Modules.html">
+            
+                <a href="../Modules.html">
+            
+                    
+                    모듈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="../Namespaces.html">
+            
+                <a href="../Namespaces.html">
+            
+                    
+                    네임스페이스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15" data-path="../Namespaces and Modules.html">
+            
+                <a href="../Namespaces and Modules.html">
+            
+                    
+                    네임스페이스와 모듈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.16" data-path="../Module Resolution.html">
+            
+                <a href="../Module Resolution.html">
+            
+                    
+                    모듈 해석
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.17" data-path="../Declaration Merging.html">
+            
+                <a href="../Declaration Merging.html">
+            
+                    
+                    선언 병합
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.18" data-path="../JSX.html">
+            
+                <a href="../JSX.html">
+            
+                    
+                    JSX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.19" data-path="../Decorators.html">
+            
+                <a href="../Decorators.html">
+            
+                    
+                    Decorators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.20" data-path="../Mixins.html">
+            
+                <a href="../Mixins.html">
+            
+                    
+                    Mixins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.21" data-path="../Triple-Slash Directives.html">
+            
+                <a href="../Triple-Slash Directives.html">
+            
+                    
+                    Triple-Slash Directives
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.22" data-path="../Type Checking JavaScript Files.html">
+            
+                <a href="../Type Checking JavaScript Files.html">
+            
+                    
+                    Type Checking JavaScript Files
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Declaration Files</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../declaration files/Introduction.html">
+            
+                <a href="../declaration files/Introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../declaration files/Library Structures.html">
+            
+                <a href="../declaration files/Library Structures.html">
+            
+                    
+                    Library Structures
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../declaration files/By Example.html">
+            
+                <a href="../declaration files/By Example.html">
+            
+                    
+                    By Example
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../declaration files/Do's and Don'ts.html">
+            
+                <a href="../declaration files/Do's and Don'ts.html">
+            
+                    
+                    Do's and Don'ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../declaration files/Deep Dive.html">
+            
+                <a href="../declaration files/Deep Dive.html">
+            
+                    
+                    Deep Dive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../declaration files/Templates.html">
+            
+                <a href="../declaration files/Templates.html">
+            
+                    
+                    Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../declaration files/Publishing.html">
+            
+                <a href="../declaration files/Publishing.html">
+            
+                    
+                    Publishing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="../declaration files/Consumption.html">
+            
+                <a href="../declaration files/Consumption.html">
+            
+                    
+                    Consumption
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Project Configuration</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../tsconfig.json.html">
+            
+                <a href="../tsconfig.json.html">
+            
+                    
+                    tsconfig.json
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../Compiler Options.html">
+            
+                <a href="../Compiler Options.html">
+            
+                    
+                    Compiler Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../Compiler Options in MSBuild.html">
+            
+                <a href="../Compiler Options in MSBuild.html">
+            
+                    
+                    Compiler Options in MSBuild
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../Integrating with Build Tools.html">
+            
+                <a href="../Integrating with Build Tools.html">
+            
+                    
+                    Integrating with Build Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../Nightly Builds.html">
+            
+                <a href="../Nightly Builds.html">
+            
+                    
+                    Nightly Builds
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >JavaScript에서 마이그레이션</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>TypeScript&#xB294; &#xACF5;&#xBC31; &#xC0C1;&#xD0DC;&#xB85C; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.<br>JavaScript &#xC0DD;&#xD0DC;&#xACC4;&#xB97C; &#xC5FC;&#xB450;&#xC5D0; &#xB450;&#xACE0; &#xB9CC;&#xB4E4;&#xC5B4;&#xC84C;&#xC73C;&#xBA70; &#xC624;&#xB298;&#xB0A0;&#xC5D0;&#xB294; &#xB9CE;&#xC740; JavaScript&#xAC00; &#xC874;&#xC7AC;&#xD569;&#xB2C8;&#xB2E4;.<br>JavaScript &#xCF54;&#xB4DC; &#xBCA0;&#xC774;&#xC2A4;&#xB97C; TypeScript&#xB85C; &#xBCC0;&#xD658;&#xD558;&#xB294; &#xAC83;&#xC740; &#xB2E4;&#xC18C; &#xC9C0;&#xB8E8;&#xD558;&#xC9C0;&#xB9CC; &#xBCF4;&#xD1B5; &#xC5B4;&#xB835;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC5D0;&#xC11C;&#xB294; &#xC2DC;&#xC791;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC0B4;&#xD3B4;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC0C8;&#xB85C;&#xC6B4; TypeScript &#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD558;&#xAE30;&#xC5D0; &#xCDA9;&#xBD84;&#xD55C; &#xD578;&#xB4DC;&#xBD81;&#xC744; &#xC77D;&#xC740; &#xAC83;&#xC73C;&#xB85C; &#xAC00;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>React &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xBCC0;&#xD658;&#xD558;&#xB824;&#xB294; &#xACBD;&#xC6B0; <a href="https://github.com/Microsoft/TypeScript-React-Conversion-Guide#typescript-react-conversion-guide" target="_blank">React Conversion Guide</a>&#xB97C; &#xBA3C;&#xC800; &#xCC38;&#xC870;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xB514;&#xB809;&#xD1A0;&#xB9AC;-&#xC124;&#xC815;&#xD558;&#xAE30;-setting-up-your-directories">&#xB514;&#xB809;&#xD1A0;&#xB9AC; &#xC124;&#xC815;&#xD558;&#xAE30; (Setting up your Directories)</h1>
+<p>&#xD3C9;&#xBC94;&#xD55C; JavaScript&#xB85C; &#xC791;&#xC131;&#xD558;&#xB294; &#xACBD;&#xC6B0; JavaScript&#xAC00; <code>src</code>&#xC640; <code>lib</code> &#xB610;&#xB294; <code>dist</code> &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC5D0; &#xC788;&#xB294; <code>.js</code> &#xD30C;&#xC77C;&#xC744; &#xC9C1;&#xC811; &#xC2E4;&#xD589;&#xD558;&#xACE0; &#xC6D0;&#xD558;&#xB294; &#xB300;&#xB85C; &#xC2E4;&#xD589;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774;&#xB7F0; &#xACBD;&#xC6B0; &#xC791;&#xC131;&#xD55C; &#xD30C;&#xC77C;&#xC740; TypeScript&#xC758; &#xC785;&#xB825;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xBA70; &#xC0DD;&#xC131;&#xB41C; &#xCD9C;&#xB825;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.<br>JS&#xC5D0;&#xC11C; TS&#xB85C; &#xB9C8;&#xC774;&#xADF8;&#xB808;&#xC774;&#xC158; &#xD558;&#xB294; &#xB3D9;&#xC548; TypeScript&#xAC00; &#xC785;&#xB825; &#xD30C;&#xC77C;&#xC744; &#xB36E;&#xC5B4;&#xC4F0;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D; &#xC785;&#xB825; &#xD30C;&#xC77C;&#xC744; &#xBD84;&#xB9AC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xCD9C;&#xB825; &#xD30C;&#xC77C;&#xC774; &#xD2B9;&#xC815; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC5D0; &#xC788;&#xC5B4;&#xC57C; &#xD558;&#xB294; &#xACBD;&#xC6B0; &#xD574;&#xB2F9; &#xD30C;&#xC77C;&#xC774; &#xCD9C;&#xB825; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xBC88;&#xB4E4;&#xB9C1;&#xC774;&#xB098; Babel&#xACFC; &#xAC19;&#xC740; &#xB2E4;&#xB978; &#xD2B8;&#xB79C;&#xC2A4;&#xD30C;&#xC77C;&#xB7EC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xACFC; &#xAC19;&#xC774; JavaScript&#xC5D0;&#xC11C; &#xC911;&#xAC04; &#xB2E8;&#xACC4;&#xB97C; &#xC218;&#xD589;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB7F0; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xC774;&#xC640; &#xAC19;&#xC740; &#xD3F4;&#xB354; &#xAD6C;&#xC870;&#xAC00; &#xC774;&#xBBF8; &#xC124;&#xC815;&#xB418;&#xC5B4; &#xC788;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC9C0;&#xAE08;&#xBD80;&#xD130; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xAC00; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC124;&#xC815;&#xB418;&#xC5C8;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-text">projectRoot
+&#x251C;&#x2500;&#x2500; src
+&#x2502;   &#x251C;&#x2500;&#x2500; file1.js
+&#x2502;   &#x2514;&#x2500;&#x2500; file2.js
+&#x251C;&#x2500;&#x2500; built
+&#x2514;&#x2500;&#x2500; tsconfig.json
+</code></pre>
+<p><code>src</code> &#xB514;&#xB809;&#xD1A0;&#xB9AC; &#xBC16;&#xC5D0; <code>tests</code> &#xD3F4;&#xB354;&#xAC00; &#xC788;&#xB2E4;&#xBA74; <code>src</code>&#xC5D0; <code>tsconfig.json</code>&#xC640; <code>tests</code>&#xC5D0; &#xD558;&#xB098;&#xC529; &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xC124;&#xC815;-&#xD30C;&#xC77C;-&#xC791;&#xC131;&#xD558;&#xAE30;-writing-a-configuration-file">&#xC124;&#xC815; &#xD30C;&#xC77C; &#xC791;&#xC131;&#xD558;&#xAE30; (Writing a Configuration File)</h1>
+<p>TypeScript&#xB294; <code>tsconfig.json</code>&#xC774;&#xB77C;&#xB294; &#xD30C;&#xC77C;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD3EC;&#xD568;&#xC2DC;&#xD0AC; &#xD30C;&#xC77C;&#xACFC; &#xAC80;&#xC0AC;&#xC758; &#xC885;&#xB958;&#xC640; &#xAC19;&#xC740; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC758; &#xC635;&#xC158;&#xC744; &#xAD00;&#xB9AC;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0; &#xC0AC;&#xC6A9;&#xD560; &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xBF08;&#xB300;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-json">{
+    <span class="cm-property">&quot;compilerOptions&quot;</span>: {
+        <span class="cm-property">&quot;outDir&quot;</span>: <span class="cm-string">&quot;./built&quot;</span>,
+        <span class="cm-property">&quot;allowJs&quot;</span>: <span class="cm-atom">true</span>,
+        <span class="cm-property">&quot;target&quot;</span>: <span class="cm-string">&quot;es5&quot;</span>
+    },
+    <span class="cm-property">&quot;include&quot;</span>: [
+        <span class="cm-string">&quot;./src/**/*&quot;</span>
+    ]
+}
+</code></pre>
+<p>&#xC5EC;&#xAE30;&#xC11C; TypeScript&#xC5D0; &#xBA87; &#xAC00;&#xC9C0;&#xB97C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<ol>
+<li><code>src</code> &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC5D0;&#xC758; &#xBAA8;&#xB4E0; &#xD30C;&#xC77C;&#xC744; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4; (<code>include</code> &#xD3EC;&#xD568;)</li>
+<li>JavaScript &#xD30C;&#xC77C;&#xC758; &#xC785;&#xB825;&#xC73C;&#xB85C; &#xD5C8;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4; (<code>allowJs</code> &#xD3EC;&#xD568;)</li>
+<li><code>builtd</code>&#xC5D0; &#xBAA8;&#xB4E0; &#xCD9C;&#xB825; &#xD30C;&#xC77C;&#xC744; &#xB0B4; &#xBCF4;&#xB0C5;&#xB2C8;&#xB2E4; (<code>outDir</code>&#xC640; &#xD568;&#xAED8;)</li>
+<li>&#xCD5C;&#xC2E0; JavaScript &#xAD6C;&#xBB38;&#xC744; ECMAScript 5 &#xAC19;&#xC740; &#xC774;&#xC804; &#xBC84;&#xC804;&#xC73C;&#xB85C; &#xBCC0;&#xD658;&#xD569;&#xB2C8;&#xB2E4; (<code>target</code> &#xC0AC;&#xC6A9;)</li>
+</ol>
+<p>&#xC774;&#xB54C; &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xB8E8;&#xD2B8;&#xC5D0; <code>tsc</code>&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xB824;&#xACE0; &#xD558;&#xBA74; <code>built</code> &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC5D0; &#xCD9C;&#xB825; &#xD30C;&#xC77C;&#xC774; &#xD45C;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.<br><code>built</code>&#xC5D0; &#xC788;&#xB294; &#xD30C;&#xC77C;&#xC758; &#xB808;&#xC774;&#xC544;&#xC6C3;&#xC740; <code>src</code>&#xC758; &#xB808;&#xC774;&#xC544;&#xC6C3;&#xACFC; &#xB3D9;&#xC77C;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xC81C; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0;&#xC11C; TypeScript&#xB85C; &#xC791;&#xC5C5;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xCD08;&#xAE30;&#xC758;-&#xD61C;&#xD0DD;-early-benefits">&#xCD08;&#xAE30;&#xC758; &#xD61C;&#xD0DD; (Early Benefits)</h2>
+<p>&#xC774; &#xC2DC;&#xC810;&#xC5D0;&#xC11C;&#xB3C4; TypeScript&#xC5D0;&#xC11C; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xC774;&#xD574;&#xD568;&#xC73C;&#xB85C;&#xC368; &#xBA87; &#xAC00;&#xC9C0; &#xB6F0;&#xC5B4;&#xB09C; &#xC774;&#xC810;&#xC744; &#xB204;&#xB9B4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br><a href="https://code.visualstudio.com" target="_blank">VS Code</a>&#xB098; <a href="https://visualstudio.com" target="_blank">Visual Studio</a> &#xAC19;&#xC740; &#xD3B8;&#xC9D1;&#xAE30;&#xB85C; &#xC2DC;&#xC791;&#xD558;&#xBA74; &#xC790;&#xB3D9; &#xC644;&#xC131;&#xACFC; &#xAC19;&#xC740; &#xB3C4;&#xAD6C; &#xC9C0;&#xC6D0;&#xC744; &#xC790;&#xC8FC; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xB610;&#xD55C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD2B9;&#xC815; &#xBC84;&#xADF8;&#xB97C; &#xBC1C;&#xACAC;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<ul>
+<li><code>noImplicitReturns</code>&#xB294; &#xD568;&#xC218;&#xC758; &#xB05D;&#xC5D0; &#xBC18;&#xD658;&#xBB38;&#xC744; &#xBE7C;&#xBA39;&#xB294; &#xAC83;&#xC744; &#xBC29;&#xC9C0;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li><code>noFallthroughCasesInSwitch</code>&#xB294; <code>switch</code>&#xBE14;&#xB85D; <code>case</code> &#xC0AC;&#xC774;&#xC5D0; <code>break</code>&#xBB38;&#xC744; &#xBEEC;&#xBA39;&#xC9C0; &#xC54A;&#xAE30; &#xC704;&#xD574; &#xC720;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<p>TypeScript&#xB294; &#xB3C4;&#xB2EC; &#xD560; &#xC218;&#xC5C6;&#xB294; &#xCF54;&#xB4DC;&#xC640; &#xB77C;&#xBCA8;&#xC5D0; &#xB300;&#xD574;&#xC11C;&#xB3C4; &#xACBD;&#xACE0;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xCF54;&#xB4DC;&#xC640; &#xB77C;&#xBCA8;&#xC740; &#xAC01;&#xAC01;&#xC758; <code>allowUnreachableCode</code>&#xC640; <code>allowUnusedLabels</code>&#xB85C; &#xD574;&#xC81C;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xBE4C;&#xB4DC;-&#xB3C4;&#xAD6C;&#xC640;-&#xD1B5;&#xD569;-integrating-with-build-tools">&#xBE4C;&#xB4DC; &#xB3C4;&#xAD6C;&#xC640; &#xD1B5;&#xD569; (Integrating with Build Tools)</h1>
+<p>&#xD30C;&#xC774;&#xD504; &#xB77C;&#xC778;&#xC5D0; &#xBE4C;&#xB4DC; &#xB2E8;&#xACC4;&#xAC00; &#xB354; &#xC788;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC544;&#xB9C8;&#xB3C4; &#xAC01; &#xD30C;&#xC77C;&#xC5D0; &#xBB34;&#xC5B8;&#xAC00;&#xB97C; &#xC5F0;&#xACB0;&#xD588;&#xC744; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xAC01; &#xBE4C;&#xB4DC; &#xB3C4;&#xAD6C;&#xB294; &#xB2E4;&#xB974;&#xC9C0;&#xB9CC; &#xAC01; &#xBE4C;&#xB4DC; &#xB3C4;&#xAD6C;&#xC758; &#xC694;&#xC810;&#xC744; &#xB2E4;&#xB8E8;&#xAE30; &#xC704;&#xD574; &#xCD5C;&#xC120;&#xC744; &#xB2E4;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h2 id="gulp">Gulp</h2>
+<p>Gulp&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0; TypeScript&#xB85C; <a href="Gulp.html">Gulp &#xC0AC;&#xC6A9;&#xD558;&#xAE30;</a> &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC774; &#xC788;&#xACE0; Browserify&#xC640; Babelify &#xADF8;&#xB9AC;&#xACE0; Uglify&#xC640; &#xAC19;&#xC740; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xBE4C;&#xB4DC; &#xB3C4;&#xAD6C;&#xC640; &#xD1B5;&#xD569;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xAC70;&#xAE30;&#xC11C; &#xB354; &#xC77D;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 id="webpack">Webpack</h2>
+<p>Webpack &#xD1B5;&#xD569;&#xC740; &#xB9E4;&#xC6B0; &#xAC04;&#xB2E8;&#xD569;&#xB2C8;&#xB2E4;.
+TypeScript &#xB85C;&#xB354;&#xC778; <code>awesome-typescript-loader</code>&#xB97C; <code>source-map-loader</code>&#xC640; &#xACB0;&#xD569;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xB514;&#xBC84;&#xAE45;&#xC774; &#xC26C;&#xC6CC; &#xC9D1;&#xB2C8;&#xB2E4;.  </p>
+<p>&#xAC04;&#xB2E8;&#xD55C; &#xC2E4;&#xD589;</p>
+<pre><code class="lang-shell">npm install awesome-typescript-loader source-map-loader
+</code></pre>
+<p>&#xADF8;&#xB9AC;&#xACE0; &#xB2E4;&#xC74C;&#xC758; &#xC635;&#xC158;&#xC744; <code>webpack.config.js</code> &#xD30C;&#xC77C;&#xC5D0; &#xBCD1;&#xD569;&#xD558;&#xC2ED;&#xC2DC;&#xC624; :</p>
+<pre><code class="lang-js"><span class="cm-keyword">module</span>.<span class="cm-variable">exports</span> <span class="cm-operator">=</span> {
+    <span class="cm-property">entry</span>: <span class="cm-string">&quot;./src/index.ts&quot;</span>,
+    <span class="cm-property">output</span>: {
+        <span class="cm-property">filename</span>: <span class="cm-string">&quot;./dist/bundle.js&quot;</span>,
+    },
+
+    <span class="cm-comment">// webpack&#xC758; &#xCD9C;&#xB825;&#xC744; &#xB514;&#xBC84;&#xAE45; &#xD560; &#xC18C;&#xC2A4; &#xB9F5;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</span>
+    <span class="cm-property">devtool</span>: <span class="cm-string">&quot;source-map&quot;</span>,
+
+    <span class="cm-property">resolve</span>: {
+        <span class="cm-comment">// &#xD655;&#xC778; &#xAC00;&#xB2A5;&#xD55C; &#xD655;&#xC7A5;&#xC790;&#xB85C; &apos;.ts&apos; &#xBC0F; &apos;.tsx&apos;&#xB97C; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</span>
+        <span class="cm-property">extensions</span>: [<span class="cm-string">&quot;&quot;</span>, <span class="cm-string">&quot;.webpack.js&quot;</span>, <span class="cm-string">&quot;.web.js&quot;</span>, <span class="cm-string">&quot;.ts&quot;</span>, <span class="cm-string">&quot;.tsx&quot;</span>, <span class="cm-string">&quot;.js&quot;</span>]
+    },
+
+    <span class="cm-keyword">module</span>: {
+        <span class="cm-variable">loaders</span>: [
+            <span class="cm-comment">// &apos;.ts&apos; &#xB610;&#xB294; &apos;.tsx&apos; &#xD655;&#xC7A5;&#xC790;&#xB97C; &#xAC00;&#xC9C4; &#xBAA8;&#xB4E0; &#xD30C;&#xC77C;&#xC740; &apos;awesome-typescript-loader&apos;&#xC5D0; &#xC758;&#xD574; &#xCC98;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;.</span>
+            { <span class="cm-variable">test</span>: <span class="cm-string-2">/\.tsx?$/</span>, <span class="cm-variable">loader</span>: <span class="cm-string">&quot;awesome-typescript-loader&quot;</span> }
+        ],
+
+        <span class="cm-variable">preLoaders</span>: [
+            <span class="cm-comment">// &apos;.js&apos; &#xD30C;&#xC77C;&#xC758; &#xBAA8;&#xB4E0; &#xCD9C;&#xB825;&#xC5D0;&#xB294; &apos;source-maps-loader&apos;&#xB85C; &#xB2E4;&#xC2DC; &#xCC98;&#xB9AC;&#xB41C; &#xC18C;&#xC2A4; &#xB9F5;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+            { <span class="cm-property">test</span>: <span class="cm-string-2">/\.js$/</span>, <span class="cm-property">loader</span>: <span class="cm-string">&quot;source-map-loader&quot;</span> }
+        ]
+    },
+
+    <span class="cm-comment">// &#xB2E4;&#xB978; &#xC635;&#xC158;&#xB4E4;...</span>
+};
+</code></pre>
+<p><code>.js</code> &#xD30C;&#xC77C;&#xC744; &#xB2E4;&#xB8E8;&#xB294; &#xB2E4;&#xB978; &#xB85C;&#xB354;&#xBCF4;&#xB2E4; awesome-typescript-loader&#xB97C; &#xBA3C;&#xC800; &#xC2E4;&#xD589;&#xD574;&#xC57C; &#xD55C;&#xB2E4;&#xB294; &#xC810;&#xC5D0; &#xC8FC;&#xC758;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>Webpack&#xC744; &#xC704;&#xD55C; TypeScript &#xB85C;&#xB354;&#xC778; <a href="https://github.com/TypeStrong/ts-loader" target="_blank">ts-loader</a>&#xB3C4; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xC785;&#xB2C8;&#xB2E4;.<br><a href="https://github.com/s-panferov/awesome-typescript-loader#differences-between-ts-loader" target="_blank">&#xC5EC;&#xAE30;&#xC5D0;&#xC11C;</a>. &#xADF8; &#xB458;&#xC758; &#xCC28;&#xC774;&#xC810;&#xC5D0; &#xB300;&#xD574; &#xB354; &#xC77D;&#xC5B4;&#xBCFC; &#xC218; &#xC788;&#xB2E4;. </p>
+<p><a href="React%20&amp;%20Webpack.md">React and Webpack&#xC5D0; &#xAD00;&#xD55C; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;</a>&#xC5D0;&#xC11C; Webpack&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC608;&#xB97C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h1 id="typescript-&#xD30C;&#xC77C;&#xB85C;-&#xC774;&#xB3D9;-moving-to-typescript-files">TypeScript &#xD30C;&#xC77C;&#xB85C; &#xC774;&#xB3D9; (Moving to TypeScript Files)</h1>
+<p>&#xC774;&#xB54C; TypeScript &#xD30C;&#xC77C;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC900;&#xBE44;&#xAC00; &#xB41C; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xCCAB; &#xBC88;&#xC9F8; &#xB2E8;&#xACC4;&#xB294; <code>.js</code> &#xD30C;&#xC77C; &#xC911; &#xD558;&#xB098;&#xC758; &#xC774;&#xB984;&#xC744; <code>.ts</code>&#xB85C; &#xBC14;&#xAFB8;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xD30C;&#xC77C;&#xC774; JSX&#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xBA74; &#xC774;&#xB984;&#xC744; <code>.tsx</code>&#xB85C; &#xBC14;&#xAFD4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xADF8; &#xB2E8;&#xACC4;&#xB97C; &#xB05D;&#xB0C8;&#xB098;&#xC694;?
+&#xC88B;&#xC558;&#xC5B4;!<br>JavaScript&#xC5D0;&#xC11C; TypeScript&#xB85C; &#xD30C;&#xC77C;&#xC744; &#xC131;&#xACF5;&#xC801;&#xC73C;&#xB85C; &#xB9C8;&#xC774;&#xADF8;&#xB808;&#xC774;&#xC158; &#xD588;&#xC2B5;&#xB2C8;&#xB2E4;!</p>
+<p>&#xBB3C;&#xB860; &#xC633;&#xB2E4;&#xACE0; &#xC0DD;&#xAC01;&#xD558;&#xC9C0; &#xC54A;&#xC744; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>TypeScript&#xB97C; &#xC9C0;&#xC6D0;&#xD558;&#xB294; &#xD3B8;&#xC9D1;&#xAE30;&#xC5D0;&#xC11C; &#xD574;&#xB2F9; &#xD30C;&#xC77C;&#xC744; &#xC5F4;&#xBA74; (&#xB610;&#xB294; tsc --pretty&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xBA74;) &#xD2B9;&#xC815; &#xB77C;&#xC778;&#xC5D0; &#xBE68;&#xAC04; &#xC904;&#xC774; &#xB098;&#xD0C0;&#xB0A0; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>Microsoft Word&#xC640; &#xAC19;&#xC740; &#xD3B8;&#xC9D1;&#xAE30;&#xC5D0;&#xC11C; &#xBE68;&#xAC04; &#xC904;&#xC744; &#xC0DD;&#xAC01;&#xD558;&#xB294; &#xAC83;&#xACFC; &#xAC19;&#xC740; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xC0DD;&#xAC01;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.<br>Word&#xC5D0;&#xC11C; &#xC5EC;&#xC804;&#xD788; &#xBB38;&#xC11C;&#xB97C; &#xC778;&#xC1C4;&#xD560; &#xC218; &#xC788;&#xB294; &#xAC83;&#xCC98;&#xB7FC; TypeScript&#xB294; &#xCF54;&#xB4DC;&#xB97C; &#xBCC0;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xADF8; &#xACBD;&#xACE0;&#xAC00; &#xB108;&#xBB34; &#xB290;&#xC2A8;&#xD558;&#xBA74; &#xADF8; &#xACBD;&#xACE0;&#xB97C; &#xC5C4;&#xACA9;&#xD558;&#xAC8C; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; &#xC624;&#xB958; &#xBC1C;&#xC0DD;&#xC73C;&#xB85C; &#xC778;&#xD574; TypeScript&#xC5D0;&#xC11C; JavaScript&#xB85C; &#xCEF4;&#xD30C;&#xC77C;&#xD558;&#xB294; &#xAC83;&#xC744; <em>&#xC6D0;&#xCE58; &#xC54A;&#xB294;</em> &#xACBD;&#xC6B0; <code>noEmitOnError</code> &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB7F0; &#xC758;&#xBBF8;&#xC5D0;&#xC11C; TypeScript&#xB294; &#xC5C4;&#xACA9;&#xD568;&#xC744; &#xC870;&#xC808;&#xD560; &#xC218; &#xC788;&#xB294; &#xB3C4;&#xAD6C;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC73C;&#xBA70; &#xC6D0;&#xD558;&#xB294; &#xB9CC;&#xD07C; &#xC870;&#xC808;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB9CC;&#xC57D; &#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;&#xD55C; &#xB354; &#xC5C4;&#xACA9;&#xD55C; &#xC124;&#xC815;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xACC4;&#xD68D;&#xC774;&#xB77C;&#xBA74; &#xC9C0;&#xAE08; &#xBC14;&#xB85C; &#xC124;&#xC815;&#xD558;&#xB294; &#xAC83;&#xC774; &#xAC00;&#xC7A5; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.<br>(&#xC544;&#xB798;&#xC758; <a href="#getting-stricter-checks">Getting Stricter Checks</a> &#xCC38;&#xC870;).</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; TypeScript&#xAC00; &#xD0C0;&#xC785;&#xC5D0; &#xB300;&#xD574; <code>any</code>&#xB97C; &#xCD94;&#xB860;&#xD558;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D; &#xBA85;&#xC2DC;&#xD558;&#xB824;&#xBA74; &#xD30C;&#xC77C;&#xC744; &#xC218;&#xC815;&#xD558;&#xAE30; &#xC804;&#xC5D0; <code>noImplicitAny</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xC18C; &#xBC85;&#xCC28;&#xB2E4;&#xACE0; &#xB290;&#xAEF4;&#xC9C8; &#xC218;&#xB3C4; &#xC788;&#xC9C0;&#xB9CC; &#xC7A5;&#xAE30;&#xC801; &#xC774;&#xB4DD;&#xC740; &#xD6E8;&#xC52C; &#xB354; &#xBE68;&#xB9AC; &#xB098;&#xD0C0;&#xB0A9;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xC624;&#xB958;-&#xC7A1;&#xAE30;-weeding-out-errors">&#xC624;&#xB958; &#xC7A1;&#xAE30; (Weeding out Errors)</h2>
+<p>&#xC55E;&#xC11C; &#xC5B8;&#xAE09; &#xD55C; &#xAC83;&#xCC98;&#xB7FC; &#xBCC0;&#xD658; &#xD6C4;&#xC5D0; &#xC624;&#xB958; &#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xD45C;&#xC2DC;&#xB418;&#xB294; &#xAC83;&#xC740; &#xC608;&#xC0C1;&#xCE58; &#xBABB;&#xD55C; &#xC77C;&#xC774; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;.<br>&#xC911;&#xC694;&#xD55C; &#xAC83;&#xC740; &#xC774;&#xB7F0; &#xAC83;&#xB4E4;&#xC744; &#xD558;&#xB098;&#xC529; &#xC0B4;&#xD3B4;&#xBCF4;&#xACE0; &#xC5B4;&#xB5BB;&#xAC8C; &#xC624;&#xB958;&#xB97C; &#xCC98;&#xB9AC;&#xD560; &#xAC83;&#xC778;&#xC9C0;&#xB97C; &#xACB0;&#xC815;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC885;&#xC885; &#xC774;&#xAC83;&#xB4E4;&#xC740; &#xBB38;&#xC81C;&#xC5C6;&#xB294; &#xBC84;&#xADF8;&#xAC00; &#xB420; &#xC218;&#xB3C4; &#xC788;&#xC9C0;&#xB9CC; &#xB54C;&#xB85C;&#xB294; TypeScript&#xB97C; &#xC704;&#xD574; &#xC870;&#xAE08; &#xB354; &#xB098;&#xC740; &#xAC83;&#xC744; &#xC124;&#xBA85;&#xD574;&#xC57C; &#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xBAA8;&#xB4C8;-&#xAC00;&#xC838;&#xC624;&#xAE30;-importing-from-modules">&#xBAA8;&#xB4C8; &#xAC00;&#xC838;&#xC624;&#xAE30; (Importing from Modules)</h3>
+<p><code>Cannot find name &apos;require&apos;.</code>&#xC640; <code>Cannot find name &apos;define&apos;.</code> &#xAC19;&#xC740; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xAE30; &#xC2DC;&#xC791;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB7EC;&#xD55C; &#xACBD;&#xC6B0; &#xBAA8;&#xB4C8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC788;&#xC744; &#xAC00;&#xB2A5;&#xC131;&#xC774; &#xB192;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>TypeScript&#xB85C; &#xC791;&#xC131;&#xD558;&#xB294; &#xB3D9;&#xC548; &#xD655;&#xC2E4;&#xD560; &#xC218; &#xC788;&#xC9C0;&#xB9CC;</p>
+<pre><code class="lang-ts"><span class="cm-comment">// Node/CommonJS&#xB97C; &#xC704;&#xD55C;</span>
+<span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">require</span>(<span class="cm-def">path</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable-3">any</span>;
+</code></pre>
+<p>&#xB610;&#xB294;</p>
+<pre><code class="lang-ts"><span class="cm-comment">// RequireJS/AMD&#xB97C; &#xC704;&#xD55C;</span>
+<span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">define</span>(<span class="cm-meta">...</span><span class="cm-def">args</span>: <span class="cm-variable-3">any</span>[]): <span class="cm-variable-3">any</span>;
+</code></pre>
+<p>&#xC774;&#xB7EC;&#xD55C; &#xD638;&#xCD9C;&#xB4E4;&#xC740; &#xC81C;&#xAC70;&#xD558;&#xACE0; import&#xC5D0; TypeScript &#xAD6C;&#xBB38;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xBA3C;&#xC800; TypeScript&#xC758; <code>module</code> &#xD50C;&#xB798;&#xADF8;&#xB97C; &#xC124;&#xC815;&#xD558;&#xC5EC; &#xC77C;&#xBD80; &#xBAA8;&#xB4C8; &#xC2DC;&#xC2A4;&#xD15C;&#xC744; &#xD65C;&#xC131;&#xD654;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xC720;&#xD6A8;&#xD55C; &#xC635;&#xC158;&#xC740;<code>commonjs</code>,<code>amd</code>,<code>system</code> &#xADF8;&#xB9AC;&#xACE0; <code>umd</code>&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C; Node/CommonJS &#xCF54;&#xB4DC;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294; &#xACBD;&#xC6B0;:</p>
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">foo</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;foo&quot;</span>);
+
+<span class="cm-variable">foo</span>.<span class="cm-property">doStuff</span>();
+</code></pre>
+<p>&#xB610;&#xB294; &#xB2E4;&#xC74C; RequireJS / AMD &#xCF54;&#xB4DC;:</p>
+<pre><code class="lang-js"><span class="cm-variable">define</span>([<span class="cm-string">&quot;foo&quot;</span>], <span class="cm-keyword">function</span>(<span class="cm-def">foo</span>) {
+    <span class="cm-variable-2">foo</span>.<span class="cm-property">doStuff</span>();
+})
+</code></pre>
+<p>&#xADF8;&#xB7EC;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; TypeScript &#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-variable">foo</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;foo&quot;</span>);
+
+<span class="cm-variable">foo</span>.<span class="cm-property">doStuff</span>();
+</code></pre>
+<h3 id="&#xC120;&#xC5B8;-&#xD30C;&#xC77C;-&#xAC00;&#xC838;-&#xC624;&#xAE30;-getting-declaration-files">&#xC120;&#xC5B8; &#xD30C;&#xC77C; &#xAC00;&#xC838; &#xC624;&#xAE30; (Getting Declaration Files)</h3>
+<p>TypeScript&#xB85C; &#xC804;&#xD658;&#xD558;&#xAE30; &#xC2DC;&#xC791;&#xD558;&#xBA74; <code>Cannot find module &apos;foo&apos;.</code>&#xACFC; &#xAC19;&#xC740; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC5EC;&#xAE30;&#xC11C; &#xBB38;&#xC81C;&#xB294; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xC124;&#xBA85;&#xD560; &#xC218; &#xC788;&#xB294; <em>&#xC120;&#xC5B8; &#xD30C;&#xC77C;(declaration files)</em> &#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC9C0; &#xC54A;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xD589;&#xD788;&#xB3C4; &#xC774;&#xAC83;&#xC740; &#xAF64; &#xC27D;&#xC2B5;&#xB2C8;&#xB2E4;.<br>TypeScript&#xC5D0;&#xC11C; <code>lodash</code>&#xC640; &#xAC19;&#xC740; &#xD328;&#xD0A4;&#xC9C0;&#xC5D0; &#xB300;&#xD574; &#xBD88;&#xD3C9;&#xD558;&#xB294; &#xACBD;&#xC6B0; &#xADF8;&#xB0E5; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-shell">npm install -S @types/lodash
+</code></pre>
+<p><code>commonjs</code>&#xAC00; &#xC544;&#xB2CC; &#xB2E4;&#xB978; &#xBAA8;&#xB4C8; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xBA74; <code>moduleResolution</code> &#xC635;&#xC158;&#xC744; <code>node</code>&#xB85C; &#xC124;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xADF8;&#xB7F0; &#xB2E4;&#xC74C; &#xBB38;&#xC81C;&#xC5C6;&#xC774; Lodash&#xB97C; &#xAC00;&#xC838;&#xC62C; &#xC218; &#xC788;&#xC73C;&#xBA70; &#xC790;&#xB3D9; &#xC644;&#xC131;&#xC744; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xBAA8;&#xB4C8;-&#xB0B4;&#xBCF4;&#xB0B4;&#xAE30;-exporting-from-modules">&#xBAA8;&#xB4C8; &#xB0B4;&#xBCF4;&#xB0B4;&#xAE30; (Exporting from Modules)</h3>
+<p>&#xC804;&#xD615;&#xC801;&#xC73C;&#xB85C; &#xBAA8;&#xB4C8;&#xC5D0;&#xC11C; &#xB0B4;&#xBCF4;&#xB0B4;&#xAE30;&#xB294; <code>exports</code> &#xB098; <code>module.exports</code>&#xC640; &#xAC19;&#xC740; &#xAC12;&#xC5D0; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xB294; &#xAC83;&#xC744; &#xD3EC;&#xD568;&#xD569;&#xB2C8;&#xB2E4;.<br>TypeScript&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xCD5C;&#xC0C1;&#xC704; &#xB808;&#xBCA8; &#xB0B4;&#xBCF4;&#xB0B4;&#xAE30; &#xBA85;&#xB839;&#xBB38;&#xC744; &#xD5C8;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; &#xC774;&#xC640; &#xAC19;&#xC740; &#xD568;&#xC218;&#xB97C; &#xB0B4;&#xBCF4;&#xB0B8; &#xACBD;&#xC6B0;:</p>
+<pre><code class="lang-js"><span class="cm-keyword">module</span>.<span class="cm-variable">exports</span>.<span class="cm-property">feedPets</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">pets</span>) {
+    <span class="cm-comment">// ...</span>
+}
+</code></pre>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">function</span> <span class="cm-variable">feedPets</span>(<span class="cm-def">pets</span>) {
+    <span class="cm-comment">// ...</span>
+}
+</code></pre>
+<p>&#xB54C;&#xB85C;&#xB294; exports &#xAC1D;&#xCCB4;&#xB97C; &#xC644;&#xC804;&#xD788; &#xB36E;&#xC5B4;&#xC4F0;&#xAE30;&#xB3C4; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774;&#xAC83;&#xC740; &#xBAA8;&#xB4C8;&#xC744; &#xC774; &#xCF54;&#xB4DC;&#xCC98;&#xB7FC; &#xC989;&#xC2DC; &#xD638;&#xCD9C; &#xAC00;&#xB2A5;&#xD55C; &#xBAA8;&#xB4C8;&#xB85C; &#xB9CC;&#xB4E4;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD328;&#xD134;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">express</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;express&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">app</span> <span class="cm-operator">=</span> <span class="cm-variable">express</span>();
+</code></pre>
+<p>&#xC774;&#xC804;&#xC5D0;&#xB294; &#xC774;&#xB807;&#xAC8C; &#xC791;&#xC131;&#xD588;&#xC744; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; :</p>
+<pre><code class="lang-js"><span class="cm-keyword">function</span> <span class="cm-variable">foo</span>() {
+    <span class="cm-comment">// ...</span>
+}
+<span class="cm-keyword">module</span>.<span class="cm-variable">exports</span> <span class="cm-operator">=</span> <span class="cm-variable">foo</span>;
+</code></pre>
+<p>TypeScript&#xC5D0;&#xC11C;&#xB294; &#xC774;&#xAC83;&#xC744; <code>export =</code> &#xAD6C;&#xC870;&#xB85C; &#xBAA8;&#xB378;&#xB9C1;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">foo</span>() {
+    <span class="cm-comment">// ...</span>
+}
+<span class="cm-keyword">export</span> <span class="cm-operator">=</span> <span class="cm-variable">foo</span>;
+</code></pre>
+<h3 id="&#xB108;&#xBB34;-&#xB9CE;&#xAC70;&#xB098;-&#xC801;&#xC740;-&#xC778;&#xC218;-too-manytoo-few-arguments">&#xB108;&#xBB34; &#xB9CE;&#xAC70;&#xB098; &#xC801;&#xC740; &#xC778;&#xC218; (Too many/too few arguments)</h3>
+<p>&#xB54C;&#xB54C;&#xB85C; &#xB108;&#xBB34;&#xB098; &#xB9CE;&#xAC70;&#xB098; &#xC801;&#xC740; &#xC778;&#xC218;&#xB97C; &#xAC00;&#xC9C4; &#xD568;&#xC218;&#xB97C; &#xD638;&#xCD9C;&#xD560; &#xB54C;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC804;&#xD615;&#xC801;&#xC73C;&#xB85C; &#xC774;&#xAC83;&#xC740; &#xBC84;&#xADF8;&#xC774;&#xC9C0;&#xB9CC; &#xC5B4;&#xB5A4; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xB97C; &#xC4F0;&#xB294; &#xB300;&#xC2E0; <code>arguments</code> &#xAC1D;&#xCCB4;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xD568;&#xC218;&#xB97C; &#xC120;&#xC5B8;&#xD588;&#xC744; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-js"><span class="cm-keyword">function</span> <span class="cm-variable">myCoolFunction</span>() {
+    <span class="cm-keyword">if</span> (<span class="cm-variable-2">arguments</span>.<span class="cm-property">length</span> <span class="cm-operator">==</span> <span class="cm-number">2</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-operator">!</span><span class="cm-variable">Array</span>.<span class="cm-property">isArray</span>(<span class="cm-variable-2">arguments</span>[<span class="cm-number">1</span>])) {
+        <span class="cm-keyword">var</span> <span class="cm-def">f</span> <span class="cm-operator">=</span> <span class="cm-variable-2">arguments</span>[<span class="cm-number">0</span>];
+        <span class="cm-keyword">var</span> <span class="cm-def">arr</span> <span class="cm-operator">=</span> <span class="cm-variable-2">arguments</span>[<span class="cm-number">1</span>];
+        <span class="cm-comment">// ...</span>
+    }
+    <span class="cm-comment">// ...</span>
+}
+
+<span class="cm-variable">myCoolFunction</span>(<span class="cm-keyword">function</span>(<span class="cm-def">x</span>) { <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable-2">x</span>) }, [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>, <span class="cm-number">4</span>]);
+<span class="cm-variable">myCoolFunction</span>(<span class="cm-keyword">function</span>(<span class="cm-def">x</span>) { <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable-2">x</span>) }, <span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>, <span class="cm-number">4</span>);
+</code></pre>
+<p>&#xC774;&#xB7F0; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; TypeScript&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; <code>myCoolfunction</code>&#xC774; &#xD568;&#xC218; &#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xB97C; &#xD1B5;&#xD574; &#xD638;&#xCD9C;&#xB420; &#xC218; &#xC788;&#xB294; &#xBC29;&#xBC95;&#xC5D0; &#xB300;&#xD574; &#xC54C;&#xB824;&#xC8FC;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">myCoolFunction</span>(<span class="cm-def">f</span>: (<span class="cm-variable">x</span>: <span class="cm-variable-3">number</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span>, <span class="cm-variable">nums</span>: <span class="cm-variable-3">number</span>[]): <span class="cm-variable">void</span>;
+<span class="cm-keyword">function</span> <span class="cm-variable">myCoolFunction</span>(<span class="cm-def">f</span>: (<span class="cm-variable">x</span>: <span class="cm-variable-3">number</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span>, <span class="cm-meta">...</span><span class="cm-variable">nums</span>: <span class="cm-variable-3">number</span>[]): <span class="cm-variable">void</span>;
+<span class="cm-keyword">function</span> <span class="cm-variable">myCoolFunction</span>() {
+    <span class="cm-keyword">if</span> (<span class="cm-variable-2">arguments</span>.<span class="cm-property">length</span> <span class="cm-operator">==</span> <span class="cm-number">2</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-operator">!</span><span class="cm-variable">Array</span>.<span class="cm-property">isArray</span>(<span class="cm-variable-2">arguments</span>[<span class="cm-number">1</span>])) {
+        <span class="cm-keyword">var</span> <span class="cm-def">f</span> <span class="cm-operator">=</span> <span class="cm-variable-2">arguments</span>[<span class="cm-number">0</span>];
+        <span class="cm-keyword">var</span> <span class="cm-def">arr</span> <span class="cm-operator">=</span> <span class="cm-variable-2">arguments</span>[<span class="cm-number">1</span>];
+        <span class="cm-comment">// ...</span>
+    }
+    <span class="cm-comment">// ...</span>
+}
+</code></pre>
+<p><code>myCoolFunction</code>&#xC5D0; &#xB450; &#xAC1C;&#xC758; &#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xB97C; &#xCD94;&#xAC00;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xCCAB; &#xBC88;&#xC9F8; &#xAC80;&#xC0AC;&#xB294; <code>myCoolFunction</code>&#xAC00; (<code>number</code>&#xB97C; &#xAC16;&#xB294;) &#xD568;&#xC218;&#xC5D0; <code>number</code>&#xC758; &#xBAA9;&#xB85D;&#xC744; &#xAC00;&#xC9D1;&#xB2C8;&#xB2E4;.
+&#xB450;&#xBC88;&#xC9F8;&#xB294; &#xD568;&#xC218;&#xB3C4; &#xAC16;&#xCDB0;&#xC57C; &#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC774;&#xACE0; &#xADF8; &#xB4A4;&#xC5D0; &#xC624;&#xB294; &#xC778;&#xC218;&#xAC00; &#xC22B;&#xC790;&#xC5EC;&#xC57C; &#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC54C;&#xB9AC;&#xAE30; &#xC704;&#xD574; &#xB098;&#xBA38;&#xC9C0; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;(<code>...nums</code>)&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xC21C;&#xCC28;&#xC801;&#xC73C;&#xB85C;-&#xCD94;&#xAC00;&#xB418;&#xB294;-&#xD504;&#xB85C;&#xD37C;&#xD2F0;-sequentially-added-properties">&#xC21C;&#xCC28;&#xC801;&#xC73C;&#xB85C; &#xCD94;&#xAC00;&#xB418;&#xB294; &#xD504;&#xB85C;&#xD37C;&#xD2F0; (Sequentially Added Properties)</h3>
+<p>&#xC5B4;&#xB5A4; &#xC0AC;&#xB78C;&#xB4E4;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC989;&#xC2DC; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xACE0; &#xC18D;&#xC131;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xB294; &#xAC83;&#xC774; &#xB354; &#xC608;&#xC220;&#xC801;&#xC73C;&#xB85C; &#xC990;&#xAC81;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC54C;&#xAC8C;&#xB429;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">options</span> <span class="cm-operator">=</span> {};
+<span class="cm-variable">options</span>.<span class="cm-property">color</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;red&quot;</span>;
+<span class="cm-variable">options</span>.<span class="cm-property">volume</span> <span class="cm-operator">=</span> <span class="cm-number">11</span>;
+</code></pre>
+<p>TypeScript&#xB294; <code>options</code>&#xC758; &#xD0C0;&#xC785;&#xC744; &#xC5B4;&#xB5A0;&#xD55C; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB3C4; &#xAC16;&#xC9C0; &#xC54A;&#xB294; <code>{}</code>&#xB85C; &#xBA3C;&#xC800; &#xCC3E;&#xC544;&#xB0C8;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; <code>volume</code>&#xACFC; <code>color</code>&#xC5D0; &#xD560;&#xB2F9;&#xD560; &#xC218; &#xC5C6;&#xB2E4;&#xACE0; &#xB9D0;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xB300;&#xC2E0; &#xC120;&#xC5B8;&#xC744; &#xAC1D;&#xCCB4; &#xB9AC;&#xD130;&#xB7F4; &#xC790;&#xCCB4;&#xB85C; &#xC62E;&#xAE30;&#xBA74; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">options</span> <span class="cm-operator">=</span> {
+    <span class="cm-property">color</span>: <span class="cm-string">&quot;red&quot;</span>,
+    <span class="cm-property">volume</span>: <span class="cm-number">11</span>
+};
+</code></pre>
+<p><code>options</code>&#xC758; &#xD0C0;&#xC785;&#xC744; &#xC815;&#xC758;&#xD558;&#xACE0; &#xAC1D;&#xCCB4; &#xB9AC;&#xD130;&#xB7F4;&#xC5D0; &#xD0C0;&#xC785; &#xD45C;&#xBA85;(type assertion)&#xC744; &#xCD94;&#xAC00; &#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">Options</span> { <span class="cm-variable">color</span>: <span class="cm-variable-3">string</span>; <span class="cm-variable">volume</span>: <span class="cm-variable-3">number</span> }
+
+<span class="cm-keyword">let</span> <span class="cm-variable">options</span> <span class="cm-operator">=</span> {} <span class="cm-variable">as</span> <span class="cm-variable">Options</span>;
+<span class="cm-variable">options</span>.<span class="cm-property">color</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;red&quot;</span>;
+<span class="cm-variable">options</span>.<span class="cm-property">volume</span> <span class="cm-operator">=</span> <span class="cm-number">11</span>;
+</code></pre>
+<p>&#xB610;&#xB294; <code>options</code>&#xC5D0; <code>any</code> &#xD0C0;&#xC785;&#xC774;&#xB77C;&#xACE0; &#xD558;&#xB294; &#xAC83;&#xC774; &#xAC00;&#xC7A5; &#xC26C;&#xC6B4; &#xBC29;&#xBC95;&#xC774;&#xC9C0;&#xB9CC; &#xAC00;&#xC7A5; &#xC774;&#xB4DD;&#xC774; &#xC801;&#xC740; &#xC77C;&#xC774; &#xB420; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h3 id="any&#xC640;-object-&#xADF8;&#xB9AC;&#xACE0;--any-object-and-"><code>any</code>&#xC640; <code>Object</code> &#xADF8;&#xB9AC;&#xACE0; <code>{}</code> (<code>any</code>, <code>Object</code>, and <code>{}</code>)</h3>
+<p>&#xB300;&#xBD80;&#xBD84;&#xC758; &#xACBD;&#xC6B0; <code>Object</code>&#xAC00; &#xAC00;&#xC7A5; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD0C0;&#xC785;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; <code>Object</code> &#xB610;&#xB294; <code>{}</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xAC12;&#xC5D0; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xD3EC;&#xD568;&#xD560; &#xC218; &#xC788;&#xB2E4;&#xACE0; &#xB9D0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xD558;&#xC9C0;&#xB9CC; any&#xAC00; &#xAC00;&#xC7A5; <em>&#xC720;&#xC5F0;&#xD55C;</em> &#xD0C0;&#xC785;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC774;&#xB7EC;&#xD55C; &#xC0C1;&#xD669;&#xC5D0;&#xC11C; <strong>&#xC2E4;&#xC81C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xB294;</strong> &#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; <code>Object</code> &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;&#xBA74; <code>toLowerCase()</code>&#xC640; &#xAC19;&#xC740; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.  </p>
+<p>&#xC880; &#xB354; &#xC77C;&#xBC18;&#xC801;&#xC774;&#xB77C;&#xB294; &#xAC83;&#xC740; &#xBCF4;&#xD1B5; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC801;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xC9C0;&#xB9CC; &#xAC00;&#xC7A5; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD0C0;&#xC785;&#xC778; <code>any</code>&#xB294; &#xC5EC;&#xC804;&#xD788; &#xC5B4;&#xB5A4; &#xAC83;&#xC774;&#xB4E0; &#xD560; &#xC218; &#xC788;&#xAC8C; &#xD5C8;&#xC6A9;&#xD574;&#xC900;&#xB2E4;&#xB294; &#xC810;&#xC5D0;&#xC11C; &#xD2B9;&#xBCC4;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC989; &#xD638;&#xCD9C;&#xD558;&#xC5EC; &#xAD6C;&#xC131;&#xD558;&#xACE0; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xC870;&#xC791;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xD558;&#xC9C0;&#xB9CC; <code>any</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; TypeScript&#xAC00; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xB300;&#xBD80;&#xBD84;&#xC758; &#xC624;&#xB958; &#xAC80;&#xC0AC; &#xBC0F; &#xD3B8;&#xC9D1;&#xAE30; &#xC9C0;&#xC6D0;&#xC744; &#xC783;&#xC5B4; &#xBC84;&#xB9AC;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p><code>Object</code>&#xC640; <code>{}</code>&#xB85C; &#xD310;&#xACB0;&#xB0AC;&#xB2E4;&#xBA74; <code>{}</code>&#xC744; &#xC120;&#xD638;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xAC83;&#xB4E4;&#xC740; &#xB300;&#xCCB4;&#xB85C; &#xAC19;&#xC9C0;&#xB9CC; &#xBE44;&#xBC00;&#xC2A4;&#xB7EC;&#xC6B4; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xAE30;&#xC220;&#xC801;&#xC73C;&#xB85C; <code>{}</code>&#xAC00; <code>Object</code>&#xBCF4;&#xB2E4; &#xB354; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xC5C4;&#xACA9;&#xD55C;-&#xAC80;&#xC0AC;-&#xBC1B;&#xAE30;-getting-stricter-checks">&#xC5C4;&#xACA9;&#xD55C; &#xAC80;&#xC0AC; &#xBC1B;&#xAE30; (Getting Stricter Checks)</h2>
+<p>TypeScript&#xB294; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC758; &#xC548;&#xC804;&#xC131;&#xACFC; &#xBD84;&#xC11D;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xAE30; &#xC704;&#xD574; &#xD2B9;&#xC815; &#xAC80;&#xC0AC;&#xB97C; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC77C;&#xB2E8; &#xCF54;&#xB4DC; &#xBCA0;&#xC774;&#xC2A4;&#xB97C; TypeScript&#xB85C; &#xBCC0;&#xD658;&#xD55C; &#xD6C4;&#xC5D0;&#xB294; &#xC774;&#xB7EC;&#xD55C; &#xAC80;&#xC0AC;&#xB97C; &#xD65C;&#xC131;&#xD654;&#xD558;&#xC5EC; &#xC548;&#xC804;&#xC131;&#xC744; &#xB192;&#xC77C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xC554;&#xC2DC;&#xC801;&#xC778;-any&#xB294;-no-no-implicit-any">&#xC554;&#xC2DC;&#xC801;&#xC778; <code>any</code>&#xB294; No (No Implicit <code>any</code>)</h3>
+<p>&#xD0C0;&#xC774;&#xD504; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xAC00; &#xC5B4;&#xB5A4; &#xD0C0;&#xC785;&#xC774;&#xC5B4;&#xC57C; &#xD560;&#xC9C0; &#xBAA8;&#xB974;&#xB294; &#xD2B9;&#xC815;&#xD55C; &#xACBD;&#xC6B0;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xAC00;&#xB2A5;&#xD558;&#xBA74; &#xAD00;&#xB300;&#xD558;&#xAE30; &#xC704;&#xD574; &#xADF8; &#xC790;&#xB9AC;&#xC5D0; <code>any</code> &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;&#xB85C; &#xACB0;&#xC815;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB294; &#xB9C8;&#xC774; &#xADF8;&#xB808;&#xC774;&#xC158;&#xC5D0;&#xB294; &#xB9E4;&#xC6B0; &#xC720;&#xC6A9;&#xD558;&#xC9C0;&#xB9CC; <code>any</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC5B4;&#xB5A0;&#xD55C; &#xC720;&#xD615;&#xC758; &#xC548;&#xC804;&#xB3C4; &#xD655;&#xBCF4;&#xD560; &#xC218; &#xC5C6;&#xC73C;&#xBA70; &#xB2E4;&#xB978; &#xACF3;&#xC5D0;&#xC11C; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xB294; &#xAC83;&#xACFC; &#xB3C4;&#xAD6C;&#xC758; &#xC9C0;&#xC6D0;&#xC744; &#xBC1B;&#xC744; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.<br>TypeScript&#xC5D0;&#xC11C; &#xC774;&#xB7EC;&#xD55C; &#xC704;&#xCE58;&#xB97C; &#xAE30;&#xB85D;&#xD558;&#xB3C4;&#xB85D; &#xC9C0;&#xC2DC;&#xD558;&#xACE0; <code>noImplicitAny</code> &#xC635;&#xC158;&#xC73C;&#xB85C; &#xC624;&#xB958;&#xB97C; &#xD45C;&#xC2DC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xC5C4;&#xACA9;&#xD55C;-null&#xACFC;-undefined-&#xCCB4;&#xD06C;-strict-null--undefined-checks">&#xC5C4;&#xACA9;&#xD55C; <code>null</code>&#xACFC; <code>undefined</code> &#xCCB4;&#xD06C; (Strict <code>null</code> &amp; <code>undefined</code> Checks)</h3>
+<p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; TypeScript&#xB294; <code>null</code>&#xACFC; <code>undefined</code>&#xC774; &#xBAA8;&#xB4E0; &#xD0C0;&#xC785;&#xC758; &#xBC94;&#xC704;&#xC5D0; &#xC788;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC989; <code>number</code> &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xC120;&#xC5B8;&#xB41C; &#xBAA8;&#xB4E0; &#xAC83;&#xC774; <code>null</code> &#xB610;&#xB294; <code>undefined</code> &#xC77C; &#xC218; &#xC788;&#xC74C;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.  </p>
+<p><code>null</code>&#xACFC; <code>undefined</code>&#xB294; JavaScript&#xC640; TypeScript&#xC5D0;&#xC11C; &#xC790;&#xC8FC; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xBC84;&#xADF8;&#xC758; &#xC6D0;&#xCC9C;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; TypeScript&#xB294; &#xC774;&#xC5D0; &#xB300;&#xD55C; &#xAC71;&#xC815;&#xC744; &#xB35C;&#xC5B4;&#xC8FC;&#xAE30; &#xC704;&#xD574; <code>strictNullChecks</code> &#xC635;&#xC158;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  </p>
+<p><code>strictNullChecks</code>&#xAC00; &#xD65C;&#xC131;&#xD654;&#xB418;&#xBA74; <code>null</code>&#xACFC; <code>undefined</code>&#xB294; <code>null</code>&#xACFC; <code>undefined</code> &#xAC01;&#xAC01;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xAC16;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><em>&#xD639;&#xC2DC;</em> <code>null</code> &#xC77C; &#xC218; &#xC788;&#xB294; &#xD56D;&#xBAA9;&#xC774; &#xC788;&#xC744; &#xB54C; &#xC6D0;&#xB798; &#xD0C0;&#xC785;&#xC744; union &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB807;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xD0C0;&#xC785;&#xC774; <code>number</code>(&#xC774;)&#xAC70;&#xB098; <code>null</code> &#xC77C; &#xC218; &#xC788;&#xB294; &#xACBD;&#xC6B0; &#xD574;&#xB2F9; &#xD0C0;&#xC785;&#xC744; <code>number | null</code>&#xB85C; &#xC4F0;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>TypeScript&#xAC00; <code>null</code> /<code>undefined</code>&#xB77C;&#xACE0; &#xC0DD;&#xAC01;&#xD558;&#xB294; &#xAC12;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC9C0;&#xB9CC; &#xB354; &#xC798; &#xC54C;&#xACE0; &#xC788;&#xB2E4;&#xBA74; &#xD6C4;&#xC704; &#xC5F0;&#xC0B0;&#xC790; <code>!</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xB2E4;&#xB974;&#xAC8C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">var</span> <span class="cm-variable">foo</span>: <span class="cm-variable-3">string</span>[] <span class="cm-operator">|</span> <span class="cm-atom">null</span>;
+
+<span class="cm-variable">foo</span>.<span class="cm-property">length</span>;  <span class="cm-comment">// &#xC624;&#xB958; - &apos;foo&apos;&#xB294; &apos;null&apos;&#xC77C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+
+<span class="cm-variable">foo</span><span class="cm-operator">!</span>.<span class="cm-variable">length</span>; <span class="cm-comment">// &#xC88B;&#xC544;&#xC694; - &apos;foo!&apos;&#xC5D0; &apos;string[]&apos;&#xD0C0;&#xC785;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+</code></pre>
+<p>&#xCC38;&#xACE0;&#xB85C; <code>strictNullChecks</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xB294; <code>strictNullChecks</code>&#xB3C4; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC758;&#xC874;&#xC131;&#xC744; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD574;&#xC57C; &#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xBB35;&#xC2DC;&#xC801;&#xC778;-this&#xC758;-any-no-no-implicit-any-for-this">&#xBB35;&#xC2DC;&#xC801;&#xC778; <code>this</code>&#xC758; <code>any</code> No! (No Implicit <code>any</code> for <code>this</code>)</h3>
+<p>&#xD074;&#xB798;&#xC2A4; &#xBC16;&#xC5D0;&#xC11C; <code>this</code> &#xD0A4;&#xC6CC;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; <code>any</code> &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9D1;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; <code>Point</code> &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC0DD;&#xAC01;&#xD558;&#xC5EC; &#xBA54;&#xC11C;&#xB4DC;&#xB85C; &#xCD94;&#xAC00;&#xD558;&#xACE0;&#xC790; &#xD558;&#xB294; &#xD568;&#xC218;&#xB97C; &#xC791;&#xC131;&#xD574;&#xBCF4;&#xC138;&#xC694; :</p>
+<pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">Point</span> {
+    <span class="cm-keyword">constructor</span>(<span class="cm-keyword">public</span> <span class="cm-variable">x</span>, <span class="cm-keyword">public</span> <span class="cm-variable">y</span>) {}
+    <span class="cm-variable">getDistance</span>(<span class="cm-variable">p</span>: <span class="cm-variable">Point</span>) {
+        <span class="cm-keyword">let</span> <span class="cm-variable">dx</span> <span class="cm-operator">=</span> <span class="cm-variable">p</span>.<span class="cm-property">x</span> <span class="cm-operator">-</span> <span class="cm-keyword">this</span>.<span class="cm-property">x</span>;
+        <span class="cm-keyword">let</span> <span class="cm-variable">dy</span> <span class="cm-operator">=</span> <span class="cm-variable">p</span>.<span class="cm-property">y</span> <span class="cm-operator">-</span> <span class="cm-keyword">this</span>.<span class="cm-property">y</span>;
+        <span class="cm-keyword">return</span> <span class="cm-variable">Math</span>.<span class="cm-property">sqrt</span>(<span class="cm-variable">dx</span> <span class="cm-operator">**</span> <span class="cm-number">2</span> <span class="cm-operator">+</span> <span class="cm-variable">dy</span> <span class="cm-operator">**</span> <span class="cm-number">2</span>);
+    }
+}
+<span class="cm-comment">// ...</span>
+
+<span class="cm-comment">// &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xB2E4;&#xC2DC; &#xC5F4;&#xC5B4;&#xBCF4;&#xC138;&#xC694;</span>
+<span class="cm-keyword">interface</span> <span class="cm-variable">Point</span> {
+    <span class="cm-variable">distanceFromOrigin</span>(<span class="cm-variable">point</span>: <span class="cm-variable">Point</span>): <span class="cm-variable-3">number</span>;
+}
+<span class="cm-variable">Point</span>.<span class="cm-property">prototype</span>.<span class="cm-property">distanceFromOrigin</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">point</span>: <span class="cm-variable-3">Point</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-keyword">this</span>.<span class="cm-property">getDistance</span>({ <span class="cm-property">x</span>: <span class="cm-number">0</span>, <span class="cm-property">y</span>: <span class="cm-number">0</span>});
+}
+</code></pre>
+<p>&#xC774;&#xAC83;&#xC740; &#xC704;&#xC5D0;&#xC11C; &#xC5B8;&#xAE09;&#xD55C; &#xAC83;&#xACFC; &#xB3D9;&#xC77C;&#xD55C; &#xBB38;&#xC81C;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; - <code>getDistance</code>&#xC758; &#xCCA0;&#xC790;&#xAC00; &#xD2C0;&#xB9AC;&#xAC70;&#xB098; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xC9C0; &#xC54A;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB7EC;&#xD55C; &#xC774;&#xC720;&#xB85C; TypeScript&#xB294; <code>noImplicitThis</code> &#xC635;&#xC158;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xC635;&#xC158;&#xC744; &#xC124;&#xC815;&#xD558;&#xBA74; TypeScript&#xC5D0;&#xC11C; &#xBA85;&#xC2DC;&#xC801;(&#xB610;&#xB294; &#xCD94;&#xB860;&#xB41C;) &#xD0C0;&#xC785; &#xC5C6;&#xC774; <code>this</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xACBD;&#xC6B0; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD574;&#xACB0;&#xCC45;&#xC740; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB098; &#xD568;&#xC218; &#xC790;&#xCCB4;&#xC5D0; <code>this</code>-&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBA85;&#xD655;&#xD55C; &#xD0C0;&#xC785;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">Point</span>.<span class="cm-property">prototype</span>.<span class="cm-property">distanceFromOrigin</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-keyword">this</span>: <span class="cm-variable">Point</span>, <span class="cm-variable">point</span>: <span class="cm-variable">Point</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-keyword">this</span>.<span class="cm-property">getDistance</span>({ <span class="cm-property">x</span>: <span class="cm-number">0</span>, <span class="cm-property">y</span>: <span class="cm-number">0</span>});
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Gulp.html" class="navigation navigation-prev " aria-label="Previous page: 걸프">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="React & Webpack.html" class="navigation navigation-next " aria-label="Next page: 리액트 & 웹팩">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"JavaScript에서 마이그레이션","level":"2.4","depth":1,"next":{"title":"리액트 & 웹팩","level":"2.5","depth":1,"path":"pages/tutorials/React & Webpack.md","ref":"pages/tutorials/React & Webpack.md","articles":[]},"previous":{"title":"걸프","level":"2.3","depth":1,"path":"pages/tutorials/Gulp.md","ref":"pages/tutorials/Gulp.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tutorials/Migrating from JavaScript.md","mtime":"2018-03-25T23:54:06.104Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-10T01:48:44.756Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    
+
+    </body>
+</html>
+

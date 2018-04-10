@@ -335,7 +335,11 @@ export var t = something + 1;
 Node.js는 `--module commonjs`를 사용하세요.  
 require.js의 경우 --module amd를 사용합니다.  
 
+<<<<<<< HEAD
 예를 들어:
+=======
+예를 들면:
+>>>>>>> 764cb472fb0987a1c9354cebc6699cc41293004c
 
 ```Shell
 tsc --module commonjs Test.ts
@@ -478,7 +482,11 @@ Node.js에서 대부분의 작업은 하나 이상의 모듈을 로드하여 수
 각 모듈을 `.d.ts` 파일에 최상위 수준의 내보내기 선언으로 정의할 수 있지만 더 넓은 `.d.ts` 파일로 작성하는 것이 더 편리합니다.  
 그렇게하기 위해서 ambient 네임스페이스와 비슷한 구조를 사용하지만 나중에 import 할 수 있는 모듈의 `module` 키워드와 따옴표 붙은 이름을 사용합니다.
 
+<<<<<<< HEAD
 예를 들어:
+=======
+예를 들면:
+>>>>>>> 764cb472fb0987a1c9354cebc6699cc41293004c
 
 ##### node.d.ts (simplified excerpt)
 
@@ -558,7 +566,11 @@ console.log(data, fileContent);
 이러한 모듈을 [UMD](https://github.com/umdjs/umd) 모듈이라고 합니다.  
 이러한 라이브러리는 import 또는 글로벌 변수를 통해 접근할 수 있습니다.
 
+<<<<<<< HEAD
 예를 들어:
+=======
+예를 들면:
+>>>>>>> 764cb472fb0987a1c9354cebc6699cc41293004c
 
 ##### math-lib.d.ts
 
@@ -602,7 +614,11 @@ export 클래스의 정적 메서드에도 비슷한 문제가 있습니다 - �
 모듈의 주요 목적이 하나의 특정 export를 저장하는 것이라면 이를 default export로 export 하는 것을 고려해야 합니다.  
 이렇게 하면 importing를 사용하며 실제로 import를 더 쉽게 사용할 수 있습니다.
 
+<<<<<<< HEAD
 예를 들어:
+=======
+예를 들면:
+>>>>>>> 764cb472fb0987a1c9354cebc6699cc41293004c
 
 #### MyClass.ts
 

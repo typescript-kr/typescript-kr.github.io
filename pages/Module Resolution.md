@@ -61,7 +61,11 @@ relative import는 import된 파일과 관련하여 해석됩니다.
 
 그러나 non-relative 모듈 imports의 경우 컴파일러는 imports 파일이 포함된 디렉토리부터 시작하여 일치하는 정의 파일을 가져오기 위해 디렉토리 트리를 찾으려합니다.
 
+<<<<<<< HEAD
 예를 들어:
+=======
+예를 들면:
+>>>>>>> 764cb472fb0987a1c9354cebc6699cc41293004c
 
 
 `moduleB`를 소스 파일에서 `import { b } from "moduleB"`와 같이 상대적으로 가져오지 않으면 `"moduleB"`를 찾기 위해 다음과 같은 위치에서 찾게 됩니다:

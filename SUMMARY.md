@@ -52,4 +52,8 @@
 * [Compiler Options](pages/Compiler Options.md)
 * [Compiler Options in MSBuild](pages/Compiler Options in MSBuild.md)
 * [Integrating with Build Tools](pages/Integrating with Build Tools.md)
+<<<<<<< HEAD
 * [Nightly Builds](pages/Nightly Builds.md)
+=======
+* [Nightly Builds](pages/Nightly Builds.md)
+>>>>>>> 764cb472fb0987a1c9354cebc6699cc41293004c

@@ -1,0 +1,1418 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>고급 타입 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight-1/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/atom-one-dark.css" />
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Symbols.html" />
+    
+    
+    <link rel="prev" href="Type Compatibility.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">튜토리얼</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="tutorials/TypeScript in 5 minutes.html">
+            
+                <a href="tutorials/TypeScript in 5 minutes.html">
+            
+                    
+                    5분 안에 보는 TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="tutorials/ASP.NET Core.html">
+            
+                <a href="tutorials/ASP.NET Core.html">
+            
+                    
+                    ASP.NET Core
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="tutorials/Gulp.html">
+            
+                <a href="tutorials/Gulp.html">
+            
+                    
+                    걸프
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="tutorials/Migrating from JavaScript.html">
+            
+                <a href="tutorials/Migrating from JavaScript.html">
+            
+                    
+                    JavaScript에서 마이그레이션
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="tutorials/React & Webpack.html">
+            
+                <a href="tutorials/React & Webpack.html">
+            
+                    
+                    리액트 & 웹팩
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">핸드북</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="Basic Types.html">
+            
+                <a href="Basic Types.html">
+            
+                    
+                    기본 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="Variable Declarations.html">
+            
+                <a href="Variable Declarations.html">
+            
+                    
+                    변수 선언
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="Interfaces.html">
+            
+                <a href="Interfaces.html">
+            
+                    
+                    인터페이스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="Classes.html">
+            
+                <a href="Classes.html">
+            
+                    
+                    클래스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="Functions.html">
+            
+                <a href="Functions.html">
+            
+                    
+                    함수
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="Generics.html">
+            
+                <a href="Generics.html">
+            
+                    
+                    제네릭
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="Enums.html">
+            
+                <a href="Enums.html">
+            
+                    
+                    열거형
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="Type Inference.html">
+            
+                <a href="Type Inference.html">
+            
+                    
+                    타입 추론
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="Type Compatibility.html">
+            
+                <a href="Type Compatibility.html">
+            
+                    
+                    타입 호환성
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.10" data-path="Advanced Types.html">
+            
+                <a href="Advanced Types.html">
+            
+                    
+                    고급 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="Symbols.html">
+            
+                <a href="Symbols.html">
+            
+                    
+                    심볼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="Iterators and Generators.html">
+            
+                <a href="Iterators and Generators.html">
+            
+                    
+                    이터레이터와 제네레이터
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="Modules.html">
+            
+                <a href="Modules.html">
+            
+                    
+                    모듈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="Namespaces.html">
+            
+                <a href="Namespaces.html">
+            
+                    
+                    네임스페이스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15" data-path="Namespaces and Modules.html">
+            
+                <a href="Namespaces and Modules.html">
+            
+                    
+                    네임스페이스와 모듈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.16" data-path="Module Resolution.html">
+            
+                <a href="Module Resolution.html">
+            
+                    
+                    모듈 해석
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.17" data-path="Declaration Merging.html">
+            
+                <a href="Declaration Merging.html">
+            
+                    
+                    선언 병합
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.18" data-path="JSX.html">
+            
+                <a href="JSX.html">
+            
+                    
+                    JSX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.19" data-path="Decorators.html">
+            
+                <a href="Decorators.html">
+            
+                    
+                    Decorators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.20" data-path="Mixins.html">
+            
+                <a href="Mixins.html">
+            
+                    
+                    Mixins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.21" data-path="Triple-Slash Directives.html">
+            
+                <a href="Triple-Slash Directives.html">
+            
+                    
+                    Triple-Slash Directives
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.22" data-path="Type Checking JavaScript Files.html">
+            
+                <a href="Type Checking JavaScript Files.html">
+            
+                    
+                    Type Checking JavaScript Files
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Declaration Files</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="declaration files/Introduction.html">
+            
+                <a href="declaration files/Introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="declaration files/Library Structures.html">
+            
+                <a href="declaration files/Library Structures.html">
+            
+                    
+                    Library Structures
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="declaration files/By Example.html">
+            
+                <a href="declaration files/By Example.html">
+            
+                    
+                    By Example
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="declaration files/Do's and Don'ts.html">
+            
+                <a href="declaration files/Do's and Don'ts.html">
+            
+                    
+                    Do's and Don'ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="declaration files/Deep Dive.html">
+            
+                <a href="declaration files/Deep Dive.html">
+            
+                    
+                    Deep Dive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="declaration files/Templates.html">
+            
+                <a href="declaration files/Templates.html">
+            
+                    
+                    Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="declaration files/Publishing.html">
+            
+                <a href="declaration files/Publishing.html">
+            
+                    
+                    Publishing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="declaration files/Consumption.html">
+            
+                <a href="declaration files/Consumption.html">
+            
+                    
+                    Consumption
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Project Configuration</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="tsconfig.json.html">
+            
+                <a href="tsconfig.json.html">
+            
+                    
+                    tsconfig.json
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="Compiler Options.html">
+            
+                <a href="Compiler Options.html">
+            
+                    
+                    Compiler Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="Compiler Options in MSBuild.html">
+            
+                <a href="Compiler Options in MSBuild.html">
+            
+                    
+                    Compiler Options in MSBuild
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="Integrating with Build Tools.html">
+            
+                <a href="Integrating with Build Tools.html">
+            
+                    
+                    Integrating with Build Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="Nightly Builds.html">
+            
+                <a href="Nightly Builds.html">
+            
+                    
+                    Nightly Builds
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >고급 타입</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#xAD50;&#xCC28;-&#xD0C0;&#xC785;-intersection-types">&#xAD50;&#xCC28; &#xD0C0;&#xC785; (Intersection Types)</h1>
+<p>&#xAD50;&#xCC28; &#xD0C0;&#xC785;&#xC740; &#xB2E4;&#xC591;&#xD55C; &#xD0C0;&#xC785;&#xC744; &#xD558;&#xB098;&#xB85C; &#xACB0;&#xD569;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB530;&#xB77C;&#xC11C; &#xAE30;&#xC874; &#xD0C0;&#xC785;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xD544;&#xC694;&#xD55C; &#xBAA8;&#xB4E0; &#xAE30;&#xB2A5;&#xC744; &#xAC16;&#xCD98; &#xB2E8;&#xC77C; &#xD0C0;&#xC785;&#xC744; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; <code>Person &amp; Serializable &amp; Loggable</code>&#xC740; <code>Person</code> <em>&#xACFC;</em> <code>Serializable</code> <em>&#xC774;&#xBA70;</em> <code>Loggable</code> &#xC785;&#xB2C8;&#xB2E4;.<br>&#xC989; &#xC774; &#xD0C0;&#xC785;&#xC758; &#xAC1D;&#xCCB4;&#xB294; &#xC138; &#xAC00;&#xC9C0; &#xD0C0;&#xC785;&#xC758; &#xBAA8;&#xB4E0; &#xBA64;&#xBC84;&#xB97C; &#xAC16;&#xAC8C;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xBBF9;&#xC2A4;&#xC778;&#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xAD50;&#xCC28; &#xD0C0;&#xC785;&#xACFC; &#xACE0;&#xC804;&#xC801;&#xC778; &#xAC1D;&#xCCB4; &#xC9C0;&#xD5A5; &#xD615;&#xC2DD;&#xC5D0; &#xB9DE;&#xC9C0; &#xC54A;&#xB294; &#xB2E4;&#xB978; &#xAC1C;&#xB150;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>(JavaScript&#xC5D0; &#xC774;&#xB7EC;&#xD55C; &#xAC83;&#xB4E4;&#xC774; &#xB9CE;&#xC2B5;&#xB2C8;&#xB2E4;!)</p>
+<p>&#xC5EC;&#xAE30;&#xC5D0; Mixin&#xC744; &#xB9CC;&#xB4DC;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xBCF4;&#xC5EC; &#xC8FC;&#xB294; &#xAC04;&#xB2E8;&#xD55C; &#xC608;&#xC81C;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; :</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">extend</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span>, <span class="cm-variable">U</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">first</span>: <span class="cm-variable">T</span>, <span class="cm-variable">second</span>: <span class="cm-variable">U</span>): <span class="cm-variable">T</span> <span class="cm-operator">&amp;</span> <span class="cm-variable">U</span> {
+    <span class="cm-keyword">let</span> <span class="cm-variable">result</span> <span class="cm-operator">=</span> <span class="cm-operator">&lt;</span><span class="cm-variable">T</span> <span class="cm-operator">&amp;</span> <span class="cm-variable">U</span><span class="cm-operator">&gt;</span>{};
+    <span class="cm-keyword">for</span> (<span class="cm-keyword">let</span> <span class="cm-variable">id</span> <span class="cm-keyword">in</span> <span class="cm-variable">first</span>) {
+        (<span class="cm-operator">&lt;</span><span class="cm-variable-3">any</span><span class="cm-operator">&gt;</span><span class="cm-variable">result</span>)[<span class="cm-variable">id</span>] <span class="cm-operator">=</span> (<span class="cm-operator">&lt;</span><span class="cm-variable-3">any</span><span class="cm-operator">&gt;</span><span class="cm-variable">first</span>)[<span class="cm-variable">id</span>];
+    }
+    <span class="cm-keyword">for</span> (<span class="cm-keyword">let</span> <span class="cm-variable">id</span> <span class="cm-keyword">in</span> <span class="cm-variable">second</span>) {
+        <span class="cm-keyword">if</span> (<span class="cm-operator">!</span><span class="cm-variable">result</span>.<span class="cm-property">hasOwnProperty</span>(<span class="cm-variable">id</span>)) {
+            (<span class="cm-operator">&lt;</span><span class="cm-variable-3">any</span><span class="cm-operator">&gt;</span><span class="cm-variable">result</span>)[<span class="cm-variable">id</span>] <span class="cm-operator">=</span> (<span class="cm-operator">&lt;</span><span class="cm-variable-3">any</span><span class="cm-operator">&gt;</span><span class="cm-variable">second</span>)[<span class="cm-variable">id</span>];
+        }
+    }
+    <span class="cm-keyword">return</span> <span class="cm-variable">result</span>;
+}
+
+<span class="cm-keyword">class</span> <span class="cm-variable">Person</span> {
+    <span class="cm-keyword">constructor</span>(<span class="cm-keyword">public</span> <span class="cm-variable">name</span>: <span class="cm-variable-3">string</span>) { }
+}
+<span class="cm-keyword">interface</span> <span class="cm-variable">Loggable</span> {
+    <span class="cm-variable">log</span>(): <span class="cm-variable">void</span>;
+}
+<span class="cm-keyword">class</span> <span class="cm-variable">ConsoleLogger</span> <span class="cm-variable">implements</span> <span class="cm-variable">Loggable</span> {
+    <span class="cm-variable">log</span>() {
+        <span class="cm-comment">// ...</span>
+    }
+}
+<span class="cm-keyword">var</span> <span class="cm-variable">jim</span> <span class="cm-operator">=</span> <span class="cm-variable">extend</span>(<span class="cm-keyword">new</span> <span class="cm-variable">Person</span>(<span class="cm-string">&quot;Jim&quot;</span>), <span class="cm-keyword">new</span> <span class="cm-variable">ConsoleLogger</span>());
+<span class="cm-keyword">var</span> <span class="cm-variable">n</span> <span class="cm-operator">=</span> <span class="cm-variable">jim</span>.<span class="cm-property">name</span>;
+<span class="cm-variable">jim</span>.<span class="cm-property">log</span>();
+</code></pre>
+<h1 id="&#xC720;&#xB2C8;&#xC628;-&#xD0C0;&#xC785;-union-types">&#xC720;&#xB2C8;&#xC628; &#xD0C0;&#xC785; (Union Types)</h1>
+<p>&#xC720;&#xB2C8;&#xC628; &#xD0C0;&#xC785;&#xC740; &#xAD50;&#xCC28; &#xD0C0;&#xC785;&#xACFC; &#xBC00;&#xC811;&#xD55C; &#xAD00;&#xB828;&#xC774; &#xC788;&#xC9C0;&#xB9CC; &#xB9E4;&#xC6B0; &#xB2E4;&#xB974;&#xAC8C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xB54C;&#xB85C;&#xB294; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xAC00; <code>number</code> &#xB610;&#xB294;<code>string</code>&#xC774; &#xB420; &#xAC83;&#xC73C;&#xB85C; &#xAE30;&#xB300;&#xD558;&#xB294; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xD568;&#xC218;&#xC744; &#xC218;&#xD589;&#xD558;&#xC2ED;&#xC2DC;&#xC624;:</p>
+<pre><code class="lang-ts"><span class="cm-comment">/**</span>
+<span class="cm-comment"> * string &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC838;&#xC640;&#xC11C; &#xC67C;&#xCABD;&#xC5D0; &quot;padding&quot;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-comment"> * &apos;padding&apos;&#xC774; string&#xC778; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &apos;padding&apos;&#xC774; &#xC67C;&#xCABD;&#xC5D0; &#xCD94;&#xAC00;&#xB429;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-comment"> * &apos;padding&apos;&#xC774; number&#xC778; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xD574;&#xB2F9; &#xAC1C;&#xC218;&#xC758; &#xACF5;&#xBC31;&#xC774; &#xC67C;&#xCABD;&#xC5D0; &#xCD94;&#xAC00;&#xB429;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-comment"> */</span>
+<span class="cm-keyword">function</span> <span class="cm-variable">padLeft</span>(<span class="cm-def">value</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">padding</span>: <span class="cm-variable-3">any</span>) {
+    <span class="cm-keyword">if</span> (<span class="cm-keyword">typeof</span> <span class="cm-variable-2">padding</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;number&quot;</span>) {
+        <span class="cm-keyword">return</span> <span class="cm-variable">Array</span>(<span class="cm-variable-2">padding</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>).<span class="cm-property">join</span>(<span class="cm-string">&quot; &quot;</span>) <span class="cm-operator">+</span> <span class="cm-variable-2">value</span>;
+    }
+    <span class="cm-keyword">if</span> (<span class="cm-keyword">typeof</span> <span class="cm-variable-2">padding</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;string&quot;</span>) {
+        <span class="cm-keyword">return</span> <span class="cm-variable-2">padding</span> <span class="cm-operator">+</span> <span class="cm-variable-2">value</span>;
+    }
+    <span class="cm-keyword">throw</span> <span class="cm-keyword">new</span> <span class="cm-variable">Error</span>(<span class="cm-string-2">`Expected string or number, got &apos;${</span><span class="cm-variable-2">padding</span><span class="cm-string-2">}</span><span class="cm-string-2">&apos;.`</span>);
+}
+
+<span class="cm-variable">padLeft</span>(<span class="cm-string">&quot;Hello world&quot;</span>, <span class="cm-number">4</span>); <span class="cm-comment">// &quot;    Hello world&quot; &#xBC18;&#xD658;</span>
+</code></pre>
+<p><code>padLeft</code>&#xC758; &#xBB38;&#xC81C;&#xC810;&#xC740; <code>padding</code> &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xAC00; <code>any</code>&#xB85C; &#xBD84;&#xB958;&#xB41C;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC989; <code>number</code>&#xC774;&#xAC70;&#xB098; <code>string</code>&#xC774; &#xC544;&#xB2CC; &#xC778;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD638;&#xCD9C;&#xD560; &#xC218; &#xC788;&#xC9C0;&#xB9CC; TypeScript&#xB294; &#xD574;&#xB2F9; &#xC778;&#xC218;&#xC640; &#xD568;&#xAED8; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">indentedString</span> <span class="cm-operator">=</span> <span class="cm-variable">padLeft</span>(<span class="cm-string">&quot;Hello world&quot;</span>, <span class="cm-atom">true</span>); <span class="cm-comment">// &#xCEF4;&#xD30C;&#xC77C; &#xD0C0;&#xC784;&#xC5D0;&#xB294; &#xD1B5;&#xACFC;&#xB418;&#xC9C0;&#xB9CC; &#xB7F0;&#xD0C0;&#xC784;&#xC5D0;&#xB294; &#xC2E4;&#xD328;&#xD569;&#xB2C8;&#xB2E4;.</span>
+</code></pre>
+<p>&#xC804;&#xD1B5;&#xC801;&#xC778; &#xAC1D;&#xCCB4; &#xC9C0;&#xD5A5; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C;&#xB294; &#xD0C0;&#xC785;&#xC758; &#xACC4;&#xCE35;&#xC744; &#xB9CC;&#xB4E4;&#xC5B4; &#xB450; &#xAC00;&#xC9C0; &#xD0C0;&#xC785;&#xC744; &#xCD94;&#xC0C1;&#xD654; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xAC83;&#xC774; &#xD6E8;&#xC52C; &#xB354; &#xBA85;&#xBC31;&#xD558;&#xAE30;&#xB294; &#xD558;&#xC9C0;&#xB9CC; &#xB610; &#xC57D;&#xAC04; &#xC9C0;&#xB098;&#xCE58;&#xAE30;&#xB3C4; &#xD569;&#xB2C8;&#xB2E4;.<br><code>padLeft</code>&#xC758; &#xC6D0;&#xB798; &#xBC84;&#xC804;&#xC5D0; &#xB300;&#xD55C; &#xC88B;&#xC740; &#xC810; &#xC911; &#xD558;&#xB098;&#xB294; &#xC6D0;&#xC2DC; &#xAC12;&#xC744; &#xC804;&#xB2EC;&#xD560; &#xC218; &#xC788;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB294; &#xC0AC;&#xC6A9;&#xBC95;&#xC774; &#xAC04;&#xB2E8;&#xD558;&#xACE0; &#xAC04;&#xACB0;&#xD558;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xC0C8;&#xB85C;&#xC6B4; &#xC811;&#xADFC;&#xBC95;&#xC740; &#xC774;&#xBBF8; &#xB2E4;&#xB978; &#xACF3;&#xC5D0; &#xC788;&#xB294; &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;&#xB3C4; &#xB3C4;&#xC6C0;&#xC774; &#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>any</code> &#xB300;&#xC2E0; <code>padding</code> &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC5D0; <em>union type</em> &#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-comment">/**</span>
+<span class="cm-comment"> * string &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC838;&#xC640;&#xC11C; &#xC67C;&#xCABD;&#xC5D0; &quot;padding&quot;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-comment"> * &apos;padding&apos;&#xC774; string&#xC778; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &apos;padding&apos;&#xC774; &#xC67C;&#xCABD;&#xC5D0; &#xCD94;&#xAC00;&#xB429;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-comment"> * &apos;padding&apos;&#xC774; number&#xC778; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xD574;&#xB2F9; &#xAC1C;&#xC218;&#xC758; &#xACF5;&#xBC31;&#xC774; &#xC67C;&#xCABD;&#xC5D0; &#xCD94;&#xAC00;&#xB429;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-comment"> */</span>
+<span class="cm-keyword">function</span> <span class="cm-variable">padLeft</span>(<span class="cm-def">value</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">padding</span>: <span class="cm-variable-3">string</span> <span class="cm-operator">|</span> <span class="cm-variable-3">number</span>) {
+    <span class="cm-comment">// ...</span>
+}
+
+<span class="cm-keyword">let</span> <span class="cm-variable">indentedString</span> <span class="cm-operator">=</span> <span class="cm-variable">padLeft</span>(<span class="cm-string">&quot;Hello world&quot;</span>, <span class="cm-atom">true</span>); <span class="cm-comment">// &#xCEF4;&#xD30C;&#xC77C; &#xC2DC; &#xC624;&#xB958;</span>
+</code></pre>
+<p>&#xC720;&#xB2C8;&#xC628; &#xD0C0;&#xC785;&#xC740; &#xC5EC;&#xB7EC; &#xD0C0;&#xC785; &#xC911; &#xD558;&#xB098;&#xC77C; &#xC218; &#xC788;&#xB294; &#xAC12;&#xC744; &#xC124;&#xBA85;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xAC01; &#xD0C0;&#xC785;&#xC744; &#xAD6C;&#xBD84;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC218;&#xC9C1; &#xB9C9;&#xB300;(<code>|</code>)&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBBC0;&#xB85C; <code>number | string | boolean</code>&#xC740; <code>number</code>, <code>string</code> &#xB610;&#xB294; <code>boolean</code> &#xB420; &#xC218; &#xC788;&#xB294; &#xAC12;&#xC758; &#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC720;&#xB2C8;&#xC628; &#xD0C0;&#xC785;&#xC774; &#xC788;&#xB294; &#xAC12;&#xC774; &#xC788;&#xC73C;&#xBA74; &#xC720;&#xB2C8;&#xC628;&#xC758; &#xBAA8;&#xB4E0; &#xD0C0;&#xC785;&#xC5D0; &#xACF5;&#xD1B5;&#xC801;&#xC778; &#xBA64;&#xBC84;&#xC5D0;&#xB9CC; &#xC811;&#xADFC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">Bird</span> {
+    <span class="cm-variable">fly</span>();
+    <span class="cm-variable">layEggs</span>();
+}
+
+<span class="cm-keyword">interface</span> <span class="cm-variable">Fish</span> {
+    <span class="cm-variable">swim</span>();
+    <span class="cm-variable">layEggs</span>();
+}
+
+<span class="cm-keyword">function</span> <span class="cm-variable">getSmallPet</span>(): <span class="cm-variable">Fish</span> <span class="cm-operator">|</span> <span class="cm-variable">Bird</span> {
+    <span class="cm-comment">// ...</span>
+}
+
+<span class="cm-keyword">let</span> <span class="cm-variable">pet</span> <span class="cm-operator">=</span> <span class="cm-variable">getSmallPet</span>();
+<span class="cm-variable">pet</span>.<span class="cm-property">layEggs</span>(); <span class="cm-comment">// &#xC88B;&#xC544;&#xC694;</span>
+<span class="cm-variable">pet</span>.<span class="cm-property">swim</span>();    <span class="cm-comment">// &#xC624;&#xB958;</span>
+</code></pre>
+<p>&#xC720;&#xB2C8;&#xC628; &#xD0C0;&#xC785;&#xC774; &#xC880; &#xAE4C;&#xB2E4;&#xB85C;&#xC6B8; &#xC218;&#xB3C4; &#xC788;&#xC9C0;&#xB9CC; &#xC775;&#xC219;&#xD574;&#xC9C0;&#xB294; &#xB370;&#xB294; &#xC57D;&#xAC04;&#xC758; &#xC9C1;&#xAD00;&#xC774; &#xD544;&#xC694;&#xD560; &#xBFD0;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC5B4;&#xB5A0;&#xD55C; &#xAC12;&#xC5D0; <code>A | B</code> &#xD0C0;&#xC785;&#xC774; &#xC788;&#xB2E4;&#xBA74; <code>A</code> <em>&#xC640;</em> <code>B</code> &#xBAA8;&#xB450; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294; &#xBA64;&#xBC84;&#xAC00; &#xC788;&#xC74C;&#xC744; <em>&#xD655;&#xC2E4;&#xD788;</em> &#xC54C;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xC608;&#xC81C;&#xC5D0;&#xC11C; <code>Bird</code>&#xB294; <code>fly</code>&#xB77C;&#xB294; &#xBA64;&#xBC84;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xD558;&#xC9C0;&#xB9CC; <code>Bird | Fish</code>&#xC758; &#xBCC0;&#xC218; &#xD0C0;&#xC785;&#xC774; <code>fly</code> &#xBA54;&#xC11C;&#xB4DC;&#xB85C; &#xC791;&#xC6A9;&#xD558;&#xACE0; &#xC788;&#xB294;&#xC9C0;&#xB294; &#xC54C; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xB7F0;&#xD0C0;&#xC784;&#xC5D0; &#xBCC0;&#xC218;&#xAC00; <code>Fish</code> &#xC778;&#xACBD;&#xC6B0; <code>pet.fly()</code> &#xD638;&#xCD9C;&#xC740; &#xC2E4;&#xD328;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xD0C0;&#xC785;-&#xAC00;&#xB4DC;&#xC640;-&#xCC28;&#xBCC4;&#xB41C;-&#xD0C0;&#xC785;-type-guards-and-differentiating-types">&#xD0C0;&#xC785; &#xAC00;&#xB4DC;&#xC640; &#xCC28;&#xBCC4;&#xB41C; &#xD0C0;&#xC785; (Type Guards and Differentiating Types)</h1>
+<p>&#xC720;&#xB2C8;&#xC628; &#xD0C0;&#xC785;&#xC740; &#xAC12;&#xC744; &#xCDE8;&#xD560; &#xC218;&#xC788;&#xB294; &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xACB9;&#xCE60; &#xC218;&#xC788;&#xB294; &#xC0C1;&#xD669;&#xC744; &#xBAA8;&#xB378;&#xB9C1; &#xD560; &#xB54C; &#xC720;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.<br><code>Fish</code>&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294;&#xC9C0;&#xC5D0; &#xB300;&#xD574; &#xAD6C;&#xCCB4;&#xC801;&#xC73C;&#xB85C; &#xC54C;&#xC544;&#xC57C; &#xD560; &#xD544;&#xC694;&#xAC00; &#xC788;&#xC744; &#xB54C; &#xBB34;&#xC2A8; &#xC77C;&#xC774; &#xC77C;&#xC5B4;&#xB0A0;&#xAE4C;&#xC694;?<br>JavaScript&#xC5D0;&#xC11C; &#xB450; &#xAC00;&#xC9C0; &#xAC00;&#xB2A5;&#xD55C; &#xAC12;&#xC744; &#xAD6C;&#xBCC4;&#xD558;&#xB294; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xC6A9;&#xC5B4;&#xB294; &#xBA64;&#xBC84;&#xC758; &#xC874;&#xC7AC;&#xB97C; &#xD655;&#xC778;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC5B8;&#xAE09;&#xD588;&#xB4EF;&#xC774; &#xC720;&#xB2C8;&#xC628; &#xD0C0;&#xC785;&#xC758; &#xBAA8;&#xB4E0; &#xAD6C;&#xC131; &#xC694;&#xC18C;&#xC5D0; &#xD3EC;&#xD568;&#xB420; &#xC218; &#xC788;&#xB294; &#xBCF4;&#xC7A5;&#xB41C; &#xBA64;&#xBC84;&#xC5D0;&#xB9CC; &#xC811;&#xADFC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">pet</span> <span class="cm-operator">=</span> <span class="cm-variable">getSmallPet</span>();
+
+<span class="cm-comment">// &#xC774;&#xB7EC;&#xD55C; &#xAC01; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xC811;&#xADFC;&#xC740; &#xC624;&#xB958;&#xB97C; &#xBC1C;&#xC0DD;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-keyword">if</span> (<span class="cm-variable">pet</span>.<span class="cm-property">swim</span>) {
+    <span class="cm-variable">pet</span>.<span class="cm-property">swim</span>();
+}
+<span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable">pet</span>.<span class="cm-property">fly</span>) {
+    <span class="cm-variable">pet</span>.<span class="cm-property">fly</span>();
+}
+</code></pre>
+<p>&#xB3D9;&#xC77C;&#xD55C; &#xCF54;&#xB4DC;&#xAC00; &#xC791;&#xB3D9;&#xD558;&#xB3C4;&#xB85D; &#xD558;&#xB824;&#xBA74; &#xD0C0;&#xC785; &#xD45C;&#xBA85;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4; :</p>
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">pet</span> <span class="cm-operator">=</span> <span class="cm-variable">getSmallPet</span>();
+
+<span class="cm-keyword">if</span> ((<span class="cm-operator">&lt;</span><span class="cm-variable">Fish</span><span class="cm-operator">&gt;</span><span class="cm-variable">pet</span>).<span class="cm-property">swim</span>) {
+    (<span class="cm-operator">&lt;</span><span class="cm-variable">Fish</span><span class="cm-operator">&gt;</span><span class="cm-variable">pet</span>).<span class="cm-property">swim</span>();
+}
+<span class="cm-keyword">else</span> {
+    (<span class="cm-operator">&lt;</span><span class="cm-variable">Bird</span><span class="cm-operator">&gt;</span><span class="cm-variable">pet</span>).<span class="cm-property">fly</span>();
+}
+</code></pre>
+<h2 id="&#xC0AC;&#xC6A9;&#xC790;-&#xC815;&#xC758;-&#xD0C0;&#xC785;-&#xAC00;&#xB4DC;-user-defined-type-guards">&#xC0AC;&#xC6A9;&#xC790; &#xC815;&#xC758; &#xD0C0;&#xC785; &#xAC00;&#xB4DC; (User-Defined Type Guards)</h2>
+<p>&#xD0C0;&#xC785; &#xD45C;&#xBA85;(type assertions)&#xC744; &#xC5EC;&#xB7EC; &#xBC88; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD588;&#xB2E4;&#xB294; &#xAC83;&#xC5D0; &#xC8FC;&#xBAA9;&#xD558;&#xC138;&#xC694;.<br>&#xC77C;&#xB2E8; &#xC774; &#xAC80;&#xC0AC;&#xB97C; &#xC2E4;&#xC2DC;&#xD558;&#xBA74; &#xAC01; &#xC9C0;&#xC810;&#xC5D0;&#xC11C; <code>pet</code>&#xC758; &#xD0C0;&#xC785;&#xB97C; &#xC54C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xADF8;&#xB7F0; &#xC77C;&#xC774; &#xC788;&#xC744; &#xB54C; TypeScript&#xC5D0;&#xB294; <em>type guard</em>&#xB77C;&#xB294; &#xAC83;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xD0C0;&#xC785; &#xAC00;&#xB4DC;(type guard)&#xB294; &#xC77C;&#xBD80; &#xC2A4;&#xCF54;&#xD504;&#xC5D0;&#xC11C; &#xD0C0;&#xC785;&#xC744; &#xBCF4;&#xC7A5;&#xD558;&#xB294; &#xB7F0;&#xD0C0;&#xC784; &#xAC80;&#xC0AC;&#xB97C; &#xC218;&#xD589;&#xD558;&#xB294; &#xD45C;&#xD604;&#xC2DD;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xD0C0;&#xC785; &#xAC00;&#xB4DC;&#xB97C; &#xC815;&#xC758;&#xD558;&#xB824;&#xBA74; &#xBC18;&#xD658; &#xD0C0;&#xC785;&#xC774; <em>&#xD0C0;&#xC785; &#xBA85;&#xC81C; (type predicate)</em> &#xC778; &#xD568;&#xC218;&#xB97C; &#xC815;&#xC758;&#xD558;&#xAE30;&#xB9CC; &#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4; :</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">isFish</span>(<span class="cm-def">pet</span>: <span class="cm-variable-3">Fish</span> <span class="cm-operator">|</span> <span class="cm-variable">Bird</span>): <span class="cm-variable">pet</span> <span class="cm-variable">is</span> <span class="cm-variable">Fish</span> {
+    <span class="cm-keyword">return</span> (<span class="cm-operator">&lt;</span><span class="cm-variable">Fish</span><span class="cm-operator">&gt;</span><span class="cm-variable">pet</span>).<span class="cm-property">swim</span> <span class="cm-operator">!==</span> <span class="cm-atom">undefined</span>;
+}
+</code></pre>
+<p><code>pet is Fish</code>&#xB294; &#xC774; &#xC608;&#xC81C;&#xC5D0;&#xC11C; &#xD0C0;&#xC785; &#xBA85;&#xC81C;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xBA85;&#xC81C;&#xB294; <code>parameterName is Type</code> &#xD615;&#xD0DC;&#xC744; &#xCDE8;&#xD569;&#xB2C8;&#xB2E4;, &#xC5EC;&#xAE30;&#xC11C; <code>parameterName</code>&#xC740; &#xD604;&#xC7AC; &#xD568;&#xC218; &#xC11C;&#xBA85;&#xC758; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218; &#xC774;&#xB984;&#xC774;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><code>IsFish</code>&#xAC00; &#xC77C;&#xBD80; &#xBCC0;&#xC218;&#xC640; &#xD568;&#xAED8; &#xD638;&#xCD9C;&#xB420; &#xB54C; &#xC6D0;&#xB798; &#xD0C0;&#xC785;&#xC774; &#xD638;&#xD658; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;&#xBA74; TypeScript&#xB294; &#xADF8; &#xBCC0;&#xC218;&#xB97C; &#xD2B9;&#xC815; &#xD0C0;&#xC785;&#xC73C;&#xB85C; <em>&#xC81C;&#xD55C;</em>&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-comment">// &apos;swim&apos;&#xACFC; &apos;fly&apos; &#xD638;&#xCD9C;&#xC740; &#xC774;&#xC81C; &#xBAA8;&#xB450; &#xAD1C;&#xCC2E;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+
+<span class="cm-keyword">if</span> (<span class="cm-variable">isFish</span>(<span class="cm-variable">pet</span>)) {
+    <span class="cm-variable">pet</span>.<span class="cm-property">swim</span>();
+}
+<span class="cm-keyword">else</span> {
+    <span class="cm-variable">pet</span>.<span class="cm-property">fly</span>();
+}
+</code></pre>
+<p>TypeScript&#xB294; <code>pet</code>&#xC774; <code>if</code> &#xC2A4;&#xCF54;&#xD504;&#xC758; <code>Fish</code>&#xB77C;&#xB294; &#xAC83;&#xC744; &#xC54C;&#xACE0; &#xC788;&#xC744; &#xBFD0;&#xB9CC; &#xC544;&#xB2C8;&#xB77C;,<br><code>else</code> &#xC2A4;&#xCF54;&#xD504;&#xC5D0;&#xC11C;&#xB294; <code>Fish</code>&#xAC00; <em>&#xC5C6;&#xB2E4;&#xB294; &#xAC83;&#xC744;</em> &#xC54C;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; <code>Bird</code>&#xAC00; &#xC788;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="typeof-&#xD0C0;&#xC785;-&#xAC00;&#xB4DC;-typeof-type-guards"><code>typeof</code> &#xD0C0;&#xC785; &#xAC00;&#xB4DC; (<code>typeof</code> type guards)</h2>
+<p>&#xADF8;&#xB7FC; &#xB2E4;&#xC2DC; &#xB3CC;&#xC544;&#xC640; &#xC720;&#xB2C8;&#xC628; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; <code>padLeft</code> &#xBC84;&#xC804;&#xC758; &#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD574;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD0C0;&#xC785; &#xBA85;&#xC81C;&#xB85C; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; :</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">isNumber</span>(<span class="cm-def">x</span>: <span class="cm-variable-3">any</span>): <span class="cm-variable">x</span> <span class="cm-variable">is</span> <span class="cm-variable-3">number</span> {
+    <span class="cm-keyword">return</span> <span class="cm-keyword">typeof</span> <span class="cm-variable">x</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;number&quot;</span>;
+}
+
+<span class="cm-keyword">function</span> <span class="cm-variable">isString</span>(<span class="cm-def">x</span>: <span class="cm-variable-3">any</span>): <span class="cm-variable">x</span> <span class="cm-variable">is</span> <span class="cm-variable-3">string</span> {
+    <span class="cm-keyword">return</span> <span class="cm-keyword">typeof</span> <span class="cm-variable">x</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;string&quot;</span>;
+}
+
+<span class="cm-keyword">function</span> <span class="cm-variable">padLeft</span>(<span class="cm-def">value</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">padding</span>: <span class="cm-variable-3">string</span> <span class="cm-operator">|</span> <span class="cm-variable-3">number</span>) {
+    <span class="cm-keyword">if</span> (<span class="cm-variable">isNumber</span>(<span class="cm-variable-2">padding</span>)) {
+        <span class="cm-keyword">return</span> <span class="cm-variable">Array</span>(<span class="cm-variable-2">padding</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>).<span class="cm-property">join</span>(<span class="cm-string">&quot; &quot;</span>) <span class="cm-operator">+</span> <span class="cm-variable-2">value</span>;
+    }
+    <span class="cm-keyword">if</span> (<span class="cm-variable">isString</span>(<span class="cm-variable-2">padding</span>)) {
+        <span class="cm-keyword">return</span> <span class="cm-variable-2">padding</span> <span class="cm-operator">+</span> <span class="cm-variable-2">value</span>;
+    }
+    <span class="cm-keyword">throw</span> <span class="cm-keyword">new</span> <span class="cm-variable">Error</span>(<span class="cm-string-2">`Expected string or number, got &apos;${</span><span class="cm-variable-2">padding</span><span class="cm-string-2">}</span><span class="cm-string-2">&apos;.`</span>);
+}
+</code></pre>
+<p>&#xADF8;&#xB7EC;&#xB098; &#xC5B4;&#xB5A4; &#xD0C0;&#xC785;&#xC774; &#xC6D0;&#xC2DC;&#xC801;&#xC778;&#xC9C0; &#xC54C;&#xC544;&#xB0B4;&#xB294; &#xD568;&#xC218;&#xB97C; &#xC815;&#xC758;&#xD558;&#xB294; &#xAC83;&#xC740; &#xACE0;&#xD1B5;&#xC2A4;&#xB7FD;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xD589;&#xC2A4;&#xB7FD;&#xAC8C;&#xB3C4;, typeScript&#xAC00; &#xC790;&#xCCB4;&#xC801;&#xC73C;&#xB85C; &#xD0C0;&#xC785; &#xAC00;&#xB4DC;&#xC784;&#xC744; &#xC778;&#xC2DD;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; <code>typeof x === &quot;number&quot;</code>&#xB97C; &#xC9C1;&#xC811; &#xD568;&#xC218;&#xB85C; &#xCD94;&#xC0C1;&#xD654;&#xD560; &#xD544;&#xC694;&#xB294; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC989; &#xC774;&#xB7EC;&#xD55C; &#xC778;&#xB77C;&#xC778; &#xAC80;&#xC0AC;&#xB97C; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">padLeft</span>(<span class="cm-def">value</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">padding</span>: <span class="cm-variable-3">string</span> <span class="cm-operator">|</span> <span class="cm-variable-3">number</span>) {
+    <span class="cm-keyword">if</span> (<span class="cm-keyword">typeof</span> <span class="cm-variable-2">padding</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;number&quot;</span>) {
+        <span class="cm-keyword">return</span> <span class="cm-variable">Array</span>(<span class="cm-variable-2">padding</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>).<span class="cm-property">join</span>(<span class="cm-string">&quot; &quot;</span>) <span class="cm-operator">+</span> <span class="cm-variable-2">value</span>;
+    }
+    <span class="cm-keyword">if</span> (<span class="cm-keyword">typeof</span> <span class="cm-variable-2">padding</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;string&quot;</span>) {
+        <span class="cm-keyword">return</span> <span class="cm-variable-2">padding</span> <span class="cm-operator">+</span> <span class="cm-variable-2">value</span>;
+    }
+    <span class="cm-keyword">throw</span> <span class="cm-keyword">new</span> <span class="cm-variable">Error</span>(<span class="cm-string-2">`Expected string or number, got &apos;${</span><span class="cm-variable-2">padding</span><span class="cm-string-2">}</span><span class="cm-string-2">&apos;.`</span>);
+}
+</code></pre>
+<p>&#xC774;&#xAC83;&#xB4E4;&#xC758; <em><code>typeof</code> &#xD0C0;&#xC785; &#xAC00;&#xB4DC;</em>&#xB294; &#xB450;&#xAC00;&#xC9C0; &#xB2E4;&#xB978; &#xD615;&#xD0DC;&#xB85C; &#xC778;&#xC2DD;&#xB429;&#xB2C8;&#xB2E4;: <code>typeof v === &quot;typename&quot;</code>&#xC640;  <code>typeof v !== &quot;typename&quot;</code>, &#xC5EC;&#xAE30;&#xC11C;  <code>&quot;typename&quot;</code>&#xC740; &#xBC18;&#xB4DC;&#xC2DC; <code>&quot;number&quot;</code>, <code>&quot;string&quot;</code>, <code>&quot;boolean&quot;</code>, &#xB610;&#xB294; <code>&quot;symbol&quot;</code>.<br>TypeScript&#xC5D0;&#xC11C; &#xB2E4;&#xB978; &#xBB38;&#xC790;&#xC5F4;&#xACFC; &#xBE44;&#xAD50;&#xD558;&#xB294; &#xAC83;&#xC744; &#xBA48;&#xCD94;&#xC9C0;&#xB294; &#xC54A;&#xC9C0;&#xB9CC; &#xC5B8;&#xC5B4;&#xC5D0;&#xC11C;&#xB294; &#xC774;&#xB7EC;&#xD55C; &#xD45C;&#xD604;&#xC2DD;&#xC744; &#xD0C0;&#xC785; &#xAC00;&#xB4DC;&#xB85C; &#xC778;&#xC2DD;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 id="instanceof-&#xD0C0;&#xC785;-&#xAC00;&#xB4DC;-instanceof-type-guards"><code>instanceof</code> &#xD0C0;&#xC785; &#xAC00;&#xB4DC; (<code>instanceof</code> type guards)</h2>
+<p><code>typeof</code> &#xD0C0;&#xC785; &#xAC00;&#xB4DC;&#xB97C; &#xC77D;&#xC5C8;&#xACE0; JavaScript&#xC5D0;&#xC11C; <code>instanceof</code> &#xC5F0;&#xC0B0;&#xC790;&#xC5D0; &#xC775;&#xC219;&#xD558;&#xB2E4;&#xBA74; &#xC544;&#xB9C8; &#xC774; &#xC139;&#xC158;&#xC5D0; &#xB300;&#xD574; &#xC54C; &#xC218; &#xC788;&#xC744; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p><em><code>instanceof</code> &#xD0C0;&#xC785; &#xAC00;&#xB4DC;</em>&#xB294; &#xC0DD;&#xC131;&#xC790; &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD0C0;&#xC785;&#xC744; &#xC881;&#xD788;&#xB294; &#xBC29;&#xBC95;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, &#xC774;&#xC804;&#xC758; string-padder &#xC608;&#xC81C;&#xB97C; &#xCC28;&#xC6A9;&#xD574;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">Padder</span> {
+    <span class="cm-variable">getPaddingString</span>(): <span class="cm-variable-3">string</span>
+}
+
+<span class="cm-keyword">class</span> <span class="cm-variable">SpaceRepeatingPadder</span> <span class="cm-variable">implements</span> <span class="cm-variable">Padder</span> {
+    <span class="cm-keyword">constructor</span>(<span class="cm-keyword">private</span> <span class="cm-variable">numSpaces</span>: <span class="cm-variable-3">number</span>) { }
+    <span class="cm-variable">getPaddingString</span>() {
+        <span class="cm-keyword">return</span> <span class="cm-variable">Array</span>(<span class="cm-keyword">this</span>.<span class="cm-property">numSpaces</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>).<span class="cm-property">join</span>(<span class="cm-string">&quot; &quot;</span>);
+    }
+}
+
+<span class="cm-keyword">class</span> <span class="cm-variable">StringPadder</span> <span class="cm-variable">implements</span> <span class="cm-variable">Padder</span> {
+    <span class="cm-keyword">constructor</span>(<span class="cm-keyword">private</span> <span class="cm-variable">value</span>: <span class="cm-variable-3">string</span>) { }
+    <span class="cm-variable">getPaddingString</span>() {
+        <span class="cm-keyword">return</span> <span class="cm-keyword">this</span>.<span class="cm-property">value</span>;
+    }
+}
+
+<span class="cm-keyword">function</span> <span class="cm-variable">getRandomPadder</span>() {
+    <span class="cm-keyword">return</span> <span class="cm-variable">Math</span>.<span class="cm-property">random</span>() <span class="cm-operator">&lt;</span> <span class="cm-number">0.5</span> <span class="cm-operator">?</span>
+        <span class="cm-keyword">new</span> <span class="cm-variable">SpaceRepeatingPadder</span>(<span class="cm-number">4</span>) :
+        <span class="cm-keyword">new</span> <span class="cm-variable">StringPadder</span>(<span class="cm-string">&quot;  &quot;</span>);
+}
+
+<span class="cm-comment">// &apos;SpaceRepeatingPadder | StringPadder&apos; &#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">padder</span>: <span class="cm-variable-3">Padder</span> <span class="cm-operator">=</span> <span class="cm-variable">getRandomPadder</span>();
+
+<span class="cm-keyword">if</span> (<span class="cm-variable">padder</span> <span class="cm-keyword">instanceof</span> <span class="cm-variable">SpaceRepeatingPadder</span>) {
+    <span class="cm-variable">padder</span>; <span class="cm-comment">// &#xD0C0;&#xC785;&#xC774; &apos;SpaceRepeatingPadder&apos;&#xB85C; &#xC881;&#xD600;&#xC84C;&#xC2B5;&#xB2C8;&#xB2E4;</span>
+
+<span class="cm-keyword">if</span> (<span class="cm-variable">padder</span> <span class="cm-keyword">instanceof</span> <span class="cm-variable">StringPadder</span>) {
+    <span class="cm-variable">padder</span>; <span class="cm-comment">// &#xD0C0;&#xC785;&#xC774; &apos;StringPadder&apos;&#xB85C; &#xC881;&#xD600;&#xC84C;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+}
+</code></pre>
+<p><code>instanceof</code>&#xC758; &#xC624;&#xB978;&#xCABD;&#xC5D0;&#xB294; &#xC0DD;&#xC131;&#xC790; &#xD568;&#xC218;&#xAC00; &#xC788;&#xC5B4;&#xC57C; &#xD558;&#xBA70; TypeScript&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xBC94;&#xC704;&#xB97C; &#xC881;&#xD600; &#xB098;&#xAC11;&#xB2C8;&#xB2E4;:</p>
+<ol>
+<li>&#xD0C0;&#xC785;&#xC774; <code>any</code>&#xAC00; &#xC544;&#xB2CC; &#xACBD;&#xC6B0; &#xD568;&#xC218;&#xC758; <code>prototype</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xD0C0;&#xC785;</li>
+<li>&#xD574;&#xB2F9; &#xD0C0;&#xC785;&#xC758; &#xC0DD;&#xC131;&#xC790; &#xC11C;&#xBA85;&#xC5D0; &#xC758;&#xD574; &#xBC18;&#xD658;&#xB41C; &#xD0C0;&#xC785;&#xC758; &#xACB0;&#xD569;</li>
+</ol>
+<p>&#xC774;&#xC640; &#xAC19;&#xC740; &#xC21C;&#xC11C;&#xB85C; &#xC9C4;&#xD589;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<h1 id="nullable-types">Nullable types</h1>
+<p>TypeScript&#xB294; <code>null</code>&#xACFC; <code>undefined</code> &#xAC12;&#xC744; &#xAC00;&#xC9C0;&#xB294; &#xB450; &#xAC00;&#xC9C0; &#xD2B9;&#xBCC4;&#xD55C; &#xD0C0;&#xC785;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xAC83;&#xC744; <a href="Basic%20Types.md">&#xAE30;&#xBCF8; &#xD0C0;&#xC785;</a> &#xC139;&#xC158;&#xC5D0;&#xC11C; &#xAC04;&#xB7B5;&#xD558;&#xAC8C; &#xC5B8;&#xAE09;&#xD588;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xD0C0;&#xC785; &#xCCB4;&#xCEE4;&#xB294; <code>null</code>&#xACFC; <code>undefined</code>&#xB97C; &#xBAA8;&#xB4E0; &#xD56D;&#xBAA9;&#xC5D0; &#xD560;&#xB2F9; &#xAC00;&#xB2A5;&#xD55C; &#xAC83;&#xC73C;&#xB85C; &#xAC04;&#xC8FC;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC0AC;&#xC2E4;&#xC0C1; <code>null</code> &#xACFC; <code>undefined</code>&#xB294; &#xBAA8;&#xB4E0; &#xD0C0;&#xC785;&#xC758; &#xC720;&#xD6A8;&#xD55C; &#xAC12;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC989; &#xBC29;&#xC9C0;&#xD558;&#xB824;&#xB294; &#xACBD;&#xC6B0;&#xC870;&#xCC28;&#xB3C4; any &#xD0C0;&#xC785;&#xC5D0; &#xD560;&#xB2F9;&#xB418;&#xC9C0; <em>&#xC54A;&#xB3C4;&#xB85D;</em> &#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.<br><code>null</code>&#xC758; &#xBC1C;&#xBA85;&#xAC00; &#xD1A0;&#xB2C8; &#xD638;&#xC5B4;&#xB294; &#xC774;&#xAC83;&#xC744; <a href="https://en.wikipedia.org/wiki/Null_pointer#History" target="_blank">&quot;10&#xC5B5; &#xB2EC;&#xB7EC;&#xC758; &#xC2E4;&#xC218;&quot;</a>&#xB77C;&#xACE0; &#xBD80;&#xB985;&#xB2C8;&#xB2E4;.</p>
+<p><code>--strictNullChecks</code>&#xC5D0;&#xC11C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC218;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;: &#xBCC0;&#xC218;&#xB97C; &#xC120;&#xC5B8;&#xD560; &#xB54C; &#xC790;&#xB3D9;&#xC73C;&#xB85C; <code>null</code> &#xB610;&#xB294; <code>undefined</code>&#xAC00; &#xD3EC;&#xD568;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC720;&#xB2C8;&#xC628; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xD3EC;&#xD568;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">s</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;foo&quot;</span>;
+<span class="cm-variable">s</span> <span class="cm-operator">=</span> <span class="cm-atom">null</span>; <span class="cm-comment">// &#xC624;&#xB958;, &apos;null&apos;&#xC740; &apos;string&apos;&#xC5D0; &#xD560;&#xB2F9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">sn</span>: <span class="cm-variable-3">string</span> <span class="cm-operator">|</span> <span class="cm-atom">null</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;bar&quot;</span>;
+<span class="cm-variable">sn</span> <span class="cm-operator">=</span> <span class="cm-atom">null</span>; <span class="cm-comment">// &#xC88B;&#xC544;&#xC694;</span>
+
+<span class="cm-variable">sn</span> <span class="cm-operator">=</span> <span class="cm-atom">undefined</span>; <span class="cm-comment">// &#xC624;&#xB958;, &apos;undefined&apos;&#xB294; &apos;string | null&apos;&#xC5D0; &#xD560;&#xB2F9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+</code></pre>
+<p>TypeScript&#xB294; JavaScript&#xC758; &#xC758;&#xBBF8;&#xB860;&#xACFC; &#xC77C;&#xCE58;&#xD558;&#xB3C4;&#xB85D; <code>null</code>&#xACFC; <code>undefined</code>&#xB97C; &#xB2E4;&#xB974;&#xAC8C; &#xB2E4;&#xB8E8;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br><code>string | null</code>&#xC740; <code>string | undefined</code> &#xBC0F; <code>string | undefined | null</code>&#xACFC;&#xB294; &#xB2E4;&#xB978; &#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xC120;&#xD0DD;&#xC801;-&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC640;-&#xD504;&#xB85C;&#xD37C;&#xD2F0;-optional-parameters-and-properties">&#xC120;&#xD0DD;&#xC801; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC640; &#xD504;&#xB85C;&#xD37C;&#xD2F0; (Optional parameters and properties)</h2>
+<p><code>--strictNullChecks</code>&#xC640; &#xC120;&#xD0DD;&#xC801; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xB294; &#xC790;&#xB3D9;&#xC73C;&#xB85C; <code>| undefined</code>&#xB97C; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">f</span>(<span class="cm-def">x</span>: <span class="cm-variable-3">number</span>, <span class="cm-def">y</span><span class="cm-operator">?</span>: <span class="cm-variable-3">number</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-variable-2">x</span> <span class="cm-operator">+</span> (<span class="cm-variable-2">y</span> <span class="cm-operator">||</span> <span class="cm-number">0</span>);
+}
+<span class="cm-variable">f</span>(<span class="cm-number">1</span>, <span class="cm-number">2</span>);
+<span class="cm-variable">f</span>(<span class="cm-number">1</span>);
+<span class="cm-variable">f</span>(<span class="cm-number">1</span>, <span class="cm-atom">undefined</span>);
+<span class="cm-variable">f</span>(<span class="cm-number">1</span>, <span class="cm-atom">null</span>); <span class="cm-comment">// &#xC624;&#xB958;, &apos;null&apos;&#xC740; &apos;number | undefined&apos;&#xC5D0; &#xD560;&#xB2F9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;</span>
+</code></pre>
+<p>&#xC120;&#xD0DD;&#xC801; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC758; &#xACBD;&#xC6B0;&#xC5D0;&#xB3C4; &#xB3D9;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">C</span> {
+    <span class="cm-property">a</span>: <span class="cm-variable-3">number</span>;
+    <span class="cm-variable">b</span><span class="cm-operator">?</span>: <span class="cm-variable-3">number</span>;
+}
+<span class="cm-keyword">let</span> <span class="cm-variable">c</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">C</span>();
+<span class="cm-variable">c</span>.<span class="cm-property">a</span> <span class="cm-operator">=</span> <span class="cm-number">12</span>;
+<span class="cm-variable">c</span>.<span class="cm-property">a</span> <span class="cm-operator">=</span> <span class="cm-atom">undefined</span>; <span class="cm-comment">// &#xC624;&#xB958;, &apos;undefined&apos;&#xB97C; &apos;number&apos;&#xC5D0; &#xD560;&#xB2F9; &#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;</span>
+<span class="cm-variable">c</span>.<span class="cm-property">b</span> <span class="cm-operator">=</span> <span class="cm-number">13</span>;
+<span class="cm-variable">c</span>.<span class="cm-property">b</span> <span class="cm-operator">=</span> <span class="cm-atom">undefined</span>; <span class="cm-comment">// ok</span>
+<span class="cm-variable">c</span>.<span class="cm-property">b</span> <span class="cm-operator">=</span> <span class="cm-atom">null</span>; <span class="cm-comment">// &#xC624;&#xB958;, &apos;null&apos;&#xC740; &apos;number | undefined&apos;&#xC5D0; &#xD560;&#xB2F9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;</span>
+</code></pre>
+<h2 id="&#xD0C0;&#xC785;-&#xAC00;&#xB4DC;&#xC640;-&#xD0C0;&#xC785;-&#xD45C;&#xBA85;-type-guards-and-type-assertions">&#xD0C0;&#xC785; &#xAC00;&#xB4DC;&#xC640; &#xD0C0;&#xC785; &#xD45C;&#xBA85; (Type guards and type assertions)</h2>
+<p>nullable &#xD0C0;&#xC785;&#xC740; &#xC720;&#xB2C8;&#xC628;&#xC73C;&#xB85C; &#xAD6C;&#xD604;&#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xD0C0;&#xC785; &#xAC00;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; <code>null</code>&#xC744; &#xC81C;&#xAC70;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xD589;&#xD788; JavaScript&#xC5D0;&#xC11C; &#xC791;&#xC131;&#xD558;&#xB294; &#xCF54;&#xB4DC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">f</span>(<span class="cm-def">sn</span>: <span class="cm-variable-3">string</span> <span class="cm-operator">|</span> <span class="cm-atom">null</span>): <span class="cm-variable-3">string</span> {
+    <span class="cm-keyword">if</span> (<span class="cm-variable">sn</span> <span class="cm-operator">==</span> <span class="cm-atom">null</span>) {
+        <span class="cm-keyword">return</span> <span class="cm-string">&quot;default&quot;</span>;
+    }
+    <span class="cm-keyword">else</span> {
+        <span class="cm-keyword">return</span> <span class="cm-variable">sn</span>;
+    }
+}
+</code></pre>
+<p>&#xC5EC;&#xAE30;&#xC11C; <code>null</code>&#xC744; &#xC81C;&#xAC70;&#xD558;&#xB294; &#xAC83;&#xC740; &#xD655;&#xC2E4;&#xD788; &#xC88B;&#xC9C0;&#xB9CC; &#xAC04;&#xB2E8;&#xD55C; &#xC5F0;&#xC0B0;&#xC790;&#xB3C4; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">f</span>(<span class="cm-def">sn</span>: <span class="cm-variable-3">string</span> <span class="cm-operator">|</span> <span class="cm-atom">null</span>): <span class="cm-variable-3">string</span> {
+    <span class="cm-keyword">return</span> <span class="cm-variable">sn</span> <span class="cm-operator">||</span> <span class="cm-string">&quot;default&quot;</span>;
+}
+</code></pre>
+<p>&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xAC00; <code>null</code> &#xB610;&#xB294; <code>undefined</code>&#xB97C; &#xC81C;&#xAC70; &#xD560; &#xC218; &#xC5C6;&#xB294; &#xACBD;&#xC6B0; &#xD0C0;&#xC785; &#xD45C;&#xBA85; &#xC5F0;&#xC0B0;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC218;&#xB3D9;&#xC73C;&#xB85C; &#xC81C;&#xAC70;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xAD6C;&#xBB38;&#xC740; &#xD6C4;&#xC704;&#xC5D0; <code>!</code> &#xC785;&#xB2C8;&#xB2E4;: <code>identifier!</code>&#xB294; <code>identifier</code>&#xC758; &#xD0C0;&#xC785; <code>null</code>&#xACFC; <code>undefined</code>&#xB97C; &#xC81C;&#xAC70;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">broken</span>(<span class="cm-def">name</span>: <span class="cm-variable-3">string</span> <span class="cm-operator">|</span> <span class="cm-atom">null</span>): <span class="cm-variable-3">string</span> {
+  <span class="cm-keyword">function</span> <span class="cm-variable">postfix</span>(<span class="cm-def">epithet</span>: <span class="cm-variable-3">string</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-variable">name</span>.<span class="cm-property">charAt</span>(<span class="cm-number">0</span>) <span class="cm-operator">+</span> <span class="cm-string">&apos;.  the &apos;</span> <span class="cm-operator">+</span> <span class="cm-variable-2">epithet</span>; <span class="cm-comment">// &#xC624;&#xB958;, &apos;name&apos;&#xC774; null&#xC77C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+  }
+  <span class="cm-variable">name</span> <span class="cm-operator">=</span> <span class="cm-variable">name</span> <span class="cm-operator">||</span> <span class="cm-string">&quot;Bob&quot;</span>;
+  <span class="cm-keyword">return</span> <span class="cm-variable">postfix</span>(<span class="cm-string">&quot;great&quot;</span>);
+}
+
+<span class="cm-keyword">function</span> <span class="cm-variable">fixed</span>(<span class="cm-def">name</span>: <span class="cm-variable-3">string</span> <span class="cm-operator">|</span> <span class="cm-atom">null</span>): <span class="cm-variable-3">string</span> {
+  <span class="cm-keyword">function</span> <span class="cm-variable">postfix</span>(<span class="cm-def">epithet</span>: <span class="cm-variable-3">string</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-variable">name</span><span class="cm-operator">!</span>.<span class="cm-variable">charAt</span>(<span class="cm-number">0</span>) <span class="cm-operator">+</span> <span class="cm-string">&apos;.  the &apos;</span> <span class="cm-operator">+</span> <span class="cm-variable-2">epithet</span>; <span class="cm-comment">// &#xC88B;&#xC544;&#xC694;</span>
+  }
+  <span class="cm-variable">name</span> <span class="cm-operator">=</span> <span class="cm-variable">name</span> <span class="cm-operator">||</span> <span class="cm-string">&quot;Bob&quot;</span>;
+  <span class="cm-keyword">return</span> <span class="cm-variable">postfix</span>(<span class="cm-string">&quot;great&quot;</span>);
+}
+</code></pre>
+<p>&#xC774; &#xC608;&#xC81C;&#xC5D0;&#xC11C; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xAC00; &#xC911;&#xCCA9;&#xB41C; &#xD568;&#xC218; &#xB0B4;&#xC5D0;&#xC11C; null&#xC744; &#xC81C;&#xAC70;&#xD560; &#xC218; &#xC5C6;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC5EC;&#xAE30;&#xC5D0; &#xC911;&#xCCA9;&#xB41C; &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;(&#xC989;&#xC2DC;&#xC2E4;&#xD589;&#xD568;&#xC218; &#xC81C;&#xC678;).<br>&#xD2B9;&#xD788; &#xC678;&#xBD80; &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xD638;&#xCD9C;&#xD55C; &#xACBD;&#xC6B0; &#xC911;&#xCCA9;&#xB41C; &#xD568;&#xC218;&#xC5D0; &#xB300;&#xD55C; &#xBAA8;&#xB4E0; &#xD638;&#xCD9C;&#xC744; &#xCD94;&#xC801;&#xD560; &#xC218; &#xC5C6;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xD568;&#xC218;&#xAC00; &#xC5B4;&#xB514;&#xC5D0;&#xC11C; &#xD638;&#xCD9C;&#xB418;&#xB294;&#xC9C0; &#xC54C;&#xC9C0; &#xBABB;&#xD558;&#xBA74; body&#xAC00; &#xC2E4;&#xD589;&#xB420; &#xB54C; <code>name</code>&#xC758; &#xD0C0;&#xC785;&#xC774; &#xBB34;&#xC5C7;&#xC778;&#xC9C0; &#xC54C; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xD0C0;&#xC785;-&#xBCC4;&#xCE6D;-type-aliases">&#xD0C0;&#xC785; &#xBCC4;&#xCE6D; (Type Aliases)</h1>
+<p>&#xD0C0;&#xC785; aliases&#xB294; &#xD0C0;&#xC785;&#xC758; &#xC0C8;&#xB85C;&#xC6B4; &#xC774;&#xB984;&#xC744; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xD0C0;&#xC785; aliases&#xC740; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC640; &#xC720;&#xC0AC;&#xD558;&#xC9C0;&#xB9CC; &#xC6D0;&#xC2DC; &#xD0C0;&#xC785;, &#xC720;&#xB2C8;&#xC628;, &#xD29C;&#xD50C; &#xBC0F; &#xAE30;&#xD0C0; &#xC9C1;&#xC811; &#xC791;&#xC131;&#xD574;&#xC57C; &#xD558;&#xB294; &#xB2E4;&#xB978; &#xD0C0;&#xC785;&#xC758; &#xC774;&#xB984;&#xC744; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Name</span> <span class="cm-operator">=</span> <span class="cm-variable-3">string</span>;
+<span class="cm-variable">type</span> <span class="cm-variable">NameResolver</span> <span class="cm-operator">=</span> () <span class="cm-operator">=&gt;</span> <span class="cm-variable-3">string</span>;
+<span class="cm-variable">type</span> <span class="cm-variable">NameOrResolver</span> <span class="cm-operator">=</span> <span class="cm-variable">Name</span> <span class="cm-operator">|</span> <span class="cm-variable">NameResolver</span>;
+<span class="cm-keyword">function</span> <span class="cm-variable">getName</span>(<span class="cm-def">n</span>: <span class="cm-variable-3">NameOrResolver</span>): <span class="cm-variable">Name</span> {
+    <span class="cm-keyword">if</span> (<span class="cm-keyword">typeof</span> <span class="cm-variable">n</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;string&quot;</span>) {
+        <span class="cm-keyword">return</span> <span class="cm-variable">n</span>;
+    }
+    <span class="cm-keyword">else</span> {
+        <span class="cm-keyword">return</span> <span class="cm-variable">n</span>();
+    }
+}
+</code></pre>
+<p>Aliasing(Type Aliases)&#xC740; &#xC2E4;&#xC81C;&#xB85C; &#xC0C8;&#xB85C;&#xC6B4; &#xD0C0;&#xC785;&#xC744; &#xC0DD;&#xC131;&#xD558;&#xC9C0;&#xB294; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4; - &#xADF8; &#xD0C0;&#xC785;&#xC744; &#xCC38;&#xC870;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0C8;&#xB85C;&#xC6B4; <em>&#xC774;&#xB984;</em>&#xC744; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC6D0;&#xC2DC; &#xAC12;&#xC744; Aliasing &#xD558;&#xB294; &#xAC83;&#xC740; &#xBB38;&#xC11C;&#xC758; &#xD615;&#xD0DC;&#xB85C; &#xC0AC;&#xC6A9;&#xB420; &#xC218; &#xC788;&#xC9C0;&#xB9CC; &#xAD49;&#xC7A5;&#xD788; &#xC720;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC640; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xD0C0;&#xC785; aliases&#xB3C4; &#xC77C;&#xBC18;&#xC801;&#xC77C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; - aliases &#xC120;&#xC5B8;&#xC758; &#xC624;&#xB978;&#xCABD;&#xC5D0; &#xD0C0;&#xC785; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Container</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span> <span class="cm-operator">=</span> { <span class="cm-property">value</span>: <span class="cm-variable">T</span> };
+</code></pre>
+<p>type alias&#xB97C; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0;&#xC11C; &#xCC38;&#xC870;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Tree</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span> <span class="cm-operator">=</span> {
+    <span class="cm-property">value</span>: <span class="cm-variable">T</span>;
+    <span class="cm-variable">left</span>: <span class="cm-variable">Tree</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span>;
+    <span class="cm-variable">right</span>: <span class="cm-variable">Tree</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span>;
+}
+</code></pre>
+<p>&#xAD50;&#xCC28;(intersection) &#xD0C0;&#xC785;&#xACFC; &#xD568;&#xAED8; mind-bending &#xD0C0;&#xC785;&#xC744; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">LinkedList</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span> <span class="cm-operator">=</span> <span class="cm-variable">T</span> <span class="cm-operator">&amp;</span> { <span class="cm-property">next</span>: <span class="cm-variable">LinkedList</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span> };
+
+<span class="cm-keyword">interface</span> <span class="cm-variable">Person</span> {
+    <span class="cm-variable">name</span>: <span class="cm-variable-3">string</span>;
+}
+
+<span class="cm-keyword">var</span> <span class="cm-variable">people</span>: <span class="cm-variable-3">LinkedList</span><span class="cm-operator">&lt;</span><span class="cm-variable">Person</span><span class="cm-operator">&gt;</span>;
+<span class="cm-keyword">var</span> <span class="cm-variable">s</span> <span class="cm-operator">=</span> <span class="cm-variable">people</span>.<span class="cm-property">name</span>;
+<span class="cm-keyword">var</span> <span class="cm-variable">s</span> <span class="cm-operator">=</span> <span class="cm-variable">people</span>.<span class="cm-property">next</span>.<span class="cm-property">name</span>;
+<span class="cm-keyword">var</span> <span class="cm-variable">s</span> <span class="cm-operator">=</span> <span class="cm-variable">people</span>.<span class="cm-property">next</span>.<span class="cm-property">next</span>.<span class="cm-property">name</span>;
+<span class="cm-keyword">var</span> <span class="cm-variable">s</span> <span class="cm-operator">=</span> <span class="cm-variable">people</span>.<span class="cm-property">next</span>.<span class="cm-property">next</span>.<span class="cm-property">next</span>.<span class="cm-property">name</span>;
+</code></pre>
+<p>&#xADF8;&#xB7EC;&#xB098; &#xD0C0;&#xC785; alias&#xAC00; &#xC120;&#xC5B8;&#xC758; &#xB2E4;&#xB978; &#xC624;&#xB978;&#xCABD;&#xC5D0; &#xB098;&#xD0C0;&#xB098;&#xB294; &#xAC83;&#xC740; &#xBD88;&#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Yikes</span> <span class="cm-operator">=</span> <span class="cm-variable">Array</span><span class="cm-operator">&lt;</span><span class="cm-variable">Yikes</span><span class="cm-operator">&gt;</span>; <span class="cm-comment">// &#xC624;&#xB958;</span>
+</code></pre>
+<h2 id="interfaces-vs-type-aliases">Interfaces vs. Type Aliases</h2>
+<p>&#xC55E;&#xC11C; &#xC5B8;&#xAE09;&#xD588;&#xB4EF;&#xC774;, &#xD0C0;&#xC785; type aliases&#xB294; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC640; &#xAC19;&#xC740; &#xC5ED;&#xD560;&#xC744; &#xD560; &#xC218; &#xC788;&#xC9C0;&#xB9CC; &#xBA87; &#xAC00;&#xC9C0; &#xBBF8;&#xBB18;&#xD55C; &#xCC28;&#xC774;&#xC810;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD55C;&#xAC00;&#xC9C0; &#xB2E4;&#xB978; &#xC810;&#xC740; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xAC00; &#xC5B4;&#xB514;&#xC5D0;&#xC11C;&#xB098; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xC0C8;&#xB85C;&#xC6B4; &#xC774;&#xB984;&#xC744; &#xB9CC;&#xB4E4;&#xC5B4; &#xB0B8;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xD0C0;&#xC785; aliases&#xB294; &#xC0C8;&#xB85C;&#xC6B4; &#xC774;&#xB984;&#xC744; &#xB9CC;&#xB4E4;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;&#x2014; &#xC608;&#xB97C; &#xB4E4;&#xC5B4; &#xC624;&#xB958; &#xBA54;&#xC2DC;&#xC9C0;&#xB294; alias &#xC774;&#xB984;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC544;&#xB798; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C;, &#xC5D0;&#xB514;&#xD130;&#xC758; <code>interfaced</code> &#xC704;&#xB85C; &#xB9C8;&#xC6B0;&#xC2A4;&#xB97C; &#xAC00;&#xC838;&#xAC00;&#xBA74; <code>Interface</code>&#xB97C; &#xBC18;&#xD658;&#xD560; &#xAC83;&#xC744; &#xBCF4;&#xC5EC;&#xC8FC;&#xC9C0;&#xB9CC; <code>aliased</code>&#xB294; &#xAC1D;&#xCCB4; &#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785;&#xC744; &#xBC18;&#xD658;&#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Alias</span> <span class="cm-operator">=</span> { <span class="cm-property">num</span>: <span class="cm-variable-3">number</span> }
+<span class="cm-keyword">interface</span> <span class="cm-variable">Interface</span> {
+    <span class="cm-variable">num</span>: <span class="cm-variable-3">number</span>;
+}
+<span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">aliased</span>(<span class="cm-def">arg</span>: <span class="cm-variable-3">Alias</span>): <span class="cm-variable">Alias</span>;
+<span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">interfaced</span>(<span class="cm-def">arg</span>: <span class="cm-variable-3">Interface</span>): <span class="cm-variable">Interface</span>;
+</code></pre>
+<p>&#xB450; &#xBC88;&#xC9F8; &#xB354; &#xC911;&#xC694;&#xD55C; &#xCC28;&#xC774;&#xC810;&#xC740; &#xD0C0;&#xC785; aliases&#xB97C; &#xB2E4;&#xC74C;&#xC5D0;&#xC11C; &#xD655;&#xC7A5;&#xD558;&#xAC70;&#xB098; &#xAD6C;&#xD604;&#xD560; &#xC218; &#xC5C6;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4; (&#xB2E4;&#xB978; &#xD0C0;&#xC785;&#xC744; &#xD655;&#xC7A5;/&#xAD6C;&#xD604;&#xD560; &#xC218;&#xB3C4; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;).<br>&#xC65C;&#xB0D0;&#xD558;&#xBA74; <a href="https://en.wikipedia.org/wiki/Open/closed_principle" target="_blank">&#xC18C;&#xD504;&#xD2B8;&#xC6E8;&#xC5B4;&#xC758; &#xC774;&#xC0C1;&#xC801;&#xC778; &#xD2B9;&#xC131;&#xC774; &#xD655;&#xC7A5;&#xC5D0; &#xC5F4;&#xB824;&#xC788;&#xB2E4;</a> &#xAC00;&#xB2A5;&#xD55C; &#xACBD;&#xC6B0; &#xD0C0;&#xC785; alias&#xC5D0; &#xB300;&#xD55C; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xB978; &#xD55C;&#xD3B8;&#xC73C;&#xB85C;&#xB294;, &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB85C; &#xC77C;&#xBD80; &#xD615;&#xD0DC;&#xB97C; &#xD45C;&#xD604;&#xD560; &#xC218; &#xC5C6;&#xACE0; &#xC720;&#xB2C8;&#xC628;&#xC774;&#xB098; &#xD29C;&#xD50C; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD558;&#xB294; &#xACBD;&#xC6B0; &#xD0C0;&#xC785; aliases&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xBCF4;&#xD1B5; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xBB38;&#xC790;&#xC5F4;-&#xB9AC;&#xD130;&#xB7F4;-&#xD0C0;&#xC785;-string-literal-types">&#xBB38;&#xC790;&#xC5F4; &#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785; (String Literal Types)</h1>
+<p>&#xBB38;&#xC790;&#xC5F4; &#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBB38;&#xC790;&#xC5F4;&#xC5D0; &#xD544;&#xC694;&#xD55C; &#xC815;&#xD655;&#xD55C; &#xAC12;&#xC744; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC2E4;&#xC81C;&#xB85C; &#xBB38;&#xC790;&#xC5F4; &#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785;&#xC740; &#xC720;&#xB2C8;&#xC628; &#xD0C0;&#xC785;, &#xD0C0;&#xC785; &#xAC00;&#xB4DC; &#xBC0F; &#xD0C0;&#xC785; aliases&#xC640; &#xC798; &#xACB0;&#xD569;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB7EC;&#xD55C; &#xAE30;&#xB2A5;&#xC744; &#xD568;&#xAED8; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBB38;&#xC790;&#xC5F4;&#xC5D0;&#xC11C; &#xC5F4;&#xAC70;&#xD615;&#xACFC; &#xAC19;&#xC740; &#xB3D9;&#xC791;&#xC744; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Easing</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;ease-in&quot;</span> <span class="cm-operator">|</span> <span class="cm-string">&quot;ease-out&quot;</span> <span class="cm-operator">|</span> <span class="cm-string">&quot;ease-in-out&quot;</span>;
+<span class="cm-keyword">class</span> <span class="cm-variable">UIElement</span> {
+    <span class="cm-property">animate</span>(<span class="cm-def">dx</span>: <span class="cm-variable-3">number</span>, <span class="cm-def">dy</span>: <span class="cm-variable-3">number</span>, <span class="cm-def">easing</span>: <span class="cm-variable-3">Easing</span>) {
+        <span class="cm-keyword">if</span> (<span class="cm-variable-2">easing</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;ease-in&quot;</span>) {
+            <span class="cm-comment">// ...</span>
+        }
+        <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable-2">easing</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;ease-out&quot;</span>) {
+        }
+        <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable-2">easing</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;ease-in-out&quot;</span>) {
+        }
+        <span class="cm-keyword">else</span> {
+            <span class="cm-comment">// &#xC624;&#xB958;! null &#xB610;&#xB294; undefined&#xB85C; &#xD1B5;&#xACFC;&#xD574;&#xC11C;&#xB294; &#xC548; &#xB429;&#xB2C8;&#xB2E4;.</span>
+        }
+    }
+}
+
+<span class="cm-keyword">let</span> <span class="cm-variable">button</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">UIElement</span>();
+<span class="cm-variable">button</span>.<span class="cm-property">animate</span>(<span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-string">&quot;ease-in&quot;</span>);
+<span class="cm-variable">button</span>.<span class="cm-property">animate</span>(<span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-string">&quot;uneasy&quot;</span>); <span class="cm-comment">// &#xC624;&#xB958;: &#xC5EC;&#xAE30;&#xC11C; &quot;uneasy&quot;&#xAC00; &#xD5C8;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+</code></pre>
+<p>&#xD5C8;&#xC6A9;&#xB418;&#xB294; &#xC138; &#xBB38;&#xC790;&#xC5F4; &#xC911; &#xC544;&#xBB34;&#xAC70;&#xB098; &#xC804;&#xB2EC;&#xD560; &#xC218; &#xC788;&#xC9C0;&#xB9CC; &#xB2E4;&#xB978; &#xBB38;&#xC790;&#xC5F4;&#xC740; &#xC624;&#xB958;&#xB97C; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-text">&apos;&quot;uneasy&quot;&apos; &#xD0C0;&#xC785;&#xC758; &#xC778;&#xC218;&#xB97C; &#xD0C0;&#xC785;&#xC758; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xC5D0; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &apos;&quot;ease-in&quot; | &quot;ease-out&quot; | &quot;ease-in-out&quot;&apos;
+</code></pre>
+<p>&#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xB97C; &#xAD6C;&#xBCC4;&#xD558;&#xAE30; &#xC704;&#xD574; &#xB3D9;&#xC77C;&#xD55C; &#xBC29;&#xBC95;&#xC73C;&#xB85C; &#xBB38;&#xC790;&#xC5F4; &#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">createElement</span>(<span class="cm-def">tagName</span>: <span class="cm-string">&quot;img&quot;</span>): <span class="cm-variable">HTMLImageElement</span>;
+<span class="cm-keyword">function</span> <span class="cm-variable">createElement</span>(<span class="cm-def">tagName</span>: <span class="cm-string">&quot;input&quot;</span>): <span class="cm-variable">HTMLInputElement</span>;
+<span class="cm-comment">// ... &#xB354; &#xB9CE;&#xC740; &#xC624;&#xBC84;&#xB85C;&#xB4DC; ...</span>
+<span class="cm-keyword">function</span> <span class="cm-variable">createElement</span>(<span class="cm-def">tagName</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable">Element</span> {
+    <span class="cm-comment">// ... &#xCF54;&#xB4DC;&#xB294; &#xC5EC;&#xAE30;&#xC5D0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; ...</span>
+}
+</code></pre>
+<h1 id="&#xC22B;&#xC790;-&#xB9AC;&#xD130;&#xB7F4;-&#xD0C0;&#xC785;-numeric-literal-types">&#xC22B;&#xC790; &#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785; (Numeric Literal Types)</h1>
+<p>TypeScript&#xC5D0;&#xB294; &#xC22B;&#xC790; &#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">rollDie</span>(): <span class="cm-number">1</span> <span class="cm-operator">|</span> <span class="cm-number">2</span> <span class="cm-operator">|</span> <span class="cm-number">3</span> <span class="cm-operator">|</span> <span class="cm-number">4</span> <span class="cm-operator">|</span> <span class="cm-number">5</span> <span class="cm-operator">|</span> <span class="cm-number">6</span> {
+    <span class="cm-comment">// ...</span>
+}
+</code></pre>
+<p>&#xC774;&#xB4E4;&#xC740; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xC791;&#xC131;&#xB418;&#xB294; &#xACBD;&#xC6B0;&#xB294; &#xAC70;&#xC758; &#xC5C6;&#xC73C;&#xBA70; &#xBC94;&#xC704;&#xB97C; &#xC881;&#xD788;&#xB294; &#xAC83;&#xC774; &#xBC84;&#xADF8;&#xB97C; &#xC7A1;&#xB294; &#xB370; &#xC720;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">foo</span>(<span class="cm-def">x</span>: <span class="cm-variable-3">number</span>) {
+    <span class="cm-keyword">if</span> (<span class="cm-variable-2">x</span> <span class="cm-operator">!==</span> <span class="cm-number">1</span> <span class="cm-operator">||</span> <span class="cm-variable-2">x</span> <span class="cm-operator">!==</span> <span class="cm-number">2</span>) {
+        <span class="cm-comment">//         ~~~~~~~</span>
+        <span class="cm-comment">// &#xC5F0;&#xC0B0;&#xC790; &apos;!==&apos;&#xB294; &apos;1&apos;&#xACFC; &apos;2&apos; &#xD0C0;&#xC785;&#xC5D0;&#xB294; &#xC801;&#xC6A9; &#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+    }
+}
+</code></pre>
+<p>&#xBC14;&#xAFD4; &#xB9D0;&#xD558;&#xBA74; <code>x</code>&#xB294; <code>2</code>&#xC640; &#xBE44;&#xAD50;&#xD560; &#xB54C; <code>1</code>&#xC774;&#xC5B4;&#xC57C; &#xD558;&#xBA70; &#xC774;&#xAC83;&#xC740; &#xC704; &#xCCB4;&#xD06C;&#xAC00; &#xC720;&#xD6A8;&#xD558;&#xC9C0; &#xC54A;&#xC740; &#xBE44;&#xAD50;&#xB97C; &#xD558;&#xACE0; &#xC788;&#xC74C;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xC5F4;&#xAC70;&#xD615;-&#xBA64;&#xBC84;-&#xD0C0;&#xC785;-enum-member-types">&#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84; &#xD0C0;&#xC785; (Enum Member Types)</h1>
+<p><a href="Enums.html#union-enums-and-enum-member-types">&#xC5F4;&#xAC70;&#xD615; &#xC139;&#xC158;</a>&#xC5D0;&#xC11C; &#xC5B8;&#xAE09;&#xD588;&#xB4EF;&#xC774; &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84;&#xB294; &#xBAA8;&#xB4E0; &#xBA64;&#xBC84;&#xAC00; &#xB9AC;&#xD130;&#xB7F4;&#xB85C; &#xCD08;&#xAE30;&#xD654;&#xB420; &#xB54C; &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9D1;&#xB2C8;&#xB2E4;.</p>
+<p>&quot;&#xC2F1;&#xAE00;&#xD1A4; &#xD0C0;&#xC785;&quot;&#xC5D0; &#xB300;&#xD574; &#xC774;&#xC57C;&#xAE30;&#xD560; &#xB54C; &#xB9CE;&#xC740; &#xC2DC;&#xAC04; &#xB3D9;&#xC548;, &#xB9CE;&#xC740; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &quot;&#xC2F1;&#xAE00;&#xD1A4; &#xD0C0;&#xC785;&quot;&#xACFC; &quot;&#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785;&quot;&#xC744; &#xBC14;&#xAFD4; &#xC0AC;&#xC6A9;&#xD558;&#xACA0;&#xC9C0;&#xB9CC; &#xC22B;&#xC790;/&#xBB38;&#xC790;&#xC5F4; &#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785;&#xBFD0;&#xB9CC; &#xC544;&#xB2C8;&#xB77C; &#xC5F4;&#xAC70;&#xD615; &#xBA64;&#xBC84; &#xD0C0;&#xC785;&#xC744; &#xBAA8;&#xB450; &#xCC38;&#xC870;&#xD569;&#xB2C8;&#xB2E4;</p>
+<h1 id="&#xACF5;&#xC6A9;&#xCCB4;-&#xC2DD;&#xBCC4;-discriminated-unions">&#xACF5;&#xC6A9;&#xCCB4; &#xC2DD;&#xBCC4; (Discriminated Unions)</h1>
+<p>&#xC2F1;&#xAE00;&#xD1A4; &#xD0C0;&#xC785;, &#xC720;&#xB2C8;&#xC628; &#xD0C0;&#xC785;, &#xD0C0;&#xC785; &#xAC00;&#xB4DC; &#xBC0F; &#xD0C0;&#xC785; &#xBCC4;&#xCE6D;&#xC744; &#xACB0;&#xD569;&#xD558;&#xC5EC; <em>discriminated unions</em>, <em>tagged unions</em> &#xB610;&#xB294; <em>&#xB300;&#xC218;&#xC758;(algebraic) &#xB370;&#xC774;&#xD130; &#xD0C0;&#xC785;</em>&#xB77C;&#xB294; &#xACE0;&#xAE09; &#xD328;&#xD134;&#xC744; &#xBE4C;&#xB4DC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>Discriminated unions&#xC740; &#xD568;&#xC218;&#xD615; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC5D0; &#xC720;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC77C;&#xBD80; &#xC5B8;&#xC5B4;&#xB294; &#xC790;&#xB3D9;&#xC73C;&#xB85C; discriminate unions&#xD569;&#xB2C8;&#xB2E4;; TypeScript&#xB294; &#xD604;&#xC7AC; &#xC874;&#xC7AC;&#xD558;&#xB294; JavaScript &#xD328;&#xD134;&#xC744; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xC138;&#xAC00;&#xC9C0; &#xAD6C;&#xC131;&#xC694;&#xC18C;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<ol>
+<li>&#xACF5;&#xD1B5;&#xC801;&#xC778; &#xC2F1;&#xAE00;&#xD1A4; &#xD0C0;&#xC785;&#xC758; &#xD2B9;&#xC131;&#xC744; &#xAC16;&#xB294; &#xD0C0;&#xC785; &#x2014; <em>discriminant</em>.</li>
+<li>&#xC774;&#xB7EC;&#xD55C; &#xD0C0;&#xC785;&#xC758; &#xD569;&#xC9D1;&#xD569;&#xC744; &#xCDE8;&#xD558;&#xB294; &#xD0C0;&#xC785; &#xBCC4;&#xCE6D; &#x2014; <em>union</em>.</li>
+<li>&#xACF5;&#xD1B5; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0; &#xD0C0;&#xC785; &#xAC00;&#xB4DC;.</li>
+</ol>
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">Square</span> {
+    <span class="cm-variable">kind</span>: <span class="cm-string">&quot;square&quot;</span>;
+    <span class="cm-variable">size</span>: <span class="cm-variable-3">number</span>;
+}
+<span class="cm-keyword">interface</span> <span class="cm-variable">Rectangle</span> {
+    <span class="cm-variable">kind</span>: <span class="cm-string">&quot;rectangle&quot;</span>;
+    <span class="cm-variable">width</span>: <span class="cm-variable-3">number</span>;
+    <span class="cm-variable">height</span>: <span class="cm-variable-3">number</span>;
+}
+<span class="cm-keyword">interface</span> <span class="cm-variable">Circle</span> {
+    <span class="cm-variable">kind</span>: <span class="cm-string">&quot;circle&quot;</span>;
+    <span class="cm-variable">radius</span>: <span class="cm-variable-3">number</span>;
+}
+</code></pre>
+<p>&#xBA3C;&#xC800; &#xACB0;&#xD569;&#xD560; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xC120;&#xC5B8;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xAC01; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB294; &#xB2E4;&#xB978; &#xBB38;&#xC790;&#xC5F4; &#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C4; <code>kind</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br><code>kind</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB294; <em>discriminant</em> &#xB610;&#xB294; <em>tag</em>&#xB77C;&#xACE0; &#xBD80;&#xB985;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xB978; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB294; &#xAC01; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xACE0;&#xC720;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB294; &#xD604;&#xC7AC; &#xAD00;&#xB828;&#xC774; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xAC83;&#xB4E4;&#xC744; &#xACB0;&#xD569;&#xD558;&#xC5EC; &#xB123;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Shape</span> <span class="cm-operator">=</span> <span class="cm-variable">Square</span> <span class="cm-operator">|</span> <span class="cm-variable">Rectangle</span> <span class="cm-operator">|</span> <span class="cm-variable">Circle</span>;
+</code></pre>
+<p>&#xC774;&#xC81C; &#xC2DD;&#xBCC4; &#xC720;&#xB2C8;&#xC628;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">area</span>(<span class="cm-def">s</span>: <span class="cm-variable-3">Shape</span>) {
+    <span class="cm-keyword">switch</span> (<span class="cm-variable-2">s</span>.<span class="cm-property">kind</span>) {
+        <span class="cm-keyword">case</span> <span class="cm-string">&quot;square&quot;</span>: <span class="cm-keyword">return</span> <span class="cm-variable-2">s</span>.<span class="cm-property">size</span> <span class="cm-operator">*</span> <span class="cm-variable-2">s</span>.<span class="cm-property">size</span>;
+        <span class="cm-keyword">case</span> <span class="cm-string">&quot;rectangle&quot;</span>: <span class="cm-keyword">return</span> <span class="cm-variable-2">s</span>.<span class="cm-property">height</span> <span class="cm-operator">*</span> <span class="cm-variable-2">s</span>.<span class="cm-property">width</span>;
+        <span class="cm-keyword">case</span> <span class="cm-string">&quot;circle&quot;</span>: <span class="cm-keyword">return</span> <span class="cm-variable">Math</span>.<span class="cm-property">PI</span> <span class="cm-operator">*</span> <span class="cm-variable-2">s</span>.<span class="cm-property">radius</span> <span class="cm-operator">**</span> <span class="cm-number">2</span>;
+    }
+}
+</code></pre>
+<h2 id="&#xCCA0;&#xC800;&#xD55C;-&#xAC80;&#xC0AC;-exhaustiveness-checking">&#xCCA0;&#xC800;&#xD55C; &#xAC80;&#xC0AC; (Exhaustiveness checking)</h2>
+<p>&#xC2DD;&#xBCC4; &#xC720;&#xB2C8;&#xC628;&#xC758; &#xBAA8;&#xB4E0; &#xBCC0;&#xD615;&#xC744; &#xB2E4;&#xB8E8;&#xC9C0; &#xC54A;&#xC744; &#xB54C; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xC5D0;&#xC11C; &#xC54C;&#xB824;&#xC8FC;&#xBA74; &#xC88B;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; <code>Shape</code>&#xC5D0; <code>Triangle</code>&#xC744; &#xCD94;&#xAC00;&#xD558;&#xBA74; <code>area</code>&#xB3C4; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Shape</span> <span class="cm-operator">=</span> <span class="cm-variable">Square</span> <span class="cm-operator">|</span> <span class="cm-variable">Rectangle</span> <span class="cm-operator">|</span> <span class="cm-variable">Circle</span> <span class="cm-operator">|</span> <span class="cm-variable">Triangle</span>;
+<span class="cm-keyword">function</span> <span class="cm-variable">area</span>(<span class="cm-def">s</span>: <span class="cm-variable-3">Shape</span>) {
+    <span class="cm-keyword">switch</span> (<span class="cm-variable-2">s</span>.<span class="cm-property">kind</span>) {
+        <span class="cm-keyword">case</span> <span class="cm-string">&quot;square&quot;</span>: <span class="cm-keyword">return</span> <span class="cm-variable-2">s</span>.<span class="cm-property">size</span> <span class="cm-operator">*</span> <span class="cm-variable-2">s</span>.<span class="cm-property">size</span>;
+        <span class="cm-keyword">case</span> <span class="cm-string">&quot;rectangle&quot;</span>: <span class="cm-keyword">return</span> <span class="cm-variable-2">s</span>.<span class="cm-property">height</span> <span class="cm-operator">*</span> <span class="cm-variable-2">s</span>.<span class="cm-property">width</span>;
+        <span class="cm-keyword">case</span> <span class="cm-string">&quot;circle&quot;</span>: <span class="cm-keyword">return</span> <span class="cm-variable">Math</span>.<span class="cm-property">PI</span> <span class="cm-operator">*</span> <span class="cm-variable-2">s</span>.<span class="cm-property">radius</span> <span class="cm-operator">**</span> <span class="cm-number">2</span>;
+    }
+    <span class="cm-comment">// &#xC5EC;&#xAE30;&#xC11C; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4; - &quot;triangle&quot;&#xC744; &#xD578;&#xB4E4;&#xB9C1;&#xD558;&#xC9C0; &#xC54A;&#xC558;&#xC2B5;&#xB2C8;&#xB2E4;</span>
+}
+</code></pre>
+<p>&#xB450; &#xAC00;&#xC9C0; &#xBC29;&#xBC95;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xCCAB; &#xBC88;&#xC9F8;&#xB294; <code>--strictNullChecks</code>&#xB97C; &#xCF1C;&#xACE0; &#xBC18;&#xD658; &#xD0C0;&#xC785;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4; :</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">area</span>(<span class="cm-def">s</span>: <span class="cm-variable-3">Shape</span>): <span class="cm-variable-3">number</span> { <span class="cm-comment">// &#xC624;&#xB958;: returns number | undefined</span>
+    <span class="cm-keyword">switch</span> (<span class="cm-variable">s</span>.<span class="cm-property">kind</span>) {
+        <span class="cm-keyword">case</span> <span class="cm-string">&quot;square&quot;</span>: <span class="cm-keyword">return</span> <span class="cm-variable">s</span>.<span class="cm-property">size</span> <span class="cm-operator">*</span> <span class="cm-variable">s</span>.<span class="cm-property">size</span>;
+        <span class="cm-keyword">case</span> <span class="cm-string">&quot;rectangle&quot;</span>: <span class="cm-keyword">return</span> <span class="cm-variable">s</span>.<span class="cm-property">height</span> <span class="cm-operator">*</span> <span class="cm-variable">s</span>.<span class="cm-property">width</span>;
+        <span class="cm-keyword">case</span> <span class="cm-string">&quot;circle&quot;</span>: <span class="cm-keyword">return</span> <span class="cm-variable">Math</span>.<span class="cm-property">PI</span> <span class="cm-operator">*</span> <span class="cm-variable">s</span>.<span class="cm-property">radius</span> <span class="cm-operator">**</span> <span class="cm-number">2</span>;
+    }
+}
+</code></pre>
+<p><code>switch</code>&#xAC00; &#xB354; &#xC774;&#xC0C1; &#xC644;&#xC804;&#xD558;&#xC9C0; &#xC54A;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; TypeScript&#xB294; &#xADF8; &#xD568;&#xC218;&#xAC00; &#xB54C;&#xB54C;&#xB85C; <code>undefined</code>&#xB97C; &#xBC18;&#xD658;&#xD560; &#xC218; &#xC788;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC54C;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xBA85;&#xC2DC;&#xC801; &#xBC18;&#xD658; &#xD0C0;&#xC785; <code>number</code>&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;&#xBA74; &#xBC18;&#xD658; &#xD0C0;&#xC785;&#xC774; &#xC2E4;&#xC81C;&#xB85C; <code>number | undefined</code>&#xB77C;&#xB294; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB7EC;&#xB098; &#xC774; &#xBC29;&#xBC95;&#xC740; &#xB9E4;&#xC6B0; &#xBBF8;&#xBB18;&#xD558;&#xBA70; <code>--strictNullChecks</code>&#xAC00; &#xC624;&#xB798;&#xB41C; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xD56D;&#xC0C1; &#xC791;&#xB3D9;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB450; &#xBC88;&#xC9F8; &#xBC29;&#xBC95;&#xC740; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xAC00; &#xCCA0;&#xC800;&#xD788; &#xAC80;&#xC0AC;&#xD558;&#xAE30; &#xC704;&#xD574; <code>never</code> &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xB294; &#xC810;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">assertNever</span>(<span class="cm-def">x</span>: <span class="cm-variable-3">never</span>): <span class="cm-variable">never</span> {
+    <span class="cm-keyword">throw</span> <span class="cm-keyword">new</span> <span class="cm-variable">Error</span>(<span class="cm-string">&quot;Unexpected object: &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable">x</span>);
+}
+<span class="cm-keyword">function</span> <span class="cm-variable">area</span>(<span class="cm-def">s</span>: <span class="cm-variable-3">Shape</span>) {
+    <span class="cm-keyword">switch</span> (<span class="cm-variable-2">s</span>.<span class="cm-property">kind</span>) {
+        <span class="cm-keyword">case</span> <span class="cm-string">&quot;square&quot;</span>: <span class="cm-keyword">return</span> <span class="cm-variable-2">s</span>.<span class="cm-property">size</span> <span class="cm-operator">*</span> <span class="cm-variable-2">s</span>.<span class="cm-property">size</span>;
+        <span class="cm-keyword">case</span> <span class="cm-string">&quot;rectangle&quot;</span>: <span class="cm-keyword">return</span> <span class="cm-variable-2">s</span>.<span class="cm-property">height</span> <span class="cm-operator">*</span> <span class="cm-variable-2">s</span>.<span class="cm-property">width</span>;
+        <span class="cm-keyword">case</span> <span class="cm-string">&quot;circle&quot;</span>: <span class="cm-keyword">return</span> <span class="cm-variable">Math</span>.<span class="cm-property">PI</span> <span class="cm-operator">*</span> <span class="cm-variable-2">s</span>.<span class="cm-property">radius</span> <span class="cm-operator">**</span> <span class="cm-number">2</span>;
+        <span class="cm-keyword">default</span>: <span class="cm-keyword">return</span> <span class="cm-variable">assertNever</span>(<span class="cm-variable-2">s</span>); <span class="cm-comment">// &#xB204;&#xB77D;&#xB41C; &#xACBD;&#xC6B0; &#xC5EC;&#xAE30;&#xC5D0; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;</span>
+    }
+}
+</code></pre>
+<p>&#xC5EC;&#xAE30;&#xC11C;, <code>assertNever</code>&#xB294; <code>s</code>&#xAC00; <code>never</code> &#xD0C0;&#xC785;&#xC778;&#xC9C0; &#xD655;&#xC778;&#xD569;&#xB2C8;&#xB2E4; &#x2014; &#xB2E4;&#xB978; &#xBAA8;&#xB4E0; case&#xAC00; &#xC885;&#xB8CC;&#xB41C; &#xD6C4;&#xC5D0; &#xB0A8;&#xACA8;&#xC9C4; &#xD0C0;&#xC785;&#xC774; &#xC81C;&#xAC70;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.<br>case&#xB97C; &#xC78A;&#xC5B4;&#xBC84;&#xB9AC;&#xBA74; <code>s</code>&#xAC00; &#xC2E4;&#xC81C; &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C0;&#xAC8C;&#xB418;&#xACE0; &#xD0C0;&#xC785; &#xC5D0;&#xB7EC;&#xAC00; &#xC0DD;&#xAE41;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xBC29;&#xBC95;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; &#xCD94;&#xAC00; &#xD568;&#xC218;&#xC744; &#xC815;&#xC758;&#xD574;&#xC57C; &#xD558;&#xC9C0;&#xB9CC; &#xC78A;&#xC5B4;&#xBC84;&#xB838;&#xC744; &#xB54C; &#xD6E8;&#xC52C; &#xB354; &#xBD84;&#xBA85;&#xD574;&#xC9D1;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xB2E4;&#xD615;&#xC131;&#xC758;-this-&#xD0C0;&#xC785;-polymorphic-this-types">&#xB2E4;&#xD615;&#xC131;&#xC758; <code>this</code> &#xD0C0;&#xC785; (Polymorphic <code>this</code> types)</h1>
+<p>&#xB2E4;&#xD615;&#xC131;&#xC758;<code>this</code> &#xD0C0;&#xC785;&#xC740; &#xD3EC;&#xD568;&#xB41C; &#xD074;&#xB798;&#xC2A4;&#xB098; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC758; <em>&#xC11C;&#xBE0C;&#xD0C0;&#xC785;</em> &#xD0C0;&#xC785;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xAC83;&#xC744; <em>F</em>-&#xBC14;&#xC6B4;&#xB4DC; &#xB2E4;&#xD615;&#xC131;&#xC774;&#xB77C;&#xACE0; &#xD569;&#xB2C8;&#xB2E4;.
+&#xB530;&#xB77C;&#xC11C; &#xACC4;&#xCE35;&#xC801;&#xC73C;&#xB85C; &#xC644;&#xB9CC;&#xD55C; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xD6E8;&#xC52C; &#xC27D;&#xAC8C; &#xD45C;&#xD604;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xAC01;&#xAC01;&#xC758; &#xC5F0;&#xC0B0;&#xC790;&#xC5D0; <code>this</code>&#xB97C; &#xBC18;&#xD658;&#xD558;&#xB294; &#xAC04;&#xB2E8;&#xD55C; &#xACC4;&#xC0B0;&#xAE30;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">BasicCalculator</span> {
+    <span class="cm-keyword">public</span> <span class="cm-keyword">constructor</span>(<span class="cm-keyword">protected</span> <span class="cm-variable">value</span>: <span class="cm-variable-3">number</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>) { }
+    <span class="cm-keyword">public</span> <span class="cm-variable">currentValue</span>(): <span class="cm-variable-3">number</span> {
+        <span class="cm-keyword">return</span> <span class="cm-keyword">this</span>.<span class="cm-property">value</span>;
+    }
+    <span class="cm-keyword">public</span> <span class="cm-variable">add</span>(<span class="cm-variable">operand</span>: <span class="cm-variable-3">number</span>): <span class="cm-keyword">this</span> {
+        <span class="cm-keyword">this</span>.<span class="cm-property">value</span> <span class="cm-operator">+=</span> <span class="cm-variable">operand</span>;
+        <span class="cm-keyword">return</span> <span class="cm-keyword">this</span>;
+    }
+    <span class="cm-keyword">public</span> <span class="cm-variable">multiply</span>(<span class="cm-variable">operand</span>: <span class="cm-variable-3">number</span>): <span class="cm-keyword">this</span> {
+        <span class="cm-keyword">this</span>.<span class="cm-property">value</span> <span class="cm-operator">*=</span> <span class="cm-variable">operand</span>;
+        <span class="cm-keyword">return</span> <span class="cm-keyword">this</span>;
+    }
+    <span class="cm-comment">// ... &#xB2E4;&#xB978; &#xC5F0;&#xC0B0;&#xC740; &#xC5EC;&#xAE30;&#xC5D0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; ...</span>
+}
+
+<span class="cm-keyword">let</span> <span class="cm-variable">v</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">BasicCalculator</span>(<span class="cm-number">2</span>)
+            .<span class="cm-property">multiply</span>(<span class="cm-number">5</span>)
+            .<span class="cm-property">add</span>(<span class="cm-number">1</span>)
+            .<span class="cm-property">currentValue</span>();
+</code></pre>
+<p>&#xD074;&#xB798;&#xC2A4;&#xB294; <code>this</code> &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xD655;&#xC7A5;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBA70; &#xC0C8;&#xB85C;&#xC6B4; &#xD074;&#xB798;&#xC2A4;&#xB294; &#xBCC0;&#xACBD; &#xC5C6;&#xC774; &#xC774;&#xC804; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">ScientificCalculator</span> <span class="cm-keyword">extends</span> <span class="cm-variable">BasicCalculator</span> {
+    <span class="cm-keyword">public</span> <span class="cm-keyword">constructor</span>(<span class="cm-variable">value</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>) {
+        <span class="cm-keyword">super</span>(<span class="cm-variable">value</span>);
+    }
+    <span class="cm-keyword">public</span> <span class="cm-variable">sin</span>() {
+        <span class="cm-keyword">this</span>.<span class="cm-property">value</span> <span class="cm-operator">=</span> <span class="cm-variable">Math</span>.<span class="cm-property">sin</span>(<span class="cm-keyword">this</span>.<span class="cm-property">value</span>);
+        <span class="cm-keyword">return</span> <span class="cm-keyword">this</span>;
+    }
+    <span class="cm-comment">// ... &#xB2E4;&#xB978; &#xC5F0;&#xC0B0;&#xC740; &#xC5EC;&#xAE30;&#xC5D0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; ...</span>
+}
+
+<span class="cm-keyword">let</span> <span class="cm-variable">v</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">ScientificCalculator</span>(<span class="cm-number">2</span>)
+        .<span class="cm-property">multiply</span>(<span class="cm-number">5</span>)
+        .<span class="cm-property">sin</span>()
+        .<span class="cm-property">add</span>(<span class="cm-number">1</span>)
+        .<span class="cm-property">currentValue</span>();
+</code></pre>
+<p><code>this</code> &#xD0C0;&#xC785;&#xC774; &#xC5C6;&#xC5C8;&#xB2E4;&#xBA74; <code>ScientificCalculator</code>&#xB294; <code>BasicCalculator</code>&#xB97C; &#xD655;&#xC7A5;&#xD558;&#xC9C0;&#xB3C4; &#xBABB;&#xD558;&#xACE0; &#xC644;&#xB9CC;&#xD55C; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xC720;&#xC9C0;&#xD560; &#xC218; &#xC5C6;&#xC5C8;&#xC744; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br><code>multiply</code>&#xB294; <code>sin</code> &#xBA54;&#xC11C;&#xB4DC;&#xAC00; &#xC5C6;&#xB294;<code>BasicCalculator</code>&#xB97C; &#xBC18;&#xD658;&#xD588;&#xC744; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB7EC;&#xB098; <code>this</code> &#xD0C0;&#xC785;&#xC758; &#xACBD;&#xC6B0; <code>multiply</code>&#xB294; <code>this</code>&#xB97C; &#xB9AC;&#xD134;&#xD569;&#xB2C8;&#xB2E4;. <code>this</code>&#xB294; <code>ScientificCalculator</code>&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xC778;&#xB371;&#xC2A4;-&#xD0C0;&#xC785;-index-types">&#xC778;&#xB371;&#xC2A4; &#xD0C0;&#xC785; (Index types)</h1>
+<p>&#xC778;&#xB371;&#xC2A4; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xB3D9;&#xC801; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xC774;&#xB984;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xCF54;&#xB4DC;&#xB97C; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xAC00; &#xAC80;&#xC0AC;&#xD558;&#xB3C4;&#xB85D; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4; &#xC77C;&#xBC18;&#xC801;&#xC778; Javascript &#xD328;&#xD134;&#xC740; &#xAC1D;&#xCCB4;&#xC5D0;&#xC11C; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC758; &#xD558;&#xC704; &#xC9D1;&#xD569;&#xC744; &#xC120;&#xD0DD;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-js"><span class="cm-keyword">function</span> <span class="cm-variable">pluck</span>(<span class="cm-def">o</span>, <span class="cm-def">names</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-variable-2">names</span>.<span class="cm-property">map</span>(<span class="cm-def">n</span> <span class="cm-operator">=&gt;</span> <span class="cm-variable-2">o</span>[<span class="cm-variable-2">n</span>]);
+}
+</code></pre>
+<p>&#xB2E4;&#xC74C;&#xC740; <strong>&#xC778;&#xB371;&#xC2A4; &#xD0C0;&#xC785; &#xCFFC;&#xB9AC;</strong> &#xBC0F; <strong>&#xC778;&#xB371;&#xC2A4; &#xC811;&#xADFC;</strong> &#xC5F0;&#xC0B0;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; TypeScript&#xC5D0;&#xC11C; &#xC774; &#xD568;&#xC218;&#xB97C; &#xC791;&#xC131;&#xD558;&#xACE0; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">pluck</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span>, <span class="cm-variable">K</span> <span class="cm-keyword">extends</span> <span class="cm-variable">keyof</span> <span class="cm-variable">T</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">o</span>: <span class="cm-variable">T</span>, <span class="cm-variable">names</span>: <span class="cm-variable">K</span>[]): <span class="cm-variable">T</span>[<span class="cm-variable">K</span>][] {
+  <span class="cm-keyword">return</span> <span class="cm-variable">names</span>.<span class="cm-property">map</span>(<span class="cm-def">n</span> <span class="cm-operator">=&gt;</span> <span class="cm-variable">o</span>[<span class="cm-variable-2">n</span>]);
+}
+
+<span class="cm-keyword">interface</span> <span class="cm-variable">Person</span> {
+    <span class="cm-variable">name</span>: <span class="cm-variable-3">string</span>;
+    <span class="cm-variable">age</span>: <span class="cm-variable-3">number</span>;
+}
+<span class="cm-keyword">let</span> <span class="cm-variable">person</span>: <span class="cm-variable-3">Person</span> <span class="cm-operator">=</span> {
+    <span class="cm-property">name</span>: <span class="cm-string">&apos;Jarid&apos;</span>,
+    <span class="cm-property">age</span>: <span class="cm-number">35</span>
+};
+<span class="cm-keyword">let</span> <span class="cm-variable">strings</span>: <span class="cm-variable-3">string</span>[] <span class="cm-operator">=</span> <span class="cm-variable">pluck</span>(<span class="cm-variable">person</span>, [<span class="cm-string">&apos;name&apos;</span>]); <span class="cm-comment">// &#xC88B;&#xC544;&#xC694;, string[]</span>
+</code></pre>
+<p>&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; <code>name</code>&#xC774; &#xC2E4;&#xC81C;&#xB85C; <code>Person</code>&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC778;&#xC9C0; &#xD655;&#xC778;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xC608;&#xC81C;&#xB294; &#xBA87; &#xAC00;&#xC9C0; &#xC0C8;&#xB85C;&#xC6B4; &#xD0C0;&#xC785;&#xC758; &#xC5F0;&#xC0B0;&#xC790;&#xB97C; &#xC18C;&#xAC1C;&#xD569;&#xB2C8;&#xB2E4;.
+&#xCCAB; &#xBC88;&#xC9F8;&#xB294; <code>keyof T</code>&#xC73C;&#xB85C; <strong>&#xC778;&#xB371;&#xC2A4; &#xD0C0;&#xC785; &#xCFFC;&#xB9AC; &#xC5F0;&#xC0B0;&#xC790;</strong>&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC5B4;&#xB5A4; &#xD0C0;&#xC785;&#xC758; <code>T</code>&#xC5D0; &#xB300;&#xD574;&#xC11C; <code>keyof T</code>&#xB294; <code>T</code>&#xC758; &#xC54C;&#xB824;&#xC9C4; public &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xC774;&#xB984;&#xB4E4;&#xC758; &#xACF5;&#xC6A9;&#xCCB4;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">personProps</span>: <span class="cm-variable-3">keyof</span> <span class="cm-variable">Person</span>; <span class="cm-comment">// &apos;name&apos; | &apos;age&apos;</span>
+</code></pre>
+<p><code>keyof Person</code>&#xC740; <code>&apos;name&apos; | &apos;age&apos;</code>&#xC640; &#xC644;&#xC804;&#xD788; &#xD638;&#xD658;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xCC28;&#xC774;&#xC810;&#xC740; <code>Person</code>&#xC5D0; &#xB610; &#xB2E4;&#xB978; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC778; <code>address: string</code>&#xC744; &#xCD94;&#xAC00;&#xD558;&#xBA74; <code>keyof Person</code>&#xC740; &#xC790;&#xB3D9;&#xC73C;&#xB85C; <code>&apos;name&apos; | &apos;age&apos; | &apos;address&apos;</code>&#xB85C; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xB41C;&#xB2E4;&#xB294; &#xC810;&#xC774;&#xB2E4;.<br>&#xADF8;&#xB9AC;&#xACE0; <code>pluck</code>&#xACFC; &#xAC19;&#xC740; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xC5D0;&#xC11C; <code>keyof</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBA70; &#xC774;&#xB54C; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xC774;&#xB984;&#xC744; &#xBBF8;&#xB9AC; &#xC54C; &#xC218;&#xB294; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC989; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xAC00; &#xC62C;&#xBC14;&#xB978; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xC774;&#xB984;&#xC744; <code>pluck</code>&#xC73C;&#xB85C; &#xC804;&#xB2EC;&#xD588;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">pluck</span>(<span class="cm-variable">person</span>, [<span class="cm-string">&apos;age&apos;</span>, <span class="cm-string">&apos;unknown&apos;</span>]); <span class="cm-comment">// &#xC624;&#xB958;, &apos;unknown&apos;&#xC740; &apos;name&apos; | &apos;age&apos;&#xC5D0; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;</span>
+</code></pre>
+<p>&#xB450; &#xBC88;&#xC9F8; &#xC5F0;&#xC0B0;&#xC790;&#xB294; <code>T[K]</code>, <strong>&#xC0C9;&#xC778; &#xC811;&#xADFC; &#xC5F0;&#xC0B0;&#xC790;(indexed access operator)</strong> &#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC5EC;&#xAE30;&#xC11C; &#xD0C0;&#xC785;&#xC758; &#xAD6C;&#xBB38;&#xC740; &#xD45C;&#xD604;&#xC2DD;&#xC744; &#xBC18;&#xC601;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC989; <code>person[&apos;name&apos;]</code>&#xC740; <code>Person[&apos;name&apos;]</code>&#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9D1;&#xB2C8;&#xB2E4; &#x2014;
+&#xC608;&#xC81C;&#xC5D0;&#xC11C;&#xB294; &#xB2E8;&#xC9C0; <code>string</code>&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD558;&#xC9C0;&#xB9CC; &#xC778;&#xB371;&#xC2A4; &#xD0C0;&#xC785; &#xCFFC;&#xB9AC;&#xC640; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; <code>T[K]</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC2E4;&#xC9C8;&#xC801;&#xC73C;&#xB85C; &#xD798;&#xC774; &#xBC1C;&#xD718;&#xB418;&#xB294; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xD0C0;&#xC785; &#xBCC0;&#xC218; <code>K extends keyof T</code>&#xB97C; &#xD655;&#xC2E4;&#xD788; &#xB9CC;&#xB4E4;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xC5EC;&#xAE30; <code>getProperty</code>&#xB77C;&#xB294; &#xD568;&#xC218;&#xAC00; &#xC788;&#xB294; &#xB610; &#xB2E4;&#xB978; &#xC608;&#xC81C;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">getProperty</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span>, <span class="cm-variable">K</span> <span class="cm-keyword">extends</span> <span class="cm-variable">keyof</span> <span class="cm-variable">T</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">o</span>: <span class="cm-variable">T</span>, <span class="cm-variable">name</span>: <span class="cm-variable">K</span>): <span class="cm-variable">T</span>[<span class="cm-variable">K</span>] {
+    <span class="cm-keyword">return</span> <span class="cm-variable">o</span>[<span class="cm-variable">name</span>]; <span class="cm-comment">// o[name]&#xC740; T[K] &#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;</span>
+}
+</code></pre>
+<p><code>getProperty</code>&#xC5D0;&#xC11C;, <code>o: T</code>&#xC640; <code>name: K</code>&#xB294; <code>o[name]: T[K]</code>&#xB97C; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC77C;&#xB2E8; <code>T[K]</code> &#xACB0;&#xACFC;&#xB97C; &#xBC18;&#xD658;&#xD558;&#xBA74; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; &#xC2E4;&#xC81C; &#xD0A4;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xD654;&#xD558;&#xBBC0;&#xB85C; <code>getProperty</code>&#xC758; &#xBC18;&#xD658; &#xD0C0;&#xC785;&#xC740; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC694;&#xCCAD;&#xD558;&#xB294; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0; &#xB530;&#xB77C; &#xB2EC;&#xB77C;&#xC9D1;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">name</span>: <span class="cm-variable-3">string</span> <span class="cm-operator">=</span> <span class="cm-variable">getProperty</span>(<span class="cm-variable">person</span>, <span class="cm-string">&apos;name&apos;</span>);
+<span class="cm-keyword">let</span> <span class="cm-variable">age</span>: <span class="cm-variable-3">number</span> <span class="cm-operator">=</span> <span class="cm-variable">getProperty</span>(<span class="cm-variable">person</span>, <span class="cm-string">&apos;age&apos;</span>);
+<span class="cm-keyword">let</span> <span class="cm-variable">unknown</span> <span class="cm-operator">=</span> <span class="cm-variable">getProperty</span>(<span class="cm-variable">person</span>, <span class="cm-string">&apos;unknown&apos;</span>); <span class="cm-comment">// &#xC624;&#xB958;, &apos;unknown&apos;&#xC740; &apos;name&apos; | &apos;age&apos;&#xC5D0; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;</span>
+</code></pre>
+<h2 id="&#xC778;&#xB371;&#xC2A4;-&#xD0C0;&#xC785;&#xACFC;-&#xBB38;&#xC790;&#xC5F4;-&#xC778;&#xB371;&#xC2A4;-&#xC11C;&#xBA85;-index-types-and-string-index-signatures">&#xC778;&#xB371;&#xC2A4; &#xD0C0;&#xC785;&#xACFC; &#xBB38;&#xC790;&#xC5F4; &#xC778;&#xB371;&#xC2A4; &#xC11C;&#xBA85; (Index types and string index signatures)</h2>
+<p><code>keyof</code>&#xC640; <code>T[K]</code>&#xB294; &#xBB38;&#xC790;&#xC5F4; &#xC778;&#xB371;&#xC2A4; &#xC11C;&#xBA85;&#xACFC; &#xC0C1;&#xD638; &#xC791;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xBB38;&#xC790;&#xC5F4; &#xC778;&#xB371;&#xC2A4; &#xC11C;&#xBA85;&#xC744; &#xAC00;&#xC9C4; &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;&#xBA74; <code>keyof T</code>&#xB294; &#xB2E8;&#xC9C0;<code>string</code>&#xC774; &#xB420; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB9AC;&#xACE0; <code>T[string]</code>&#xC740; &#xC778;&#xB371;&#xC2A4; &#xC11C;&#xBA85;&#xC758; &#xD55C;&#xAC00;&#xC9C0; &#xC885;&#xB958;&#xC77C;&#xBFD0;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">Map</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span> {
+    [<span class="cm-variable">key</span>: <span class="cm-variable-3">string</span>]: <span class="cm-variable">T</span>;
+}
+<span class="cm-keyword">let</span> <span class="cm-variable">keys</span>: <span class="cm-variable-3">keyof</span> <span class="cm-variable">Map</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">number</span><span class="cm-operator">&gt;</span>; <span class="cm-comment">// string</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">value</span>: <span class="cm-variable-3">Map</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">number</span><span class="cm-operator">&gt;</span>[<span class="cm-string">&apos;foo&apos;</span>]; <span class="cm-comment">// number</span>
+</code></pre>
+<h1 id="mapped-types">Mapped types</h1>
+<p>&#xC77C;&#xBC18;&#xC801;&#xC778; &#xC791;&#xC5C5;&#xC740; &#xAE30;&#xC874; &#xD0C0;&#xC785;&#xC744; &#xC120;&#xD0DD;&#xD558;&#xACE0; &#xAC01; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xC120;&#xD0DD;&#xC801;&#xC73C;&#xB85C; &#xB9CC;&#xB4DC;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">PersonPartial</span> {
+    <span class="cm-variable">name</span><span class="cm-operator">?</span>: <span class="cm-variable-3">string</span>;
+    <span class="cm-variable">age</span><span class="cm-operator">?</span>: <span class="cm-variable-3">number</span>;
+}
+</code></pre>
+<p>&#xB610;&#xB294; readonly&#xB97C; &#xC6D0;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">PersonReadonly</span> {
+    <span class="cm-variable">readonly</span> <span class="cm-variable">name</span>: <span class="cm-variable-3">string</span>;
+    <span class="cm-variable">readonly</span> <span class="cm-variable">age</span>: <span class="cm-variable-3">number</span>;
+}
+</code></pre>
+<p>&#xC774;&#xB7EC;&#xD55C; &#xC77C;&#xC740; Javascript&#xC5D0;&#xC11C; &#xC790;&#xC8FC; &#xBC1C;&#xC0DD;&#xD558;&#xC5EC; TypeScript&#xB294; &#xC774;&#xC804; &#xD0C0;&#xC785;&#xC778; &#x2014; <strong>mapped types</strong> &#xD0C0;&#xC785;&#xC744; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC0C8;&#xB85C;&#xC6B4; &#xD0C0;&#xC785;&#xC744; &#xB9CC;&#xB4DC;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.<br>mapped type&#xC5D0;&#xC11C; &#xC0C8;&#xB85C;&#xC6B4; &#xD0C0;&#xC785;&#xC740; &#xC774;&#xC804; &#xD0C0;&#xC785;&#xC758; &#xAC01; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xB3D9;&#xC77C;&#xD55C; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xBCC0;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; &#xBAA8;&#xB4E0; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xD0C0;&#xC785;&#xC744; <code>readonly</code> &#xB610;&#xB294; &#xC120;&#xD0DD;&#xC801;&#xC73C;&#xB85C; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC544;&#xB798; &#xBA87; &#xAC00;&#xC9C0; &#xC608;&#xC81C;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Readonly</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span> <span class="cm-operator">=</span> {
+    <span class="cm-property">readonly</span> [<span class="cm-variable">P</span> <span class="cm-keyword">in</span> <span class="cm-variable">keyof</span> <span class="cm-variable">T</span>]: <span class="cm-variable">T</span>[<span class="cm-variable">P</span>];
+}
+<span class="cm-variable">type</span> <span class="cm-variable">Partial</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span> <span class="cm-operator">=</span> {
+    [<span class="cm-variable">P</span> <span class="cm-keyword">in</span> <span class="cm-variable">keyof</span> <span class="cm-variable">T</span>]<span class="cm-operator">?</span>: <span class="cm-variable">T</span>[<span class="cm-variable">P</span>];
+}
+</code></pre>
+<p>&#xADF8;&#xB9AC;&#xACE0; &#xADF8;&#xAC83;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">PersonPartial</span> <span class="cm-operator">=</span> <span class="cm-variable">Partial</span><span class="cm-operator">&lt;</span><span class="cm-variable">Person</span><span class="cm-operator">&gt;</span>;
+<span class="cm-variable">type</span> <span class="cm-variable">ReadonlyPerson</span> <span class="cm-operator">=</span> <span class="cm-variable">Readonly</span><span class="cm-operator">&lt;</span><span class="cm-variable">Person</span><span class="cm-operator">&gt;</span>;
+</code></pre>
+<p>&#xAC00;&#xC7A5; &#xAC04;&#xB2E8;&#xD55C; mapped type&#xACFC; &#xD574;&#xB2F9; &#xBD80;&#xBD84;&#xC744; &#xC0B4;&#xD3B4;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Keys</span> <span class="cm-operator">=</span> <span class="cm-string">&apos;option1&apos;</span> <span class="cm-operator">|</span> <span class="cm-string">&apos;option2&apos;</span>;
+<span class="cm-variable">type</span> <span class="cm-variable">Flags</span> <span class="cm-operator">=</span> { [<span class="cm-variable">K</span> <span class="cm-keyword">in</span> <span class="cm-variable">Keys</span>]: <span class="cm-variable">boolean</span> };
+</code></pre>
+<p>&#xAD6C;&#xBB38;&#xC740; &#xC778;&#xB371;&#xC2A4; &#xC11C;&#xBA85;&#xC744; &#xC704;&#xD55C; &#xAD6C;&#xBB38;&#xACFC; <code>for .. in</code> &#xB0B4;&#xBD80;&#xAC00; &#xC720;&#xC0AC;&#xD558;&#xAC8C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC138; &#xAC00;&#xC9C0; &#xD30C;&#xD2B8;&#xB85C; &#xB098;&#xB269;&#xB2C8;&#xB2E4;:</p>
+<ol>
+<li>&#xBCC0;&#xC218;&#xC758; &#xD0C0;&#xC785; <code>K</code>&#xB294; &#xAC01; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0; &#xCC28;&#xB840;&#xB300;&#xB85C; &#xBC14;&#xC778;&#xB529; &#xB429;&#xB2C8;&#xB2E4;.</li>
+<li>&#xBB38;&#xC790;&#xC5F4; &#xB9AC;&#xD130;&#xB7F4; &#xACF5;&#xC6A9;&#xCCB4; <code>Keys</code>&#xB294; &#xBC18;&#xBCF5;&#xD560; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC758; &#xC774;&#xB984;&#xC744; &#xD3EC;&#xD568;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>&#xACB0;&#xACFC;&#xC801;&#xC73C;&#xB85C; &#xC0DD;&#xC131;&#xB41C; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC758; &#xD0C0;&#xC785;.</li>
+</ol>
+<p>&#xC774; &#xAC04;&#xB2E8;&#xD55C; &#xC608;&#xC81C;&#xC5D0;&#xC11C; <code>Keys</code>&#xB294; &#xD558;&#xB4DC; &#xCF54;&#xB529;&#xB41C; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xC774;&#xB984;&#xC758; &#xB9AC;&#xC2A4;&#xD2B8;&#xC774;&#xACE0; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xD0C0;&#xC785;&#xC740; &#xD56D;&#xC0C1; <code>boolean</code>&#xC774;&#xBBC0;&#xB85C; mapped type&#xC740; &#xC791;&#xC131;&#xB41C; &#xAC83;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Flags</span> <span class="cm-operator">=</span> {
+    <span class="cm-property">option1</span>: <span class="cm-variable">boolean</span>;
+    <span class="cm-variable">option2</span>: <span class="cm-variable">boolean</span>;
+}
+</code></pre>
+<p>&#xADF8;&#xB7EC;&#xB098; &#xC2E4;&#xC81C; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC740; &#xC704;&#xC758; <code>Readonly</code> &#xB610;&#xB294; <code>Partial</code>&#xCC98;&#xB7FC; &#xBCF4;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xAE30;&#xC874;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xD558;&#xBA70; &#xC5B4;&#xB5A4; &#xBC29;&#xC2DD;&#xC73C;&#xB85C;&#xB4E0; &#xD544;&#xB4DC;&#xB97C; &#xBCC0;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC989; <code>keyof</code>&#xC640; &#xC778;&#xB371;&#xC2A4; &#xC811;&#xADFC; &#xD0C0;&#xC785;&#xC774; &#xB4E4;&#xC5B4;&#xC788;&#xB294; &#xACF3;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">NullablePerson</span> <span class="cm-operator">=</span> { [<span class="cm-variable">P</span> <span class="cm-keyword">in</span> <span class="cm-variable">keyof</span> <span class="cm-variable">Person</span>]: <span class="cm-variable">Person</span>[<span class="cm-variable">P</span>] <span class="cm-operator">|</span> <span class="cm-atom">null</span> }
+<span class="cm-variable">type</span> <span class="cm-variable">PartialPerson</span> <span class="cm-operator">=</span> { [<span class="cm-variable">P</span> <span class="cm-keyword">in</span> <span class="cm-variable">keyof</span> <span class="cm-variable">Person</span>]<span class="cm-operator">?</span>: <span class="cm-variable">Person</span>[<span class="cm-variable">P</span>] }
+</code></pre>
+<p>&#xD558;&#xC9C0;&#xB9CC; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xBC84;&#xC804;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xB354; &#xC720;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Nullable</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span> <span class="cm-operator">=</span> { [<span class="cm-variable">P</span> <span class="cm-keyword">in</span> <span class="cm-variable">keyof</span> <span class="cm-variable">T</span>]: <span class="cm-variable">T</span>[<span class="cm-variable">P</span>] <span class="cm-operator">|</span> <span class="cm-atom">null</span> }
+<span class="cm-variable">type</span> <span class="cm-variable">Partial</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span> <span class="cm-operator">=</span> { [<span class="cm-variable">P</span> <span class="cm-keyword">in</span> <span class="cm-variable">keyof</span> <span class="cm-variable">T</span>]<span class="cm-operator">?</span>: <span class="cm-variable">T</span>[<span class="cm-variable">P</span>] }
+</code></pre>
+<p>&#xC774; &#xC608;&#xC81C;&#xC5D0;&#xC11C; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xBAA9;&#xB85D;&#xC740; <code>keyof T</code>&#xC774;&#xBA70; &#xACB0;&#xACFC; &#xD0C0;&#xC785;&#xC740; <code>T[P]</code>&#xC758; &#xBCC0;&#xD615;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xAC83;&#xC740; mapped types&#xC758; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xC0AC;&#xC6A9;&#xC744; &#xC704;&#xD55C; &#xC88B;&#xC740; &#xD15C;&#xD50C;&#xB9BF;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC65C;&#xB0D0;&#xD558;&#xBA74; &#xC774;&#xB7EC;&#xD55C; &#xC885;&#xB958;&#xC758; &#xBCC0;&#xD658;&#xC740; &#xC720;&#xC0AC; <a href="https://en.wikipedia.org/wiki/Homomorphism" target="_blank">&#xB3D9;&#xD615;(homomorphic)</a>&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xB9E4;&#xD551;&#xC740; <code>T</code>&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0;&#xB9CC; &#xC801;&#xC6A9;&#xB418;&#xACE0; &#xB2E4;&#xB978; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0;&#xB294; &#xC801;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; &#xC0C8;&#xB85C;&#xC6B4; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xAE30; &#xC804;&#xC5D0; &#xAE30;&#xC874;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xC9C0;&#xC815;&#xC790;&#xB97C; &#xBAA8;&#xB450; &#xBCF5;&#xC0AC;&#xD560; &#xC218; &#xC788;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC54C;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; <code>Person.name</code>&#xC774; &#xC77D;&#xAE30; &#xC804;&#xC6A9;&#xC778; &#xACBD;&#xC6B0; <code>Partial&lt;Person&gt;.name</code>&#xC740; &#xC77D;&#xAE30; &#xC804;&#xC6A9; &#xBC0F; &#xC120;&#xD0DD;&#xC801;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xC74C;&#xC740; <code>T[P]</code>&#xAC00; <code>Proxy&lt;T&gt;</code> &#xD074;&#xB798;&#xC2A4;&#xC5D0; &#xB798;&#xD551;&#xB41C; &#xB610; &#xD558;&#xB098;&#xC758; &#xC608;&#xC81C;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Proxy</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span> <span class="cm-operator">=</span> {
+    <span class="cm-property">get</span>(): <span class="cm-variable">T</span>;
+    <span class="cm-variable">set</span>(<span class="cm-variable">value</span>: <span class="cm-variable">T</span>): <span class="cm-variable">void</span>;
+}
+<span class="cm-variable">type</span> <span class="cm-variable">Proxify</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span> <span class="cm-operator">=</span> {
+    [<span class="cm-variable">P</span> <span class="cm-keyword">in</span> <span class="cm-variable">keyof</span> <span class="cm-variable">T</span>]: <span class="cm-variable">Proxy</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span>[<span class="cm-variable">P</span>]<span class="cm-operator">&gt;</span>;
+}
+<span class="cm-keyword">function</span> <span class="cm-variable">proxify</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">o</span>: <span class="cm-variable">T</span>): <span class="cm-variable">Proxify</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span> {
+   <span class="cm-comment">// ... proxies &#xAC10;&#xC2F8;&#xAE30; ...</span>
+}
+<span class="cm-keyword">let</span> <span class="cm-variable">proxyProps</span> <span class="cm-operator">=</span> <span class="cm-variable">proxify</span>(<span class="cm-variable">props</span>);
+</code></pre>
+<p><code>Readonly&lt;T&gt;</code>&#xC640; <code>Partial&lt;T&gt;</code>&#xB294; &#xB9E4;&#xC6B0; &#xC720;&#xC6A9;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; TypeScript&#xC758; &#xD45C;&#xC900; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC5D0; <code>Pick</code>&#xACFC; <code>Record</code>&#xC640; &#xD568;&#xAED8; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Pick</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span>, <span class="cm-variable">K</span> <span class="cm-keyword">extends</span> <span class="cm-variable">keyof</span> <span class="cm-variable">T</span><span class="cm-operator">&gt;</span> <span class="cm-operator">=</span> {
+    [<span class="cm-variable">P</span> <span class="cm-keyword">in</span> <span class="cm-variable">K</span>]: <span class="cm-variable">T</span>[<span class="cm-variable">P</span>];
+}
+<span class="cm-variable">type</span> <span class="cm-variable">Record</span><span class="cm-operator">&lt;</span><span class="cm-variable">K</span> <span class="cm-keyword">extends</span> <span class="cm-variable-3">string</span>, <span class="cm-variable">T</span><span class="cm-operator">&gt;</span> <span class="cm-operator">=</span> {
+    [<span class="cm-variable">P</span> <span class="cm-keyword">in</span> <span class="cm-variable">K</span>]: <span class="cm-variable">T</span>;
+}
+</code></pre>
+<p><code>Readonly</code>, <code>Partial</code>&#xACFC; <code>Pick</code>&#xC740; &#xB3D9;&#xD615;(homomorphic)&#xC778; &#xBC18;&#xBA74; <code>Record</code>&#xB294; &#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.<br><code>Record</code>&#xAC00; &#xB3D9;&#xD615;(homomorphic)&#xC774; &#xC544;&#xB2CC; &#xD55C;&#xAC00;&#xC9C0; &#xB2E8;&#xC11C;&#xB294; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xBCF5;&#xC0AC;&#xD558;&#xB294; &#xB370; &#xC785;&#xB825; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;&#xB294; &#xC810;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">ThreeStringProps</span> <span class="cm-operator">=</span> <span class="cm-variable">Record</span><span class="cm-operator">&lt;</span><span class="cm-string">&apos;prop1&apos;</span> <span class="cm-operator">|</span> <span class="cm-string">&apos;prop2&apos;</span> <span class="cm-operator">|</span> <span class="cm-string">&apos;prop3&apos;</span>, <span class="cm-variable-3">string</span><span class="cm-operator">&gt;</span>
+</code></pre>
+<p>&#xB3D9;&#xD615;&#xC774; &#xC544;&#xB2CC; &#xD0C0;&#xC785;&#xC740; &#xBCF8;&#xC9C8;&#xC801;&#xC73C;&#xB85C; &#xC0C8;&#xB85C;&#xC6B4; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC5B4;&#xB514;&#xC5D0;&#xC11C;&#xB098; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xC9C0;&#xC815;&#xC790;&#xB97C; &#xBCF5;&#xC0AC;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 id="mapped-types&#xC758;-&#xCD94;&#xB860;-inference-from-mapped-types">mapped types&#xC758; &#xCD94;&#xB860; (Inference from mapped types)</h2>
+<p>&#xC774;&#xC81C;&#xB294; &#xD0C0;&#xC785;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xB798;&#xD551;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC54C;&#xC558;&#xC73C;&#xBBC0;&#xB85C; &#xB2E4;&#xC74C;&#xC73C;&#xB85C; &#xD574;&#xC57C; &#xD560; &#xC77C;&#xC740; &#xC5B8;&#xB798;&#xD551;(&#xD478;&#xB294;) &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xD589;&#xD788;&#xB3C4; &#xAF64; &#xC27D;&#xC2B5;&#xB2C8;&#xB2E4; :</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">unproxify</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">t</span>: <span class="cm-variable">Proxify</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span>): <span class="cm-variable">T</span> {
+    <span class="cm-keyword">let</span> <span class="cm-variable">result</span> <span class="cm-operator">=</span> {} <span class="cm-variable">as</span> <span class="cm-variable">T</span>;
+    <span class="cm-keyword">for</span> (<span class="cm-keyword">const</span> <span class="cm-variable">k</span> <span class="cm-keyword">in</span> <span class="cm-variable">t</span>) {
+        <span class="cm-variable">result</span>[<span class="cm-variable">k</span>] <span class="cm-operator">=</span> <span class="cm-variable">t</span>[<span class="cm-variable">k</span>].<span class="cm-property">get</span>();
+    }
+    <span class="cm-keyword">return</span> <span class="cm-variable">result</span>;
+}
+
+<span class="cm-keyword">let</span> <span class="cm-variable">originalProps</span> <span class="cm-operator">=</span> <span class="cm-variable">unproxify</span>(<span class="cm-variable">proxyProps</span>);
+</code></pre>
+<p>&#xC774; &#xC5B8;&#xB798;&#xD551; &#xCD94;&#xB860;&#xC740; &#xB3D9;&#xD615; &#xB9E4;&#xD551; &#xD0C0;&#xC785;&#xC5D0;&#xC11C;&#xB9CC; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB9E4;&#xD551;&#xB41C; &#xD0C0;&#xC785;&#xC774; &#xB3D9;&#xD615;&#xC774; &#xC544;&#xB2CC; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xC5B8;&#xB798;&#xD551; &#xD568;&#xC218;&#xC5D0; &#xBA85;&#xC2DC;&#xC801; &#xD0C0;&#xC785; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xB97C; &#xC9C0;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Type Compatibility.html" class="navigation navigation-prev " aria-label="Previous page: 타입 호환성">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Symbols.html" class="navigation navigation-next " aria-label="Next page: 심볼">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"고급 타입","level":"3.10","depth":1,"next":{"title":"심볼","level":"3.11","depth":1,"path":"pages/Symbols.md","ref":"pages/Symbols.md","articles":[]},"previous":{"title":"타입 호환성","level":"3.9","depth":1,"path":"pages/Type Compatibility.md","ref":"pages/Type Compatibility.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon"],"pluginsConfig":{"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Advanced Types.md","mtime":"2018-03-25T23:54:05.917Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-10T01:48:44.756Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    
+
+    </body>
+</html>
+
