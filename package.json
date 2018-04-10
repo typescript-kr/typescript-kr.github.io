@@ -8,6 +8,7 @@
     "gitbook-plugin-custom-favicon": "^0.0.4",
     "gitbook-plugin-favicon": "^0.0.2",
     "gitbook-plugin-forkmegithub": "^2.2.0",
+    "gitbook-plugin-header": "^0.1.0",
     "gitbook-plugin-highlight-1": "^2.0.3",
     "gitbook-plugin-sitemap": "^1.2.0",
     "gitbook-plugin-theme-darkblue": "^1.0.1"
@@ -18,12 +19,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/typescript-study/typescript-study.github.io.git"
+    "url": "git+https://github.com/typescript-kr/typescript-kr.github.io.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/typescript-study/typescript-study.github.io/issues"
+    "url": "https://github.com/typescript-kr/typescript-kr.github.io/issues"
   },
-  "homepage": "https://github.com/typescript-study/typescript-study.github.io#readme"
+  "homepage": "https://github.com/typescript-kr/typescript-kr.github.io#readme"
 }
