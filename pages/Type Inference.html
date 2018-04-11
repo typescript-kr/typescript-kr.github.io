@@ -1,28 +1,46 @@
 
 <!DOCTYPE HTML>
 <html lang="" >
-
-<head>
-	<meta charset="UTF-8">
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-	<title>타입 추론 · GitBook</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="description" content="">
-	<meta name="generator" content="GitBook 3.2.3">
-	<meta property="og:title" content="TypeScript 한글 문서">
-	<meta property="og:image" content="https://avatars1.githubusercontent.com/u/37781342?s=200&v=4">
-	<meta property="og:description" content="TypeScript 한글 번역 문서입니다">
-	<meta property="og:url" content="http://typescript-kr.github.io/index.html">   
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>타입 추론 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+				<meta name="generator" content="GitBook 3.2.3">
+				<meta property="og:title" content="TypeScript 한글 문서">
+        <meta property="og:image" content="https://avatars1.githubusercontent.com/u/37781342?s=200&v=4">
+        <meta property="og:description" content="TypeScript 한글 번역 문서입니다">
+        
+        
+        
     
     
     <link rel="stylesheet" href="../gitbook/style.css">
 
-      
-	<link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight-1/website.css">   
-	<link rel="stylesheet" href="../gitbook/gitbook-plugin-forkmegithub/plugin.css">   
-	<link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">   
-	<link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">   
-	<link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">   
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight-1/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-forkmegithub/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
 
     
 
@@ -43,7 +61,8 @@
     
     <link rel="stylesheet" type="text/css" href="../assets/css/atom-one-dark.css" />
     
- 
+
+        
     
     
     <meta name="HandheldFriendly" content="true"/>
@@ -60,10 +79,9 @@
     <link rel="prev" href="Enums.html" />
     
 
-</head>
-
-<body>
-	
+    </head>
+    <body>
+        
 <div class="book">
     <div class="book-summary">
         
@@ -694,50 +712,60 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#xC18C;&#xAC1C;-introduction">&#xC18C;&#xAC1C; (Introduction)</h1>
-<p>&#xC774; &#xC7A5;&#xC5D0;&#xC11C;&#xB294; TypeScript&#xC758; &#xD0C0;&#xC785; &#xCD94;&#xB860;(Type Inference)&#xC5D0; &#xB300;&#xD574; &#xC124;&#xBA85;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC989; &#xD0C0;&#xC785;&#xC774; &#xC5B4;&#xB514;&#xC11C; &#xC5B4;&#xB5BB;&#xAC8C; &#xCD94;&#xB860;&#xB418;&#xB294;&#xC9C0; &#xB17C;&#xC758;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774; &#xC7A5;&#xC5D0;&#xC11C;&#xB294; TypeScript&#xC758; &#xD0C0;&#xC785; &#xCD94;&#xB860;(Type Inference)&#xC5D0; &#xB300;&#xD574; &#xC124;&#xBA85;&#xD569;&#xB2C8;&#xB2E4;. &#xC989; &#xD0C0;&#xC785;&#xC774; &#xC5B4;&#xB514;&#xC11C; &#xC5B4;&#xB5BB;&#xAC8C; &#xCD94;&#xB860;&#xB418;&#xB294;&#xC9C0; &#xB17C;&#xC758;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h1 id="&#xAE30;&#xBCF8;-basics">&#xAE30;&#xBCF8; (Basics)</h1>
-<p>TypeScript&#xC5D0;&#xB294; &#xD0C0;&#xC785;&#xC744; &#xBA85;&#xC2DC;&#xD574;&#xC8FC;&#xC9C0; &#xC54A;&#xC558;&#xC744; &#xB54C; &#xD0C0;&#xC785; &#xC815;&#xBCF4;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xAE30; &#xC704;&#xD574; &#xD0C0;&#xC785; &#xCD94;&#xB860;&#xC774; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xC5EC;&#xB7EC; &#xC704;&#xCE58;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC544;&#xB798; &#xC608;&#xC2DC; &#xCF54;&#xB4DC;&#xB97C; &#xBD05;&#xC2DC;&#xB2E4;.</p>
+<p>TypeScript&#xC5D0;&#xB294; &#xD0C0;&#xC785;&#xC744; &#xBA85;&#xC2DC;&#xD574;&#xC8FC;&#xC9C0; &#xC54A;&#xC558;&#xC744; &#xB54C; &#xD0C0;&#xC785; &#xC815;&#xBCF4;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xAE30; &#xC704;&#xD574; &#xD0C0;&#xC785; &#xCD94;&#xB860;&#xC774; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xC5EC;&#xB7EC; &#xC704;&#xCE58;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC544;&#xB798; &#xC608;&#xC2DC; &#xCF54;&#xB4DC;&#xB97C; &#xBD05;&#xC2DC;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-number">3</span>;
 </code></pre>
-<p><code>x</code> &#xBCC0;&#xC218;&#xC758; &#xD0C0;&#xC785;&#xC740; <code>number</code> &#xB77C;&#xACE0; &#xCD94;&#xB860;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB7EC;&#xD55C; &#xC885;&#xB958;&#xC758; &#xCD94;&#xB860;&#xC740; &#xBCC0;&#xC218;&#xC640; &#xBA64;&#xBC84;&#xB97C; &#xCD08;&#xAE30;&#xD654;&#xD558;&#xAC70;&#xB098; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xC758; &#xAE30;&#xBCF8;&#xAC12;&#xC744; &#xC124;&#xC815;&#xD558;&#xAC70;&#xB098; &#xD568;&#xC218; &#xBC18;&#xD658; &#xD0C0;&#xC785;&#xC744; &#xACB0;&#xC815;&#xD560; &#xB54C; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB300;&#xBD80;&#xBD84;&#xC758; &#xD0C0;&#xC785; &#xCD94;&#xB860;&#xC740; &#xAC04;&#xB2E8;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xC74C; &#xC7A5;&#xC5D0;&#xC11C;&#xB294; &#xD0C0;&#xC785; &#xCD94;&#xB860;&#xC758; &#xBBF8;&#xBB18;&#xD55C; &#xCC28;&#xC774;&#xC5D0; &#xB300;&#xD558;&#xC5EC; &#xC0B4;&#xD3B4;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>x</code> &#xBCC0;&#xC218;&#xC758; &#xD0C0;&#xC785;&#xC740; <code>number</code> &#xB77C;&#xACE0; &#xCD94;&#xB860;&#xB429;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB7EC;&#xD55C; &#xC885;&#xB958;&#xC758; &#xCD94;&#xB860;&#xC740; &#xBCC0;&#xC218;&#xC640; &#xBA64;&#xBC84;&#xB97C; &#xCD08;&#xAE30;&#xD654;&#xD558;&#xAC70;&#xB098; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xC758; &#xAE30;&#xBCF8;&#xAC12;&#xC744; &#xC124;&#xC815;&#xD558;&#xAC70;&#xB098;, &#xD568;&#xC218; &#xBC18;&#xD658; &#xD0C0;&#xC785;&#xC744; &#xACB0;&#xC815;&#xD560; &#xB54C; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB300;&#xBD80;&#xBD84;&#xC758; &#xD0C0;&#xC785; &#xCD94;&#xB860;&#xC740; &#xAC04;&#xB2E8;&#xD569;&#xB2C8;&#xB2E4;.
+&#xB2E4;&#xC74C; &#xC7A5;&#xC5D0;&#xC11C;&#xB294; &#xD0C0;&#xC785; &#xCD94;&#xB860;&#xC758; &#xBBF8;&#xBB18;&#xD55C; &#xCC28;&#xC774;&#xC5D0; &#xB300;&#xD558;&#xC5EC; &#xC0B4;&#xD3B4;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h1 id="&#xAC00;&#xC7A5;-&#xC77C;&#xBC18;&#xC801;&#xC778;-&#xD0C0;&#xC785;-best-common-type">&#xAC00;&#xC7A5; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD0C0;&#xC785; (Best common type)</h1>
-<p>&#xC5EC;&#xB7EC; &#xD45C;&#xD604;&#xC2DD;&#xC5D0;&#xC11C; &#xD0C0;&#xC785; &#xCD94;&#xB860;&#xC774; &#xC774;&#xB8E8;&#xC5B4;&#xC9C0;&#xBA74; &#xADF8; &#xD45C;&#xD604;&#xC2DD;&#xC758; &#xD0C0;&#xC785;&#xC774; &quot;&#xAC00;&#xC7A5; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD0C0;&#xC785;&quot;&#xC744; &#xACC4;&#xC0B0;&#xD558;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC608;:</p>
+<p>&#xC5EC;&#xB7EC; &#xD45C;&#xD604;&#xC2DD;&#xC5D0;&#xC11C; &#xD0C0;&#xC785; &#xCD94;&#xB860;&#xC774; &#xC774;&#xB8E8;&#xC5B4;&#xC9C0;&#xBA74; &#xADF8; &#xD45C;&#xD604;&#xC2DD;&#xC758; &#xD0C0;&#xC785;&#xC774; &quot;&#xAC00;&#xC7A5; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD0C0;&#xC785;&quot;&#xC744; &#xACC4;&#xC0B0;&#xD558;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. &#xC608;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">x</span> <span class="cm-operator">=</span> [<span class="cm-number">0</span>, <span class="cm-number">1</span>, <span class="cm-atom">null</span>];
 </code></pre>
-<p>&#xC704;&#xC758; &#xC608;&#xC81C;&#xC5D0;&#xC11C; <code>x</code> &#xC758; &#xD0C0;&#xC785;&#xC744; &#xCD94;&#xB860;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB294; &#xAC01; &#xBC30;&#xC5F4; &#xC694;&#xC18C;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xBC18;&#xB4DC;&#xC2DC; &#xACE0;&#xB824;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC5EC;&#xAE30;&#xC11C;&#xB294; &#xBC30;&#xC5F4;&#xC758; &#xD0C0;&#xC785;&#xC5D0; &#xB300;&#xD55C; &#xB450;&#xAC00;&#xC9C0; &#xC120;&#xD0DD;&#xC0AC;&#xD56D; <code>number</code> &#xC640; <code>null</code> &#xC774; &#xC8FC;&#xC5B4;&#xC9D1;&#xB2C8;&#xB2E4;.<br>&#xAC00;&#xC7A5; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD0C0;&#xC785; &#xC54C;&#xACE0;&#xB9AC;&#xC998;&#xC740; &#xAC01; &#xD6C4;&#xBCF4; &#xD0C0;&#xC785;&#xC744; &#xACE0;&#xB824;&#xD558;&#xACE0; &#xB2E4;&#xB978; &#xD638;&#xBD80;&#xC640; &#xD638;&#xD658;&#xB418;&#xB294; &#xD0C0;&#xC785;&#xC744; &#xC120;&#xD0DD;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC81C;&#xACF5;&#xB418;&#xB294; &#xD6C4;&#xBCF4; &#xD0C0;&#xC785; &#xC911;&#xC5D0;&#xC11C; &#xAC00;&#xC7A5; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD0C0;&#xC785;&#xC744; &#xC120;&#xD0DD;&#xD574;&#xC57C;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xD0C0;&#xC785;&#xC774; &#xACF5;&#xD1B5; &#xAD6C;&#xC870;&#xB97C; &#xACF5;&#xC720;&#xD558;&#xC9C0;&#xB9CC; &#xBAA8;&#xB4E0; &#xD0C0;&#xC785;&#xC758; &#xC218;&#xD37C; &#xD0C0;&#xC785;(&#xC0C1;&#xC704; &#xD0C0;&#xC785;)&#xC774; &#xD558;&#xB098;&#xB3C4; &#xC5C6;&#xB294; &#xACBD;&#xC6B0;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC608;:</p>
+<p>&#xC704;&#xC758; &#xC608;&#xC81C;&#xC5D0;&#xC11C; <code>x</code> &#xC758; &#xD0C0;&#xC785;&#xC744; &#xCD94;&#xB860;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB294; &#xAC01; &#xBC30;&#xC5F4; &#xC694;&#xC18C;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xBC18;&#xB4DC;&#xC2DC; &#xACE0;&#xB824;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC5EC;&#xAE30;&#xC11C;&#xB294; &#xBC30;&#xC5F4;&#xC758; &#xD0C0;&#xC785;&#xC5D0; &#xB300;&#xD55C; &#xB450;&#xAC00;&#xC9C0; &#xC120;&#xD0DD;&#xC0AC;&#xD56D; <code>number</code> &#xC640; <code>null</code> &#xC774; &#xC8FC;&#xC5B4;&#xC9D1;&#xB2C8;&#xB2E4;.
+&#xAC00;&#xC7A5; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD0C0;&#xC785; &#xC54C;&#xACE0;&#xB9AC;&#xC998;&#xC740; &#xAC01; &#xD6C4;&#xBCF4; &#xD0C0;&#xC785;&#xC744; &#xACE0;&#xB824;&#xD558;&#xACE0; &#xB2E4;&#xB978; &#xD638;&#xBD80;&#xC640; &#xD638;&#xD658;&#xB418;&#xB294; &#xD0C0;&#xC785;&#xC744; &#xC120;&#xD0DD;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC81C;&#xACF5;&#xB418;&#xB294; &#xD6C4;&#xBCF4; &#xD0C0;&#xC785; &#xC911;&#xC5D0;&#xC11C; &#xAC00;&#xC7A5; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD0C0;&#xC785;&#xC744; &#xC120;&#xD0DD;&#xD574;&#xC57C;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xD0C0;&#xC785;&#xC774; &#xACF5;&#xD1B5; &#xAD6C;&#xC870;&#xB97C; &#xACF5;&#xC720;&#xD558;&#xC9C0;&#xB9CC; &#xBAA8;&#xB4E0; &#xD0C0;&#xC785;&#xC758; &#xC218;&#xD37C; &#xD0C0;&#xC785;(&#xC0C1;&#xC704; &#xD0C0;&#xC785;)&#xC774; &#xD558;&#xB098;&#xB3C4; &#xC5C6;&#xB294; &#xACBD;&#xC6B0;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC608;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">zoo</span> <span class="cm-operator">=</span> [<span class="cm-keyword">new</span> <span class="cm-variable">Rhino</span>(), <span class="cm-keyword">new</span> <span class="cm-variable">Elephant</span>(), <span class="cm-keyword">new</span> <span class="cm-variable">Snake</span>()];
 </code></pre>
-<p>&#xC774;&#xC0C1;&#xC801;&#xC73C;&#xB85C;, <code>zoo</code> &#xBC30;&#xC5F4;&#xC774; <code>Animal[]</code> &#xB85C; &#xCD94;&#xB860;&#xB418;&#xAE30;&#xB97C; &#xC6D0;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xD558;&#xC9C0;&#xB9CC; &#xBC30;&#xC5F4;&#xC5D0;&#xB294; &#xC815;&#xD655;&#xD788; <code>Animal</code> &#xD0C0;&#xC785;&#xC758; &#xAC1D;&#xCCB4;&#xAC00; &#xC5C6;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xBC30;&#xC5F4; &#xC694;&#xC18C; &#xD0C0;&#xC785;&#xC5D0; &#xB300;&#xD55C; &#xCD94;&#xCE21;&#xC744; &#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xBB38;&#xC81C;&#xB97C; &#xD574;&#xACB0;&#xD558;&#xB824;&#xBA74; &#xB2E4;&#xB978; &#xC720;&#xD615;&#xC758; &#xC218;&#xD37C; &#xD0C0;&#xC785;&#xC774; &#xC5C6;&#xB294; &#xC720;&#xD615;&#xC744; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xC81C;&#xACF5;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<p>&#xC774;&#xC0C1;&#xC801;&#xC73C;&#xB85C;, <code>zoo</code> &#xBC30;&#xC5F4;&#xC774; <code>Animal[]</code> &#xB85C; &#xCD94;&#xB860;&#xB418;&#xAE30;&#xB97C; &#xC6D0;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xD558;&#xC9C0;&#xB9CC; &#xBC30;&#xC5F4;&#xC5D0;&#xB294; &#xC815;&#xD655;&#xD788; <code>Animal</code> &#xD0C0;&#xC785;&#xC758; &#xAC1D;&#xCCB4;&#xAC00; &#xC5C6;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xBC30;&#xC5F4; &#xC694;&#xC18C; &#xD0C0;&#xC785;&#xC5D0; &#xB300;&#xD55C; &#xCD94;&#xCE21;&#xC744; &#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774; &#xBB38;&#xC81C;&#xB97C; &#xD574;&#xACB0;&#xD558;&#xB824;&#xBA74; &#xB2E4;&#xB978; &#xC720;&#xD615;&#xC758; &#xC218;&#xD37C; &#xD0C0;&#xC785;&#xC774; &#xC5C6;&#xB294; &#xC720;&#xD615;&#xC744; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xC81C;&#xACF5;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">zoo</span>: <span class="cm-variable-3">Animal</span>[] <span class="cm-operator">=</span> [<span class="cm-keyword">new</span> <span class="cm-variable">Rhino</span>(), <span class="cm-keyword">new</span> <span class="cm-variable">Elephant</span>(), <span class="cm-keyword">new</span> <span class="cm-variable">Snake</span>()];
 </code></pre>
 <p>&#xAC00;&#xC7A5; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD0C0;&#xC785;&#xC774; &#xBC1C;&#xACAC;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xCD94;&#xB860;&#xC758; &#xACB0;&#xACFC;&#xB294; &#xC720;&#xB2C8;&#xC628; &#xBC30;&#xC5F4;(Union Array) &#xD0C0;&#xC785;&#xC778; <code>(Rhino | Elephant | Snake)[]</code> &#xAC00; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <h1 id="&#xC0C1;&#xD669;&#xC801;-&#xD0C0;&#xC785;-contextual-type">&#xC0C1;&#xD669;&#xC801; &#xD0C0;&#xC785; (Contextual Type)</h1>
-<p>&#xD0C0;&#xC785; &#xCD94;&#xB860;&#xC740; TypeScript&#xC758; &quot;&#xB2E4;&#xB978; &#xBC29;&#xD5A5;&quot;&#xC5D0;&#xC11C;&#xB3C4; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB97C; &quot;&#xC0C1;&#xD669;&#xC801; &#xD0C0;&#xC774;&#xD551;(Contextual Typing)&quot; &#xC774;&#xB77C;&#xACE0; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xC0C1;&#xD669;&#xC801; &#xD0C0;&#xC785;&#xC740; &#xD45C;&#xD604;&#xC2DD;&#xC758; &#xD0C0;&#xC785;&#xC758; &#xC704;&#xCE58;&#xC5D0; &#xC758;&#xD574; &#xC554;&#xC2DC;&#xB420; &#xB54C; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;. </p>
-<p>&#xC608;:</p>
+<p>&#xD0C0;&#xC785; &#xCD94;&#xB860;&#xC740; TypeScript&#xC758; &quot;&#xB2E4;&#xB978; &#xBC29;&#xD5A5;&quot;&#xC5D0;&#xC11C;&#xB3C4; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB97C; &quot;&#xC0C1;&#xD669;&#xC801; &#xD0C0;&#xC774;&#xD551;(Contextual Typing)&quot; &#xC774;&#xB77C;&#xACE0; &#xD569;&#xB2C8;&#xB2E4;. &#xC0C1;&#xD669;&#xC801; &#xD0C0;&#xC785;&#xC740; &#xD45C;&#xD604;&#xC2DD;&#xC758; &#xD0C0;&#xC785;&#xC758; &#xC704;&#xCE58;&#xC5D0; &#xC758;&#xD574; &#xC554;&#xC2DC;&#xB420; &#xB54C; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;. &#xC608;:</p>
 <pre><code class="lang-ts"><span class="cm-variable">window</span>.<span class="cm-property">onmousedown</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">mouseEvent</span>) {
     <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable-2">mouseEvent</span>.<span class="cm-property">button</span>);  <span class="cm-comment">//&lt;- &#xC624;&#xB958;</span>
 };
 </code></pre>
-<p>&#xC704;&#xC758; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xD0C0;&#xC785; &#xC624;&#xB958;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xAE30; &#xC704;&#xD574; TypeScript &#xD0C0;&#xC785; &#xAC80;&#xC0AC;&#xAE30;&#xB294; <code>Window.onmousedown</code> &#xD568;&#xC218; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC624;&#xB978;&#xCABD; &#xD568;&#xC218; &#xD45C;&#xD604;&#xC2DD;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xCD94;&#xB860;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB807;&#xAC8C; &#xD588;&#xC744; &#xB54C; <code>mouseEvent</code> &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xCD94;&#xB860;&#xD560; &#xC218; &#xC788;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xD568;&#xC218; &#xD45C;&#xD604;&#xC2DD;&#xC774; &#xBB38;&#xB9E5;&#xC801;&#xC73C;&#xB85C; &#xC785;&#xB825; &#xB41C; &#xC704;&#xCE58;&#xC5D0; &#xC788;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; <code>mouseEvent</code> &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB294; <code>any</code> &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C0;&#xBA70; &#xC624;&#xB958;&#xB294; &#xBC1C;&#xC0DD;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p>&#xBB38;&#xB9E5;&#xC801;&#xC73C;&#xB85C; &#xD0C0;&#xC785;&#xC774; &#xC815;&#xD574;&#xC9C4; &#xD45C;&#xD604;&#xC2DD;&#xC5D0; &#xBA85;&#xC2DC;&#xC801;&#xC778; &#xD0C0;&#xC785; &#xC815;&#xBCF4;&#xAC00; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xBA74; &#xD574;&#xB2F9; &#xD0C0;&#xC785;&#xC774; &#xBB34;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC704; &#xC608;&#xC81C;&#xB97C; &#xC791;&#xC131;&#xD588;&#xB2E4;&#xBA74;:</p>
+<p>&#xC704;&#xC758; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xD0C0;&#xC785; &#xC624;&#xB958;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xAE30; &#xC704;&#xD574; TypeScript &#xD0C0;&#xC785; &#xAC80;&#xC0AC;&#xAE30;&#xB294; <code>Window.onmousedown</code> &#xD568;&#xC218; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC624;&#xB978;&#xCABD; &#xD568;&#xC218; &#xD45C;&#xD604;&#xC2DD;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xCD94;&#xB860;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB807;&#xAC8C; &#xD588;&#xC744; &#xB54C; <code>mouseEvent</code> &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xCD94;&#xB860;&#xD560; &#xC218; &#xC788;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774; &#xD568;&#xC218; &#xD45C;&#xD604;&#xC2DD;&#xC774; &#xBB38;&#xB9E5;&#xC801;&#xC73C;&#xB85C; &#xC785;&#xB825; &#xB41C; &#xC704;&#xCE58;&#xC5D0; &#xC788;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; <code>mouseEvent</code> &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB294; <code>any</code> &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C0;&#xBA70; &#xC624;&#xB958;&#xB294; &#xBC1C;&#xC0DD;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xBB38;&#xB9E5;&#xC801;&#xC73C;&#xB85C; &#xD0C0;&#xC785;&#xC774; &#xC815;&#xD574;&#xC9C4; &#xD45C;&#xD604;&#xC2DD;&#xC5D0; &#xBA85;&#xC2DC;&#xC801;&#xC778; &#xD0C0;&#xC785; &#xC815;&#xBCF4;&#xAC00; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xBA74; &#xD574;&#xB2F9; &#xD0C0;&#xC785;&#xC774; &#xBB34;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.
+&#xC704; &#xC608;&#xC81C;&#xB97C; &#xC791;&#xC131;&#xD588;&#xB2E4;&#xBA74;:</p>
 <pre><code class="lang-ts"><span class="cm-variable">window</span>.<span class="cm-property">onmousedown</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">mouseEvent</span>: <span class="cm-variable-3">any</span>) {
     <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable-2">mouseEvent</span>.<span class="cm-property">button</span>);  <span class="cm-comment">//&lt;- &#xC774;&#xC81C; &#xC624;&#xB958;&#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;</span>
 };
 </code></pre>
-<p>&#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xC5D0; &#xBA85;&#xC2DC;&#xC801; &#xD0C0;&#xC785; &#xC8FC;&#xC11D;&#xC774; &#xC788;&#xB294; &#xD568;&#xC218; &#xD45C;&#xD604;&#xC2DD;&#xC740; &#xC0C1;&#xD669;&#xC801; &#xD0C0;&#xC785;&#xC744; &#xB300;&#xCCB4;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC77C;&#xB2E8; &#xADF8;&#xB807;&#xAC8C; &#xB418;&#xBA74; &#xC0C1;&#xD669;&#xC801; &#xD0C0;&#xC785;&#xC774; &#xC801;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBBC0;&#xB85C; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC0C1;&#xD669;&#xC801; &#xD0C0;&#xC774;&#xD551;&#xC740; &#xB9CE;&#xC740; &#xACBD;&#xC6B0;&#xC5D0; &#xC801;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC77C;&#xBC18;&#xC801;&#xC778; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xD568;&#xC218; &#xD638;&#xCD9C;&#xC5D0; &#xB300;&#xD55C; &#xC778;&#xC218;, &#xD560;&#xB2F9;&#xC758; &#xC6B0;&#xCE21; &#xD45C;&#xD604;&#xC2DD;, &#xD0C0;&#xC785; &#xD45C;&#xBA85;(Type Assertions), &#xAC1D;&#xCCB4;&#xC758; &#xBA64;&#xBC84;&#xC640; &#xBC30;&#xC5F4; &#xB9AC;&#xD130;&#xB7F4;, &#xADF8;&#xB9AC;&#xACE0; &#xBC18;&#xD658;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC0C1;&#xD669;&#xC801; &#xD0C0;&#xC785;&#xC740; &#xB610;&#xD55C; &#xAC00;&#xC7A5; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD0C0;&#xC785;&#xC758; &#xD6C4;&#xBCF4; &#xD0C0;&#xC785;&#xC73C;&#xB85C;&#xB3C4; &#xC791;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC608;:</p>
+<p>&#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xC5D0; &#xBA85;&#xC2DC;&#xC801; &#xD0C0;&#xC785; &#xC8FC;&#xC11D;&#xC774; &#xC788;&#xB294; &#xD568;&#xC218; &#xD45C;&#xD604;&#xC2DD;&#xC740; &#xC0C1;&#xD669;&#xC801; &#xD0C0;&#xC785;&#xC744; &#xB300;&#xCCB4;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC77C;&#xB2E8; &#xADF8;&#xB807;&#xAC8C; &#xB418;&#xBA74; &#xC0C1;&#xD669;&#xC801; &#xD0C0;&#xC785;&#xC774; &#xC801;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBBC0;&#xB85C; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC0C1;&#xD669;&#xC801; &#xD0C0;&#xC774;&#xD551;&#xC740; &#xB9CE;&#xC740; &#xACBD;&#xC6B0;&#xC5D0; &#xC801;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.
+&#xC77C;&#xBC18;&#xC801;&#xC778; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xD568;&#xC218; &#xD638;&#xCD9C;&#xC5D0; &#xB300;&#xD55C; &#xC778;&#xC218;, &#xD560;&#xB2F9;&#xC758; &#xC6B0;&#xCE21; &#xD45C;&#xD604;&#xC2DD;, &#xD0C0;&#xC785; &#xD45C;&#xBA85;(Type Assertions), &#xAC1D;&#xCCB4;&#xC758; &#xBA64;&#xBC84;&#xC640; &#xBC30;&#xC5F4; &#xB9AC;&#xD130;&#xB7F4;, &#xADF8;&#xB9AC;&#xACE0; return &#xBB38;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC0C1;&#xD669;&#xC801; &#xD0C0;&#xC785;&#xC740; &#xB610;&#xD55C; &#xAC00;&#xC7A5; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD0C0;&#xC785;&#xC758; &#xD6C4;&#xBCF4; &#xD0C0;&#xC785;&#xC73C;&#xB85C;&#xB3C4; &#xC791;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC608;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">createZoo</span>(): <span class="cm-variable">Animal</span>[] {
     <span class="cm-keyword">return</span> [<span class="cm-keyword">new</span> <span class="cm-variable">Rhino</span>(), <span class="cm-keyword">new</span> <span class="cm-variable">Elephant</span>(), <span class="cm-keyword">new</span> <span class="cm-variable">Snake</span>()];
 }
 </code></pre>
-<p>&#xC774; &#xC608;&#xC5D0;&#xC11C; &#xAC00;&#xC7A5; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD0C0;&#xC785;&#xC740; <code>Animal</code>, <code>Rhino</code>, <code>Elephant</code>, &#xADF8;&#xB9AC;&#xACE0; <code>Snake</code> &#xB124;&#xAC00;&#xC9C0; &#xC9D1;&#xD569;&#xC73C;&#xB85C; &#xAD6C;&#xC131;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xC911;&#xC5D0;&#xC11C; <code>Animal</code> &#xC740; &#xAC00;&#xC7A5; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD0C0;&#xC785; &#xC54C;&#xACE0;&#xB9AC;&#xC998;&#xC73C;&#xB85C; &#xC120;&#xD0DD;&#xC774; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<script src="../_gitbook_plugin_analytics.js"></script>
+<p>&#xC774; &#xC608;&#xC5D0;&#xC11C; &#xAC00;&#xC7A5; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD0C0;&#xC785;&#xC740; <code>Animal</code>, <code>Rhino</code>, <code>Elephant</code>, &#xADF8;&#xB9AC;&#xACE0; <code>Snake</code> &#xB124;&#xAC00;&#xC9C0; &#xC9D1;&#xD569;&#xC73C;&#xB85C; &#xAD6C;&#xC131;&#xB429;&#xB2C8;&#xB2E4;.
+&#xC774; &#xC911;&#xC5D0;&#xC11C; <code>Animal</code> &#xC740; &#xAC00;&#xC7A5; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD0C0;&#xC785; &#xC54C;&#xACE0;&#xB9AC;&#xC998;&#xC73C;&#xB85C; &#xC120;&#xD0DD;&#xC774; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
+
                                 
                                 </section>
                             
@@ -780,11 +808,12 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"타입 추론","level":"3.8","depth":1,"next":{"title":"타입 호환성","level":"3.9","depth":1,"path":"pages/Type Compatibility.md","ref":"pages/Type Compatibility.md","articles":[]},"previous":{"title":"열거형","level":"3.7","depth":1,"path":"pages/Enums.md","ref":"pages/Enums.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","analytics"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"analytics":{"google":"UA-99001722-6"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Type Inference.md","mtime":"2018-04-11T04:30:47.657Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-11T04:32:07.720Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"타입 추론","level":"3.8","depth":1,"next":{"title":"타입 호환성","level":"3.9","depth":1,"path":"pages/Type Compatibility.md","ref":"pages/Type Compatibility.md","articles":[]},"previous":{"title":"열거형","level":"3.7","depth":1,"path":"pages/Enums.md","ref":"pages/Enums.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"analytics":{"google":"UA-99001722-6"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Type Inference.md","mtime":"2018-04-11T02:17:29.074Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-11T09:44:11.774Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
- 
+
+        
     
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
@@ -820,20 +849,5 @@
 
     
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-99001722-6"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-
-		gtag('config', 'UA-99001722-6');
-	</script>
-
-
-</body>
-
+    </body>
 </html>

@@ -1,8 +1,8 @@
-# TypeScript-Handbook 한글 문서
+# 타입스크립트 한글 번역
 
 [![Build Status](https://travis-ci.org/Microsoft/TypeScript-Handbook.svg)](https://travis-ci.org/Microsoft/TypeScript-Handbook)
 
-[TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/basic-types.html)을 번역하는 저장소입니다.
+[TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/basic-types.html)을 한글 번역하는 저장소입니다.
 
 # 번역 품질
 초보 번역가이며 기초적인 Java 지식과 JavaScript 개발을 주로하는 개발자들이 함께 번역했습니다.  
