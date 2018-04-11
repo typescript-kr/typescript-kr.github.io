@@ -1,12 +1,12 @@
 {
-	"plugins": ["theme-darkblue", "addcssjs", "highlight-1", "custom-favicon", "forkmegithub", "sitemap-general", "sitemap"],
-	"pluginsConfig": {
+  "plugins": ["theme-darkblue", "addcssjs", "highlight-1", "custom-favicon", "forkmegithub", "sitemap-general", "sitemap", "ga"],
+  "pluginsConfig": {
     "sitemap-general": {
       "prefix": "https://typescript-kr.gitbooks.io/"
     },
-		"addcssjs": {
-			"css": ["assets/css/atom-one-dark.css"]
-		},
+    "addcssjs": {
+      "css": ["assets/css/atom-one-dark.css"]
+    },
     "favicon": "assets/images/favicon.ico",
     "forkmegithub": {
       "url": "https://github.com/typescript-kr/typescript-kr.github.io",
@@ -17,6 +17,9 @@
     },
     "sitemap": {
       "hostname": "https://typescript-kr.github.io/"
+    },
+    "ga": {
+      "token": "UA-99001722-6"
     }
-	}
+  }
 }
