@@ -10,7 +10,7 @@
 let isDone: boolean = false;
 ```
 
-# 숫자형 \(Boolean\)
+# 숫자형 \(Number\)
 
 JavaScript와 마찬가지로 TypeScript의 모든 숫자는 부동 소수 점 값입니다.  
 이 부동 소수 점 숫자는 `number` 타입을 받습니다.  

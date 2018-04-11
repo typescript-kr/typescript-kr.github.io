@@ -46,7 +46,7 @@
 * [Publishing](pages/declaration files/Publishing.md)
 * [Consumption](pages/declaration files/Consumption.md)
 
-## Project Configuration
+## 프로젝트 환경설정
 
 * [tsconfig.json](pages/tsconfig.json.md)
 * [Compiler Options](pages/Compiler Options.md)

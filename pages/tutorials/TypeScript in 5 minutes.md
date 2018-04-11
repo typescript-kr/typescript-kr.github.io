@@ -8,7 +8,7 @@ TypeScript를 설치하는 방법은 크게 두가지입니다:
 -   TypeScript의 Visual Studio 플러그인 설치
 
 Visual Studio 2017 및 Visual Studio 2015 Update 3에는 기본적으로 TypeScript가 포함되어 있습니다.  
-Visual Studio와 함꼐 TypeScript를 설치하지 않았다면 [다운로드](#download-links)할 수 있습니다.
+Visual Studio와 함께 TypeScript를 설치하지 않았다면 [다운로드](#download-links)할 수 있습니다.
 
 NPM 사용자의 경우:
 
@@ -41,7 +41,7 @@ document.body.innerHTML = greeter(user);
 tsc greeter.ts
 ```
 
-결과는 동일한 자바스크립트를 포함하고있는 `gretter.js` 파일이 될 것입니다.  
+결과는 동일한 자바스크립트를 포함하고있는 `greeter.js` 파일이 될 것입니다.  
 JavaScript 애플리케이션에서 TypeScript를 실행 중입니다!
 
 이제 TypeScript가 제공하는 새로운 기능들을 활용할 수 있습니다.  
