@@ -1,21 +1,22 @@
-## Overview
+## 개요
 
-The presence of a `tsconfig.json` file in a directory indicates that the directory is the root of a TypeScript project.
-The `tsconfig.json` file specifies the root files and the compiler options required to compile the project.
-A project is compiled in one of the following ways:
+디렉토리에 `tsconfig.json` 파일이 존재한다는 것은 해당 디렉토리가 TypeScript 프로젝트의 루트임를 나타냅니다.  
+`tsconfig.json` 파일은 프로젝트를 컴파일하는 데 필요한 루트 파일과 컴파일러 옵션을 지정합니다.
 
-## Using tsconfig.json
+프로젝트는 다음 방법 중 하나로 컴파일됩니다:
+
+## tsconfig.json 사용 (Using tsconfig.json)
 
 * By invoking tsc with no input files, in which case the compiler searches for the `tsconfig.json` file starting in the current directory and continuing up the parent directory chain.
 * By invoking tsc with no input files and a `--project` (or just `-p`) command line option that specifies the path of a directory containing a `tsconfig.json` file, or a path to a valid `.json` file containing the configurations.
 
-When input files are specified on the command line, `tsconfig.json` files are ignored.
+커맨드 라인에 입력 파일을 지정하면 `tsconfig.json` 파일이 무시됩니다.
 
-## Examples
+## 예제
 
-Example `tsconfig.json` files:
+`tsconfig.json` 예제 파일들:
 
-* Using the `"files"` property
+* `"files"` 속성 사용
 
   ```json
   {
@@ -44,7 +45,7 @@ Example `tsconfig.json` files:
   }
   ```
 
-* Using the `"include"` and `"exclude"` properties
+* `"include"` 및 `"exclude"` 속성 사용
 
   ```json
   {
@@ -68,17 +69,18 @@ Example `tsconfig.json` files:
 
 ## Details
 
-The `"compilerOptions"` property can be omitted, in which case the compiler's defaults are used. See our full list of supported [Compiler Options](./Compiler Options.md).
+`"compilerOptions"` 속성은 생략될 수 있으며 이 경우 컴파일러의 기본 값이 사용됩니다.  
+지원되는 [컴파일러 옵션](./Compiler Options.md)의 전체 목록보기
 
-The `"files"` property takes a list of relative or absolute file paths.
-The `"include"` and `"exclude"` properties take a list of glob-like file patterns.
-The supported glob wildcards are:
+`"files"` 속성은 상대적이거나 절대적인 파일 경로 목록을 갖습니다.  
+`"include"`와 `"exclude"`는 glob 파일 패턴의 목록과 같은 속성을 갖습니다.  
+지원되는 glob 와일드카드는 다음과 같습니다:
 
-* `*` matches zero or more characters (excluding directory separators)
-* `?` matches any one character (excluding directory separators)
-* `**/` recursively matches any subdirectory
+* `*` 0개 이상의 문자와 매칭 (디렉토리 separator 제외)
+* `?` 한 문자와 매칭 (디렉토리 separator 제외)
+* `**/` 반복적으로 모든 하위 디렉토리와 매칭
 
-If a segment of a glob pattern includes only `*` or `.*`, then only files with supported extensions are included (e.g. `.ts`, `.tsx`, and `.d.ts` by default with `.js` and `.jsx` if `allowJs` is set to true).
+glob 패턴의 구분에 `*` 또는 `. *`만 있는 경우, 지원하는 확장자 파일만 포함됩니다 (예: 기본적으로는 `.ts`, `.tsx` 및 `.d.ts` / `allowJs` true로 설정시 `.js`와 `.jsx`).
 
 If the `"files"` and `"include"` are both left unspecified, the compiler defaults to including all TypeScript (`.ts`, `.d.ts` and `.tsx`) files in the containing directory and subdirectories except those excluded using the `"exclude"` property. JS files (`.js` and `.jsx`) are also included if `allowJs` is set to true.
 If the `"files"` or `"include"` properties are specified, the compiler will instead include the union of the files included by those two properties.
