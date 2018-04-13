@@ -48,7 +48,7 @@ printLabel(myObj);
 
 인터페이스의 모든 프로퍼티가 필수로 필요할 수는 없습니다.  
 어떤 것들은 특정한 조건 하에 존재하거나 아예 존재하지 않을 수도 있습니다.  
-이러한 선택적 프로퍼티는 프로퍼티 중에서 일부만 채워진 객체를 함수에 전달하는 "옵션 가방\(option bags\)"과 같은 패턴을 생성할 때 많이 사용됩니다.
+이러한 선택적 프로퍼티는 프로퍼티 중에서 일부만 채워진 객체를 함수에 전달하는 "옵션 백\(option bags\)"과 같은 패턴을 생성할 때 많이 사용됩니다.
 
 다음은 이 패턴의 예입니다:
 
@@ -130,7 +130,7 @@ a = ro; // 오류!
 ```
 
 코드의 마지막 줄에서 전체 `ReadonlyArray`를 일반적인 배열로 다시 할당하는 것조차도 불법임을 알 수 있습니다.  
-그럼에도 불구하고 타입 표명\(assertion\)을 통해 오버라이드 할 수 있습니다.
+그럼에도 불구하고 타입 단언\(assertion\)을 통해 오버라이드 할 수 있습니다.
 
 ```ts
 a = ro as number[];
@@ -144,7 +144,7 @@ readonly을 사용할지 아니면 const 사용할지 기억할 수 있는 가�
 # 프로퍼티 초과 검사 \(Excess Property Checks\)
 
 인터페이스를 사용하는 첫 번째 예에서 TypeScript를 사용하면 `{ size: number; label: string; }`을 `{ label: string; }`으로만 예상하는 항목으로 전달할 수 있습니다.  
-또한 선택적 프로퍼티에 대해서 배웠고 그것이 소위 말하는 "옵션 가방\(option bags\)"을 설명할 때 어떻게 유용한지도 배웠습니다.
+또한 선택적 프로퍼티에 대해서 배웠고 그것이 소위 말하는 "옵션 백\(option bags\)"을 설명할 때 어떻게 유용한지도 배웠습니다.
 
 그러나 두 가지를 결합하는 것은 JavaScript에서와 하고 있는 것과 같은 방식으로 자신의 무덤을 파는 것입니다.  
 예를 들어 `createSquare`를 사용한 마지막 예제를 봅시다:
@@ -176,13 +176,13 @@ let mySquare = createSquare({ colour: "red", width: 100 });
 ```
 
 이런 검사을 하는 것은 실제로 정말 간단합니다.  
-가장 쉬운 방법은 타입 표명\(type assertion\)을 사용하는 것입니다:
+가장 쉬운 방법은 타입 단언\(type assertion\)을 사용하는 것입니다:
 
 ```ts
 let mySquare = createSquare({ width: 100, opacity: 0.5 } as SquareConfig);
 ```
 
-하지만 객체에 특별한 방법으로 사용되는 추가 프로퍼티가 있는 것이 확실한 경우 문자열 인덱스 서명\(string index signature\)을 추가하는 것이 더 좋습니다.
+하지만 객체에 특별한 방법으로 사용되는 추가 프로퍼티가 있는 것이 확실한 경우 문자열 인덱스 시그니처\(string index signature\)을 추가하는 것이 더 좋습니다.
 
 `SquareConfig`가 위의 타입이 포함되는 `color` 및 `width` 프로퍼티가 가질 수 _있지만 또_ 다른 속성도 있는 경우에는 다음과 같이 정의할 수 있습니다.
 
@@ -194,7 +194,7 @@ interface SquareConfig {
 }
 ```
 
-이후에 인덱스 서명\(index signatures\)에 대해 이야기하겠지만 `SquareConfig`은 여러 프로퍼티들을 가질 수 있으며 `color` 또는  `width`가 아닌 다른 프로퍼티들의 타입은 문제 되지 않습니다.
+이후에 인덱스 시그니처\(index signatures\)에 대해 이야기하겠지만 `SquareConfig`은 여러 프로퍼티들을 가질 수 있으며 `color` 또는  `width`가 아닌 다른 프로퍼티들의 타입은 문제 되지 않습니다.
 
 이러한 검사를 하는 마지막 방법 중 하나는 객체를 다른 변수에 할당하는 것입니다: `squareOptions`은 너무 프로퍼티 초과 검사를 거치지 않기 때문에 컴파일러가 오류를 제공하지 않습니다:
 
@@ -205,7 +205,7 @@ let mySquare = createSquare(squareOptions);
 
 위와 같은 간단한 코드의 경우에는 이러한 검사를 "회피하는" 시도를 하지 말아야 합니다.  
 메서드와 상태를 유지하는 더 복잡한 객체 리터럴의 경우 이러한 기법을 유지하고 싶은 마음이겠지만 대부분의 초과 프로퍼티 오류는 실제로 버그입니다.  
-즉 옵션 가방\(option bags\)과 같은 물건에 대해 초과 프로퍼티 검사 문제가 발생하는 경우 타입 선언 중 일부를 수정해야 할 수도 있습니다.  
+즉 옵션 백\(option bags\)과 같은 물건에 대해 초과 프로퍼티 검사 문제가 발생하는 경우 타입 선언 중 일부를 수정해야 할 수도 있습니다.  
 `createSquare`에 `color` 또는 `colour` 프로퍼티를 모두 포함한 객체를 전달하는 것이 괜찮은 경우 `squareConfig`의 정의를 수정해야 합니다.
 
 # 함수 타입 \(Function Types\)
@@ -213,7 +213,7 @@ let mySquare = createSquare(squareOptions);
 인터페이스는 JavaScript 객체가 취할 수 있는 다양한 형태을 형성할 수 있습니다.  
 프로퍼티를 가진 객체를 설명하는 것 외에도 인터페이스는 함수 타입을 형성할 수도 있습니다.
 
-인터페이스가 포함된 함수의 타입을 형성하기 위해 인터페이스에 호출 서명\(call signature\)을 제공합니다.  
+인터페이스가 포함된 함수의 타입을 형성하기 위해 인터페이스에 호출 시그니처\(call signature\)을 제공합니다.  
 이것은 매개 변수 목록과 반환 타입만 주어진 함수 선언과 같습니다. 매개 변수 목록의 각 매개 변수에는 이름과 타입이 모두 필요합니다.
 
 ```ts
@@ -260,7 +260,7 @@ mySearch = function(src, sub) {
 # 인덱싱 가능 타입\(Indexable Types\)
 
 함수 타입을 설명하기 위해 인터페이스를 사용하는 방법과 마찬가지로 `a[10]` 또는 `ageMap["daniel"]`처럼 "인덱스"를 생성할 수 있는 타입을 만들 수도 있습니다.  
-인덱싱 가능 타입에는 객체로 인덱싱 하는 데 사용할 수 있는 타입과 인덱싱 할 때 해당 반환 타입을 설명하는 _인덱스 서명\(index signature\)_ 이 있습니다.  
+인덱싱 가능 타입에는 객체로 인덱싱 하는 데 사용할 수 있는 타입과 인덱싱 할 때 해당 반환 타입을 설명하는 _인덱스 시그니처\(index signature\)_ 이 있습니다.  
 예를 들어 보겠습니다.
 
 ```ts
@@ -274,10 +274,10 @@ myArray = ["Bob", "Fred"];
 let myStr: string = myArray[0];
 ```
 
-위에서 우리는 인덱스 서명\(index signature\)을 가진 `String Array` 인터페이스를 가지고 있습니다.  
-이 인덱스 서명은 `StringArray`이 `number`로 인덱싱 될 때 `string`을 반환한다는 것을 나타냅니다.
+위에서 우리는 인덱스 시그니처\(index signature\)을 가진 `String Array` 인터페이스를 가지고 있습니다.  
+이 인덱스 시그니처은 `StringArray`이 `number`로 인덱싱 될 때 `string`을 반환한다는 것을 나타냅니다.
 
-지원되는 인덱스 서명에는 문자열과 숫자의 두 가지 타입이 있습니다.  
+지원되는 인덱스 시그니처에는 문자열과 숫자의 두 가지 타입이 있습니다.  
 두 가지 타입의 인덱서\(indexer\)를 모두 지원할 수 있지만 숫자\(numeric\) 인덱서에서 반환되는 타입은 문자열\(string\) 인덱서에서 반환된 타입의 하위 타입이어야 합니다.  
 왜냐하면 `number`로 인덱싱을 생성하는 시점에 JavaScript가 객체로 인덱싱하기 전에 `string`으로 변환하기 때문입니다.  
 즉 `100` \(`number`\)로 인덱싱하는 것은 `"100"` \(`string`\)으로 인덱싱하는 것과 동일하므로 두 가지 모두 일관성이 있어야 합니다.
@@ -297,7 +297,7 @@ interface NotOkay {
 }
 ```
 
-문자열 인덱스 서명\(index signatures\)이 "사전\(dictionary\)" 패턴을 만드는 강력한 방법이지만 모든 프로퍼티가 반환 타입과 일치하도록 강요합니다.  
+문자열 인덱스 시그니처\(index signatures\)이 "사전\(dictionary\)" 패턴을 만드는 강력한 방법이지만 모든 프로퍼티가 반환 타입과 일치하도록 강요합니다.  
 문자열 인덱스의 `obj.property`가 `obj["property"]`으로도 사용할 수 있다고 선언하기 때문입니다.  
 다음 예에서는 `name`의 타입이 문자열 인덱스의 타입과 일치하지 않으며 타입-체커에서 오류를 표시합니다
 
@@ -309,7 +309,7 @@ interface NumberDictionary {
 }
 ```
 
-마지막으로 인덱스에 할당되지 않도록 인덱스 서명\(index signatures\)을 읽기 전용\(readonly\)으로 만들 수 있습니다:
+마지막으로 인덱스에 할당되지 않도록 인덱스 시그니처\(index signatures\)을 읽기 전용\(readonly\)으로 만들 수 있습니다:
 
 ```ts
 interface ReadonlyStringArray {
@@ -319,7 +319,7 @@ let myArray: ReadonlyStringArray = ["Alice", "Bob"];
 myArray[2] = "Mallory"; // 오류!
 ```
 
-인덱스 서명이 읽기 전용이므로 `myArray[2]`를 설정할 수 없습니다.
+인덱스 시그니처이 읽기 전용이므로 `myArray[2]`를 설정할 수 없습니다.
 
 # 클래스 타입 \(Class Types\)
 
@@ -410,7 +410,7 @@ let digital = createClock(DigitalClock, 12, 17);
 let analog = createClock(AnalogClock, 7, 32);
 ```
 
-`createClock`의 첫 번째 매개 변수는 `createClock(AnalogClock, 7, 32)`에 `ClockConstructor` 타입이므로 `AnalogClock`이 올바른 생성자 서명\(constructor signature\)을 가지고 있는지 확인합니다.
+`createClock`의 첫 번째 매개 변수는 `createClock(AnalogClock, 7, 32)`에 `ClockConstructor` 타입이므로 `AnalogClock`이 올바른 생성자 시그니처\(constructor signature\)을 가지고 있는지 확인합니다.
 
 # 인터페이스 확장 \(Extending Interfaces\)
 

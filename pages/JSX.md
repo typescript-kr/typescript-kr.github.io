@@ -15,7 +15,7 @@ TypeScript에는 세 가지 JSX 모드가 있습니다: `preserve`, `react`, 그
 이 모드는 방출 단계에만 영향을 미칩니다 - 타입 검사에는 영향받지 않습니다.  
 `preserve` 모드는 다른 변환 단계 (예: [Babel](https://babeljs.io/))에서 더 사용되도록 출력의 일부로 JSX를 계속 유지합니다.  
 추가적으로 출력에는 `.jsx` 파일 확장자가 지정되어 있습니다.  
-`react` 모드는 `React.createElement`를 내보내고 사용하기 전에 JSX 변환을 거칠 필요가 없으며 출력은 `.js` 파일 확장자를 갖습니다.  
+`react` 모드는 `React.createElement`를 방출하고 사용하기 전에 JSX 변환을 거칠 필요가 없으며 출력은 `.js` 파일 확장자를 갖습니다.  
 `react-native` 모드는 모든 JSX를 유지하고 있다는 점에서 `preserve`와 같지만 대신 출력은 `.js` 파일 확장자를 갖습니다.
 
 모드           | 입력      | 출력                         | 출력 파일 확장자
@@ -30,24 +30,24 @@ TypeScript에는 세 가지 JSX 모드가 있습니다: `preserve`, `react`, 그
 
 # `as` 연산자 (The `as` operator)
 
-타입 표명 작성 방법을 회상해봅시다.
+타입 단언 작성 방법을 회상해봅시다.
 
 ```ts
 var foo = <foo>bar;
 ```
 
 여기서 변수 `bar`의 타입을 `foo`라고 주장하고 있습니다.  
-TypeScript도 타입 표명을 위해 꺾쇠 괄호를 사용하기 때문에 JSX의 특정 구문 파싱에는 몇가지 어려움이 있습니다.   
-결과적으로 TypeScript는 `.tsx` 파일에 꺾쇠 괄호 타입 표명을 허용하지 않습니다.
+TypeScript도 타입 단언을 위해 꺾쇠 괄호를 사용하기 때문에 JSX의 특정 구문 파싱에는 몇가지 어려움이 있습니다.   
+결과적으로 TypeScript는 `.tsx` 파일에 꺾쇠 괄호 타입 단언을 허용하지 않습니다.
 
-이러한 `.tsx` 파일의 기능 손실을 채우기 위해 새로운 타입의 표명 연산자가  추가되었습니다: `as`.  
+이러한 `.tsx` 파일의 기능 손실을 채우기 위해 새로운 타입의 단언 연산자가  추가되었습니다: `as`.  
 위 예제는 쉽게 `as` 연산자로 다시 작성할 수 있습니다.
 
 ```ts
 var foo = bar as foo;
 ```
 
-`as` 연산자는 `.ts`와 `.tsx` 파일 모두에서 사용할 수 있으며 다른 타입 표명 스타일과 똑같이 동작합니다.
+`as` 연산자는 `.ts`와 `.tsx` 파일 모두에서 사용할 수 있으며 다른 타입 단언 스타일과 똑같이 동작합니다.
 
 # 타입 검사 (Type Checking)
 
@@ -56,7 +56,7 @@ JSX 표현식 `<expr />`이 주어지면 `expr`은 원래 환경에 내장된 �
 
 이것이 중요한 두 가지 이유가 있습니다:
 
-1. React의 경우, 내장 요소는 문자열 (`React.createElement("div")`)로 생성되는 반면 생성한 컴포넌트는 (`React.createElement(MyComponent)`)가 아닙니다.
+1. React의 경우, 내장 요소는 문자열 (`React.createElement("div")`)로 방출되는 반면 생성한 컴포넌트는 (`React.createElement(MyComponent)`)가 아닙니다.
 2. JSX 요소에서 전달되는 속성의 타입은 다르게 보여야합니다.  
   내장 요소 속성은 *본질적으로* 알려져야 하는 반면에 컴포넌트는 자체 속성 집합을 지정하기를 원할 수 있습니다.
 
@@ -164,7 +164,7 @@ function MainButton(prop: SideProps): JSX.Element {
 따라서 위 예제의 `MyComponent`가 ES6 클래스라면 이 클래스가 그 클래스 타입이 될 것입니다.  
 만일 `MyComponent`가 팩토리 함수라면 클래스 타입이 그 함수가 될 것입니다.
 
-한 번 클래스 타입이 설정되면 인스턴스 타입은 클래스 타입의 호출 서명과 구조 서명의 반환 타입 유니온에 따라 결정됩니다.  
+한 번 클래스 타입이 설정되면 인스턴스 타입은 클래스 타입의 호출 시그니처과 구조 시그니처의 반환 타입 유니온에 따라 결정됩니다.  
 다시 ES6 클래스의 경우, 인스턴스 타입은 해당 클래스의 인스턴스 타입이 되고 팩토리 함수의 경우 해당 함수에서 반환되는 값의 타입이 됩니다.
 
 ```ts
@@ -172,7 +172,7 @@ class MyComponent {
   render() {}
 }
 
-// 구조 서명 사용
+// 구조 시그니처 사용
 var myComponent = new MyComponent();
 
 // 요소 클래스 타입 => MyComponent
@@ -185,7 +185,7 @@ function MyFactoryFunction() {
   }
 }
 
-// 호출 서명 사용
+// 호출 시그니처 사용
 var myComponent = MyFactoryFunction();
 
 // 요소 클래스 타입 => 팩토리 함수
