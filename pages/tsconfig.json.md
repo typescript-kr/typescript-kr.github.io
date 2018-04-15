@@ -82,25 +82,30 @@
 
 glob 패턴의 구분에 `*` 또는 `. *`만 있는 경우, 지원하는 확장자 파일만 포함됩니다 (예: 기본적으로는 `.ts`, `.tsx` 및 `.d.ts` / `allowJs` true로 설정시 `.js`와 `.jsx`).
 
-If the `"files"` and `"include"` are both left unspecified, the compiler defaults to including all TypeScript (`.ts`, `.d.ts` and `.tsx`) files in the containing directory and subdirectories except those excluded using the `"exclude"` property. JS files (`.js` and `.jsx`) are also included if `allowJs` is set to true.
-If the `"files"` or `"include"` properties are specified, the compiler will instead include the union of the files included by those two properties.
-Files in the directory specified using the `"outDir"` compiler option are excluded as long as `"exclude"` property is not specfied. 
+`"files"`과 `"include"` 모두 지정되어 있지 않을 경우 컴파일러는 기본적으로 모든 TypeScript (`.ts`,`.d.ts` 그리고 `.tsx`) 파일을 포함하는 디렉토리와 하위 디렉토리에 포함시킵니다.  
+`"exclude"` 속성을 사용하여 제외된 것은 제외합니다.  
+`allowJs`가 true로 설정되면 JS 파일(`.js`와 `.jsx`)도 포함됩니다.
 
-Files included using `"include"` can be filtered using the `"exclude"` property.
-However, files included explicitly using the `"files"` property are always included regardless of `"exclude"`.
-The `"exclude"` property defaults to excluding the `node_modules`, `bower_components`, `jspm_packages` and `<outDir>` directories when not specified.
+`"files"`과 `"include"` 모두 지정되어 있는 경우 컴파일러는 그 두 속성에 포함된 파일의 결합(union)을 대신 포함합니다.  
+`"outDir"` 컴파일러 옵션을 사용하여 지정된 디렉토리의 파일들은 `"exclude"` 속성이 지정되지 않은 한 제외됩니다.
 
-Any files that are referenced by files included via the `"files"` or `"include"` properties are also included.
-Similarly, if a file `B.ts` is referenced by another file `A.ts`, then `B.ts` cannot be excluded unless the referencing file `A.ts` is also specified in the `"exclude"` list.
+`"include"`을 사용하여 포함된 파일들은 `"exclude"` 속성을 사용해 필터링할 수 있습니다.  
+그러나 `"files"` 속성을 명시적으로 사용하는 파일은 `"exclude"`에 관계없이 항상 포함됩니다.  
+`"exclude"` 속성에 디렉토리가 지정되지 있지 않을 경우 `node_modules`, `bower_components`, `jspm_packages` 그리고 `<outDir>`를 제외합니다.
 
-Please note that the compiler does not include files that can be possible outputs; e.g. if the input includes `index.ts`, then `index.d.ts` and `index.js` are excluded.
-In general, having files that differ only in extension next to each other is not recomended.
+`"files"` 또는 `"include"` 속성을 통해 파일에 참조되는 모든 파일도 포함됩니다.  
+
+비슷하게, 파일 `B.ts`가 또 다른 파일 `A.ts`에 의해 참조되는 경우, `B.ts`는 참조 파일 `A.ts`가 `"exclude"` 리스트에서도 지정되지 않는 한 제외될 수 없습니다.
+
+컴파일러에는 실행할 수 있는 출력 파일이 포함되어 있지 않다는 점에 주의해야 합니다.  
+즉 입력에 `index.ts`가 포함되면 `index.d.ts`와 `index.js`는 제외됩니다.  
+일반적으로 파일이 확장자만 다르게 나란히 있는 것은 권장하지 않습니다.
 
 A `tsconfig.json` file is permitted to be completely empty, which compiles all files included by default (as described above) with the default compiler options.
 
 Compiler options specified on the command line override those specified in the `tsconfig.json` file.
 
-## `@types`, `typeRoots` and `types`
+## `@types`, `typeRoots` 및 `types`
 
 By default all *visible* "`@types`" packages are included in your compilation.
 Packages in `node_modules/@types` of any enclosing folder are considered *visible*;
