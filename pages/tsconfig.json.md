@@ -101,9 +101,12 @@ glob 패턴의 구분에 `*` 또는 `. *`만 있는 경우, 지원하는 확장�
 즉 입력에 `index.ts`가 포함되면 `index.d.ts`와 `index.js`는 제외됩니다.  
 일반적으로 파일이 확장자만 다르게 나란히 있는 것은 권장하지 않습니다.
 
-A `tsconfig.json` file is permitted to be completely empty, which compiles all files included by default (as described above) with the default compiler options.
+`tsconfig.json` 파일은 완전히 비어있을 수 있습니다.  
+기본 컴파일러 옵션으로 기본적인(위에서 설명한대로) 포함된 모든 파일을 컴파일합니다.
 
-Compiler options specified on the command line override those specified in the `tsconfig.json` file.
+기본 컴파일러 옵션으로 기본적으로(위에서 설명한대로) 모든 파일을 컴파일하는 것이 `tsconfig.json`파일을 완전히 비워 두는 것을 허용하십시오.
+
+커맨드 라인에 지정된 컴파일러 옵션은 `tsconfig.json` 파일에 지정된 옵션을 오버라이드합니다.
 
 ## `@types`, `typeRoots` 및 `types`
 
