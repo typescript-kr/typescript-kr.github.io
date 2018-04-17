@@ -113,6 +113,6 @@ TypeScript에서 모듈의 주요 특징은 두 개의 서로 다른 모듈이 �
 
 ## 모듈의 관계 (Trade-offs of Modules)
 
-JS 파일과 모듈 사이에 일대일 대응이 있는 것과 마찬가지로 TypeScript는 모듈 소스 파일과 발생된 JS 파일 간에 일대일 대응을 합니다.  
+JS 파일과 모듈 사이에 일대일 대응이 있는 것과 마찬가지로 TypeScript는 모듈 소스 파일과 방출된 JS 파일 간에 일대일 대응을 합니다.  
 이에 따른 한가지 효과는 대상 모듈 시스템에 따라 여러 모듈 소스 파일을 연결할 수 없다는 것입니다.  
 예를 들어 `commonjs` 또는 `umd`를 대상으로 하는 동안 `outFile` 옵션을 사용할 수 없지만 TypeScript 1.8 이상에서는 `amd` 또는 `system`을 대상으로 지정할 때 `outFile`을 사용[할 수 있습니다](./release%20notes/TypeScript%201.8.md#concatenate-amd-and-system-modules-with---outfile).

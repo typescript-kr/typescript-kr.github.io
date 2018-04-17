@@ -145,7 +145,7 @@ else if (pet.fly) {
 }
 ```
 
-동일한 코드가 작동하도록 하려면 타입 표명을 사용해야 합니다 :
+동일한 코드가 작동하도록 하려면 타입 단언을 사용해야 합니다 :
 
 ```ts
 let pet = getSmallPet();
@@ -160,7 +160,7 @@ else {
 
 ## 사용자 정의 타입 가드 (User-Defined Type Guards)
 
-타입 표명(type assertions)을 여러 번 사용해야 했다는 것에 주목하세요.  
+타입 단언(type assertions)을 여러 번 사용해야 했다는 것에 주목하세요.  
 일단 이 검사를 실시하면 각 지점에서 `pet`의 타입를 알 수 있습니다.
 
 그런 일이 있을 때 TypeScript에는 *type guard*라는 것이 있습니다.  
@@ -174,7 +174,7 @@ function isFish(pet: Fish | Bird): pet is Fish {
 ```
 
 `pet is Fish`는 이 예제에서 타입 명제입니다.  
-명제는 `parameterName is Type` 형태을 취합니다, 여기서 `parameterName`은 현재 함수 서명의 매개 변수 이름이어야 합니다.
+명제는 `parameterName is Type` 형태을 취합니다, 여기서 `parameterName`은 현재 함수 시그니처의 매개 변수 이름이어야 합니다.
 
 `IsFish`가 일부 변수와 함께 호출될 때 원래 타입이 호환 가능하다면 TypeScript는 그 변수를 특정 타입으로 *제한*할 것입니다.
 
@@ -282,7 +282,7 @@ if (padder instanceof StringPadder) {
 `instanceof`의 오른쪽에는 생성자 함수가 있어야 하며 TypeScript는 다음과 같이 범위를 좁혀 나갑니다:
 
 1. 타입이 `any`가 아닌 경우 함수의 `prototype` 프로퍼티 타입
-2. 해당 타입의 생성자 서명에 의해 반환된 타입의 결합
+2. 해당 타입의 생성자 시그니처에 의해 반환된 타입의 결합
 
 이와 같은 순서로 진행됩니다.
 
@@ -339,7 +339,7 @@ c.b = undefined; // ok
 c.b = null; // 오류, 'null'은 'number | undefined'에 할당할 수 없습니다
 ```
 
-## 타입 가드와 타입 표명 (Type guards and type assertions)
+## 타입 가드와 타입 단언 (Type guards and type assertions)
 
 nullable 타입은 유니온으로 구현되기 때문에 타입 가드를 사용하여 `null`을 제거해야 합니다.  
 다행히 JavaScript에서 작성하는 코드는 다음과 같습니다:
@@ -363,7 +363,7 @@ function f(sn: string | null): string {
 }
 ```
 
-컴파일러가 `null` 또는 `undefined`를 제거 할 수 없는 경우 타입 표명 연산자를 사용하여 수동으로 제거할 수 있습니다.  
+컴파일러가 `null` 또는 `undefined`를 제거할 수 없는 경우 타입 단언 연산자를 사용하여 수동으로 제거할 수 있습니다.  
 구문은 후위에 `!` 입니다: `identifier!`는 `identifier`의 타입 `null`과 `undefined`를 제거합니다:
 
 ```ts
@@ -543,7 +543,7 @@ function foo(x: number) {
 
 "싱글톤 타입"에 대해 이야기할 때 많은 시간 동안, 많은 사용자가 "싱글톤 타입"과 "리터럴 타입"을 바꿔 사용하겠지만 숫자/문자열 리터럴 타입뿐만 아니라 열거형 멤버 타입을 모두 참조합니다
 
-# 공용체 식별 (Discriminated Unions)
+# 유니온 식별 (Discriminated Unions)
 
 싱글톤 타입, 유니온 타입, 타입 가드 및 타입 별칭을 결합하여 *discriminated unions*, *tagged unions* 또는 *대수의(algebraic) 데이터 타입*라는 고급 패턴을 빌드할 수 있습니다.  
 Discriminated unions은 함수형 프로그래밍에 유용합니다.  
@@ -734,7 +734,7 @@ let strings: string[] = pluck(person, ['name']); // 좋아요, string[]
 컴파일러는 `name`이 실제로 `Person`의 프로퍼티인지 확인합니다.  
 이 예제는 몇 가지 새로운 타입의 연산자를 소개합니다.
 첫 번째는 `keyof T`으로 **인덱스 타입 쿼리 연산자**입니다.  
-어떤 타입의 `T`에 대해서 `keyof T`는 `T`의 알려진 public 프로퍼티 이름들의 공용체입니다.
+어떤 타입의 `T`에 대해서 `keyof T`는 `T`의 알려진 public 프로퍼티 이름들의 유니온입니다.
 
 예를 들어:
 
@@ -751,7 +751,7 @@ let personProps: keyof Person; // 'name' | 'age'
 pluck(person, ['age', 'unknown']); // 오류, 'unknown'은 'name' | 'age'에 없습니다
 ```
 
-두 번째 연산자는 `T[K]`, **색인 접근 연산자(indexed access operator)** 입니다.
+두 번째 연산자는 `T[K]`, **인덱스 접근 연산자(indexed access operator)** 입니다.
 
 여기서 타입의 구문은 표현식을 반영합니다.
 
@@ -777,11 +777,11 @@ let age: number = getProperty(person, 'age');
 let unknown = getProperty(person, 'unknown'); // 오류, 'unknown'은 'name' | 'age'에 없습니다
 ```
 
-## 인덱스 타입과 문자열 인덱스 서명 (Index types and string index signatures)
+## 인덱스 타입과 문자열 인덱스 시그니처 (Index types and string index signatures)
 
-`keyof`와 `T[K]`는 문자열 인덱스 서명과 상호 작용합니다.  
-문자열 인덱스 서명을 가진 타입을 가지고 있다면 `keyof T`는 단지`string`이 될 것입니다.  
-그리고 `T[string]`은 인덱스 서명의 한가지 종류일뿐입니다:
+`keyof`와 `T[K]`는 문자열 인덱스 시그니처과 상호 작용합니다.  
+문자열 인덱스 시그니처을 가진 타입을 가지고 있다면 `keyof T`는 단지`string`이 될 것입니다.  
+그리고 `T[string]`은 인덱스 시그니처의 한가지 종류일뿐입니다:
 
 ```ts
 interface Map<T> {
@@ -839,11 +839,11 @@ type Keys = 'option1' | 'option2';
 type Flags = { [K in Keys]: boolean };
 ```
 
-구문은 인덱스 서명을 위한 구문과 `for .. in` 내부가 유사하게 사용됩니다.  
+구문은 인덱스 시그니처을 위한 구문과 `for .. in` 내부가 유사하게 사용됩니다.  
 세 가지 파트로 나뉩니다:
 
 1. 변수의 타입 `K`는 각 프로퍼티에 차례대로 바인딩 됩니다.
-2. 문자열 리터럴 공용체 `Keys`는 반복할 프로퍼티의 이름을 포함합니다.
+2. 문자열 리터럴 유니온 `Keys`는 반복할 프로퍼티의 이름을 포함합니다.
 3. 결과적으로 생성된 프로퍼티의 타입.
 
 이 간단한 예제에서 `Keys`는 하드 코딩된 프로퍼티 이름의 리스트이고 프로퍼티 타입은 항상 `boolean`이므로 mapped type은 작성된 것과 같습니다.

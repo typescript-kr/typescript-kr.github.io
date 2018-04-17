@@ -332,7 +332,7 @@ let options = {
 };
 ```
 
-`options`의 타입을 정의하고 객체 리터럴에 타입 표명(type assertion)을 추가 할 수도 있습니다.
+`options`의 타입을 정의하고 객체 리터럴에 타입 단언(type assertion)을 추가 할 수도 있습니다.
 
 ```ts
 interface Options { color: string; volume: number }

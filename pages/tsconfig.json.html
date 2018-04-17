@@ -693,20 +693,19 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="overview">Overview</h2>
-<p>The presence of a <code>tsconfig.json</code> file in a directory indicates that the directory is the root of a TypeScript project.
-The <code>tsconfig.json</code> file specifies the root files and the compiler options required to compile the project.
-A project is compiled in one of the following ways:</p>
-<h2 id="using-tsconfigjson">Using tsconfig.json</h2>
+                                <h2 id="&#xAC1C;&#xC694;">&#xAC1C;&#xC694;</h2>
+<p>&#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC5D0; <code>tsconfig.json</code> &#xD30C;&#xC77C;&#xC774; &#xC874;&#xC7AC;&#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC740; &#xD574;&#xB2F9; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xAC00; TypeScript &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC758; &#xB8E8;&#xD2B8;&#xC784;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.<br><code>tsconfig.json</code> &#xD30C;&#xC77C;&#xC740; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xCEF4;&#xD30C;&#xC77C;&#xD558;&#xB294; &#xB370; &#xD544;&#xC694;&#xD55C; &#xB8E8;&#xD2B8; &#xD30C;&#xC77C;&#xACFC; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC635;&#xC158;&#xC744; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB294; &#xB2E4;&#xC74C; &#xBC29;&#xBC95; &#xC911; &#xD558;&#xB098;&#xB85C; &#xCEF4;&#xD30C;&#xC77C;&#xB429;&#xB2C8;&#xB2E4;:</p>
+<h2 id="tsconfigjson-&#xC0AC;&#xC6A9;">tsconfig.json &#xC0AC;&#xC6A9;</h2>
 <ul>
-<li>By invoking tsc with no input files, in which case the compiler searches for the <code>tsconfig.json</code> file starting in the current directory and continuing up the parent directory chain.</li>
-<li>By invoking tsc with no input files and a <code>--project</code> (or just <code>-p</code>) command line option that specifies the path of a directory containing a <code>tsconfig.json</code> file, or a path to a valid <code>.json</code> file containing the configurations.</li>
+<li>&#xC785;&#xB825; &#xD30C;&#xC77C; &#xC5C6;&#xC774; tsc&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xB294; &#xACBD;&#xC6B0; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; &#xD604;&#xC7AC; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC5D0;&#xC11C;&#xBD80;&#xD130; &#xC2DC;&#xC791;&#xD558;&#xC5EC; &#xC0C1;&#xC704; &#xB514;&#xB809;&#xD1A0;&#xB9AC; &#xCCB4;&#xC778;&#xC73C;&#xB85C; &#xC774;&#xC5B4;&#xC9C0;&#xBA70; <code>tsconfig.json</code> &#xD30C;&#xC77C;&#xC744; &#xAC80;&#xC0C9;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>&#xC785;&#xB825; &#xD30C;&#xC77C;&#xC774; &#xC5C6;&#xB294; tsc&#xC640; <code>tsconfig.json</code> &#xD30C;&#xC77C;&#xC774; &#xD3EC;&#xD568;&#xB41C; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC758; &#xACBD;&#xB85C;&#xB97C; &#xC9C0;&#xC815;&#xD558;&#xB294; <code>--project</code> (&#xB610;&#xB294; <code>-p</code>) &#xCEE4;&#xB9E8;&#xB4DC; &#xB77C;&#xC778; &#xC635;&#xC158;&#xC744; &#xD638;&#xCD9C;&#xD558;&#xAC70;&#xB098; &#xC720;&#xD6A8;&#xD55C; &#xACBD;&#xB85C;&#xC758; <code>.json</code> &#xD30C;&#xC77C;&#xC5D0; &#xC124;&#xC815;&#xC774; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
 </ul>
-<p>When input files are specified on the command line, <code>tsconfig.json</code> files are ignored.</p>
-<h2 id="examples">Examples</h2>
-<p>Example <code>tsconfig.json</code> files:</p>
+<p>&#xCEE4;&#xB9E8;&#xB4DC; &#xB77C;&#xC778;&#xC5D0; &#xC785;&#xB825; &#xD30C;&#xC77C;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xBA74; <code>tsconfig.json</code> &#xD30C;&#xC77C;&#xC774; &#xBB34;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xC608;&#xC81C;">&#xC608;&#xC81C;</h2>
+<p><code>tsconfig.json</code> &#xC608;&#xC81C; &#xD30C;&#xC77C;&#xB4E4;:</p>
 <ul>
-<li><p>Using the <code>&quot;files&quot;</code> property</p>
+<li><p><code>&quot;files&quot;</code> &#xC18D;&#xC131; &#xC0AC;&#xC6A9;</p>
 <pre><code class="lang-json">{
     <span class="cm-property">&quot;compilerOptions&quot;</span>: {
         <span class="cm-property">&quot;module&quot;</span>: <span class="cm-string">&quot;commonjs&quot;</span>,
@@ -733,7 +732,7 @@ A project is compiled in one of the following ways:</p>
 }
 </code></pre>
 </li>
-<li><p>Using the <code>&quot;include&quot;</code> and <code>&quot;exclude&quot;</code> properties</p>
+<li><p><code>&quot;include&quot;</code> &#xBC0F; <code>&quot;exclude&quot;</code> &#xC18D;&#xC131; &#xC0AC;&#xC6A9;</p>
 <pre><code class="lang-json">{
     <span class="cm-property">&quot;compilerOptions&quot;</span>: {
         <span class="cm-property">&quot;module&quot;</span>: <span class="cm-string">&quot;system&quot;</span>,
@@ -754,65 +753,53 @@ A project is compiled in one of the following ways:</p>
 </code></pre>
 </li>
 </ul>
-<h2 id="details">Details</h2>
-<p>The <code>&quot;compilerOptions&quot;</code> property can be omitted, in which case the compiler&apos;s defaults are used. See our full list of supported <a href="Compiler%20Options.md">Compiler Options</a>.</p>
-<p>The <code>&quot;files&quot;</code> property takes a list of relative or absolute file paths.
-The <code>&quot;include&quot;</code> and <code>&quot;exclude&quot;</code> properties take a list of glob-like file patterns.
-The supported glob wildcards are:</p>
+<h2 id="&#xC0C1;&#xC138;-&#xC124;&#xBA85;">&#xC0C1;&#xC138; &#xC124;&#xBA85;</h2>
+<p><code>&quot;compilerOptions&quot;</code> &#xC18D;&#xC131;&#xC740; &#xC0DD;&#xB7B5;&#xB420; &#xC218; &#xC788;&#xC73C;&#xBA70; &#xC774; &#xACBD;&#xC6B0; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xC758; &#xAE30;&#xBCF8; &#xAC12;&#xC774; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC9C0;&#xC6D0;&#xB418;&#xB294; <a href="Compiler%20Options.md">&#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC635;&#xC158;</a>&#xC758; &#xC804;&#xCCB4; &#xBAA9;&#xB85D;&#xBCF4;&#xAE30;</p>
+<p><code>&quot;files&quot;</code> &#xC18D;&#xC131;&#xC740; &#xC0C1;&#xB300;&#xC801;&#xC774;&#xAC70;&#xB098; &#xC808;&#xB300;&#xC801;&#xC778; &#xD30C;&#xC77C; &#xACBD;&#xB85C; &#xBAA9;&#xB85D;&#xC744; &#xAC16;&#xC2B5;&#xB2C8;&#xB2E4;.<br><code>&quot;include&quot;</code>&#xC640; <code>&quot;exclude&quot;</code>&#xB294; glob &#xD30C;&#xC77C; &#xD328;&#xD134;&#xC758; &#xBAA9;&#xB85D;&#xACFC; &#xAC19;&#xC740; &#xC18D;&#xC131;&#xC744; &#xAC16;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC9C0;&#xC6D0;&#xB418;&#xB294; glob &#xC640;&#xC77C;&#xB4DC;&#xCE74;&#xB4DC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <ul>
-<li><code>*</code> matches zero or more characters (excluding directory separators)</li>
-<li><code>?</code> matches any one character (excluding directory separators)</li>
-<li><code>**/</code> recursively matches any subdirectory</li>
+<li><code>*</code> 0&#xAC1C; &#xC774;&#xC0C1;&#xC758; &#xBB38;&#xC790;&#xC640; &#xB9E4;&#xCE6D; (&#xB514;&#xB809;&#xD1A0;&#xB9AC; separator &#xC81C;&#xC678;)</li>
+<li><code>?</code> &#xD55C; &#xBB38;&#xC790;&#xC640; &#xB9E4;&#xCE6D; (&#xB514;&#xB809;&#xD1A0;&#xB9AC; separator &#xC81C;&#xC678;)</li>
+<li><code>**/</code> &#xBC18;&#xBCF5;&#xC801;&#xC73C;&#xB85C; &#xBAA8;&#xB4E0; &#xD558;&#xC704; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC640; &#xB9E4;&#xCE6D;</li>
 </ul>
-<p>If a segment of a glob pattern includes only <code>*</code> or <code>.*</code>, then only files with supported extensions are included (e.g. <code>.ts</code>, <code>.tsx</code>, and <code>.d.ts</code> by default with <code>.js</code> and <code>.jsx</code> if <code>allowJs</code> is set to true).</p>
-<p>If the <code>&quot;files&quot;</code> and <code>&quot;include&quot;</code> are both left unspecified, the compiler defaults to including all TypeScript (<code>.ts</code>, <code>.d.ts</code> and <code>.tsx</code>) files in the containing directory and subdirectories except those excluded using the <code>&quot;exclude&quot;</code> property. JS files (<code>.js</code> and <code>.jsx</code>) are also included if <code>allowJs</code> is set to true.
-If the <code>&quot;files&quot;</code> or <code>&quot;include&quot;</code> properties are specified, the compiler will instead include the union of the files included by those two properties.
-Files in the directory specified using the <code>&quot;outDir&quot;</code> compiler option are excluded as long as <code>&quot;exclude&quot;</code> property is not specfied. </p>
-<p>Files included using <code>&quot;include&quot;</code> can be filtered using the <code>&quot;exclude&quot;</code> property.
-However, files included explicitly using the <code>&quot;files&quot;</code> property are always included regardless of <code>&quot;exclude&quot;</code>.
-The <code>&quot;exclude&quot;</code> property defaults to excluding the <code>node_modules</code>, <code>bower_components</code>, <code>jspm_packages</code> and <code>&lt;outDir&gt;</code> directories when not specified.</p>
-<p>Any files that are referenced by files included via the <code>&quot;files&quot;</code> or <code>&quot;include&quot;</code> properties are also included.
-Similarly, if a file <code>B.ts</code> is referenced by another file <code>A.ts</code>, then <code>B.ts</code> cannot be excluded unless the referencing file <code>A.ts</code> is also specified in the <code>&quot;exclude&quot;</code> list.</p>
-<p>Please note that the compiler does not include files that can be possible outputs; e.g. if the input includes <code>index.ts</code>, then <code>index.d.ts</code> and <code>index.js</code> are excluded.
-In general, having files that differ only in extension next to each other is not recomended.</p>
-<p>A <code>tsconfig.json</code> file is permitted to be completely empty, which compiles all files included by default (as described above) with the default compiler options.</p>
-<p>Compiler options specified on the command line override those specified in the <code>tsconfig.json</code> file.</p>
-<h2 id="types-typeroots-and-types"><code>@types</code>, <code>typeRoots</code> and <code>types</code></h2>
-<p>By default all <em>visible</em> &quot;<code>@types</code>&quot; packages are included in your compilation.
-Packages in <code>node_modules/@types</code> of any enclosing folder are considered <em>visible</em>;
-specifically, that means packages within <code>./node_modules/@types/</code>,  <code>../node_modules/@types/</code>, <code>../../node_modules/@types/</code>, and so on.</p>
-<p>If <code>typeRoots</code> is specified, <em>only</em> packages under <code>typeRoots</code> will be included.
-For example:</p>
+<p>glob &#xD328;&#xD134;&#xC758; &#xAD6C;&#xBD84;&#xC5D0; <code>*</code> &#xB610;&#xB294; <code>. *</code>&#xB9CC; &#xC788;&#xB294; &#xACBD;&#xC6B0;, &#xC9C0;&#xC6D0;&#xD558;&#xB294; &#xD655;&#xC7A5;&#xC790; &#xD30C;&#xC77C;&#xB9CC; &#xD3EC;&#xD568;&#xB429;&#xB2C8;&#xB2E4; (&#xC608;: &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C;&#xB294; <code>.ts</code>, <code>.tsx</code> &#xBC0F; <code>.d.ts</code> / <code>allowJs</code> true&#xB85C; &#xC124;&#xC815;&#xC2DC; <code>.js</code>&#xC640; <code>.jsx</code>).</p>
+<p><code>&quot;files&quot;</code>&#xACFC; <code>&quot;include&quot;</code> &#xBAA8;&#xB450; &#xC9C0;&#xC815;&#xB418;&#xC5B4; &#xC788;&#xC9C0; &#xC54A;&#xC744; &#xACBD;&#xC6B0; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xBAA8;&#xB4E0; TypeScript (<code>.ts</code>,<code>.d.ts</code> &#xADF8;&#xB9AC;&#xACE0; <code>.tsx</code>) &#xD30C;&#xC77C;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xB294; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC640; &#xD558;&#xC704; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC5D0; &#xD3EC;&#xD568;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;.<br><code>&quot;exclude&quot;</code> &#xC18D;&#xC131;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC81C;&#xC678;&#xB41C; &#xAC83;&#xC740; &#xC81C;&#xC678;&#xD569;&#xB2C8;&#xB2E4;.<br><code>allowJs</code>&#xAC00; true&#xB85C; &#xC124;&#xC815;&#xB418;&#xBA74; JS &#xD30C;&#xC77C;(<code>.js</code>&#xC640; <code>.jsx</code>)&#xB3C4; &#xD3EC;&#xD568;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p><code>&quot;files&quot;</code>&#xACFC; <code>&quot;include&quot;</code> &#xBAA8;&#xB450; &#xC9C0;&#xC815;&#xB418;&#xC5B4; &#xC788;&#xB294; &#xACBD;&#xC6B0; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; &#xADF8; &#xB450; &#xC18D;&#xC131;&#xC5D0; &#xD3EC;&#xD568;&#xB41C; &#xD30C;&#xC77C;&#xC758; &#xACB0;&#xD569;(union)&#xC744; &#xB300;&#xC2E0; &#xD3EC;&#xD568;&#xD569;&#xB2C8;&#xB2E4;.<br><code>&quot;outDir&quot;</code> &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC9C0;&#xC815;&#xB41C; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC758; &#xD30C;&#xC77C;&#xB4E4;&#xC740; <code>&quot;exclude&quot;</code> &#xC18D;&#xC131;&#xC774; &#xC9C0;&#xC815;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xD55C; &#xC81C;&#xC678;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p><code>&quot;include&quot;</code>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD3EC;&#xD568;&#xB41C; &#xD30C;&#xC77C;&#xB4E4;&#xC740; <code>&quot;exclude&quot;</code> &#xC18D;&#xC131;&#xC744; &#xC0AC;&#xC6A9;&#xD574; &#xD544;&#xD130;&#xB9C1;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB7EC;&#xB098; <code>&quot;files&quot;</code> &#xC18D;&#xC131;&#xC744; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xD30C;&#xC77C;&#xC740; <code>&quot;exclude&quot;</code>&#xC5D0; &#xAD00;&#xACC4;&#xC5C6;&#xC774; &#xD56D;&#xC0C1; &#xD3EC;&#xD568;&#xB429;&#xB2C8;&#xB2E4;.<br><code>&quot;exclude&quot;</code> &#xC18D;&#xC131;&#xC5D0; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xAC00; &#xC9C0;&#xC815;&#xB418;&#xC9C0; &#xC788;&#xC9C0; &#xC54A;&#xC744; &#xACBD;&#xC6B0; <code>node_modules</code>, <code>bower_components</code>, <code>jspm_packages</code> &#xADF8;&#xB9AC;&#xACE0; <code>&lt;outDir&gt;</code>&#xB97C; &#xC81C;&#xC678;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><code>&quot;files&quot;</code> &#xB610;&#xB294; <code>&quot;include&quot;</code> &#xC18D;&#xC131;&#xC744; &#xD1B5;&#xD574; &#xD30C;&#xC77C;&#xC5D0; &#xCC38;&#xC870;&#xB418;&#xB294; &#xBAA8;&#xB4E0; &#xD30C;&#xC77C;&#xB3C4; &#xD3EC;&#xD568;&#xB429;&#xB2C8;&#xB2E4;.  </p>
+<p>&#xBE44;&#xC2B7;&#xD558;&#xAC8C;, &#xD30C;&#xC77C; <code>B.ts</code>&#xAC00; &#xB610; &#xB2E4;&#xB978; &#xD30C;&#xC77C; <code>A.ts</code>&#xC5D0; &#xC758;&#xD574; &#xCC38;&#xC870;&#xB418;&#xB294; &#xACBD;&#xC6B0;, <code>B.ts</code>&#xB294; &#xCC38;&#xC870; &#xD30C;&#xC77C; <code>A.ts</code>&#xAC00; <code>&quot;exclude&quot;</code> &#xB9AC;&#xC2A4;&#xD2B8;&#xC5D0;&#xC11C;&#xB3C4; &#xC9C0;&#xC815;&#xB418;&#xC9C0; &#xC54A;&#xB294; &#xD55C; &#xC81C;&#xC678;&#xB420; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xC5D0;&#xB294; &#xC2E4;&#xD589;&#xD560; &#xC218; &#xC788;&#xB294; &#xCD9C;&#xB825; &#xD30C;&#xC77C;&#xC774; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xC9C0; &#xC54A;&#xB2E4;&#xB294; &#xC810;&#xC5D0; &#xC8FC;&#xC758;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xC989; &#xC785;&#xB825;&#xC5D0; <code>index.ts</code>&#xAC00; &#xD3EC;&#xD568;&#xB418;&#xBA74; <code>index.d.ts</code>&#xC640; <code>index.js</code>&#xB294; &#xC81C;&#xC678;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xD30C;&#xC77C;&#xC774; &#xD655;&#xC7A5;&#xC790;&#xB9CC; &#xB2E4;&#xB974;&#xAC8C; &#xB098;&#xB780;&#xD788; &#xC788;&#xB294; &#xAC83;&#xC740; &#xAD8C;&#xC7A5;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>tsconfig.json</code> &#xD30C;&#xC77C;&#xC740; &#xC644;&#xC804;&#xD788; &#xBE44;&#xC5B4;&#xC788;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xAE30;&#xBCF8; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC635;&#xC158;&#xC73C;&#xB85C; &#xAE30;&#xBCF8;&#xC801;&#xC778;(&#xC704;&#xC5D0;&#xC11C; &#xC124;&#xBA85;&#xD55C;&#xB300;&#xB85C;) &#xD3EC;&#xD568;&#xB41C; &#xBAA8;&#xB4E0; &#xD30C;&#xC77C;&#xC744; &#xCEF4;&#xD30C;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xAE30;&#xBCF8; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC635;&#xC158;&#xC73C;&#xB85C; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C;(&#xC704;&#xC5D0;&#xC11C; &#xC124;&#xBA85;&#xD55C;&#xB300;&#xB85C;) &#xBAA8;&#xB4E0; &#xD30C;&#xC77C;&#xC744; &#xCEF4;&#xD30C;&#xC77C;&#xD558;&#xB294; &#xAC83;&#xC774; <code>tsconfig.json</code>&#xD30C;&#xC77C;&#xC744; &#xC644;&#xC804;&#xD788; &#xBE44;&#xC6CC; &#xB450;&#xB294; &#xAC83;&#xC744; &#xD5C8;&#xC6A9;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.</p>
+<p>&#xCEE4;&#xB9E8;&#xB4DC; &#xB77C;&#xC778;&#xC5D0; &#xC9C0;&#xC815;&#xB41C; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC635;&#xC158;&#xC740; <code>tsconfig.json</code> &#xD30C;&#xC77C;&#xC5D0; &#xC9C0;&#xC815;&#xB41C; &#xC635;&#xC158;&#xC744; &#xC624;&#xBC84;&#xB77C;&#xC774;&#xB4DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="types-typeroots-&#xBC0F;-types"><code>@types</code>, <code>typeRoots</code> &#xBC0F; <code>types</code></h2>
+<p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; <em>&#xD45C;&#xC2DC;&#xB41C;</em> &#xBAA8;&#xB4E0; &quot;<code>@types</code>&quot; &#xD328;&#xD0A4;&#xC9C0;&#xAC00; &#xCEF4;&#xD30C;&#xC77C;&#xC5D0; &#xD3EC;&#xD568;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xB3D9;&#xBD09;&#xB41C; &#xBAA8;&#xB4E0; &#xD3F4;&#xB354;&#xC758; <code>node_modules/@types</code> &#xD328;&#xD0A4;&#xC9C0;&#xB294; &#xD45C;&#xC2DC;&#xB41C; &#xAC83;&#xC73C;&#xB85C; &#xAC04;&#xC8FC;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xAD6C;&#xCCB4;&#xC801;&#xC73C;&#xB85C; <code>./node_modules/@types/</code>,  <code>../node_modules/@types/</code>, <code>../../node_modules/@types/</code> &#xB4F1;&#xC758; &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><code>typeRoots</code>&#xB97C; &#xC9C0;&#xC815;&#xD558;&#xBA74; <code>typeRoots</code> &#xC544;&#xB798;&#xC5D0; &#xC788;&#xB294; &#xD328;&#xD0A4;&#xC9C0;<em>&#xB9CC;</em> &#xD3EC;&#xD568;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;</p>
 <pre><code class="lang-json">{
    <span class="cm-property">&quot;compilerOptions&quot;</span>: {
        <span class="cm-property">&quot;typeRoots&quot;</span> : [<span class="cm-string">&quot;./typings&quot;</span>]
    }
 }
 </code></pre>
-<p>This config file will include <em>all</em> packages under <code>./typings</code>, and no packages from <code>./node_modules/@types</code>.</p>
-<p>If <code>types</code> is specified, only packages listed will be included.
-For instance:</p>
+<p>&#xC774; &#xC124;&#xC815; &#xD30C;&#xC77C;&#xC5D0;&#xB294; <code>./typings</code>&#xC758; <em>&#xBAA8;&#xB4E0;</em> &#xD328;&#xD0A4;&#xC9C0;&#xAC00; &#xD3EC;&#xD568;&#xB418;&#xBA70; <code>./node_modules/@types</code>&#xC758; &#xD328;&#xD0A4;&#xC9C0;&#xB294; &#xD3EC;&#xD568;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>types</code>&#xC744; &#xC9C0;&#xC815;&#xD560; &#xACBD;&#xC6B0; &#xB098;&#xC5F4;&#xB41C; &#xD328;&#xD0A4;&#xC9C0;&#xB9CC; &#xD3EC;&#xD568;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;:</p>
 <pre><code class="lang-json">{
    <span class="cm-property">&quot;compilerOptions&quot;</span>: {
        <span class="cm-property">&quot;types&quot;</span> : [<span class="cm-string">&quot;node&quot;</span>, <span class="cm-string">&quot;lodash&quot;</span>, <span class="cm-string">&quot;express&quot;</span>]
    }
 }
 </code></pre>
-<p>This <code>tsconfig.json</code> file will <em>only</em> include  <code>./node_modules/@types/node</code>, <code>./node_modules/@types/lodash</code> and <code>./node_modules/@types/express</code>.
-Other packages under <code>node_modules/@types/*</code> will not be included. </p>
-<p>A types package is a folder with a file called <code>index.d.ts</code> or a folder with a <code>package.json</code> that has a <code>types</code> field.</p>
-<p>Specify <code>&quot;types&quot;: []</code> to disable automatic inclusion of <code>@types</code> packages.</p>
-<p>Keep in mind that automatic inclusion is only important if you&apos;re using files with global declarations (as opposed to files declared as modules).
-If you use an <code>import &quot;foo&quot;</code> statement, for instance, TypeScript may still look through <code>node_modules</code> &amp; <code>node_modules/@types</code> folders to find the <code>foo</code> package.</p>
-<h2 id="configuration-inheritance-with-extends">Configuration inheritance with <code>extends</code></h2>
-<p>A <code>tsconfig.json</code> file can inherit configurations from another file using the <code>extends</code> property.</p>
-<p>The <code>extends</code> is a top-level property in <code>tsconfig.json</code> (alongside <code>compilerOptions</code>, <code>files</code>, <code>include</code>, and <code>exclude</code>).
-<code>extends</code>&apos; value is a string containing a path to another configuration file to inherit from.</p>
-<p>The configuration from the base file are loaded first, then overridden by those  in the inheriting config file.
-If a circularity is encountered, we report an error.</p>
-<p><code>files</code>, <code>include</code> and <code>exclude</code> from the inheriting config file <em>overwrite</em> those from the base config file.</p>
-<p>All relative paths found in the configuration file will be resolved relative to the configuration file they originated in.</p>
-<p>For example:</p>
+<p>&#xC774; <code>tsconfig.json</code>&#xC740; <em>&#xC624;&#xC9C1;</em> <code>./node_modules/@types/node</code>, <code>./node_modules/@types/lodash</code> &#xBC0F; <code>./node_modules/@types/express</code>&#xB9CC; &#xD3EC;&#xD568;&#xD569;&#xB2C8;&#xB2E4;.<br><code>node_modules/@types/*</code> &#xC544;&#xB798;&#xC758; &#xB2E4;&#xB978; &#xD328;&#xD0A4;&#xC9C0;&#xB294; &#xD3EC;&#xD568;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>types &#xD328;&#xD0A4;&#xC9C0;&#xB294; <code>index.d.ts</code> &#xD30C;&#xC77C;&#xC774; &#xC788;&#xB294; &#xD3F4;&#xB354; &#xB610;&#xB294; &#xD3F4;&#xB354;&#xC5D0; <code>types</code> &#xD544;&#xB4DC;&#xB97C; &#xAC00;&#xC9C4; <code>package.json</code>&#xAC00; &#xC788;&#xB294; &#xD3F4;&#xB354;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p><code>&quot;types&quot;: []</code>&#xB97C; &#xC9C0;&#xC815;&#xD558;&#xBA74; <code>@types</code> &#xD328;&#xD0A4;&#xC9C0;&#xAC00; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xD3EC;&#xD568;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC804;&#xC5ED; &#xC120;&#xC5B8;&#xC774; &#xD3EC;&#xD568;&#xB41C; &#xD30C;&#xC77C;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;&#xB9CC; &#xC790;&#xB3D9; &#xD3EC;&#xD568;&#xC774; &#xC911;&#xC694;&#xD558;&#xB2E4;&#xB294; &#xC810;&#xC5D0; &#xBA85;&#xC2EC;&#xD558;&#xC138;&#xC694; (&#xBAA8;&#xB4C8;&#xB85C; &#xC120;&#xC5B8;&#xB41C; &#xD30C;&#xC77C;&#xACFC; &#xB2EC;&#xB9AC;).<br>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; <code>import &quot;foo&quot;</code> &#xBB38;&#xC744; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xBA74; TypeScript&#xB294; &#xC5EC;&#xC804;&#xD788; <code>node_modules</code> &amp; <code>node_modules/@types</code> &#xD3F4;&#xB354;&#xB97C; &#xBCF4;&#xACE0; <code>foo</code> &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xCC3E;&#xC744; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. </p>
+<h2 id="extends&#xB97C;-&#xC774;&#xC6A9;&#xD55C;-&#xC124;&#xC815;-&#xC0C1;&#xC18D;-configuration-inheritance-with-extends"><code>extends</code>&#xB97C; &#xC774;&#xC6A9;&#xD55C; &#xC124;&#xC815; &#xC0C1;&#xC18D; (Configuration inheritance with <code>extends</code>)</h2>
+<p><code>tsconfig.json</code> &#xD30C;&#xC77C;&#xC740; <code>extends</code> &#xC18D;&#xC131;&#xC744;  &#xC0AC;&#xC6A9;&#xD574; &#xB2E4;&#xB978; &#xD30C;&#xC77C;&#xC758; &#xC124;&#xC815;&#xC744; &#xC0C1;&#xC18D;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>extends</code>&#xB294; <code>tsconfig.json</code>&#xC758; &#xCD5C;&#xC0C1;&#xC704; &#xC18D;&#xC131; (<code>compilerOptions</code>,<code>files</code>,<code>include</code> &#xBC0F; <code>exclude</code>&#xC640; &#xD568;&#xAED8;) &#xC785;&#xB2C8;&#xB2E4;.<br><code>extends</code>&apos; &#xAC12;&#xC740; &#xC0C1;&#xC18D;&#xBC1B;&#xC744; &#xB2E4;&#xB978; &#xC124;&#xC815; &#xD30C;&#xC77C;&#xC758; &#xACBD;&#xB85C;&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xB294; &#xBB38;&#xC790;&#xC5F4;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xAE30;&#xBCF8; &#xD30C;&#xC77C;&#xC758; &#xC124;&#xC815;&#xC774; &#xBA3C;&#xC800; &#xB85C;&#xB4DC;&#xB41C; &#xB2E4;&#xC74C; &#xC0C1;&#xC18D;&#xB418;&#xB294; &#xC124;&#xC815; &#xD30C;&#xC77C;&#xC758; &#xC124;&#xC815;&#xC5D0; &#xC758;&#xD574; &#xC7AC;&#xC815;&#xC758;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC21C;&#xD658;&#xC131; &#xC7A5;&#xC560;&#xC640; &#xB9DE;&#xB2E5;&#xB728;&#xB9AC;&#xBA74; &#xC624;&#xB958;&#xB97C; &#xBCF4;&#xACE0;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC0C1;&#xC18D; &#xC124;&#xC815; &#xD30C;&#xC77C;&#xC5D0;&#xC11C; <code>files</code>, <code>include</code> &#xBC0F; <code>exclude</code>&#xB294; &#xAE30;&#xBCF8; &#xC124;&#xC815; &#xD30C;&#xC77C;&#xC744; <em>&#xB36E;&#xC5B4;&#xC501;&#xB2C8;&#xB2E4;.</em></p>
+<p>&#xC124;&#xC815; &#xD30C;&#xC77C;&#xC5D0; &#xC788;&#xB294; &#xBAA8;&#xB4E0; &#xC0C1;&#xB300;&#xC801; &#xACBD;&#xB85C;&#xB294; &#xD574;&#xB2F9; &#xACBD;&#xB85C;&#xAC00; &#xC6D0;&#xB798; &#xC788;&#xB358; &#xC124;&#xC815; &#xD30C;&#xC77C;&#xC744; &#xAE30;&#xC900;&#xC73C;&#xB85C; &#xD574;&#xC11D;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;:</p>
 <p><code>configs/base.json</code>:</p>
 <pre><code class="lang-json">{
   <span class="cm-property">&quot;compilerOptions&quot;</span>: {
@@ -839,7 +826,7 @@ If a circularity is encountered, we report an error.</p>
 }
 </code></pre>
 <h2 id="compileonsave"><code>compileOnSave</code></h2>
-<p>Setting a top-level property <code>compileOnSave</code> signals to the IDE to generate all files for a given tsconfig.json upon saving.</p>
+<p>&#xCD5C;&#xC0C1;&#xC704; &#xC18D;&#xC131; <code>compileOnSave</code>&#xB97C; IDE&#xC5D0; &#xC124;&#xC815;&#xD558;&#xBA74; &#xC800;&#xC7A5; &#xC2DC; &#xC9C0;&#xC815;&#xB41C; tsconfig.json&#xC5D0; &#xB300;&#xD55C; &#xBAA8;&#xB4E0; &#xD30C;&#xC77C;&#xC744; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-json">{
    <span class="cm-property">&quot;compileOnSave&quot;</span>: <span class="cm-atom">true</span>,
    <span class="cm-property">&quot;compilerOptions&quot;</span>: {
@@ -847,9 +834,9 @@ If a circularity is encountered, we report an error.</p>
    }
 }
 </code></pre>
-<p>This feature is currently supported in Visual Studio 2015 with TypeScript 1.8.4 and above, and <a href="https://github.com/TypeStrong/atom-typescript#compile-on-save" target="_blank">atom-typescript</a> plugin.</p>
-<h2 id="schema">Schema</h2>
-<p>Schema can be found at: <a href="http://json.schemastore.org/tsconfig" target="_blank">http://json.schemastore.org/tsconfig</a></p>
+<p>&#xC774; &#xAE30;&#xB2A5;&#xC740; &#xD604;&#xC7AC; TypeScript 1.8.4 &#xC774;&#xC0C1;&#xACFC; <a href="https://github.com/TypeStrong/atom-typescript#compile-on-save" target="_blank">atom-typescript</a> &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC774; &#xC788;&#xB294; Visual Studio 2015&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xC2A4;&#xD0A4;&#xB9C8;">&#xC2A4;&#xD0A4;&#xB9C8;</h2>
+<p>&#xC2A4;&#xD0A4;&#xB9C8;&#xB294; <a href="http://json.schemastore.org/tsconfig" target="_blank">http://json.schemastore.org/tsconfig</a>&#xC5D0;&#xC11C; &#xCC3E;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <script src="_gitbook_plugin_analytics.js"></script>
                                 
                                 </section>
@@ -893,7 +880,7 @@ If a circularity is encountered, we report an error.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"tsconfig.json","level":"5.1","depth":1,"next":{"title":"Compiler Options","level":"5.2","depth":1,"path":"pages/Compiler Options.md","ref":"pages/Compiler Options.md","articles":[]},"previous":{"title":"Consumption","level":"4.8","depth":1,"path":"pages/declaration files/Consumption.md","ref":"pages/declaration files/Consumption.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","analytics"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"analytics":{"google":"UA-99001722-6"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tsconfig.json.md","mtime":"2018-04-09T13:24:29.865Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-11T14:34:25.111Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"tsconfig.json","level":"5.1","depth":1,"next":{"title":"Compiler Options","level":"5.2","depth":1,"path":"pages/Compiler Options.md","ref":"pages/Compiler Options.md","articles":[]},"previous":{"title":"Consumption","level":"4.8","depth":1,"path":"pages/declaration files/Consumption.md","ref":"pages/declaration files/Consumption.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","analytics"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"analytics":{"google":"UA-99001722-6"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tsconfig.json.md","mtime":"2018-04-17T07:28:07.674Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-17T07:28:53.954Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

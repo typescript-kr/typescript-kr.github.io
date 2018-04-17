@@ -100,7 +100,7 @@ console.log(x[5].toString()); // 좋아요, 'string' 및 'number'에 모두 'toS
 x[6] = true; // 오류, 'boolean'은 'string | number' 타입이 아닙니다.
 ```
 
-공용체 타입은 다음 장에서 다루게 될 고급 주제입니다.
+유니온 타입은 다음 장에서 다루게 될 고급 주제입니다.
 
 # 열거 \(Enum\)
 
@@ -242,7 +242,7 @@ function infiniteLoop(): never {
 }
 ```
 
-# 타입 표명 \(Type assertions\)
+# 타입 단언 \(Type assertions\)
 
 때로는 TypeScript보다 더 많은 값을 알아야 하는 상황에 놓일 수도 있습니다.  
 일반적으로 이 문제는 일부 엔티티의 타입이 현재 타입보다 더 구체적일 수 있다는 것을 알고 있을 때 발생합니다.
@@ -271,7 +271,7 @@ let strLength: number = (someValue as string).length;
 
 두 샘플은 동일합니다.  
 다른 하나를 사용하는 것은 주로 선호도에 따른 선택입니다.  
-그러나 TypeScript를 JSX와 함께 사용할 때는 `as` 스타일의 표명만 허용됩니다.
+그러나 TypeScript를 JSX와 함께 사용할 때는 `as` 스타일의 단언만 허용됩니다.
 
 # `let`에 대한 메모
 
