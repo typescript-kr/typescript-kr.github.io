@@ -1,13 +1,13 @@
-## Compiler Options
+## 컴파일러 옵션
 
-Option                                         | Type      | Default                        | Description
+옵션                                           | 타입      | 기본값                         | 설명
 -----------------------------------------------|-----------|--------------------------------|----------------------------------------------------------------------
-`--allowJs`                                    | `boolean` | `false`                        | Allow JavaScript files to be compiled.
-`--allowSyntheticDefaultImports`               | `boolean` | `module === "system"`          | Allow default imports from modules with no default export. This does not affect code emit, just typechecking.
-`--allowUnreachableCode`                       | `boolean` | `false`                        | Do not report errors on unreachable code.
-`--allowUnusedLabels`                          | `boolean` | `false`                        | Do not report errors on unused labels.
-`--alwaysStrict`                               | `boolean` | `false`                        | Parse in strict mode and emit `"use strict"` for each source file
-`--baseUrl`                                    | `string`  |                                | Base directory to resolve non-relative module names. See [Module Resolution documentation](./Module Resolution.md#base-url) for more details.
+`--allowJs`                                    | `boolean` | `false`                        | JavaScript 파일 컴파일 허용합니다
+`--allowSyntheticDefaultImports`               | `boolean` | `module === "system"`          | default export가 없는 모듈에서 default imports를 허용합니다. 코드 방출에는 영향을 주지 않으며 단지 타입 검사에 불과합니다.
+`--allowUnreachableCode`                       | `boolean` | `false`                        | 연결할 수 없는 코드에 대한 오류를 보고하지 않습니다.
+`--allowUnusedLabels`                          | `boolean` | `false`                        | 사용되지 않는 레이블에 대한 오류 보고하지 않습니다.
+`--alwaysStrict`                               | `boolean` | `false`                        | 각 소스 파일에 대해 strict 모드로 구문 파싱을 하고 `"use strict"`을 내보냅니다.
+`--baseUrl`                                    | `string`  |                                | 비-상대적 모듈 이름을 해석하기 위한 기본 디렉토리. 자세한 내용은 [모듈 해석 문서](./Module Resolution.md#base-url)을 참조하세요.
 `--charset`                                    | `string`  | `"utf8"`                       | The character set of the input files.
 `--checkJs`                                    | `boolean` | `false`                        | Report errors in `.js` files. Use in conjunction with `--allowJs`.
 `--declaration`<br/>`-d`                       | `boolean` | `false`                        | Generates corresponding `.d.ts` file.
@@ -30,12 +30,12 @@ Option                                         | Type      | Default            
 `--lib`                                        | `string[]`|                                | List of library files to be included in the compilation.<br/>Possible values are:  <br/>► `ES5` <br/>► `ES6` <br/>► `ES2015` <br/>► `ES7` <br/>► `ES2016` <br/>► `ES2017` <br/>► `ESNext` <br/>► `DOM` <br/>► `DOM.Iterable` <br/>► `WebWorker` <br/>► `ScriptHost` <br/>► `ES2015.Core` <br/>► `ES2015.Collection` <br/>► `ES2015.Generator` <br/>► `ES2015.Iterable` <br/>► `ES2015.Promise` <br/>► `ES2015.Proxy` <br/>► `ES2015.Reflect` <br/>► `ES2015.Symbol` <br/>► `ES2015.Symbol.WellKnown` <br/>► `ES2016.Array.Include` <br/>► `ES2017.object` <br/>► `ES2017.SharedMemory` <br/>► `ES2017.TypedArrays` <br/>► `esnext.asynciterable` <br/>► `esnext.promise` <br/><br/> Note: If `--lib` is not specified a default list of librares are injected. The default libraries injected are:  <br/> ► For `--target ES5`: `DOM,ES5,ScriptHost`<br/>  ► For `--target ES6`: `DOM,ES6,DOM.Iterable,ScriptHost`
 `--listEmittedFiles`                           | `boolean` | `false`                        | Print names of generated files part of the compilation.
 `--listFiles`                                  | `boolean` | `false`                        | Print names of files part of the compilation.
-`--locale`                                     | `string`  | *(platform specific)*          | The locale to use to show error messages, e.g. en-us. <br/>Possible values are:  <br/>► English (US): `en` <br/>► Czech: `cs` <br/>► German: `de` <br/>► Spanish: `es` <br/>► French: `fr` <br/>► Italian: `it` <br/>► Japanese: `ja` <br/>► Korean: `ko` <br/>► Polish: `pl` <br/>► Portuguese(Brazil): `pt-BR` <br/>► Russian: `ru` <br/>► Turkish: `tr` <br/>► Simplified Chinese: `zh-CN`  <br/>► Traditional Chinese: `zh-TW`
+`--locale`                                     | `string`  | *(특정 플랫폼)*          | The locale to use to show error messages, e.g. en-us. <br/>Possible values are:  <br/>► English (US): `en` <br/>► Czech: `cs` <br/>► German: `de` <br/>► Spanish: `es` <br/>► French: `fr` <br/>► Italian: `it` <br/>► Japanese: `ja` <br/>► Korean: `ko` <br/>► Polish: `pl` <br/>► Portuguese(Brazil): `pt-BR` <br/>► Russian: `ru` <br/>► Turkish: `tr` <br/>► Simplified Chinese: `zh-CN`  <br/>► Traditional Chinese: `zh-TW`
 `--mapRoot`                                    | `string`  |                                | Specifies the location where debugger should locate map files instead of generated locations. Use this flag if the .map files will be located at run-time in a different location than the .js files. The location specified will be embedded in the sourceMap to direct the debugger where the map files will be located.
 `--maxNodeModuleJsDepth`                       | `number`  | `0`                            | The maximum dependency depth to search under node_modules and load JavaScript files. Only applicable with `--allowJs`.
 `--module`<br/>`-m`                            | `string`  | `target === "ES3" or "ES5" ? "CommonJS" : "ES6"`   | Specify module code generation: `"None"`, `"CommonJS"`, `"AMD"`, `"System"`, `"UMD"`, `"ES6"`, `"ES2015"` or `"ESNext"`.<br/>► Only `"AMD"` and `"System"` can be used in conjunction with `--outFile`.<br/>► `"ES6"` and `"ES2015"` values may be used when targeting `"ES5"` or lower.
 `--moduleResolution`                           | `string`  | `module === "AMD" or "System" or "ES6" ?  "Classic" : "Node"`                    | Determine how modules get resolved. Either `"Node"` for Node.js/io.js style resolution, or `"Classic"`. See [Module Resolution documentation](./Module Resolution.md) for more details.
-`--newLine`                                    | `string`  | *(platform specific)*          | Use the specified end of line sequence to be used when emitting files: `"crlf"` (windows) or `"lf"` (unix)."
+`--newLine`                                    | `string`  | *(특정 플랫폼)*          | Use the specified end of line sequence to be used when emitting files: `"crlf"` (windows) or `"lf"` (unix)."
 `--noEmit`                                     | `boolean` | `false`                        | Do not emit outputs.
 `--noEmitHelpers`                              | `boolean` | `false`                        | Do not generate custom helper functions like `__extends` in compiled output.
 `--noEmitOnError`                              | `boolean` | `false`                        | Do not emit outputs if any errors were reported.
@@ -60,7 +60,7 @@ Option                                         | Type      | Default            
 `--project`<br/>`-p`                           | `string`  |                                | Compile a project given a valid configuration file.<br/>The argument can be a file path to a valid JSON configuration file, or a directory path to a directory containing a `tsconfig.json` file.<br/>See [tsconfig.json](./tsconfig.json.md) documentation for more details.
 `--reactNamespace`                             | `string`  | `"React"`                      | DEPRECATED. Use `--jsxFactory` instead.<br/>Specifies the object invoked for `createElement` and `__spread` when targeting `"react"` JSX emit.
 `--removeComments`                             | `boolean` | `false`                        | Remove all comments except copy-right header comments beginning with `/*!`
-`--rootDir`                                    | `string`  | *(common root directory is computed from the list of input files)*   | Specifies the root directory of input files. Only use to control the output directory structure with `--outDir`.
+`--rootDir`                                    | `string`  | *(공통 루트 디렉토리는 input files 리스트에서 처리됩니다)*   | Specifies the root directory of input files. Only use to control the output directory structure with `--outDir`.
 `rootDirs`<sup>[2]</sup>                       | `string[]`|                                | List of <i>root</i> folders whose combined content represent the structure of the project at runtime. See [Module Resolution documentation](./Module Resolution.md#virtual-directories-with-rootdirs) for more details.
 `--skipDefaultLibCheck`                        | `boolean` | `false`                        | DEPRECATED. Use `--skipLibCheck` instead.<br/>Skip type checking of [default library declaration files](./Triple-Slash Directives.md#-reference-no-default-libtrue).
 `--skipLibCheck`                               | `boolean` | `false`                        | Skip type checking of all declaration files (`*.d.ts`).
@@ -79,10 +79,10 @@ Option                                         | Type      | Default            
 `--version`<br/>`-v`                           |           |                                | Print the compiler's version.
 `--watch`<br/>`-w`                             |           |                                | Run the compiler in watch mode. Watch input files and trigger recompilation on changes.
 
-* <sup>[1]</sup> These options are experimental.
-* <sup>[2]</sup> These options are only allowed in `tsconfig.json`, and not through command-line switches.
+* <sup>[1]</sup> 이 옵션은 실험단계입니다.
+* <sup>[2]</sup> 이 옵션은 `tsconfig.json`에서만 허용되며 커맨드 라인에서는 허용되지 않습니다.
 
-## Related
+## 관련사항
 
-* Setting compiler options in [`tsconfig.json`](./tsconfig.json.md) files.
-* Setting compiler options in [MSBuild projects](./Compiler-Options-in-MSBuild.md).
+* [`tsconfig.json`](./tsconfig.json.md) 파일에서 컴파일러 옵션 설정하기
+* [MSBuild projects](./Compiler-Options-in-MSBuild.md) 프로젝트에서 컴파일러 옵션 설정하기
