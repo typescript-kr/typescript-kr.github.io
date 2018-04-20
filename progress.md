@@ -40,7 +40,7 @@
 - [ ] Consumption
 ## 프로젝트 환경설정
 - [x] tsconfig.json
-- [ ] Compiler Options
+- [x] Compiler Options
 - [ ] Compiler Options in MSBuild
 - [ ] Integrating with Build Tools
 - [ ] Nightly Builds
