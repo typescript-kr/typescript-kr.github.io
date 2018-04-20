@@ -65,7 +65,7 @@
 `--skipDefaultLibCheck`                        | `boolean` | `false`                        | DEPRECATED 되었습니다. `--skipLibCheck`를 대신 사용합니다.<br/>[기본 라이브러리 선언 파일](./Triple-Slash Directives.md#-reference-no-default-libtrue)의 타입 검사 건너뛰기[default library declaration files].
 `--skipLibCheck`                               | `boolean` | `false`                        | 모든 선언 파일(`*.d.ts`)의 타입 검사를 건너뜁니다.
 `--sourceMap`                                  | `boolean` | `false`                        | 해당하는 `.map` 파일을 생성합니다.
-`--sourceRoot`                                 | `string`  |                                | 디버거가 소스 위치 대신 TypeScript 파일을 찾아야 하는 위치를 지정합니다. The location specified will be embedded in the sourceMap to direct the debugger where the source files will be located.
+`--sourceRoot`                                 | `string`  |                                | 디버거가 소스 위치 대신 TypeScript 파일을 찾아야 하는 위치를 지정합니다. 설계 시점에 소스가 아닌 런타임에 소스가 있는 경우 이 옵션을 사용하세요. 지정한 위치는 소스 파일이 위치할 디버깅 위치를 지정하기 위해 소스 맵에 포함됩니다.
 `--strict`                                     | `boolean` | `false`                        | 모든 엄격한 타입 검사 옵션을 활성화합니다. <br/>`--strict`를 활성화하면 `--noImplicitAny`, `--noImplicitThis`, `--alwaysStrict`, `--strictNullChecks` 및 `--strictFunctionTypes`이 가능합니다.
 `--strictFunctionTypes`                        | `boolean` | `false`                        | 함수 타입에 대한 bivariant 매개변수를 비활성화합니다.
 `--strictNullChecks`                           | `boolean` | `false`                        | strict null checking 모드에서는 `null`과 `undefined` 값이 모든 타입의 도메인에 있지 않고 그 자체와 `any`만 할당할 수  있습니다(한 가지 예외사항은 `undefined` 또한 `void`에 할당 가능하다는 것입니다).
