@@ -8,21 +8,21 @@
 `--allowUnusedLabels`                          | `boolean` | `false`                        | 사용되지 않는 레이블에 대한 오류 보고하지 않습니다.
 `--alwaysStrict`                               | `boolean` | `false`                        | 각 소스 파일에 대해 strict 모드로 구문 파싱을 하고 `"use strict"`을 내보냅니다.
 `--baseUrl`                                    | `string`  |                                | 비-상대적 모듈 이름을 해석하기 위한 기본 디렉토리. 자세한 내용은 [모듈 해석 문서](./Module Resolution.md#base-url)을 참조하세요.
-`--charset`                                    | `string`  | `"utf8"`                       | 입력 파일의 문자열 집합입니다.
+`--charset`                                    | `string`  | `"utf8"`                       | 입력 파일의 문자열 집합입니다 (인코딩 관련).
 `--checkJs`                                    | `boolean` | `false`                        | `.js` 파일에 오류를 보고합니다. `--allowJs`와 함께 사용하세요.
 `--declaration`<br/>`-d`                       | `boolean` | `false`                        | 해당하는 `.d.ts` 파일을 생성합니다.
 `--declarationDir`                             | `string`  |                                | 생성된 선언 파일의 출력 디렉토리입니다.
 `--diagnostics`                                | `boolean` | `false`                        | 진단 정보를 보여줍니다.
 `--disableSizeLimit`                           | `boolean` | `false`                        | JavaScript 프로젝트의 사이즈 제한을 중지합니다.
-`--downlevelIteration`                         | `boolean` | `false`                        | ES5 또는 ES3를 대상으로 할 때 `for..of`, spread 및 destructuring 반복가능한 iterables 지원을 제공합니다.
+`--downlevelIteration`                         | `boolean` | `false`                        | ES5 또는 ES3를 대상으로 할 때 `for..of`, spread 및 destructuring 반복 가능한 iterables 지원을 제공합니다.
 `--emitBOM`                                    | `boolean` | `false`                        | 출력 파일의 시작 부분에 UTF-8 바이트 순서표(BOM)를 내보냅니다.
 `--emitDecoratorMetadata`<sup>[1]</sup>        | `boolean` | `false`                        | 소스에 데코레이터 선언에 대한 설계 타입 메타 데이터를 내보냅니다. 자세한 내용은 [#2577 이슈](https://github.com/Microsoft/TypeScript/issues/2577)을 참조하세요.
 `--experimentalDecorators`<sup>[1]</sup>       | `boolean` | `false`                        | ES 데코레이터에 대한 실험적인 지원을 사용하도록 활성화합니다.
-`--forceConsistentCasingInFileNames`           | `boolean` | `false`                        | 동일한 파일에 대해 일관성없는 참조를 허용하지 않습니다.
+`--forceConsistentCasingInFileNames`           | `boolean` | `false`                        | 동일한 파일에 대해 일관성이 없는 참조는 허용하지 않습니다.
 `--help`<br/>`-h`                              |           |                                | 도움말을 출력합니다.
 `--importHelpers`                              | `boolean` | `false`                        | 방출된 헬퍼를 임포트합니다. [`tslib`](https://www.npmjs.com/package/tslib)로부터 (예. `__extends`, `__rest`, 등..)
 `--inlineSourceMap`                            | `boolean` | `false`                        | 별도의 파일 대신 소스 맵으로 단일 파일을 내보냅니다.
-`--inlineSources`                              | `boolean` | `false`                        | 단일 파일 내에서 소스 맵과 함께 소스를 내 보냅니다. `--inlineSourceMap` 또는 `--sourceMap`을 설정해야합니다.
+`--inlineSources`                              | `boolean` | `false`                        | 단일 파일 내에서 소스 맵과 함께 소스를 내보냅니다. `--inlineSourceMap` 또는 `--sourceMap`을 설정해야 합니다.
 `--init`                                       |           |                                | TypeScript 프로젝트를 초기화하고 `tsconfig.json` 파일을 생성합니다.
 `--isolatedModules`                            | `boolean` | `false`                        | 각 파일을 별도의 모듈로 불리하여 변환합니다 ("ts.transpileModule"과 비슷합니다).
 `--jsx`                                        | `string`  | `"Preserve"`                   | `.tsx` 파일에서 JSX 지원: `"React"` 또는 `"Preserve"`. [JSX](./JSX.md)를 확인하세요.
@@ -31,7 +31,7 @@
 `--listEmittedFiles`                           | `boolean` | `false`                        | 컴파일의 일부로 생성된 파일의 이름을 출력합니다.
 `--listFiles`                                  | `boolean` | `false`                        | 컴파일에 포함된 파일의 이름을 출력합니다.
 `--locale`                                     | `string`  | *(특정 플랫폼)*          | 오류 메시지를 표시하는 데 사용할 지역화, 예: en-us. <br/>가능한 값은 다음과 같습니다:  <br/>► English (US): `en` <br/>► Czech: `cs` <br/>► German: `de` <br/>► Spanish: `es` <br/>► French: `fr` <br/>► Italian: `it` <br/>► Japanese: `ja` <br/>► Korean: `ko` <br/>► Polish: `pl` <br/>► Portuguese(Brazil): `pt-BR` <br/>► Russian: `ru` <br/>► Turkish: `tr` <br/>► Simplified Chinese: `zh-CN`  <br/>► Traditional Chinese: `zh-TW`
-`--mapRoot`                                    | `string`  |                                | 디버거가 생성된 위치가 아닌 맵 파일의 위치를 지정합니다. .map 파일이 .js 파일과 다른 위치에 런타임시 위치할 경우 이 옵션을 사용하세요. 지정된 위치는 sourceMap에 포함되어 맵 파일이 위치할 디버거를 지정합니다.
+`--mapRoot`                                    | `string`  |                                | 디버거가 생성된 위치가 아닌 맵 파일의 위치를 지정합니다. .map 파일이 .js 파일과 다른 위치에 런타임 시 위치할 경우 이 옵션을 사용하세요. 지정된 위치는 sourceMap에 포함되어 맵 파일이 위치할 디버거를 지정합니다.
 `--maxNodeModuleJsDepth`                       | `number`  | `0`                            | node_modules 및 로드 JavaScript 파일 아래에서 검색할 최대 의존성 깊이. `--allowJs`에만 적용됩니다.
 `--module`<br/>`-m`                            | `string`  | `target === "ES3" or "ES5" ? "CommonJS" : "ES6"`   | 모듈 코드 생성 지정: `"None"`, `"CommonJS"`, `"AMD"`, `"System"`, `"UMD"`, `"ES6"`, `"ES2015"` 또는 `"ESNext"`.<br/>► `"AMD"`와 `"System"`만 `--outFile`과 함께 사용할 수 있습니다.<br/>► `"ES6"`와 `"ES2015"` 값은 `"ES5"` 또는 이하를 대상으로 할 때 사용할 수 있습니다.
 `--moduleResolution`                           | `string`  | `module === "AMD" or "System" or "ES6" ?  "Classic" : "Node"`                    | 모듈 해석 방법 결정. Node.js/io.js 스타일 해석의 경우, `"Node"` 또는 `"Classic"` 중 하나입니다. 자세한 내용은 [모듈 해석 문서](./Module Resolution.md)를 참조하세요.
@@ -46,7 +46,7 @@
 `--noImplicitThis`                             | `boolean` | `false`                        | `any` 타입으로 암시한 `this` 표현식에 오류를 보고합니다.
 `--noImplicitUseStrict`                        | `boolean` | `false`                        | 모듈 출력에 `"use strict"` 지시자를 내보내지 않습니다.
 `--noLib`                                      | `boolean` | `false`                        | 기본 라이브러리 파일(`lib.d.ts`)은 포함하지 않습니다.
-`--noResolve`                                  | `boolean` | `false`                        | 컴파일된 파일 목록에 트리플-슬래시 참조 또는 모듈 임포트 타겟을 추가하지 않습니다.
+`--noResolve`                                  | `boolean` | `false`                        | 컴파일된 파일 목록에 트리플-슬래시 참조 또는 모듈 임포트 대상을 추가하지 않습니다.
 `--noStrictGenericChecks`                      | `boolean` | `false`                        | 함수 타입에서 제네릭 시그니처의 엄격한 검사를 비활성화합니다.
 `--noUnusedLocals`                             | `boolean` | `false`                        | 사용하지 않는 지역 변수에 대한 오류를 보고합니다.
 `--noUnusedParameters`                         | `boolean` | `false`                        | 사용하지 않는 매개 변수에 대한 오류를 보고합니다.
@@ -61,14 +61,14 @@
 `--reactNamespace`                             | `string`  | `"React"`                      | DEPRECATED 되었습니다. `--jsxFactory`를 대신 사용합니다.<br/>`"react"` JSX emit을 대상으로 할 때 `createElement`와 `__spread`에 호출된 객체를 지정합니다.
 `--removeComments`                             | `boolean` | `false`                        | `/*!`로 시작하는 copy-right 헤더 주석을 제외한 모든 주석을 제거합니다.
 `--rootDir`                                    | `string`  | *(공통 루트 디렉토리는 input files 리스트에서 처리됩니다)*   | 입력 파일의 루트 디렉토리를 지정합니다. `--outDir`로 출력 디렉토리 구조를 제어하기 위해서만 사용합니다.
-`rootDirs`<sup>[2]</sup>                       | `string[]`|                                | 런타임시 결합된 컨텐츠가 프로젝트의 구조를 나타내는 <i>루트</i> 폴더 목록입니다. 자세한 내용은 [모듈 해석 문서](./Module Resolution.md#virtual-directories-with-rootdirs)를 참조하세요.
+`rootDirs`<sup>[2]</sup>                       | `string[]`|                                | 런타임 시 결합된 컨텐츠가 프로젝트의 구조를 나타내는 <i>루트</i> 폴더 목록입니다. 자세한 내용은 [모듈 해석 문서](./Module Resolution.md#virtual-directories-with-rootdirs)를 참조하세요.
 `--skipDefaultLibCheck`                        | `boolean` | `false`                        | DEPRECATED 되었습니다. `--skipLibCheck`를 대신 사용합니다.<br/>[기본 라이브러리 선언 파일](./Triple-Slash Directives.md#-reference-no-default-libtrue)의 타입 검사 건너뛰기[default library declaration files].
 `--skipLibCheck`                               | `boolean` | `false`                        | 모든 선언 파일(`*.d.ts`)의 타입 검사를 건너뜁니다.
 `--sourceMap`                                  | `boolean` | `false`                        | 해당하는 `.map` 파일을 생성합니다.
-`--sourceRoot`                                 | `string`  |                                | Specifies the location where debugger should locate TypeScript files instead of source locations. Use this flag if the sources will be located at run-time in a different location than that at design-time. The location specified will be embedded in the sourceMap to direct the debugger where the source files will be located.
-`--strict`                                     | `boolean` | `false`                        | 모든 엄격한 타입 검사 옵션을 활성화 합니다. <br/>`--strict`를 활성화하면 `--noImplicitAny`, `--noImplicitThis`, `--alwaysStrict`, `--strictNullChecks` 및 `--strictFunctionTypes`이 가능합니다.
+`--sourceRoot`                                 | `string`  |                                | 디버거가 소스 위치 대신 TypeScript 파일을 찾아야 하는 위치를 지정합니다. The location specified will be embedded in the sourceMap to direct the debugger where the source files will be located.
+`--strict`                                     | `boolean` | `false`                        | 모든 엄격한 타입 검사 옵션을 활성화합니다. <br/>`--strict`를 활성화하면 `--noImplicitAny`, `--noImplicitThis`, `--alwaysStrict`, `--strictNullChecks` 및 `--strictFunctionTypes`이 가능합니다.
 `--strictFunctionTypes`                        | `boolean` | `false`                        | 함수 타입에 대한 bivariant 매개변수를 비활성화합니다.
-`--strictNullChecks`                           | `boolean` | `false`                        | strict null checking 모드에서는 the `null`과 `undefined` 값이 모든 타입의 도메인에 있지않고 그 자체와 `any`만 할당할 수 있습니다(한가지 예외사항은 `undefined` 또한 `void`에 할당 가능하다는 것 입니다).
+`--strictNullChecks`                           | `boolean` | `false`                        | strict null checking 모드에서는 `null`과 `undefined` 값이 모든 타입의 도메인에 있지 않고 그 자체와 `any`만 할당할 수  있습니다(한 가지 예외사항은 `undefined` 또한 `void`에 할당 가능하다는 것입니다).
 `--stripInternal`<sup>[1]</sup>                | `boolean` | `false`                        |  `/** @internal */` JSDoc 주석을 가진 코드에 대한 선언을 방출하지 않습니다.
 `--suppressExcessPropertyErrors`               | `boolean` | `false`                        | 객체 리터럴에 대한 프로퍼티 초과 검사를 억제합니다.
 `--suppressImplicitAnyIndexErrors`             | `boolean` | `false`                        | 인덱스 시그니처가 없는 객체를 인덱싱하는 경우 `--noImplicitAny` 억제합니다. 오류를 시그니처 자세한 내용은 [#1232 이슈](https://github.com/Microsoft/TypeScript/issues/1232#issuecomment-64510362)를 참조하세요.
@@ -77,7 +77,7 @@
 `--types`                                      | `string[]`|                                | 타입 정의가 포함될 이름의 목록. 자세한 내용은 [@types, --typeRoots 및 --types](./tsconfig.json.md#types-typeroots-and-types)를 참조하세요.
 `--typeRoots`                                  | `string[]`|                                | 타입 정의가 포함될 폴더의 목록. 자세한 내용은 [@types, --typeRoots 및 --types](./tsconfig.json.md#types-typeroots-and-types)를 참조하세요.
 `--version`<br/>`-v`                           |           |                                | 컴파일러의 버전을 출력합니다.
-`--watch`<br/>`-w`                             |           |                                | 컴파일러를 와치 모드로 실행합니다. 입력 파일을 와치하여 변경시 다시 컴파일합니다.
+`--watch`<br/>`-w`                             |           |                                | 컴파일러를 와치 모드로 실행합니다. 입력 파일을 와치하여 변경 시 다시 컴파일합니다.
 
 * <sup>[1]</sup> 이 옵션은 실험단계입니다.
 * <sup>[2]</sup> 이 옵션은 `tsconfig.json`에서만 허용되며 커맨드 라인에서는 허용되지 않습니다.
