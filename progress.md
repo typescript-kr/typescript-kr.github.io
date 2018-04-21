@@ -42,5 +42,5 @@
 - [x] tsconfig.json
 - [x] 컴파일러 옵션
 - [x] MSBuild에서의 컴파일러 옵션
-- [ ] Integrating with Build Tools
-- [ ] Nightly Builds
+- [x] 빌드 도구와 통합
+- [ ] Nightly 빌드

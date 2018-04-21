@@ -1,4 +1,4 @@
-Build tools
+빌드 도구들
 
 * [Browserify](#browserify)
 * [Duo](#duo)
@@ -11,19 +11,19 @@ Build tools
 
 # Browserify
 
-### Install
+### 설치
 
 ```sh
 npm install tsify
 ```
 
-### Using Command Line Interface
+### 커맨드 라인 인터페이스 사용
 
 ```sh
 browserify main.ts -p [ tsify --noImplicitAny ] > bundle.js
 ```
 
-### Using API
+### API 사용
 
 ```js
 var browserify = require("browserify");
@@ -36,23 +36,23 @@ browserify()
     .pipe(process.stdout);
 ```
 
-More details: [smrq/tsify](https://github.com/smrq/tsify)
+자세한 내용: [smrq/tsify](https://github.com/smrq/tsify)
 
 # Duo
 
-### Install
+### 설치
 
 ```sh
 npm install duo-typescript
 ```
 
-### Using Command Line Interface
+### 커맨드 라인 인터페이스 사용
 
 ```sh
 duo --use duo-typescript entry.ts
 ```
 
-### Using API
+### API 사용
 
 ```js
 var Duo = require("duo");
@@ -72,17 +72,17 @@ Duo(__dirname)
     });
 ```
 
-More details: [frankwallis/duo-typescript](https://github.com/frankwallis/duo-typescript)
+자세한 내용: [frankwallis/duo-typescript](https://github.com/frankwallis/duo-typescript)
 
 # Grunt
 
-### Install
+### 설치
 
 ```sh
 npm install grunt-ts
 ```
 
-### Basic Gruntfile.js
+### 기본 Gruntfile.js
 
 ````js
 module.exports = function(grunt) {
@@ -98,11 +98,11 @@ module.exports = function(grunt) {
 };
 ````
 
-More details: [TypeStrong/grunt-ts](https://github.com/TypeStrong/grunt-ts)
+자세한 내용: [TypeStrong/grunt-ts](https://github.com/TypeStrong/grunt-ts)
 
 # Gulp
 
-### Install
+### 설치
 
 ```sh
 npm install gulp-typescript
@@ -124,29 +124,29 @@ gulp.task("default", function () {
 });
 ```
 
-More details: [ivogabe/gulp-typescript](https://github.com/ivogabe/gulp-typescript)
+자세한 내용: [ivogabe/gulp-typescript](https://github.com/ivogabe/gulp-typescript)
 
 # Jspm
 
-### Install
+### 설치
 
 ```sh
 npm install -g jspm@beta
 ```
 
-_Note: Currently TypeScript support in jspm is in 0.16beta_
+_주의사항: 현재 jspm의 TypeScript 지원은 0.16beta 입니다._
 
-More details: [TypeScriptSamples/jspm](https://github.com/Microsoft/TypeScriptSamples/tree/master/jspm)
+자세한 내용: [TypeScriptSamples/jspm](https://github.com/Microsoft/TypeScriptSamples/tree/master/jspm)
 
 # Webpack
 
-### Install
+### 설치
 
 ```sh
 npm install ts-loader --save-dev
 ```
 
-### Basic webpack.config.js
+### 기본 webpack.config.js
 
 ```js
 module.exports = {
@@ -167,15 +167,15 @@ module.exports = {
 }
 ```
 
-See [more details on ts-loader here](https://www.npmjs.com/package/ts-loader).
+[ts-loader에 대한 자세한 내용](https://www.npmjs.com/package/ts-loader)은 여기를 참조하세요.
 
-Alternatives:
+대안:
 
 * [awesome-typescript-loader](https://www.npmjs.com/package/awesome-typescript-loader)
 
 # MSBuild
 
-Update project file to include locally installed `Microsoft.TypeScript.Default.props` (at the top) and `Microsoft.TypeScript.targets` (at the bottom) files:
+Update project file to include locally installed `Microsoft.TypeScript.Default.props` (맨 위) and `Microsoft.TypeScript.targets` (맨 아래) files:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -202,13 +202,13 @@ Update project file to include locally installed `Microsoft.TypeScript.Default.p
 </Project>
 ```
 
-More details about defining MSBuild compiler options: [Setting Compiler Options in MSBuild projects](./Compiler Options in MSBuild.md)
+MSBuild 컴파일러 옵션 정의에 대한 자세한 내용: [MSBuild 프로젝트의 컴파일러 옵션 설정](./Compiler Options in MSBuild.md)
 
 # NuGet
 
-* Right-Click -> Manage NuGet Packages
-* Search for `Microsoft.TypeScript.MSBuild`
-* Hit `Install`
-* When install is complete, rebuild!
+* 우-클릭 -> Manage NuGet Packages
+* `Microsoft.TypeScript.MSBuild`를 검색하세요
+* `Install` 클릭
+* 설치가 완료되면 다시 빌드 하세요!
 
-More details can be found at [Package Manager Dialog](http://docs.nuget.org/Consume/Package-Manager-Dialog) and [using nightly builds with NuGet](https://github.com/Microsoft/TypeScript/wiki/Nightly-drops#using-nuget-with-msbuild)
+자세한 내용은 [패키지 매니저 다이얼로그](http://docs.nuget.org/Consume/Package-Manager-Dialog)와 [NuGet과 nightly builds 사용](https://github.com/Microsoft/TypeScript/wiki/Nightly-drops#using-nuget-with-msbuild)

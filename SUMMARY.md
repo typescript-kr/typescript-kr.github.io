@@ -51,5 +51,5 @@
 * [tsconfig.json](pages/tsconfig.json.md)
 * [컴파일러 옵션](pages/Compiler Options.md)
 * [MSBuild에서의 컴파일러 옵션](pages/Compiler Options in MSBuild.md)
-* [Integrating with Build Tools](pages/Integrating with Build Tools.md)
-* [Nightly Builds](pages/Nightly Builds.md)
+* [빌드 도구와 통합](pages/Integrating with Build Tools.md)
+* [Nightly 빌드](pages/Nightly Builds.md)
