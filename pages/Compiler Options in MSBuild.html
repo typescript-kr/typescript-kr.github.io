@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-	<title>Compiler Options in MSBuild · GitBook</title>
+	<title>MSBuild에서의 컴파일러 옵션 · GitBook</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="description" content="">
 	<meta name="generator" content="GitBook 3.2.3">
@@ -601,7 +601,7 @@
                 <a href="Compiler Options.html">
             
                     
-                    Compiler Options
+                    컴파일러 옵션
             
                 </a>
             
@@ -614,7 +614,7 @@
                 <a href="Compiler Options in MSBuild.html">
             
                     
-                    Compiler Options in MSBuild
+                    MSBuild에서의 컴파일러 옵션
             
                 </a>
             
@@ -678,7 +678,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Compiler Options in MSBuild</a>
+        <a href=".." >MSBuild에서의 컴파일러 옵션</a>
     </h1>
 </div>
 
@@ -693,9 +693,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="overview">Overview</h2>
-<p>Compiler options can be specified using MSBuild properties within an MSBuild project.</p>
-<h2 id="example">Example</h2>
+                                <h2 id="&#xAC1C;&#xC694;">&#xAC1C;&#xC694;</h2>
+<p>&#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC635;&#xC158;&#xC740; MSBuild &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xB0B4;&#xC758; MSBuild &#xC18D;&#xC131;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xC608;&#xC81C;">&#xC608;&#xC81C;</h2>
 <pre><code class="lang-XML">  <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">PropertyGroup</span> <span class="cm-attribute">Condition</span>=<span class="cm-string">&quot;&apos;$(Configuration)&apos; == &apos;Debug&apos;&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
     <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">TypeScriptRemoveComments</span><span class="cm-tagcm-bracket">&gt;</span>false<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">TypeScriptRemoveComments</span><span class="cm-tagcm-bracket">&gt;</span>
     <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">TypeScriptSourceMap</span><span class="cm-tagcm-bracket">&gt;</span>true<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">TypeScriptSourceMap</span><span class="cm-tagcm-bracket">&gt;</span>
@@ -708,19 +708,19 @@
       <span class="cm-attribute">Project</span>=<span class="cm-string">&quot;$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets&quot;</span>
       <span class="cm-attribute">Condition</span>=<span class="cm-string">&quot;Exists(&apos;$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets&apos;)&quot;</span> <span class="cm-tagcm-bracket">/&gt;</span>
 </code></pre>
-<h2 id="mappings">Mappings</h2>
+<h2 id="&#xB9F5;&#xD551;">&#xB9F5;&#xD551;</h2>
 <table>
 <thead>
 <tr>
-<th>Compiler Option</th>
-<th>MSBuild Property Name</th>
-<th>Allowed Values</th>
+<th>&#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC635;&#xC158;</th>
+<th>MSBuild &#xC18D;&#xC131; &#xC774;&#xB984;</th>
+<th>&#xD5C8;&#xC6A9;&#xB41C; &#xAC12;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>--allowJs</code></td>
-<td><em>Not supported in MSBuild</em></td>
+<td><em>MSBuild&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;</em></td>
 <td></td>
 </tr>
 <tr>
@@ -746,7 +746,7 @@
 <tr>
 <td><code>--baseUrl</code></td>
 <td>TypeScriptBaseUrl</td>
-<td>File path</td>
+<td>&#xD30C;&#xC77C; &#xACBD;&#xB85C;</td>
 </tr>
 <tr>
 <td><code>--charset</code></td>
@@ -761,16 +761,16 @@
 <tr>
 <td><code>--declarationDir</code></td>
 <td>TypeScriptDeclarationDir</td>
-<td>File path</td>
+<td>&#xD30C;&#xC77C; &#xACBD;&#xB85C;</td>
 </tr>
 <tr>
 <td><code>--diagnostics</code></td>
-<td><em>Not supported in MSBuild</em></td>
+<td><em>MSBuild&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;</em></td>
 <td></td>
 </tr>
 <tr>
 <td><code>--disableSizeLimit</code></td>
-<td><em>Not supported in MSBuild</em></td>
+<td><em>MSBuild&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;</em></td>
 <td></td>
 </tr>
 <tr>
@@ -800,7 +800,7 @@
 </tr>
 <tr>
 <td><code>--help</code></td>
-<td><em>Not supported in MSBuild</em></td>
+<td><em>MSBuild&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;</em></td>
 <td></td>
 </tr>
 <tr>
@@ -820,7 +820,7 @@
 </tr>
 <tr>
 <td><code>--init</code></td>
-<td><em>Not supported in MSBuild</em></td>
+<td><em>MSBuild&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;</em></td>
 <td></td>
 </tr>
 <tr>
@@ -831,41 +831,41 @@
 <tr>
 <td><code>--jsx</code></td>
 <td>TypeScriptJSXEmit</td>
-<td><code>React</code> or <code>Preserve</code></td>
+<td><code>React</code> &#xB610;&#xB294; <code>Preserve</code></td>
 </tr>
 <tr>
 <td><code>--jsxFactory</code></td>
 <td>TypeScriptJSXFactory</td>
-<td>qualified name</td>
+<td>&#xC81C;&#xD55C;&#xB41C; &#xC774;&#xB984;</td>
 </tr>
 <tr>
 <td><code>--lib</code></td>
 <td>TypeScriptLib</td>
-<td>Comma-separated list of strings</td>
+<td>&#xC27C;&#xD45C;&#xB85C; &#xAD6C;&#xBD84;&#xB41C; &#xBB38;&#xC790;&#xC5F4; &#xBAA9;&#xB85D;</td>
 </tr>
 <tr>
 <td><code>--listEmittedFiles</code></td>
-<td><em>Not supported in MSBuild</em></td>
+<td><em>MSBuild&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;</em></td>
 <td></td>
 </tr>
 <tr>
 <td><code>--listFiles</code></td>
-<td><em>Not supported in MSBuild</em></td>
+<td><em>MSBuild&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;</em></td>
 <td></td>
 </tr>
 <tr>
 <td><code>--locale</code></td>
-<td><em>automatic</em></td>
-<td>Automatically set to PreferredUILang value</td>
+<td><em>&#xC790;&#xB3D9;</em></td>
+<td>&#xC790;&#xB3D9;&#xC73C;&#xB85C; PreferredUILang &#xAC12; &#xC124;&#xC815;</td>
 </tr>
 <tr>
 <td><code>--mapRoot</code></td>
 <td>TypeScriptMapRoot</td>
-<td>File path</td>
+<td>&#xD30C;&#xC77C; &#xACBD;&#xB85C;</td>
 </tr>
 <tr>
 <td><code>--maxNodeModuleJsDepth</code></td>
-<td><em>Not supported in MSBuild</em></td>
+<td><em>MSBuild&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;</em></td>
 <td></td>
 </tr>
 <tr>
@@ -876,16 +876,16 @@
 <tr>
 <td><code>--moduleResolution</code></td>
 <td>TypeScriptModuleResolution</td>
-<td><code>Classic</code> or <code>Node</code></td>
+<td><code>Classic</code> &#xB610;&#xB294; <code>Node</code></td>
 </tr>
 <tr>
 <td><code>--newLine</code></td>
 <td>TypeScriptNewLine</td>
-<td><code>CRLF</code> or <code>LF</code></td>
+<td><code>CRLF</code> &#xB610;&#xB294; <code>LF</code></td>
 </tr>
 <tr>
 <td><code>--noEmit</code></td>
-<td><em>Not supported in MSBuild</em></td>
+<td><em>MSBuild&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;</em></td>
 <td></td>
 </tr>
 <tr>
@@ -951,21 +951,21 @@
 <tr>
 <td><code>--out</code></td>
 <td>TypeScriptOutFile</td>
-<td>File path</td>
+<td>&#xD30C;&#xC77C; &#xACBD;&#xB85C;</td>
 </tr>
 <tr>
 <td><code>--outDir</code></td>
 <td>TypeScriptOutDir</td>
-<td>File path</td>
+<td>&#xD30C;&#xC77C; &#xACBD;&#xB85C;</td>
 </tr>
 <tr>
 <td><code>--outFile</code></td>
 <td>TypeScriptOutFile</td>
-<td>File path</td>
+<td>&#xD30C;&#xC77C; &#xACBD;&#xB85C;</td>
 </tr>
 <tr>
 <td><code>--paths</code></td>
-<td><em>Not supported in MSBuild</em></td>
+<td><em>MSBuild&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;</em></td>
 <td></td>
 </tr>
 <tr>
@@ -980,12 +980,12 @@
 </tr>
 <tr>
 <td><code>--listEmittedFiles</code></td>
-<td><em>Not supported in MSBuild</em></td>
+<td><em>MSBuild&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;</em></td>
 <td></td>
 </tr>
 <tr>
 <td><code>--pretty</code></td>
-<td><em>Not supported in MSBuild</em></td>
+<td><em>MSBuild&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;</em></td>
 <td></td>
 </tr>
 <tr>
@@ -1001,11 +1001,11 @@
 <tr>
 <td><code>--rootDir</code></td>
 <td>TypeScriptRootDir</td>
-<td>File path</td>
+<td>&#xD30C;&#xC77C; &#xACBD;&#xB85C;</td>
 </tr>
 <tr>
 <td><code>--rootDirs</code></td>
-<td><em>Not supported in MSBuild</em></td>
+<td><em>MSBuild&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;</em></td>
 <td></td>
 </tr>
 <tr>
@@ -1021,12 +1021,12 @@
 <tr>
 <td><code>--sourceMap</code></td>
 <td>TypeScriptSourceMap</td>
-<td>File path</td>
+<td>&#xD30C;&#xC77C; &#xACBD;&#xB85C;</td>
 </tr>
 <tr>
 <td><code>--sourceRoot</code></td>
 <td>TypeScriptSourceRoot</td>
-<td>File path</td>
+<td>&#xD30C;&#xC77C; &#xACBD;&#xB85C;</td>
 </tr>
 <tr>
 <td><code>--strict</code></td>
@@ -1061,46 +1061,44 @@
 <tr>
 <td><code>--target</code></td>
 <td>TypeScriptTarget</td>
-<td><code>ES3</code>, <code>ES5</code>, or <code>ES6</code></td>
+<td><code>ES3</code>, <code>ES5</code>, &#xB610;&#xB294; <code>ES6</code></td>
 </tr>
 <tr>
 <td><code>--traceResolution</code></td>
-<td><em>Not supported in MSBuild</em></td>
+<td><em>MSBuild&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;</em></td>
 <td></td>
 </tr>
 <tr>
 <td><code>--types</code></td>
-<td><em>Not supported in MSBuild</em></td>
+<td><em>MSBuild&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;</em></td>
 <td></td>
 </tr>
 <tr>
 <td><code>--typeRoots</code></td>
-<td><em>Not supported in MSBuild</em></td>
+<td><em>MSBuild&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;</em></td>
 <td></td>
 </tr>
 <tr>
 <td><code>--watch</code></td>
-<td><em>Not supported in MSBuild</em></td>
+<td><em>MSBuild&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;</em></td>
 <td></td>
 </tr>
 <tr>
-<td><em>MSBuild only option</em></td>
+<td><em>MSBuild &#xC804;&#xC6A9; &#xC635;&#xC158;</em></td>
 <td>TypeScriptAdditionalFlags</td>
-<td><em>Any compiler option</em></td>
+<td><em>&#xBAA8;&#xB4E0; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC635;&#xC158;</em></td>
 </tr>
 </tbody>
 </table>
-<h2 id="what-is-supported-in-my-version-of-visual-studio">What is supported in my version of Visual Studio?</h2>
-<p>Look in your <code>C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets</code> file.
-The authoritative mappings between MSBuild XML tags and <code>tsc</code> compiler options live in there.</p>
+<h2 id="&#xC5EC;&#xB7EC;&#xBD84;&#xC758;-visual-studio-&#xBC84;&#xC804;&#xC5D0;&#xC11C;-&#xC9C0;&#xC6D0;&#xB418;&#xB294;-&#xAE30;&#xB2A5;&#xC740;-&#xBB34;&#xC5C7;&#xC77C;&#xAE4C;&#xC694;">&#xC5EC;&#xB7EC;&#xBD84;&#xC758; Visual Studio &#xBC84;&#xC804;&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xB418;&#xB294; &#xAE30;&#xB2A5;&#xC740; &#xBB34;&#xC5C7;&#xC77C;&#xAE4C;&#xC694;?</h2>
+<p><code>C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets</code> &#xD30C;&#xC77C;&#xC744; &#xD655;&#xC778;&#xD558;&#xC138;&#xC694;.<br>MSBuild XML &#xD0DC;&#xADF8;&#xC640; <code>tsc</code> &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC635;&#xC158; &#xC0AC;&#xC774;&#xC758; &#xC2E0;&#xB8B0;&#xD560; &#xC218; &#xC788;&#xB294; &#xB9F5;&#xD551;&#xC774; &#xC5EC;&#xAE30;&#xC5D0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h2 id="toolsversion">ToolsVersion</h2>
-<p>The value of <code>&lt;TypeScriptToolsVersion&gt;1.7&lt;/TypeScriptToolsVersion&gt;</code> property in the project file identifies the compiler version to use to build (1.7 in this example).
-This allows a project to build against the same versions of the compiler on different machines.</p>
-<p>If <code>TypeScriptToolsVersion</code> is not specified, the latest compiler version installed on the machine will be used to build.</p>
-<p>Users using newer versions of TS, will see a prompt to upgrade their project on first load.</p>
+<p>&#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xD30C;&#xC77C;&#xC758; <code>&lt;TypeScriptToolsVersion&gt;1.7&lt;/TypeScriptToolsVersion&gt;</code> &#xC18D;&#xC131; &#xAC12;&#xC740; &#xBE4C;&#xB4DC;&#xD558;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xD560; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xBC84;&#xC804;&#xC744; &#xC2DD;&#xBCC4;&#xD569;&#xB2C8;&#xB2E4; (&#xC774; &#xC608;&#xC81C;&#xC5D0;&#xC11C;&#xB294; 1.7).<br>&#xC774;&#xB807;&#xAC8C; &#xD558;&#xBA74; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xAC00; &#xB2E4;&#xB978; &#xCEF4;&#xD4E8;&#xD130;&#xC5D0; &#xC788;&#xB294; &#xB3D9;&#xC77C;&#xD55C; &#xBC84;&#xC804;&#xC758; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xC5D0; &#xB300;&#xD55C; &#xBE4C;&#xB4DC;&#xB97C; &#xD5C8;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB9CC;&#xC57D; <code>TypeScriptToolsVersion</code>&#xC774; &#xC9C0;&#xC815;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xC124;&#xCE58;&#xB41C; &#xCD5C;&#xC2E0; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xBC84;&#xC804;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBE4C;&#xB4DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xCD5C;&#xC2E0; &#xBC84;&#xC804;&#xC758; TS&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC0AC;&#xC6A9;&#xC790;&#xC5D0;&#xAC8C;&#xB294; &#xCCAB; &#xB85C;&#xB4DC; &#xC2DC; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xC5C5;&#xADF8;&#xB808;&#xC774;&#xB4DC;&#xD558;&#xB77C;&#xB294; &#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xD45C;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;</p>
 <h2 id="typescriptcompileblocked">TypeScriptCompileBlocked</h2>
-<p>If you are using a different build tool to build your project (e.g. gulp, grunt , etc.) and VS for the development and debugging experience, set <code>&lt;TypeScriptCompileBlocked&gt;true&lt;/TypeScriptCompileBlocked&gt;</code> in your project.
-This should give you all the editing support, but not the build when you hit F5.</p>
+<p>&#xB2E4;&#xB978; &#xBE4C;&#xB4DC; &#xB3C4;&#xAD6C;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD504;&#xB85C;&#xC81D;&#xD2B8; (&#xC608;: &#xAC78;&#xD504;, &#xADF8;&#xB7F0;&#xD2B8; &#xB4F1;) &#xADF8;&#xB9AC;&#xACE0; &#xAC1C;&#xBC1C;&#xC744; &#xC704;&#xD55C; VS&#xC640; &#xB514;&#xBC84;&#xAE45; &#xD658;&#xACBD;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0;&#xC11C; <code>&lt;TypeScriptCompileBlocked&gt;true&lt;/TypeScriptCompileBlocked&gt;</code>&#xB97C; &#xC124;&#xC815;&#xD558;&#xC138;&#xC694;.</p>
+<p>&#xC774;&#xB807;&#xAC8C; &#xD558;&#xBA74; &#xBAA8;&#xB4E0; &#xD3B8;&#xC9D1; &#xC9C0;&#xC6D0;&#xC774; &#xC81C;&#xACF5;&#xB418;&#xC9C0;&#xB9CC; F5&#xD0A4;&#xB97C; &#xB20C;&#xB7EC;&#xB3C4; &#xBE4C;&#xB4DC;&#xAC00; &#xC9C0;&#xC6D0;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <script src="_gitbook_plugin_analytics.js"></script>
                                 
                                 </section>
@@ -1128,7 +1126,7 @@ This should give you all the editing support, but not the build when you hit F5.
 
             
                 
-                <a href="Compiler Options.html" class="navigation navigation-prev " aria-label="Previous page: Compiler Options">
+                <a href="Compiler Options.html" class="navigation navigation-prev " aria-label="Previous page: 컴파일러 옵션">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -1144,7 +1142,7 @@ This should give you all the editing support, but not the build when you hit F5.
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Compiler Options in MSBuild","level":"5.3","depth":1,"next":{"title":"Integrating with Build Tools","level":"5.4","depth":1,"path":"pages/Integrating with Build Tools.md","ref":"pages/Integrating with Build Tools.md","articles":[]},"previous":{"title":"Compiler Options","level":"5.2","depth":1,"path":"pages/Compiler Options.md","ref":"pages/Compiler Options.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","analytics"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"analytics":{"google":"UA-99001722-6"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Compiler Options in MSBuild.md","mtime":"2018-04-17T07:29:20.810Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-20T09:53:56.137Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"MSBuild에서의 컴파일러 옵션","level":"5.3","depth":1,"next":{"title":"Integrating with Build Tools","level":"5.4","depth":1,"path":"pages/Integrating with Build Tools.md","ref":"pages/Integrating with Build Tools.md","articles":[]},"previous":{"title":"컴파일러 옵션","level":"5.2","depth":1,"path":"pages/Compiler Options.md","ref":"pages/Compiler Options.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","analytics"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"analytics":{"google":"UA-99001722-6"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Compiler Options in MSBuild.md","mtime":"2018-04-21T17:41:28.447Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-21T17:43:54.808Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -1,8 +1,8 @@
-## Overview
+## 개요
 
-Compiler options can be specified using MSBuild properties within an MSBuild project.
+컴파일러 옵션은 MSBuild 프로젝트 내의 MSBuild 속성을 사용하여 지정할 수 있습니다.
 
-## Example
+## 예제
 
 ```XML
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
@@ -18,44 +18,44 @@ Compiler options can be specified using MSBuild properties within an MSBuild pro
       Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
 ```
 
-## Mappings
+## 맵핑
 
-Compiler Option                              | MSBuild Property Name                      | Allowed Values
+컴파일러 옵션                              | MSBuild 속성 이름                      | 허용된 값
 ---------------------------------------------|--------------------------------------------|-----------------
-`--allowJs`                                  | *Not supported in MSBuild*                 |
+`--allowJs`                                  | *MSBuild에서 지원되지 않습니다*                 |
 `--allowSyntheticDefaultImports`             | TypeScriptAllowSyntheticDefaultImports     | boolean
 `--allowUnreachableCode`                     | TypeScriptAllowUnreachableCode             | boolean
 `--allowUnusedLabels`                        | TypeScriptAllowUnusedLabels                | boolean
 `--alwaysStrict`                             | TypeScriptAlwaysStrict                     | boolean
-`--baseUrl`                                  | TypeScriptBaseUrl                          | File path
+`--baseUrl`                                  | TypeScriptBaseUrl                          | 파일 경로
 `--charset`                                  | TypeScriptCharset                          |
 `--declaration`                              | TypeScriptGeneratesDeclarations            | boolean
-`--declarationDir`                           | TypeScriptDeclarationDir                   | File path
-`--diagnostics`                              | *Not supported in MSBuild*                 |
-`--disableSizeLimit`                         | *Not supported in MSBuild*                 |
+`--declarationDir`                           | TypeScriptDeclarationDir                   | 파일 경로
+`--diagnostics`                              | *MSBuild에서 지원되지 않습니다*                 |
+`--disableSizeLimit`                         | *MSBuild에서 지원되지 않습니다*                 |
 `--emitBOM`                                  | TypeScriptEmitBOM                          | boolean
 `--emitDecoratorMetadata`                    | TypeScriptEmitDecoratorMetadata            | boolean
 `--experimentalAsyncFunctions`               | TypeScriptExperimentalAsyncFunctions       | boolean
 `--experimentalDecorators`                   | TypeScriptExperimentalDecorators           | boolean
 `--forceConsistentCasingInFileNames`         | TypeScriptForceConsistentCasingInFileNames | boolean
-`--help`                                     | *Not supported in MSBuild*                 |
+`--help`                                     | *MSBuild에서 지원되지 않습니다*                 |
 `--importHelpers`                            | TypeScriptImportHelpers                    | boolean
 `--inlineSourceMap`                          | TypeScriptInlineSourceMap                  | boolean
 `--inlineSources`                            | TypeScriptInlineSources                    | boolean
-`--init`                                     | *Not supported in MSBuild*                 |
+`--init`                                     | *MSBuild에서 지원되지 않습니다*                 |
 `--isolatedModules`                          | TypeScriptIsolatedModules                  | boolean
-`--jsx`                                      | TypeScriptJSXEmit                          | `React` or `Preserve`
-`--jsxFactory`                               | TypeScriptJSXFactory                       | qualified name
-`--lib`                                      | TypeScriptLib                              | Comma-separated list of strings
-`--listEmittedFiles`                         | *Not supported in MSBuild*                 |
-`--listFiles`                                | *Not supported in MSBuild*                 |
-`--locale`                                   | *automatic*                                | Automatically set to PreferredUILang value
-`--mapRoot`                                  | TypeScriptMapRoot                          | File path
-`--maxNodeModuleJsDepth`                     | *Not supported in MSBuild*                 |
+`--jsx`                                      | TypeScriptJSXEmit                          | `React` 또는 `Preserve`
+`--jsxFactory`                               | TypeScriptJSXFactory                       | 제한된 이름
+`--lib`                                      | TypeScriptLib                              | 쉼표로 구분된 문자열 목록
+`--listEmittedFiles`                         | *MSBuild에서 지원되지 않습니다*                 |
+`--listFiles`                                | *MSBuild에서 지원되지 않습니다*                 |
+`--locale`                                   | *자동*                                | 자동으로 PreferredUILang 값 설정
+`--mapRoot`                                  | TypeScriptMapRoot                          | 파일 경로
+`--maxNodeModuleJsDepth`                     | *MSBuild에서 지원되지 않습니다*                 |
 `--module`                                   | TypeScriptModuleKind                       | `AMD`, `CommonJs`, `UMD`, `System` or `ES6`
-`--moduleResolution`                         | TypeScriptModuleResolution                 | `Classic` or `Node`
-`--newLine`                                  | TypeScriptNewLine                          | `CRLF` or `LF`
-`--noEmit`                                   | *Not supported in MSBuild*                 |
+`--moduleResolution`                         | TypeScriptModuleResolution                 | `Classic` 또는 `Node`
+`--newLine`                                  | TypeScriptNewLine                          | `CRLF` 또는 `LF`
+`--noEmit`                                   | *MSBuild에서 지원되지 않습니다*                 |
 `--noEmitHelpers`                            | TypeScriptNoEmitHelpers                    | boolean
 `--noEmitOnError`                            | TypeScriptNoEmitOnError                    | boolean
 `--noFallthroughCasesInSwitch`               | TypeScriptNoFallthroughCasesInSwitch       | boolean
@@ -68,50 +68,51 @@ Compiler Option                              | MSBuild Property Name            
 `--noUnusedParameters`                       | TypeScriptNoUnusedParameters               | boolean
 `--noLib`                                    | TypeScriptNoLib                            | boolean
 `--noResolve`                                | TypeScriptNoResolve                        | boolean
-`--out`                                      | TypeScriptOutFile                          | File path
-`--outDir`                                   | TypeScriptOutDir                           | File path
-`--outFile`                                  | TypeScriptOutFile                          | File path
-`--paths`                                    | *Not supported in MSBuild*                 |
+`--out`                                      | TypeScriptOutFile                          | 파일 경로
+`--outDir`                                   | TypeScriptOutDir                           | 파일 경로
+`--outFile`                                  | TypeScriptOutFile                          | 파일 경로
+`--paths`                                    | *MSBuild에서 지원되지 않습니다*                 |
 `--preserveConstEnums`                       | TypeScriptPreserveConstEnums               | boolean
 `--preserveSymlinks`                         | TypeScriptPreserveSymlinks                 | boolean
-`--listEmittedFiles`                         | *Not supported in MSBuild*                 |
-`--pretty`                                   | *Not supported in MSBuild*                 |
+`--listEmittedFiles`                         | *MSBuild에서 지원되지 않습니다*                 |
+`--pretty`                                   | *MSBuild에서 지원되지 않습니다*                 |
 `--reactNamespace`                           | TypeScriptReactNamespace                   | string
 `--removeComments`                           | TypeScriptRemoveComments                   | boolean
-`--rootDir`                                  | TypeScriptRootDir                          | File path
-`--rootDirs`                                 | *Not supported in MSBuild*                 |
+`--rootDir`                                  | TypeScriptRootDir                          | 파일 경로
+`--rootDirs`                                 | *MSBuild에서 지원되지 않습니다*                 |
 `--skipLibCheck`                             | TypeScriptSkipLibCheck                     | boolean
 `--skipDefaultLibCheck`                      | TypeScriptSkipDefaultLibCheck              | boolean
-`--sourceMap`                                | TypeScriptSourceMap                        | File path
-`--sourceRoot`                               | TypeScriptSourceRoot                       | File path
+`--sourceMap`                                | TypeScriptSourceMap                        | 파일 경로
+`--sourceRoot`                               | TypeScriptSourceRoot                       | 파일 경로
 `--strict`                                   | TypeScriptStrict                           | boolean
 `--strictFunctionTypes`                      | TypeScriptStrictFunctionTypes              | boolean
 `--strictNullChecks`                         | TypeScriptStrictNullChecks                 | boolean
 `--stripInternal`                            | TypeScriptStripInternal                    | boolean
 `--suppressExcessPropertyErrors`             |  TypeScriptSuppressExcessPropertyErrors    | boolean
 `--suppressImplicitAnyIndexErrors`           | TypeScriptSuppressImplicitAnyIndexErrors   | boolean
-`--target`                                   | TypeScriptTarget                           | `ES3`, `ES5`, or `ES6`
-`--traceResolution`                          | *Not supported in MSBuild*                 |
-`--types`                                    | *Not supported in MSBuild*                 |
-`--typeRoots`                                | *Not supported in MSBuild*                 |
-`--watch`                                    | *Not supported in MSBuild*                 |
-*MSBuild only option*                        | TypeScriptAdditionalFlags                  | *Any compiler option*
+`--target`                                   | TypeScriptTarget                           | `ES3`, `ES5`, 또는 `ES6`
+`--traceResolution`                          | *MSBuild에서 지원되지 않습니다*                 |
+`--types`                                    | *MSBuild에서 지원되지 않습니다*                 |
+`--typeRoots`                                | *MSBuild에서 지원되지 않습니다*                 |
+`--watch`                                    | *MSBuild에서 지원되지 않습니다*                 |
+*MSBuild 전용 옵션*                        | TypeScriptAdditionalFlags                  | *모든 컴파일러 옵션*
 
-## What is supported in my version of Visual Studio?
+## 여러분의 Visual Studio 버전에서 지원되는 기능은 무엇일까요?
 
-Look in your `C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets` file.
-The authoritative mappings between MSBuild XML tags and `tsc` compiler options live in there.
+`C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets` 파일을 확인하세요.  
+MSBuild XML 태그와 `tsc` 컴파일러 옵션 사이의 신뢰할 수 있는 맵핑이 여기에 있습니다.
 
 ## ToolsVersion
 
-The value of `<TypeScriptToolsVersion>1.7</TypeScriptToolsVersion>` property in the project file identifies the compiler version to use to build (1.7 in this example).
-This allows a project to build against the same versions of the compiler on different machines.
+프로젝트 파일의 `<TypeScriptToolsVersion>1.7</TypeScriptToolsVersion>` 속성 값은 빌드하는 데 사용할 컴파일러 버전을 식별합니다 (이 예제에서는 1.7).  
+이렇게 하면 프로젝트가 다른 컴퓨터에 있는 동일한 버전의 컴파일러에 대한 빌드를 허용합니다.
 
-If `TypeScriptToolsVersion` is not specified, the latest compiler version installed on the machine will be used to build.
+만약 `TypeScriptToolsVersion`이 지정되지 않으면 설치된 최신 컴파일러 버전을 사용하여 빌드합니다.
 
-Users using newer versions of TS, will see a prompt to upgrade their project on first load.
+최신 버전의 TS를 사용하는 사용자에게는 첫 로드 시 프로젝트를 업그레이드하라는 메시지가 표시됩니다
 
 ## TypeScriptCompileBlocked
 
-If you are using a different build tool to build your project (e.g. gulp, grunt , etc.) and VS for the development and debugging experience, set `<TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>` in your project.
-This should give you all the editing support, but not the build when you hit F5.
+다른 빌드 도구를 사용하여 프로젝트 (예: 걸프, 그런트 등) 그리고 개발을 위한 VS와 디버깅 환경을 사용하는 경우 프로젝트에서 `<TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>`를 설정하세요.
+
+이렇게 하면 모든 편집 지원이 제공되지만 F5키를 눌러도 빌드가 지원되지 않습니다.
