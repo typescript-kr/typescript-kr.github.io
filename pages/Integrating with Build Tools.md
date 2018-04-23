@@ -67,7 +67,7 @@ Duo(__dirname)
     .use(typescript())
     .run(function (err, results) {
         if (err) throw err;
-        // Write compiled result to output file
+        // 컴파일된 결과를 출력 파일에 작성합니다.
         fs.writeFileSync(out, results.code);
     });
 ```
@@ -155,12 +155,12 @@ module.exports = {
         filename: "bundle.js"
     },
     resolve: {
-        // Add '.ts' and '.tsx' as a resolvable extension.
+        // '.ts'와 '.tsx'를 해석 가능한 확장자로 추가합니다.
         extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
     },
     module: {
         loaders: [
-            // all files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'
+            // '.ts' 또는 '.tsx' 확장자를 가진 모든 파일은 'ts-loader'에 의해 처리됩니다.
             { test: /\.tsx?$/, loader: "ts-loader" }
         ]
     }
@@ -175,17 +175,17 @@ module.exports = {
 
 # MSBuild
 
-Update project file to include locally installed `Microsoft.TypeScript.Default.props` (맨 위) and `Microsoft.TypeScript.targets` (맨 아래) files:
+프로젝트 파일을 업데이트하여 로컬에 설치된 `Microsoft.TypeScript.Default.props` (맨 위)와 `Microsoft.TypeScript.targets` (맨 아래) 파일을 포함하도록 하세요:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <!-- Include default props at the bottom -->
+  <!-- 하단에 기본 props 포함 -->
   <Import
       Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props"
       Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
 
-  <!-- TypeScript configurations go here -->
+  <!-- TypeScript 환경 설정 -->
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
     <TypeScriptSourceMap>true</TypeScriptSourceMap>
@@ -195,7 +195,7 @@ Update project file to include locally installed `Microsoft.TypeScript.Default.p
     <TypeScriptSourceMap>false</TypeScriptSourceMap>
   </PropertyGroup>
 
-  <!-- Include default targets at the bottom -->
+  <!-- 하단에 기본 대상 포함 -->
   <Import
       Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets"
       Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
