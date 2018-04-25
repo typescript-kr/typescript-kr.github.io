@@ -43,4 +43,4 @@
 - [x] 컴파일러 옵션
 - [x] MSBuild에서의 컴파일러 옵션
 - [x] 빌드 도구와 통합
-- [ ] Nightly 빌드
+- [x] Nightly 빌드

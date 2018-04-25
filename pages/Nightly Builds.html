@@ -691,61 +691,57 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>A nightly build from the <a href="https://github.com/Microsoft/TypeScript/tree/master" target="_blank">TypeScript&apos;s <code>master</code></a> branch is published by midnight PST to NPM and NuGet.
-Here is how you can get it and use it with your tools.</p>
-<h2 id="using-npm">Using npm</h2>
+                                <p><a href="https://github.com/Microsoft/TypeScript/tree/master" target="_blank">TypeScript&#xC758; <code>master</code></a> &#xBE0C;&#xB79C;&#xCE58;&#xC758; nightly &#xBE4C;&#xB4DC;&#xB294; PST midnight&#xAE4C;&#xC9C0; NPM&#xACFC; NuGet&#xC5D0; &#xBC30;&#xD3EC;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xB3C4;&#xAD6C;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xAC00;&#xC838;&#xC62C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 id="npm-&#xC0AC;&#xC6A9;">npm &#xC0AC;&#xC6A9;</h2>
 <pre><code class="lang-shell">npm install -g typescript@next
 </code></pre>
-<h2 id="using-nuget-with-msbuild">Using NuGet with MSBuild</h2>
+<h2 id="msbuild&#xC5D0;-nuget-&#xC0AC;&#xC6A9;">MSBuild&#xC5D0; NuGet &#xC0AC;&#xC6A9;</h2>
 <blockquote>
-<p>Note: You&apos;ll need to configure your project to use the NuGet packages.
-Please see <a href="https://github.com/Microsoft/TypeScript/wiki/Configuring-MSBuild-projects-to-use-NuGet" target="_blank">Configuring MSBuild projects to use NuGet</a> for more information.</p>
+<p>&#xC8FC;&#xC758;&#xC0AC;&#xD56D;: NuGet &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB3C4;&#xB85D; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xAD6C;&#xC131;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="https://github.com/Microsoft/TypeScript/wiki/Configuring-MSBuild-projects-to-use-NuGet" target="_blank">NuGet&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB3C4;&#xB85D; MSBuild &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xAD6C;&#xC131;</a>&#xC744; &#xCC38;&#xC870;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.</p>
 </blockquote>
-<p>The nightlies are available on <a href="https://www.myget.org/gallery/typescript-preview" target="_blank">www.myget.org</a>.</p>
+<p>nightlies&#xB294; <a href="https://www.myget.org/gallery/typescript-preview" target="_blank">www.myget.org</a>&#xC5D0;&#xC11C; &#xC774;&#xC6A9; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>There are two packages:</p>
 <ul>
-<li><code>Microsoft.TypeScript.Compiler</code>: Tools only (<code>tsc.exe</code>, <code>lib.d.ts</code>, etc.) .</li>
-<li><code>Microsoft.TypeScript.MSBuild</code>: Tools as above, as well as MSBuild tasks and targets (<code>Microsoft.TypeScript.targets</code>, <code>Microsoft.TypeScript.Default.props</code>, etc.)</li>
+<li><code>Microsoft.TypeScript.Compiler</code>: &#xB3C4;&#xAD6C;&#xB9CC; (<code>tsc.exe</code>, <code>lib.d.ts</code>, &#xB4F1;.) .</li>
+<li><code>Microsoft.TypeScript.MSBuild</code>: &#xC704;&#xC640; &#xAC19;&#xC740; &#xB3C4;&#xAD6C;&#xBFD0;&#xB9CC; &#xC544;&#xB2C8;&#xB77C; MSBuild &#xC791;&#xC5C5; &#xBC0F; &#xB300;&#xC0C1; (<code>Microsoft.TypeScript.targets</code>, <code>Microsoft.TypeScript.Default.props</code>, &#xB4F1;.)</li>
 </ul>
-<h2 id="updating-your-ide-to-use-the-nightly-builds">Updating your IDE to use the nightly builds</h2>
-<p>You can also update your IDE to use the nightly drop.
-First you will need to install the package through npm.
-You can either install the npm package globally or to a local <code>node_modules</code> folder.</p>
-<p>The rest of this section assumes <code>typescript@next</code> is already installed.</p>
+<h2 id="nightly-&#xBE4C;&#xB4DC;&#xB97C;-&#xC0AC;&#xC6A9;&#xD558;&#xB3C4;&#xB85D;-ide-&#xC5C5;&#xB370;&#xC774;&#xD2B8;">nightly &#xBE4C;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB3C4;&#xB85D; IDE &#xC5C5;&#xB370;&#xC774;&#xD2B8;</h2>
+<p>nightly drop&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB3C4;&#xB85D; IDE&#xB97C; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xBA3C;&#xC800; npm&#xC744; &#xD1B5;&#xD574; &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xC124;&#xCE58;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>npm &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xC804;&#xC5ED;&#xC73C;&#xB85C; &#xC124;&#xCE58;&#xD558;&#xAC70;&#xB098; &#xB85C;&#xCEEC; <code>node_modules</code> &#xD3F4;&#xB354;&#xC5D0; &#xC124;&#xCE58;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774; &#xC139;&#xC158;&#xC758; &#xB098;&#xBA38;&#xC9C0; &#xBD80;&#xBD84;&#xC5D0;&#xC11C;&#xB294; <code>typescript@next</code>&#xAC00; &#xC774;&#xBBF8; &#xC124;&#xCE58;&#xB418;&#xC5B4; &#xC788;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="visual-studio-code">Visual Studio Code</h3>
-<p>Update <code>.vscode/settings.json</code> with the following:</p>
+<p><code>.vscode/settings.json</code> &#xD30C;&#xC77C;&#xC744; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD558;&#xC138;&#xC694;:</p>
 <pre><code class="lang-json"><span class="cm-string">&quot;typescript.tsdk&quot;</span>: <span class="cm-string">&quot;&lt;path to your folder&gt;/node_modules/typescript/lib&quot;</span>
 </code></pre>
-<p>More information is available at <a href="https://code.visualstudio.com/Docs/languages/typescript#_using-newer-typescript-versions" target="_blank">VSCode documentation</a>.</p>
+<p>&#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="https://code.visualstudio.com/Docs/languages/typescript#_using-newer-typescript-versions" target="_blank">VSCode &#xBB38;&#xC11C;</a>&#xB97C; &#xCC38;&#xC870;&#xD558;&#xC138;&#xC694;.</p>
 <h3 id="sublime-text">Sublime Text</h3>
-<p>Update the <code>Settings - User</code> file with the following:</p>
+<p><code>Settings - User</code> &#xD30C;&#xC77C;&#xC744; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD558;&#xC138;&#xC694;:</p>
 <pre><code class="lang-json"><span class="cm-string">&quot;typescript_tsdk&quot;</span>: <span class="cm-string">&quot;&lt;path to your folder&gt;/node_modules/typescript/lib&quot;</span>
 </code></pre>
-<p>More information is available at the <a href="https://github.com/Microsoft/TypeScript-Sublime-Plugin#installation" target="_blank">TypeScript Plugin for Sublime Text installation documentation</a>.</p>
-<h3 id="visual-studio-2013-and-2015">Visual Studio 2013 and 2015</h3>
+<p>&#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="https://github.com/Microsoft/TypeScript-Sublime-Plugin#installation" target="_blank">Sublime Text&#xB97C; &#xC704;&#xD55C; TypeScript &#xD50C;&#xB7EC;&#xADF8;&#xC778; &#xC124;&#xCE58; &#xBB38;&#xC11C;</a>&#xB97C; &#xCC38;&#xC870;&#xD558;&#xC138;&#xC694;.</p>
+<h3 id="visual-studio-2013-&#xBC0F;-2015">Visual Studio 2013 &#xBC0F; 2015</h3>
 <blockquote>
-<p>Note: Most changes do not require you to install a new version of the VS TypeScript plugin.</p>
+<p>&#xC8FC;&#xC758;&#xC0AC;&#xD56D;: &#xB300;&#xBD80;&#xBD84;&#xC758; &#xBCC0;&#xACBD; &#xC0AC;&#xD56D;&#xC5D0;&#xB294; &#xC0C8;&#xB85C;&#xC6B4; &#xBC84;&#xC804;&#xC758; VS TypeScript &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC744; &#xC124;&#xCE58;&#xD560; &#xD544;&#xC694;&#xB294; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
-<p>The nightly build currently does not include the full plugin setup, but we are working on publishing an installer on a nightly basis as well.</p>
+<p>&#xD604;&#xC7AC; nightly build&#xC5D0;&#xB294; &#xC804;&#xCCB4; &#xD50C;&#xB7EC;&#xADF8;&#xC778; &#xC124;&#xC815;&#xC774; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xC9C0; &#xC54A;&#xC9C0;&#xB9CC; nightly &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC124;&#xCE58; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC744; &#xBC30;&#xD3EC;&#xD558;&#xAE30; &#xC704;&#xD574; &#xB178;&#xB825;&#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <ol>
-<li><p>Download the <a href="https://github.com/Microsoft/TypeScript/blob/master/scripts/VSDevMode.ps1" target="_blank">VSDevMode.ps1</a> script.</p>
+<li><p><a href="https://github.com/Microsoft/TypeScript/blob/master/scripts/VSDevMode.ps1" target="_blank">VSDevMode.ps1</a> &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;.</p>
 <blockquote>
-<p>Also see our wiki page on <a href="https://github.com/Microsoft/TypeScript/wiki/Dev-Mode-in-Visual-Studio#using-a-custom-language-service-file" target="_blank">using a custom language service file</a>.</p>
+<p>&#xB610;&#xD55C; <a href="https://github.com/Microsoft/TypeScript/wiki/Dev-Mode-in-Visual-Studio#using-a-custom-language-service-file" target="_blank">&#xCEE4;&#xC2A4;&#xD140; &#xC5B8;&#xC5B4; &#xC11C;&#xBE44;&#xC2A4; &#xD30C;&#xC77C; &#xC0AC;&#xC6A9;</a>&#xC5D0; &#xB300;&#xD55C; &#xC704;&#xD0A4; &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xCC38;&#xC870;&#xD558;&#xC138;&#xC694;.</p>
 </blockquote>
 </li>
-<li><p>From a PowerShell command window, run:</p>
-<p>For VS 2015:</p>
+<li><p>PowerShell &#xCEE4;&#xB9E8;&#xB4DC; &#xB77C;&#xC778; &#xCC3D;&#xC5D0;&#xC11C; &#xB2E4;&#xC74C;&#xC744; &#xC2E4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<p>VS 2015:</p>
 <pre><code class="lang-posh">VSDevMode.ps1 14 -tsScript &lt;path to your folder&gt;/node_modules/typescript/lib
 </code></pre>
-<p>For VS 2013:</p>
+<p>VS 2013:</p>
 <pre><code class="lang-posh">VSDevMode.ps1 12 -tsScript &lt;path to your folder&gt;/node_modules/typescript/lib
 </code></pre>
 </li>
 </ol>
 <h3 id="intellij-idea-mac">IntelliJ IDEA (Mac)</h3>
-<p>Go to <code>Preferences</code> &gt; <code>Languages &amp; Frameworks</code> &gt; <code>TypeScript</code>:</p>
+<p><code>Preferences</code> &gt; <code>Languages &amp; Frameworks</code> &gt; <code>TypeScript</code>&#xB97C; &#xC120;&#xD0DD;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <blockquote>
-<p>TypeScript Version: If you installed with npm: <code>/usr/local/lib/node_modules/typescript/lib</code></p>
+<p>TypeScript &#xBC84;&#xC804;: npm&#xACFC; &#xD568;&#xAED8; &#xC124;&#xCE58;&#xD55C; &#xACBD;&#xC6B0;: <code>/usr/local/lib/node_modules/typescript/lib</code></p>
 </blockquote>
 <script src="_gitbook_plugin_analytics.js"></script>
                                 
@@ -786,7 +782,7 @@ You can either install the npm package globally or to a local <code>node_modules
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Nightly 빌드","level":"5.5","depth":1,"previous":{"title":"빌드 도구와 통합","level":"5.4","depth":1,"path":"pages/Integrating with Build Tools.md","ref":"pages/Integrating with Build Tools.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","analytics"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"analytics":{"google":"UA-99001722-6"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Nightly Builds.md","mtime":"2018-04-21T17:44:16.047Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-23T20:16:01.265Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Nightly 빌드","level":"5.5","depth":1,"previous":{"title":"빌드 도구와 통합","level":"5.4","depth":1,"path":"pages/Integrating with Build Tools.md","ref":"pages/Integrating with Build Tools.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","analytics"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"analytics":{"google":"UA-99001722-6"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Nightly Builds.md","mtime":"2018-04-25T09:25:22.609Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-25T09:26:39.533Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
