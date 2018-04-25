@@ -15,13 +15,13 @@ nightlies는 [www.myget.org](https://www.myget.org/gallery/typescript-preview)�
 
 There are two packages:
 
-* `Microsoft.TypeScript.Compiler`: Tools only (`tsc.exe`, `lib.d.ts`, etc.) .
-* `Microsoft.TypeScript.MSBuild`: Tools as above, as well as MSBuild tasks and targets (`Microsoft.TypeScript.targets`, `Microsoft.TypeScript.Default.props`, etc.)
+* `Microsoft.TypeScript.Compiler`: 도구만 (`tsc.exe`, `lib.d.ts`, 등.) .
+* `Microsoft.TypeScript.MSBuild`: 위와 같은 도구뿐만 아니라 MSBuild 작업 및 대상 (`Microsoft.TypeScript.targets`, `Microsoft.TypeScript.Default.props`, 등.)
 
 ## nightly 빌드를 사용하도록 IDE 업데이트
 
 nightly drop을 사용하도록 IDE를 업데이트할 수도 있습니다.  
-먼저 npm을 통해 패키지를 설치해야합니다.  
+먼저 npm을 통해 패키지를 설치해야 합니다.  
 npm 패키지를 전역으로 설치하거나 로컬 `node_modules` 폴더에 설치할 수 있습니다.
 
 이 섹션의 나머지 부분에서는 `typescript@next`가 이미 설치되어 있다고 가정합니다.
@@ -56,7 +56,7 @@ npm 패키지를 전역으로 설치하거나 로컬 `node_modules` 폴더에 �
 
    > 또한 [커스텀 언어 서비스 파일 사용](https://github.com/Microsoft/TypeScript/wiki/Dev-Mode-in-Visual-Studio#using-a-custom-language-service-file)에 대한 위키 페이지를 참조하세요.
 
-2. PowerShell 커맨드 라인창에서 다음을 실행합니다:
+2. PowerShell 커맨드 라인 창에서 다음을 실행합니다:
 
   VS 2015:
 
