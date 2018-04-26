@@ -29,8 +29,8 @@
 - [X] 믹스인
 - [x] 트리플-슬래시 지시자
 - [x] JavaScript 파일 타입 검사
-## Declaration Files
-- [ ] Introduction
+## 선언 파일
+- [ ] 소개
 - [ ] Library Structures
 - [ ] By Example
 - [ ] Do's and Don'ts

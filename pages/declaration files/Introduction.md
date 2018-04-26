@@ -1,49 +1,47 @@
-This guide is designed to teach you how to write a high-quality TypeScript Declaration File.
+이 가이드는 높은 품질의 TypeScript 선언 파일을 작성하는 방법을 설명하기 위해 작성되었습니다.
 
-In this guide, we'll assume basic familiarity with the TypeScript language.
-If you haven't already, you should read the [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/basic-types.html)
-  to familiarize yourself with basic concepts, especially types and namespaces.
+이 가이드에서는 TypeScript 언어에 대해 기본적인 지식을 전제로 합니다.  
+아직 읽어 보지 않으셨다면 특히 타입과 네임스페이스와 같은 기본 개념에 
+익숙해지게 하도록 하기 위해 [TypeScript 핸드북](https://typescript-kr.github.io)을 읽어 보시길 바랍니다. 
 
-# Sections
+# 섹션
 
-The guide is broken down into the following sections.
+가이드는 다음 섹션으로 나뉩니다.
 
-## Library Structures
+## 라이브러리 구조
 
-The [Library Structures](./Library Structures.md) guide helps you understand common library formats and how to write a correct declaration file for each format.
-If you're editing an existing file, you probably don't need to read this section.
-Authors of new declaration files must read this section to properly understand how the format of the library influences the writing of the declaration file.
+[라이브러리 구조](./Library Structures.md) 가이드는 일반적인 라이브러리 포맷과 각 포맷에 맞는 선언 파일을 작성하는 방법을 이해할 수 있도록 도와줍니다.  
+기존 파일을 편집하는 경우에는 이 섹션을 읽지 않아도 됩니다.  
+새로운 선언 파일의 작성자는 라이브러리 포맷이 선언 파일의 작성에 어떤 영향을 미치는지를 제대로 이해하기 위해 이 섹션을 읽어야 합니다.
 
-## By Example
+## 예제
 
-Many times, we are faced with writing a declaration file when we only have examples of the underlying library to guide us.
-The [By Example](./By Example.md) section shows many common API patterns and how to write declarations for each of them.
-This guide is aimed at the TypeScript novice who may not yet be familiar with every language construct in TypeScript.
+대부분, 사용자는 사용자를 안내해 줄 기본적인 라이브러리의 예만 있을 때 선언 파일을 작성하는 것에 직면하게 됩니다.  
+[예제](./By Example.md) 섹션에서는 많은 공통 API 패턴과 각각에 대한 선언을 작성하는 방법을 보여줍니다.  
+이 가이드는 아직 TypeScript의 모든 언어 구조에 익숙하지 않을 수 있는 TypeScript 초보자를 대상으로 합니다.
 
-## "Do"s and "Don't"s
+## "하세요"와 "하지 마세요"
 
-Many common mistakes in declaration files can be easily avoided.
-The [Do's and Don'ts](./Do's and Don'ts.md) section identifies common errors,
-  describes how to detect them,
-  and how to fix them.
-Everyone should read this section to help themselves avoid common mistakes.
+선언 파일에서 자주 범하는 실수를 쉽게 피할 수 있습니다.  
+["하세요"와 "하지 마세요"](./Do's and Don'ts.md) 섹션에서는 일반적인 오류를 식별합니다,
+  그것들을 감지하는 방법을 기술하고,
+  어떻게 고쳐야하는지.
+모든 사용자들은 일반적인 실수를 피하고자 이 섹션을 읽어야합니다.
 
-## Deep Dive
+## 더 깊숙이
 
-For seasoned authors interested in the underlying mechanics of how declaration files work,
-  the [Deep Dive](./Deep Dive.md) section explains many advanced concepts in declaration writing,
-  and shows how to leverage these concepts to create cleaner and more intuitive declaration files.
+선언 파일이 어떻게 작동하는지에 대한 기본 메커니즘에 관심이 있는 숙련자들을 위해,
+  [더 깊숙이](./Deep Dive.md) 섹션은 선언 작성의 많은 고급 개념을 설명하고 이러한 개념을 활용하여보다 명확하고 직관적인 선언 파일을 작성하는 방법을 설명합니다.
 
-## Templates
+## 템플릿
 
-In [Templates](./Templates.md) you'll find a number of declaration files that serve as a useful starting point
-  when writing a new file.
-Refer to the documentation in [Library Structures](./Library Structures.md) to figure out which template file to use.
+[템플릿](./Templates.md)에서 새 파일을 작성할 때 유용한 시작점이 되는 여러 선언 파일이 있습니다.  
+어떤 템플릿 파일을 사용할 지 알아 보려면 [라이브러리 구조](./Library Structures.md)의 문서를 참조하세요.
 
-## Publish to npm
+## npm 배포
 
-The [Publishing](./Publishing.md) section explains how to publish your declaration files to an npm package, and shows how to manage your dependent packages.
+[배포](./Publishing.md) 섹션에서는 선언 파일을 npm 패키지에 배포하는 방법과 의존성 패키지를 관리하는 방법을 설명합니다.
 
-## Find and Install Declaration Files
+## 선언 파일 찾기와 설치
 
-For JavaScript library users, the [Consumption](./Consumption.md) section offers a few simple steps to locate and install corresponding declaration files.
+JavaScript 라이브러리 사용자의 경우 [Consumption](./Consumption.md) 섹션에서 해당 선언 파일을 찾아 설치하는 몇 가지 간단한 단계를 제공합니다.
