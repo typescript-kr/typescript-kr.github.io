@@ -35,9 +35,9 @@
 * [트리플-슬래시 지시자](pages/Triple-Slash Directives.md)
 * [JavaScript 파일 타입 검사](pages/Type Checking JavaScript Files.md)
 
-## Declaration Files
+## 선언 파일
 
-* [Introduction](pages/declaration files/Introduction.md)
+* [소개](pages/declaration files/Introduction.md)
 * [Library Structures](pages/declaration files/Library Structures.md)
 * [By Example](pages/declaration files/By Example.md)
 * [Do's and Don'ts](pages/declaration files/Do's and Don'ts.md)
