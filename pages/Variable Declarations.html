@@ -1,28 +1,46 @@
 
 <!DOCTYPE HTML>
 <html lang="" >
-
-<head>
-	<meta charset="UTF-8">
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-	<title>변수 선언 · GitBook</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="description" content="">
-	<meta name="generator" content="GitBook 3.2.3">
-	<meta property="og:title" content="TypeScript 한글 문서">
-	<meta property="og:image" content="https://avatars1.githubusercontent.com/u/37781342?s=200&v=4">
-	<meta property="og:description" content="TypeScript 한글 번역 문서입니다">
-	<meta property="og:url" content="http://typescript-kr.github.io/index.html">   
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>변수 선언 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+				<meta name="generator" content="GitBook 3.2.3">
+				<meta property="og:title" content="TypeScript 한글 문서">
+        <meta property="og:image" content="https://avatars1.githubusercontent.com/u/37781342?s=200&v=4">
+        <meta property="og:description" content="TypeScript 한글 번역 문서입니다">
+        
+        
+        
     
     
     <link rel="stylesheet" href="../gitbook/style.css">
 
-      
-	<link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight-1/website.css">   
-	<link rel="stylesheet" href="../gitbook/gitbook-plugin-forkmegithub/plugin.css">   
-	<link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">   
-	<link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">   
-	<link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">   
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight-1/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-forkmegithub/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
 
     
 
@@ -43,7 +61,8 @@
     
     <link rel="stylesheet" type="text/css" href="../assets/css/atom-one-dark.css" />
     
- 
+
+        
     
     
     <meta name="HandheldFriendly" content="true"/>
@@ -60,10 +79,9 @@
     <link rel="prev" href="Basic Types.html" />
     
 
-</head>
-
-<body>
-	
+    </head>
+    <body>
+        
 <div class="book">
     <div class="book-summary">
         
@@ -1101,7 +1119,7 @@
 <pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">defaults</span> <span class="cm-operator">=</span> { <span class="cm-property">food</span>: <span class="cm-string">&quot;spicy&quot;</span>, <span class="cm-property">price</span>: <span class="cm-string">&quot;$$&quot;</span>, <span class="cm-property">ambiance</span>: <span class="cm-string">&quot;noisy&quot;</span> };
 <span class="cm-keyword">let</span> <span class="cm-variable">search</span> <span class="cm-operator">=</span> { <span class="cm-property">food</span>: <span class="cm-string">&quot;rich&quot;</span>, <span class="cm-meta">...</span><span class="cm-variable">defaults</span> };
 </code></pre>
-<p><code>defaults</code>&#xC758; <code>food</code>&#xC18D;&#xC131;&#xC744; <code>food: &quot;rich&quot;</code>&#xB85C; &#xB36E;&#xC5B4;&#xC4F0;&#xB294;&#xB370; &#xC6B0;&#xB9AC;&#xB294; &#xC774;&#xAC83;&#xC744; &#xC6D0;&#xD55C; &#xAC8C; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;.</p>
+<p><code>defaults</code>&#xC758; <code>food</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xAC00; <code>food: &quot;rich&quot;</code>&#xB97C; &#xB36E;&#xC5B4;&#xC4F0;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098; &#xC774;&#xAC83;&#xC740; &#xC6B0;&#xB9AC;&#xAC00; &#xC6D0;&#xD55C; &#xACB0;&#xACFC;&#xAC00; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;.&apos;</p>
 <p>&#xAC1D;&#xCCB4; Spread&#xC5D0;&#xB294; &#xBA87; &#xAC00;&#xC9C0; &#xB2E4;&#xB978; &#xB180;&#xB77C;&#xC6B4; &#xD55C;&#xACC4;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>&#xCCAB;&#xBC88;&#xC9F8;, &#xC5F4;&#xAC70; &#xAC00;&#xB2A5; &#xC18D;&#xC131;(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties" target="_blank">own, enumerable properties</a>) &#xAC1D;&#xCCB4;&#xC5D0; &#xD3EC;&#xD568;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xAC1D;&#xCCB4;&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC804;&#xAC1C;&#xD560; &#xB54C; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xC783;&#xC5B4;&#xBC84;&#xB9B0;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">C</span> {
@@ -1115,7 +1133,7 @@
 <span class="cm-variable">clone</span>.<span class="cm-property">m</span>(); <span class="cm-comment">// &#xC624;&#xB958;!</span>
 </code></pre>
 <p>&#xB450;&#xBC88;&#xC9F8;, Typescript &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; &#xC77C;&#xBC18; &#xD568;&#xC218;&#xC758; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC804;&#xAC1C;&#xB85C; &#xD5C8;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xAE30;&#xB2A5;&#xC740; &#xD5A5;&#xD6C4; &#xBC84;&#xC804;&#xC758; &#xC5B8;&#xC5B4;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB420; &#xAC83;&#xC73C;&#xB85C; &#xC608;&#xC0C1;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<script src="_gitbook_plugin_analytics.js"></script>
+<script src="../_gitbook_plugin_analytics.js"></script>
                                 
                                 </section>
                             
@@ -1158,11 +1176,12 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"변수 선언","level":"3.2","depth":1,"next":{"title":"인터페이스","level":"3.3","depth":1,"path":"pages/Interfaces.md","ref":"pages/Interfaces.md","articles":[]},"previous":{"title":"기본 타입","level":"3.1","depth":1,"path":"pages/Basic Types.md","ref":"pages/Basic Types.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","analytics"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"analytics":{"google":"UA-99001722-6"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Variable Declarations.md","mtime":"2018-04-25T09:27:04.917Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-26T10:24:13.399Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"변수 선언","level":"3.2","depth":1,"next":{"title":"인터페이스","level":"3.3","depth":1,"path":"pages/Interfaces.md","ref":"pages/Interfaces.md","articles":[]},"previous":{"title":"기본 타입","level":"3.1","depth":1,"path":"pages/Basic Types.md","ref":"pages/Basic Types.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","analytics"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"analytics":{"google":"UA-99001722-6"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Variable Declarations.md","mtime":"2019-06-14T05:35:15.554Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-14T05:48:57.633Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
- 
+
+        
     
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
@@ -1198,20 +1217,5 @@
 
     
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-99001722-6"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-
-		gtag('config', 'UA-99001722-6');
-	</script>
-
-
-</body>
-
+    </body>
 </html>
