@@ -1,5 +1,5 @@
 {
-  "plugins": ["theme-darkblue", "addcssjs", "highlight-1", "custom-favicon", "forkmegithub", "sitemap-general", "sitemap"],
+  "plugins": ["theme-darkblue", "addcssjs", "highlight-1", "custom-favicon", "forkmegithub", "sitemap-general", "sitemap", "analytics"],
   "pluginsConfig": {
     "sitemap-general": {
       "prefix": "https://typescript-kr.gitbooks.io/"

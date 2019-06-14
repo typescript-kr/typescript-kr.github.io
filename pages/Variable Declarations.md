@@ -653,7 +653,7 @@ let defaults = { food: "spicy", price: "$$", ambiance: "noisy" };
 let search = { food: "rich", ...defaults };
 ```
 
-`defaults`의 `food`속성을 `food: "rich"`로 덮어쓰는데 우리는 이것을 원한 게 아닙니다.
+`defaults`의 `food` 프로퍼티가 `food: "rich"`를 덮어쓰게 됩니다. 그러나 이것은 우리가 원한 결과가 아닙니다.'
 
 객체 Spread에는 몇 가지 다른 놀라운 한계가 있습니다.
 

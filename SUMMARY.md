@@ -35,9 +35,9 @@
 * [트리플-슬래시 지시자](pages/Triple-Slash Directives.md)
 * [JavaScript 파일 타입 검사](pages/Type Checking JavaScript Files.md)
 
-## Declaration Files
+## 선언 파일
 
-* [Introduction](pages/declaration files/Introduction.md)
+* [소개](pages/declaration files/Introduction.md)
 * [Library Structures](pages/declaration files/Library Structures.md)
 * [By Example](pages/declaration files/By Example.md)
 * [Do's and Don'ts](pages/declaration files/Do's and Don'ts.md)
@@ -46,10 +46,10 @@
 * [Publishing](pages/declaration files/Publishing.md)
 * [Consumption](pages/declaration files/Consumption.md)
 
-## Project Configuration
+## 프로젝트 환경설정
 
 * [tsconfig.json](pages/tsconfig.json.md)
-* [Compiler Options](pages/Compiler Options.md)
-* [Compiler Options in MSBuild](pages/Compiler Options in MSBuild.md)
-* [Integrating with Build Tools](pages/Integrating with Build Tools.md)
-* [Nightly Builds](pages/Nightly Builds.md)
+* [컴파일러 옵션](pages/Compiler Options.md)
+* [MSBuild에서의 컴파일러 옵션](pages/Compiler Options in MSBuild.md)
+* [빌드 도구와 통합](pages/Integrating with Build Tools.md)
+* [Nightly 빌드](pages/Nightly Builds.md)
