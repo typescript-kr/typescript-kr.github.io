@@ -309,8 +309,7 @@ function myCoolFunction() {
 ```
 
 `myCoolFunction`에 두 개의 오버로드를 추가했습니다.
-첫 번째 검사는 `myCoolFunction`가 (`number`를 갖는) 함수에 `number`의 목록을 가집니다.
-두번째는 함수도 갖춰야 한다는 것이고 그 뒤에 오는 인수가 숫자여야 한다는 것을 알리기 위해 나머지 매개변수(`...nums`)를 사용합니다.
+첫 번째 검사는 `myCoolFunctions`가 두 개의 인수를 가질 수 있다는 것을 뜻 하며, 하나는 함수 타입 (`number` 타입의 매개변수를 받는), 다른 하나는 `number`의 목록(list) 타입입니다. 그리고, 두 번째 검사가 뜻 하는 것은 마찬가지로 첫번째 인수는 함수 타입이고, 그 이후에는 몇개가 오든 모든 인수는 `nubmber` 타입이어야 한다는 것을 나타내기 위해 나머지 매개변수 (rest parameters, `...nums`) 를 사용했습니다.
 
 ### 순차적으로 추가되는 프로퍼티 (Sequentially Added Properties)
 
