@@ -90,14 +90,12 @@ console.log(x[0].substr(1)); // 좋아요
 console.log(x[1].substr(1)); // 오류, 'number'은 'substr'을 가지고 있지 않습니다.
 ```
 
-알려진 인덱스 집합 외부의 요소에 접근할 때는 다음과 같이 Union 타입이 사용됩니다:
+알려진 인덱스 집합 외부의 요소에 접근하면 오류와 함께 실패합니다.
 
 ```ts
-x[3] = "world"; // 좋아요, 'string'은 'string | number'에 할당될 수 있습니다.
+x[3] = "world"; // 오류, Property '3'은 '[string, number]' 타입에 존재하지 않습니다.
 
-console.log(x[5].toString()); // 좋아요, 'string' 및 'number'에 모두 'toString'이 있습니다.
-
-x[6] = true; // 오류, 'boolean'은 'string | number' 타입이 아닙니다.
+console.log(x[5].toString()); // 오류, Property '5'는 '[string, number]' 타입에 존재하지 않습니다.
 ```
 
 유니온 타입은 다음 장에서 다루게 될 고급 주제입니다.
