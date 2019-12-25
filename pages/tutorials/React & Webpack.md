@@ -1,6 +1,6 @@
 이 가이드에서는 TypeScript를 [React](http://facebook.github.io/react/)와 [webpack](http://webpack.github.io/)으로 묶는 방법을 가르쳐줄 것입니다.
 
-새로운 프로젝트를 시작하려면 먼저 [React Quick Start guide](/samples/index.html)를 살펴보세요.
+새로운 프로젝트를 시작하려면 먼저 [React Quick Start guide](https://create-react-app.dev/docs/adding-typescript/)를 살펴보세요.
 
 그렇지 않으면 [npm](https://www.npmjs.com/)과 [Node.js](https://nodejs.org/)를 이미 사용하고 있다고 가정합니다.
 
