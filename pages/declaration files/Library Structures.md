@@ -55,8 +55,6 @@ window.createGreeting = function(s) {
 }
 ```
 
-When looking at the code of a global library, you'll usually see:
-
 전역 라이브러리의 코드를 보면, 일반적으로 다음과 같은 정보가 표시됩니다:
 
 * Top-level `var` statements or `function` declarations
@@ -72,10 +70,8 @@ When looking at the code of a global library, you'll usually see:
 
 ### 전역 라이브러리의 예시 (Examples of Global Libraries)
 
-Because it's usually easy to turn a global library into a UMD library, very few popular libraries are still written in the global style.
-However, libraries that are small and require the DOM (or have *no* dependencies) may still be global.
-
 전역 라이브러리를 UMD 라이브러리로 변환 하는 것은 일반적으로 간단하기 때문에, 아주 소수의 인기있는 라이브러리들은 여전히 전역 스타일로 작성됩니다.
+그러나 크기가 작고 DOM이 필요한 라이브러리(혹은 의존성이 *없는* 라이브러리)는 여전히 전역일수 있습니다.
 
 ### 전역 라이브러리 템플릿 (Global Library Template)
 
@@ -354,9 +350,6 @@ interface CatsKittySettings { }
 TypeScript는 로더에 구애받지 않기 때문에 이 정책을 컴파일 타임으로 적용할 수는 없지 ES6 모듈 로더로 전환하려는 개발자는 이를 알고 있어야 합니다.
 
 ## ES6가 모듈 호출 서명에 미치는 영향(The Impact of ES6 on Module Call Signatures)
-
-Many popular libraries, such as Express, expose themselves as a callable function when imported.
-For example, the typical Express usage looks like this:
 
 Express와 같이 인기 있는 많은 라이브러리는 import될때 호출가능한 함수로 자신을 노출시킵니다.
 예를 들어, 일반적인 Express 사용법은 다음과 같습니다.
