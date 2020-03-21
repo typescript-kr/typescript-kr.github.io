@@ -1,46 +1,45 @@
 # Overview
 
-Broadly speaking, the way you *structure* your declaration file depends on how the library is consumed.
-There are many ways of offering a library for consumption in JavaScript, and you'll need to write your declaration file to match it.
-This guide covers how to identify common library patterns, and how to write declaration files which correspond to that pattern.
+대체로 선언파일을 *구성하는* 방법은 라이브러리가 어떻게 사용되냐에 따라 달라집니다. JavaScript에서 사용할 수 있는 라이브러리를 제공하는 방법은 여러가지가 있으며, 그에 맞게 선언 파일을 작성해야합니다. 이 가이드에서는 공통 라이브러리 패턴을 식별하는 방법과 해당 패턴에 해당하는 선언파일을 작성하는 법을 다룹니다.
 
-Each type of major library structuring pattern has a corresponding file in the [Templates](./Templates.md) section.
-You can start with these templates to help you get going faster.
+각 유형의 주요 라이브러리 구조화 패턴은 [Templates](./Templates.md) 섹션에 해당 파일이 있습니다.
+이러한 템플릿을 통해 더빨리 시작할 수 있습니다.
 
-# Identifying Kinds of Libraries
+# 라이브러리 종류 식별 (Identifying Kinds of Libraries)
 
-First, we'll review the kinds of libraries TypeScript declaration files can represent.
-We'll briefly show how each kind of library is *used*, how it is *written*, and list some example libraries from the real world.
+먼저 TypeScript 선언 파일이 나타낼 수 있는 라이브러리의 종류를 검토합니다.
+우리는 각 종류의 라이브러리가 어떻게 *사용되고*, 어떻게 *쓰여지는지를* 간략히 보여주고, 현실 세계의 예시 라이브러리들을 나열할것입니다.
 
-Identifying the structure of a library is the first step in writing its declaration file.
-We'll give hints on how to identify structure both based on its *usage* and its *code*.
-Depending on the library's documentation and organization, one might be easier than the other.
-We recommend using whichever is more comfortable to you.
+라이브러리의 구조를 식별하는 것은 선언 파일을 작성하는 첫 번째 단계입니다.
+*사용법* 과 *코드* 를 기반으로 구조를 식별하는 방법에 대해 힌트를 드리겠습니다.
+라이브러리의 문서 및 구성에 따라, one might be easier than the other.
+어느 것이든 편한 것을 사용하는 것이 좋습니다.
 
-## Global Libraries
+## 전역 라이브러리 (Global Libraries)
 
-A *global* library is one that can be accessed from the global scope (i.e. without using any form of `import`).
-Many libraries simply expose one or more global variables for use.
-For example, if you were using [jQuery](https://jquery.com/), the `$` variable can be used by simply referring to it:
+*전역* 라이브러리는 전역 범위에서 액세스할 수 있는 라이브러리입니다(즉, 어떤 형태의 `import`도 사용하지 않음).
+많은 라이브러리는 간단히 하나 이상의 전역 변수를 노출하여 사용할 수 있습니다.
+예를 들어, [jQuery](https://jquery.com/)를 사용 중인 경우, `$` 변수는 다음을 참조하는 것으로 사용할 수 있습니다:
 
 ```ts
 $(() => { console.log('hello!'); } );
 ```
 
-You'll usually see guidance in the documentation of a global library of how to use the library in an HTML script tag:
+일반적으로 전역 라이브러리의 문서에서 HTML 스크립트 태그 라이브러리 사용 방법에 대한 가이드를 볼 수 있습니다.
 
 ```html
 <script src="http://a.great.cdn.for/someLib.js"></script>
 ```
 
-Today, most popular globally-accessible libraries are actually written as UMD libraries (see below).
-UMD library documentation is hard to distinguish from global library documentation.
-Before writing a global declaration file, make sure the library isn't actually UMD.
+오늘날 세계적으로 가장 많이 엑세스 가능한 라이브러리는 실제로 UMD 라이브러리로 작성됩니다. (아래 참조).
+UMD 라이브러리 문서는 전역 라이브러리 문서와 구분하기 어렵습니다.
+전역 선언 파일을 작성하기 전에 라이브러리가 실제로 UMD가 아니라는 것을 확실히 해야합니다.
 
-### Identifying a Global Library from Code
 
-Global library code is usually extremely simple.
-A global "Hello, world" library might look like this:
+### 코드에서 전역 라이브러리 식별 (Identifying a Global Library from Code)
+
+전역 라이브러리 코드는 일반적으로 매우 간단합니다.
+전역 라이브러리 "Hello, world"는 다음과 같습니다:
 
 ```js
 function createGreeting(s) {
@@ -48,7 +47,7 @@ function createGreeting(s) {
 }
 ```
 
-or like this:
+혹은 다음과 같습니다:
 
 ```js
 window.createGreeting = function(s) {
@@ -58,46 +57,50 @@ window.createGreeting = function(s) {
 
 When looking at the code of a global library, you'll usually see:
 
+전역 라이브러리의 코드를 보면, 일반적으로 다음과 같은 정보가 표시됩니다:
+
 * Top-level `var` statements or `function` declarations
 * One or more assignments to `window.someName`
 * Assumptions that DOM primitives like `document` or `window` exist
 
-You *won't* see:
+다음과 같은 정보는 표시되지 *않습니다.*
 
 * Checks for, or usage of, module loaders like `require` or `define`
 * CommonJS/Node.js-style imports of the form `var fs = require("fs");`
 * Calls to `define(...)`
 * Documentation describing how to `require` or import the library
 
-### Examples of Global Libraries
+### 전역 라이브러리의 예시 (Examples of Global Libraries)
 
 Because it's usually easy to turn a global library into a UMD library, very few popular libraries are still written in the global style.
 However, libraries that are small and require the DOM (or have *no* dependencies) may still be global.
 
-### Global Library Template
+전역 라이브러리를 UMD 라이브러리로 변환 하는 것은 일반적으로 간단하기 때문에, 아주 소수의 인기있는 라이브러리들은 여전히 전역 스타일로 작성됩니다.
 
-The template file [`global.d.ts`](./templates/global.d.ts.md) defines an example library `myLib`.
-Be sure to read the ["Preventing Name Conflicts" footnote](#preventing-name-conflicts).
+### 전역 라이브러리 템플릿 (Global Library Template)
 
-## Modular Libraries
+템플릿 파일 [`global.d.ts`](./templates/global.d.ts.md)은 예제 라이브러리 `myLib` 를 정의합니다.
+["Preventing Name Conflicts" footnote](#preventing-name-conflicts)를 반드시 읽어야 합니다.
 
-Some libraries only work in a module loader environment.
-For example, because `express` only works in Node.js and must be loaded using the CommonJS `require` function.
+## 모듈러 라이브러리 (Modular Libraries)
 
-ECMAScript 2015 (also known as ES2015, ECMAScript 6, and ES6), CommonJS, and RequireJS have similar notions of *importing* a *module*.
-In JavaScript CommonJS (Node.js), for example, you would write
+일부 라이브러리는 모듈 로더 환경에서만 동작합니다.
+예를 들어, `express`는 Node.js에서만 동작하고 반드시 CommonJs `requrie`함수를 사용하여 로드 해야합니다..
+
+ECMAScript 2015 (ES2015, ECMAScript 6 및 ES6), CommonJS, 그리고 RequireJS는 *모듈* 을 *가져오는* 개념과 유사합니다.
+예를 들어, JavaScript CommonJS (Node.js)에서는 다음과 같이 씁니다.
 
 ```ts
 var fs = require("fs");
 ```
 
-In TypeScript or ES6, the `import` keyword serves the same purpose:
+TypeScript나 ES6 에서는 , `import` 키워드는 같은 목적을 가지고 있습니다.
 
 ```ts
 import fs = require("fs");
 ```
 
-You'll typically see modular libraries include one of these lines in their documentation:
+일반적으로 모듈형 라이브러리는 문서에서 다음 중 하나를 포함합니다.
 
 ```js
 var someLib = require('someLib');
@@ -111,45 +114,48 @@ define(..., ['someLib'], function(someLib) {
 });
 ```
 
-As with global modules, you might see these examples in the documentation of a UMD module, so be sure to check the code or documentation.
+전역 모듈과 마찬가지로 UMD 모듈의 문서에서 이러한 예를 볼 수 있으므로 코드나 문서를 꼭 확인해야합니다.
 
-### Identifying a Module Library from Code
+### 코드에서 모듈 라이브러리를 식별 (Identifying a Module Library from Code)
 
-Modular libraries will typically have at least some of the following:
+모듈러 라이브러리는 일반적으로 아래중 적어도 하나를 가지고 있습니다.
 
 * Unconditional calls to `require` or `define`
 * Declarations like `import * as a from 'b';` or `export c;`
 * Assignments to `exports` or `module.exports`
 
-They will rarely have:
+다음과 같은 경우는 거의 없습니다:
+
 
 * Assignments to properties of `window` or `global`
 
-### Examples of Modular Libraries
+### 모듈러 라이브러리의 예시 (Examples of Modular Libraries)
 
-Many popular Node.js libraries are in the module family, such as [`express`](http://expressjs.com/), [`gulp`](http://gulpjs.com/), and [`request`](https://github.com/request/request).
+
+[`express`](http://expressjs.com/), [`gulp`](http://gulpjs.com/) 혹은 [`request`](https://github.com/request/request)와 같은 많은 인기 있는 Node.js 라이브러리가 모듈 제품군에 있습니다.
 
 ## *UMD*
 
-A *UMD* module is one that can *either* be used as module (through an import), or as a global (when run in an environment without a module loader).
-Many popular libraries, such as [Moment.js](http://momentjs.com/), are written this way.
-For example, in Node.js or using RequireJS, you would write:
+*UMD* 모듈은 (import를 통해) 모듈로 사용하거나(모듈 로더가 없는 환경에서 실행되는 경우) 전역으로 사용할 수 있는 모듈입니다.
+[Moment.js](http://momentjs.com/)와 같은 많은 인기있는 라이브러리가 이러한 방법으로 쓰여져 있습니다.
+예를 들어, Node.js 또는 RequireJS를 사용하면 다음과 같이 작성해야합니다:
+
 
 ```ts
 import moment = require("moment");
 console.log(moment.format());
 ```
 
-whereas in a vanilla browser environment you would write:
+반면에 바닐라 브라우저 환경에서는 다음과 같이 작성합니다:
 
 ```ts
 console.log(moment.format());
 ```
 
-### Identifying a UMD library
+### UMD 라이브러리 식별 (Identifying a UMD library)
 
-[UMD modules](https://github.com/umdjs/umd) check for the existence of a module loader environment.
-This is an easy-to-spot pattern that looks something like this:
+[UMD modules](https://github.com/umdjs/umd)는 모듈로더 환경이 있는지 확인합니다.
+이것은 다음과 같이 나타내기 쉬운 패턴입니다:
 
 ```js
 (function (root, factory) {
@@ -163,22 +169,20 @@ This is an easy-to-spot pattern that looks something like this:
 }(this, function (b) {
 ```
 
-If you see tests for `typeof define`, `typeof window`, or `typeof module` in the code of a library, especially at the top of the file, it's almost always a UMD library.
+특히 파일 맨위에 있는 라이브러리의 코드에서 `typeof define`, `typeof window`, 혹은 `typeof module`를 위한 테스트가 있다면 거의 항상 UMD 라이브러리 입니다.
 
-Documentation for UMD libraries will also often demonstrate a "Using in Node.js" example showing `require`,
-  and a "Using in the browser" example showing using a `<script>` tag to load the script.
+UMD 라이브러리에 대한 문서에는 종종 `require`를 보여주는 "Node.js에서 사용" 예제와 스크립트를 로드하기 위한 `<script>` 테그를 사용하는 "브라우저에서 사용" 예제를 보여줍니다.
 
-### Examples of UMD libraries
+### UMD 라이브러리의 예시 (Examples of UMD libraries)
 
-Most popular libraries are now available as UMD packages.
-Examples include [jQuery](https://jquery.com/), [Moment.js](http://momentjs.com/), [lodash](https://lodash.com/), and many more.
+대부분의 인기있는 라이브러리는 현재 UMD 라이브러리를 지원하고있습니다.
+예시로는 [jQuery](https://jquery.com/), [Moment.js](http://momentjs.com/), [lodash](https://lodash.com/) 등이 포함됩니다.
 
-### Template
+### 템플릿 (Template)
 
-There are three templates available for modules,
-  [`module.d.ts`](./templates/module.d.ts.md), [`module-class.d.ts`](./templates/module-class.d.ts.md) and [`module-function.d.ts`](./templates/module-function.d.ts.md).
+모듈에는 세 가지 템플릿 [`module.d.ts`](./templates/module.d.ts.md), [`module-class.d.ts`](./templates/module-class.d.ts.md), [`module-function.d.ts`](./templates/module-function.d.ts.md) 이 있습니다.
 
-Use [`module-function.d.ts`](./templates/module-function.d.ts.md) if your module can be *called* like a function:
+모듈을 함수처럼 호출할 수 있으면 [`module-function.d.ts`](./templates/module-function.d.ts.md)를 사용하세요.
 
 ```ts
 var x = require("foo");
@@ -186,9 +190,9 @@ var x = require("foo");
 var y = x(42);
 ```
 
-Be sure to read the [footnote "The Impact of ES6 on Module Call Signatures"](#the-impact-of-es6-on-module-plugins)
+반드시 [footnote "The Impact of ES6 on Module Call Signatures"](#the-impact-of-es6-on-module-plugins)를 읽어보세요.
 
-Use [`module-class.d.ts`](./templates/module-class.d.ts.md) if your module can be *constructed* using `new`:
+모듈이 `new`를 사용해 *생성*될 수 있으면 [`module-class.d.ts`](./templates/module-class.d.ts.md)를 사용하세요:
 
 ```ts
 var x = require("bar");
@@ -196,33 +200,33 @@ var x = require("bar");
 var y = new x("hello");
 ```
 
-The same [footnote](#the-impact-of-es6-on-module-plugins) applies to these modules.
+동일한 [footnote](#the-impact-of-es6-on-module-plugins)가 이러한 모듈에 적용됩니다.
 
-If your module is not callable or constructable, use the [`module.d.ts`](./templates/module.d.ts.md) file.
+모듈을 호출하거나 생성(new)할 수 없는 경우 [`module.d.ts`](./templates/module.d.ts.md)를 사용하세요.
 
-## *Module Plugin* or *UMD Plugin*
+## *모듈 플러그인* or *UMD 플러그인* (*Module Plugin* or *UMD Plugin*)
 
-A *module plugin* changes the shape of another module (either UMD or module).
-For example, in Moment.js, `moment-range` adds a new `range` method to the `moment` object.
+*모듈 플러그인*은 다른 다른 모듈(UMD 또은 모듈)의 형태를 변경합니다.
+예를들어 Moment.js에서, `moment-range`는 `moment` 객체에 새로운 `range`메서드를 추가합니다.
 
 For the purposes of writing a declaration file, you'll write the same code whether the module being changed is a plain module or UMD module.
 
-### Template
+### 템플릿 (Template)
 
-Use the [`module-plugin.d.ts`](./templates/module-plugin.d.ts.md) template.
+[`module-plugin.d.ts`](./templates/module-plugin.d.ts.md) 템플릿을 사용합니다.
 
-## *Global Plugin*
+## *전역 플러그인* (*Global Plugin*)
 
-A *global plugin* is global code that changes the shape of some global.
-As with *global-modifying modules*, these raise the possibility of runtime conflict.
+*전역 플러그인*은 일부 전역 형태를 변경하는 전역코드 입니다.
+*global-modifying modules*과 마찬가지로 런타임 충돌 가능성도 제기됩니다.
 
-For example, some libraries add new functions to `Array.prototype` or `String.prototype`.
+예를 들어 일부 라이브러리는 새로운 함수를 `Array.prototype`나 `String.prototype`에 추가합니다.
 
-### Identifying global plugins
+### 전역 플러그인 식별 (Identifying global plugins)
 
-Global plugins are generally easy to identify from their documentation.
+전역 플로그인은 일반적으로 문서에서 식별하기 쉽습니다.
 
-You'll see examples that look like this:
+다음과 같은 예를 볼 수 있습니다.
 
 ```ts
 var x = "hello, world";
@@ -234,23 +238,22 @@ var y = [1, 2, 3];
 console.log(y.reverseAndSort());
 ```
 
-### Template
+### 템플릿 (Template)
 
-Use the [`global-plugin.d.ts`](./templates/global-plugin.d.ts.md) template.
+[`global-plugin.d.ts`](./templates/global-plugin.d.ts.md) 템플릿을 사용하세요.
 
 ## *Global-modifying Modules*
 
-A *global-modifying module* alters existing values in the global scope when they are imported.
-For example, there might exist a library which adds new members to `String.prototype` when imported.
-This pattern is somewhat dangerous due to the possibility of runtime conflicts,
-  but we can still write a declaration file for it.
+*global-modifying module*은 import 될때 전역 범위안의 기존 값을 변경합니다.
+예를 들어, import될때 `String.prototype`에 새로운 맴버를 추가하는 라이브러리가 존재할 수 있습니다.
+이 패턴은 런타인 충돌 가능성 때문에 다소 위험하지만, 그래도 여전히 선언 파일을 쓸 수 있습니다.
 
-### Identifying global-modifying modules
+### global-modifying modules 식별하기 (Identifying global-modifying modules)
 
-Global-modifying modules are generally easy to identify from their documentation.
-In general, they're similar to global plugins, but need a `require` call to activate their effects.
+Global-modifying modules은 일반적으로 문서에서 쉽게 식별될 수 있습니다.
+일반적으로 전역 플러그인과 비슷하지만, 효과를 활성화하려면 `require`를 호출해야 합니다.
 
-You might see documentation like this:
+다음과 같은 문서를 볼 수 있습니다:
 
 ```ts
 // 'require' call that doesn't use its return value
@@ -267,17 +270,17 @@ var y = [1, 2, 3];
 console.log(y.reverseAndSort());
 ```
 
-### Template
+### 템플릿 (Template)
 
-Use the [`global-modifying-module.d.ts`](./templates/global-modifying-module.d.ts.md) template.
+[`global-modifying-module.d.ts`](./templates/global-modifying-module.d.ts.md) 템플릿을 사용하세요.
 
 # Consuming Dependencies
 
-There are several kinds of dependencies you might have.
+여러 종류의 의존성이 있을 수 있습니다.
 
-## Dependencies on Global Libraries
+## 전역 라이브러리에 대한 의존성 (Dependencies on Global Libraries)
 
-If your library depends on a global library, use a `/// <reference types="..." />` directive:
+만약 당신의 라이브러리가 전역 라이브러에 의존한다면, `/// <reference types="..." />` 지시자를 사용하세요:
 
 ```ts
 /// <reference types="someLib" />
@@ -285,9 +288,9 @@ If your library depends on a global library, use a `/// <reference types="..." /
 function getThing(): someLib.thing;
 ```
 
-## Dependencies on Modules
+## 모듈에 대한 의존성 (Dependencies on Modules)
 
-If your library depends on a module, use an `import` statement:
+만약 당신의 라이브러리가 모듈에 의존한다면 `import`를 사용하세요:
 
 ```ts
 import * as moment from "moment";
@@ -295,11 +298,11 @@ import * as moment from "moment";
 function getThing(): moment;
 ```
 
-## Dependencies on UMD libraries
+## UMD 라이브러리에 대한 의존성 (Dependencies on UMD libraries)
 
 ### From a Global Library
 
-If your global library depends on a UMD module, use a `/// <reference types` directive:
+만약 당신의 전역 라이브러리가 UMD 모듈에 의존한다면, `/// <reference types` 지시자를 사용하세요:
 
 ```ts
 /// <reference types="moment" />
@@ -309,7 +312,7 @@ function getThing(): moment;
 
 ### From a Module or UMD Library
 
-If your module or UMD library depends on a UMD library, use an `import` statement:
+만약 당신의 모듈이나 UMD 라이브러리가 UMD 라이브러리에 의존한다면, `import`를 사용하세요:
 
 ```ts
 import * as someLib from 'someLib';
@@ -317,15 +320,17 @@ import * as someLib from 'someLib';
 
 Do *not* use a `/// <reference` directive to declare a dependency to a UMD library!
 
-# Footnotes
+UMD라이브러리에 대한 의존성을 선언하기 위해 `/// <reference` 지시자를 사용하지 *마세요*
 
-## Preventing Name Conflicts
+# 각주 (Footnotes)
 
-Note that it's possible to define many types in the global scope when writing a global declaration file.
-We strongly discourage this as it leads to possible unresolvable name conflicts when many declaration files are in a project.
+## 이름 충돌 방지 (Preventing Name Conflicts)
 
-A simple rule to follow is to only declare types *namespaced* by whatever global variable the library defines.
-For example, if the library defines the global value 'cats', you should write
+전역 선언파일을 작성할때 전역 범위에서 여러 타입을 정의할 수 있다는 것을 알아두세요.
+프로젝트에 많은 선언파일이 있을때 해결할 수 없는 이름 충돌이 발생할 수 있으므로 이 방법을 사용하지 않는 것이 좋습니다.
+
+따라야하는 간단한 규칙은 라이브러리가 지정한 전역 변수로 네임스페이스가 지정된 타입만 선언하는 것입니다.
+예를 들어, 만약 라이브러리가 전역 값 'cats'를 정의하면 이렇게 작성해야합니다.
 
 ```ts
 declare namespace cats {
@@ -333,32 +338,35 @@ declare namespace cats {
 }
 ```
 
-But *not*
+그러나 이렇게는 작성하지*마세요*
 
 ```ts
 // at top-level
 interface CatsKittySettings { }
 ```
 
-This guidance also ensures that the library can be transitioned to UMD without breaking declaration file users.
+이 가이드는 또한 선언파일 사용자를 중단하지 않고 라이브러리를 UMD로 전환 할 수 있도록 합니다.
 
-## The Impact of ES6 on Module Plugins
+## 모듈 플로그인에 대한 ES6의 영향 (The Impact of ES6 on Module Plugins)
 
-Some plugins add or modify top-level exports on existing modules.
-While this is legal in CommonJS and other loaders, ES6 modules are considered immutable and this pattern will not be possible.
-Because TypeScript is loader-agnostic, there is no compile-time enforcement of this policy, but developers intending to transition to an ES6 module loader should be aware of this.
+일부 플로그인은 기존 모듈에서 최상위 export를 추가하거나 수정합니다.
+이것은 CommonJS에서는 합법이지만 ES6 모듈은 불변(immutable)으로 간주되며 이 패턴은 불가능합니다.
+TypeScript는 로더에 구애받지 않기 때문에 이 정책을 컴파일 타임으로 적용할 수는 없지 ES6 모듈 로더로 전환하려는 개발자는 이를 알고 있어야 합니다.
 
-## The Impact of ES6 on Module Call Signatures
+## ES6가 모듈 호출 서명에 미치는 영향(The Impact of ES6 on Module Call Signatures)
 
 Many popular libraries, such as Express, expose themselves as a callable function when imported.
 For example, the typical Express usage looks like this:
+
+Express와 같이 인기 있는 많은 라이브러리는 import될때 호출가능한 함수로 자신을 노출시킵니다.
+예를 들어, 일반적인 Express 사용법은 다음과 같습니다.
 
 ```ts
 import exp = require("express");
 var app = exp();
 ```
 
-In ES6 module loaders, the top-level object (here imported as `exp`) can only have properties;
-  the top-level module object is *never* callable.
-The most common solution here is to define a `default` export for a callable/constructable object;
-  some module loader shims will automatically detect this situation and replace the top-level object with the `default` export.
+ES6 모듈 로더에서 최상위 객체 (here imported as `exp`)는 속성만 가질 수 있습니다;
+  최상위 모듈 객체는 *절대* 호출할 수 없습니다.
+여기서 가장 일반적인 해결책은 호출/생성(new) 가능한 객체에 대해 `default` export를 정의하는 것입니다;
+  일부 모듈 로더 shims는 이 상황을 자동으로 감지하여 최상위 객체를 `default` export로 대체합니다.
