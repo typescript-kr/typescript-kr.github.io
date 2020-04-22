@@ -483,6 +483,19 @@
             
         </li>
     
+        <li class="chapter " data-level="3.23" data-path="../Utility Types.html">
+            
+                <a href="../Utility Types.html">
+            
+                    
+                    유틸리티 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -627,7 +640,20 @@
             
         </li>
     
-        <li class="chapter " data-level="5.3" data-path="../Compiler Options in MSBuild.html">
+        <li class="chapter " data-level="5.3" data-path="../Project References.html">
+            
+                <a href="../Project References.html">
+            
+                    
+                    프로젝트 레퍼런스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../Compiler Options in MSBuild.html">
             
                 <a href="../Compiler Options in MSBuild.html">
             
@@ -640,7 +666,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.4" data-path="../Integrating with Build Tools.html">
+        <li class="chapter " data-level="5.5" data-path="../Integrating with Build Tools.html">
             
                 <a href="../Integrating with Build Tools.html">
             
@@ -653,12 +679,32 @@
             
         </li>
     
-        <li class="chapter " data-level="5.5" data-path="../Nightly Builds.html">
+        <li class="chapter " data-level="5.6" data-path="../Nightly Builds.html">
             
                 <a href="../Nightly Builds.html">
             
                     
                     Nightly 빌드
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">릴리즈 노트</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../release notes/TypeScript 3.8.html">
+            
+                <a href="../release notes/TypeScript 3.8.html">
+            
+                    
+                    TypeScript 3.8
             
                 </a>
             
@@ -711,30 +757,30 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>In TypeScript 2.0, it has become significantly easier to consume declaration files, in acquiring, using, and finding them.
-This page details exactly how to do all three.</p>
-<h1 id="downloading">Downloading</h1>
-<p>Getting type declarations in TypeScript 2.0 and above requires no tools apart from npm.</p>
-<p>As an example, getting the declarations for a library like lodash takes nothing more than the following command</p>
+                                <p>TypeScript 2.0&#xC5D0;&#xC11C;&#xB294; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC744; &#xC5BB;&#xACE0;, &#xC0AC;&#xC6A9;&#xD558;&#xACE0;, &#xCC3E;&#xB294; &#xAC83;&#xC774; &#xD6E8;&#xC52C; &#xC26C;&#xC6CC;&#xC84C;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774; &#xD398;&#xC774;&#xC9C0;&#xC5D0;&#xC11C; &#xC138; &#xAC00;&#xC9C0;&#xB97C; &#xC5B4;&#xB5BB;&#xAC8C; &#xD558;&#xB294;&#xC9C0; &#xC815;&#xD655;&#xD558;&#xAC8C; &#xC124;&#xBA85;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;-downloading">&#xB2E4;&#xC6B4;&#xB85C;&#xB4DC; (Downloading)</h1>
+<p>TypeScript 2.0 &#xC774;&#xC0C1;&#xC5D0;&#xC11C; &#xD0C0;&#xC785; &#xC120;&#xC5B8;&#xC744; &#xAC00;&#xC838;&#xC624;&#xB294;&#xB370; npm &#xC774;&#xC678;&#xC758; &#xB3C4;&#xAD6C;&#xB294; &#xD544;&#xC694;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, lodash&#xC640; &#xAC19;&#xC740; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC5D0; &#xB300;&#xD55C; &#xC120;&#xC5B8;&#xC744; &#xC5BB;&#xB294; &#xAC83;&#xC740; &#xB2E4;&#xC74C; &#xBA85;&#xB839;&#xC5B4;&#xB85C; &#xCDA9;&#xBD84;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-cmd">npm install --save @types/lodash
 </code></pre>
-<p>It is worth noting that if the npm package already includes its declaration file as described in <a href="Publishing.html">Publishing</a>, downloading the corresponding <code>@types</code> package is not needed.</p>
-<h1 id="consuming">Consuming</h1>
-<p>From there you&#x2019;ll be able to use lodash in your TypeScript code with no fuss.
-This works for both modules and global code.</p>
-<p>For example, once you&#x2019;ve <code>npm install</code>-ed your type declarations, you can use imports and write</p>
+<p><a href="Publishing.html">Publishing</a>&#xC5D0;&#xC11C; &#xC124;&#xBA85;&#xD55C; &#xB370;&#xB85C; npm &#xD328;&#xD0A4;&#xC9C0;&#xC5D0; &#xC774;&#xBBF8; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC774; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xB2E4;&#xBA74;, <code>@types</code> &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xC124;&#xCE58;&#xD560; &#xD544;&#xC694;&#xB294; &#xC5C6;&#xB2E4;&#xB294; &#xAC78; &#xC720;&#xC758;&#xD558;&#xC138;&#xC694;.</p>
+<h1 id="&#xC0AC;&#xC6A9;&#xD558;&#xAE30;-consuming">&#xC0AC;&#xC6A9;&#xD558;&#xAE30; (Consuming)</h1>
+<p>TypeScript &#xCF54;&#xB4DC;&#xC5D0; &#xBCC4; &#xC5B4;&#xB824;&#xC6C0; &#xC5C6;&#xC774; lodash&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB294; &#xBAA8;&#xB4C8; &#xBC0F; &#xC804;&#xC5ED; &#xCF54;&#xB4DC;&#xC5D0; &#xBAA8;&#xB450; &#xC801;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, &#xD0C0;&#xC785; &#xC120;&#xC5B8;&#xC5D0; &#xB300;&#xD574; <code>npm install</code>&#xC744; &#xD55C; &#xBC88;&#xB9CC; &#xC218;&#xD589;&#xD558;&#xBA74;, import &#xD558;&#xACE0; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xACE0;</p>
 <pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">_</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;lodash&quot;</span>;
 <span class="cm-variable">_</span>.<span class="cm-property">padStart</span>(<span class="cm-string">&quot;Hello TypeScript!&quot;</span>, <span class="cm-number">20</span>, <span class="cm-string">&quot; &quot;</span>);
 </code></pre>
-<p>or if you&#x2019;re not using modules, you can just use the global variable <code>_</code>.</p>
+<p>&#xB610;&#xB294; &#xBAA8;&#xB4C8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;&#xBA74;, &#xC804;&#xC5ED; &#xBCC0;&#xC218; <code>_</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-variable">_</span>.<span class="cm-property">padStart</span>(<span class="cm-string">&quot;Hello TypeScript!&quot;</span>, <span class="cm-number">20</span>, <span class="cm-string">&quot; &quot;</span>);
 </code></pre>
-<h1 id="searching">Searching</h1>
-<p>For the most part, type declaration packages should always have the same name as the package name on <code>npm</code>, but prefixed with <code>@types/</code>,
-  but if you need, you can check out <a href="https://aka.ms/types" target="_blank">https://aka.ms/types</a> to find the package for your favorite library.</p>
+<h1 id="&#xCC3E;&#xAE30;-searching">&#xCC3E;&#xAE30; (Searching)</h1>
+<p>&#xB300;&#xBD80;&#xBD84;&#xC758; &#xACBD;&#xC6B0;, &#xD0C0;&#xC785; &#xC120;&#xC5B8; &#xD328;&#xD0A4;&#xC9C0; &#xC774;&#xB984;&#xC740; &#xD56D;&#xC0C1; <code>npm</code> &#xC0C1;&#xC758; &#xD328;&#xD0A4;&#xC9C0; &#xC774;&#xB984;&#xACFC; &#xAC19;&#xC544;&#xC57C; &#xD558;&#xC9C0;&#xB9CC;, <code>@types/</code> &#xAC00; &#xC55E;&#xC5D0; &#xBD99;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.
+  &#xD558;&#xC9C0;&#xB9CC; &#xD544;&#xC694;&#xC2DC; <a href="https://aka.ms/types" target="_blank">https://aka.ms/types</a> &#xB97C; &#xBC29;&#xBB38;&#xD574; &#xC120;&#xD638;&#xD558;&#xB294; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC758; &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xCC3E;&#xC73C;&#xC138;&#xC694;.</p>
 <blockquote>
-<p>Note: if the declaration file you are searching for is not present, you can always contribute one back and help out the next developer looking for it.
-Please see the DefinitelyTyped <a href="http://definitelytyped.org/guides/contributing.html" target="_blank">contribution guidelines page</a> for details.</p>
+<p>&#xCC38;&#xACE0;: &#xB9CC;&#xC57D; &#xCC3E;&#xACE0;&#xC790; &#xD558;&#xB294; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC774; &#xC5C6;&#xB294; &#xACBD;&#xC6B0;, &#xC5B8;&#xC81C;&#xB4E0;&#xC9C0; &#xAE30;&#xC5EC;&#xD558;&#xACE0;, &#xB2E4;&#xC74C; &#xAC1C;&#xBC1C;&#xC790;&#xAC00; &#xC774;&#xB97C; &#xCC3E;&#xB294; &#xB370; &#xB3C4;&#xC6C0;&#xC744; &#xC904; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; DefinitelyTyped&#xC758; <a href="http://definitelytyped.org/guides/contributing.html" target="_blank">&#xAE30;&#xC5EC; &#xC9C0;&#xCE68; &#xD398;&#xC774;&#xC9C0;</a>&#xB97C; &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;.</p>
 </blockquote>
 <script src="../../_gitbook_plugin_analytics.js"></script>
                                 
@@ -779,7 +825,7 @@ Please see the DefinitelyTyped <a href="http://definitelytyped.org/guides/contri
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Consumption","level":"4.8","depth":1,"next":{"title":"tsconfig.json","level":"5.1","depth":1,"path":"pages/tsconfig.json.md","ref":"pages/tsconfig.json.md","articles":[]},"previous":{"title":"Publishing","level":"4.7","depth":1,"path":"pages/declaration files/Publishing.md","ref":"pages/declaration files/Publishing.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","analytics"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"analytics":{"google":"UA-99001722-6"},"search":{},"addcssjs":{"css":["assets/css/atom-one-dark.css"],"js":[]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/declaration files/Consumption.md","mtime":"2019-06-14T05:32:52.253Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-14T05:59:20.233Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Consumption","level":"4.8","depth":1,"next":{"title":"tsconfig.json","level":"5.1","depth":1,"path":"pages/tsconfig.json.md","ref":"pages/tsconfig.json.md","articles":[]},"previous":{"title":"Publishing","level":"4.7","depth":1,"path":"pages/declaration files/Publishing.md","ref":"pages/declaration files/Publishing.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","analytics"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"analytics":{"google":"UA-163809183-2"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/declaration files/Consumption.md","mtime":"2020-04-22T15:29:36.181Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-22T18:13:20.384Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

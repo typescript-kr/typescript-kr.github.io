@@ -28,6 +28,7 @@
 <url> <loc>https://typescript-kr.github.io/pages/Mixins.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://typescript-kr.github.io/pages/Triple-Slash Directives.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://typescript-kr.github.io/pages/Type Checking JavaScript Files.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Utility Types.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://typescript-kr.github.io/pages/declaration files/Introduction.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://typescript-kr.github.io/pages/declaration files/Library Structures.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://typescript-kr.github.io/pages/declaration files/By Example.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
@@ -38,7 +39,9 @@
 <url> <loc>https://typescript-kr.github.io/pages/declaration files/Consumption.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://typescript-kr.github.io/pages/tsconfig.json.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://typescript-kr.github.io/pages/Compiler Options.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/Project References.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://typescript-kr.github.io/pages/Compiler Options in MSBuild.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://typescript-kr.github.io/pages/Integrating with Build Tools.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://typescript-kr.github.io/pages/Nightly Builds.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/release notes/TypeScript 3.8.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 </urlset>

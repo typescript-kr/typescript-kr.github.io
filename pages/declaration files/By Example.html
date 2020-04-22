@@ -483,6 +483,19 @@
             
         </li>
     
+        <li class="chapter " data-level="3.23" data-path="../Utility Types.html">
+            
+                <a href="../Utility Types.html">
+            
+                    
+                    유틸리티 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -627,7 +640,20 @@
             
         </li>
     
-        <li class="chapter " data-level="5.3" data-path="../Compiler Options in MSBuild.html">
+        <li class="chapter " data-level="5.3" data-path="../Project References.html">
+            
+                <a href="../Project References.html">
+            
+                    
+                    프로젝트 레퍼런스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../Compiler Options in MSBuild.html">
             
                 <a href="../Compiler Options in MSBuild.html">
             
@@ -640,7 +666,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.4" data-path="../Integrating with Build Tools.html">
+        <li class="chapter " data-level="5.5" data-path="../Integrating with Build Tools.html">
             
                 <a href="../Integrating with Build Tools.html">
             
@@ -653,12 +679,32 @@
             
         </li>
     
-        <li class="chapter " data-level="5.5" data-path="../Nightly Builds.html">
+        <li class="chapter " data-level="5.6" data-path="../Nightly Builds.html">
             
                 <a href="../Nightly Builds.html">
             
                     
                     Nightly 빌드
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">릴리즈 노트</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../release notes/TypeScript 3.8.html">
+            
+                <a href="../release notes/TypeScript 3.8.html">
+            
+                    
+                    TypeScript 3.8
             
                 </a>
             
@@ -711,97 +757,97 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="introduction">Introduction</h1>
-<p>The purpose of this guide is to teach you how to write a high-quality definition file.
-This guide is structured by showing documentation for some API, along with sample usage of that API,
-  and explaining how to write the corresponding declaration.</p>
-<p>These examples are ordered in approximately increasing order of complexity.</p>
+                                <h1 id="&#xC18C;&#xAC1C;-introduction">&#xC18C;&#xAC1C; (Introduction)</h1>
+<p>&#xC774; &#xAC00;&#xC774;&#xB4DC;&#xB294; &#xC591;&#xC9C8;&#xC758; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC744; &#xC791;&#xC131;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC124;&#xBA85;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC791;&#xC131;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774; &#xAC00;&#xC774;&#xB4DC;&#xB294; &#xC77C;&#xBD80; API &#xBB38;&#xC11C;&#xB97C; &#xD574;&#xB2F9; API &#xC0AC;&#xC6A9; &#xC608;&#xC2DC;&#xC640; &#xD568;&#xAED8; &#xBCF4;&#xC5EC;&#xC8FC;&#xACE0;,
+  &#xC0C1;&#xC751;&#xD558;&#xB294; &#xC120;&#xC5B8;&#xC744; &#xC791;&#xC131;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC124;&#xBA85;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xC81C;&#xB294; &#xB300;&#xCCB4;&#xB85C; &#xD6C4;&#xBC18;&#xBD80;&#xB85C; &#xAC08;&#xC218;&#xB85D; &#xBCF5;&#xC7A1;&#xD574;&#xC9D1;&#xB2C8;&#xB2E4;.</p>
 <ul>
-<li><a href="#global-variables">Global Variables</a></li>
-<li><a href="#global-functions">Global Functions</a></li>
-<li><a href="#objects-with-properties">Objects with Properties</a></li>
-<li><a href="#overloaded-functions">Overloaded Function</a></li>
-<li><a href="#reusable-types-interfaces">Reusable Types (Interfaces)</a></li>
-<li><a href="#reusable-types-type-aliases">Reusable Types (Type Aliases)</a></li>
-<li><a href="#organizing-types">Organizing Types</a></li>
-<li><a href="#classes">Classes</a></li>
+<li><a href="#&#xC804;&#xC5ED;-&#xBCC0;&#xC218;-global-variables">&#xC804;&#xC5ED; &#xBCC0;&#xC218; (Global Variables)</a></li>
+<li><a href="#&#xC804;&#xC5ED;-&#xD568;&#xC218;-global-functions">&#xC804;&#xC5ED; &#xD568;&#xC218; (Global Functions)</a></li>
+<li><a href="#&#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C;-&#xAC16;&#xB294;-&#xAC1D;&#xCCB4;-objects-with-properties">&#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xAC16;&#xB294; &#xAC1D;&#xCCB4; (Objects with Properties)</a></li>
+<li><a href="#&#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xB41C;-&#xD568;&#xC218;-overloaded-functions">&#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xB41C; &#xD568;&#xC218; (Overloaded Function)</a></li>
+<li><a href="#&#xC7AC;&#xC0AC;&#xC6A9;-&#xAC00;&#xB2A5;&#xD55C;-&#xD0C0;&#xC785;-&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;-reusable-types-interfaces">&#xC7AC;&#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;&#xD55C; &#xD0C0;&#xC785; (&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;) (Reusable Types (Interfaces))</a></li>
+<li><a href="#&#xC7AC;&#xC0AC;&#xC6A9;-&#xAC00;&#xB2A5;&#xD55C;-&#xD0C0;&#xC785;-&#xD0C0;&#xC785;-&#xBCC4;&#xCE6D;-reusable-types-type-aliases">&#xC7AC;&#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;&#xD55C; &#xD0C0;&#xC785; (&#xD0C0;&#xC785; &#xBCC4;&#xCE6D;) (Reusable Types (Type Aliases))</a></li>
+<li><a href="#&#xD0C0;&#xC785;-&#xAD6C;&#xC870;&#xD654;&#xD558;&#xAE30;-organizing-types">&#xD0C0;&#xC785; &#xAD6C;&#xC870;&#xD654;&#xD558;&#xAE30; (Organizing Types)</a></li>
+<li><a href="#&#xD074;&#xB798;&#xC2A4;-classes">&#xD074;&#xB798;&#xC2A4; (Classes)</a></li>
 </ul>
-<h1 id="the-examples">The Examples</h1>
-<h2 id="global-variables">Global Variables</h2>
-<p><em>Documentation</em></p>
+<h1 id="&#xC608;&#xC81C;-the-examples">&#xC608;&#xC81C; (The Examples)</h1>
+<h2 id="&#xC804;&#xC5ED;-&#xBCC0;&#xC218;-global-variables">&#xC804;&#xC5ED; &#xBCC0;&#xC218; (Global Variables)</h2>
+<p><em>&#xBB38;&#xC11C;</em></p>
 <blockquote>
-<p>The global variable <code>foo</code> contains the number of widgets present.</p>
+<p>&#xC804;&#xC5ED; &#xBCC0;&#xC218; <code>foo</code>&#xB294; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xC704;&#xC82F;&#xC758; &#xC218;&#xB97C; &#xD3EC;&#xD568;&#xD569;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
-<p><em>Code</em></p>
+<p><em>&#xCF54;&#xB4DC;</em></p>
 <pre><code class="lang-ts"><span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">&quot;Half the number of widgets is &quot;</span> <span class="cm-operator">+</span> (<span class="cm-variable">foo</span> <span class="cm-operator">/</span> <span class="cm-number">2</span>));
 </code></pre>
-<p><em>Declaration</em></p>
-<p>Use <code>declare var</code> to declare variables.
-If the variable is read-only, you can use <code>declare const</code>.
-You can also use <code>declare let</code> if the variable is block-scoped.</p>
-<pre><code class="lang-ts"><span class="cm-comment">/** The number of widgets present */</span>
+<p><em>&#xC120;&#xC5B8;</em></p>
+<p>&#xBCC0;&#xC218;&#xB97C; &#xC120;&#xC5B8;&#xD558;&#xAE30; &#xC704;&#xD574; <code>declare var</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;.
+&#xB9CC;&#xC57D; &#xBCC0;&#xC218;&#xAC00; &#xC77D;&#xAE30;-&#xC804;&#xC6A9;&#xC774;&#xB77C;&#xBA74;, <code>declare const</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;.
+&#xBCC0;&#xC218;&#xAC00; &#xBE14;&#xB85D;-&#xC2A4;&#xCF54;&#xD504;&#xC778; &#xACBD;&#xC6B0; <code>declare let</code> &#xB610;&#xD55C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-comment">/** &#xC874;&#xC7AC;&#xD558;&#xB294; &#xC704;&#xC82F;&#xC758; &#xC218; */</span>
 <span class="cm-variable">declare</span> <span class="cm-keyword">var</span> <span class="cm-variable">foo</span>: <span class="cm-variable-3">number</span>;
 </code></pre>
-<h2 id="global-functions">Global Functions</h2>
-<p><em>Documentation</em></p>
+<h2 id="&#xC804;&#xC5ED;-&#xD568;&#xC218;-global-functions">&#xC804;&#xC5ED; &#xD568;&#xC218; (Global Functions)</h2>
+<p><em>&#xBB38;&#xC11C;</em></p>
 <blockquote>
-<p>You can call the function <code>greet</code> with a string to show a greeting to the user.</p>
+<p>&#xC0AC;&#xC6A9;&#xC790;&#xC5D0;&#xAC8C; &#xC778;&#xC0AC;&#xB9D0;&#xC744; &#xBCF4;&#xC5EC;&#xC8FC;&#xAE30; &#xC704;&#xD574; <code>greet</code> &#xD568;&#xC218;&#xB97C; &#xD638;&#xCD9C;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
-<p><em>Code</em></p>
+<p><em>&#xCF54;&#xB4DC;</em></p>
 <pre><code class="lang-ts"><span class="cm-variable">greet</span>(<span class="cm-string">&quot;hello, world&quot;</span>);
 </code></pre>
-<p><em>Declaration</em></p>
-<p>Use <code>declare function</code> to declare functions.</p>
+<p><em>&#xC120;&#xC5B8;</em></p>
+<p>&#xD568;&#xC218;&#xB97C; &#xC120;&#xC5B8;&#xD558;&#xAE30; &#xC704;&#xD574; <code>declare function</code>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;.</p>
 <pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">greet</span>(<span class="cm-def">greeting</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable">void</span>;
 </code></pre>
-<h2 id="objects-with-properties">Objects with Properties</h2>
-<p><em>Documentation</em></p>
+<h2 id="&#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C;-&#xAC16;&#xB294;-&#xAC1D;&#xCCB4;-objects-with-properties">&#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xAC16;&#xB294; &#xAC1D;&#xCCB4; (Objects with Properties)</h2>
+<p><em>&#xBB38;&#xC11C;</em></p>
 <blockquote>
-<p>The global variable <code>myLib</code> has a function <code>makeGreeting</code> for creating greetings,
-and a property <code>numberOfGreetings</code> indicating the number of greetings made so far.</p>
+<p>&#xC804;&#xC5ED; &#xBCC0;&#xC218; <code>myLib</code>&#xC5D0;&#xB294; &#xC778;&#xC0AC;&#xB9D0;&#xC744; &#xB9CC;&#xB4DC;&#xB294; &#xD568;&#xC218; <code>makeGreeting</code>&#xC640;,
+&#xC9C0;&#xAE08;&#xAE4C;&#xC9C0; &#xC0DD;&#xC131;&#xD55C; &#xC778;&#xC0AC;&#xB9D0;&#xC758; &#xC218;&#xB97C; &#xAC00;&#xB9AC;&#xD0A4;&#xB294; <code>numberOfGreetings</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
-<p><em>Code</em></p>
+<p><em>&#xCF54;&#xB4DC;</em></p>
 <pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">result</span> <span class="cm-operator">=</span> <span class="cm-variable">myLib</span>.<span class="cm-property">makeGreeting</span>(<span class="cm-string">&quot;hello, world&quot;</span>);
 <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">&quot;The computed greeting is:&quot;</span> <span class="cm-operator">+</span> <span class="cm-variable">result</span>);
 
 <span class="cm-keyword">let</span> <span class="cm-variable">count</span> <span class="cm-operator">=</span> <span class="cm-variable">myLib</span>.<span class="cm-property">numberOfGreetings</span>;
 </code></pre>
-<p><em>Declaration</em></p>
-<p>Use <code>declare namespace</code> to describe types or values accessed by dotted notation.</p>
+<p><em>&#xC120;&#xC5B8;</em></p>
+<p>&#xC810; &#xD45C;&#xAE30;&#xBC95;&#xC73C;&#xB85C; &#xC811;&#xADFC;&#xD558;&#xB294; &#xD0C0;&#xC785;&#xC774;&#xB098; &#xAC12;&#xC744; &#xC124;&#xBA85;&#xD558;&#xAE30; &#xC704;&#xD574; <code>declare namespace</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;.</p>
 <pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-variable">namespace</span> <span class="cm-variable">myLib</span> {
     <span class="cm-keyword">function</span> <span class="cm-variable">makeGreeting</span>(<span class="cm-def">s</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable-3">string</span>;
     <span class="cm-keyword">let</span> <span class="cm-variable">numberOfGreetings</span>: <span class="cm-variable-3">number</span>;
 }
 </code></pre>
-<h2 id="overloaded-functions">Overloaded Functions</h2>
-<p><em>Documentation</em></p>
-<p>The <code>getWidget</code> function accepts a number and returns a Widget, or accepts a string and returns a Widget array.</p>
-<p><em>Code</em></p>
+<h2 id="&#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xB41C;-&#xD568;&#xC218;-overloaded-functions">&#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xB41C; &#xD568;&#xC218; (Overloaded Functions)</h2>
+<p><em>&#xBB38;&#xC11C;</em></p>
+<p><code>getWidget</code> &#xD568;&#xC218;&#xB294; &#xC22B;&#xC790;&#xB97C; &#xC778;&#xC790;&#xB85C; &#xBC1B;&#xC544; Widget&#xC744; &#xBC18;&#xD658;&#xD558;&#xAC70;&#xB098;, &#xBB38;&#xC790;&#xC5F4;&#xC744; &#xC778;&#xC790;&#xB85C; &#xBC1B;&#xC544; Widget &#xBC30;&#xC5F4;&#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><em>&#xCF54;&#xB4DC;</em></p>
 <pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">x</span>: <span class="cm-variable-3">Widget</span> <span class="cm-operator">=</span> <span class="cm-variable">getWidget</span>(<span class="cm-number">43</span>);
 
 <span class="cm-keyword">let</span> <span class="cm-variable">arr</span>: <span class="cm-variable-3">Widget</span>[] <span class="cm-operator">=</span> <span class="cm-variable">getWidget</span>(<span class="cm-string">&quot;all of them&quot;</span>);
 </code></pre>
-<p><em>Declaration</em></p>
+<p><em>&#xC120;&#xC5B8;</em></p>
 <pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">getWidget</span>(<span class="cm-def">n</span>: <span class="cm-variable-3">number</span>): <span class="cm-variable">Widget</span>;
 <span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">getWidget</span>(<span class="cm-def">s</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable">Widget</span>[];
 </code></pre>
-<h2 id="reusable-types-interfaces">Reusable Types (Interfaces)</h2>
-<p><em>Documentation</em></p>
+<h2 id="&#xC7AC;&#xC0AC;&#xC6A9;-&#xAC00;&#xB2A5;&#xD55C;-&#xD0C0;&#xC785;-&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;-reusable-types-interfaces">&#xC7AC;&#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;&#xD55C; &#xD0C0;&#xC785; (&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;) (Reusable Types (Interfaces))</h2>
+<p><em>&#xBB38;&#xC11C;</em></p>
 <blockquote>
-<p>When specifying a greeting, you must pass a <code>GreetingSettings</code> object.
-This object has the following properties:</p>
-<p>1 - greeting: Mandatory string</p>
-<p>2 - duration: Optional length of time (in milliseconds)</p>
-<p>3 - color: Optional string, e.g. &apos;#ff00ff&apos;</p>
+<p>greeting&#xC744; &#xBA85;&#xC2DC;&#xD560; &#xB54C;, &#xBC18;&#xB4DC;&#xC2DC; <code>GreetingSettings</code> &#xAC1D;&#xCCB4;&#xB97C; &#xC804;&#xB2EC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.
+&#xC774; &#xAC1D;&#xCCB4;&#xB294; &#xB2E4;&#xC74C;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xAC16;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<p>1 - greeting: &#xD544;&#xC218; &#xBB38;&#xC790;&#xC5F4;</p>
+<p>2 - duration: &#xC120;&#xD0DD;&#xC801; &#xC2DC;&#xAC04; (&#xBC00;&#xB9AC;&#xCD08;)</p>
+<p>3 - color: &#xC120;&#xD0DD;&#xC801; &#xBB38;&#xC790;&#xC5F4;, &#xC608;. &apos;#ff00ff&apos;</p>
 </blockquote>
-<p><em>Code</em></p>
+<p><em>&#xCF54;&#xB4DC;</em></p>
 <pre><code class="lang-ts"><span class="cm-variable">greet</span>({
   <span class="cm-property">greeting</span>: <span class="cm-string">&quot;hello world&quot;</span>,
   <span class="cm-property">duration</span>: <span class="cm-number">4000</span>
 });
 </code></pre>
-<p><em>Declaration</em></p>
-<p>Use an <code>interface</code> to define a type with properties.</p>
+<p><em>&#xC120;&#xC5B8;</em></p>
+<p>&#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xAC16;&#xB294; &#xD0C0;&#xC785;&#xC744; &#xC815;&#xC758;&#xD558;&#xAE30; &#xC704;&#xD574; <code>interface</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">GreetingSettings</span> {
   <span class="cm-variable">greeting</span>: <span class="cm-variable-3">string</span>;
   <span class="cm-variable">duration</span><span class="cm-operator">?</span>: <span class="cm-variable-3">number</span>;
@@ -810,12 +856,12 @@ This object has the following properties:</p>
 
 <span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">greet</span>(<span class="cm-def">setting</span>: <span class="cm-variable-3">GreetingSettings</span>): <span class="cm-variable">void</span>;
 </code></pre>
-<h2 id="reusable-types-type-aliases">Reusable Types (Type Aliases)</h2>
-<p><em>Documentation</em></p>
+<h2 id="&#xC7AC;&#xC0AC;&#xC6A9;-&#xAC00;&#xB2A5;&#xD55C;-&#xD0C0;&#xC785;-&#xD0C0;&#xC785;-&#xBCC4;&#xCE6D;-reusable-types-type-aliases">&#xC7AC;&#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;&#xD55C; &#xD0C0;&#xC785; (&#xD0C0;&#xC785; &#xBCC4;&#xCE6D;) (Reusable Types (Type Aliases))</h2>
+<p><em>&#xBB38;&#xC11C;</em></p>
 <blockquote>
-<p>Anywhere a greeting is expected, you can provide a <code>string</code>, a function returning a <code>string</code>, or a <code>Greeter</code> instance.</p>
+<p>&#xC778;&#xC0AC;&#xB9D0;&#xC774; &#xC608;&#xC0C1;&#xB418;&#xB294; &#xC5B4;&#xB290; &#xACF3;&#xC5D0;&#xB098;, <code>string</code>, <code>string</code>&#xC744; &#xBC18;&#xD658;&#xD558;&#xB294; &#xD568;&#xC218;, &#xB610;&#xB294; <code>Greeter</code> &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC804;&#xB2EC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
-<p><em>Code</em></p>
+<p><em>&#xCF54;&#xB4DC;</em></p>
 <pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">getGreeting</span>() {
     <span class="cm-keyword">return</span> <span class="cm-string">&quot;howdy&quot;</span>;
 }
@@ -825,25 +871,25 @@ This object has the following properties:</p>
 <span class="cm-variable">greet</span>(<span class="cm-variable">getGreeting</span>);
 <span class="cm-variable">greet</span>(<span class="cm-keyword">new</span> <span class="cm-variable">MyGreeter</span>());
 </code></pre>
-<p><em>Declaration</em></p>
-<p>You can use a type alias to make a shorthand for a type:</p>
-<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">GreetingLike</span> <span class="cm-operator">=</span> <span class="cm-variable-3">string</span> <span class="cm-operator">|</span> (() <span class="cm-operator">=&gt;</span> <span class="cm-variable-3">string</span>) <span class="cm-operator">|</span> <span class="cm-variable">MyGreeter</span>;
+<p><em>&#xC120;&#xC5B8;</em></p>
+<p>&#xD0C0;&#xC785;&#xC5D0; &#xB300;&#xD55C; &#xC57D;&#xCE6D;&#xC73C;&#xB85C; &#xD0C0;&#xC785; &#xBCC4;&#xCE6D;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">GreetingLike</span> <span class="cm-operator">=</span> <span class="cm-variable-3">string</span> <span class="cm-operator">|</span> (() <span class="cm-operator">=&gt;</span> <span class="cm-variable-3">string</span>) <span class="cm-operator">|</span> <span class="cm-variable">Greeter</span>;
 
 <span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">greet</span>(<span class="cm-def">g</span>: <span class="cm-variable-3">GreetingLike</span>): <span class="cm-variable">void</span>;
 </code></pre>
-<h2 id="organizing-types">Organizing Types</h2>
-<p><em>Documentation</em></p>
+<h2 id="&#xD0C0;&#xC785;-&#xAD6C;&#xC870;&#xD654;&#xD558;&#xAE30;-organizing-types">&#xD0C0;&#xC785; &#xAD6C;&#xC870;&#xD654;&#xD558;&#xAE30; (Organizing Types)</h2>
+<p><em>&#xBB38;&#xC11C;</em></p>
 <blockquote>
-<p>The <code>greeter</code> object can log to a file or display an alert.
-You can provide LogOptions to <code>.log(...)</code> and alert options to <code>.alert(...)</code></p>
+<p><code>greeter</code> &#xAC1D;&#xCCB4;&#xB294; &#xD30C;&#xC77C;&#xC5D0; &#xB85C;&#xADF8;&#xB97C; &#xC791;&#xC131;&#xD558;&#xAC70;&#xB098; &#xACBD;&#xACE0; &#xCC3D;&#xC744; &#xB744;&#xC6B8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB85C;&#xADF8; &#xC635;&#xC158;&#xC744; <code>.log(...)</code> &#xB0B4;&#xBD80;&#xC5D0;, &#xACBD;&#xACE0; &#xCC3D; &#xC635;&#xC158;&#xC744; <code>.alert(...)</code> &#xB0B4;&#xBD80;&#xC5D0; &#xC804;&#xB2EC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
-<p><em>Code</em></p>
+<p><em>&#xCF54;&#xB4DC;</em></p>
 <pre><code class="lang-ts"><span class="cm-keyword">const</span> <span class="cm-variable">g</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Greeter</span>(<span class="cm-string">&quot;Hello&quot;</span>);
 <span class="cm-variable">g</span>.<span class="cm-property">log</span>({ <span class="cm-property">verbose</span>: <span class="cm-atom">true</span> });
 <span class="cm-variable">g</span>.<span class="cm-property">alert</span>({ <span class="cm-property">modal</span>: <span class="cm-atom">false</span>, <span class="cm-property">title</span>: <span class="cm-string">&quot;Current Greeting&quot;</span> });
 </code></pre>
-<p><em>Declaration</em></p>
-<p>Use namespaces to organize types.</p>
+<p><em>&#xC120;&#xC5B8;</em></p>
+<p>&#xD0C0;&#xC785;&#xC744; &#xAD6C;&#xC870;&#xD654;&#xD558;&#xAE30; &#xC704;&#xD574; &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;.</p>
 <pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-variable">namespace</span> <span class="cm-variable">GreetingLib</span> {
     <span class="cm-keyword">interface</span> <span class="cm-variable">LogOptions</span> {
         <span class="cm-variable">verbose</span><span class="cm-operator">?</span>: <span class="cm-variable">boolean</span>;
@@ -855,7 +901,7 @@ You can provide LogOptions to <code>.log(...)</code> and alert options to <code>
     }
 }
 </code></pre>
-<p>You can also create nested namespaces in one declaration:</p>
+<p>&#xC911;&#xCCA9;&#xB41C; &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xD558;&#xB098;&#xC758; &#xC120;&#xC5B8;&#xC73C;&#xB85C; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-variable">namespace</span> <span class="cm-variable">GreetingLib</span>.<span class="cm-property">Options</span> {
     <span class="cm-comment">// Refer to via GreetingLib.Options.Log</span>
     <span class="cm-keyword">interface</span> <span class="cm-variable">Log</span> {
@@ -868,12 +914,12 @@ You can provide LogOptions to <code>.log(...)</code> and alert options to <code>
     }
 }
 </code></pre>
-<h2 id="classes">Classes</h2>
-<p><em>Documentation</em></p>
+<h2 id="&#xD074;&#xB798;&#xC2A4;-classes">&#xD074;&#xB798;&#xC2A4; (Classes)</h2>
+<p><em>&#xBB38;&#xC11C;</em></p>
 <blockquote>
-<p>You can create a greeter by instantiating the <code>Greeter</code> object, or create a customized greeter by extending from it.</p>
+<p><code>Greeter</code> &#xAC1D;&#xCCB4;&#xB97C; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xD654;&#xD574;&#xC11C; greeter&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xAC70;&#xB098;, &#xC774; &#xAC1D;&#xCCB4;&#xB97C; &#xC0C1;&#xC18D;&#xD574;&#xC11C; &#xCEE4;&#xC2A4;&#xD140; greeter&#xB97C; &#xC0DD;&#xC131;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
-<p><em>Code</em></p>
+<p><em>&#xCF54;&#xB4DC;</em></p>
 <pre><code class="lang-ts"><span class="cm-keyword">const</span> <span class="cm-variable">myGreeter</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Greeter</span>(<span class="cm-string">&quot;hello, world&quot;</span>);
 <span class="cm-variable">myGreeter</span>.<span class="cm-property">greeting</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;howdy&quot;</span>;
 <span class="cm-variable">myGreeter</span>.<span class="cm-property">showGreeting</span>();
@@ -884,9 +930,9 @@ You can provide LogOptions to <code>.log(...)</code> and alert options to <code>
     }
 }
 </code></pre>
-<p><em>Declaration</em></p>
-<p>Use <code>declare class</code> to describe a class or class-like object.
-Classes can have properties and methods as well as a constructor.</p>
+<p><em>&#xC120;&#xC5B8;</em></p>
+<p>&#xD074;&#xB798;&#xC2A4; &#xD639;&#xC740; &#xD074;&#xB798;&#xC2A4;-&#xAC19;&#xC740; &#xAC1D;&#xCCB4;&#xB97C; &#xC124;&#xBA85;&#xD558;&#xAE30; &#xC704;&#xD574; <code>declare class</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;.
+&#xD074;&#xB798;&#xC2A4;&#xB294; &#xC0DD;&#xC131;&#xC790; &#xBFD0;&#xB9CC; &#xC544;&#xB2C8;&#xB77C; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC640; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">class</span> <span class="cm-variable">Greeter</span> {
     <span class="cm-keyword">constructor</span>(<span class="cm-variable">greeting</span>: <span class="cm-variable-3">string</span>);
 
@@ -957,7 +1003,7 @@ Classes can have properties and methods as well as a constructor.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"By Example","level":"4.3","depth":1,"next":{"title":"Do's and Don'ts","level":"4.4","depth":1,"path":"pages/declaration files/Do's and Don'ts.md","ref":"pages/declaration files/Do's and Don'ts.md","articles":[]},"previous":{"title":"Library Structures","level":"4.2","depth":1,"path":"pages/declaration files/Library Structures.md","ref":"pages/declaration files/Library Structures.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","analytics"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"analytics":{"google":"UA-99001722-6"},"search":{},"addcssjs":{"css":["assets/css/atom-one-dark.css"],"js":[]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/declaration files/By Example.md","mtime":"2019-06-14T05:32:52.252Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-14T05:59:20.233Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"By Example","level":"4.3","depth":1,"next":{"title":"Do's and Don'ts","level":"4.4","depth":1,"path":"pages/declaration files/Do's and Don'ts.md","ref":"pages/declaration files/Do's and Don'ts.md","articles":[]},"previous":{"title":"Library Structures","level":"4.2","depth":1,"path":"pages/declaration files/Library Structures.md","ref":"pages/declaration files/Library Structures.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","analytics"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"analytics":{"google":"UA-163809183-2"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/declaration files/By Example.md","mtime":"2020-04-22T15:29:36.181Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-22T18:13:20.384Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

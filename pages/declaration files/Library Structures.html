@@ -483,6 +483,19 @@
             
         </li>
     
+        <li class="chapter " data-level="3.23" data-path="../Utility Types.html">
+            
+                <a href="../Utility Types.html">
+            
+                    
+                    유틸리티 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -627,7 +640,20 @@
             
         </li>
     
-        <li class="chapter " data-level="5.3" data-path="../Compiler Options in MSBuild.html">
+        <li class="chapter " data-level="5.3" data-path="../Project References.html">
+            
+                <a href="../Project References.html">
+            
+                    
+                    프로젝트 레퍼런스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../Compiler Options in MSBuild.html">
             
                 <a href="../Compiler Options in MSBuild.html">
             
@@ -640,7 +666,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.4" data-path="../Integrating with Build Tools.html">
+        <li class="chapter " data-level="5.5" data-path="../Integrating with Build Tools.html">
             
                 <a href="../Integrating with Build Tools.html">
             
@@ -653,12 +679,32 @@
             
         </li>
     
-        <li class="chapter " data-level="5.5" data-path="../Nightly Builds.html">
+        <li class="chapter " data-level="5.6" data-path="../Nightly Builds.html">
             
                 <a href="../Nightly Builds.html">
             
                     
                     Nightly 빌드
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">릴리즈 노트</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../release notes/TypeScript 3.8.html">
+            
+                <a href="../release notes/TypeScript 3.8.html">
+            
+                    
+                    TypeScript 3.8
             
                 </a>
             
@@ -711,107 +757,107 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="overview">Overview</h1>
-<p>Broadly speaking, the way you <em>structure</em> your declaration file depends on how the library is consumed.
-There are many ways of offering a library for consumption in JavaScript, and you&apos;ll need to write your declaration file to match it.
-This guide covers how to identify common library patterns, and how to write declaration files which correspond to that pattern.</p>
-<p>Each type of major library structuring pattern has a corresponding file in the <a href="Templates.html">Templates</a> section.
-You can start with these templates to help you get going faster.</p>
-<h1 id="identifying-kinds-of-libraries">Identifying Kinds of Libraries</h1>
-<p>First, we&apos;ll review the kinds of libraries TypeScript declaration files can represent.
-We&apos;ll briefly show how each kind of library is <em>used</em>, how it is <em>written</em>, and list some example libraries from the real world.</p>
-<p>Identifying the structure of a library is the first step in writing its declaration file.
-We&apos;ll give hints on how to identify structure both based on its <em>usage</em> and its <em>code</em>.
-Depending on the library&apos;s documentation and organization, one might be easier than the other.
-We recommend using whichever is more comfortable to you.</p>
-<h2 id="global-libraries">Global Libraries</h2>
-<p>A <em>global</em> library is one that can be accessed from the global scope (i.e. without using any form of <code>import</code>).
-Many libraries simply expose one or more global variables for use.
-For example, if you were using <a href="https://jquery.com/" target="_blank">jQuery</a>, the <code>$</code> variable can be used by simply referring to it:</p>
+                                <h1 id="&#xAC1C;&#xC694;-overview">&#xAC1C;&#xC694; (Overview)</h1>
+<p>&#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C;, &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC744; <em>&#xAD6C;&#xC870;&#xD654;</em>&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC740; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC5D0; &#xB530;&#xB77C; &#xB2E4;&#xB985;&#xB2C8;&#xB2E4;.
+JavaScript&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC740; &#xC5EC;&#xB7EC; &#xAC00;&#xC9C0;&#xAC00; &#xC788;&#xACE0;, &#xC774;&#xC5D0; &#xB9DE;&#xCD94;&#xC5B4; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC744; &#xC791;&#xC131;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.
+&#xC774; &#xAC00;&#xC774;&#xB4DC;&#xB294; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xD328;&#xD134;&#xC744; &#xC2DD;&#xBCC4;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xACFC;, &#xADF8; &#xD328;&#xD134;&#xC5D0; &#xC0C1;&#xC751;&#xD558;&#xB294; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC744; &#xC791;&#xC131;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC5D0; &#xB300;&#xD574; &#xB2E4;&#xB8F9;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC8FC;&#xC694; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xAC01;&#xAC01;&#xC758; &#xAD6C;&#xC870;&#xD654; &#xD328;&#xD134; &#xC720;&#xD615;&#xC740; <a href="Templates.html">&#xD15C;&#xD50C;&#xB9BF;</a> &#xC139;&#xC158;&#xC5D0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774; &#xD15C;&#xD50C;&#xB9BF;&#xC73C;&#xB85C; &#xC2DC;&#xC791;&#xD558;&#xBA74; &#xB354; &#xBE60;&#xB974;&#xAC8C; &#xC9C4;&#xD589;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;-&#xC885;&#xB958;-&#xC2DD;&#xBCC4;&#xD558;&#xAE30;-identifying-kinds-of-libraries">&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xC885;&#xB958; &#xC2DD;&#xBCC4;&#xD558;&#xAE30; (Identifying Kinds of Libraries)</h1>
+<p>&#xCCAB; &#xBC88;&#xC9F8;&#xB85C;, TypeScript &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC774; &#xB098;&#xD0C0;&#xB0BC; &#xC218; &#xC788;&#xB294; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xC885;&#xB958;&#xB97C; &#xB2E4;&#xB904;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xAC01; &#xC885;&#xB958;&#xC758; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; <em>&#xC0AC;&#xC6A9;&#xD558;&#xB294;</em> &#xBC29;&#xBC95;&#xACFC;, <em>&#xC791;&#xC131;&#xD558;&#xB294;</em> &#xBC29;&#xBC95;, &#xADF8;&#xB9AC;&#xACE0; &#xC2E4;&#xC81C; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB4E4;&#xC758; &#xC608;&#xC81C;&#xB97C; &#xBCFC; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC758; &#xAD6C;&#xC870;&#xB97C; &#xC2DD;&#xBCC4;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC744; &#xC791;&#xC131;&#xD558;&#xB294; &#xCCAB; &#xB2E8;&#xACC4;&#xC785;&#xB2C8;&#xB2E4;.
+<em>&#xC0AC;&#xC6A9;&#xBC95;</em>&#xACFC; <em>&#xCF54;&#xB4DC;</em>&#xB97C; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xAD6C;&#xC870;&#xB97C; &#xC2DD;&#xBCC4;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC5D0; &#xB300;&#xD55C; &#xD78C;&#xD2B8;&#xB97C; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.
+&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC758; &#xBB38;&#xC11C;&#xC640; &#xAD6C;&#xC131;&#xC5D0; &#xB530;&#xB77C;&#xC11C;, &#xC5B4;&#xB5A4; &#xAC74; &#xB2E4;&#xB978; &#xAC83;&#xBCF4;&#xB2E4; &#xD6E8;&#xC52C; &#xC26C;&#xC6B8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xBCF8;&#xC778;&#xC5D0;&#xAC8C; &#xB354; &#xD3B8;&#xD55C; &#xAC83;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xAC83;&#xC744; &#xCD94;&#xCC9C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xC804;&#xC5ED;-&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;-global-libraries">&#xC804;&#xC5ED; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; (Global Libraries)</h2>
+<p><em>&#xC804;&#xC5ED;</em> &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB294; &#xC804;&#xC5ED; &#xC2A4;&#xCF54;&#xD504; (&#xC989;, <code>import</code> &#xD615;&#xC2DD;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC74C;)&#xC5D0;&#xC11C; &#xC811;&#xADFC; &#xAC00;&#xB2A5;&#xD55C; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC785;&#xB2C8;&#xB2E4;.
+&#xB9CE;&#xC740; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB294; &#xC0AC;&#xC6A9;&#xC744; &#xC704;&#xD574; &#xAC04;&#xB2E8;&#xD788; &#xD558;&#xB098; &#xC774;&#xC0C1;&#xC758; &#xC804;&#xC5ED; &#xBCC0;&#xC218;&#xB97C; &#xB178;&#xCD9C;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, <a href="https://jquery.com/" target="_blank">jQuery</a>&#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xBA74;, <code>$</code> &#xBCC0;&#xC218;&#xB97C; &#xCC38;&#xC870;&#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-variable">$</span>(() <span class="cm-operator">=&gt;</span> { <span class="cm-variable">console</span>.<span class="cm-variable">log</span>(<span class="cm-string">&apos;hello!&apos;</span>); } );
 </code></pre>
-<p>You&apos;ll usually see guidance in the documentation of a global library of how to use the library in an HTML script tag:</p>
+<p>HTML &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xD0DC;&#xADF8;&#xB85C; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC740; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xBB38;&#xC11C;&#xC5D0;&#xC11C; &#xC9C0;&#xCE68;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-html"><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">script</span> <span class="cm-attribute">src</span>=<span class="cm-string">&quot;http://a.great.cdn.for/someLib.js&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">script</span><span class="cm-tagcm-bracket">&gt;</span>
 </code></pre>
-<p>Today, most popular globally-accessible libraries are actually written as UMD libraries (see below).
-UMD library documentation is hard to distinguish from global library documentation.
-Before writing a global declaration file, make sure the library isn&apos;t actually UMD.</p>
-<h3 id="identifying-a-global-library-from-code">Identifying a Global Library from Code</h3>
-<p>Global library code is usually extremely simple.
-A global &quot;Hello, world&quot; library might look like this:</p>
+<p>&#xC624;&#xB298;&#xB0A0;, &#xB300;&#xBD80;&#xBD84;&#xC758; &#xC804;&#xC5ED;&#xC5D0;&#xC11C; &#xC811;&#xADFC; &#xAC00;&#xB2A5;&#xD55C; &#xC720;&#xBA85; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB4E4;&#xC740; &#xC2E4;&#xC81C;&#xB85C; UMD &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB85C; &#xC791;&#xC131;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; (&#xC544;&#xB798;&#xB97C; &#xCC38;&#xC870;).
+UMD &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xBB38;&#xC11C;&#xB294; &#xC804;&#xC5ED; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xBB38;&#xC11C;&#xC640; &#xAD6C;&#xBCC4;&#xD558;&#xAE30; &#xC5B4;&#xB835;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC804;&#xC5ED; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC744; &#xC791;&#xC131;&#xD558;&#xAE30; &#xC804;&#xC5D0;, &#xC2E4;&#xC81C;&#xB85C;&#xB294; UMD&#xAC00; &#xC544;&#xB2CC;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.</p>
+<h3 id="&#xCF54;&#xB4DC;&#xC5D0;&#xC11C;-&#xC804;&#xC5ED;-&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;-&#xC2DD;&#xBCC4;&#xD558;&#xAE30;-identifying-a-global-library-from-code">&#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xC804;&#xC5ED; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xC2DD;&#xBCC4;&#xD558;&#xAE30; (Identifying a Global Library from Code)</h3>
+<p>&#xC804;&#xC5ED; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xCF54;&#xB4DC;&#xB294; &#xB300;&#xAC8C; &#xC5C4;&#xCCAD; &#xAC04;&#xB2E8;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC804;&#xC5ED; &quot;Hello, world&quot; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-js"><span class="cm-keyword">function</span> <span class="cm-variable">createGreeting</span>(<span class="cm-def">s</span>) {
     <span class="cm-keyword">return</span> <span class="cm-string">&quot;Hello, &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable-2">s</span>;
 }
 </code></pre>
-<p>or like this:</p>
+<p>&#xD639;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-js"><span class="cm-variable">window</span>.<span class="cm-property">createGreeting</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">s</span>) {
     <span class="cm-keyword">return</span> <span class="cm-string">&quot;Hello, &quot;</span> <span class="cm-operator">+</span> <span class="cm-variable-2">s</span>;
 }
 </code></pre>
-<p>When looking at the code of a global library, you&apos;ll usually see:</p>
+<p>&#xC804;&#xC5ED; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC758; &#xCF54;&#xB4DC;&#xB97C; &#xBCF4;&#xBA74;, &#xBCF4;&#xD1B5; &#xB2E4;&#xC74C;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <ul>
-<li>Top-level <code>var</code> statements or <code>function</code> declarations</li>
-<li>One or more assignments to <code>window.someName</code></li>
-<li>Assumptions that DOM primitives like <code>document</code> or <code>window</code> exist</li>
+<li>&#xCD5C;&#xC0C1;&#xC704; &#xB808;&#xBCA8; <code>var</code>&#xBB38; &#xC774;&#xB098; <code>function</code>&#xC120;&#xC5B8;</li>
+<li>&#xD558;&#xB098; &#xC774;&#xC0C1;&#xC758; <code>window.someName</code> &#xD560;&#xB2F9;</li>
+<li>DOM &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4; <code>document</code> &#xD639;&#xC740; <code>window</code>&#xAC00; &#xC874;&#xC7AC;&#xD55C;&#xB2E4;&#xACE0; &#xAC00;&#xC815;</li>
 </ul>
-<p>You <em>won&apos;t</em> see:</p>
+<p>&#xB2E4;&#xC74C;&#xC740; &#xBCFC; &#xC218; <em>&#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;</em>:</p>
 <ul>
-<li>Checks for, or usage of, module loaders like <code>require</code> or <code>define</code></li>
-<li>CommonJS/Node.js-style imports of the form <code>var fs = require(&quot;fs&quot;);</code></li>
-<li>Calls to <code>define(...)</code></li>
-<li>Documentation describing how to <code>require</code> or import the library</li>
+<li><code>require</code> &#xC774;&#xB098; <code>define</code> &#xAC19;&#xC740; &#xBAA8;&#xB4C8; &#xB85C;&#xB354; &#xAC80;&#xC0AC; &#xD639;&#xC740; &#xC0AC;&#xC6A9;</li>
+<li><code>var fs = require(&quot;fs&quot;);</code> &#xD615;&#xD0DC;&#xC758; CommonJS/Node.js-&#xC2A4;&#xD0C0;&#xC77C; import</li>
+<li><code>define(...)</code> &#xD638;&#xCD9C;</li>
+<li>&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; <code>require</code> &#xD639;&#xC740; import&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC5D0; &#xB300;&#xD574; &#xC124;&#xBA85;&#xD558;&#xB294; &#xBB38;&#xC11C;</li>
 </ul>
-<h3 id="examples-of-global-libraries">Examples of Global Libraries</h3>
-<p>Because it&apos;s usually easy to turn a global library into a UMD library, very few popular libraries are still written in the global style.
-However, libraries that are small and require the DOM (or have <em>no</em> dependencies) may still be global.</p>
-<h3 id="global-library-template">Global Library Template</h3>
-<p>The template file <a href="templates/global.d.ts.md"><code>global.d.ts</code></a> defines an example library <code>myLib</code>.
-Be sure to read the <a href="#preventing-name-conflicts">&quot;Preventing Name Conflicts&quot; footnote</a>.</p>
-<h2 id="modular-libraries">Modular Libraries</h2>
-<p>Some libraries only work in a module loader environment.
-For example, because <code>express</code> only works in Node.js and must be loaded using the CommonJS <code>require</code> function.</p>
-<p>ECMAScript 2015 (also known as ES2015, ECMAScript 6, and ES6), CommonJS, and RequireJS have similar notions of <em>importing</em> a <em>module</em>.
-In JavaScript CommonJS (Node.js), for example, you would write</p>
-<pre><code class="lang-ts"><span class="cm-keyword">var</span> <span class="cm-variable">fs</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;fs&quot;</span>);
+<h3 id="&#xC804;&#xC5ED;-&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;-&#xC608;&#xC81C;-examples-of-global-libraries">&#xC804;&#xC5ED; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xC608;&#xC81C; (Examples of Global Libraries)</h3>
+<p>&#xC804;&#xC5ED; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; UMD &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB85C; &#xBC14;&#xAFB8;&#xB294;&#xAC8C; &#xC27D;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, &#xC804;&#xC5ED; &#xC2A4;&#xD0C0;&#xC77C;&#xB85C; &#xC791;&#xC131;&#xD55C; &#xC778;&#xAE30; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB294; &#xAC70;&#xC758; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xD558;&#xC9C0;&#xB9CC;, &#xD06C;&#xAE30;&#xAC00; &#xC791;&#xACE0; DOM&#xC774; &#xD544;&#xC694;&#xD55C; (&#xD639;&#xC740; &#xC758;&#xC874;&#xC131;&#xC774; <em>&#xC5C6;&#xB294;</em>) &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB294; &#xC5EC;&#xC804;&#xD788; &#xC804;&#xC5ED;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xC804;&#xC5ED;-&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;-&#xD15C;&#xD50C;&#xB9BF;-global-library-template">&#xC804;&#xC5ED; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xD15C;&#xD50C;&#xB9BF; (Global Library Template)</h3>
+<p>&#xD15C;&#xD50C;&#xB9BF; &#xD30C;&#xC77C; <a href="templates/global.d.ts.md"><code>global.d.ts</code></a>&#xC740; &#xC608;&#xC81C; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; <code>myLib</code>&#xB97C; &#xC815;&#xC758;&#xD569;&#xB2C8;&#xB2E4;.
+<a href="#preventing-name-conflicts">&quot;&#xC774;&#xB984; &#xCDA9;&#xB3CC; &#xBC29;&#xC9C0;&quot; &#xAC01;&#xC8FC;</a>&#xB97C; &#xBC18;&#xB4DC;&#xC2DC; &#xC77D;&#xC5B4;&#xBCF4;&#xC138;&#xC694;.</p>
+<h2 id="&#xBAA8;&#xB4C8;&#xD615;-&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;-modular-libraries">&#xBAA8;&#xB4C8;&#xD615; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; (Modular Libraries)</h2>
+<p>&#xC5B4;&#xB5A4; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB294; &#xBAA8;&#xB4C8; &#xB85C;&#xB354; &#xD658;&#xACBD;&#xC5D0;&#xC11C;&#xB9CC; &#xB3D9;&#xC791;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, <code>express</code>&#xB294; Node.js&#xC5D0;&#xC11C;&#xB9CC; &#xB3D9;&#xC791;&#xD558;&#xACE0; &#xBC18;&#xB4DC;&#xC2DC; CommonJS&#xC758; <code>require</code> &#xD568;&#xC218;&#xB85C; &#xB85C;&#xB4DC;&#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>ECMAScript 2015 (ES2015, ECMAScript 6, ES6&#xB85C;&#xB3C4; &#xC798; &#xC54C;&#xB824;&#xC9C4;), CommonJS&#xC640; RequireJS&#xB294; <em>&#xBAA8;&#xB4C8;</em>&#xC744; <em>importing</em>&#xD558;&#xB294; &#xBE44;&#xC2B7;&#xD55C; &#xAC1C;&#xB150;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+JavaScript&#xC758; CommonJS (Node.js)&#xB97C; &#xC608;&#xB97C; &#xB4E4;&#xBA74;, &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC791;&#xC131;&#xD569;&#xB2C8;&#xB2E4;</p>
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">fs</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;fs&quot;</span>);
 </code></pre>
-<p>In TypeScript or ES6, the <code>import</code> keyword serves the same purpose:</p>
+<p>TypeScript&#xB098; ES6&#xC5D0;&#xC11C;&#xB294;, <code>import</code> &#xD0A4;&#xC6CC;&#xB4DC;&#xAC00; &#xAC19;&#xC740; &#xBAA9;&#xC801;&#xC744; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-variable">fs</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;fs&quot;</span>);
 </code></pre>
-<p>You&apos;ll typically see modular libraries include one of these lines in their documentation:</p>
+<p>&#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xBAA8;&#xB4C8;&#xD615; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC758; &#xBB38;&#xC11C;&#xC5D0;&#xC11C; &#xB2E4;&#xC74C; &#xCF54;&#xB4DC;&#xB4E4; &#xC911; &#xD558;&#xB098;&#xB97C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">someLib</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&apos;someLib&apos;</span>);
 </code></pre>
-<p>or</p>
-<pre><code class="lang-ts"><span class="cm-variable">define</span>(<span class="cm-meta">...</span>, [<span class="cm-string">&apos;someLib&apos;</span>], <span class="cm-keyword">function</span>(<span class="cm-variable">someLib</span>) {
+<p>&#xD639;&#xC740;</p>
+<pre><code class="lang-js"><span class="cm-variable">define</span>(<span class="cm-meta">...</span>, [<span class="cm-string">&apos;someLib&apos;</span>], <span class="cm-keyword">function</span>(<span class="cm-variable">someLib</span>) {
 
 });
 </code></pre>
-<p>As with global modules, you might see these examples in the documentation of a UMD module, so be sure to check the code or documentation.</p>
-<h3 id="identifying-a-module-library-from-code">Identifying a Module Library from Code</h3>
-<p>Modular libraries will typically have at least some of the following:</p>
+<p>&#xC804;&#xC5ED; &#xBAA8;&#xB4C8;&#xACFC; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; UMD &#xBAA8;&#xB4C8;&#xC758; &#xBB38;&#xC11C;&#xC5D0;&#xC11C;&#xB3C4; &#xC774; &#xC608;&#xC81C;&#xB4E4;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC73C;&#xBBC0;&#xB85C;, &#xCF54;&#xB4DC;&#xB098; &#xBB38;&#xC11C;&#xB97C; &#xBC18;&#xB4DC;&#xC2DC; &#xD655;&#xC778;&#xD558;&#xC138;&#xC694;.</p>
+<h3 id="&#xCF54;&#xB4DC;&#xC5D0;&#xC11C;-&#xBAA8;&#xB4C8;-&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;-&#xC2DD;&#xBCC4;&#xD558;&#xAE30;-identifying-a-module-library-from-code">&#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xBAA8;&#xB4C8; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xC2DD;&#xBCC4;&#xD558;&#xAE30; (Identifying a Module Library from Code)</h3>
+<p>&#xBAA8;&#xB4C8;&#xD615; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB294; &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xB2E4;&#xC74C; &#xC911; &#xBA87; &#xAC00;&#xC9C0;&#xB97C; &#xBC18;&#xB4DC;&#xC2DC; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <ul>
-<li>Unconditional calls to <code>require</code> or <code>define</code></li>
-<li>Declarations like <code>import * as a from &apos;b&apos;;</code> or <code>export c;</code></li>
-<li>Assignments to <code>exports</code> or <code>module.exports</code></li>
+<li><code>require</code> &#xD639;&#xC740; <code>define</code>&#xC5D0; &#xB300;&#xD55C; &#xBB34;&#xC870;&#xAC74;&#xC801;&#xC778; &#xD638;&#xCD9C;</li>
+<li><code>import * as a from &apos;b&apos;;</code> &#xD639;&#xC740; <code>export c;</code> &#xAC19;&#xC740; &#xC120;&#xC5B8;&#xBB38;</li>
+<li><code>exports</code> &#xD639;&#xC740; <code>module.exports</code>&#xC5D0; &#xB300;&#xD55C; &#xD560;&#xB2F9;</li>
 </ul>
-<p>They will rarely have:</p>
+<p>&#xB2E4;&#xC74C;&#xC740; &#xAC70;&#xC758; &#xAC16;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <ul>
-<li>Assignments to properties of <code>window</code> or <code>global</code></li>
+<li><code>window</code> &#xD639;&#xC740; <code>global</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xD560;&#xB2F9;</li>
 </ul>
-<h3 id="examples-of-modular-libraries">Examples of Modular Libraries</h3>
-<p>Many popular Node.js libraries are in the module family, such as <a href="http://expressjs.com/" target="_blank"><code>express</code></a>, <a href="http://gulpjs.com/" target="_blank"><code>gulp</code></a>, and <a href="https://github.com/request/request" target="_blank"><code>request</code></a>.</p>
+<h3 id="&#xBAA8;&#xB4C8;&#xD615;-&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;-&#xC608;&#xC81C;-examples-of-modular-libraries">&#xBAA8;&#xB4C8;&#xD615; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xC608;&#xC81C; (Examples of Modular Libraries)</h3>
+<p>&#xB9CE;&#xC740; &#xC720;&#xBA85;&#xD55C; Node.js &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB4E4;&#xC740; <a href="http://expressjs.com/" target="_blank"><code>express</code></a>, <a href="http://gulpjs.com/" target="_blank"><code>gulp</code></a>, <a href="https://github.com/request/request" target="_blank"><code>request</code></a>&#xC640; &#xAC19;&#xC740; &#xBAA8;&#xB4C8;&#xAD70; &#xC548;&#xC5D0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h2 id="umd"><em>UMD</em></h2>
-<p>A <em>UMD</em> module is one that can <em>either</em> be used as module (through an import), or as a global (when run in an environment without a module loader).
-Many popular libraries, such as <a href="http://momentjs.com/" target="_blank">Moment.js</a>, are written this way.
-For example, in Node.js or using RequireJS, you would write:</p>
+<p><em>UMD</em> &#xBAA8;&#xB4C8;&#xC740; &#xBAA8;&#xB4C8;&#xB85C; (import&#xB97C; &#xD1B5;&#xD574;) &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xACE0; &#xD639;&#xC740; &#xC804;&#xC5ED;&#xC73C;&#xB85C;&#xB3C4; (&#xBAA8;&#xB4C8; &#xB85C;&#xB354; &#xC5C6;&#xB294; &#xD658;&#xACBD;&#xC5D0;&#xC11C; &#xC2E4;&#xD589;&#xB420; &#xB54C;) &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+<a href="http://momentjs.com/" target="_blank">Moment.js</a> &#xAC19;&#xC740; &#xB9CE;&#xC740; &#xC720;&#xBA85;&#xD55C; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB4E4;&#xC740; &#xC774; &#xBC29;&#xBC95;&#xC73C;&#xB85C; &#xC791;&#xC131;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, Node.js&#xB098; RequireJS&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74;, &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC791;&#xC131;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-variable">moment</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;moment&quot;</span>);
 <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">moment</span>.<span class="cm-property">format</span>());
 </code></pre>
-<p>whereas in a vanilla browser environment you would write:</p>
-<pre><code class="lang-ts"><span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">moment</span>.<span class="cm-property">format</span>());
+<p>&#xBC18;&#xBA74; &#xBC14;&#xB2D0;&#xB77C; &#xBE0C;&#xB77C;&#xC6B0;&#xC800; &#xD658;&#xACBD;&#xC5D0;&#xC11C;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC4F8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-js"><span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">moment</span>.<span class="cm-property">format</span>());
 </code></pre>
-<h3 id="identifying-a-umd-library">Identifying a UMD library</h3>
-<p><a href="https://github.com/umdjs/umd" target="_blank">UMD modules</a> check for the existence of a module loader environment.
-This is an easy-to-spot pattern that looks something like this:</p>
+<h3 id="umd-&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;-&#xC2DD;&#xBCC4;&#xD558;&#xAE30;-identifying-a-umd-library">UMD &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xC2DD;&#xBCC4;&#xD558;&#xAE30; (Identifying a UMD library)</h3>
+<p><a href="https://github.com/umdjs/umd" target="_blank">UMD modules</a>&#xC740; &#xBAA8;&#xB4C8; &#xB85C;&#xB354; &#xD658;&#xACBD; &#xC720;&#xBB34;&#xB97C; &#xAC80;&#xC0AC;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xBCF4;&#xC774;&#xB294; &#xCC3E;&#xAE30; &#xC26C;&#xC6B4; &#xD328;&#xD134;&#xC785;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-js">(<span class="cm-keyword">function</span> (<span class="cm-def">root</span>, <span class="cm-def">factory</span>) {
     <span class="cm-keyword">if</span> (<span class="cm-keyword">typeof</span> <span class="cm-variable">define</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;function&quot;</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable">define</span>.<span class="cm-property">amd</span>) {
         <span class="cm-variable">define</span>([<span class="cm-string">&quot;libName&quot;</span>], <span class="cm-variable-2">factory</span>);
@@ -822,130 +868,155 @@ This is an easy-to-spot pattern that looks something like this:</p>
     }
 }(<span class="cm-keyword">this</span>, <span class="cm-keyword">function</span> (<span class="cm-def">b</span>) {
 </code></pre>
-<p>If you see tests for <code>typeof define</code>, <code>typeof window</code>, or <code>typeof module</code> in the code of a library, especially at the top of the file, it&apos;s almost always a UMD library.</p>
-<p>Documentation for UMD libraries will also often demonstrate a &quot;Using in Node.js&quot; example showing <code>require</code>,
-  and a &quot;Using in the browser&quot; example showing using a <code>&lt;script&gt;</code> tag to load the script.</p>
-<h3 id="examples-of-umd-libraries">Examples of UMD libraries</h3>
-<p>Most popular libraries are now available as UMD packages.
-Examples include <a href="https://jquery.com/" target="_blank">jQuery</a>, <a href="http://momentjs.com/" target="_blank">Moment.js</a>, <a href="https://lodash.com/" target="_blank">lodash</a>, and many more.</p>
-<h3 id="template">Template</h3>
-<p>There are three templates available for modules,
-  <a href="templates/module.d.ts.md"><code>module.d.ts</code></a>, <a href="templates/module-class.d.ts.md"><code>module-class.d.ts</code></a> and <a href="templates/module-function.d.ts.md"><code>module-function.d.ts</code></a>.</p>
-<p>Use <a href="templates/module-function.d.ts.md"><code>module-function.d.ts</code></a> if your module can be <em>called</em> like a function:</p>
-<pre><code class="lang-ts"><span class="cm-keyword">var</span> <span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;foo&quot;</span>);
-<span class="cm-comment">// Note: calling &apos;x&apos; as a function</span>
+<p>&#xB9CC;&#xC57D; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xCF54;&#xB4DC;, &#xD2B9;&#xD788; &#xD30C;&#xC77C; &#xC0C1;&#xB2E8;&#xC5D0;&#xC11C; <code>typeof define</code>, <code>typeof window</code> &#xD639;&#xC740; <code>typeof module</code>&#xC5D0; &#xB300;&#xD55C; &#xD14C;&#xC2A4;&#xD2B8;&#xB97C; &#xBCF4;&#xC558;&#xB2E4;&#xBA74;, &#xAC70;&#xC758; &#xB300;&#xBD80;&#xBD84; UMD &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>UMD &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xBB38;&#xC11C;&#xC5D0;&#xC11C;&#xB294; <code>require</code>&#xB97C; &#xBCF4;&#xC5EC;&#xC8FC;&#xB294; &quot;Node.js&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;&quot; &#xC608;&#xC81C;&#xB97C; &#xC885;&#xC885; &#xC124;&#xBA85;&#xD558;&#xACE0;
+  &quot;&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;&quot; &#xC608;&#xC81C;&#xC5D0;&#xC11C;&#xB294; <code>&lt;script&gt;</code> &#xD0DC;&#xADF8;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC11C; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xB85C;&#xB4DC;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;.</p>
+<h3 id="umd-&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;-&#xC608;&#xC81C;-examples-of-umd-libraries">UMD &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xC608;&#xC81C; (Examples of UMD libraries)</h3>
+<p>&#xC720;&#xBA85;&#xD55C; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xB300;&#xBD80;&#xBD84;&#xC740; UMD &#xD328;&#xD0A4;&#xC9C0;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB85C;&#xB294; <a href="https://jquery.com/" target="_blank">jQuery</a>, <a href="http://momentjs.com/" target="_blank">Moment.js</a>, <a href="https://loadash.com/" target="_blank">loadash</a> &#xB4F1; &#xB354; &#xB9CE;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xD15C;&#xD50C;&#xB9BF;-template">&#xD15C;&#xD50C;&#xB9BF; (Template)</h3>
+<p>&#xBAA8;&#xB4C8;&#xC740; &#xC138; &#xAC00;&#xC9C0; &#xD15C;&#xD50C;&#xB9BF;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;,
+  <a href="templates/module.d.ts.md"><code>module.d.ts</code></a>, <a href="templates/module-class.d.ts.md"><code>module-class.d.ts</code></a> &#xADF8;&#xB9AC;&#xACE0; <a href="templates/module-function.d.ts.md"><code>module-function.d.ts</code></a>.</p>
+<p>&#xB9CC;&#xC57D; &#xBAA8;&#xB4C8;&#xC744; &#xD568;&#xC218;&#xCC98;&#xB7FC; <em>&#xD638;&#xCD9C;</em>&#xD560; &#xC218; &#xC788;&#xC73C;&#xBA74; <a href="templates/module-function.d.ts.md"><code>module-function.d.ts</code></a>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;:</p>
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;foo&quot;</span>);
+<span class="cm-comment">// &#xCC38;&#xACE0;: &#xD568;&#xC218;&#xB85C; &apos;x&apos;&#xB97C; &#xD638;&#xCD9C;</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">y</span> <span class="cm-operator">=</span> <span class="cm-variable">x</span>(<span class="cm-number">42</span>);
 </code></pre>
-<p>Be sure to read the <a href="#the-impact-of-es6-on-module-plugins">footnote &quot;The Impact of ES6 on Module Call Signatures&quot;</a></p>
-<p>Use <a href="templates/module-class.d.ts.md"><code>module-class.d.ts</code></a> if your module can be <em>constructed</em> using <code>new</code>:</p>
-<pre><code class="lang-ts"><span class="cm-keyword">var</span> <span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;bar&quot;</span>);
-<span class="cm-comment">// Note: using &apos;new&apos; operator on the imported variable</span>
+<p><a href="#the-impact-of-es6-on-module-plugins">&#xAC01;&#xC8FC; &quot;ES6&#xAC00; &#xBAA8;&#xB4C8; &#xD638;&#xCD9C; &#xC2DC;&#xADF8;&#xB2C8;&#xCC98;&#xC5D0; &#xBBF8;&#xCE58;&#xB294; &#xC601;&#xD5A5;&quot;</a>&#xB97C; &#xBC18;&#xB4DC;&#xC2DC; &#xC77D;&#xC5B4;&#xBCF4;&#xC138;&#xC694;</p>
+<p>&#xB9CC;&#xC57D; &#xBAA8;&#xB4C8;&#xC774; <code>new</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; <em>&#xC0DD;&#xC131;</em>&#xD560; &#xC218; &#xC788;&#xB2E4;&#xBA74; <a href="templates/module-class.d.ts.md"><code>module-class.d.ts</code></a>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;:</p>
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;bar&quot;</span>);
+<span class="cm-comment">// &#xCC38;&#xACE0;: &apos;new&apos; &#xC5F0;&#xC0B0;&#xC790;&#xB97C; import&#xB41C; &#xBCC0;&#xC218;&#xC5D0; &#xC0AC;&#xC6A9;</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">y</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">x</span>(<span class="cm-string">&quot;hello&quot;</span>);
 </code></pre>
-<p>The same <a href="#the-impact-of-es6-on-module-plugins">footnote</a> applies to these modules.</p>
-<p>If your module is not callable or constructable, use the <a href="templates/module.d.ts.md"><code>module.d.ts</code></a> file.</p>
-<h2 id="module-plugin-or-umd-plugin"><em>Module Plugin</em> or <em>UMD Plugin</em></h2>
-<p>A <em>module plugin</em> changes the shape of another module (either UMD or module).
-For example, in Moment.js, <code>moment-range</code> adds a new <code>range</code> method to the <code>moment</code> object.</p>
-<p>For the purposes of writing a declaration file, you&apos;ll write the same code whether the module being changed is a plain module or UMD module.</p>
-<h3 id="template">Template</h3>
-<p>Use the <a href="templates/module-plugin.d.ts.md"><code>module-plugin.d.ts</code></a> template.</p>
-<h2 id="global-plugin"><em>Global Plugin</em></h2>
-<p>A <em>global plugin</em> is global code that changes the shape of some global.
-As with <em>global-modifying modules</em>, these raise the possibility of runtime conflict.</p>
-<p>For example, some libraries add new functions to <code>Array.prototype</code> or <code>String.prototype</code>.</p>
-<h3 id="identifying-global-plugins">Identifying global plugins</h3>
-<p>Global plugins are generally easy to identify from their documentation.</p>
-<p>You&apos;ll see examples that look like this:</p>
-<pre><code class="lang-ts"><span class="cm-keyword">var</span> <span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;hello, world&quot;</span>;
-<span class="cm-comment">// Creates new methods on built-in types</span>
+<p>&#xC774;&#xB7F0; &#xBAA8;&#xB4C8;&#xC5D0;&#xB3C4; &#xAC19;&#xC740; <a href="#the-impact-of-es6-on-module-plugins">&#xAC01;&#xC8FC;</a>&#xAC00; &#xC801;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB9CC;&#xC57D; &#xBAA8;&#xB4C8;&#xC774; &#xC704; &#xC0AC;&#xD56D;&#xC5D0; &#xD574;&#xB2F9;&#xB418;&#xC9C0; &#xC54A;&#xB2E4;&#xBA74;, <a href="templates/module.d.ts.md"><code>module.d.ts</code></a> &#xD30C;&#xC77C;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;.</p>
+<h2 id="&#xBAA8;&#xB4C8;-&#xD50C;&#xB7EC;&#xADF8;&#xC778;-&#xD639;&#xC740;-umd-&#xD50C;&#xB7EC;&#xADF8;&#xC778;-module-plugin-or-umd-plugin"><em>&#xBAA8;&#xB4C8; &#xD50C;&#xB7EC;&#xADF8;&#xC778;</em> &#xD639;&#xC740; <em>UMD &#xD50C;&#xB7EC;&#xADF8;&#xC778;</em> (<em>Module Plugin</em> or <em>UMD Plugin</em>)</h2>
+<p><em>&#xBAA8;&#xB4C8; &#xD50C;&#xB7EC;&#xADF8;&#xC778;</em>&#xC740; &#xB2E4;&#xB978; &#xBAA8;&#xB4C8; (UMD&#xB098; &#xBAA8;&#xB4C8;)&#xC758; &#xD615;&#xD0DC;&#xB97C; &#xBCC0;&#xACBD;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, Moment.js&#xC5D0;&#xC11C;, <code>moment-range</code>&#xB294; <code>moment</code> &#xAC1D;&#xCCB4;&#xC5D0; &#xC0C8;&#xB85C;&#xC6B4; <code>range</code> &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC120;&#xC5B8; &#xD30C;&#xC77C; &#xC791;&#xC131;&#xC744; &#xC704;&#xD574;, &#xBAA8;&#xB4C8;&#xC774; &#xC77C;&#xBC18; &#xBAA8;&#xB4C8;&#xB85C; &#xBCC0;&#xACBD;&#xB418;&#xB4E0; UMD &#xBAA8;&#xB4C8;&#xB85C; &#xBCC0;&#xACBD;&#xB418;&#xB4E0; &#xAC19;&#xC740; &#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xD15C;&#xD50C;&#xB9BF;-template">&#xD15C;&#xD50C;&#xB9BF; (Template)</h3>
+<p><a href="templates/module-plugin.d.ts.md"><code>module-plugin.d.ts</code></a> &#xD15C;&#xD50C;&#xB9BF;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;.</p>
+<h2 id="&#xC804;&#xC5ED;-&#xD50C;&#xB7EC;&#xADF8;&#xC778;-global-plugin"><em>&#xC804;&#xC5ED; &#xD50C;&#xB7EC;&#xADF8;&#xC778;</em> (<em>Global Plugin</em>)</h2>
+<p><em>&#xC804;&#xC5ED; &#xD50C;&#xB7EC;&#xADF8;&#xC778;</em>&#xC740; &#xC804;&#xC5ED;&#xC758; &#xD615;&#xD0DC;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xB294; &#xC804;&#xC5ED; &#xCF54;&#xB4DC;&#xC785;&#xB2C8;&#xB2E4;.
+<em>&#xC804;&#xC5ED;-&#xC218;&#xC815; &#xBAA8;&#xB4C8;</em>&#xACFC; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xB7F0;&#xD0C0;&#xC784;&#xC5D0; &#xCDA9;&#xB3CC; &#xAC00;&#xB2A5;&#xC131;&#xC744; &#xB192;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, &#xBA87;&#xBA87; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB294; <code>Array.prototype</code>&#xC774;&#xB098; <code>String.prototype</code>&#xC5D0; &#xC0C8;&#xB85C;&#xC6B4; &#xD568;&#xC218;&#xB97C; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xC804;&#xC5ED;-&#xD50C;&#xB7EC;&#xADF8;&#xC778;-&#xC2DD;&#xBCC4;&#xD558;&#xAE30;-identifying-global-plugins">&#xC804;&#xC5ED; &#xD50C;&#xB7EC;&#xADF8;&#xC778; &#xC2DD;&#xBCC4;&#xD558;&#xAE30; (Identifying global plugins)</h3>
+<p>&#xC804;&#xC5ED; &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC740; &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xBB38;&#xC11C;&#xB97C; &#xBCF4;&#xACE0; &#xC27D;&#xAC8C; &#xC2DD;&#xBCC4;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC608;&#xC81C;&#xB97C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;hello, world&quot;</span>;
+<span class="cm-comment">// &#xB0B4;&#xC7A5; &#xD0C0;&#xC785;&#xC5D0; &#xC0C8;&#xB85C;&#xC6B4; &#xBA54;&#xC11C;&#xB4DC; &#xC0DD;&#xC131;</span>
 <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">x</span>.<span class="cm-property">startsWithHello</span>());
 
 <span class="cm-keyword">var</span> <span class="cm-variable">y</span> <span class="cm-operator">=</span> [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>];
-<span class="cm-comment">// Creates new methods on built-in types</span>
+<span class="cm-comment">// &#xB0B4;&#xC7A5; &#xD0C0;&#xC785;&#xC5D0; &#xC0C8;&#xB85C;&#xC6B4; &#xBA54;&#xC11C;&#xB4DC; &#xC0DD;&#xC131;</span>
 <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">y</span>.<span class="cm-property">reverseAndSort</span>());
 </code></pre>
-<h3 id="template">Template</h3>
-<p>Use the <a href="templates/global-plugin.d.ts.md"><code>global-plugin.d.ts</code></a> template.</p>
-<h2 id="global-modifying-modules"><em>Global-modifying Modules</em></h2>
-<p>A <em>global-modifying module</em> alters existing values in the global scope when they are imported.
-For example, there might exist a library which adds new members to <code>String.prototype</code> when imported.
-This pattern is somewhat dangerous due to the possibility of runtime conflicts,
-  but we can still write a declaration file for it.</p>
-<h3 id="identifying-global-modifying-modules">Identifying global-modifying modules</h3>
-<p>Global-modifying modules are generally easy to identify from their documentation.
-In general, they&apos;re similar to global plugins, but need a <code>require</code> call to activate their effects.</p>
-<p>You might see documentation like this:</p>
-<pre><code class="lang-ts"><span class="cm-comment">// &apos;require&apos; call that doesn&apos;t use its return value</span>
+<h3 id="&#xD15C;&#xD50C;&#xB9BF;-template">&#xD15C;&#xD50C;&#xB9BF; (Template)</h3>
+<p><a href="templates/global-plugin.d.ts.md"><code>global-plugin.d.ts</code></a> &#xD15C;&#xD50C;&#xB9BF;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;.</p>
+<h2 id="&#xC804;&#xC5ED;-&#xC218;&#xC815;-&#xBAA8;&#xB4C8;-global-modifying-modules"><em>&#xC804;&#xC5ED;-&#xC218;&#xC815; &#xBAA8;&#xB4C8;</em> (<em>Global-modifying Modules</em>)</h2>
+<p><em>&#xC804;&#xC5ED;-&#xC218;&#xC815; &#xBAA8;&#xB4C8;</em>&#xC740; import &#xB420; &#xB54C;, &#xC804;&#xC5ED; &#xC2A4;&#xCF54;&#xD504;&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xAC12;&#xC744; &#xBCC0;&#xACBD;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, import &#xB420; &#xB54C; <code>String.prototype</code>&#xC5D0; &#xC0C8;&#xB85C;&#xC6B4; &#xBA64;&#xBC84;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xB294; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xAC00; &#xC788;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774; &#xD328;&#xD134;&#xC740; &#xB7F0;&#xD0C0;&#xC784; &#xCDA9;&#xB3CC;&#xC758; &#xAC00;&#xB2A5;&#xC131; &#xB54C;&#xBB38;&#xC5D0; &#xC704;&#xD5D8;&#xD558;&#xC9C0;&#xB9CC;,
+  &#xC5EC;&#xC804;&#xD788; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC744; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xC804;&#xC5ED;-&#xC218;&#xC815;-&#xBAA8;&#xB4C8;-&#xC2DD;&#xBCC4;&#xD558;&#xAE30;-identifying-global-modifying-modules">&#xC804;&#xC5ED;-&#xC218;&#xC815; &#xBAA8;&#xB4C8; &#xC2DD;&#xBCC4;&#xD558;&#xAE30; (Identifying global-modifying modules)</h3>
+<p>&#xC804;&#xC5ED;-&#xC218;&#xC815; &#xBAA8;&#xB4C8;&#xC740; &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xBB38;&#xC11C;&#xB97C; &#xBCF4;&#xACE0; &#xC27D;&#xAC8C; &#xC2DD;&#xBCC4;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C;, &#xC804;&#xC5ED; &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xACFC; &#xBE44;&#xC2B7;&#xD558;&#xC9C0;&#xB9CC;, &#xD6A8;&#xACFC;&#xB97C; &#xD65C;&#xC131;&#xD654;&#xD558;&#xAE30; &#xC704;&#xD574; <code>require</code> &#xD638;&#xCD9C;&#xC774; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBB38;&#xC11C;&#xB97C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-js"><span class="cm-comment">// &#xBC18;&#xD658;&#xAC12;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xB294; &apos;require&apos; &#xD638;&#xCD9C;</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">unused</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;magic-string-time&quot;</span>);
-<span class="cm-comment">/* or */</span>
+<span class="cm-comment">/* &#xD639;&#xC740; */</span>
 <span class="cm-variable">require</span>(<span class="cm-string">&quot;magic-string-time&quot;</span>);
 
 <span class="cm-keyword">var</span> <span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;hello, world&quot;</span>;
-<span class="cm-comment">// Creates new methods on built-in types</span>
+<span class="cm-comment">// &#xB0B4;&#xC7A5; &#xD0C0;&#xC785;&#xC5D0; &#xC0C8;&#xB85C;&#xC6B4; &#xBA54;&#xC11C;&#xB4DC; &#xC0DD;&#xC131;</span>
 <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">x</span>.<span class="cm-property">startsWithHello</span>());
 
 <span class="cm-keyword">var</span> <span class="cm-variable">y</span> <span class="cm-operator">=</span> [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>];
-<span class="cm-comment">// Creates new methods on built-in types</span>
+<span class="cm-comment">// &#xB0B4;&#xC7A5; &#xD0C0;&#xC785;&#xC5D0; &#xC0C8;&#xB85C;&#xC6B4; &#xBA54;&#xC11C;&#xB4DC; &#xC0DD;&#xC131;</span>
 <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">y</span>.<span class="cm-property">reverseAndSort</span>());
 </code></pre>
-<h3 id="template">Template</h3>
-<p>Use the <a href="templates/global-modifying-module.d.ts.md"><code>global-modifying-module.d.ts</code></a> template.</p>
-<h1 id="consuming-dependencies">Consuming Dependencies</h1>
-<p>There are several kinds of dependencies you might have.</p>
-<h2 id="dependencies-on-global-libraries">Dependencies on Global Libraries</h2>
-<p>If your library depends on a global library, use a <code>/// &lt;reference types=&quot;...&quot; /&gt;</code> directive:</p>
+<h3 id="&#xD15C;&#xD50C;&#xB9BF;-template">&#xD15C;&#xD50C;&#xB9BF; (Template)</h3>
+<p><a href="templates/global-modifying-module.d.ts.md"><code>global-modifying-module.d.ts</code></a> &#xD15C;&#xD50C;&#xB9BF;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;.</p>
+<h1 id="&#xC758;&#xC874;&#xC131;-&#xC0AC;&#xC6A9;&#xD558;&#xAE30;-consuming-dependencies">&#xC758;&#xC874;&#xC131; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; (Consuming Dependencies)</h1>
+<p>&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xAC00; &#xBA87; &#xAC00;&#xC9C0; &#xC758;&#xC874;&#xC131;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774;&#xBC88; &#xC139;&#xC158;&#xC5D0;&#xC11C;&#xB294; &#xC120;&#xC5B8; &#xD30C;&#xC77C; &#xC548;&#xC5D0; &#xC758;&#xC874;&#xC131;&#xC744; import &#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC124;&#xBA85;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xC804;&#xC5ED;-&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;-&#xC758;&#xC874;&#xC131;-dependencies-on-global-libraries">&#xC804;&#xC5ED; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xC758;&#xC874;&#xC131; (Dependencies on Global Libraries)</h2>
+<p>&#xB9CC;&#xC57D; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xAC00; &#xC804;&#xC5ED; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC5D0; &#xC758;&#xC874;&#xC131;&#xC774; &#xC788;&#xB2E4;&#xBA74;, <code>/// &lt;reference types=&quot;...&quot; /&gt;</code> &#xB514;&#xB809;&#xD2F0;&#xBE0C;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;:</p>
 <pre><code class="lang-ts"><span class="cm-comment">/// &lt;reference types=&quot;someLib&quot; /&gt;</span>
 
 <span class="cm-keyword">function</span> <span class="cm-variable">getThing</span>(): <span class="cm-variable">someLib</span>.<span class="cm-property">thing</span>;
 </code></pre>
-<h2 id="dependencies-on-modules">Dependencies on Modules</h2>
-<p>If your library depends on a module, use an <code>import</code> statement:</p>
+<h2 id="&#xBAA8;&#xB4C8;-&#xC758;&#xC874;&#xC131;-dependencies-on-modules">&#xBAA8;&#xB4C8; &#xC758;&#xC874;&#xC131; (Dependencies on Modules)</h2>
+<p>&#xB9CC;&#xC57D; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xAC00; &#xBAA8;&#xB4C8;&#xC5D0; &#xC758;&#xC874;&#xC131;&#xC774; &#xC788;&#xB2E4;&#xBA74;, <code>import</code>&#xBB38;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">moment</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;moment&quot;</span>;
 
 <span class="cm-keyword">function</span> <span class="cm-variable">getThing</span>(): <span class="cm-variable">moment</span>;
 </code></pre>
-<h2 id="dependencies-on-umd-libraries">Dependencies on UMD libraries</h2>
-<h3 id="from-a-global-library">From a Global Library</h3>
-<p>If your global library depends on a UMD module, use a <code>/// &lt;reference types</code> directive:</p>
+<h2 id="umd-&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;-&#xC758;&#xC874;&#xC131;-dependencies-on-umd-libraries">UMD &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xC758;&#xC874;&#xC131; (Dependencies on UMD libraries)</h2>
+<h3 id="&#xC804;&#xC5ED;-&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC5D0;&#xC11C;-from-a-global-library">&#xC804;&#xC5ED; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC5D0;&#xC11C; (From a Global Library)</h3>
+<p>&#xB9CC;&#xC57D; &#xC804;&#xC5ED; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xAC00; UMD &#xBAA8;&#xB4C8;&#xC5D0; &#xC758;&#xC874;&#xC131;&#xC774; &#xC788;&#xB2E4;&#xBA74;, <code>/// &lt;reference types</code> &#xB514;&#xB809;&#xD2F0;&#xBE0C;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;:</p>
 <pre><code class="lang-ts"><span class="cm-comment">/// &lt;reference types=&quot;moment&quot; /&gt;</span>
 
 <span class="cm-keyword">function</span> <span class="cm-variable">getThing</span>(): <span class="cm-variable">moment</span>;
 </code></pre>
-<h3 id="from-a-module-or-umd-library">From a Module or UMD Library</h3>
-<p>If your module or UMD library depends on a UMD library, use an <code>import</code> statement:</p>
+<h3 id="&#xBAA8;&#xB4C8;&#xC774;&#xB098;-umd-&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC5D0;&#xC11C;-from-a-module-or-umd-library">&#xBAA8;&#xB4C8;&#xC774;&#xB098; UMD &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC5D0;&#xC11C; (From a Module or UMD Library)</h3>
+<p>&#xB9CC;&#xC57D; &#xBAA8;&#xB4C8;&#xC774;&#xB098; UMD &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xAC00; UMD &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC5D0; &#xC758;&#xC874;&#xC131;&#xC774; &#xC788;&#xB2E4;&#xBA74;, <code>import</code>&#xBB38;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">someLib</span> <span class="cm-variable">from</span> <span class="cm-string">&apos;someLib&apos;</span>;
 </code></pre>
-<p>Do <em>not</em> use a <code>/// &lt;reference</code> directive to declare a dependency to a UMD library!</p>
-<h1 id="footnotes">Footnotes</h1>
-<h2 id="preventing-name-conflicts">Preventing Name Conflicts</h2>
-<p>Note that it&apos;s possible to define many types in the global scope when writing a global declaration file.
-We strongly discourage this as it leads to possible unresolvable name conflicts when many declaration files are in a project.</p>
-<p>A simple rule to follow is to only declare types <em>namespaced</em> by whatever global variable the library defines.
-For example, if the library defines the global value &apos;cats&apos;, you should write</p>
+<p>UMD &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC5D0; &#xB300;&#xD55C; &#xC758;&#xC874;&#xC131; &#xC120;&#xC5B8;&#xC5D0; <code>/// &lt;reference</code> &#xB514;&#xB809;&#xD2F0;&#xBE0C;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; <em>&#xB9C8;&#xC138;&#xC694;</em>!</p>
+<h1 id="&#xAC01;&#xC8FC;-footnotes">&#xAC01;&#xC8FC; (Footnotes)</h1>
+<h2 id="&#xC774;&#xB984;-&#xCDA9;&#xB3CC;-&#xBC29;&#xC9C0;&#xD558;&#xAE30;-preventing-name-conflicts">&#xC774;&#xB984; &#xCDA9;&#xB3CC; &#xBC29;&#xC9C0;&#xD558;&#xAE30; (Preventing Name Conflicts)</h2>
+<p>&#xC804;&#xC5ED; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC744; &#xC791;&#xC131;&#xD560; &#xB54C;, &#xC804;&#xC5ED; &#xC2A4;&#xCF54;&#xD504;&#xC5D0; &#xB9CE;&#xC740; &#xD0C0;&#xC785;&#xC744; &#xC815;&#xC758;&#xD560; &#xC218; &#xC788;&#xB2E4;&#xB294; &#xC810;&#xC744; &#xC720;&#xC758;&#xD558;&#xC138;&#xC694;.
+&#xB9CE;&#xC740; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC774; &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xB0B4;&#xC5D0; &#xC788;&#xC744; &#xB54C;, &#xD574;&#xACB0;&#xD560; &#xC218; &#xC5C6;&#xB294; &#xC774;&#xB984; &#xCDA9;&#xB3CC;&#xC774; &#xBC1C;&#xC0DD;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBBC0;&#xB85C; &#xC774;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB530;&#xB77C;&#xC57C; &#xD558;&#xB294; &#xAC04;&#xB2E8;&#xD55C; &#xADDC;&#xCE59;&#xC740; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xAC00; &#xC815;&#xC758;&#xD55C; &#xC804;&#xC5ED; &#xBCC0;&#xC218;&#xAC00; &#xBB34;&#xC5C7;&#xC774;&#xB4E0; &#xD0C0;&#xC785;&#xC744; <em>&#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;</em>&#xB85C; &#xC815;&#xC758;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, &#xB9CC;&#xC57D; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xAC00; &#xC804;&#xC5ED; &#xAC12; &apos;cats&apos;&#xB97C; &#xC815;&#xC758;&#xD558;&#xBA74;, &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC791;&#xC131;&#xD558;&#xACE0;</p>
 <pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-variable">namespace</span> <span class="cm-variable">cats</span> {
     <span class="cm-keyword">interface</span> <span class="cm-variable">KittySettings</span> { }
 }
 </code></pre>
-<p>But <em>not</em></p>
-<pre><code class="lang-ts"><span class="cm-comment">// at top-level</span>
+<p>&#xC774;&#xB807;&#xAC8C; &#xD558;&#xC9C0;&#xB294; <em>&#xB9C8;&#xC138;&#xC694;</em></p>
+<pre><code class="lang-ts"><span class="cm-comment">// &#xCD5C;&#xC0C1;&#xC704;-&#xB808;&#xBCA8;&#xC5D0;&#xC11C;</span>
 <span class="cm-keyword">interface</span> <span class="cm-variable">CatsKittySettings</span> { }
 </code></pre>
-<p>This guidance also ensures that the library can be transitioned to UMD without breaking declaration file users.</p>
-<h2 id="the-impact-of-es6-on-module-plugins">The Impact of ES6 on Module Plugins</h2>
-<p>Some plugins add or modify top-level exports on existing modules.
-While this is legal in CommonJS and other loaders, ES6 modules are considered immutable and this pattern will not be possible.
-Because TypeScript is loader-agnostic, there is no compile-time enforcement of this policy, but developers intending to transition to an ES6 module loader should be aware of this.</p>
-<h2 id="the-impact-of-es6-on-module-call-signatures">The Impact of ES6 on Module Call Signatures</h2>
-<p>Many popular libraries, such as Express, expose themselves as a callable function when imported.
-For example, the typical Express usage looks like this:</p>
+<p>&#xC774; &#xAC00;&#xC774;&#xB4DC;&#xB294; &#xC120;&#xC5B8; &#xD30C;&#xC77C; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC911;&#xB2E8;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; UMD&#xB85C; &#xC804;&#xD658;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="es6&#xAC00;-&#xBAA8;&#xB4C8;-&#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC5D0;-&#xBBF8;&#xCE58;&#xB294;-&#xC601;&#xD5A5;-the-impact-of-es6-on-module-plugins">ES6&#xAC00; &#xBAA8;&#xB4C8; &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC5D0; &#xBBF8;&#xCE58;&#xB294; &#xC601;&#xD5A5; (The Impact of ES6 on Module Plugins)</h2>
+<p>&#xC5B4;&#xB5A4; &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC740; &#xAE30;&#xC874; &#xBAA8;&#xB4C8;&#xC5D0; &#xCD5C;&#xC0C1;&#xC704; export&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xAC70;&#xB098; &#xC218;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.
+CommonJS&#xC640; &#xB2E4;&#xB978; &#xB85C;&#xB354;&#xC5D0;&#xC11C;&#xB294; &#xD5C8;&#xC6A9;&#xB418;&#xC9C0;&#xB9CC;, ES6 &#xBAA8;&#xB4C8;&#xC740; &#xBD88;&#xBCC0;&#xD558;&#xB2E4;&#xACE0; &#xAC04;&#xC8FC;&#xB418;&#xAE30;&#xC5D0; &#xC774; &#xD328;&#xD134;&#xC740; &#xBD88;&#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC65C;&#xB0D0;&#xD558;&#xBA74; TypeScript&#xB294; &#xB85C;&#xB354;&#xC5D0; &#xAD6C;&#xC560;&#xBC1B;&#xC9C0; &#xC54A;&#xAE30;&#xC5D0;, &#xC774; &#xC815;&#xCC45;&#xC774; &#xCEF4;&#xD30C;&#xC77C;-&#xC2DC;&#xAC04;&#xC5D0; &#xC801;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC9C0;&#xB9CC;, ES6 &#xBAA8;&#xB4C8; &#xB85C;&#xB354;&#xB85C; &#xC804;&#xD658;&#xD558;&#xB824;&#xB294; &#xAC1C;&#xBC1C;&#xC790;&#xB294; &#xC54C;&#xACE0; &#xC788;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xBAA8;&#xB4C8;-&#xD638;&#xCD9C;-&#xC2DC;&#xADF8;&#xB2C8;&#xCC98;&#xC5D0;-es6&#xAC00;-&#xBBF8;&#xCE58;&#xB294;-&#xC601;&#xD5A5;-the-impact-of-es6-on-module-call-signatures">&#xBAA8;&#xB4C8; &#xD638;&#xCD9C; &#xC2DC;&#xADF8;&#xB2C8;&#xCC98;&#xC5D0; ES6&#xAC00; &#xBBF8;&#xCE58;&#xB294; &#xC601;&#xD5A5; (The Impact of ES6 on Module Call Signatures)</h2>
+<p>Express&#xC640; &#xAC19;&#xC740; &#xB9CE;&#xC740; &#xC720;&#xBA85;&#xD55C; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB4E4;&#xC740; import &#xB420; &#xB54C; &#xD638;&#xCD9C; &#xAC00;&#xB2A5;&#xD55C; &#xD568;&#xC218;&#xB97C; &#xB178;&#xCD9C;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, &#xC77C;&#xBC18;&#xC801;&#xC778; Express &#xC0AC;&#xC6A9;&#xBC95;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-variable">exp</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;express&quot;</span>);
 <span class="cm-keyword">var</span> <span class="cm-variable">app</span> <span class="cm-operator">=</span> <span class="cm-variable">exp</span>();
 </code></pre>
-<p>In ES6 module loaders, the top-level object (here imported as <code>exp</code>) can only have properties;
-  the top-level module object is <em>never</em> callable.
-The most common solution here is to define a <code>default</code> export for a callable/constructable object;
-  some module loader shims will automatically detect this situation and replace the top-level object with the <code>default</code> export.</p>
+<p>ES6 &#xBAA8;&#xB4C8; &#xB85C;&#xB354;&#xC5D0;&#xC11C;, &#xCD5C;&#xC0C1;&#xC704;-&#xB808;&#xBCA8; &#xAC1D;&#xCCB4;(&#xC5EC;&#xAE30;&#xC5D0;&#xC11C;&#xB294; <code>exp</code>&#xB85C; import)&#xB294; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB9CC; &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;;
+  &#xCD5C;&#xC0C1;&#xC704;-&#xB808;&#xBCA8; &#xBAA8;&#xB4C8; &#xAC1D;&#xCCB4;&#xB294; <em>&#xC808;&#xB300;</em> &#xD638;&#xCD9C;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xAC00;&#xC7A5; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD574;&#xACB0;&#xCC45;&#xC740; &#xD638;&#xCD9C; &#xAC00;&#xB2A5;/&#xC0DD;&#xC131; &#xAC00;&#xB2A5; &#xAC1D;&#xCCB4;&#xB97C; <code>default</code> export&#xB85C; &#xC815;&#xC758;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;;
+  &#xC5B4;&#xB5A4; &#xBAA8;&#xB4C8; &#xB85C;&#xB354; shims&#xC740; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xC774; &#xC0C1;&#xD669;&#xC744; &#xAC10;&#xC9C0;&#xD558;&#xACE0; &#xCD5C;&#xC0C1;&#xC704;-&#xB808;&#xBCA8; &#xAC1D;&#xCCB4;&#xB97C; <code>default</code> export&#xB85C; &#xBC14;&#xAFC9;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;-&#xD30C;&#xC77C;-&#xB808;&#xC774;&#xC544;&#xC6C3;-library-file-layout">&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xD30C;&#xC77C; &#xB808;&#xC774;&#xC544;&#xC6C3; (Library file layout)</h2>
+<p>&#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC758; &#xB808;&#xC774;&#xC544;&#xC6C3;&#xC740; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC758; &#xB808;&#xC774;&#xC544;&#xC6C3;&#xC744; &#xBC18;&#xC601;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC5EC;&#xB7EC; &#xBAA8;&#xB4C8;&#xB85C; &#xAD6C;&#xC131;&#xB429;&#xB2C8;&#xB2E4;</p>
+<pre><code class="lang-Text">myLib
+  +---- index.js
+  +---- foo.js
+  +---- bar
+         +---- index.js
+         +---- baz.js
+</code></pre>
+<p>&#xC774;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; import &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;</p>
+<pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">a</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;myLib&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">b</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;myLib/foo&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">c</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;myLib/bar&quot;</span>);
+<span class="cm-keyword">var</span> <span class="cm-variable">d</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;myLib/bar/baz&quot;</span>);
+</code></pre>
+<p>&#xADF8;&#xB7EC;&#xBBC0;&#xB85C; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC544;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;</p>
+<pre><code class="lang-Text">@types/myLib
+  +---- index.d.ts
+  +---- foo.d.ts
+  +---- bar
+         +---- index.d.ts
+         +---- baz.d.ts
+</code></pre>
 <script src="../../_gitbook_plugin_analytics.js"></script>
                                 
                                 </section>
@@ -989,7 +1060,7 @@ The most common solution here is to define a <code>default</code> export for a c
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Library Structures","level":"4.2","depth":1,"next":{"title":"By Example","level":"4.3","depth":1,"path":"pages/declaration files/By Example.md","ref":"pages/declaration files/By Example.md","articles":[]},"previous":{"title":"소개","level":"4.1","depth":1,"path":"pages/declaration files/Introduction.md","ref":"pages/declaration files/Introduction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","analytics"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"analytics":{"google":"UA-99001722-6"},"search":{},"addcssjs":{"css":["assets/css/atom-one-dark.css"],"js":[]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/declaration files/Library Structures.md","mtime":"2019-06-14T05:32:52.255Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-14T05:59:20.233Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Library Structures","level":"4.2","depth":1,"next":{"title":"By Example","level":"4.3","depth":1,"path":"pages/declaration files/By Example.md","ref":"pages/declaration files/By Example.md","articles":[]},"previous":{"title":"소개","level":"4.1","depth":1,"path":"pages/declaration files/Introduction.md","ref":"pages/declaration files/Introduction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","analytics"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"analytics":{"google":"UA-163809183-2"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/declaration files/Library Structures.md","mtime":"2020-04-22T15:29:36.183Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-22T18:13:20.384Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
