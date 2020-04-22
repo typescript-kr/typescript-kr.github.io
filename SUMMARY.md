@@ -34,6 +34,7 @@
 * [믹스인](pages/Mixins.md)
 * [트리플-슬래시 지시자](pages/Triple-Slash Directives.md)
 * [JavaScript 파일 타입 검사](pages/Type Checking JavaScript Files.md)
+* [유틸리티 타입](pages/Utility Types.md)
 
 ## 선언 파일
 
@@ -50,6 +51,11 @@
 
 * [tsconfig.json](pages/tsconfig.json.md)
 * [컴파일러 옵션](pages/Compiler Options.md)
+* [프로젝트 레퍼런스](pages/Project References.md)
 * [MSBuild에서의 컴파일러 옵션](pages/Compiler Options in MSBuild.md)
 * [빌드 도구와 통합](pages/Integrating with Build Tools.md)
 * [Nightly 빌드](pages/Nightly Builds.md)
+
+## 릴리즈 노트
+
+* [TypeScript 3.8](pages/release notes/TypeScript 3.8.md)
