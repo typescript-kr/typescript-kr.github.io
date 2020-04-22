@@ -1,5 +1,6 @@
 _book
 .DS_Store
+bin
 
 # Created by https://www.gitignore.io/api/node,macos,windows,intellij,sublimetext,visualstudiocode
 

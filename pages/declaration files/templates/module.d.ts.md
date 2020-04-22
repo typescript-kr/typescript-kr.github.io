@@ -1,43 +1,43 @@
 ```ts
-// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
-// Project: [~THE PROJECT NAME~]
-// Definitions by: [~YOUR NAME~] <[~A URL FOR YOU~]>
+// Type definitions for [~라이브러리 이름~] [~선택적 버전 숫자~]
+// Project: [~프로젝트 이름~]
+// Definitions by: [~내 이름~] <[~내 URL~]>
 
-/*~ This is the module template file. You should rename it to index.d.ts
- *~ and place it in a folder with the same name as the module.
- *~ For example, if you were writing a file for "super-greeter", this
- *~ file should be 'super-greeter/index.d.ts'
+/*~ 이건 모듈 템플릿 파일입니다.
+ *~ 이름을 index.d.ts로 변경하고, 모듈과 같은 이름의 폴더 안에 배치해야 합니다.
+ *~ 예를 들어, "super-greeter" 파일을 작성하는 경우
+ *~ 이 파일은 'super-greeter/index.d.ts'가 되어야 합니다.
  */
 
-/*~ If this module is a UMD module that exposes a global variable 'myLib' when
- *~ loaded outside a module loader environment, declare that global here.
- *~ Otherwise, delete this declaration.
+/*~ 전역 변수 'myClassLib'을 노출하는 UMD 모듈을
+ *~ 모듈 로더 환경 외부에서 로드하려면, 여기에서 전역으로 선언하세요.
+ *~ 그렇지 않으면, 이 선언을 제거하세요.
  */
 export as namespace myLib;
 
-/*~ If this module has methods, declare them as functions like so.
+/*~ 이 모듈이 메서드를 가지고 있다면, 다음과 같이 함수로써 선언하세요.
  */
 export function myMethod(a: string): string;
 export function myOtherMethod(a: number): number;
 
-/*~ You can declare types that are available via importing the module */
+/*~ 모듈 import를 통해 사용 가능한 타입을 선언할 수 있습니다 */
 export interface someType {
     name: string;
     length: number;
     extras?: string[];
 }
 
-/*~ You can declare properties of the module using const, let, or var */
+/*~ const, let, var를 사용하여 모듈의 프로퍼티를 선언할 수 있습니다 */
 export const myField: number;
 
-/*~ If there are types, properties, or methods inside dotted names
- *~ of the module, declare them inside a 'namespace'.
+/*~ 모듈의 점으로 구분된 이름 안에 타입, 프로퍼티, 메서드가 있는 경우
+ *~ 'namespace' 안에 선언하세요.
  */
 export namespace subProp {
-    /*~ For example, given this definition, someone could write:
+    /*~ 예를 들어 이런 정의가 있을 때, 다음과 같이 작성할 수 있습니다:
      *~   import { subProp } from 'yourModule';
      *~   subProp.foo();
-     *~ or
+     *~ 또는
      *~   import * as yourMod from 'yourModule';
      *~   yourMod.subProp.foo();
      */

@@ -1,4 +1,4 @@
-This quick start guide will teach you how to wire up TypeScript with [React](http://facebook.github.io/react/).
+This quick start guide will teach you how to wire up TypeScript with [React](https://reactjs.org/).
 By the end, you'll have
 
 * a project with React and TypeScript
@@ -9,7 +9,7 @@ By the end, you'll have
 We'll use the [create-react-app](https://github.com/facebookincubator/create-react-app) tool to quickly get set up.
 
 We assume that you're already using [Node.js](https://nodejs.org/) with [npm](https://www.npmjs.com/).
-You may also want to get a sense of [the basics with React](https://facebook.github.io/react/docs/hello-world.html).
+You may also want to get a sense of [the basics with React](https://reactjs.org/docs/hello-world.html).
 
 # Install create-react-app
 
@@ -142,11 +142,11 @@ function getExclamationMarks(numChars: number) {
 Notice that we defined a type named `Props` that specifies the properties our component will take.
 `name` is a required `string`, and `enthusiasmLevel` is an optional `number` (which you can tell from the `?` that we wrote out after its name).
 
-We also wrote `Hello` as a stateless function component (an SFC).
+We also wrote `Hello` as a function component.
 To be specific, `Hello` is a function that takes a `Props` object, and destructures it.
 If `enthusiasmLevel` isn't given in our `Props` object, it will default to `1`.
 
-Writing functions is one of two primary [ways React allows us to make components]((https://facebook.github.io/react/docs/components-and-props.html#functional-and-class-components)).
+Writing functions is one of two primary [ways React allows us to make components]((https://reactjs.org/docs/components-and-props.html#functional-and-class-components)).
 If we wanted, we *could* have written it out as a class as follows:
 
 ```ts
@@ -169,8 +169,8 @@ class Hello extends React.Component<Props, object> {
 }
 ```
 
-Classes are useful [when our component instances have some state](https://facebook.github.io/react/docs/state-and-lifecycle.html).
-But we don't really need to think about state in this example - in fact, we specified it as `object` in `React.Component<Props, object>`, so writing an SFC tends to be shorter.
+Classes are useful [when our component instances have some state](https://reactjs.org/docs/state-and-lifecycle.html).
+But we don't really need to think about state in this example - in fact, we specified it as `object` in `React.Component<Props, object>`, so writing a function component tends to be shorter.
 Local component state is more useful at the presentational level when creating generic UI elements that can be shared between libraries.
 For our application's lifecycle, we will revisit how applications manage general state with Redux in a bit.
 
@@ -252,15 +252,17 @@ Enzyme is similar, but builds on jsdom and makes it easier to make certain queri
 Let's install it as a development-time dependency.
 
 ```sh
-npm install -D enzyme @types/enzyme react-addons-test-utils
+npm install -D enzyme @types/enzyme enzyme-adapter-react-16 @types/enzyme-adapter-react-16 react-addons-test-utils
 ```
 
 Notice we installed packages `enzyme` as well as `@types/enzyme`.
 The `enzyme` package refers to the package containing JavaScript code that actually gets run, while `@types/enzyme` is a package that contains declaration files (`.d.ts` files) so that TypeScript can understand how you can use Enzyme.
 You can learn more about `@types` packages [here](https://www.typescriptlang.org/docs/handbook/declaration-files/consumption.html).
 
-We also had to install `react-addons-test-utils`.
+We had to install `react-addons-test-utils`.
 This is something `enzyme` expects to be installed.
+
+We also had to make sure `esModuleInterop` is set to `true` in the `tsconfig.json`
 
 Now that we've got Enzyme set up, let's start writing our test!
 Let's create a file named `src/components/Hello.test.tsx`, adjacent to our `Hello.tsx` file from earlier.
@@ -270,7 +272,10 @@ Let's create a file named `src/components/Hello.test.tsx`, adjacent to our `Hell
 
 import * as React from 'react';
 import * as enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import Hello from './Hello';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 it('renders the correct text when no enthusiasm level is given', () => {
   const hello = enzyme.shallow(<Hello name='Daniel' />);
@@ -319,7 +324,7 @@ Because React on its own does not provide built-in support for state management,
 State is updated in an immutable fashion by sending explicit action messages which must be handled by functions called reducers.
 Because of the explicit nature, it is often easier to reason about how an action will affect the state of your program.
 
-[MobX](https://mobx.js.org/) relies on functional reactive patterns where state is wrapped through observables and and passed through as props.
+[MobX](https://mobx.js.org/) relies on functional reactive patterns where state is wrapped through observables and passed through as props.
 Keeping state fully synchronized for any observers is done by simply marking state as observable.
 As a nice bonus, the library is already written in TypeScript.
 
@@ -449,7 +454,7 @@ It's important that the `enthusiasmLevel` property come last, since otherwise it
 You may want to write a few tests for your reducer.
 Since reducers are pure functions, they can be passed arbitrary data.
 For every input, reducers can tested by checking their newly produced state.
-Consider looking into Jest's [toEqual](https://facebook.github.io/jest/docs/expect.html#toequalvalue) method to accomplish this.
+Consider looking into Jest's [toEqual](https://facebook.github.io/jest/docs/en/expect.html#toequalvalue) method to accomplish this.
 
 ## Making a container
 
@@ -638,7 +643,7 @@ If you still want to learn more about Redux, you can [check out the official web
 The same goes [for MobX](https://mobx.js.org/).
 
 If you want to eject at some point, you may need to know a little bit more about Webpack.
-You can check out our [React & Webpack walkthrough here](./React & Webpack.md).
+You can check out our [React & Webpack walkthrough here](./React%20&%20Webpack.md).
 
 At some point you might need routing.
-There are several solutons, but [react-router](https://github.com/ReactTraining/react-router) is probably the most popular for Redux projects, and is often used in conjunction with [react-router-redux](https://github.com/reactjs/react-router-redux).
+There are several solutions, but [react-router](https://github.com/ReactTraining/react-router) is probably the most popular for Redux projects, and is often used in conjunction with [react-router-redux](https://github.com/reactjs/react-router-redux).

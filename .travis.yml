@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+ - 12
+before_script:
+ - node --version
+ - rm -rf ./node_modules package-lock.json
+ - npm uninstall -D husky
+ - npm install
+ - npm run build
+branches:
+ only:
+   - master
