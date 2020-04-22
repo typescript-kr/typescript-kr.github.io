@@ -483,6 +483,19 @@
             
         </li>
     
+        <li class="chapter " data-level="3.23" data-path="../Utility Types.html">
+            
+                <a href="../Utility Types.html">
+            
+                    
+                    유틸리티 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -627,7 +640,20 @@
             
         </li>
     
-        <li class="chapter " data-level="5.3" data-path="../Compiler Options in MSBuild.html">
+        <li class="chapter " data-level="5.3" data-path="../Project References.html">
+            
+                <a href="../Project References.html">
+            
+                    
+                    프로젝트 레퍼런스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../Compiler Options in MSBuild.html">
             
                 <a href="../Compiler Options in MSBuild.html">
             
@@ -640,7 +666,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.4" data-path="../Integrating with Build Tools.html">
+        <li class="chapter " data-level="5.5" data-path="../Integrating with Build Tools.html">
             
                 <a href="../Integrating with Build Tools.html">
             
@@ -653,12 +679,32 @@
             
         </li>
     
-        <li class="chapter " data-level="5.5" data-path="../Nightly Builds.html">
+        <li class="chapter " data-level="5.6" data-path="../Nightly Builds.html">
             
                 <a href="../Nightly Builds.html">
             
                     
                     Nightly 빌드
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">릴리즈 노트</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../release notes/TypeScript 3.8.html">
+            
+                <a href="../release notes/TypeScript 3.8.html">
+            
+                    
+                    TypeScript 3.8
             
                 </a>
             
@@ -711,20 +757,20 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>Now that you have authored a declaration file following the steps of this guide, it is time to publish it to npm.
-There are two main ways you can publish your declaration files to npm:</p>
+                                <p>&#xC774; &#xAC00;&#xC774;&#xB4DC;&#xB97C; &#xB530;&#xB77C; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC744; &#xC791;&#xC131;&#xD588;&#xC73C;&#xBBC0;&#xB85C;, &#xC774;&#xC81C; npm&#xC5D0; &#xBC30;&#xD3EC;&#xD560; &#xC2DC;&#xAC04;&#xC785;&#xB2C8;&#xB2E4;.
+npm&#xC5D0; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC744; &#xBC30;&#xD3EC;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC740; &#xD06C;&#xAC8C; &#xB450; &#xAC00;&#xC9C0;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <ol>
-<li>bundling with your npm package, or</li>
-<li>publishing to the <a href="https://www.npmjs.com/~types" target="_blank">@types organization</a> on npm.</li>
+<li>npm &#xD328;&#xD0A4;&#xC9C0;&#xB85C; &#xBC88;&#xB4E4;&#xB9C1;&#xD558;&#xAC70;&#xB098;</li>
+<li>npm&#xC758; <a href="https://www.npmjs.com/~types" target="_blank">@types organization</a>&#xC5D0; &#xBC30;&#xD3EC;&#xD558;&#xAE30;</li>
 </ol>
-<p>If your package is written in TypeScript then the first approach is favored.
-Use the <code>--declaration</code> flag to generate declaration files.
-This way, your declarations and JavaScript always be in sync.</p>
-<p>If your package is not written in TypeScript then the second is the prefered approch.</p>
-<h1 id="including-declarations-in-your-npm-package">Including declarations in your npm package</h1>
-<p>If your package has a main <code>.js</code> file, you will need to indicate the main declaration file in your <code>package.json</code> file as well.
-Set the <code>types</code> property to point to your bundled declaration file.
-For example:</p>
+<p>&#xB9CC;&#xC57D; &#xD328;&#xD0A4;&#xC9C0;&#xAC00; TypeScript&#xB85C; &#xC791;&#xC131;&#xB418;&#xC5C8;&#xB2E4;&#xBA74; &#xCCAB; &#xBC88;&#xC9F8; &#xBC29;&#xBC95;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.
+<code>--declaration</code> &#xD50C;&#xB798;&#xADF8;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC744; &#xC0DD;&#xC131;&#xD558;&#xC138;&#xC694;.
+&#xC774; &#xBC29;&#xBC95;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74;, &#xC120;&#xC5B8;&#xACFC; JavaScript&#xAC00; &#xD56D;&#xC0C1; &#xC77C;&#xCE58;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB9CC;&#xC57D; &#xD328;&#xD0A4;&#xC9C0;&#xAC00; TypeScript&#xB85C; &#xC791;&#xC131;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xB2E4;&#xBA74; &#xB450; &#xBC88;&#xC9F8; &#xBC29;&#xBC95;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h1 id="npm-&#xD328;&#xD0A4;&#xC9C0;&#xC5D0;-&#xC120;&#xC5B8;-&#xD3EC;&#xD568;&#xD558;&#xAE30;-including-declarations-in-your-npm-package">npm &#xD328;&#xD0A4;&#xC9C0;&#xC5D0; &#xC120;&#xC5B8; &#xD3EC;&#xD568;&#xD558;&#xAE30; (Including declarations in your npm package)</h1>
+<p>&#xB9CC;&#xC57D; &#xD328;&#xD0A4;&#xC9C0;&#xAC00; &#xBA54;&#xC778; <code>.js</code> &#xD30C;&#xC77C;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;&#xBA74;, &#xBA54;&#xC778; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC744; <code>package.json</code>&#xC5D0;&#xB3C4; &#xD45C;&#xC2DC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.
+&#xBC88;&#xB4E4;&#xB9C1;&#xB41C; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC744; <code>types</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB85C; &#xAC00;&#xB9AC;&#xD0A4;&#xB3C4;&#xB85D; &#xD558;&#xC138;&#xC694;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4;:</p>
 <pre><code class="lang-json">{
     <span class="cm-property">&quot;name&quot;</span>: <span class="cm-string">&quot;awesome&quot;</span>,
     <span class="cm-property">&quot;author&quot;</span>: <span class="cm-string">&quot;Vandelay Industries&quot;</span>,
@@ -733,12 +779,13 @@ For example:</p>
     <span class="cm-property">&quot;types&quot;</span>: <span class="cm-string">&quot;./lib/main.d.ts&quot;</span>
 }
 </code></pre>
-<p>Note that the <code>&quot;typings&quot;</code> field is synonymous with <code>&quot;types&quot;</code>, and could be used as well.</p>
-<p>Also note that if your main declaration file is named <code>index.d.ts</code> and lives at the root of the package (next to <code>index.js</code>) you do not need to mark the <code>&quot;types&quot;</code> property, though it is advisable to do so.</p>
-<h2 id="dependencies">Dependencies</h2>
-<p>All dependencies are managed by npm.
-Make sure all the declaration packages you depend on are marked appropriately in the <code>&quot;dependencies&quot;</code> section in your <code>package.json</code>.
-For example, imagine we authored a package that used Browserify and TypeScript.</p>
+<p><code>&quot;typings&quot;</code> &#xD544;&#xB4DC;&#xB294; <code>&quot;types&quot;</code>&#xC640; &#xB3D9;&#xC758;&#xC5B4;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC5ED;&#xC2DC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB610;&#xD55C; <code>package.json</code>&#xC774; <code>&quot;files&quot;</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC788;&#xC73C;&#xBA74; <code>&quot;types&quot;</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB294; &#xBB34;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;. &#xC774; &#xACBD;&#xC6B0; &#xBA54;&#xC778; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC744; <code>&quot;files&quot;</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0; &#xC804;&#xB2EC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB9CC;&#xC57D; &#xBA54;&#xC778; &#xC120;&#xC5B8; &#xD30C;&#xC77C; &#xC774;&#xB984;&#xC774; <code>index.d.ts</code>&#xC774;&#xACE0; &#xD328;&#xD0A4;&#xC9C0;&#xC758; &#xB8E8;&#xD2B8;&#xC5D0; &#xC788;&#xC73C;&#xBA74; (<code>index.js</code> &#xC606;&#xC5D0;) <code>&quot;types&quot;</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xC4F0;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB418;&#xC9C0;&#xB9CC;, &#xC4F0;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xC758;&#xC874;&#xC131;-dependencies">&#xC758;&#xC874;&#xC131; (Dependencies)</h2>
+<p>&#xBAA8;&#xB4E0; &#xC758;&#xC874;&#xC131;&#xC740; npm&#xC73C;&#xB85C; &#xAD00;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;.
+&#xC758;&#xC874;&#xC131;&#xC774; &#xC788;&#xB294; &#xBAA8;&#xB4E0; &#xC120;&#xC5B8; &#xD328;&#xD0A4;&#xC9C0;&#xAC00; <code>package.json</code>&#xC5D0; <code>&quot;dependencies&quot;</code> &#xC139;&#xC158; &#xC548;&#xC5D0; &#xC54C;&#xB9DE;&#xAC8C; &#xC791;&#xC131;&#xB418;&#xC5B4; &#xC788;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xC138;&#xC694;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, Browserify&#xC640; TypeScript&#xB85C; &#xC791;&#xC131;&#xB41C; &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xC0DD;&#xAC01;&#xD574;&#xBD05;&#xC2DC;&#xB2E4;.</p>
 <pre><code class="lang-json">{
     <span class="cm-property">&quot;name&quot;</span>: <span class="cm-string">&quot;browserify-typescript-extension&quot;</span>,
     <span class="cm-property">&quot;author&quot;</span>: <span class="cm-string">&quot;Vandelay Industries&quot;</span>,
@@ -752,34 +799,34 @@ For example, imagine we authored a package that used Browserify and TypeScript.<
     }
 }
 </code></pre>
-<p>Here, our package depends on the <code>browserify</code> and <code>typescript</code> packages.
-<code>browserify</code> does not bundle its declaration files with its npm packages, so we needed to depend on <code>@types/browserify</code> for its declarations.
-<code>typescript</code>, on the other hand, packages its declaration files, so there was no need for any additional dependencies</p>
-<p>Our package exposes declarations from each of those, so any user of our <code>browserify-typescript-extension</code> package needs to have these dependencies as well.
-For that reason, we used <code>&quot;dependencies&quot;</code> and not <code>&quot;devDependencies&quot;</code>, because otherwise our consumers would have needed to manually install those packages.
-If we had just written a command line application and not expected our package to be used as a library, we might have used <code>devDependencies</code>.</p>
-<h2 id="red-flags">Red flags</h2>
+<p>&#xC5EC;&#xAE30;&#xC5D0;&#xC11C;, &#xD328;&#xD0A4;&#xC9C0;&#xB294; <code>browserify</code>&#xC640; <code>typescript</code> &#xD328;&#xD0A4;&#xC9C0;&#xC5D0; &#xC758;&#xC874;&#xC131;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+<code>browserify</code>&#xB294; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC774; npm &#xD328;&#xD0A4;&#xC9C0;&#xC5D0; &#xD568;&#xAED8; &#xBC88;&#xB4E4;&#xB9C1; &#xB418;&#xC9C0; &#xC54A;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, <code>@types/browserify</code> &#xC120;&#xC5B8;&#xC744; &#xC758;&#xC874;&#xC131;&#xC5D0; &#xCD94;&#xAC00;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.
+&#xBC18;&#xBA74;&#xC5D0; <code>typescript</code>&#xB294; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC774; &#xD328;&#xD0A4;&#xC9D5;&#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, &#xBCC4;&#xB3C4;&#xC758; &#xC758;&#xC874;&#xC131;&#xC744; &#xCD94;&#xAC00;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774; &#xD328;&#xD0A4;&#xC9C0;&#xB294; <code>browserify</code>&#xC640; <code>typescript</code> &#xD328;&#xD0A4;&#xC9C0;&#xC758; &#xAC01; &#xC120;&#xC5B8;&#xC744; &#xB178;&#xCD9C;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, <code>browserify-typescript-extension</code> &#xD328;&#xD0A4;&#xC9C0;&#xB294; &#xC774; &#xC758;&#xC874;&#xC131;&#xB4E4;&#xC744; &#xAC00;&#xC838;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.
+&#xC774; &#xC774;&#xC720;&#xB85C;, <code>&quot;devDependencies&quot;</code>&#xAC00; &#xC544;&#xB2C8;&#xB77C; <code>&quot;dependencies&quot;</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xC65C;&#xB0D0;&#xD558;&#xBA74; <code>&quot;devDependencies&quot;</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC9C1;&#xC811; &#xC774; &#xD328;&#xD0A4;&#xC9C0;&#xB4E4;&#xC744; &#xC124;&#xCE58;&#xD574;&#xC57C; &#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.
+&#xB9CC;&#xC57D;&#xC5D0; &#xB2E8;&#xC9C0; &#xBA85;&#xB839;&#xC904; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC791;&#xC131;&#xD588;&#xACE0; &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xAE38; &#xAE30;&#xB300;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;&#xBA74;, <code>devDependencies</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xB3C4; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xACBD;&#xACE0;-&#xD50C;&#xB798;&#xADF8;-red-flags">&#xACBD;&#xACE0; &#xD50C;&#xB798;&#xADF8; (Red flags)</h2>
 <h3 id="reference-path-"><code>/// &lt;reference path=&quot;...&quot; /&gt;</code></h3>
-<p><em>Don&apos;t</em> use <code>/// &lt;reference path=&quot;...&quot; /&gt;</code> in your declaration files.</p>
+<p>&#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC5D0; <code>/// &lt;reference path=&quot;...&quot; /&gt;</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; <em>&#xB9C8;&#xC138;&#xC694;</em>.</p>
 <pre><code class="lang-ts"><span class="cm-comment">/// &lt;reference path=&quot;../typescript/lib/typescriptServices.d.ts&quot; /&gt;</span>
 <span class="cm-meta">...</span>.
 </code></pre>
-<p><em>Do</em> use <code>/// &lt;reference types=&quot;...&quot; /&gt;</code> instead.</p>
+<p>&#xB300;&#xC2E0; <code>/// &lt;reference types=&quot;...&quot; /&gt;</code>&#xB97C; &#xC0AC;&#xC6A9;<em>&#xD558;&#xC138;&#xC694;</em>.</p>
 <pre><code class="lang-ts"><span class="cm-comment">/// &lt;reference types=&quot;typescript&quot; /&gt;</span>
 <span class="cm-meta">...</span>.
 </code></pre>
-<p>Make sure to revisit the <a href="Library%20Structures.md#consuming-dependencies">Consuming dependencies</a> section for more information.</p>
-<h3 id="packaging-dependent-declarations">Packaging dependent declarations</h3>
-<p>If your type definitions depend on another package:</p>
+<p>&#xB354; &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC744; &#xC704;&#xD574; <a href="Library%20Structures.md#consuming-dependencies">&#xC758;&#xC874;&#xC131; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;</a> &#xC139;&#xC158;&#xC744; &#xB2E4;&#xC2DC; &#xBCF4;&#xC2ED;&#xC2DC;&#xC624;.</p>
+<h3 id="&#xC758;&#xC874;&#xC801;&#xC778;-&#xC120;&#xC5B8;-&#xD328;&#xD0A4;&#xC9D5;&#xD558;&#xAE30;-packaging-dependent-declarations">&#xC758;&#xC874;&#xC801;&#xC778; &#xC120;&#xC5B8; &#xD328;&#xD0A4;&#xC9D5;&#xD558;&#xAE30; (Packaging dependent declarations)</h3>
+<p>&#xB9CC;&#xC57D; &#xD0C0;&#xC785; &#xC815;&#xC758;&#xAC00; &#xB2E4;&#xB978; &#xD328;&#xD0A4;&#xC9C0;&#xC5D0; &#xC758;&#xC874;&#xC801;&#xC774;&#xB77C;&#xBA74;:</p>
 <ul>
-<li><em>Don&apos;t</em> combine it with yours, keep each in their own file.</li>
-<li><em>Don&apos;t</em> copy the declarations in your package either.</li>
-<li><em>Do</em> depend on the npm type declaration package if it doesn&apos;t package its declaration files.</li>
+<li>&#xAC01; &#xD30C;&#xC77C;&#xC740; &#xC720;&#xC9C0;&#xD558;&#xACE0; &#xB2E4;&#xB978; &#xD328;&#xD0A4;&#xC9C0;&#xC640; &#xD569;&#xCE58;&#xC9C0; <em>&#xB9C8;&#xC138;&#xC694;</em>.</li>
+<li>&#xB610;&#xD55C; &#xC791;&#xC131;&#xD55C; &#xD328;&#xD0A4;&#xC9C0;&#xC5D0; &#xC120;&#xC5B8;&#xC744; &#xBCF5;&#xC0AC;&#xD558;&#xC9C0; <em>&#xB9C8;&#xC138;&#xC694;</em>.</li>
+<li>&#xB9CC;&#xC57D; npm &#xD0C0;&#xC785; &#xC120;&#xC5B8; &#xD328;&#xD0A4;&#xC9C0;&#xAC00; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC744; &#xD328;&#xD0A4;&#xC9D5;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;&#xBA74;, &#xD574;&#xB2F9; &#xD328;&#xD0A4;&#xC9C0;&#xC5D0; &#xC758;&#xC874;<em>&#xD558;&#xC138;&#xC694;</em>.</li>
 </ul>
-<h1 id="publish-to-types">Publish to <a href="https://www.npmjs.com/~types" target="_blank">@types</a></h1>
-<p>Packages on under the <a href="https://www.npmjs.com/~types" target="_blank">@types</a> organization are published automatically from <a href="https://github.com/DefinitelyTyped/DefinitelyTyped" target="_blank">DefinitelyTyped</a> using the <a href="https://github.com/Microsoft/types-publisher" target="_blank">types-publisher tool</a>.
-To get your declarations published as an @types package, please submit a pull request to <a href="https://github.com/DefinitelyTyped/DefinitelyTyped" target="_blank">https://github.com/DefinitelyTyped/DefinitelyTyped</a>.
-You can find more details in the <a href="http://definitelytyped.org/guides/contributing.html" target="_blank">contribution guidelines page</a>.</p>
+<h1 id="types&#xC5D0;-&#xBC30;&#xD3EC;&#xD558;&#xAE30;-publish-to-types"><a href="https://www.npmjs.com/~types" target="_blank">@types</a>&#xC5D0; &#xBC30;&#xD3EC;&#xD558;&#xAE30; (Publish to <a href="https://www.npmjs.com/~types" target="_blank">@types</a>)</h1>
+<p><a href="https://www.npmjs.com/~types" target="_blank">@types</a>&#xC548;&#xC5D0; &#xC788;&#xB294; &#xD328;&#xD0A4;&#xC9C0;&#xB4E4;&#xC740; <a href="https://github.com/Microsoft/types-publisher" target="_blank">&#xD0C0;&#xC785;-&#xBC30;&#xD3EC; &#xB3C4;&#xAD6C;</a>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; <a href="https://github.com/DefinitelyTyped/DefinitelyTyped" target="_blank">DefinitelyTyped</a>&#xC5D0;&#xC11C; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xBC30;&#xD3EC;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC120;&#xC5B8;&#xC744; @types &#xD328;&#xD0A4;&#xC9C0;&#xB85C; &#xBC30;&#xD3EC;&#xD558;&#xB824;&#xBA74;, <a href="https://github.com/DefinitelyTyped/DefinitelyTyped" target="_blank">https://github.com/DefinitelyTyped/DefinitelyTyped</a>&#xC5D0; pull request&#xB97C; &#xC81C;&#xCD9C;&#xD558;&#xC138;&#xC694;.
+<a href="http://definitelytyped.org/guides/contributing.html" target="_blank">&#xAE30;&#xC5EC; &#xC9C0;&#xCE68; &#xD398;&#xC774;&#xC9C0;</a>&#xC5D0;&#xC11C; &#xB354; &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC744; &#xCC3E;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <script src="../../_gitbook_plugin_analytics.js"></script>
                                 
                                 </section>
@@ -823,7 +870,7 @@ You can find more details in the <a href="http://definitelytyped.org/guides/cont
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Publishing","level":"4.7","depth":1,"next":{"title":"Consumption","level":"4.8","depth":1,"path":"pages/declaration files/Consumption.md","ref":"pages/declaration files/Consumption.md","articles":[]},"previous":{"title":"Templates","level":"4.6","depth":1,"path":"pages/declaration files/Templates.md","ref":"pages/declaration files/Templates.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","analytics"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"analytics":{"google":"UA-99001722-6"},"search":{},"addcssjs":{"css":["assets/css/atom-one-dark.css"],"js":[]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/declaration files/Publishing.md","mtime":"2019-06-14T05:32:52.255Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-14T05:59:20.233Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Publishing","level":"4.7","depth":1,"next":{"title":"Consumption","level":"4.8","depth":1,"path":"pages/declaration files/Consumption.md","ref":"pages/declaration files/Consumption.md","articles":[]},"previous":{"title":"Templates","level":"4.6","depth":1,"path":"pages/declaration files/Templates.md","ref":"pages/declaration files/Templates.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","analytics"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"analytics":{"google":"UA-163809183-2"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/declaration files/Publishing.md","mtime":"2020-04-22T15:29:36.183Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-22T18:13:20.384Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

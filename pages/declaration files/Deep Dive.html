@@ -483,6 +483,19 @@
             
         </li>
     
+        <li class="chapter " data-level="3.23" data-path="../Utility Types.html">
+            
+                <a href="../Utility Types.html">
+            
+                    
+                    유틸리티 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -627,7 +640,20 @@
             
         </li>
     
-        <li class="chapter " data-level="5.3" data-path="../Compiler Options in MSBuild.html">
+        <li class="chapter " data-level="5.3" data-path="../Project References.html">
+            
+                <a href="../Project References.html">
+            
+                    
+                    프로젝트 레퍼런스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../Compiler Options in MSBuild.html">
             
                 <a href="../Compiler Options in MSBuild.html">
             
@@ -640,7 +666,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.4" data-path="../Integrating with Build Tools.html">
+        <li class="chapter " data-level="5.5" data-path="../Integrating with Build Tools.html">
             
                 <a href="../Integrating with Build Tools.html">
             
@@ -653,12 +679,32 @@
             
         </li>
     
-        <li class="chapter " data-level="5.5" data-path="../Nightly Builds.html">
+        <li class="chapter " data-level="5.6" data-path="../Nightly Builds.html">
             
                 <a href="../Nightly Builds.html">
             
                     
                     Nightly 빌드
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">릴리즈 노트</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../release notes/TypeScript 3.8.html">
+            
+                <a href="../release notes/TypeScript 3.8.html">
+            
+                    
+                    TypeScript 3.8
             
                 </a>
             
@@ -711,151 +757,151 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="definition-file-theory-a-deep-dive">Definition File Theory: A Deep Dive</h1>
-<p>Structuring modules to give the exact API shape you want can be tricky.
-For example, we might want a module that can be invoked with or without <code>new</code> to produce different types,
-  has a variety of named types exposed in a hierarchy,
-  and has some properties on the module object as well.</p>
-<p>By reading this guide, you&apos;ll have the tools to write complex definition files that expose a friendly API surface.
-This guide focuses on module (or UMD) libraries because the options here are more varied.</p>
-<h2 id="key-concepts">Key Concepts</h2>
-<p>You can fully understand how to make any shape of definition
-  by understanding some key concepts of how TypeScript works.</p>
-<h3 id="types">Types</h3>
-<p>If you&apos;re reading this guide, you probably already roughly know what a type in TypeScript is.
-To be more explicit, though, a <em>type</em> is introduced with:</p>
+                                <h1 id="&#xC815;&#xC758;-&#xD30C;&#xC77C;-&#xC774;&#xB860;-&#xC2EC;&#xCE35;-&#xBD84;&#xC11D;-definition-file-theory-a-deep-dive">&#xC815;&#xC758; &#xD30C;&#xC77C; &#xC774;&#xB860;: &#xC2EC;&#xCE35; &#xBD84;&#xC11D; (Definition File Theory: A Deep Dive)</h1>
+<p>&#xC6D0;&#xD558;&#xB294; API &#xD615;&#xD0DC;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xBAA8;&#xB4C8;&#xC744; &#xB9CC;&#xB4DC;&#xB294; &#xAC83;&#xC740; &#xAE4C;&#xB2E4;&#xB85C;&#xC6B8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, <code>new</code>&#xC758; &#xC0AC;&#xC6A9;&#xC5D0; &#xB530;&#xB77C; &#xD638;&#xCD9C;&#xD560; &#xB54C; &#xB2E4;&#xB978; &#xD0C0;&#xC785;&#xC744; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xBAA8;&#xB4C8;&#xC744; &#xC6D0;&#xD560; &#xC218; &#xC788;&#xACE0;,
+  &#xACC4;&#xCE35;&#xC5D0; &#xB178;&#xCD9C; &#xB41C; &#xB2E4;&#xC591;&#xD55C; &#xBA85;&#xBA85;&#xB41C; &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC73C;&#xBA70;,
+  &#xBAA8;&#xB4C8; &#xAC1D;&#xCCB4;&#xC5D0; &#xB300;&#xD55C; &#xC5EC;&#xB7EC; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB3C4; &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774; &#xAC00;&#xC774;&#xB4DC;&#xC5D0;&#xC11C;&#xB294;, &#xC775;&#xC219;&#xD55C; API&#xB97C; &#xB178;&#xCD9C;&#xD558;&#xB294; &#xBCF5;&#xC7A1;&#xD55C; &#xC815;&#xC758; &#xD30C;&#xC77C;&#xC5D0; &#xB300;&#xD574; &#xC791;&#xC131;&#xD558;&#xB294; &#xB3C4;&#xAD6C;&#xB97C; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.
+&#xB610;&#xD55C; &#xC635;&#xC158;&#xC774; &#xB2E4;&#xC591;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC5EC;&#xAE30;&#xC11C;&#xB294; &#xBAA8;&#xB4C8; (&#xB610;&#xB294; UMD) &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC5D0; &#xC911;&#xC810;&#xC744; &#xB461;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xC8FC;&#xC694;-&#xCEE8;&#xC149;-key-concepts">&#xC8FC;&#xC694; &#xCEE8;&#xC149; (Key Concepts)</h2>
+<p>TypeScript &#xC791;&#xB3D9; &#xBC29;&#xC2DD;&#xC5D0; &#xB300;&#xD574; &#xC5EC;&#xB7EC; &#xC8FC;&#xC694; &#xAC1C;&#xB150;&#xC744; &#xC774;&#xD574;&#xD558;&#xC5EC;
+  &#xC815;&#xC758;&#xC758; &#xD615;&#xD0DC;&#xB97C; &#xB9CC;&#xB4DC;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC644;&#xC804;&#xD788; &#xC774;&#xD574;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xD0C0;&#xC785;-types">&#xD0C0;&#xC785; (Types)</h3>
+<p>&#xC774; &#xAC00;&#xC774;&#xB4DC;&#xB97C; &#xC77D;&#xACE0; &#xC788;&#xB2E4;&#xBA74;, &#xC544;&#xB9C8;&#xB3C4; TypeScript&#xC758; &#xD0C0;&#xC785;&#xC5D0; &#xB300;&#xD574; &#xC774;&#xBBF8; &#xC54C;&#xACE0; &#xC788;&#xC744; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
+&#xBCF4;&#xB2E4; &#xBA85;&#xD655;&#xD558;&#xAC8C;&#xD558;&#xAE30; &#xC704;&#xD574;, &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; <em>&#xD0C0;&#xC785;</em>&#xC774; &#xB3C4;&#xC785;&#xB429;&#xB2C8;&#xB2E4;:</p>
 <ul>
-<li>A type alias declaration (<code>type sn = number | string;</code>)</li>
-<li>An interface declaration (<code>interface I { x: number[]; }</code>)</li>
-<li>A class declaration (<code>class C { }</code>)</li>
-<li>An enum declaration (<code>enum E { A, B, C }</code>)</li>
-<li>An <code>import</code> declaration which refers to a type</li>
+<li>&#xD0C0;&#xC785; &#xBCC4;&#xCE6D; &#xC120;&#xC5B8; (<code>type sn = number | string;</code>)</li>
+<li>&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4; &#xC120;&#xC5B8; (<code>interface I { x: number[]; }</code>)</li>
+<li>&#xD074;&#xB798;&#xC2A4; &#xC120;&#xC5B8; (<code>class C { }</code>)</li>
+<li>&#xC5F4;&#xAC70;&#xD615; &#xC120;&#xC5B8; (<code>enum E { A, B, C }</code>)</li>
+<li>&#xD0C0;&#xC785;&#xC744; &#xAC00;&#xB9AC;&#xD0A4;&#xB294; <code>import</code> &#xC120;&#xC5B8;</li>
 </ul>
-<p>Each of these declaration forms creates a new type name.</p>
-<h3 id="values">Values</h3>
-<p>As with types, you probably already understand what a value is.
-Values are runtime names that we can reference in expressions.
-For example <code>let x = 5;</code> creates a value called <code>x</code>.</p>
-<p>Again, being explicit, the following things create values:</p>
+<p>&#xC774;&#xB7EC;&#xD55C; &#xAC01; &#xC120;&#xC5B8; &#xD615;&#xD0DC;&#xB294; &#xC0C8;&#xB85C;&#xC6B4; &#xD0C0;&#xC785; &#xC774;&#xB984;&#xC744; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xAC12;-values">&#xAC12; (Values)</h3>
+<p>&#xD0C0;&#xC785;&#xACFC; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xAC12;&#xC774; &#xBB34;&#xC5C7;&#xC778;&#xC9C0; &#xC774;&#xBBF8; &#xC54C;&#xACE0; &#xC788;&#xC744; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
+&#xAC12;&#xC740; &#xD45C;&#xD604;&#xC2DD;&#xC5D0;&#xC11C; &#xCC38;&#xC870;&#xD560; &#xC218; &#xC788;&#xB294; &#xB7F0;&#xD0C0;&#xC784; &#xC774;&#xB984;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4; <code>let x = 5;</code>&#xC5D0;&#xC11C;&#xB294; <code>x</code>&#xB77C;&#xACE0; &#xBD88;&#xB9AC;&#xB294; &#xAC12;&#xC744; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC2DC; &#xBA85;&#xD655;&#xD558;&#xAC8C; &#xB9D0;&#xD558;&#xC790;&#xBA74;, &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xAC12;&#xC744; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;:</p>
 <ul>
-<li><code>let</code>, <code>const</code>, and <code>var</code> declarations</li>
-<li>A <code>namespace</code> or <code>module</code> declaration which contains a value</li>
-<li>An <code>enum</code> declaration</li>
-<li>A <code>class</code> declaration</li>
-<li>An <code>import</code> declaration which refers to a value</li>
-<li>A <code>function</code> declaration</li>
+<li><code>let</code>, <code>const</code>, &#xADF8;&#xB9AC;&#xACE0; <code>var</code> &#xC120;&#xC5B8;</li>
+<li>&#xAC12;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xB294; <code>&#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;</code> &#xB610;&#xB294; <code>&#xBAA8;&#xB4C8;</code> &#xC120;&#xC5B8;</li>
+<li><code>&#xC5F4;&#xAC70;&#xD615;</code> &#xC120;&#xC5B8;</li>
+<li><code>&#xD074;&#xB798;&#xC2A4;</code> &#xC120;&#xC5B8;</li>
+<li>&#xAC12;&#xC744; &#xCC38;&#xC870;&#xD558;&#xB294; <code>import</code> &#xC120;&#xC5B8;</li>
+<li><code>&#xD568;&#xC218;</code> &#xC120;&#xC5B8;</li>
 </ul>
-<h3 id="namespaces">Namespaces</h3>
-<p>Types can exist in <em>namespaces</em>.
-For example, if we have the declaration <code>let x: A.B.C</code>,
-  we say that the type <code>C</code> comes from the <code>A.B</code> namespace.</p>
-<p>This distinction is subtle and important -- here, <code>A.B</code> is not necessarily a type or a value.</p>
-<h2 id="simple-combinations-one-name-multiple-meanings">Simple Combinations: One name, multiple meanings</h2>
-<p>Given a name <code>A</code>, we might find up to three different meanings for <code>A</code>: a type, a value or a namespace.
-How the name is interpreted depends on the context in which it is used.
-For example, in the declaration <code>let m: A.A = A;</code>,
-  <code>A</code> is used first as a namespace, then as a type name, then as a value.
-These meanings might end up referring to entirely different declarations!</p>
-<p>This may seem confusing, but it&apos;s actually very convenient as long as we don&apos;t excessively overload things.
-Let&apos;s look at some useful aspects of this combining behavior.</p>
-<h3 id="built-in-combinations">Built-in Combinations</h3>
-<p>Astute readers will notice that, for example, <code>class</code> appeared in both the <em>type</em> and <em>value</em> lists.
-The declaration <code>class C { }</code> creates two things:
-  a <em>type</em> <code>C</code> which refers to the instance shape of the class,
-  and a <em>value</em> <code>C</code> which refers to the constructor function of the class.
-Enum declarations behave similarly.</p>
-<h3 id="user-combinations">User Combinations</h3>
-<p>Let&apos;s say we wrote a module file <code>foo.d.ts</code>:</p>
+<h3 id="&#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;-namespaces">&#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4; (Namespaces)</h3>
+<p>&#xD0C0;&#xC785;&#xC740; <em>&#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;</em> &#xC548;&#xC5D0; &#xC874;&#xC7AC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, <code>let x: A.B.C</code> &#xC774;&#xB780; &#xC120;&#xC5B8;&#xC774; &#xC788;&#xB2E4;&#xBA74;,
+  &#xD0C0;&#xC785; <code>C</code>&#xB294; <code>A.B</code> &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC5D0;&#xC11C; &#xC628; &#xAC83; &#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774; &#xAD6C;&#xBCC4;&#xC740; &#xBBF8;&#xBB18;&#xD558;&#xC9C0;&#xB9CC; &#xC911;&#xC694;&#xD569;&#xB2C8;&#xB2E4; -- &#xC5EC;&#xAE30;&#xC11C; <code>A.B</code>&#xB294; &#xD0C0;&#xC785;&#xC774;&#xAC70;&#xB098; &#xAC12;&#xC77C; &#xD544;&#xC694;&#xB294; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xAC04;&#xB2E8;&#xD55C;-&#xC870;&#xD569;-&#xD558;&#xB098;&#xC758;-&#xC774;&#xB984;-&#xC5EC;&#xB7EC;-&#xC758;&#xBBF8;-simple-combinations-one-name-multiple-meanings">&#xAC04;&#xB2E8;&#xD55C; &#xC870;&#xD569;: &#xD558;&#xB098;&#xC758; &#xC774;&#xB984;, &#xC5EC;&#xB7EC; &#xC758;&#xBBF8; (Simple Combinations: One name, multiple meanings)</h2>
+<p><code>A</code>&#xB77C;&#xB294; &#xC774;&#xB984;&#xC774; &#xC788;&#xC73C;&#xBA74;, <code>A</code>&#xC5D0; &#xB300;&#xD574; &#xD0C0;&#xC785;, &#xAC12; &#xB610;&#xB294; &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xB77C;&#xB294; &#xC138; &#xAC00;&#xC9C0; &#xB2E4;&#xB978; &#xC758;&#xBBF8;&#xB97C; &#xCC3E;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB984;&#xC744; &#xD574;&#xC11D;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC740; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xC5D0; &#xB530;&#xB77C; &#xB2E4;&#xB985;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4; <code>let m: A.A = A;</code> &#xC120;&#xC5B8;&#xC5D0;&#xC11C;,
+  <code>A</code>&#xB294; &#xBA3C;&#xC800; &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xB85C; &#xC0AC;&#xC6A9; &#xB41C; &#xB2E4;&#xC74C;, &#xD0C0;&#xC785;&#xC758; &#xC774;&#xB984;&#xC73C;&#xB85C;, &#xADF8; &#xB2E4;&#xC74C; &#xAC12;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.
+&#xC989; &#xC644;&#xC804;&#xD788; &#xB2E4;&#xB978; &#xC120;&#xC5B8;&#xC744; &#xC758;&#xBBF8;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;!</p>
+<p>&#xC57D;&#xAC04;&#xC740; &#xD63C;&#xB780;&#xC2A4;&#xB7EC;&#xC6CC; &#xBCF4;&#xC774;&#xC9C0;&#xB9CC;, &#xACFC;&#xD558;&#xAC8C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xD55C; &#xC2E4;&#xC81C;&#xB85C; &#xB9E4;&#xC6B0; &#xD3B8;&#xB9AC;&#xD569;&#xB2C8;&#xB2E4;.
+&#xACB0;&#xD569; &#xB3D9;&#xC791;&#xC758; &#xC720;&#xC6A9;&#xD55C; &#xCE21;&#xBA74;&#xC744; &#xC0B4;&#xD3B4; &#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xB0B4;&#xBD80;-&#xC870;&#xD569;-built-in-combinations">&#xB0B4;&#xBD80; &#xC870;&#xD569; (Built-in Combinations)</h3>
+<p>&#xC601;&#xB9AC;&#xD55C; &#xC0AC;&#xB78C;&#xC774;&#xB77C;&#xBA74;, <em>&#xD0C0;&#xC785;</em>&#xACFC; <em>&#xAC12;</em> &#xBAA9;&#xB85D;&#xC5D0;&#xC11C; <code>&#xD074;&#xB798;&#xC2A4;</code>&#xAC00; &#xB458; &#xB2E4; &#xB098;&#xC628; &#xAC83;&#xC744; &#xB208;&#xCE58;&#xCC58;&#xC744; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
+<code>class C { }</code> &#xC120;&#xC5B8;&#xC740; &#xB450; &#xAC00;&#xC9C0;&#xB97C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;:
+  &#xD074;&#xB798;&#xC2A4; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xC758; &#xD615;&#xD0DC;&#xB97C; &#xB098;&#xD0C0;&#xB0B4;&#xB294; <em>&#xD0C0;&#xC785;</em> <code>C</code>&#xC640;
+  &#xD074;&#xB798;&#xC2A4; &#xC0DD;&#xC131;&#xC790;&#xB97C; &#xB098;&#xD0C0;&#xB0B4;&#xB294; <em>&#xAC12;</em> <code>C</code> &#xC785;&#xB2C8;&#xB2E4;.
+&#xC5F4;&#xAC70;&#xD615; &#xC120;&#xC5B8;&#xB3C4; &#xBE44;&#xC2B7;&#xD558;&#xAC8C; &#xB3D9;&#xC791;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xC0AC;&#xC6A9;&#xC790;-&#xC870;&#xD569;-user-combinations">&#xC0AC;&#xC6A9;&#xC790; &#xC870;&#xD569; (User Combinations)</h3>
+<p>&#xBAA8;&#xB4C8; &#xD30C;&#xC77C; <code>foo.d.ts</code>&#xC744; &#xC791;&#xC131;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">var</span> <span class="cm-variable">SomeVar</span>: { <span class="cm-variable">a</span>: <span class="cm-variable">SomeType</span> };
 <span class="cm-keyword">export</span> <span class="cm-keyword">interface</span> <span class="cm-variable">SomeType</span> {
   <span class="cm-variable">count</span>: <span class="cm-variable-3">number</span>;
 }
 </code></pre>
-<p>Then consumed it:</p>
+<p>&#xADF8; &#xB2E4;&#xC74C; &#xC0AC;&#xC6A9;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">foo</span> <span class="cm-variable">from</span> <span class="cm-string">&apos;./foo&apos;</span>;
 <span class="cm-keyword">let</span> <span class="cm-variable">x</span>: <span class="cm-variable-3">foo</span>.<span class="cm-variable">SomeType</span> <span class="cm-operator">=</span> <span class="cm-variable">foo</span>.<span class="cm-property">SomeVar</span>.<span class="cm-property">a</span>;
 <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">x</span>.<span class="cm-property">count</span>);
 </code></pre>
-<p>This works well enough, but we might imagine that <code>SomeType</code> and <code>SomeVar</code> were very closely related
-  such that you&apos;d like them to have the same name.
-We can use combining to present these two different objects (the value and the type) under the same name <code>Bar</code>:</p>
+<p>&#xC798; &#xC791;&#xB3D9;&#xD558;&#xC9C0;&#xB9CC;, <code>SomeType</code>&#xACFC; <code>SomeVar</code>&#xB294; &#xC774;&#xB984;&#xC774; &#xAC19;&#xB3C4;&#xB85D;
+  &#xBC00;&#xC811;&#xD558;&#xAC8C; &#xAD00;&#xB828;&#xB418;&#xC5B4; &#xC788;&#xB2E4;&#xACE0; &#xC0C1;&#xC0C1;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xACB0;&#xD569;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xAC19;&#xC740; &#xC774;&#xB984; <code>Bar</code>&#xB85C; &#xB450; &#xAC00;&#xC9C0; &#xB2E4;&#xB978; &#xAC1D;&#xCCB4; (&#xAC12;&#xACFC; &#xD0C0;&#xC785;)&#xB97C; &#xD45C;&#xC2DC; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">var</span> <span class="cm-variable">Bar</span>: { <span class="cm-variable">a</span>: <span class="cm-variable">Bar</span> };
 <span class="cm-keyword">export</span> <span class="cm-keyword">interface</span> <span class="cm-variable">Bar</span> {
   <span class="cm-variable">count</span>: <span class="cm-variable-3">number</span>;
 }
 </code></pre>
-<p>This presents a very good opportunity for destructuring in the consuming code:</p>
+<p>&#xC774; &#xACBD;&#xC6B0; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xCF54;&#xB4DC;&#xB97C; &#xAD6C;&#xC870; &#xBD84;&#xD574;&#xD560; &#xC218; &#xC788;&#xB294; &#xC544;&#xC8FC; &#xC88B;&#xC740; &#xAE30;&#xD68C;&#xC785;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">import</span> { <span class="cm-variable">Bar</span> } <span class="cm-keyword">from</span> <span class="cm-string">&apos;./foo&apos;</span>;
 <span class="cm-keyword">let</span> <span class="cm-variable">x</span>: <span class="cm-variable-3">Bar</span> <span class="cm-operator">=</span> <span class="cm-variable">Bar</span>.<span class="cm-property">a</span>;
 <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">x</span>.<span class="cm-property">count</span>);
 </code></pre>
-<p>Again, we&apos;ve used <code>Bar</code> as both a type and a value here.
-Note that we didn&apos;t have to declare the <code>Bar</code> value as being of the <code>Bar</code> type -- they&apos;re independent.</p>
-<h2 id="advanced-combinations">Advanced Combinations</h2>
-<p>Some kinds of declarations can be combined across multiple declarations.
-For example, <code>class C { }</code> and <code>interface C { }</code> can co-exist and both contribute properties to the <code>C</code> types.</p>
-<p>This is legal as long as it does not create a conflict.
-A general rule of thumb is that values always conflict with other values of the same name unless they are declared as <code>namespace</code>s,
-  types will conflict if they are declared with a type alias declaration (<code>type s = string</code>),
-  and namespaces never conflict.</p>
-<p>Let&apos;s see how this can be used.</p>
-<h3 id="adding-using-an-interface">Adding using an <code>interface</code></h3>
-<p>We can add additional members to an <code>interface</code> with another <code>interface</code> declaration:</p>
+<p>&#xC5EC;&#xAE30;&#xC11C;&#xB3C4; <code>Bar</code>&#xB97C; &#xD0C0;&#xC785;&#xACFC; &#xAC12;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.
+<code>Bar</code> &#xAC12;&#xC744; <code>Bar</code> &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xC120;&#xC5B8;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xB2E4;&#xB294; &#xC810;&#xC744; &#xC720;&#xC758;&#xD558;&#xC138;&#xC694; -- &#xC800; &#xB458;&#xC740; &#xB3C5;&#xB9BD;&#xC801;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xACE0;&#xAE09;-&#xACB0;&#xD569;-advanced-combinations">&#xACE0;&#xAE09; &#xACB0;&#xD569; (Advanced Combinations)</h2>
+<p>&#xC120;&#xC5B8;&#xC740; &#xC5EC;&#xB7EC; &#xAC1C;&#xC758; &#xC120;&#xC5B8;&#xC5D0; &#xAC78;&#xCCD0; &#xACB0;&#xD569;&#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, <code>class C { }</code>&#xC640; <code>interface C { }</code> &#xAC19;&#xC774; &#xACB0;&#xD569;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBA70; &#xB458; &#xB2E4; <code>C</code> &#xD0C0;&#xC785;&#xC5D0; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xCDA9;&#xB3CC;&#xC744; &#xC77C;&#xC73C;&#xD0A4;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;&#xBA74; &#xCDA9;&#xBD84;&#xD788; &#xD569;&#xBC95;&#xC801;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC77C;&#xBC18;&#xC801;&#xC778; &#xACBD;&#xD5D8; &#xBC95;&#xCE59;&#xC740; &#xAC12;&#xC758; &#xC774;&#xB984;&#xC774; <code>&#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;</code>&#xB85C; &#xC120;&#xC5B8;&#xB418;&#xC9C0; &#xC54A;&#xB294; &#xD55C; &#xD56D;&#xC0C1; &#xAC19;&#xC740; &#xC774;&#xB984;&#xC758; &#xB2E4;&#xB978; &#xAC12;&#xACFC; &#xCDA9;&#xB3CC;&#xD558;&#xACE0;,
+  &#xD0C0;&#xC785; &#xBCC4;&#xCE6D; &#xC120;&#xC5B8;(<code>type s = string</code>)&#xC73C;&#xB85C; &#xC120;&#xC5B8; &#xB41C; &#xACBD;&#xC6B0; &#xD0C0;&#xC785;&#xC774; &#xCDA9;&#xB3CC;&#xD558;&#xBA70;,
+  &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC640;&#xB294; &#xC808;&#xB300;&#xB85C; &#xCDA9;&#xB3CC;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC5B4;&#xB5BB;&#xAC8C; &#xC0AC;&#xC6A9;&#xB418;&#xB294;&#xC9C0; &#xC0B4;&#xD3B4;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C;-&#xC0AC;&#xC6A9;&#xD558;&#xC5EC;-&#xCD94;&#xAC00;&#xD558;&#xAE30;-adding-using-an-interface"><code>&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xCD94;&#xAC00;&#xD558;&#xAE30; (Adding using an <code>interface</code>)</h3>
+<p><code>&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;</code>&#xC5D0; &#xB2E4;&#xB978; <code>&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;</code> &#xC120;&#xC5B8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBA64;&#xBC84;&#xB97C; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">Foo</span> {
   <span class="cm-variable">x</span>: <span class="cm-variable-3">number</span>;
 }
-<span class="cm-comment">// ... elsewhere ...</span>
+<span class="cm-comment">// ... &#xB2E4;&#xB978; &#xC704;&#xCE58; ...</span>
 <span class="cm-keyword">interface</span> <span class="cm-variable">Foo</span> {
   <span class="cm-variable">y</span>: <span class="cm-variable-3">number</span>;
 }
 <span class="cm-keyword">let</span> <span class="cm-variable">a</span>: <span class="cm-variable-3">Foo</span> <span class="cm-operator">=</span> <span class="cm-meta">...</span>;
-<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">a</span>.<span class="cm-property">x</span> <span class="cm-operator">+</span> <span class="cm-variable">a</span>.<span class="cm-property">y</span>); <span class="cm-comment">// OK</span>
+<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">a</span>.<span class="cm-property">x</span> <span class="cm-operator">+</span> <span class="cm-variable">a</span>.<span class="cm-property">y</span>); <span class="cm-comment">// &#xC131;&#xACF5;</span>
 </code></pre>
-<p>This also works with classes:</p>
+<p>&#xD074;&#xB798;&#xC2A4;&#xC640;&#xB3C4; &#xAC19;&#xC774; &#xB3D9;&#xC791;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">Foo</span> {
   <span class="cm-property">x</span>: <span class="cm-variable-3">number</span>;
 }
-<span class="cm-comment">// ... elsewhere ...</span>
+<span class="cm-comment">// ... &#xB2E4;&#xB978; &#xC704;&#xCE58; ...</span>
 <span class="cm-keyword">interface</span> <span class="cm-variable">Foo</span> {
   <span class="cm-variable">y</span>: <span class="cm-variable-3">number</span>;
 }
 <span class="cm-keyword">let</span> <span class="cm-variable">a</span>: <span class="cm-variable-3">Foo</span> <span class="cm-operator">=</span> <span class="cm-meta">...</span>;
-<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">a</span>.<span class="cm-property">x</span> <span class="cm-operator">+</span> <span class="cm-variable">a</span>.<span class="cm-property">y</span>); <span class="cm-comment">// OK</span>
+<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">a</span>.<span class="cm-property">x</span> <span class="cm-operator">+</span> <span class="cm-variable">a</span>.<span class="cm-property">y</span>); <span class="cm-comment">// &#xC131;&#xACF5;</span>
 </code></pre>
-<p>Note that we cannot add to type aliases (<code>type s = string;</code>) using an interface.</p>
-<h3 id="adding-using-a-namespace">Adding using a <code>namespace</code></h3>
-<p>A <code>namespace</code> declaration can be used to add new types, values, and namespaces in any way which does not create a conflict.</p>
-<p>For example, we can add a static member to a class:</p>
+<p>&#xB2E8;, &#xD0C0;&#xC785; &#xBCC4;&#xCE6D; (<code>type s = string;</code>)&#xC5D0;&#xB294; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC11C; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xB97C;-&#xC0AC;&#xC6A9;&#xD558;&#xC5EC;-&#xCD94;&#xAC00;&#xD558;&#xAE30;-adding-using-a-namespace"><code>&#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xCD94;&#xAC00;&#xD558;&#xAE30; (Adding using a <code>namespace</code>)</h3>
+<p><code>&#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;</code> &#xC120;&#xC5B8;&#xC740; &#xCDA9;&#xB3CC;&#xC744; &#xC77C;&#xC73C;&#xD0A4;&#xC9C0; &#xC54A;&#xB294; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xC0C8;&#xB85C;&#xC6B4; &#xD0C0;&#xC785;, &#xAC12; &#xADF8;&#xB9AC;&#xACE0; &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, &#xD074;&#xB798;&#xC2A4;&#xC5D0; &#xC815;&#xC801; &#xBA64;&#xBC84;&#xB97C; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">C</span> {
 }
-<span class="cm-comment">// ... elsewhere ...</span>
+<span class="cm-comment">// ... &#xB2E4;&#xB978; &#xC704;&#xCE58; ...</span>
 <span class="cm-variable">namespace</span> <span class="cm-variable">C</span> {
   <span class="cm-keyword">export</span> <span class="cm-keyword">let</span> <span class="cm-variable">x</span>: <span class="cm-variable-3">number</span>;
 }
-<span class="cm-keyword">let</span> <span class="cm-variable">y</span> <span class="cm-operator">=</span> <span class="cm-variable">C</span>.<span class="cm-property">x</span>; <span class="cm-comment">// OK</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">y</span> <span class="cm-operator">=</span> <span class="cm-variable">C</span>.<span class="cm-property">x</span>; <span class="cm-comment">// &#xC131;&#xACF5;</span>
 </code></pre>
-<p>Note that in this example, we added a value to the <em>static</em> side of <code>C</code> (its constructor function).
-This is because we added a <em>value</em>, and the container for all values is another value
-  (types are contained by namespaces, and namespaces are contained by other namespaces).</p>
-<p>We could also add a namespaced type to a class:</p>
+<p>&#xC704; &#xC608;&#xC81C;&#xC5D0;&#xC11C; <code>C</code>&#xC758; <em>&#xC815;&#xC801;</em> &#xCE21;&#xBA74;(&#xC0DD;&#xC131;&#xC790; &#xD568;&#xC218;)&#xC5D0; &#xAC12;&#xC744; &#xCD94;&#xAC00;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.
+<em>&#xAC12;</em>&#xC744; &#xCD94;&#xAC00; &#xD588;&#xACE0; &#xBAA8;&#xB4E0; &#xAC12;&#xC5D0; &#xB300;&#xD55C; &#xCEE8;&#xD14C;&#xC774;&#xB108;&#xAC00; &#xB2E4;&#xB974;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.
+  (&#xD0C0;&#xC785;&#xC740; &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xD3EC;&#xD568;&#xB418;&#xACE0; &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xB294; &#xB2E4;&#xB978; &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xD3EC;&#xD568;&#xB429;&#xB2C8;&#xB2E4;).</p>
+<p>&#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4; &#xD0C0;&#xC785;&#xC744; &#xD074;&#xB798;&#xC2A4;&#xC5D0; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">C</span> {
 }
-<span class="cm-comment">// ... elsewhere ...</span>
+<span class="cm-comment">// ... &#xB2E4;&#xB978; &#xC704;&#xCE58; ...</span>
 <span class="cm-variable">namespace</span> <span class="cm-variable">C</span> {
   <span class="cm-keyword">export</span> <span class="cm-keyword">interface</span> <span class="cm-variable">D</span> { }
 }
-<span class="cm-keyword">let</span> <span class="cm-variable">y</span>: <span class="cm-variable-3">C</span>.<span class="cm-variable">D</span>; <span class="cm-comment">// OK</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">y</span>: <span class="cm-variable-3">C</span>.<span class="cm-variable">D</span>; <span class="cm-comment">// &#xC131;&#xACF5;</span>
 </code></pre>
-<p>In this example, there wasn&apos;t a namespace <code>C</code> until we wrote the <code>namespace</code> declaration for it.
-The meaning <code>C</code> as a namespace doesn&apos;t conflict with the value or type meanings of <code>C</code> created by the class.</p>
-<p>Finally, we could perform many different merges using <code>namespace</code> declarations.
-This isn&apos;t a particularly realistic example, but shows all sorts of interesting behavior:</p>
+<p>&#xC774; &#xC608;&#xC81C;&#xC5D0;&#xC11C; <code>namespace</code> &#xC120;&#xC5B8;&#xC744; &#xC791;&#xC131;&#xD560; &#xB54C;&#xAE4C;&#xC9C0; &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4; <code>C</code>&#xB294; &#xC5C6;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4; <code>C</code>&#xB294; &#xD074;&#xB798;&#xC2A4;&#xC5D0; &#xC758;&#xD574; &#xC0DD;&#xC131;&#xB41C; <code>C</code>&#xC758; &#xAC12; &#xB610;&#xB294; &#xD0C0;&#xC785;&#xACFC; &#xCDA9;&#xB3CC;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; <code>namespace</code> &#xC120;&#xC5B8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xB2E4;&#xC591;&#xD55C; &#xBCD1;&#xD569;&#xC744; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xD2B9;&#xD788; &#xD604;&#xC2E4;&#xC801;&#xC778; &#xC608;&#xB294; &#xC544;&#xB2C8;&#xC9C0;&#xB9CC;, &#xD765;&#xBBF8;&#xB85C;&#xC6B4; &#xB3D9;&#xC791;&#xC744; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-variable">namespace</span> <span class="cm-variable">X</span> {
   <span class="cm-keyword">export</span> <span class="cm-keyword">interface</span> <span class="cm-variable">Y</span> { }
   <span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">Z</span> { }
 }
 
-<span class="cm-comment">// ... elsewhere ...</span>
+<span class="cm-comment">// ... &#xB2E4;&#xB978; &#xC704;&#xCE58; ...</span>
 <span class="cm-variable">namespace</span> <span class="cm-variable">X</span> {
   <span class="cm-keyword">export</span> <span class="cm-keyword">var</span> <span class="cm-variable">Y</span>: <span class="cm-variable-3">number</span>;
   <span class="cm-keyword">export</span> <span class="cm-variable">namespace</span> <span class="cm-variable">Z</span> {
@@ -864,25 +910,25 @@ This isn&apos;t a particularly realistic example, but shows all sorts of interes
 }
 <span class="cm-variable">type</span> <span class="cm-variable">X</span> <span class="cm-operator">=</span> <span class="cm-variable-3">string</span>;
 </code></pre>
-<p>In this example, the first block creates the following name meanings:</p>
+<p>&#xC704; &#xC608;&#xC81C;&#xC5D0;&#xC11C; &#xCCAB; &#xBC88;&#xC9F8; &#xBE14;&#xB85D;&#xC740; &#xB2E4;&#xC74C; &#xC774;&#xB984;&#xC758; &#xC758;&#xBBF8;&#xB97C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;:</p>
 <ul>
-<li>A value <code>X</code> (because the <code>namespace</code> declaration contains a value, <code>Z</code>)</li>
-<li>A namespace <code>X</code> (because the <code>namespace</code> declaration contains a type, <code>Y</code>)</li>
-<li>A type <code>Y</code> in the <code>X</code> namespace</li>
-<li>A type <code>Z</code> in the <code>X</code> namespace (the instance shape of the class)</li>
-<li>A value <code>Z</code> that is a property of the <code>X</code> value (the constructor function of the class)</li>
+<li>&#xAC12; <code>X</code> (<code>&#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;</code> &#xC120;&#xC5B8;&#xC740; &#xAC12; <code>Z</code>&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;)</li>
+<li>&#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4; <code>X</code> (<code>&#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;</code> &#xC120;&#xC5B8;&#xC740; &#xD0C0;&#xC785; <code>Y</code>&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;)</li>
+<li><code>X</code> &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4; &#xC548;&#xC758; &#xD0C0;&#xC785; <code>Y</code></li>
+<li><code>X</code> &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4; &#xC548;&#xC758; &#xD0C0;&#xC785; <code>Z</code> (&#xD074;&#xB798;&#xC2A4;&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xD615;&#xD0DC;)</li>
+<li><code>X</code> &#xAC12;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC778; &#xAC12; <code>Z</code> (&#xD074;&#xB798;&#xC2A4;&#xC758; &#xC0DD;&#xC131;&#xC790; &#xD568;&#xC218;)</li>
 </ul>
-<p>The second  block creates the following name meanings:</p>
+<p>&#xB450; &#xBC88;&#xC9F8; &#xBE14;&#xB85D;&#xC740; &#xB2E4;&#xC74C; &#xC774;&#xB984;&#xC758; &#xC758;&#xBBF8;&#xB97C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;:</p>
 <ul>
-<li>A value <code>Y</code> (of type <code>number</code>) that is a property of the <code>X</code> value</li>
-<li>A namespace <code>Z</code></li>
-<li>A value <code>Z</code> that is a property of the <code>X</code> value</li>
-<li>A type <code>C</code> in the <code>X.Z</code> namespace</li>
-<li>A value <code>C</code> that is a property of the <code>X.Z</code> value</li>
-<li>A type <code>X</code></li>
+<li><code>X</code> &#xAC12;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC778; &#xAC12; <code>Y</code> (<code>number</code> &#xD0C0;&#xC785;)</li>
+<li>&#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4; <code>Z</code></li>
+<li><code>X</code> &#xAC12;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC778; &#xAC12; <code>Z</code></li>
+<li><code>X.Z</code> &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4; &#xC548;&#xC758; &#xD0C0;&#xC785; <code>C</code></li>
+<li><code>X.Z</code> &#xAC12;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC778; &#xAC12; <code>C</code></li>
+<li>&#xD0C0;&#xC785; <code>X</code></li>
 </ul>
-<h2 id="using-with-export--or-import">Using with <code>export =</code> or <code>import</code></h2>
-<p>An important rule is that <code>export</code> and <code>import</code> declarations export or import <em>all meanings</em> of their targets.</p>
+<h2 id="export--or-import-&#xC0AC;&#xC6A9;&#xD558;&#xAE30;-using-with-export--or-import"><code>export =</code> or <code>import</code> &#xC0AC;&#xC6A9;&#xD558;&#xAE30; (Using with <code>export =</code> or <code>import</code>)</h2>
+<p>&#xC911;&#xC694;&#xD55C; &#xADDC;&#xCE59;&#xC740; <code>export</code>&#xC640; <code>import</code> &#xC120;&#xC5B8;&#xC774; &#xB300;&#xC0C1;&#xC758; <em>&#xBAA8;&#xB4E0; &#xC758;&#xBBF8;</em> &#xB97C; &#xB0B4;&#xBCF4;&#xB0B4;&#xAC70;&#xB098; &#xAC00;&#xC838;&#xC628;&#xB2E4;&#xB294; &#xAC83; &#xC785;&#xB2C8;&#xB2E4;.</p>
 <!-- TODO: Write more on that. -->
 <script src="../../_gitbook_plugin_analytics.js"></script>
                                 
@@ -927,7 +973,7 @@ This isn&apos;t a particularly realistic example, but shows all sorts of interes
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Deep Dive","level":"4.5","depth":1,"next":{"title":"Templates","level":"4.6","depth":1,"path":"pages/declaration files/Templates.md","ref":"pages/declaration files/Templates.md","articles":[]},"previous":{"title":"Do's and Don'ts","level":"4.4","depth":1,"path":"pages/declaration files/Do's and Don'ts.md","ref":"pages/declaration files/Do's and Don'ts.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","analytics"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"analytics":{"google":"UA-99001722-6"},"search":{},"addcssjs":{"css":["assets/css/atom-one-dark.css"],"js":[]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/declaration files/Deep Dive.md","mtime":"2019-06-14T05:32:52.253Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-14T05:59:20.233Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Deep Dive","level":"4.5","depth":1,"next":{"title":"Templates","level":"4.6","depth":1,"path":"pages/declaration files/Templates.md","ref":"pages/declaration files/Templates.md","articles":[]},"previous":{"title":"Do's and Don'ts","level":"4.4","depth":1,"path":"pages/declaration files/Do's and Don'ts.md","ref":"pages/declaration files/Do's and Don'ts.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","analytics"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"analytics":{"google":"UA-163809183-2"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/declaration files/Deep Dive.md","mtime":"2020-04-22T15:29:36.182Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-22T18:13:20.384Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

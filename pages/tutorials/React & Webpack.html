@@ -483,6 +483,19 @@
             
         </li>
     
+        <li class="chapter " data-level="3.23" data-path="../Utility Types.html">
+            
+                <a href="../Utility Types.html">
+            
+                    
+                    유틸리티 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -627,7 +640,20 @@
             
         </li>
     
-        <li class="chapter " data-level="5.3" data-path="../Compiler Options in MSBuild.html">
+        <li class="chapter " data-level="5.3" data-path="../Project References.html">
+            
+                <a href="../Project References.html">
+            
+                    
+                    프로젝트 레퍼런스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../Compiler Options in MSBuild.html">
             
                 <a href="../Compiler Options in MSBuild.html">
             
@@ -640,7 +666,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.4" data-path="../Integrating with Build Tools.html">
+        <li class="chapter " data-level="5.5" data-path="../Integrating with Build Tools.html">
             
                 <a href="../Integrating with Build Tools.html">
             
@@ -653,12 +679,32 @@
             
         </li>
     
-        <li class="chapter " data-level="5.5" data-path="../Nightly Builds.html">
+        <li class="chapter " data-level="5.6" data-path="../Nightly Builds.html">
             
                 <a href="../Nightly Builds.html">
             
                     
                     Nightly 빌드
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">릴리즈 노트</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../release notes/TypeScript 3.8.html">
+            
+                <a href="../release notes/TypeScript 3.8.html">
+            
+                    
+                    TypeScript 3.8
             
                 </a>
             
@@ -711,88 +757,97 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>&#xC774; &#xAC00;&#xC774;&#xB4DC;&#xC5D0;&#xC11C;&#xB294; TypeScript&#xB97C; <a href="http://facebook.github.io/react/" target="_blank">React</a>&#xC640; <a href="http://webpack.github.io/" target="_blank">webpack</a>&#xC73C;&#xB85C; &#xBB36;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xAC00;&#xB974;&#xCCD0;&#xC904; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC0C8;&#xB85C;&#xC6B4; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xC2DC;&#xC791;&#xD558;&#xB824;&#xBA74; &#xBA3C;&#xC800; <a href="../../samples/index.html">React Quick Start guide</a>&#xB97C; &#xC0B4;&#xD3B4;&#xBCF4;&#xC138;&#xC694;.</p>
-<p>&#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; <a href="https://www.npmjs.com/" target="_blank">npm</a>&#xACFC; <a href="https://nodejs.org/" target="_blank">Node.js</a>&#xB97C; &#xC774;&#xBBF8; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC788;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
+                                <p>&#xC774; &#xAC00;&#xC774;&#xB4DC;&#xB294; TypeScript&#xB97C; <a href="https://reactjs.org/" target="_blank">React</a> &#xBC0F; <a href="https://webpack.js.org/" target="_blank">webpack</a>&#xC5D0; &#xC5F0;&#xACB0;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC54C;&#xB824;&#xC90D;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC0C8;&#xB85C;&#xC6B4; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xC2DC;&#xC791;&#xD558;&#xB294; &#xACBD;&#xC6B0;, &#xBA3C;&#xC800; <a href="https://create-react-app.dev/docs/adding-typescript" target="_blank">React Quick Start guide</a>&#xB97C; &#xC0B4;&#xD3B4;&#xBCF4;&#xC138;&#xC694;.</p>
+<p>&#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xC774;&#xBBF8; <a href="https://www.npmjs.com/" target="_blank">npm</a>&#xACFC; &#xD568;&#xAED8; <a href="https://nodejs.org/" target="_blank">Node.js</a>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC788;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h1 id="&#xD504;&#xB85C;&#xC81D;&#xD2B8;-&#xBC30;&#xCE58;-lay-out-the-project">&#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xBC30;&#xCE58; (Lay out the project)</h1>
-<p>&#xC0C8;&#xB85C;&#xC6B4; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xBD80;&#xD130; &#xC2DC;&#xC791;&#xD569;&#xC2DC;&#xB2E4;. &#xC9C0;&#xAE08;&#xC740; &#xC774;&#xB984;&#xC744; <code>proj</code>&#xB85C; &#xC9C0;&#xC815;&#xD588;&#xC9C0;&#xB9CC; &#xC6D0;&#xD558;&#xB294;&#xB300;&#xB85C; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC0C8; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xBD80;&#xD130; &#xC2DC;&#xC791;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC9C0;&#xAE08;&#xC740; &#xC774;&#xB984;&#xC744; <code>proj</code>&#xB77C;&#xACE0; &#xC9C0;&#xC815;&#xD558;&#xC9C0;&#xB9CC;, &#xC6D0;&#xD558;&#xB294;&#xB300;&#xB85C; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-shell">mkdir proj
 cd proj
 </code></pre>
-<p>&#xC2DC;&#xC791;&#xD558;&#xB824;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xAD6C;&#xC131;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<p>&#xC2DC;&#xC791;&#xD558;&#xAE30; &#xC704;&#xD574;, &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xAD6C;&#xC131;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-text">proj/
 &#x251C;&#x2500; dist/
 &#x2514;&#x2500; src/
    &#x2514;&#x2500; components/
 </code></pre>
-<p>TypeScript &#xD30C;&#xC77C;&#xC740; <code>src</code> &#xD3F4;&#xB354;&#xC5D0;&#xC11C; &#xC2DC;&#xC791;&#xD55C; TypeScript&#xB294; &#xCEF4;&#xD30C;&#xC77C; &#xD6C4; webpack&#xC744; &#xC2E4;&#xD589;&#xD558;&#xC5EC; <code>dist</code>&#xC758; <code>bundle.js</code> &#xD30C;&#xC77C;&#xB85C; &#xB05D;&#xB0A9;&#xB2C8;&#xB2E4;.<br>&#xC791;&#xC131;&#xB41C; &#xBAA8;&#xB4E0; &#xAD6C;&#xC131; &#xC694;&#xC18C;&#xB294;<code>src / components</code> &#xD3F4;&#xB354;&#xC5D0; &#xB4E4;&#xC5B4;&#xAC11;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC774;&#xAC83;&#xC744; &#xACE8;&#xACA9;&#xC73C;&#xB85C; &#xD569;&#xB2C8;&#xB2E4;:</p>
+<p>TypeScript &#xD30C;&#xC77C;&#xC740; <code>src</code> &#xD3F4;&#xB354;&#xC5D0;&#xC11C; &#xC2DC;&#xC791;&#xD558;&#xC5EC;, TypeScript &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB97C; &#xD1B5;&#xD574; &#xC2E4;&#xD589;&#xD55C; &#xB2E4;&#xC74C;, webpack&#xC744; &#xAC70;&#xCCD0; <code>dist</code>&#xC758; <code>main.js</code> &#xD30C;&#xC77C;&#xB85C; &#xB05D;&#xB0A9;&#xB2C8;&#xB2E4;.
+&#xC6B0;&#xB9AC;&#xAC00; &#xC791;&#xC131;&#xD558;&#xB294; &#xBAA8;&#xB4E0; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB294; <code>src/components</code> &#xD3F4;&#xB354; &#xC548;&#xC5D0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774;&#xAC83;&#xC744; &#xAE30;&#xBCF8; &#xBF08;&#xB300;&#xB85C; &#xAD6C;&#xC131;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-shell">mkdir src
 cd src
 mkdir components
 cd ..
 </code></pre>
-<p>Webpack&#xC740; &#xACB0;&#xAD6D; <code>dist</code> &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xB97C; &#xC0DD;&#xC131;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>Webpack&#xC73C;&#xB85C; &#xB9C8;&#xC9C0;&#xB9C9;&#xC5D4; <code>dist</code>&#xD3F4;&#xB354;&#xB97C; &#xC0DD;&#xC131;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h1 id="&#xD504;&#xB85C;&#xC81D;&#xD2B8;-&#xCD08;&#xAE30;&#xD654;-initialize-the-project">&#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xCD08;&#xAE30;&#xD654; (Initialize the project)</h1>
-<p>&#xC774;&#xC81C; &#xC774; &#xD3F4;&#xB354;&#xB97C; npm &#xD328;&#xD0A4;&#xC9C0;&#xB85C; &#xBC14;&#xAFC0; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-shell">npm init
+<p>&#xC774;&#xC81C; &#xC774; &#xD3F4;&#xB354;&#xB97C; npm &#xD328;&#xD0A4;&#xC9C0;&#xB85C; &#xBC14;&#xAFC0; &#xAC83; &#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-shell">npm init -y
 </code></pre>
-<p>&#xC8FC;&#xC758;&#xC0AC;&#xD56D;&#xC774; &#xD45C;&#xC2DC;&#xB418;&#xC9C0;&#xB9CC; &#xAE30;&#xBCF8;&#xAC12;&#xC744; &#xC790;&#xC720;&#xB86D;&#xAC8C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC0AC;&#xC6A9;&#xC790;&#xB97C; &#xC704;&#xD574; &#xC0DD;&#xC131;&#xB41C; <code>package.json</code> &#xD30C;&#xC77C;&#xC5D0;&#xC11C; &#xC5B8;&#xC81C;&#xB4E0; &#xAE30;&#xBCF8;&#xAC12;&#xC744; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xAE30;&#xBCF8;&#xAC12;&#xC73C;&#xB85C; <code>package.json</code> &#xD30C;&#xC77C;&#xC774; &#xC0DD;&#xC131;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <h1 id="&#xC758;&#xC874;&#xC131;-&#xC124;&#xCE58;-install-our-dependencies">&#xC758;&#xC874;&#xC131; &#xC124;&#xCE58; (Install our dependencies)</h1>
-<p>&#xBA3C;&#xC800; Webpack&#xC774; &#xAE00;&#xB85C;&#xBC8C;&#xC73C;&#xB85C; &#xC124;&#xCE58;&#xB418;&#xC5B4; &#xC788;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD574;&#xBCF4;&#xC138;&#xC694;.</p>
-<pre><code class="lang-shell">npm install -g webpack
+<p>&#xBA3C;&#xC800; Webpack&#xC774; &#xC124;&#xCE58;&#xB418;&#xC5B4; &#xC788;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-shell">npm install --save-dev webpack webpack-cli
 </code></pre>
-<p>Webpack&#xC740; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xCF54;&#xB4DC;&#xB97C; &#xBC88;&#xB4E4;(&#xBB36;&#xC5B4;&#xC11C;)&#xB85C; &#xC81C;&#xACF5;&#xD558;&#xACE0; &#xC120;&#xD0DD;&#xC801;&#xC73C;&#xB85C; &#xBAA8;&#xB4E0; &#xC758;&#xC874;&#xC131;&#xC744; &#xB2E8; &#xD558;&#xB098;&#xC758; <code>.js</code> &#xD30C;&#xC77C;&#xB85C; &#xBC88;&#xB4E4;&#xB9C1;(&#xBB36;&#xB294;)&#xD558;&#xB294; &#xB3C4;&#xAD6C;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC774;&#xC81C; React&#xC640; React-DOM&#xC744; <code>package.json</code> &#xD30C;&#xC77C;&#xC758; &#xC758;&#xC874;&#xC131;&#xC73C;&#xB85C; &#xCD94;&#xAC00;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-shell">npm install --save react react-dom @types/react @types/react-dom
+<p>Webpack&#xC740; &#xCF54;&#xB4DC;&#xC640; &#xC120;&#xD0DD;&#xC801;&#xC73C;&#xB85C; &#xBAA8;&#xB4E0; &#xC758;&#xC874;&#xC131;&#xC744; &#xD558;&#xB098;&#xC758; <code>.js</code>&#xD30C;&#xC77C;&#xB85C; &#xBB36;&#xB294; &#xB3C4;&#xAD6C;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774;&#xC81C; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xACFC; &#xD568;&#xAED8; React &#xBC0F; React-DOM&#xC744; <code>package.json</code> &#xD30C;&#xC77C;&#xC5D0; &#xC758;&#xC874;&#xC131;&#xC73C;&#xB85C; &#xCD94;&#xAC00;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-shell">npm install --save react react-dom
+npm install --save-dev @types/react @types/react-dom
 </code></pre>
-<p><code>@types/</code> &#xC811;&#xB450;&#xC0AC;&#xB294; React&#xC640; React-DOM&#xC744; &#xC704;&#xD55C; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC744; &#xAC00;&#xC838;&#xC628;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; <code>&quot;react&quot;</code>&#xC640; &#xAC19;&#xC740; &#xACBD;&#xB85C;&#xB97C; &#xAC00;&#xC838; &#xC624;&#xBA74; <code>react</code> &#xD328;&#xD0A4;&#xC9C0; &#xC790;&#xCCB4;&#xB97C; &#xC0B4;&#xD3B4;&#xBD05;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB7EC;&#xB098; &#xBAA8;&#xB4E0; &#xD328;&#xD0A4;&#xC9C0;&#xAC00; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC544;&#xB2C8;&#xBBC0;&#xB85C; TypeScript&#xB294; &#xB610;&#xD55C; <code>@types/react</code> &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xCC3E;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xB098;&#xC911;&#xC5D0;&#xB294; &#xC774; &#xC77C;&#xC5D0; &#xB300;&#xD574; &#xC0DD;&#xAC01;&#xD560; &#xD544;&#xC694;&#xB3C4; &#xC5C6;&#xB2E4;&#xB294; &#xAC78; &#xC54C;&#xAC8C; &#xB420; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB2E4;&#xC74C;&#xC73C;&#xB85C; <a href="https://www.npmjs.com/package/awesome-typescript-loader" target="_blank">awesome-typescript-loader</a>&#xC640; <a href="https://www.npmjs.com/package/source-map-loader" target="_blank">source-map-loader</a>&#xC5D0; development-time &#xC758;&#xC874;&#xC131;&#xC744; &#xCD94;&#xAC00;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-shell">npm install --save-dev typescript awesome-typescript-loader source-map-loader
+<p><code>@types/</code> &#xC811;&#xB450;&#xC0AC;&#xB294; React&#xC640; React-DOM&#xC758; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC744; &#xAC00;&#xC838;&#xC624;&#xACE0; &#xC2F6;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; <code>&quot;react&quot;</code>&#xC640; &#xAC19;&#xC740; &#xACBD;&#xB85C;&#xB97C; &#xAC00;&#xC838;&#xC624;&#xBA74;, <code>react</code> &#xD328;&#xD0A4;&#xC9C0; &#xC790;&#xCCB4;&#xB97C; &#xC0B4;&#xD3B4;&#xBCFC; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;;
+&#xADF8;&#xB7EC;&#xB098; &#xBAA8;&#xB4E0; &#xD328;&#xD0A4;&#xC9C0;&#xC5D0; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC774; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xC9C0; &#xC54A;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, TypeScript&#xB294; <code>@types/react</code> &#xD328;&#xD0A4;&#xC9C0;&#xB3C4; &#xCC3E;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB098;&#xC911;&#xC5D0;&#xB294; &#xC774;&#xAC83;&#xC5D0; &#xB300;&#xD574; &#xC0DD;&#xAC01;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC54C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C;&#xC73C;&#xB85C;, &#xAC1C;&#xBC1C; &#xC2DC; &#xD544;&#xC694;&#xD55C; &#xC758;&#xC874;&#xC131;&#xC5D0; <a href="https://www.npmjs.com/package/ts-loader" target="_blank">ts-loader</a>&#xC640;<a href="https://www.npmjs.com/package/source-map-loader" target="_blank">source-map-loader</a>&#xB97C; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-shell">npm install --save-dev typescript ts-loader source-map-loader
 </code></pre>
-<p>&#xC774;&#xB7EC;&#xD55C; &#xC758;&#xC874;&#xC131; &#xB458; &#xB2E4; TypeScript&#xC640; webpack&#xC774; &#xD568;&#xAED8; &#xC798; &#xC791;&#xB3D9;&#xD558;&#xB3C4;&#xB85D; &#xD560; &#xAC83; &#xC785;&#xB2C8;&#xB2E4;.<br>awesome-typescript-loader&#xB294; Webpack&#xC774; TypeScript&#xC758; &#xD45C;&#xC900; &#xAD6C;&#xC131; &#xD30C;&#xC77C; <code>tsconfig.json</code>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; TypeScript &#xCF54;&#xB4DC;&#xB97C; &#xCEF4;&#xD30C;&#xC77C;&#xD558;&#xB294; &#xB370; &#xB3C4;&#xC6C0;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.<br>source-map-loader&#xB294; TypeScript&#xC758; &#xBAA8;&#xB4E0; &#xC18C;&#xC2A4; &#xB9F5; &#xCD9C;&#xB825;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; <em>&#xC790;&#xCCB4;</em> &#xC18C;&#xC2A4; &#xB9F5;&#xC744; &#xC0DD;&#xC131; &#xD560; &#xB54C; webpack&#xC5D0; &#xC54C;&#xB9BD;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB807;&#xAC8C;&#xD558;&#xBA74; &#xC6D0;&#xB798; TypeScript &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;&#xB97C; &#xB514;&#xBC84;&#xAE45; &#xD558;&#xB4EF;&#xC774; &#xCD5C;&#xC885; &#xCD9C;&#xB825; &#xD30C;&#xC77C;&#xC744; &#xB514;&#xBC84;&#xAE45; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p>awesome-typescript-loader&#xAC00; typescript&#xC758; &#xC720;&#xC77C;&#xD55C; &#xB85C;&#xB354;&#xB294; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;.<br>&#xB300;&#xC2E0; <a href="https://github.com/TypeStrong/ts-loader" target="_blank">ts-loader</a>&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br><a href="https://github.com/s-panferov/awesome-typescript-loader#differences-between-ts-loader" target="_blank">&#xC5EC;&#xAE30;&#xC5D0;&#xC11C;</a>  &#xB450; &#xB85C;&#xB354; &#xC0AC;&#xC774;&#xC758; &#xCC28;&#xC774;&#xC810;&#xC5D0; &#xB300;&#xD574; &#xC77D;&#xC5B4;&#xBCF4;&#xC138;&#xC694;.</p>
-<p>&#xAC1C;&#xBC1C; &#xC758;&#xC874;&#xC131;&#xC73C;&#xB85C; TypeScript&#xB97C; &#xC124;&#xCE58;&#xD588;&#xC74C;&#xC744; &#xC8FC;&#xBAA9;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.<br>TypeScript&#xB97C; <code>npm link typescript</code>&#xB85C; &#xAE00;&#xB85C;&#xBC8C; &#xC0AC;&#xBCF8;&#xC5D0; &#xC5F0;&#xACB0;&#xD560; &#xC218; &#xC788;&#xC5C8;&#xB294;&#xB370; &#xC774;&#xAC83;&#xC740; &#xD754;&#xCE58; &#xC54A;&#xC740; &#xACBD;&#xC6B0;&#xC785;&#xC774;&#xB2E4;.</p>
-<h1 id="typescript-&#xC124;&#xC815;-&#xD30C;&#xC77C;-&#xCD94;&#xAC00;-add-a-typescript-configuration-file">TypeScript &#xC124;&#xC815; &#xD30C;&#xC77C; &#xCD94;&#xAC00; (Add a TypeScript configuration file)</h1>
-<p>TypeScript &#xD30C;&#xC77C;&#xC744; &#xD568;&#xAED8; &#xAC00;&#xC838;&#xC624;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74; &#xD544;&#xC694;&#xD55C; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xBFD0;&#xB9CC; &#xC544;&#xB2C8;&#xB77C; &#xC791;&#xC131;&#xD560; &#xCF54;&#xB4DC; &#xBAA8;&#xB450; &#xC791;&#xC131;&#xD558;&#xC138;&#xC694;.</p>
-<p>&#xC774;&#xB807;&#xAC8C; &#xD558;&#xB824;&#xBA74; &#xBAA8;&#xB4E0; &#xCEF4;&#xD30C;&#xC77C; &#xC124;&#xC815;&#xACFC; &#xD568;&#xAED8; &#xC785;&#xB825; &#xD30C;&#xC77C; &#xBAA9;&#xB85D;&#xC774; &#xD3EC;&#xD568;&#xB41C; <code>tsconfig.json</code>&#xC744; &#xC0DD;&#xC131;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br>&#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xB8E8;&#xD2B8;&#xC5D0; <code>tsconfig.json</code>&#xC774;&#xB77C;&#xB294; &#xC774;&#xB984;&#xC758; &#xC0C8; &#xD30C;&#xC77C;&#xC744; &#xB9CC;&#xB4E4;&#xACE0; &#xB0B4;&#xC6A9;&#xC744; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xCC44;&#xC6B0;&#xAE30;&#xB9CC; &#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;:</p>
+<p>&#xC774; &#xC758;&#xC874;&#xC131;&#xB4E4;&#xC740;  TypeScript&#xC640; Webpack&#xC744; &#xAC19;&#xC774; &#xC4F8; &#xC218; &#xC788;&#xAC8C; &#xD574;&#xC90D;&#xB2C8;&#xB2E4;.
+ts-loader&#xB294; Webpack&#xC774; <code>tsconfig.json</code>&#xC774;&#xB77C;&#xB294; TypeScript &#xD45C;&#xC900; &#xAD6C;&#xC131; &#xD30C;&#xC77C;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; TypeScript &#xCF54;&#xB4DC;&#xB97C; &#xCEF4;&#xD30C;&#xC77C;&#xD558;&#xB3C4;&#xB85D; &#xB3C4;&#xC640;&#xC90D;&#xB2C8;&#xB2E4;.
+source-map-loader&#xB294; TypeScript&#xC758; &#xC18C;&#xC2A4; &#xB9F5; &#xCD9C;&#xB825;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; <em>&#xACE0;&#xC720;&#xD55C;</em> &#xC18C;&#xC2A4; &#xB9F5;&#xC744; &#xC0DD;&#xC131;&#xD560; &#xB54C; Webpack&#xC5D0; &#xC54C;&#xB9BD;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB807;&#xAC8C; &#xD558;&#xBA74; &#xAE30;&#xC874;&#xC758; TypeScript &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;&#xB97C; &#xB514;&#xBC84;&#xAE45;&#xD558;&#xB294; &#xAC83; &#xCC98;&#xB7FC; &#xCD5C;&#xC885; &#xCD9C;&#xB825; &#xD30C;&#xC77C;&#xC744; &#xB514;&#xBC84;&#xAE45; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>ts-loader&#xAC00; TypeScript&#xC758; &#xC720;&#xC77C;&#xD55C; &#xB85C;&#xB354;&#xB294; &#xC544;&#xB2D8;&#xC744; &#xC720;&#xC758;&#xD574;&#xC8FC;&#xC138;&#xC694;</p>
+<p>TypeScript&#xB97C; &#xAC1C;&#xBC1C; &#xC758;&#xC874;&#xC131;&#xC73C;&#xB85C;  &#xC124;&#xCE58;&#xD588;&#xB2E4;&#xB294; &#xAC83;&#xC5D0; &#xC720;&#xC758;&#xD558;&#xC138;&#xC694;.
+<code>npm link typescript</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; TypeScript&#xB97C; &#xC804;&#xC5ED; &#xBCF5;&#xC0AC;&#xBCF8;&#xC5D0; &#xC5F0;&#xACB0;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC9C0;&#xB9CC;, &#xB35C; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xC2DC;&#xB098;&#xB9AC;&#xC624;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h1 id="typescript-&#xAD6C;&#xC131;-&#xD30C;&#xC77C;-&#xCD94;&#xAC00;-add-a-typescript-configuration-file">TypeScript &#xAD6C;&#xC131; &#xD30C;&#xC77C; &#xCD94;&#xAC00; (Add a TypeScript configuration file)</h1>
+<p>&#xC791;&#xC131;&#xD558;&#xB824;&#xB294; &#xCF54;&#xB4DC;&#xC640; &#xD544;&#xC694;&#xD55C; &#xC120;&#xC5B8; &#xD30C;&#xC77C; &#xBAA8;&#xB450; TypeScript &#xD30C;&#xC77C;&#xB85C; &#xAC00;&#xC838;&#xC624;&#xAE30;&#xB97C; &#xC6D0;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774;&#xB807;&#xAC8C; &#xD558;&#xB824;&#xBA74;, &#xC785;&#xB825; &#xD30C;&#xC77C; &#xBAA9;&#xB85D;&#xACFC; &#xBAA8;&#xB4E0; &#xCEF4;&#xD30C;&#xC77C; &#xC124;&#xC815;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xB294; <code>tsconfig.json</code> &#xD30C;&#xC77C;&#xC744; &#xB9CC;&#xB4E4;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.
+&#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xB8E8;&#xD2B8;&#xC5D0; <code>tsconfig.json</code>&#xC774;&#xB77C;&#xB294; &#xC0C8; &#xD30C;&#xC77C;&#xC744; &#xC0DD;&#xC131;&#xD558;&#xACE0;, &#xB2E4;&#xC74C; &#xB0B4;&#xC6A9;&#xC744; &#xCC44;&#xC6B0;&#xC138;&#xC694;:</p>
 <pre><code class="lang-json">{
     <span class="cm-property">&quot;compilerOptions&quot;</span>: {
         <span class="cm-property">&quot;outDir&quot;</span>: <span class="cm-string">&quot;./dist/&quot;</span>,
         <span class="cm-property">&quot;sourceMap&quot;</span>: <span class="cm-atom">true</span>,
         <span class="cm-property">&quot;noImplicitAny&quot;</span>: <span class="cm-atom">true</span>,
         <span class="cm-property">&quot;module&quot;</span>: <span class="cm-string">&quot;commonjs&quot;</span>,
-        <span class="cm-property">&quot;target&quot;</span>: <span class="cm-string">&quot;es5&quot;</span>,
+        <span class="cm-property">&quot;target&quot;</span>: <span class="cm-string">&quot;es6&quot;</span>,
         <span class="cm-property">&quot;jsx&quot;</span>: <span class="cm-string">&quot;react&quot;</span>
-    },
-    <span class="cm-property">&quot;include&quot;</span>: [
-        <span class="cm-string">&quot;./src/**/*&quot;</span>
-    ]
+    }
 }
 </code></pre>
-<p><code>tsconfig.json</code> &#xD30C;&#xC77C;&#xC5D0; &#xB300;&#xD55C; &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="../tsconfig.json.html">&#xC5EC;&#xAE30;</a>&#xB97C; &#xCC38;&#xC870;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.</p>
-<h1 id="&#xBA87;-&#xAC00;&#xC9C0;-&#xCF54;&#xB4DC;-&#xC791;&#xC131;-write-some-code">&#xBA87; &#xAC00;&#xC9C0; &#xCF54;&#xB4DC; &#xC791;&#xC131; (Write some code)</h1>
-<p>React&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xCCAB; &#xBC88;&#xC9F8; TypeScript &#xD30C;&#xC77C;&#xC744; &#xC791;&#xC131;&#xD574; &#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xBA3C;&#xC800;<code>src/components</code>&#xC5D0; <code>Hello.tsx</code>&#xB77C;&#xB294; &#xC774;&#xB984;&#xC758; &#xD30C;&#xC77C;&#xC744; &#xB9CC;&#xB4E4;&#xACE0; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC791;&#xC131;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<p><code>tsconfig.json</code> &#xD30C;&#xC77C;&#xC5D0; &#xB300;&#xD55C; &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="tsconfig.json.md">&#xC5EC;&#xAE30;</a>&#xB97C; &#xCC38;&#xC870;&#xD558;&#xC138;&#xC694;.</p>
+<h1 id="&#xCF54;&#xB4DC;-&#xC791;&#xC131;&#xD558;&#xAE30;-write-some-code">&#xCF54;&#xB4DC; &#xC791;&#xC131;&#xD558;&#xAE30; (Write some code)</h1>
+<p>React&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xCCAB; &#xBC88;&#xC9F8; TypeScript &#xD30C;&#xC77C;&#xC744; &#xC791;&#xC131;&#xD574; &#xBD05;&#xC2DC;&#xB2E4;.
+&#xBA3C;&#xC800;, <code>src/components</code>&#xC5D0; <code>Hello.tsx</code> &#xD30C;&#xC77C;&#xC744; &#xB9CC;&#xB4E4;&#xACE0; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC791;&#xC131;&#xD558;&#xC138;&#xC694;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">React</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;react&quot;</span>;
 
 <span class="cm-keyword">export</span> <span class="cm-keyword">interface</span> <span class="cm-variable">HelloProps</span> { <span class="cm-variable">compiler</span>: <span class="cm-variable-3">string</span>; <span class="cm-variable">framework</span>: <span class="cm-variable-3">string</span>; }
 
 <span class="cm-keyword">export</span> <span class="cm-keyword">const</span> <span class="cm-variable">Hello</span> <span class="cm-operator">=</span> (<span class="cm-def">props</span>: <span class="cm-variable">HelloProps</span>) <span class="cm-operator">=&gt;</span> <span class="cm-operator">&lt;</span><span class="cm-variable">h1</span><span class="cm-operator">&gt;</span><span class="cm-variable">Hello</span> <span class="cm-variable">from</span> {<span class="cm-variable">props</span>.<span class="cm-property">compiler</span>} <span class="cm-variable">and</span> {<span class="cm-variable">props</span>.<span class="cm-property">framework</span>}<span class="cm-operator">!&lt;</span><span class="cm-string-2">/h1&gt;;</span>
 </code></pre>
-<p>&#xC774; &#xC608;&#xC81C;&#xC5D0;&#xC11C;&#xB294; <a href="https://facebook.github.io/react/docs/reusable-components.html#stateless-functions" target="_blank">stateless functional components</a>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xC5D0; &#xB300;&#xBE44;&#xD558;&#xC5EC; &#xC608;&#xC81C;&#xB97C; &#xC880; &#xB354; <em>&#xACE0;&#xAE09;&#xC2A4;&#xB7FD;&#xAC8C;</em> &#xB9CC;&#xB4E4; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774; &#xC608;&#xC81C;&#xB294; <a href="https://reactjs.org/docs/components-and-props.html#functional-and-class-components" target="_blank">&#xD568;&#xC218; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;</a>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0;&#xB9CC;, &#xC608;&#xC81C;&#xB97C; &#xC870;&#xAE08; &#xB354; <em>&#xACE0;&#xAE09;&#xC2A4;&#xB7FD;&#xAC8C;</em> &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">React</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;react&quot;</span>;
 
 <span class="cm-keyword">export</span> <span class="cm-keyword">interface</span> <span class="cm-variable">HelloProps</span> { <span class="cm-variable">compiler</span>: <span class="cm-variable-3">string</span>; <span class="cm-variable">framework</span>: <span class="cm-variable-3">string</span>; }
 
-<span class="cm-comment">// &apos;HelloProps&apos;&#xB294; props&#xC758; &#xD615;&#xD0DC;&#xC744; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;.</span>
-<span class="cm-comment">// State&#xAC00; &#xC124;&#xC815;&#xB418;&#xC5B4; &#xC788;&#xC9C0; &#xC54A;&#xC544; &apos;{}&apos;&#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-comment">// &apos;HelloProps&apos;&#xB294; props&#xC758; &#xD615;&#xD0DC;&#xB97C; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-comment">// state&#xB294; &#xC124;&#xC815;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBBC0;&#xB85C;, `{}` &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</span>
 <span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-variable">Hello</span> <span class="cm-keyword">extends</span> <span class="cm-variable">React</span>.<span class="cm-property">Component</span><span class="cm-operator">&lt;</span><span class="cm-variable">HelloProps</span>, {}<span class="cm-operator">&gt;</span> {
     <span class="cm-property">render</span>() {
         <span class="cm-keyword">return</span> <span class="cm-operator">&lt;</span><span class="cm-variable">h1</span><span class="cm-operator">&gt;</span><span class="cm-variable">Hello</span> <span class="cm-variable">from</span> {<span class="cm-keyword">this</span>.<span class="cm-property">props</span>.<span class="cm-property">compiler</span>} <span class="cm-variable">and</span> {<span class="cm-keyword">this</span>.<span class="cm-property">props</span>.<span class="cm-property">framework</span>}<span class="cm-operator">!&lt;</span><span class="cm-string-2">/h1&gt;;</span>
     }
 }
 </code></pre>
-<p>&#xADF8;&#xB7F0; &#xB2E4;&#xC74C; <code>src</code>&#xC5D0; <code>index.tsx</code>&#xB97C; &#xC0DD;&#xC131;&#xD574; &#xBD05;&#xC2DC;&#xB2E4; :</p>
+<p>&#xB2E4;&#xC74C; &#xC18C;&#xC2A4;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; <code>src</code>&#xC5D0; <code>index.tsx</code>&#xB97C; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">React</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;react&quot;</span>;
 <span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">ReactDOM</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;react-dom&quot;</span>;
 
@@ -803,8 +858,11 @@ cd ..
     <span class="cm-variable">document</span>.<span class="cm-variable">getElementById</span>(<span class="cm-string">&quot;example&quot;</span>)
 );
 </code></pre>
-<p><code>Hello</code> &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB97C; <code>index.tsx</code>&#xB85C; &#xAC00;&#xC838;&#xC654;&#xC2B5;&#xB2C8;&#xB2E4;.<br><code>&quot;react&quot;</code> &#xB610;&#xB294; <code>&quot;react-dom&quot;</code>&#xACFC; &#xB2EC;&#xB9AC; <code>Hello.tsx</code>&#xC5D0; &#xB300;&#xD55C; &#xC0C1;&#xB300; &#xACBD;&#xB85C;&#xB97C; &#xC0AC;&#xC6A9;&#xD588;&#xC74C;&#xC744; &#xC8FC;&#xBAA9;&#xD558;&#xC138;&#xC694; - &#xC774;&#xAC83;&#xC740; &#xC911;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xB2E4;&#xBA74; TypeScript&#xB294; &#xB300;&#xC2E0;<code>node_modules</code> &#xD3F4;&#xB354;&#xB97C; &#xC0B4;&#xD3B4; &#xBCF4;&#xC558;&#xC744; &#xAC81;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB610;&#xD55C; <code>Hello</code> &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB97C; &#xBCF4;&#xC5EC;&#xC904; &#xD398;&#xC774;&#xC9C0;&#xAC00; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xB0B4;&#xC6A9;&#xC744; &#xB2F4;&#xC740; <code>index.html</code>&#xD30C;&#xC77C;&#xC744; <code>proj</code>&#xC758; &#xB8E8;&#xD2B8;&#xC5D0; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;:</p>
+<p>&#xBC29;&#xAE08; <code>Hello</code> &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB97C; <code>index.tsx</code>&#xB85C; &#xAC00;&#xC838;&#xC654;&#xC2B5;&#xB2C8;&#xB2E4;.
+<code>&quot;react&quot;</code>&#xB098; <code>&quot;react-dom&quot;</code>&#xACFC;&#xB294; &#xB2EC;&#xB9AC;, <code>Hello.tsx</code>&#xC5D0; &#xB300;&#xD55C; <em>&#xC0C1;&#xB300; &#xACBD;&#xB85C;</em>&#xB97C; &#xC0AC;&#xC6A9;&#xD588;&#xB2E4;&#xB294; &#xAC83;&#xC5D0; &#xC720;&#xC758;&#xD558;&#xC138;&#xC694;. - &#xC774;&#xAC83;&#xC740; &#xC911;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.
+&#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xC740; &#xACBD;&#xC6B0;, TypeScript&#xB294; &#xB300;&#xC2E0; <code>node_modules</code> &#xD3F4;&#xB354;&#xB97C; &#xCC3E;&#xC558;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>Hello</code> &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB97C; &#xD45C;&#xC2DC;&#xD560; &#xD398;&#xC774;&#xC9C0;&#xB3C4; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.
+<code>proj</code>&#xC758; &#xB8E8;&#xD2B8;&#xC5D0; <code>index.html</code> &#xD30C;&#xC77C;&#xC744; &#xC0DD;&#xC131;&#xD558;&#xACE0; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC791;&#xC131;&#xD558;&#xC138;&#xC694;:</p>
 <pre><code class="lang-html"><span class="cm-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">html</span><span class="cm-tagcm-bracket">&gt;</span>
     <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">head</span><span class="cm-tagcm-bracket">&gt;</span>
@@ -819,58 +877,70 @@ cd ..
         <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">script</span> <span class="cm-attribute">src</span>=<span class="cm-string">&quot;./node_modules/react-dom/umd/react-dom.development.js&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">script</span><span class="cm-tagcm-bracket">&gt;</span>
 
         <span class="cm-comment">&lt;!-- Main --&gt;</span>
-        <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">script</span> <span class="cm-attribute">src</span>=<span class="cm-string">&quot;./dist/bundle.js&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">script</span><span class="cm-tagcm-bracket">&gt;</span>
+        <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">script</span> <span class="cm-attribute">src</span>=<span class="cm-string">&quot;./dist/main.js&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">script</span><span class="cm-tagcm-bracket">&gt;</span>
     <span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">body</span><span class="cm-tagcm-bracket">&gt;</span>
 <span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">html</span><span class="cm-tagcm-bracket">&gt;</span>
 </code></pre>
-<p><code>node_modules</code>&#xC5D0;&#xC11C; &#xD30C;&#xC77C;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC788;&#xC74C;&#xC744; &#xC8FC;&#xBAA9;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.<br>React&#xC640; React-DOM&#xC758; npm &#xD328;&#xD0A4;&#xC9C0;&#xC5D0;&#xB294; &#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xC5D0; &#xD3EC;&#xD568;&#xD560; &#xC218; &#xC788;&#xB294; &#xB3C5;&#xB9BD;&#xC801;&#xC778; <code>.js</code> &#xD30C;&#xC77C;&#xC774; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xC73C;&#xBA70;<br>&#xC774;&#xB97C; &#xBE60;&#xB974;&#xAC8C; &#xC704;&#xD574; &#xC9C1;&#xC811; &#xCC38;&#xC870;&#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-&#xC774;&#xB7EC;&#xD55C; &#xD30C;&#xC77C;&#xC744; &#xB2E4;&#xB978; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC5D0; &#xC790;&#xC720;&#xB86D;&#xAC8C; &#xBCF5;&#xC0AC;&#xD558;&#xAC70;&#xB098; CDN&#xC744; &#xD1B5;&#xD574; &#xD638;&#xC2A4;&#xD305;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xD398;&#xC774;&#xC2A4;&#xBD81;&#xC740; React&#xC758; CDN &#xD638;&#xC2A4;&#xD305; &#xBC84;&#xC804;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xBA70; <a href="http://facebook.github.io/react/downloads.html#development-vs.-production-builds" target="_blank">&#xC5EC;&#xAE30;&#xC5D0;&#xC11C;</a> &#xB354; &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<h1 id="&#xC6F9;&#xD329;-&#xC124;&#xC815;-&#xD30C;&#xC77C;-&#xB9CC;&#xB4E4;&#xAE30;-create-a-webpack-configuration-file">&#xC6F9;&#xD329; &#xC124;&#xC815; &#xD30C;&#xC77C; &#xB9CC;&#xB4E4;&#xAE30; (Create a webpack configuration file)</h1>
-<p>&#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC758; &#xB8E8;&#xD2B8;&#xC5D0; <code>webpack.config.js</code> &#xD30C;&#xC77C;&#xC744; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC6B0;&#xB9AC;&#xB294; <code>node_modules</code> &#xC548;&#xC5D0; &#xB4E4;&#xC5B4;&#xC788;&#xB294; &#xD30C;&#xC77C;&#xC744; &#xD3EC;&#xD568;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;.
+React&#xC640; React-DOM&#xC758; npm &#xD328;&#xD0A4;&#xC9C0;&#xC5D0;&#xB294; &#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xC5D0; &#xD3EC;&#xD568; &#xD560; &#xC218; &#xC788;&#xB294; &#xB3C5;&#xB9BD;&#xD615; <code>.js</code> &#xD30C;&#xC77C;&#xC774; &#xC788;&#xC73C;&#xBA70;, &#xBCF4;&#xB2E4; &#xBE60;&#xB974;&#xAC8C; &#xC774;&#xB3D9;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC9C1;&#xC811; &#xCC39;&#xC870;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB7F0; &#xD30C;&#xC77C;&#xC744; &#xB2E4;&#xB978; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC5D0; &#xBCF5;&#xC0AC;&#xD558;&#xAC70;&#xB098;, CDN(Content Delivery Network)&#xC5D0;&#xC11C; &#xD638;&#xC2A4;&#xD305;&#xD569;&#xB2C8;&#xB2E4;.
+Facebook&#xC740; CDN-&#xD638;&#xC2A4;&#xD2B8; &#xBC84;&#xC804;&#xC758; React&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xBA70;, <a href="http://facebook.github.io/react/downloads.html#development-vs.-production-builds" target="_blank">&#xC5EC;&#xAE30;&#xC5D0;&#xC11C; &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC744; &#xC77D;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;</a>.</p>
+<h1 id="webpack-&#xAD6C;&#xC131;-&#xD30C;&#xC77C;-&#xC0DD;&#xC131;&#xD558;&#xAE30;-create-a-webpack-configuration-file">Webpack &#xAD6C;&#xC131; &#xD30C;&#xC77C; &#xC0DD;&#xC131;&#xD558;&#xAE30; (Create a webpack configuration file)</h1>
+<p>&#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC758; &#xB8E8;&#xD2B8;&#xC5D0; <code>webpack.config.js</code> &#xD30C;&#xC77C;&#xC744; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-js"><span class="cm-keyword">module</span>.<span class="cm-variable">exports</span> <span class="cm-operator">=</span> {
-    <span class="cm-property">entry</span>: <span class="cm-string">&quot;./src/index.tsx&quot;</span>,
-    <span class="cm-property">output</span>: {
-        <span class="cm-property">filename</span>: <span class="cm-string">&quot;bundle.js&quot;</span>,
-        <span class="cm-property">path</span>: <span class="cm-variable">__dirname</span> <span class="cm-operator">+</span> <span class="cm-string">&quot;/dist&quot;</span>
-    },
+    <span class="cm-property">mode</span>: <span class="cm-string">&quot;production&quot;</span>,
 
-    <span class="cm-comment">// webpack&#xC758; &#xCD9C;&#xB825;&#xC744; &#xB514;&#xBC84;&#xAE45; &#xD560; &#xC18C;&#xC2A4; &#xB9F5;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</span>
+    <span class="cm-comment">// Webpack&#xC758; &#xCD9C;&#xB825;&#xBB3C;&#xC5D0;&#xC11C; &#xB514;&#xBC84;&#xAE45;&#xC744; &#xD558;&#xAE30;&#xC704;&#xD574; &#xC18C;&#xC2A4; &#xB9F5;&#xC744; &#xD5C8;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</span>
     <span class="cm-property">devtool</span>: <span class="cm-string">&quot;source-map&quot;</span>,
 
     <span class="cm-property">resolve</span>: {
-        <span class="cm-comment">// &#xD655;&#xC778; &#xAC00;&#xB2A5;&#xD55C; &#xD655;&#xC7A5;&#xC790;&#xB85C; &apos;.ts&apos; &#xBC0F; &apos;.tsx&apos;&#xB97C; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</span>
-        <span class="cm-property">extensions</span>: [<span class="cm-string">&quot;.ts&quot;</span>, <span class="cm-string">&quot;.tsx&quot;</span>, <span class="cm-string">&quot;.js&quot;</span>, <span class="cm-string">&quot;.json&quot;</span>]
+        <span class="cm-comment">// &#xD655;&#xC778; &#xAC00;&#xB2A5;&#xD55C; &#xD655;&#xC7A5;&#xC790;&#xB85C; &apos;.ts&apos; &#xC640; &apos;.tsx&apos; &#xB97C; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</span>
+        <span class="cm-property">extensions</span>: [<span class="cm-string">&quot;.ts&quot;</span>, <span class="cm-string">&quot;.tsx&quot;</span>]
     },
 
     <span class="cm-keyword">module</span>: {
         <span class="cm-variable">rules</span>: [
-            <span class="cm-comment">// &apos;.ts&apos; &#xB610;&#xB294; &apos;.tsx&apos; &#xD655;&#xC7A5;&#xC790;&#xB97C; &#xAC00;&#xC9C4; &#xBAA8;&#xB4E0; &#xD30C;&#xC77C;&#xC740; &apos;awesome-typescript-loader&apos;&#xC5D0; &#xC758;&#xD574; &#xCC98;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;.</span>
-            { <span class="cm-variable">test</span>: <span class="cm-string-2">/\.tsx?$/</span>, <span class="cm-variable">loader</span>: <span class="cm-string">&quot;awesome-typescript-loader&quot;</span> },
-
-            <span class="cm-comment">// &apos;.js&apos; &#xD30C;&#xC77C;&#xC758; &#xBAA8;&#xB4E0; &#xCD9C;&#xB825;&#xC5D0;&#xB294; &apos;source-maps-loader&apos;&#xB85C; &#xB2E4;&#xC2DC; &#xCC98;&#xB9AC;&#xB41C; &#xC18C;&#xC2A4; &#xB9F5;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
-            { <span class="cm-property">enforce</span>: <span class="cm-string">&quot;pre&quot;</span>, <span class="cm-property">test</span>: <span class="cm-string-2">/\.js$/</span>, <span class="cm-property">loader</span>: <span class="cm-string">&quot;source-map-loader&quot;</span> }
+            {
+                <span class="cm-variable">test</span>: <span class="cm-string-2">/\.ts(x?)$/</span>,
+                <span class="cm-variable">exclude</span>: <span class="cm-string-2">/node_modules/</span>,
+                <span class="cm-variable">use</span>: [
+                    {
+                        <span class="cm-variable">loader</span>: <span class="cm-string">&quot;ts-loader&quot;</span>
+                    }
+                ]
+            },
+            <span class="cm-comment">// &#xBAA8;&#xB4E0; &apos;.js&apos; &#xCD9C;&#xB825; &#xD30C;&#xC77C;&#xC740; &apos;source-map-loader&apos;&#xC5D0;&#xC11C; &#xB2E4;&#xC2DC; &#xCC98;&#xB9AC;&#xD55C; &#xC18C;&#xC2A4; &#xB9F5;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+            {
+                <span class="cm-variable">enforce</span>: <span class="cm-string">&quot;pre&quot;</span>,
+                <span class="cm-variable">test</span>: <span class="cm-string-2">/\.js$/</span>,
+                <span class="cm-variable">loader</span>: <span class="cm-string">&quot;source-map-loader&quot;</span>
+            }
         ]
     },
 
-    <span class="cm-comment">// &#xACBD;&#xB85C;&#xAC00; &#xB2E4;&#xC74C; &#xC911; &#xD558;&#xB098;&#xC640; &#xC77C;&#xCE58;&#xD558;&#xB294; &#xBAA8;&#xB4C8;&#xC744; &#xC784;&#xD3EC;&#xD2B8; &#xACBD;&#xC6B0;</span>
-    <span class="cm-comment">// &#xD574;&#xB2F9;&#xD558;&#xB294; &#xAE00;&#xB85C;&#xBC8C; &#xBCC0;&#xC218;&#xAC00; &#xC788;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD558;&#xACE0; &#xB300;&#xC2E0; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;.</span>
-    <span class="cm-comment">// &#xC774;&#xB294; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xAC00; &#xBE4C;&#xB4DC;&#xC640; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xC0AC;&#xC774;&#xC5D0; &#xCE90;&#xC2DC; &#xD560; &#xC218; &#xC788;&#xAC8C; &#xD574;&#xC8FC;&#xB294;</span>
-    <span class="cm-comment">// &#xBAA8;&#xB4E0; &#xC885;&#xC18D;&#xC131;&#xC744; &#xBC88;&#xB4E4;&#xB85C; &#xBB36;&#xB294; &#xAC83;&#xC744; &#xD53C;&#xD560; &#xC218; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC911;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</span>
+    <span class="cm-comment">// &#xACBD;&#xB85C;&#xAC00; &#xB2E4;&#xC74C; &#xC911; &#xD558;&#xB098;&#xC640; &#xC77C;&#xCE58;&#xD558;&#xB294; &#xBAA8;&#xB4C8;&#xC744; &#xAC00;&#xC838;&#xC62C; &#xB54C;,</span>
+    <span class="cm-comment">// &#xD574;&#xB2F9; &#xC804;&#xC5ED; &#xBCC0;&#xC218;&#xAC00; &#xC788;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD558;&#xACE0; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</span>
+    <span class="cm-comment">// &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xAC00; &#xBE4C;&#xB4DC;&#xAC04;&#xC5D0; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xCE90;&#xC2DC; &#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D;</span>
+    <span class="cm-comment">// &#xBAA8;&#xB4E0; &#xC758;&#xC874;&#xC131;&#xC744; &#xBB36;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC911;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</span>
     <span class="cm-variable">externals</span>: {
         <span class="cm-string">&quot;react&quot;</span>: <span class="cm-string">&quot;React&quot;</span>,
         <span class="cm-string">&quot;react-dom&quot;</span>: <span class="cm-string">&quot;ReactDOM&quot;</span>
-    },
+    }
 };
 </code></pre>
-<p>&#xC544;&#xB9C8;&#xB3C4; <code>externals</code> &#xD544;&#xB4DC;&#xC5D0; &#xB300;&#xD574; &#xAD81;&#xAE08;&#xD574; &#xD560;&#xC9C0;&#xB3C4; &#xBAA8;&#xB985;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB807;&#xAC8C; &#xD558;&#xBA74; &#xCEF4;&#xD30C;&#xC77C; &#xC2DC;&#xAC04;&#xC774; &#xC99D;&#xAC00;&#xD558;&#xACE0; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xAC00; &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xC9C0; &#xC54A;&#xC744; &#xACBD;&#xC6B0; &#xCE90;&#xC2DC; &#xD560; &#xC218; &#xC788;&#xC73C;&#xBBC0;&#xB85C; &#xBAA8;&#xB4E0; React &#xD30C;&#xC77C;&#xC744; &#xB3D9;&#xC77C;&#xD55C; &#xD30C;&#xC77C;&#xB85C; &#xBC88;&#xB4E4;&#xB9C1;&#xD558;&#xB294; &#xAC83;&#xC744; &#xBC29;&#xC9C0;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC774;&#xC0C1;&#xC801;&#xC73C;&#xB85C;&#xB294; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xC11C; React &#xBAA8;&#xB4C8;&#xC744; &#xC784;&#xD3EC;&#xD2B8;&#xD558;&#xB294; &#xAC83; &#xBFD0;&#xC774;&#xC9C0;&#xB9CC; &#xB300;&#xBD80;&#xBD84;&#xC758; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB4E4;&#xC740; &#xC544;&#xC9C1;&#xB3C4; &#xBAA8;&#xB4C8;&#xC744; &#xC644;&#xC804;&#xD788; &#xC9C0;&#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xB300;&#xC2E0; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB294; &#xC804;&#xD1B5;&#xC801;&#xC73C;&#xB85C; <code>jQuery</code> &#xB098; <code>_</code>&#xC640; &#xAC19;&#xC740; &#xAE00;&#xB85C;&#xBC8C; &#xD558;&#xAC8C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC790;&#xCCB4;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xAC8C; &#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xB97C; &quot;&#xB124;&#xC784; &#xC2A4;&#xD398;&#xC774;&#xC2A4; &#xD328;&#xD134;&quot;&#xC774;&#xB77C;&#xACE0; &#xD558;&#xBA70; webpack&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC774;&#xB7EC;&#xD55C; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xC791;&#xC131;&#xB41C; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xACC4;&#xC18D; &#xD65C;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p><code>&quot;react&quot;</code>&#xC5D0; &#xB300;&#xD55C; entry&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; : webpack&#xC740; <code>&quot;React&quot;</code> &#xBCC0;&#xC218;&#xC5D0;&#xC11C; <code>&quot;react&quot;</code>&#xB97C; &#xBD88;&#xB7EC;&#xC624;&#xAE30; &#xC704;&#xD574; &#xB9C8;&#xC220;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>webpack &#xC124;&#xC815;&#xC5D0; &#xB300;&#xD55C; &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="https://webpack.js.org/concepts" target="_blank">&#xC5EC;&#xAE30;</a>&#xB97C; &#xCC38;&#xC870;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.</p>
+<p><code>externals</code> &#xD544;&#xB4DC;&#xC5D0; &#xB300;&#xD574; &#xAD81;&#xAE08;&#xD560; &#xAC83; &#xC785;&#xB2C8;&#xB2E4;.
+&#xCEF4;&#xD30C;&#xC77C; &#xC2DC;&#xAC04;&#xC774; &#xC99D;&#xAC00;&#xD558;&#xACE0; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xAC00; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74;, &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xCE90;&#xC2DC; &#xD560; &#xC218; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xBAA8;&#xB4E0; React&#xB97C; &#xB3D9;&#xC77C;&#xD55C; &#xD30C;&#xC77C;&#xC5D0; &#xBB36;&#xC9C0; &#xC54A;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xBE0C;&#xB77C;&#xC6B0;&#xC800; &#xB0B4;&#xC5D0;&#xC11C; React &#xBAA8;&#xB4C8;&#xC744; &#xAC00;&#xC838;&#xC624;&#xC9C0;&#xB9CC;, &#xB300;&#xBD80;&#xBD84;&#xC758; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB294; &#xC544;&#xC9C1; &#xBAA8;&#xB4C8;&#xC744; &#xC9C0;&#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB300;&#xC2E0; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB294; &#xC804;&#xD1B5;&#xC801;&#xC73C;&#xB85C; <code>jQuery</code> &#xB098; <code>_</code> &#xC640; &#xAC19;&#xC740; &#xB2E8;&#xC77C; &#xC804;&#xC5ED; &#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB7F0; &#xBC29;&#xC2DD;&#xC744; &quot;namespace pattern&quot;&#xC774;&#xB77C;&#xACE0; &#xD558;&#xBA70;, Webpack&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC774; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xC791;&#xC131;&#xB41C; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xACC4;&#xC18D; &#xD65C;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+<code>&quot;react&quot;: &quot;React&quot;</code>&#xB97C; &#xC785;&#xB825;&#xD558;&#xBA74; Webpack&#xC740; <code>React</code> &#xBCC0;&#xC218;&#xC5D0;&#xC11C; <code>&quot;react&quot;</code>&#xB97C; &#xBD88;&#xB7EC;&#xC624;&#xAE30; &#xC704;&#xD574; &#xB9C8;&#xBC95;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xAC83; &#xC785;&#xB2C8;&#xB2E4;.</p>
+<p><a href="https://webpack.js.org/concepts" target="_blank">&#xC5EC;&#xAE30;</a>&#xC5D0;&#xC11C; Webpack &#xAD6C;&#xC131;&#xC5D0; &#xB300;&#xD574; &#xC790;&#xC138;&#xD788; &#xC54C;&#xC544;&#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h1 id="&#xBAA8;&#xB4E0;-&#xAC83;&#xC744;-&#xD568;&#xAED8;-&#xBAA8;&#xC544;&#xC11C;-putting-it-all-together">&#xBAA8;&#xB4E0; &#xAC83;&#xC744; &#xD568;&#xAED8; &#xBAA8;&#xC544;&#xC11C; (Putting it all together)</h1>
-<p>&#xC2E4;&#xD589; :</p>
-<pre><code class="lang-shell">webpack
+<p>&#xADF8;&#xB0E5; &#xC2E4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-shell">npx webpack
 </code></pre>
-<p>&#xC774;&#xC81C; &#xC990;&#xACA8; &#xCC3E;&#xB294; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0; <code>index.html</code>&#xC744; &#xC5F4;&#xBA74; &#xBAA8;&#xB4E0; &#xAC83;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC900;&#xBE44;&#xAC00; &#xB420; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;!<br>&quot;Hello from TypeScript and React!&quot;&#xB77C;&#xACE0; &#xC4F0;&#xC778; &#xD398;&#xC774;&#xC9C0;&#xAC00; &#xBCF4;&#xC77C; &#xAC81;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774;&#xC81C; &#xC990;&#xACA8; &#xCC3E;&#xB294; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xC11C; <code>index.html</code>&#xC744; &#xC5F4;&#xACE0; &#xBAA8;&#xB4E0; &#xAC83;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC900;&#xBE44;&#xAC00; &#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;!
+&quot;Hello from TypeScript and React!&quot; &#xB77C;&#xB294; &#xD398;&#xC774;&#xC9C0;&#xAC00; &#xB098;&#xD0C0;&#xB0A9;&#xB2C8;&#xB2E4;.</p>
 <script src="../../_gitbook_plugin_analytics.js"></script>
                                 
                                 </section>
@@ -914,7 +984,7 @@ cd ..
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"리액트 & 웹팩","level":"2.5","depth":1,"next":{"title":"기본 타입","level":"3.1","depth":1,"path":"pages/Basic Types.md","ref":"pages/Basic Types.md","articles":[]},"previous":{"title":"JavaScript에서 마이그레이션","level":"2.4","depth":1,"path":"pages/tutorials/Migrating from JavaScript.md","ref":"pages/tutorials/Migrating from JavaScript.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","analytics"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"analytics":{"google":"UA-99001722-6"},"search":{},"addcssjs":{"css":["assets/css/atom-one-dark.css"],"js":[]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tutorials/React & Webpack.md","mtime":"2019-06-14T05:32:52.262Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-14T05:59:20.233Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"리액트 & 웹팩","level":"2.5","depth":1,"next":{"title":"기본 타입","level":"3.1","depth":1,"path":"pages/Basic Types.md","ref":"pages/Basic Types.md","articles":[]},"previous":{"title":"JavaScript에서 마이그레이션","level":"2.4","depth":1,"path":"pages/tutorials/Migrating from JavaScript.md","ref":"pages/tutorials/Migrating from JavaScript.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","analytics"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"analytics":{"google":"UA-163809183-2"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/tutorials/React & Webpack.md","mtime":"2020-04-22T15:29:36.187Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-22T18:13:20.384Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
