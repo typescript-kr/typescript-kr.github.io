@@ -24,6 +24,7 @@
   },
   "scripts": {
     "test": "npx markdownlint . && node ./bin/lint '**/*.md'",
+    "lint": "npm run test",
     "build": "npx tsc",
     "build:gitbook": "npx gitbook build"
   },
