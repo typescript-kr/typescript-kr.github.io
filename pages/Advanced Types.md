@@ -605,7 +605,7 @@ function foo(x: number) {
 
 [열거형 섹션](./enums.md#유니언-열거형과-열거형-멤버-타입-union-enums-and-enum-member-types)에서 언급했듯이, 열거형 멤버는 모든 멤버가 리터럴로-초기화될 때 타입을 가집니다.
 
-싱글톤 타입을 이야기 할때 여기서는 열거형 멤버 타입과 숫자/문자열 리터럴 타입을 얘기하지만, 대부분 많은 유저들은 "싱글톤 타입"과 "리터럴 타입"을 상호 교환적으로 사용합니다. 
+싱글톤 타입을 이야기 할때 여기서는 열거형 멤버 타입과 숫자/문자열 리터럴 타입을 얘기하지만, 대부분 많은 유저들은 "싱글톤 타입"과 "리터럴 타입"을 상호 교환적으로 사용합니다.
 
 # 판별 유니언 (Discriminated Unions)
 
@@ -1308,4 +1308,5 @@ type T22 = InstanceType<never>;  // never
 type T23 = InstanceType<string>;  // 오류
 type T24 = InstanceType<Function>;  // 오류
 ```
+
 > Note: `Exclude` 타입은 [여기](https://github.com/Microsoft/TypeScript/issues/12215#issuecomment-307871458)에서 제안된 `Diff` 타입의 적절한 구현입니다. `Diff`를 정의한 코드와의 충돌을 피하기 위해 `Exclude`를 사용했고, 또 이 이름이 타입의 의미를 더 잘 전달한다고 느꼈습니다.

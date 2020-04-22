@@ -150,6 +150,7 @@ scripts 폴더를 마우스 오른쪽 버튼으로 클릭하고 **New Item**을 
     "del": "2.2.0"
 }
 ```
+
 Visual Studio는 파일을 저장하는 즉시 gulp 및 del 설치를 시작해야 합니다.  
 그렇지 않은 경우 패키지를 마우스 오른쪽 버튼으로 누르고 **Restore Packages**를 하십시오.
 

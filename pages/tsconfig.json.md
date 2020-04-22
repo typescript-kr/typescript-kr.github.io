@@ -147,8 +147,8 @@ types 패키지는 `index.d.ts` 파일이 있는 폴더 또는 폴더에 `types`
 
 `"types": []`를 지정하면 `@types` 패키지가 자동으로 포함되지 않습니다.
 
-전역 선언이 포함된 파일을 사용하는 경우에만 자동 포함이 중요하다는 점에 명심하세요 (모듈로 선언된 파일과 달리).   
-예를 들어 `import "foo"` 문을 사용한다면 TypeScript는 여전히 `node_modules` & `node_modules/@types` 폴더를 보고 `foo` 패키지를 찾을 것입니다. 
+전역 선언이 포함된 파일을 사용하는 경우에만 자동 포함이 중요하다는 점에 명심하세요 (모듈로 선언된 파일과 달리).
+예를 들어 `import "foo"` 문을 사용한다면 TypeScript는 여전히 `node_modules` & `node_modules/@types` 폴더를 보고 `foo` 패키지를 찾을 것입니다.
 
 ## `extends`를 이용한 설정 상속 (Configuration inheritance with `extends`)
 
