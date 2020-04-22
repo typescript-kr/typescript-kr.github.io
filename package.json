@@ -17,19 +17,18 @@
   "devDependencies": {
     "@types/glob": "^7.1.1",
     "glob": "^7.1.6",
-    "lint-staged": "^10.1.7",
+    "husky": "^4.2.5",
     "markdownlint-cli": "^0.22.0",
     "typescript": "^3.8.3"
   },
   "scripts": {
     "test": "npx markdownlint . && node ./bin/lint '**/*.md'",
-    "build": "npx tsc",
-    "precommit": "lint-staged"
+    "build": "npx tsc"
   },
-  "lint-staged": {
-    "*.md": [
-      "npx run test"
-    ]
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test"
+    }
   },
   "repository": {
     "type": "git",
