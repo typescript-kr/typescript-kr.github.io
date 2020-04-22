@@ -14,16 +14,29 @@
     "gitbook-plugin-sitemap-general": "^0.1.1",
     "gitbook-plugin-theme-darkblue": "^1.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "glob": "^7.1.6",
+    "lint-staged": "^10.1.7",
+    "markdownlint-cli": "^0.22.0",
+    "typescript": "^3.8.3"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx markdownlint . && node ./bin/lint '**/*.md'",
+    "build": "npx tsc",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.md": [
+      "npx run test"
+    ]
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/typescript-kr/typescript-kr.github.io.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/typescript-kr/typescript-kr.github.io/issues"
   },
