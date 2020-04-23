@@ -1,0 +1,204 @@
+{
+  "projectName": "typescript-kr.github.io",
+  "projectOwner": "yeonjuan",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 80,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "yeonjuan",
+      "name": "YeonJuan",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/41323220?v=4",
+      "profile": "https://github.com/yeonjuan/dev-blog",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "Bumkeyy",
+      "name": "Kibeom Kwon",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/16663226?v=4",
+      "profile": "https://github.com/Bumkeyy",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "guyeol",
+      "name": "GuyeolJeong",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/7357413?v=4",
+      "profile": "https://guyeol.github.io",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "dvlprsh",
+      "name": "seoheePark",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/48552752?v=4",
+      "profile": "https://github.com/dvlprsh",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "devJang",
+      "name": "poco.j",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/23068523?v=4",
+      "profile": "https://devjang.github.io",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "ysm0622",
+      "name": "Sungmin Chris Yang",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/18487241?v=4",
+      "profile": "http://ysm.sh",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "publisherKim",
+      "name": "publisherKim",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/20119283?v=4",
+      "profile": "https://github.com/publisherKim",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "yeonggyulim",
+      "name": "Yeonggyu Lim",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/36085009?v=4",
+      "profile": "https://github.com/yeonggyulim",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "urbanscenery",
+      "name": "YeonTaeKIM",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/25319263?v=4",
+      "profile": "https://github.com/urbanscenery",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "taekyunKimDev",
+      "name": "taekyunKimDev",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/28584029?v=4",
+      "profile": "https://github.com/taekyunKimDev",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "jiimy",
+      "name": "rudwn Aiden",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/24261724?v=4",
+      "profile": "https://jiimy.github.io",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "hellomhc",
+      "name": "Myeonghwan Cho",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/29670732?v=4",
+      "profile": "https://github.com/hellomhc",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "ENvironmentSet",
+      "name": " Jaewon Seo",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/28680594?v=4",
+      "profile": "https://overcurried.com",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "cprayer",
+      "name": "Taemin Shin",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/24709996?v=4",
+      "profile": "https://www.linkedin.com/in/taemin-shin-abba95195/",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "badger93",
+      "name": "badger93",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/38435151?v=4",
+      "profile": "https://github.com/badger93",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "kok202",
+      "name": "kok202",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/39543643?v=4",
+      "profile": "https://github.com/kok202",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "ye-geeee",
+      "name": "Yeji Kang",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/60929159?v=4",
+      "profile": "https://github.com/ye-geeee",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "Myoji",
+      "name": "Myoji",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/12138415?v=4",
+      "profile": "https://github.com/Myoji",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "heeveloper",
+      "name": "Heeveloper",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/17620671?v=4",
+      "profile": "https://heeveloper.github.io/",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "bobfull",
+      "name": "bobfull",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/48228621?v=4",
+      "profile": "https://github.com/bobfull",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "lcm6528",
+      "name": "changmin Lee",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/6929166?v=4",
+      "profile": "https://github.com/lcm6528",
+      "contributions": [
+        "translation"
+      ]
+    }
+  ],
+  "contributorsPerLine": 8
+}
