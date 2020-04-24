@@ -39,7 +39,8 @@ npm init
 ```
 
 일련의 알림을 받게 될 것입니다.  
-entry point를 제외하고는 기본값을 사용할 수 있으며 `./dist/main.js`를 사용합니다.  
+entry point를 제외하고는 기본값을 사용할 수 있습니다.
+entry point로 `./dist/main.js`를 사용합니다.
 `package.json` 파일로 돌아가서 언제든 변경할 수 있습니다.
 
 ## 의존성 설치 (Install our dependencies)
@@ -321,8 +322,7 @@ Watchify와 Gulp 모두 호출해야 하기 때문에 `default` 함수에 이름
 
 이제 Gulp를 실행하면 시작해야 하고 계속 실행됩니다.  
 `main.ts`에서 `showHello`에 대한 코드를 변경하고 저장하십시오.  
-
-다음과 같은 출력이 표시되어야 합니다 :
+다음과 같은 출력이 표시되어야 합니다:
 
 ```shell
 proj$ gulp
