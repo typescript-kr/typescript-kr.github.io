@@ -444,7 +444,7 @@ gulp.task('default', gulp.series(gulp.parallel('copy-html'), function () {
 
 TypeScript 대상 ES2015도 필요합니다.  
 Babel은 TypeScript에서 내보내는 ES2015 코드에서 ES5를 생성합니다.
-`tsconfig.json`을 수정합시다 :
+`tsconfig.json`을 수정합시다:
 
 ```json
 {
