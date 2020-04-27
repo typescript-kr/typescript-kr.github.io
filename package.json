@@ -4,6 +4,7 @@
   "description": "[![Build Status](https://travis-ci.org/Microsoft/TypeScript-Handbook.svg)](https://travis-ci.org/Microsoft/TypeScript-Handbook)",
   "main": "index.js",
   "dependencies": {
+    "gitbook-cli": "^2.3.2",
     "gitbook-plugin-addcssjs": "^1.0.2",
     "gitbook-plugin-analytics": "^0.2.1",
     "gitbook-plugin-custom-favicon": "^0.0.4",
@@ -26,7 +27,8 @@
     "test": "npx markdownlint . && node ./bin/lint '**/*.md'",
     "lint": "npm run test",
     "build": "npx tsc",
-    "build:gitbook": "npx gitbook build"
+    "build:gitbook": "npx gitbook build",
+    "serve:gitbook": "npx gitbook serve"
   },
   "husky": {
     "hooks": {
