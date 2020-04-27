@@ -30,14 +30,14 @@
 - [x] 트리플-슬래시 지시자
 - [x] JavaScript 파일 타입 검사
 ## 선언 파일
-- [ ] 소개
-- [ ] Library Structures
-- [ ] By Example
-- [ ] Do's and Don'ts
-- [ ] Deep Dive
-- [ ] Templates
-- [ ] Publishing
-- [ ] Consumption
+- [x] 소개
+- [x] Library Structures
+- [x] By Example
+- [x] Do's and Don'ts
+- [x] Deep Dive
+- [x] Templates
+- [x] Publishing
+- [x] Consumption
 ## 프로젝트 환경설정
 - [x] tsconfig.json
 - [x] 컴파일러 옵션
