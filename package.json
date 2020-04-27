@@ -23,10 +23,11 @@
     "typescript": "^3.8.3"
   },
   "scripts": {
-    "test": "npx markdownlint . && node ./bin/lint '**/*.md'",
+    "test": "npx markdownlint . && node ./bin/script/lint '**/*.md'",
     "lint": "npm run test",
     "build": "npx tsc",
-    "build:gitbook": "npx gitbook build"
+    "build:gitbook": "gitbook build",
+    "serve:gitbook": "gitbook serve"
   },
   "husky": {
     "hooks": {

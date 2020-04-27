@@ -21,5 +21,8 @@
     "analytics": {
       "google": "UA-163809183-2"
     }
+  },
+  "styles": {
+    "website": "assets/css/website.css"
   }
 }
