@@ -8,7 +8,7 @@ npm run build
 
 npm run test
 
-npm build:gitbook
+npm run build:gitbook
 
 cp -R _book/* .
 

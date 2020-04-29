@@ -1,5 +1,5 @@
 {
-  "plugins": ["theme-darkblue", "addcssjs", "highlight-1", "custom-favicon", "forkmegithub", "sitemap-general", "sitemap", "analytics"],
+  "plugins": ["theme-darkblue", "addcssjs", "highlight-1", "custom-favicon", "forkmegithub", "sitemap-general", "sitemap", "ga"],
   "pluginsConfig": {
     "sitemap-general": {
       "prefix": "https://typescript-kr.gitbooks.io/"
@@ -18,8 +18,8 @@
     "sitemap": {
       "hostname": "https://typescript-kr.github.io/"
     },
-    "analytics": {
-      "google": "UA-163809183-2"
+    "ga": {
+      "token": "UA-163809183-2"
     }
   },
   "styles": {

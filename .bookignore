@@ -1,0 +1,7 @@
+script
+.markdownlint.json
+markdownlintignore
+.travis.yml
+publish.sh
+package.json
+package-lock.json
