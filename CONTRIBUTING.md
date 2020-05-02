@@ -19,9 +19,9 @@
 ### 1. 제목
 `[번역]v(원어)` 형태로 번역합니다. 단 **번역이 어려울 시** 원어를 사용해도 무방합니다.
 
->   소개 (Introduction)  // 번역이 가능할 때 
+> 소개 (Introduction)  // 번역이 가능할 때
 >
->  `const` vs `let`  // 번역이 어려울 때
+> `const` vs `let`  // 번역이 어려울 때
 
 ### 2. 원문의 마크다운 양식
 원문에서의 마크다운 양식은 정확하게 따릅니다. 마크다운 양식은 [원본 마크다운 양식](https://github.com/microsoft/TypeScript-Handbook/tree/master/pages)을 참고합니다.
@@ -66,6 +66,7 @@ interface NumberDictionary {
     name: string;      // error, the type of 'name' is not a subtype of the indexer
 }
 ```
+
 위 주석은 메세지가 아니므로 번역해야 합니다.
 
 #### 4.1 `ok`, `error` 번역
@@ -73,7 +74,7 @@ interface NumberDictionary {
 
 ### 5. 용어의 정의
 문서에서 용어를 정의할 때, **번역을 쓰고 괄호 안에 원어를** 첨부합니다. 명시를 했다면 다음부터 원어 부분은 생략해도 무방합니다.
-> 하위클래스(subclasses), 상위클래스(superclasses) 
+> 하위클래스(subclasses), 상위클래스(superclasses)
 
 ### 6. 번역이 애매할 때
 문서 번역시 애매한 부분이 발생할 수 있습니다. Issue란에 `질문` 태그를 달아서 토론을 진행하거나 PR시 리뷰어들에게 도움을 요청할 수 있습니다.
@@ -114,8 +115,8 @@ interface NumberDictionary {
 
 ## 번역 작업에 도움이 될만한 글들
 
-- [흔한 번역투 TOP 12](https://m.hanbit.co.kr/channel/category/category_view.html?cms_code=CMS1174085364)
-- [describe - 번역 팁](http://blog.daum.net/standards/442)
+* [흔한 번역투 TOP 12](https://m.hanbit.co.kr/channel/category/category_view.html?cms_code=CMS1174085364)
+* [describe - 번역 팁](http://blog.daum.net/standards/442)
 
 
 ## Pull Request
