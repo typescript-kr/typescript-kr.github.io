@@ -402,7 +402,7 @@ class Point {
 }
 // ...
 
-// Reopen the interface.
+// 인터페이스를 다시 열어보세요.
 interface Point {
     distanceFromOrigin(point: Point): number;
 }
