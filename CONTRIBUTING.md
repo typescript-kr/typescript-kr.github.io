@@ -10,7 +10,7 @@
 * 번역 작업시 아래의 [번역 규칙](#번역-규칙)을 지켜야 합니다. **번역 규칙을 지키지 않았다고 판단되는 커밋은 PR받지 않습니다.**
 * 다른 참여자가 진행하고 있는 작업과 중복을 피하기 위해 작업 전 [이슈](https://github.com/typescript-kr/typescript-kr.github.io/issues)를 확인해 주세요.
 * 중복된 작업을 피하기 위해 작업 전, [이슈-번역 필요](https://github.com/typescript-kr/typescript-kr.github.io/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)에 번역할 범위, 예상 완료 날짜를 등록해 주세요.
-   > 번역 범위: 문서 전체 
+   > 번역 범위: 문서 전체
    > 예상 완료 날짜: 2020/00/00
 * 번역할 범위, 기간은 짧게 하는 것을 권장 드리며, 범위의 경우 최소 한 문단까지 가능합니다.
    > ex) Basic Types introduction만 번역
