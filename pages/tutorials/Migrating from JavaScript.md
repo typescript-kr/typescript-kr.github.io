@@ -1,6 +1,6 @@
 TypeScript는 공백 상태가 아닙니다.
 JavaScript 생태계를 바탕으로 구축되었으며, 오늘날 많은 JavaScript가 존재합니다.
-JavaScript 코드 베이스를 TypeScript로 변환하는 것은 다소 지루하기는 하지만 어렵지 않습니다.
+JavaScript 코드 베이스를 TypeScript로 변환하는 것은 다소 지루하지만 어렵진 않습니다.
 이 튜토리얼에서 어떻게 시작하는지 살펴보겠습니다.
 TypeScript 코드를 작성하기 위해 핸드북을 충분히 읽었다고 가정하고 설명하겠습니다.
 
