@@ -5,11 +5,13 @@
 ## 기여 방법
 
 * 경어체를 사용하여 번역합니다.
-* 번역의 진행 상황은 [이곳](./progress.md)에서 확인할 수 있습니다.
+* 번역의 진행 상황은 [이곳](https://github.com/typescript-kr/typescript-kr.github.io/projects/1)에서 확인할 수 있습니다.
 * 자주 사용되는 용어를 일관적으로 번역하기 위해 공통된 용어를 사용합니다. 공통된 용어는 [번역 용어](#번역-용어)를 참고하세요.
 * 번역 작업시 아래의 [번역 규칙](#번역-규칙)을 지켜야 합니다. **번역 규칙을 지키지 않았다고 판단되는 커밋은 PR받지 않습니다.**
 * 다른 참여자가 진행하고 있는 작업과 중복을 피하기 위해 작업 전 [이슈](https://github.com/typescript-kr/typescript-kr.github.io/issues)를 확인해 주세요.
-* 중복된 작업을 피하기 위해 작업 전, [이슈-번역 필요]()에 번역할 범위, 기간을 등록해 주세요.
+* 중복된 작업을 피하기 위해 작업 전, [이슈-번역 필요](https://github.com/typescript-kr/typescript-kr.github.io/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)에 번역할 범위, 예상 완료 날짜를 등록해 주세요.
+   > 번역 범위: 문서 전체
+   > 예상 완료 날짜: 2020/00/00
 * 번역할 범위, 기간은 짧게 하는 것을 권장 드리며, 범위의 경우 최소 한 문단까지 가능합니다.
    > ex) Basic Types introduction만 번역
 * 아래 [Pull Request 가이드](#pull-request)를 참고하여 PR합니다.
