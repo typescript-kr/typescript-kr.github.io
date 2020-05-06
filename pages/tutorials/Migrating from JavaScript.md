@@ -127,7 +127,7 @@ module.exports = {
 
 awesome-typescript-loader는 다른 로더가 `.js` 파일을 처리하기 전에 실행되어야 한다는 점을 유의하세요.
 
-웹 팩을 위한 또 다른 TypeScript 로더, [ts-loader](https://github.com/TypeStrong/ts-loader)도 같습니다.
+Webpack을 위한 또 다른 TypeScript 로더, [ts-loader](https://github.com/TypeStrong/ts-loader)도 같습니다.
 [여기](https://github.com/s-panferov/awesome-typescript-loader#differences-between-ts-loader)에서 둘 사이의 차이점을 읽을 수 있습니다.
 
 [리액트와 웹 팩 튜토리얼](./React%20&%20Webpack.md)에서 웹 팩 사용에 관한 예제를 볼 수 있습니다.
