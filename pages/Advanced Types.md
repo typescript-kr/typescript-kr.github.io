@@ -1,6 +1,6 @@
 # 목차 (Table of contents)
 
-[교차 타입 (Intersection Types)](#교차-타입-Intersection-Types)
+[교차 타입 (Intersection Types)](#교차-타입-intersection-types)
 
 [유니언 타입 (Union Types)](#유니언-타입-union-types)
 
