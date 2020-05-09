@@ -44,6 +44,13 @@
 * [Do's and Don'ts](pages/declaration files/Do's and Don'ts.md)
 * [Deep Dive](pages/declaration files/Deep Dive.md)
 * [Templates](pages/declaration files/Templates.md)
+    * [global-modifying-module.d.ts](pages/declaration files/templates/global-modifying-module.d.ts.md)
+    * [global-plugin.d.ts](pages/declaration files/templates/global-plugin.d.ts.md)
+    * [global.d.ts](pages/declaration files/templates/global.d.ts.md)
+    * [module-class.d.ts](pages/declaration files/templates/module-class.d.ts.md)
+    * [module-function.d.ts](pages/declaration files/templates/module-function.d.ts.md)
+    * [module-plugin.d.ts](pages/declaration files/templates/module-plugin.d.ts.md)
+    * [module.d.ts](pages/declaration files/templates/module.d.ts.md)
 * [Publishing](pages/declaration files/Publishing.md)
 * [Consumption](pages/declaration files/Consumption.md)
 
