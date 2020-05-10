@@ -1,7 +1,7 @@
 > 이번 섹션은 모듈에 대한 기초적인 지식을 전제로 합니다.
 더 많은 정보는 [모듈](./modules.md)을 보도록 하세요.
 
-*모듈 해석 (module resolution)* 은 컴파일러가 imoprt가 무엇을 참조하는지 알아내기 위해 사용하는 프로세스입니다.
+*모듈 해석 (module resolution)* 은 컴파일러가 import가 무엇을 참조하는지 알아내기 위해 사용하는 프로세스입니다.
 `import { a } from "moduleA"`같은 import 문을 생각해보세요;
 `a`의 모든 사용을 검사하기 위해, 컴파일러는 무엇을 참조하는지 정확히 알아야 할 필요가 있습니다, 그리고 `moduleA` 정의를 검사해야 할 필요가 있습니다.
 
@@ -9,14 +9,14 @@
 간단해 보이지만, `moduleA`는 `.ts`/`.tsx` 파일에 정의되어 있거나 혹은 코드가 의존하는 `.d.ts`에 정의되어 있을 수 있습니다.
 
 첫 번째로, 컴파일러는 가져온 모듈을 나타내는 파일의 위치를 찾으려고 할 것입니다.
-그렇게 하기 위해 컴파일러는 두 가지 다른 전략 중 하나를 따릅니다: [클래식](#클래식-classic) 혹은 [노드][#노드-node].
+그렇게 하기 위해 컴파일러는 두 가지 다른 전략 중 하나를 따릅니다: [클래식](#클래식-classic) 혹은 [노드](#노드-node).
 이 전략들은 컴파일러가 `moduleA`를 찾기 위해 *어디*를 봐야 할지 알려줍니다.
 
 만약 이 방법이 잘 안되고 모듈 이름이 비-상대적이라면 (`"moduleA`의 경우가 그렇습니다), 컴파일러는 [ambient 모듈 선언](./modules.md#Ambient-모듈-Ambient-modules)을 찾으려고 할 것입니다.
 비-상대적 import는 다음에 다룰 것입니다.
 
 마지막으로, 컴파일러가 모듈을 해석할 수 없다면, 오류 로그가 발생합니다.
-이 경우에, 오류는 `error TS2307: Cannot find module 'moduleA`와 같습니다.
+이 경우에, 오류는 `error TS2307: Cannot find module 'moduleA'`와 같습니다.
 
 ## 상대적 vs. 비-상대적 모듈 import (Relative vs. Non-relative module imports)
 
