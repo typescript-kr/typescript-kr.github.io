@@ -1,4 +1,4 @@
-## CLI로 사용하기
+## CLI로 사용하기 (Using the CLI)
 
 로컬에서 `tsc`를 실행하면 `tsconfig.json`가 정의한 가장 가까운 프로젝트를 컴파일하고, 원하는 파일 glob을 전달하여
 TypeScript 파일 집합을 컴파일할 수 있습니다.
@@ -17,7 +17,7 @@ tsc src/*.ts
 tsc --project tsconfig.json src/*.ts
 ```
 
-## 컴파일러 옵션
+## 컴파일러 옵션 (Compiler Options)
 
 tsconfig의 컴파일러 옵션에 대한 더 많은 정보를 찾는다면, 베타 TSConfig 레퍼런스를
 [v2 사이트](https://www.typescriptlang.org/v2/en/tsconfig)에서 확인하세요.
@@ -122,7 +122,7 @@ tsconfig의 컴파일러 옵션에 대한 더 많은 정보를 찾는다면, 베
 * <sup>[1]</sup> 이 옵션은 실험단계입니다.
 * <sup>[2]</sup> 이 옵션은 `tsconfig.json`에서만 허용되며 커맨드 라인에서는 허용되지 않습니다.
 
-## 관련사항
+## 관련사항 (Related)
 
 * [`tsconfig.json`](./tsconfig.json.md) 파일에서 컴파일러 옵션 설정하기
 * [MSBuild projects](./Compiler-Options-in-MSBuild.md) 프로젝트에서 컴파일러 옵션 설정하기
