@@ -52,7 +52,7 @@ tsconfig의 컴파일러 옵션에 대한 더 많은 정보를 찾는다면, 베
 `--generateCpuProfile`                         | `string`  | `profile.cpuprofile`           | 주어진 경로에 cpu 프로필을 생성합니다. 파일 경로 대신 존재하는 디렉터리 이름을 전달하면 타임스탬프 이름이 지정된 프로필이 그 디렉터리에 대신 생성됩니다.
 `--help`<br/>`-h`                              |           |                                | 도움말을 출력합니다.
 `--importHelpers`                              | `boolean` | `false`                        | [`tslib`](https://www.npmjs.com/package/tslib)에서 방출된 헬퍼를 import 합니다.  (예. `__extends`, `__rest`, 등..)
-`--importsNotUsedAsValues`                     | `string`  | `remove`                       | 타입을 위해서만 사용하는 import를 위한 내보내기/검사 동작을 지정합니다. `"remove"`와 `"preserve"`는 사이드 이펙트를 위해 사용하지 않는 import를 내보낼지 지정하고, `"erorr"`는 타입을 위해서만 사용하는 import는 `import type`으로 작성하게 강제합니다.
+`--importsNotUsedAsValues`                     | `string`  | `remove`                       | 타입을 위해서만 사용하는 import를 위한 내보내기/검사 동작을 지정합니다. `"remove"`와 `"preserve"`는 사이드 이펙트를 위해 사용하지 않는 import를 내보낼지 지정하고, `"error"`는 타입을 위해서만 사용하는 import는 `import type`으로 작성하게 강제합니다.
 `--incremental`                                | `boolean` | `composite`이 켜져있으면 `true` 아니면 `false` | 이전 컴파일에서 디스크의 파일로 정보를 읽거나/기록하여 증분 컴파일을 활성화합니다. 이 파일은 `--tsBuildInfoFile` 플래그로 컨트롤합니다.
 `--inlineSourceMap`                            | `boolean` | `false`                        | 별도의 파일 대신 소스 맵으로 단일 파일을 내보냅니다.
 `--inlineSources`                              | `boolean` | `false`                        | 단일 파일 내에서 소스 맵과 함께 소스를 내보냅니다. `--inlineSourceMap` 또는 `--sourceMap`을 설정해야 합니다.
