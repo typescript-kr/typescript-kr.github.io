@@ -8,7 +8,7 @@ TypeScript를 설치하는 방법에는 크게 두 가지가 있습니다:
 * TypeScript의 Visual Studio 플러그인 설치
 
 Visual Studio 2017과 Visual Studio 2015 Update 3는 기본적으로 Typescript를 포함하고 있습니다.
-만약 TypeScript를 Visual Studio과 함께 설치하지 않았다면 [이곳에서 다운로드](/#download-links)할 수 있습니다.
+만약 TypeScript를 Visual Studio과 함께 설치하지 않았다면 [이곳에서 다운로드](https://www.typescriptlang.org/download)할 수 있습니다.
 
 NPM 사용자의 경우:
 
