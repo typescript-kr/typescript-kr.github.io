@@ -31,7 +31,7 @@ tsconfig의 컴파일러 옵션에 대한 더 많은 정보를 찾는다면, 베
 `--allowUnusedLabels`                          | `boolean` | `false`                        | 사용되지 않는 레이블에 대한 오류를 보고하지 않습니다.
 `--alwaysStrict`                               | `boolean` | `false`                        | strict mode에서 파싱하고 각 소스 파일에 대해 `"use strict"`를 내보냅니다.
 `--assumeChangesOnlyAffectDirectDependencies`  | `boolean` | `false`                        | 파일 안에서의 변경은 파일이 직접 의존하는 파일에만 영향을 미친다고 가정하고 '--incremental' 및 '-watch'로 다시 컴파일 합니다.
-`--baseUrl`                                    | `string`  |                                | 비-상대적 모듈 이름을 해석하기 위한 기본 디렉터리. 자세한 내용은 [모듈 해석 문서](./Module Resolution.md#base-url)을 참조하세요.
+`--baseUrl`                                    | `string`  |                                | 비-상대적 모듈 이름을 해석하기 위한 기본 디렉터리. 자세한 내용은 [모듈 해석 문서](./Module%20Resolution.md#base-url)을 참조하세요.
 `--build`<br/>`-b`                             | `boolean` | `false`                        | [프로젝트 레퍼런스](./Project%20References.md)에서 지정한 이 프로젝트와 프로젝트의 모든 의존성을 빌드 합니다. 이 플래그는 이 페이지의 다른 플래그들과는 호환되지 않음에 유의하세요 자세한 내용은 [여기](./Project%20References.md)를 보세요.
 `--charset`                                    | `string`  | `"utf8"`                       | 입력 파일의 문자 집합입니다.
 `--checkJs`                                    | `boolean` | `false`                        | `.js` 파일에 오류를 보고합니다. `--allowJs`와 함께 사용하세요.
