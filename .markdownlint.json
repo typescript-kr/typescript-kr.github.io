@@ -21,9 +21,7 @@
   "list-marker-space": true,
   "blanks-around-fences": true,
   "blanks-around-lists": false,
-  "no-bare-urls": true,
   "hr-style": "---",
   "no-space-in-emphasis": true,
-  "no-space-in-links": true,
-  "fenced-code-language": true
+  "no-space-in-links": true
 }
