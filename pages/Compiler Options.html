@@ -571,6 +571,103 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.6.1" data-path="declaration files/templates/global-modifying-module.d.ts.html">
+            
+                <a href="declaration files/templates/global-modifying-module.d.ts.html">
+            
+                    
+                    global-modifying-module.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.2" data-path="declaration files/templates/global-plugin.d.ts.html">
+            
+                <a href="declaration files/templates/global-plugin.d.ts.html">
+            
+                    
+                    global-plugin.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.3" data-path="declaration files/templates/global.d.ts.html">
+            
+                <a href="declaration files/templates/global.d.ts.html">
+            
+                    
+                    global.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.4" data-path="declaration files/templates/module-class.d.ts.html">
+            
+                <a href="declaration files/templates/module-class.d.ts.html">
+            
+                    
+                    module-class.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.5" data-path="declaration files/templates/module-function.d.ts.html">
+            
+                <a href="declaration files/templates/module-function.d.ts.html">
+            
+                    
+                    module-function.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.6" data-path="declaration files/templates/module-plugin.d.ts.html">
+            
+                <a href="declaration files/templates/module-plugin.d.ts.html">
+            
+                    
+                    module-plugin.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.7" data-path="declaration files/templates/module.d.ts.html">
+            
+                <a href="declaration files/templates/module.d.ts.html">
+            
+                    
+                    module.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="4.7" data-path="declaration files/Publishing.html">
@@ -749,7 +846,24 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;-&#xC635;&#xC158;">&#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC635;&#xC158;</h2>
+                                <h2 id="cli&#xB85C;-&#xC0AC;&#xC6A9;&#xD558;&#xAE30;-using-the-cli">CLI&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; (Using the CLI)</h2>
+<p>&#xB85C;&#xCEEC;&#xC5D0;&#xC11C; <code>tsc</code>&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xBA74; <code>tsconfig.json</code>&#xAC00; &#xC815;&#xC758;&#xD55C; &#xAC00;&#xC7A5; &#xAC00;&#xAE4C;&#xC6B4; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xCEF4;&#xD30C;&#xC77C;&#xD558;&#xACE0;, &#xC6D0;&#xD558;&#xB294; &#xD30C;&#xC77C; glob&#xC744; &#xC804;&#xB2EC;&#xD558;&#xC5EC;
+TypeScript &#xD30C;&#xC77C; &#xC9D1;&#xD569;&#xC744; &#xCEF4;&#xD30C;&#xC77C;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-sh"><span class="cm-comment"># tsconfig.json&#xC5D0; &#xB300;&#xD55C; fs&#xB97C; &#xC5ED;&#xBC29;&#xD5A5;&#xC73C;&#xB85C; &#xAC80;&#xD1A0;&#xD558;&#xC5EC; &#xCEF4;&#xD30C;&#xC77C; &#xC2E4;&#xD589;</span>
+tsc
+
+<span class="cm-comment"># &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xAE30;&#xBCF8;&#xAC12;&#xC73C;&#xB85C; index.ts&#xB9CC; &#xD2B8;&#xB79C;&#xC2A4;&#xD30C;&#xC77C;</span>
+tsc index.ts
+
+<span class="cm-comment"># &#xAE30;&#xBCF8; &#xC124;&#xC815;&#xC73C;&#xB85C; src &#xD3F4;&#xB354; &#xC548;&#xC5D0; &#xBAA8;&#xB4E0; .ts &#xD30C;&#xC77C;&#xC744; &#xD2B8;&#xB79C;&#xC2A4;&#xD30C;&#xC77C;</span>
+tsc src/*.ts
+
+<span class="cm-comment"># tsconfig.json&#xC758; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC124;&#xC815;&#xC73C;&#xB85C; src &#xD3F4;&#xB354; &#xC548;&#xC5D0; &#xBAA8;&#xB4E0; .ts &#xD30C;&#xC77C;&#xC744; &#xD2B8;&#xB79C;&#xC2A4;&#xD30C;&#xC77C;</span>
+tsc <span class="cm-attribute">--project</span> tsconfig.json src/*.ts
+</code></pre>
+<h2 id="&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;-&#xC635;&#xC158;-compiler-options">&#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC635;&#xC158; (Compiler Options)</h2>
+<p>tsconfig&#xC758; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC635;&#xC158;&#xC5D0; &#xB300;&#xD55C; &#xB354; &#xB9CE;&#xC740; &#xC815;&#xBCF4;&#xB97C; &#xCC3E;&#xB294;&#xB2E4;&#xBA74;, &#xBCA0;&#xD0C0; TSConfig &#xB808;&#xD37C;&#xB7F0;&#xC2A4;&#xB97C;
+<a href="https://www.typescriptlang.org/v2/en/tsconfig" target="_blank">v2 &#xC0AC;&#xC774;&#xD2B8;</a>&#xC5D0;&#xC11C; &#xD655;&#xC778;&#xD558;&#xC138;&#xC694;.</p>
 <table>
 <thead>
 <tr>
@@ -764,49 +878,73 @@
 <td><code>--allowJs</code></td>
 <td><code>boolean</code></td>
 <td><code>false</code></td>
-<td>JavaScript &#xD30C;&#xC77C; &#xCEF4;&#xD30C;&#xC77C; &#xD5C8;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;</td>
+<td>JavaScript &#xD30C;&#xC77C;&#xC758; &#xCEF4;&#xD30C;&#xC77C;&#xC744; &#xD5C8;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;</td>
 </tr>
 <tr>
 <td><code>--allowSyntheticDefaultImports</code></td>
 <td><code>boolean</code></td>
-<td><code>module === &quot;system&quot;</code></td>
-<td>default export&#xAC00; &#xC5C6;&#xB294; &#xBAA8;&#xB4C8;&#xC5D0;&#xC11C; default imports&#xB97C; &#xD5C8;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xCF54;&#xB4DC; &#xBC29;&#xCD9C;&#xC5D0;&#xB294; &#xC601;&#xD5A5;&#xC744; &#xC8FC;&#xC9C0; &#xC54A;&#xC73C;&#xBA70; &#xB2E8;&#xC9C0; &#xD0C0;&#xC785; &#xAC80;&#xC0AC;&#xC5D0; &#xBD88;&#xACFC;&#xD569;&#xB2C8;&#xB2E4;.</td>
+<td><code>module === &quot;system&quot;</code> &#xB610;&#xB294; <code>--esModuleInterop</code></td>
+<td>default export&#xAC00; &#xC5C6;&#xB294; &#xBAA8;&#xB4C8;&#xC5D0;&#xC11C; default imports&#xB97C; &#xD5C8;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xCF54;&#xB4DC; &#xBC29;&#xCD9C;&#xC5D0;&#xB294; &#xC601;&#xD5A5;&#xC744; &#xC8FC;&#xC9C0; &#xC54A;&#xC73C;&#xBA70;, &#xD0C0;&#xC785; &#xAC80;&#xC0AC;&#xB9CC; &#xC218;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><code>--allowUmdGlobalAccess</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>&#xBAA8;&#xB4C8;&#xC5D0;&#xC11C; &#xC804;&#xC5ED; UMD &#xC811;&#xADFC;&#xC744; &#xD5C8;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td><code>--allowUnreachableCode</code></td>
 <td><code>boolean</code></td>
 <td><code>false</code></td>
-<td>&#xC5F0;&#xACB0;&#xD560; &#xC218; &#xC5C6;&#xB294; &#xCF54;&#xB4DC;&#xC5D0; &#xB300;&#xD55C; &#xC624;&#xB958;&#xB97C; &#xBCF4;&#xACE0;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
+<td>&#xB3C4;&#xB2EC;&#xD560; &#xC218; &#xC5C6;&#xB294; &#xCF54;&#xB4DC;&#xC5D0; &#xB300;&#xD55C; &#xC624;&#xB958;&#xB97C; &#xBCF4;&#xACE0;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td><code>--allowUnusedLabels</code></td>
 <td><code>boolean</code></td>
 <td><code>false</code></td>
-<td>&#xC0AC;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xB294; &#xB808;&#xC774;&#xBE14;&#xC5D0; &#xB300;&#xD55C; &#xC624;&#xB958; &#xBCF4;&#xACE0;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC0AC;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xB294; &#xB808;&#xC774;&#xBE14;&#xC5D0; &#xB300;&#xD55C; &#xC624;&#xB958;&#xB97C; &#xBCF4;&#xACE0;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td><code>--alwaysStrict</code></td>
 <td><code>boolean</code></td>
 <td><code>false</code></td>
-<td>&#xAC01; &#xC18C;&#xC2A4; &#xD30C;&#xC77C;&#xC5D0; &#xB300;&#xD574; strict &#xBAA8;&#xB4DC;&#xB85C; &#xAD6C;&#xBB38; &#xD30C;&#xC2F1;&#xC744; &#xD558;&#xACE0; <code>&quot;use strict&quot;</code>&#xC744; &#xB0B4;&#xBCF4;&#xB0C5;&#xB2C8;&#xB2E4;.</td>
+<td>strict mode&#xC5D0;&#xC11C; &#xD30C;&#xC2F1;&#xD558;&#xACE0; &#xAC01; &#xC18C;&#xC2A4; &#xD30C;&#xC77C;&#xC5D0; &#xB300;&#xD574; <code>&quot;use strict&quot;</code>&#xB97C; &#xB0B4;&#xBCF4;&#xB0C5;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><code>--assumeChangesOnlyAffectDirectDependencies</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>&#xD30C;&#xC77C; &#xC548;&#xC5D0;&#xC11C;&#xC758; &#xBCC0;&#xACBD;&#xC740; &#xD30C;&#xC77C;&#xC774; &#xC9C1;&#xC811; &#xC758;&#xC874;&#xD558;&#xB294; &#xD30C;&#xC77C;&#xC5D0;&#xB9CC; &#xC601;&#xD5A5;&#xC744; &#xBBF8;&#xCE5C;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD558;&#xACE0; &apos;--incremental&apos; &#xBC0F; &apos;-watch&apos;&#xB85C; &#xB2E4;&#xC2DC; &#xCEF4;&#xD30C;&#xC77C; &#xD569;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td><code>--baseUrl</code></td>
 <td><code>string</code></td>
 <td></td>
-<td>&#xBE44;-&#xC0C1;&#xB300;&#xC801; &#xBAA8;&#xB4C8; &#xC774;&#xB984;&#xC744; &#xD574;&#xC11D;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xAE30;&#xBCF8; &#xB514;&#xB809;&#xD1A0;&#xB9AC;. &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="Module%20Resolution.md#base-url">&#xBAA8;&#xB4C8; &#xD574;&#xC11D; &#xBB38;&#xC11C;</a>&#xC744; &#xCC38;&#xC870;&#xD558;&#xC138;&#xC694;.</td>
+<td>&#xBE44;-&#xC0C1;&#xB300;&#xC801; &#xBAA8;&#xB4C8; &#xC774;&#xB984;&#xC744; &#xD574;&#xC11D;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xAE30;&#xBCF8; &#xB514;&#xB809;&#xD130;&#xB9AC;. &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="Module%20Resolution.md#base-url">&#xBAA8;&#xB4C8; &#xD574;&#xC11D; &#xBB38;&#xC11C;</a>&#xC744; &#xCC38;&#xC870;&#xD558;&#xC138;&#xC694;.</td>
+</tr>
+<tr>
+<td><code>--build</code><br><code>-b</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td><a href="Project%20References.md">&#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xB808;&#xD37C;&#xB7F0;&#xC2A4;</a>&#xC5D0;&#xC11C; &#xC9C0;&#xC815;&#xD55C; &#xC774; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC640; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC758; &#xBAA8;&#xB4E0; &#xC758;&#xC874;&#xC131;&#xC744; &#xBE4C;&#xB4DC; &#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xD50C;&#xB798;&#xADF8;&#xB294; &#xC774; &#xD398;&#xC774;&#xC9C0;&#xC758; &#xB2E4;&#xB978; &#xD50C;&#xB798;&#xADF8;&#xB4E4;&#xACFC;&#xB294; &#xD638;&#xD658;&#xB418;&#xC9C0; &#xC54A;&#xC74C;&#xC5D0; &#xC720;&#xC758;&#xD558;&#xC138;&#xC694; &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="Project%20References.md">&#xC5EC;&#xAE30;</a>&#xB97C; &#xBCF4;&#xC138;&#xC694;.</td>
 </tr>
 <tr>
 <td><code>--charset</code></td>
 <td><code>string</code></td>
 <td><code>&quot;utf8&quot;</code></td>
-<td>&#xC785;&#xB825; &#xD30C;&#xC77C;&#xC758; &#xBB38;&#xC790;&#xC5F4; &#xC9D1;&#xD569;&#xC785;&#xB2C8;&#xB2E4; (&#xC778;&#xCF54;&#xB529; &#xAD00;&#xB828;).</td>
+<td>&#xC785;&#xB825; &#xD30C;&#xC77C;&#xC758; &#xBB38;&#xC790; &#xC9D1;&#xD569;&#xC785;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td><code>--checkJs</code></td>
 <td><code>boolean</code></td>
 <td><code>false</code></td>
 <td><code>.js</code> &#xD30C;&#xC77C;&#xC5D0; &#xC624;&#xB958;&#xB97C; &#xBCF4;&#xACE0;&#xD569;&#xB2C8;&#xB2E4;. <code>--allowJs</code>&#xC640; &#xD568;&#xAED8; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;.</td>
+</tr>
+<tr>
+<td><code>--composite</code></td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>TypeScript&#xAC00; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xCEF4;&#xD30C;&#xC77C;&#xD558;&#xAE30; &#xC704;&#xD574; &#xCC38;&#xC870;&#xB41C; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC758; &#xCD9C;&#xB825;&#xC744; &#xCC3E;&#xC744; &#xC704;&#xCE58;&#xB97C; &#xACB0;&#xC815;&#xD560; &#xC218; &#xC788;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD569;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td><code>--declaration</code><br><code>-d</code></td>
@@ -821,6 +959,12 @@
 <td>&#xC0DD;&#xC131;&#xB41C; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xC758; &#xCD9C;&#xB825; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC785;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
+<td><code>--declarationMap</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>&#xD574;&#xB2F9;&#xD558;&#xB294; &apos;.d.ts&apos;&#xD30C;&#xC77C; &#xAC01;&#xAC01;&#xC5D0; &#xB300;&#xD55C; &#xC18C;&#xC2A4; &#xB9F5;&#xC744; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
 <td><code>--diagnostics</code></td>
 <td><code>boolean</code></td>
 <td><code>false</code></td>
@@ -830,13 +974,13 @@
 <td><code>--disableSizeLimit</code></td>
 <td><code>boolean</code></td>
 <td><code>false</code></td>
-<td>JavaScript &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC758; &#xC0AC;&#xC774;&#xC988; &#xC81C;&#xD55C;&#xC744; &#xC911;&#xC9C0;&#xD569;&#xB2C8;&#xB2E4;.</td>
+<td>JavaScript &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC758; &#xC0AC;&#xC774;&#xC988; &#xC81C;&#xD55C;&#xC744; &#xBE44;&#xD65C;&#xC131;&#xD654;&#xD569;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td><code>--downlevelIteration</code></td>
 <td><code>boolean</code></td>
 <td><code>false</code></td>
-<td>ES5 &#xB610;&#xB294; ES3&#xB97C; &#xB300;&#xC0C1;&#xC73C;&#xB85C; &#xD560; &#xB54C; <code>for..of</code>, spread &#xBC0F; destructuring &#xBC18;&#xBCF5; &#xAC00;&#xB2A5;&#xD55C; iterables &#xC9C0;&#xC6D0;&#xC744; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.</td>
+<td>ES5 &#xB610;&#xB294; ES3&#xB97C; &#xB300;&#xC0C1;&#xC73C;&#xB85C; &#xD560; &#xB54C; <code>for..of</code>, &#xC2A4;&#xD504;&#xB808;&#xB4DC;&#xC640; &#xAD6C;&#xC870;&#xBD84;&#xD574;&#xD560;&#xB2F9;&#xC5D0;&#xC11C; &#xC774;&#xD130;&#xB7EC;&#xBE14;&#xC744; &#xC644;&#xC804;&#xD788; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td><code>--emitBOM</code></td>
@@ -845,10 +989,22 @@
 <td>&#xCD9C;&#xB825; &#xD30C;&#xC77C;&#xC758; &#xC2DC;&#xC791; &#xBD80;&#xBD84;&#xC5D0; UTF-8 &#xBC14;&#xC774;&#xD2B8; &#xC21C;&#xC11C;&#xD45C;(BOM)&#xB97C; &#xB0B4;&#xBCF4;&#xB0C5;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
+<td><code>--emitDeclarationOnly</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>&apos;.d.ts&apos; &#xC120;&#xC5B8; &#xD30C;&#xC77C;&#xB9CC; &#xB0B4;&#xBCF4;&#xB0C5;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
 <td><code>--emitDecoratorMetadata</code><sup>[1]</sup></td>
 <td><code>boolean</code></td>
 <td><code>false</code></td>
-<td>&#xC18C;&#xC2A4;&#xC5D0; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; &#xC120;&#xC5B8;&#xC5D0; &#xB300;&#xD55C; &#xC124;&#xACC4; &#xD0C0;&#xC785; &#xBA54;&#xD0C0; &#xB370;&#xC774;&#xD130;&#xB97C; &#xB0B4;&#xBCF4;&#xB0C5;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="https://github.com/Microsoft/TypeScript/issues/2577" target="_blank">#2577 &#xC774;&#xC288;</a>&#xC744; &#xCC38;&#xC870;&#xD558;&#xC138;&#xC694;.</td>
+<td>&#xC18C;&#xC2A4;&#xC5D0; &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130; &#xC120;&#xC5B8;&#xC5D0; &#xB300;&#xD55C; &#xC124;&#xACC4;-&#xD0C0;&#xC785; &#xBA54;&#xD0C0; &#xB370;&#xC774;&#xD130;&#xB97C; &#xB0B4;&#xBCF4;&#xB0C5;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="https://github.com/Microsoft/TypeScript/issues/2577" target="_blank">#2577 &#xC774;&#xC288;</a>&#xC744; &#xCC38;&#xC870;&#xD558;&#xC138;&#xC694;.</td>
+</tr>
+<tr>
+<td><code>--esModuleInterop</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>&#xB7F0;&#xD0C0;&#xC784; &#xBC14;&#xBCA8; &#xC0DD;&#xD0DC;&#xACC4; &#xD638;&#xD658;&#xC131;&#xC744; &#xC704;&#xD55C; <code>__importStar</code>&#xC640; <code>__importDefault</code> &#xD5EC;&#xD37C;&#xB97C; &#xB0B4;&#xBCF4;&#xB0B4;&#xACE0; &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C; &#xD638;&#xD658;&#xC131;&#xC744; &#xC704;&#xD574; <code>--allowSyntheticDefaultImports</code>&#xB97C; &#xD65C;&#xC131;&#xD654;&#xD569;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td><code>--experimentalDecorators</code><sup>[1]</sup></td>
@@ -857,10 +1013,22 @@
 <td>ES &#xB370;&#xCF54;&#xB808;&#xC774;&#xD130;&#xC5D0; &#xB300;&#xD55C; &#xC2E4;&#xD5D8;&#xC801;&#xC778; &#xC9C0;&#xC6D0;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB3C4;&#xB85D; &#xD65C;&#xC131;&#xD654;&#xD569;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
+<td><code>--extendedDiagnostics</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>&#xC790;&#xC138;&#xD55C; &#xC9C4;&#xB2E8; &#xC815;&#xBCF4;&#xB97C; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;</td>
+</tr>
+<tr>
 <td><code>--forceConsistentCasingInFileNames</code></td>
 <td><code>boolean</code></td>
 <td><code>false</code></td>
-<td>&#xB3D9;&#xC77C;&#xD55C; &#xD30C;&#xC77C;&#xC5D0; &#xB300;&#xD574; &#xC77C;&#xAD00;&#xC131;&#xC774; &#xC5C6;&#xB294; &#xCC38;&#xC870;&#xB294; &#xD5C8;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
+<td>&#xB3D9;&#xC77C; &#xD30C;&#xC77C; &#xCC38;&#xC870;&#xC5D0; &#xB300;&#xD574; &#xC77C;&#xAD00;&#xC131; &#xC5C6;&#xB294; &#xB300;&#xC18C;&#xBB38;&#xC790;&#xB97C; &#xBE44;&#xD65C;&#xC131;&#xD654;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><code>--generateCpuProfile</code></td>
+<td><code>string</code></td>
+<td><code>profile.cpuprofile</code></td>
+<td>&#xC8FC;&#xC5B4;&#xC9C4; &#xACBD;&#xB85C;&#xC5D0; cpu &#xD504;&#xB85C;&#xD544;&#xC744; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;. &#xD30C;&#xC77C; &#xACBD;&#xB85C; &#xB300;&#xC2E0; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xB514;&#xB809;&#xD130;&#xB9AC; &#xC774;&#xB984;&#xC744; &#xC804;&#xB2EC;&#xD558;&#xBA74; &#xD0C0;&#xC784;&#xC2A4;&#xD0EC;&#xD504; &#xC774;&#xB984;&#xC774; &#xC9C0;&#xC815;&#xB41C; &#xD504;&#xB85C;&#xD544;&#xC774; &#xADF8; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xC5D0; &#xB300;&#xC2E0; &#xC0DD;&#xC131;&#xB429;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td><code>--help</code><br><code>-h</code></td>
@@ -872,7 +1040,19 @@
 <td><code>--importHelpers</code></td>
 <td><code>boolean</code></td>
 <td><code>false</code></td>
-<td>&#xBC29;&#xCD9C;&#xB41C; &#xD5EC;&#xD37C;&#xB97C; &#xC784;&#xD3EC;&#xD2B8;&#xD569;&#xB2C8;&#xB2E4;. <a href="https://www.npmjs.com/package/tslib" target="_blank"><code>tslib</code></a>&#xB85C;&#xBD80;&#xD130; (&#xC608;. <code>__extends</code>, <code>__rest</code>, &#xB4F1;..)</td>
+<td><a href="https://www.npmjs.com/package/tslib" target="_blank"><code>tslib</code></a>&#xC5D0;&#xC11C; &#xBC29;&#xCD9C;&#xB41C; &#xD5EC;&#xD37C;&#xB97C; import &#xD569;&#xB2C8;&#xB2E4;.  (&#xC608;. <code>__extends</code>, <code>__rest</code>, &#xB4F1;..)</td>
+</tr>
+<tr>
+<td><code>--importsNotUsedAsValues</code></td>
+<td><code>string</code></td>
+<td><code>remove</code></td>
+<td>&#xD0C0;&#xC785;&#xC744; &#xC704;&#xD574;&#xC11C;&#xB9CC; &#xC0AC;&#xC6A9;&#xD558;&#xB294; import&#xB97C; &#xC704;&#xD55C; &#xB0B4;&#xBCF4;&#xB0B4;&#xAE30;/&#xAC80;&#xC0AC; &#xB3D9;&#xC791;&#xC744; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. <code>&quot;remove&quot;</code>&#xC640; <code>&quot;preserve&quot;</code>&#xB294; &#xC0AC;&#xC774;&#xB4DC; &#xC774;&#xD399;&#xD2B8;&#xB97C; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xB294; import&#xB97C; &#xB0B4;&#xBCF4;&#xB0BC;&#xC9C0; &#xC9C0;&#xC815;&#xD558;&#xACE0;, <code>&quot;error&quot;</code>&#xB294; &#xD0C0;&#xC785;&#xC744; &#xC704;&#xD574;&#xC11C;&#xB9CC; &#xC0AC;&#xC6A9;&#xD558;&#xB294; import&#xB294; <code>import type</code>&#xC73C;&#xB85C; &#xC791;&#xC131;&#xD558;&#xAC8C; &#xAC15;&#xC81C;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><code>--incremental</code></td>
+<td><code>boolean</code></td>
+<td><code>composite</code>&#xC774; &#xCF1C;&#xC838;&#xC788;&#xC73C;&#xBA74; <code>true</code> &#xC544;&#xB2C8;&#xBA74; <code>false</code></td>
+<td>&#xC774;&#xC804; &#xCEF4;&#xD30C;&#xC77C;&#xC5D0;&#xC11C; &#xB514;&#xC2A4;&#xD06C;&#xC758; &#xD30C;&#xC77C;&#xB85C; &#xC815;&#xBCF4;&#xB97C; &#xC77D;&#xAC70;&#xB098;/&#xAE30;&#xB85D;&#xD558;&#xC5EC; &#xC99D;&#xBD84; &#xCEF4;&#xD30C;&#xC77C;&#xC744; &#xD65C;&#xC131;&#xD654;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xD30C;&#xC77C;&#xC740; <code>--tsBuildInfoFile</code> &#xD50C;&#xB798;&#xADF8;&#xB85C; &#xCEE8;&#xD2B8;&#xB864;&#xD569;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td><code>--inlineSourceMap</code></td>
@@ -896,13 +1076,13 @@
 <td><code>--isolatedModules</code></td>
 <td><code>boolean</code></td>
 <td><code>false</code></td>
-<td>&#xAC01; &#xD30C;&#xC77C;&#xC744; &#xBCC4;&#xB3C4;&#xC758; &#xBAA8;&#xB4C8;&#xB85C; &#xBD88;&#xB9AC;&#xD558;&#xC5EC; &#xBCC0;&#xD658;&#xD569;&#xB2C8;&#xB2E4; (&quot;ts.transpileModule&quot;&#xACFC; &#xBE44;&#xC2B7;&#xD569;&#xB2C8;&#xB2E4;).</td>
+<td>&#xCD94;&#xAC00; &#xAC80;&#xC0AC;&#xB97C; &#xC218;&#xD589;&#xD558;&#xC5EC; &#xBCC4;&#xB3C4;&#xC758; &#xCEF4;&#xD30C;&#xC77C; (&#xC608;&#xB97C; &#xB4E4;&#xC5B4; <a href="https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API#a-simple-transform-function" target="_blank"><code>&#xD2B8;&#xB79C;&#xC2A4;&#xD30C;&#xC77C;&#xB41C; &#xBAA8;&#xB4C8;</code></a> &#xD639;&#xC740; <a href="https://babeljs.io/docs/en/babel-plugin-transform-typescript" target="_blank">@babel/plugin-transform-typescript</a>) &#xC774; &#xC548;&#xC804;&#xD55C;&#xC9C0; &#xD655;&#xC778;&#xD569;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td><code>--jsx</code></td>
 <td><code>string</code></td>
 <td><code>&quot;Preserve&quot;</code></td>
-<td><code>.tsx</code> &#xD30C;&#xC77C;&#xC5D0;&#xC11C; JSX &#xC9C0;&#xC6D0;: <code>&quot;React&quot;</code> &#xB610;&#xB294; <code>&quot;Preserve&quot;</code>. <a href="JSX.html">JSX</a>&#xB97C; &#xD655;&#xC778;&#xD558;&#xC138;&#xC694;.</td>
+<td><code>.tsx</code> &#xD30C;&#xC77C;&#xC5D0;&#xC11C; JSX &#xC9C0;&#xC6D0;: <code>&quot;React&quot;</code>, <code>&quot;Preserve&quot;</code>, <code>&quot;react-native&quot;</code>. <a href="JSX.html">JSX</a>&#xB97C; &#xD655;&#xC778;&#xD558;&#xC138;&#xC694;.</td>
 </tr>
 <tr>
 <td><code>--jsxFactory</code></td>
@@ -911,10 +1091,22 @@
 <td>&#xB9AC;&#xC561;&#xD2B8; JSX &#xBC29;&#xCD9C;&#xC744; &#xB300;&#xC0C1;&#xC73C;&#xB85C; &#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xD560; JSX &#xD329;&#xD1A0;&#xB9AC; &#xD568;&#xC218;&#xB97C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. &#xC608;: <code>React.createElement</code> &#xB610;&#xB294; <code>h</code>.</td>
 </tr>
 <tr>
+<td><code>--keyofStringsOnly</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td><code>keyof</code>&#xB97C; &#xBB38;&#xC790;&#xC5F4; &#xAC12;&#xC73C;&#xB85C; &#xB41C; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xC774;&#xB984;&#xC5D0;&#xB9CC; &#xC801;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4; (&#xC22B;&#xC790;&#xB098; &#xC2EC;&#xBC8C;&#xC5D0;&#xC11C;&#xB294; &#xC548;&#xB428;).</td>
+</tr>
+<tr>
+<td><code>--useDefineForClassFields</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>&#xD074;&#xB798;&#xC2A4; &#xD544;&#xB4DC;&#xB97C; ECMAScript-&#xD45C;&#xC900; &#xC2DC;&#xB9E8;&#xD2F1;&#xC73C;&#xB85C; &#xB0B4;&#xBCF4;&#xB0C5;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
 <td><code>--lib</code></td>
 <td><code>string[]</code></td>
 <td></td>
-<td>&#xCEF4;&#xD30C;&#xC77C;&#xC5D0; &#xD3EC;&#xD568;&#xB420; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xD30C;&#xC77C; &#xBAA9;&#xB85D;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xAC00;&#xB2A5;&#xD55C; &#xAC12;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;:  <br>&#x25BA; <code>ES5</code> <br>&#x25BA; <code>ES6</code> <br>&#x25BA; <code>ES2015</code> <br>&#x25BA; <code>ES7</code> <br>&#x25BA; <code>ES2016</code> <br>&#x25BA; <code>ES2017</code> <br>&#x25BA; <code>ESNext</code> <br>&#x25BA; <code>DOM</code> <br>&#x25BA; <code>DOM.Iterable</code> <br>&#x25BA; <code>WebWorker</code> <br>&#x25BA; <code>ScriptHost</code> <br>&#x25BA; <code>ES2015.Core</code> <br>&#x25BA; <code>ES2015.Collection</code> <br>&#x25BA; <code>ES2015.Generator</code> <br>&#x25BA; <code>ES2015.Iterable</code> <br>&#x25BA; <code>ES2015.Promise</code> <br>&#x25BA; <code>ES2015.Proxy</code> <br>&#x25BA; <code>ES2015.Reflect</code> <br>&#x25BA; <code>ES2015.Symbol</code> <br>&#x25BA; <code>ES2015.Symbol.WellKnown</code> <br>&#x25BA; <code>ES2016.Array.Include</code> <br>&#x25BA; <code>ES2017.object</code> <br>&#x25BA; <code>ES2017.SharedMemory</code> <br>&#x25BA; <code>ES2017.TypedArrays</code> <br>&#x25BA; <code>esnext.asynciterable</code> <br>&#x25BA; <code>esnext.promise</code> <br><br> &#xC8FC;&#xC758;&#xC0AC;&#xD56D;: <code>--lib</code>&#xAC00; &#xC9C0;&#xC815;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC758; &#xAE30;&#xBCF8; &#xB9AC;&#xC2A4;&#xD2B8;&#xAC00; &#xC0BD;&#xC785;&#xB429;&#xB2C8;&#xB2E4;. &#xC8FC;&#xC785;&#xB418;&#xB294; &#xAE30;&#xBCF8; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;:  <br> &#x25BA; <code>--target ES5</code>: <code>DOM,ES5,ScriptHost</code><br>  &#x25BA; <code>--target ES6</code>: <code>DOM,ES6,DOM.Iterable,ScriptHost</code></td>
+<td>&#xCEF4;&#xD30C;&#xC77C;&#xC5D0; &#xD3EC;&#xD568;&#xB420; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xD30C;&#xC77C; &#xBAA9;&#xB85D;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xAC00;&#xB2A5;&#xD55C; &#xAC12;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;:  <br>&#x25BA; <code>ES5</code> <br>&#x25BA; <code>ES6</code> <br>&#x25BA; <code>ES2015</code> <br>&#x25BA; <code>ES7</code> <br>&#x25BA; <code>ES2016</code> <br>&#x25BA; <code>ES2017</code> <br>&#x25BA; <code>ES2018</code> <br>&#x25BA; <code>ESNext</code> <br>&#x25BA; <code>DOM</code> <br>&#x25BA; <code>DOM.Iterable</code> <br>&#x25BA; <code>WebWorker</code> <br>&#x25BA; <code>ScriptHost</code> <br>&#x25BA; <code>ES2015.Core</code> <br>&#x25BA; <code>ES2015.Collection</code> <br>&#x25BA; <code>ES2015.Generator</code> <br>&#x25BA; <code>ES2015.Iterable</code> <br>&#x25BA; <code>ES2015.Promise</code> <br>&#x25BA; <code>ES2015.Proxy</code> <br>&#x25BA; <code>ES2015.Reflect</code> <br>&#x25BA; <code>ES2015.Symbol</code> <br>&#x25BA; <code>ES2015.Symbol.WellKnown</code> <br>&#x25BA; <code>ES2016.Array.Include</code> <br>&#x25BA; <code>ES2017.object</code> <br>&#x25BA; <code>ES2017.Intl</code> <br>&#x25BA; <code>ES2017.SharedMemory</code> <br>&#x25BA; <code>ES2017.String</code> <br>&#x25BA; <code>ES2017.TypedArrays</code> <br>&#x25BA; <code>ES2018.Intl</code> <br>&#x25BA; <code>ES2018.Promise</code> <br>&#x25BA; <code>ES2018.RegExp</code> <br>&#x25BA; <code>ESNext.AsyncIterable</code> <br>&#x25BA; <code>ESNext.Array</code> <br>&#x25BA; <code>ESNext.Intl</code> <br>&#x25BA; <code>ESNext.Symbol</code> <br><br> &#xC8FC;&#xC758;&#xC0AC;&#xD56D;: <code>--lib</code>&#xAC00; &#xC9C0;&#xC815;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC758; &#xAE30;&#xBCF8; &#xB9AC;&#xC2A4;&#xD2B8;&#xAC00; &#xC0BD;&#xC785;&#xB429;&#xB2C8;&#xB2E4;. &#xC8FC;&#xC785;&#xB418;&#xB294; &#xAE30;&#xBCF8; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;:  <br> &#x25BA; <code>--target ES5</code>: <code>DOM,ES5,ScriptHost</code><br>  &#x25BA; <code>--target ES6</code>: <code>DOM,ES6,DOM.Iterable,ScriptHost</code></td>
 </tr>
 <tr>
 <td><code>--listEmittedFiles</code></td>
@@ -931,14 +1123,14 @@
 <tr>
 <td><code>--locale</code></td>
 <td><code>string</code></td>
-<td><em>(&#xD2B9;&#xC815; &#xD50C;&#xB7AB;&#xD3FC;)</em></td>
-<td>&#xC624;&#xB958; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xD45C;&#xC2DC;&#xD558;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xD560; &#xC9C0;&#xC5ED;&#xD654;, &#xC608;: en-us. <br>&#xAC00;&#xB2A5;&#xD55C; &#xAC12;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;:  <br>&#x25BA; English (US): <code>en</code> <br>&#x25BA; Czech: <code>cs</code> <br>&#x25BA; German: <code>de</code> <br>&#x25BA; Spanish: <code>es</code> <br>&#x25BA; French: <code>fr</code> <br>&#x25BA; Italian: <code>it</code> <br>&#x25BA; Japanese: <code>ja</code> <br>&#x25BA; Korean: <code>ko</code> <br>&#x25BA; Polish: <code>pl</code> <br>&#x25BA; Portuguese(Brazil): <code>pt-BR</code> <br>&#x25BA; Russian: <code>ru</code> <br>&#x25BA; Turkish: <code>tr</code> <br>&#x25BA; Simplified Chinese: <code>zh-CN</code>  <br>&#x25BA; Traditional Chinese: <code>zh-TW</code></td>
+<td><em>(&#xD50C;&#xB7AB;&#xD3FC; &#xBCC4;)</em></td>
+<td>&#xC624;&#xB958; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xD45C;&#xC2DC;&#xD558;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xD560; &#xC9C0;&#xC5ED;&#xD654;, &#xC608;: en-us. <br>&#xAC00;&#xB2A5;&#xD55C; &#xAC12;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;:  <br>&#x25BA; &#xC601;&#xC5B4; (US): <code>en</code> <br>&#x25BA; &#xCCB4;&#xCF54;&#xC5B4;: <code>cs</code> <br>&#x25BA; &#xB3C5;&#xC77C;&#xC5B4;: <code>de</code> <br>&#x25BA; &#xC2A4;&#xD398;&#xC778;&#xC5B4;: <code>es</code> <br>&#x25BA; &#xD504;&#xB791;&#xC2A4;&#xC5B4;: <code>fr</code> <br>&#x25BA; &#xC774;&#xD0C8;&#xB9AC;&#xC544;&#xC5B4;: <code>it</code> <br>&#x25BA; &#xC77C;&#xBCF8;&#xC5B4;: <code>ja</code> <br>&#x25BA; &#xD55C;&#xAD6D;&#xC5B4;: <code>ko</code> <br>&#x25BA; &#xD3F4;&#xB780;&#xB4DC;&#xC5B4;: <code>pl</code> <br>&#x25BA; &#xD3EC;&#xB974;&#xD22C;&#xAC08;&#xC5B4;(&#xBE0C;&#xB77C;&#xC9C8;): <code>pt-BR</code> <br>&#x25BA; &#xB7EC;&#xC2DC;&#xC544;&#xC5B4;: <code>ru</code> <br>&#x25BA; &#xD130;&#xD0A4;&#xC5B4;: <code>tr</code> <br>&#x25BA; &#xC911;&#xAD6D;&#xC5B4; &#xAC04;&#xCCB4;: <code>zh-CN</code>  <br>&#x25BA; &#xC911;&#xAD6D;&#xC5B4; &#xBC88;&#xCCB4;: <code>zh-TW</code></td>
 </tr>
 <tr>
 <td><code>--mapRoot</code></td>
 <td><code>string</code></td>
 <td></td>
-<td>&#xB514;&#xBC84;&#xAC70;&#xAC00; &#xC0DD;&#xC131;&#xB41C; &#xC704;&#xCE58;&#xAC00; &#xC544;&#xB2CC; &#xB9F5; &#xD30C;&#xC77C;&#xC758; &#xC704;&#xCE58;&#xB97C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. .map &#xD30C;&#xC77C;&#xC774; .js &#xD30C;&#xC77C;&#xACFC; &#xB2E4;&#xB978; &#xC704;&#xCE58;&#xC5D0; &#xB7F0;&#xD0C0;&#xC784; &#xC2DC; &#xC704;&#xCE58;&#xD560; &#xACBD;&#xC6B0; &#xC774; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;. &#xC9C0;&#xC815;&#xB41C; &#xC704;&#xCE58;&#xB294; sourceMap&#xC5D0; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xB9F5; &#xD30C;&#xC77C;&#xC774; &#xC704;&#xCE58;&#xD560; &#xB514;&#xBC84;&#xAC70;&#xB97C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</td>
+<td>&#xB514;&#xBC84;&#xAC70;&#xAC00; &#xC0DD;&#xC131;&#xB41C; &#xC704;&#xCE58;&#xAC00; &#xC544;&#xB2CC; &#xB9F5; &#xD30C;&#xC77C;&#xC758; &#xC704;&#xCE58;&#xB97C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. .map &#xD30C;&#xC77C;&#xC774; .js &#xD30C;&#xC77C;&#xACFC; &#xB2E4;&#xB978; &#xC704;&#xCE58;&#xC5D0; &#xB7F0;&#xD0C0;&#xC784; &#xC2DC; &#xC704;&#xCE58;&#xD560; &#xACBD;&#xC6B0; &#xC774; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;. &#xC9C0;&#xC815;&#xB41C; &#xC704;&#xCE58;&#xB294; sourceMap&#xC5D0; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xB9F5; &#xD30C;&#xC77C;&#xC774; &#xC704;&#xCE58;&#xD560; &#xB514;&#xBC84;&#xAC70;&#xB97C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xD50C;&#xB798;&#xADF8;&#xB294; &#xC9C0;&#xC815;&#xB41C; &#xACBD;&#xB85C;&#xB97C; &#xC791;&#xC131;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xD574;&#xB2F9; &#xC704;&#xCE58;&#xC5D0; &#xB9F5; &#xD30C;&#xC77C;&#xC744; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;. &#xB300;&#xC2E0; &#xD30C;&#xC77C;&#xC744; &#xC9C0;&#xC815;&#xB41C; &#xACBD;&#xB85C;&#xB85C; &#xC774;&#xB3D9;&#xD558;&#xB294; &#xBE4C;&#xB4DC; &#xD6C4; &#xB2E8;&#xACC4;&#xB97C; &#xC791;&#xC131;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.</td>
 </tr>
 <tr>
 <td><code>--maxNodeModuleJsDepth</code></td>
@@ -961,7 +1153,7 @@
 <tr>
 <td><code>--newLine</code></td>
 <td><code>string</code></td>
-<td><em>(&#xD2B9;&#xC815; &#xD50C;&#xB7AB;&#xD3FC;)</em></td>
+<td><em>(&#xD50C;&#xB7AB;&#xD3FC; &#xBCC4;)</em></td>
 <td>&#xD30C;&#xC77C;&#xC744; &#xB0B4;&#xBCF4;&#xB0BC; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xC9C0;&#xC815;&#xB41C; &#xB77C;&#xC778; &#xB05D;&#xC758; &#xC2DC;&#xD000;&#xC2A4; &#xC0AC;&#xC6A9;: <code>&quot;crlf&quot;</code> (&#xC708;&#xB3C4;&#xC6B0;) &#xB610;&#xB294; <code>&quot;lf&quot;</code> (&#xC720;&#xB2C9;&#xC2A4;).&quot;</td>
 </tr>
 <tr>
@@ -1052,7 +1244,7 @@
 <td><del><code>--out</code></del></td>
 <td><code>string</code></td>
 <td></td>
-<td>DEPRECATED &#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;. <code>--outFile</code>&#xC744; &#xB300;&#xC2E0; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</td>
+<td>&#xB354; &#xC774;&#xC0C1; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. <code>--outFile</code>&#xC744; &#xB300;&#xC2E0; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td><code>--outDir</code></td>
@@ -1064,7 +1256,7 @@
 <td><code>--outFile</code></td>
 <td><code>string</code></td>
 <td></td>
-<td>&#xCD9C;&#xB825;&#xC744; &#xB2E8;&#xC77C; &#xD30C;&#xC77C;&#xB85C; &#xC5F0;&#xACB0;&#xD558;&#xC5EC; &#xBC29;&#xCD9C;&#xD569;&#xB2C8;&#xB2E4;. &#xC5F0;&#xACB0;&#xC758; &#xC21C;&#xC11C;&#xB294; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xC5D0; &#xC804;&#xB2EC;&#xB41C; &#xD30C;&#xC77C; &#xBAA9;&#xB85D;&#xACFC; &#xD2B8;&#xB9AC;&#xD50C;-&#xC2AC;&#xB798;&#xC2DC; &#xCC38;&#xC870; &#xADF8;&#xB9AC;&#xACE0; &#xC784;&#xD3EC;&#xD2B8;&#xC640; &#xD568;&#xAED8; &#xACB0;&#xC815;&#xB429;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; &#xCD9C;&#xB825; &#xD30C;&#xC77C; &#xC21C;&#xC11C; &#xBB38;&#xC11C;&#xB97C; &#xCC38;&#xC870;&#xD558;&#xC138;&#xC694;.</td>
+<td>&#xCD9C;&#xB825;&#xC744; &#xB2E8;&#xC77C; &#xD30C;&#xC77C;&#xB85C; &#xC5F0;&#xACB0;&#xD558;&#xC5EC; &#xBC29;&#xCD9C;&#xD569;&#xB2C8;&#xB2E4;. &#xC5F0;&#xACB0;&#xC758; &#xC21C;&#xC11C;&#xB294; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xC5D0; &#xC804;&#xB2EC;&#xB41C; &#xD30C;&#xC77C; &#xBAA9;&#xB85D;&#xACFC; &#xD2B8;&#xB9AC;&#xD50C;-&#xC2AC;&#xB798;&#xC2DC; &#xCC38;&#xC870; &#xADF8;&#xB9AC;&#xACE0; import&#xC640; &#xD568;&#xAED8; &#xACB0;&#xC815;&#xB429;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="https://github.com/Microsoft/TypeScript/wiki/FAQ#how-do-i-control-file-ordering-in-combined-output---out-" target="_blank">&#xCD9C;&#xB825; &#xD30C;&#xC77C; &#xC21C;&#xC11C; &#xBB38;&#xC11C;</a>&#xB97C; &#xCC38;&#xC870;&#xD558;&#xC138;&#xC694;.</td>
 </tr>
 <tr>
 <td><code>paths</code><sup>[2]</sup></td>
@@ -1085,10 +1277,16 @@
 <td>symlinks&#xB97C; &#xC2E4;&#xC81C; &#xACBD;&#xB85C;&#xB85C; &#xD574;&#xC11D;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. symlinked&#xB41C; &#xD30C;&#xC77C;&#xC744; &#xC2E4;&#xC81C; &#xD30C;&#xC77C;&#xCC98;&#xB7FC; &#xB2E4;&#xB8F9;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
-<td><code>--pretty</code><sup>[1]</sup></td>
+<td><code>--preserveWatchOutput</code></td>
 <td><code>boolean</code></td>
 <td><code>false</code></td>
-<td>&#xC0C9;&#xC0C1; &#xBC0F; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC624;&#xB958; &#xBC0F; &#xBA54;&#xC138;&#xC9C0; &#xC2A4;&#xD0C0;&#xC77C;&#xC744; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC2A4;&#xD06C;&#xB9B0;&#xC744; &#xC9C0;&#xC6B0;&#xB294; &#xB300;&#xC2E0;&#xC5D0; &#xC608;&#xC804; &#xCF58;&#xC194; &#xCD9C;&#xB825;&#xC744; &#xAC10;&#xC2DC; &#xBAA8;&#xB4DC;&#xB85C; &#xB0A8;&#xACA8;&#xB461;&#xB2C8;&#xB2E4;</td>
+</tr>
+<tr>
+<td><code>--pretty</code></td>
+<td><code>boolean</code></td>
+<td>&#xB2E4;&#xB978; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC73C;&#xB85C; &#xD30C;&#xC774;&#xD504;&#xD558;&#xAC70;&#xB098; &#xCD9C;&#xB825;&#xC744; &#xD30C;&#xC77C;&#xB85C; &#xB9AC;&#xB2E4;&#xC774;&#xB809;&#xC158;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; <code>true</code></td>
+<td>&#xC5D0;&#xB7EC;&#xC640; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC0C9;&#xACFC; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC11C; &#xC2A4;&#xD0C0;&#xC77C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td><code>--project</code><br><code>-p</code></td>
@@ -1100,13 +1298,19 @@
 <td><code>--reactNamespace</code></td>
 <td><code>string</code></td>
 <td><code>&quot;React&quot;</code></td>
-<td>DEPRECATED &#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;. <code>--jsxFactory</code>&#xB97C; &#xB300;&#xC2E0; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.<br><code>&quot;react&quot;</code> JSX emit&#xC744; &#xB300;&#xC0C1;&#xC73C;&#xB85C; &#xD560; &#xB54C; <code>createElement</code>&#xC640; <code>__spread</code>&#xC5D0; &#xD638;&#xCD9C;&#xB41C; &#xAC1D;&#xCCB4;&#xB97C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</td>
+<td>&#xB354; &#xC774;&#xC0C1; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. <code>--jsxFactory</code>&#xB97C; &#xB300;&#xC2E0; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.<br><code>&quot;react&quot;</code> JSX emit&#xC744; &#xB300;&#xC0C1;&#xC73C;&#xB85C; &#xD560; &#xB54C; <code>createElement</code>&#xC640; <code>__spread</code>&#xC5D0; &#xD638;&#xCD9C;&#xB41C; &#xAC1D;&#xCCB4;&#xB97C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td><code>--removeComments</code></td>
 <td><code>boolean</code></td>
 <td><code>false</code></td>
 <td><code>/*!</code>&#xB85C; &#xC2DC;&#xC791;&#xD558;&#xB294; copy-right &#xD5E4;&#xB354; &#xC8FC;&#xC11D;&#xC744; &#xC81C;&#xC678;&#xD55C; &#xBAA8;&#xB4E0; &#xC8FC;&#xC11D;&#xC744; &#xC81C;&#xAC70;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><code>--resolveJsonModule</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td><code>.json</code> &#xD655;&#xC7A5;&#xC790;&#xB85C; import&#xB41C; &#xBAA8;&#xB4C8;&#xC744; &#xD3EC;&#xD568;&#xD569;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td><code>--rootDir</code></td>
@@ -1121,10 +1325,16 @@
 <td>&#xB7F0;&#xD0C0;&#xC784; &#xC2DC; &#xACB0;&#xD569;&#xB41C; &#xCEE8;&#xD150;&#xCE20;&#xAC00; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC758; &#xAD6C;&#xC870;&#xB97C; &#xB098;&#xD0C0;&#xB0B4;&#xB294; <i>&#xB8E8;&#xD2B8;</i> &#xD3F4;&#xB354; &#xBAA9;&#xB85D;&#xC785;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="Module%20Resolution.md#virtual-directories-with-rootdirs">&#xBAA8;&#xB4C8; &#xD574;&#xC11D; &#xBB38;&#xC11C;</a>&#xB97C; &#xCC38;&#xC870;&#xD558;&#xC138;&#xC694;.</td>
 </tr>
 <tr>
+<td><code>--showConfig</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>&#xB2E4;&#xB978; &#xC785;&#xB825; &#xC635;&#xC158; &#xBC0F; &#xAD6C;&#xC131; &#xD30C;&#xC77C;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBE4C;&#xB4DC;&#xB97C; &#xC2E4;&#xC81C;&#xB85C; &#xC2E4;&#xD589;&#xD558;&#xB294; &#xB300;&#xC2E0; &#xCD9C;&#xB825;&#xC5D0; &#xB9C8;&#xC9C0;&#xB9C9; &#xC554;&#xC2DC;&#xC801; &#xAD6C;&#xC131; &#xD30C;&#xC77C;&#xC744; &#xD45C;&#xC2DC;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.</td>
+</tr>
+<tr>
 <td><code>--skipDefaultLibCheck</code></td>
 <td><code>boolean</code></td>
 <td><code>false</code></td>
-<td>DEPRECATED &#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;. <code>--skipLibCheck</code>&#xB97C; &#xB300;&#xC2E0; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.<br><a href="Triple-Slash%20Directives.md#-reference-no-default-libtrue">&#xAE30;&#xBCF8; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xC120;&#xC5B8; &#xD30C;&#xC77C;</a>&#xC758; &#xD0C0;&#xC785; &#xAC80;&#xC0AC; &#xAC74;&#xB108;&#xB6F0;&#xAE30;[default library declaration files].</td>
+<td>&#xB354; &#xC774;&#xC0C1; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. <code>--skipLibCheck</code>&#xB97C; &#xB300;&#xC2E0; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.<br><a href="Triple-Slash%20Directives.md#-reference-no-default-libtrue">&#xAE30;&#xBCF8; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xC120;&#xC5B8; &#xD30C;&#xC77C;</a>&#xC758; &#xD0C0;&#xC785; &#xAC80;&#xC0AC;&#xB97C; &#xAC74;&#xB108;&#xB701;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td><code>--skipLibCheck</code></td>
@@ -1151,22 +1361,28 @@
 <td>&#xBAA8;&#xB4E0; &#xC5C4;&#xACA9;&#xD55C; &#xD0C0;&#xC785; &#xAC80;&#xC0AC; &#xC635;&#xC158;&#xC744; &#xD65C;&#xC131;&#xD654;&#xD569;&#xB2C8;&#xB2E4;. <br><code>--strict</code>&#xB97C; &#xD65C;&#xC131;&#xD654;&#xD558;&#xBA74; <code>--noImplicitAny</code>, <code>--noImplicitThis</code>, <code>--alwaysStrict</code>, <code>--strictNullChecks</code> &#xBC0F; <code>--strictFunctionTypes</code>&#xC774; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
+<td><code>--strictBindCallApply</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>&#xD568;&#xC218;&#xC5D0;&#xC11C; <code>bind</code>, <code>call</code> &#xADF8;&#xB9AC;&#xACE0; <code>apply</code> &#xBA54;&#xC11C;&#xB4DC;&#xC758; &#xB354; &#xC5C4;&#xACA9;&#xD55C; &#xAC80;&#xC0AC;&#xB97C; &#xD65C;&#xC131;&#xD654;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
 <td><code>--strictFunctionTypes</code></td>
 <td><code>boolean</code></td>
 <td><code>false</code></td>
 <td>&#xD568;&#xC218; &#xD0C0;&#xC785;&#xC5D0; &#xB300;&#xD55C; bivariant &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xBE44;&#xD65C;&#xC131;&#xD654;&#xD569;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
+<td><code>--strictPropertyInitialization</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>undefined&#xAC00; &#xC544;&#xB2CC; &#xD074;&#xB798;&#xC2A4; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xAC00; &#xC0DD;&#xC131;&#xC790;&#xC5D0;&#xC11C; &#xCD08;&#xAE30;&#xD654; &#xB418;&#xB3C4;&#xB85D; &#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xC635;&#xC158;&#xC744; &#xC801;&#xC6A9;&#xD558;&#xB824;&#xBA74; <code>--strictNullChecks</code>&#xAC00; &#xD65C;&#xC131;&#xD654;&#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
 <td><code>--strictNullChecks</code></td>
 <td><code>boolean</code></td>
 <td><code>false</code></td>
-<td>strict null checking &#xBAA8;&#xB4DC;&#xC5D0;&#xC11C;&#xB294; <code>null</code>&#xACFC; <code>undefined</code> &#xAC12;&#xC774; &#xBAA8;&#xB4E0; &#xD0C0;&#xC785;&#xC758; &#xB3C4;&#xBA54;&#xC778;&#xC5D0; &#xC788;&#xC9C0; &#xC54A;&#xACE0; &#xADF8; &#xC790;&#xCCB4;&#xC640; <code>any</code>&#xB9CC; &#xD560;&#xB2F9;&#xD560; &#xC218;  &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;(&#xD55C; &#xAC00;&#xC9C0; &#xC608;&#xC678;&#xC0AC;&#xD56D;&#xC740; <code>undefined</code> &#xB610;&#xD55C; <code>void</code>&#xC5D0; &#xD560;&#xB2F9; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;).</td>
-</tr>
-<tr>
-<td><code>--stripInternal</code><sup>[1]</sup></td>
-<td><code>boolean</code></td>
-<td><code>false</code></td>
-<td><code>/** @internal */</code> JSDoc &#xC8FC;&#xC11D;&#xC744; &#xAC00;&#xC9C4; &#xCF54;&#xB4DC;&#xC5D0; &#xB300;&#xD55C; &#xC120;&#xC5B8;&#xC744; &#xBC29;&#xCD9C;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC5C4;&#xACA9;&#xD55C; null &#xAC80;&#xC0AC; &#xBAA8;&#xB4DC;&#xC5D0;&#xC11C;&#xB294; <code>null</code>&#xACFC; <code>undefined</code> &#xAC12;&#xC774; &#xBAA8;&#xB4E0; &#xD0C0;&#xC785;&#xC758; &#xB3C4;&#xBA54;&#xC778;&#xC5D0; &#xC788;&#xC9C0; &#xC54A;&#xACE0; &#xADF8; &#xC790;&#xCCB4;&#xC640; <code>any</code>&#xB9CC; &#xD560;&#xB2F9;&#xD560; &#xC218;  &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;(&#xD55C; &#xAC00;&#xC9C0; &#xC608;&#xC678;&#xC0AC;&#xD56D;&#xC740; <code>undefined</code> &#xB610;&#xD55C; <code>void</code>&#xC5D0; &#xD560;&#xB2F9; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;).</td>
 </tr>
 <tr>
 <td><code>--suppressExcessPropertyErrors</code></td>
@@ -1184,13 +1400,19 @@
 <td><code>--target</code><br><code>-t</code></td>
 <td><code>string</code></td>
 <td><code>&quot;ES3&quot;</code></td>
-<td>ECMAScript &#xB300;&#xC0C1; &#xBC84;&#xC804; &#xC9C0;&#xC815;: <code>&quot;ES3&quot;</code> (&#xAE30;&#xBCF8;&#xAC12;), <code>&quot;ES5&quot;</code>, <code>&quot;ES6&quot;</code>/<code>&quot;ES2015&quot;</code>, <code>&quot;ES2016&quot;</code>, <code>&quot;ES2017&quot;</code> &#xB610;&#xB294; <code>&quot;ESNext&quot;</code>. <br><br> &#xC8FC;&#xC758;&#xC0AC;&#xD56D;: <code>&quot;ESNext&quot;</code>&#xB294; &#xCD5C;&#xC2E0; <a href="https://github.com/tc39/proposals" target="_blank">ES &#xC81C;&#xC548; &#xAE30;&#xB2A5;</a>&#xC744; &#xB300;&#xC0C1;&#xC73C;&#xB85C; &#xD569;&#xB2C8;&#xB2E4;.</td>
+<td>ECMAScript &#xB300;&#xC0C1; &#xBC84;&#xC804; &#xC9C0;&#xC815;: <br>&#x25BA; <code>&quot;ES3&quot;</code> (&#xAE30;&#xBCF8; &#xAC12;) <br>&#x25BA; <code>&quot;ES5&quot;</code> <br>&#x25BA; <code>&quot;ES6&quot;</code>/<code>&quot;ES2015&quot;</code> <br>&#x25BA; <code>&quot;ES2016&quot;</code> <br>&#x25BA; <code>&quot;ES2017&quot;</code> <br>&#x25BA; <code>&quot;ES2018&quot;</code> <br>&#x25BA; <code>&quot;ES2019&quot;</code> <br>&#x25BA; <code>&quot;ES2020&quot;</code> <br>&#x25BA; <code>&quot;ESNext&quot;</code> <br><br> &#xC8FC;&#xC758;&#xC0AC;&#xD56D;: <code>&quot;ESNext&quot;</code>&#xB294; &#xCD5C;&#xC2E0; <a href="https://github.com/tc39/proposals" target="_blank">ES &#xC81C;&#xC548; &#xAE30;&#xB2A5;</a>&#xC744; &#xB300;&#xC0C1;&#xC73C;&#xB85C; &#xD569;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td><code>--traceResolution</code></td>
 <td><code>boolean</code></td>
 <td><code>false</code></td>
 <td>&#xBAA8;&#xB4C8; &#xD574;&#xC11D; &#xB85C;&#xADF8; &#xBA54;&#xC138;&#xC9C0;&#xB97C; &#xBCF4;&#xACE0;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><code>--tsBuildInfoFile</code></td>
+<td><code>string</code></td>
+<td><code>.tsbuildinfo</code></td>
+<td>&#xC99D;&#xBD84; &#xBE4C;&#xB4DC; &#xC815;&#xBCF4;&#xB97C; &#xC800;&#xC7A5;&#xD560; &#xD30C;&#xC77C;&#xC744; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td><code>--types</code></td>
@@ -1214,7 +1436,7 @@
 <td><code>--watch</code><br><code>-w</code></td>
 <td></td>
 <td></td>
-<td>&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB97C; &#xC640;&#xCE58; &#xBAA8;&#xB4DC;&#xB85C; &#xC2E4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;. &#xC785;&#xB825; &#xD30C;&#xC77C;&#xC744; &#xC640;&#xCE58;&#xD558;&#xC5EC; &#xBCC0;&#xACBD; &#xC2DC; &#xB2E4;&#xC2DC; &#xCEF4;&#xD30C;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;.</td>
+<td>&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB97C; &#xAC10;&#xC2DC; &#xBAA8;&#xB4DC;&#xB85C; &#xC2E4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;. &#xC785;&#xB825; &#xD30C;&#xC77C;&#xC744; &#xAC10;&#xC2DC;&#xD558;&#xC5EC; &#xBCC0;&#xACBD; &#xC2DC; &#xB2E4;&#xC2DC; &#xCEF4;&#xD30C;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;. &#xAC10;&#xC2DC; &#xD30C;&#xC77C;&#xACFC; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xC758; &#xAD6C;&#xD604;&#xC740; &#xD658;&#xACBD; &#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xAD6C;&#xC131;&#xD569;&#xB2C8;&#xB2E4;. &#xB354; &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="Configuring%20Watch.md">&#xAC10;&#xC2DC; &#xAD6C;&#xC131;&#xD558;&#xAE30;</a>&#xB97C; &#xBCF4;&#xC138;&#xC694;.</td>
 </tr>
 </tbody>
 </table>
@@ -1222,10 +1444,10 @@
 <li><sup>[1]</sup> &#xC774; &#xC635;&#xC158;&#xC740; &#xC2E4;&#xD5D8;&#xB2E8;&#xACC4;&#xC785;&#xB2C8;&#xB2E4;.</li>
 <li><sup>[2]</sup> &#xC774; &#xC635;&#xC158;&#xC740; <code>tsconfig.json</code>&#xC5D0;&#xC11C;&#xB9CC; &#xD5C8;&#xC6A9;&#xB418;&#xBA70; &#xCEE4;&#xB9E8;&#xB4DC; &#xB77C;&#xC778;&#xC5D0;&#xC11C;&#xB294; &#xD5C8;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
 </ul>
-<h2 id="&#xAD00;&#xB828;&#xC0AC;&#xD56D;">&#xAD00;&#xB828;&#xC0AC;&#xD56D;</h2>
+<h2 id="&#xAD00;&#xB828;&#xC0AC;&#xD56D;-related">&#xAD00;&#xB828;&#xC0AC;&#xD56D; (Related)</h2>
 <ul>
 <li><a href="tsconfig.json.html"><code>tsconfig.json</code></a> &#xD30C;&#xC77C;&#xC5D0;&#xC11C; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC635;&#xC158; &#xC124;&#xC815;&#xD558;&#xAE30;</li>
-<li><a href="Compiler-Options-in-MSBuild.md">MSBuild projects</a> &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0;&#xC11C; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC635;&#xC158; &#xC124;&#xC815;&#xD558;&#xAE30;</li>
+<li><a href="Compiler%20Options%20in%20MSBuild.md">MSBuild projects</a> &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0;&#xC11C; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC635;&#xC158; &#xC124;&#xC815;&#xD558;&#xAE30;</li>
 </ul>
 
                                 
@@ -1270,7 +1492,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"컴파일러 옵션","level":"5.2","depth":1,"next":{"title":"프로젝트 레퍼런스","level":"5.3","depth":1,"path":"pages/Project References.md","ref":"pages/Project References.md","articles":[]},"previous":{"title":"tsconfig.json","level":"5.1","depth":1,"path":"pages/tsconfig.json.md","ref":"pages/tsconfig.json.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/Compiler Options.md","mtime":"2020-04-29T12:45:06.660Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-29T13:40:19.688Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"컴파일러 옵션","level":"5.2","depth":1,"next":{"title":"프로젝트 레퍼런스","level":"5.3","depth":1,"path":"pages/Project References.md","ref":"pages/Project References.md","articles":[]},"previous":{"title":"tsconfig.json","level":"5.1","depth":1,"path":"pages/tsconfig.json.md","ref":"pages/tsconfig.json.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/Compiler Options.md","mtime":"2020-05-13T15:08:10.610Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-13T15:58:00.482Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
