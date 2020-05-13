@@ -125,4 +125,4 @@ tsconfig의 컴파일러 옵션에 대한 더 많은 정보를 찾는다면, 베
 ## 관련사항 (Related)
 
 * [`tsconfig.json`](./tsconfig.json.md) 파일에서 컴파일러 옵션 설정하기
-* [MSBuild projects](./Compiler-Options-in-MSBuild.md) 프로젝트에서 컴파일러 옵션 설정하기
+* [MSBuild projects](./Compiler%20Options%20in%20MSBuild.md) 프로젝트에서 컴파일러 옵션 설정하기
