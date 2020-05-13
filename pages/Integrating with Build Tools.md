@@ -270,4 +270,4 @@ MSBuild 컴파일러 옵션 정의에 대한 자세한 내용: [MSBuild 프로�
 * `Install` 클릭
 * 설치가 완료되면 다시 빌드 하세요!
 
-자세한 내용은 [패키지 매니저 다이얼로그](http://docs.nuget.org/Consume/Package-Manager-Dialog)와 [NuGet과 nightly builds 사용](https://github.com/Microsoft/TypeScript/wiki/Nightly-drops#using-nuget-with-msbuild)
+자세한 내용은 [패키지 매니저 다이얼로그](http://docs.nuget.org/Consume/Package-Manager-Dialog)와 [NuGet과 nightly builds 사용](https://github.com/Microsoft/TypeScript/wiki/Nightly-drops#using-nuget-with-msbuild)을 참고하세요
