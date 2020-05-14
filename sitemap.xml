@@ -35,6 +35,13 @@
 <url> <loc>https://typescript-kr.github.io/pages/declaration files/Do&#039;s and Don&#039;ts.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://typescript-kr.github.io/pages/declaration files/Deep Dive.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://typescript-kr.github.io/pages/declaration files/Templates.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/declaration files/templates/global-modifying-module.d.ts.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/declaration files/templates/global-plugin.d.ts.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/declaration files/templates/global.d.ts.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/declaration files/templates/module-class.d.ts.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/declaration files/templates/module-function.d.ts.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/declaration files/templates/module-plugin.d.ts.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/declaration files/templates/module.d.ts.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://typescript-kr.github.io/pages/declaration files/Publishing.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://typescript-kr.github.io/pages/declaration files/Consumption.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://typescript-kr.github.io/pages/tsconfig.json.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
