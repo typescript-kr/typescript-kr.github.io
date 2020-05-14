@@ -199,7 +199,7 @@ TypeScript 컴파일러는 주요 에디터의 TypeScript 작성 경험뿐만 �
 * Visual Studio 2017/2019 에는 [SDK 설치 프로그램] 과 [MSBuild 설치](https://www.nuget.org/packages/Microsoft.TypeScript.MSBuild)가 있습니다.
 * Subkube Text 3은 [다른 버전의 TypeScript 선택]((https://github.com/microsoft/TypeScript-Sublime-Plugin#note-using-different-versions-of-typescript))을 지원합니다.
 
-###  <span id="commonjs-auto-imports-in-javascript" /> JavaScript에서 CommonJs 자동-import (CommonJS Auto-Imports in JavaScript)
+### <span id="commonjs-auto-imports-in-javascript" /> JavaScript에서 CommonJs 자동-import (CommonJS Auto-Imports in JavaScript)
 
 CommonJS 모듈을 사용하는 JavaScript 파일에서 자동-import 기능이 크게 개선되었습니다.
 
@@ -216,7 +216,7 @@ import * as fs from "fs";
 const fs = require("fs");
 ```
 
-이제 TypeScript는 파일 스타일을 깔끔하고 일관되게 유지하기 위해서 사용 중인 import 유형을 자동으로 검색합니다. 
+이제 TypeScript는 파일 스타일을 깔끔하고 일관되게 유지하기 위해서 사용 중인 import 유형을 자동으로 검색합니다.
 
 <video src="https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2020/03/ERkaliGU0AA5anJ1.mp4"></video>
 
@@ -260,7 +260,7 @@ function printSquares() {
 
 ![이전 버전의 TypeScript에선 함수로 루프 추출은. 개행을 유지하지 않습니다.](https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2020/03/printSquaresWithoutNewlines-3.9.gif.gif)
 
-이건 이상적이지 않습니다 - `for` 루프에서 각각의 문 사이에 빈 줄이 있었지만 리팩터링이 없애버렸습니다! 
+이건 이상적이지 않습니다 - `for` 루프에서 각각의 문 사이에 빈 줄이 있었지만 리팩터링이 없애버렸습니다!
 TypeScript 3.9은 우리가 작성한 것을 보존하기 위해 조금 더 작업을 합니다.
 
 ```ts
