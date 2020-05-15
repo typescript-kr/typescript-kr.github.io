@@ -60,7 +60,7 @@ TypeScript 3.9는 많은 새로운 속도 향상 기능이 포함되어 있습�
 * https://github.com/microsoft/TypeScript/pull/36754
 * https://github.com/microsoft/TypeScript/pull/36696
 
-이러한 각 풀 리퀘스트는 특정 코드 베이스에서 컴파일 시간이 약 5-10% 단축됩니다.
+이러한 각 pull request는 특정 코드 베이스에서 컴파일 시간이 약 5-10% 단축됩니다.
 전체적으로 material-ui의 컴파일 시간이 약 40% 단축되었습니다!
 
 또한 에디터 시나리오에서 파일 이름 변경 기능이 일부 변경되었습니다.
