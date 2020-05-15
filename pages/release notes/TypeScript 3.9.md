@@ -34,7 +34,7 @@ async function visitZoo(lionExhibit: Promise<Lion>, sealExhibit: Promise<Seal | 
 이건 이상한 행동입니다!
 `sealExhibit`가 `undefined`를 포함하는 것은 어떻게든 `lion` 타입에 `undefined`를 주입합니다.
 
-[Jack Bates](https://github.com/jablko)의 [풀 리퀘스트](https://github.com/microsoft/TypeScript/pull/34501) 덕분에, TypeScript 3.9의 추론 프로세스가 개선되었습니다.
+[Jack Bates](https://github.com/jablko)의 [pull request](https://github.com/microsoft/TypeScript/pull/34501) 덕분에, TypeScript 3.9의 추론 프로세스가 개선되었습니다.
 위 오류는 더 이상 없습니다.
 `Promise`들과 관련된 문제로 인해 이전 버전의 TypeScript에서 고생을 했다면, 3.9를 사용하는 것이 좋습니다.
 
