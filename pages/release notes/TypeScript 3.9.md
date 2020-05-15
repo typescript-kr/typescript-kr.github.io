@@ -36,7 +36,7 @@ async function visitZoo(lionExhibit: Promise<Lion>, sealExhibit: Promise<Seal | 
 
 [Jack Bates](https://github.com/jablko)의 [pull request](https://github.com/microsoft/TypeScript/pull/34501) 덕분에, TypeScript 3.9의 추론 프로세스가 개선되었습니다.
 위 오류는 더 이상 발생하지 않습니다.
-`Promise`들과 관련된 문제로 인해 이전 버전의 TypeScript에서 고생을 했다면, 3.9를 사용하는 것이 좋습니다.
+`Promise`와 관련된 문제로 인해 이전 버전의 TypeScript에서 고생했다면, 3.9를 사용하는 것이 좋습니다.
 
 ### `awaited` 타입은 무엇입니까? (What About the `awaited` Type?)
 
