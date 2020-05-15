@@ -197,7 +197,7 @@ TypeScript 컴파일러는 주요 에디터의 TypeScript 작성 경험뿐만 �
 
 * Visual Studio Code는 [다른 버전의 TypeScript 선택](https://code.visualstudio.com/docs/typescript/typescript-compiling#_using-the-workspace-version-of-typescript)을 지원합니다. 또는, 최신으로 유지하기 위한 [JavaScript/TypeScript Nightly Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next)도 있습니다.(대체로 안정적입니다.)
 * Visual Studio 2017/2019 에는 [SDK 설치 프로그램] 과 [MSBuild 설치](https://www.nuget.org/packages/Microsoft.TypeScript.MSBuild)가 있습니다.
-* Subkube Text 3은 [다른 버전의 TypeScript 선택]((https://github.com/microsoft/TypeScript-Sublime-Plugin#note-using-different-versions-of-typescript))을 지원합니다.
+* Sublime Text 3은 [다른 버전의 TypeScript 선택]((https://github.com/microsoft/TypeScript-Sublime-Plugin#note-using-different-versions-of-typescript))을 지원합니다.
 
 ### <span id="commonjs-auto-imports-in-javascript" /> JavaScript에서 CommonJs 자동-import (CommonJS Auto-Imports in JavaScript)
 
