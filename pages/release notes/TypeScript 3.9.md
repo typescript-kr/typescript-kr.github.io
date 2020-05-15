@@ -51,7 +51,7 @@ async function visitZoo(lionExhibit: Promise<Lion>, sealExhibit: Promise<Seal | 
 
 TypeScript 3.9는 많은 새로운 속도 향상 기능이 포함되어 있습니다.
 우리 팀은 material-ui 및 스타일 구성 요소와 같은 패키지를 사용하여 편집 / 컴파일 속도가 매우 열악한 것을 확인한 후 성능에 중점을 두었습니다.
-거대한 유니언, 인터섹션, 조건별 타입 그리고 매핑된 타입과 관련된 특정 병리학적 사례를 최적화하는 다양한 풀 레퀘스트로 심층 분석했습니다.
+거대한 유니언, 인터섹션, 조건별 타입 그리고 매핑된 타입과 관련된 특정 병리학적 사례를 최적화하는 다양한 pull request로 심층 분석했습니다.
 
 * https://github.com/microsoft/TypeScript/pull/36576
 * https://github.com/microsoft/TypeScript/pull/36590
