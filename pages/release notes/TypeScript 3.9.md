@@ -1,7 +1,7 @@
 * [Improvements in Inference and `Promise.all`](#improvements-in-inference-and-promiseall)
 * [Speed Improvements](#speed-improvements)
-* [`// @ts-expect-error` Comments](#-ts-expect-error-comments)
-* [Uncalled Function Checks in Conditional Expressions](#uncalled-function-checks-in-conditional-expressions)
+* [`// @ts-expect-error` 주석](#-ts-expect-error-comments)
+* [조건문에서 호출되지 않은 함수 체크](#uncalled-function-checks-in-conditional-expressions)
 * [Editor Improvements](#editor-improvements)
     * [CommonJS Auto-Imports in JavaScript](#commonjs-auto-imports-in-javascript)
     * [Code Actions Preserve Newlines](#code-actions-preserve-newlines)
@@ -69,22 +69,22 @@ TypeScript 3.9 addresses this issue by [changing the internals of how the compil
 
 While there's still room for improvement, we hope this work translates to a snappier experience for everyone!
 
-## `// @ts-expect-error` Comments
+## <span id="-ts-expect-error-comments" /> `// @ts-expect-error` 주석 (`// @ts-expect-error` Comments)
 
-Imagine that we're writing a library in TypeScript and we're exporting some function called `doStuff` as part of our public API.
-The function's types declare that it takes two `string`s so that other TypeScript users can get type-checking errors, but it also does a runtime check (maybe only in development builds) to give JavaScript users a helpful error.
+TypeScript에 라이브러리를 작성하고 퍼블릭 API의 일부분으로 `doStuff`라는 함수를 export 한다고 상상해보세요.
+TypeScript 사용자가 타입-체크 오류를 받을 수 있도록 `doStuff` 함수의 타입은 두 개의 `string`을 갖는다고 선언하지만, 또한 JavaScript 사용자에게 유용한 오류를 제공하기 위해 런타임 오류 체크를 합니다 (개발 빌드 시에만 가능).
 
 ```ts
 function doStuff(abc: string, xyz: string) {
     assert(typeof abc === "string");
     assert(typeof xyz === "string");
 
-    // do some stuff
+    // 어떤 작업을 하세요
 }
 ```
 
-So TypeScript users will get a helpful red squiggle and an error message when they misuse this function, and JavaScript users will get an assertion error.
-We'd like to test this behavior, so we'll write a unit test.
+그래서 TypeScript 사용자는 함수를 잘못 사용할 경우 유용한 빨간 오류 밑줄과 오류 메시지를 받게 되며, JavaScript 사용자는 단언 오류를 얻게 됩니다.
+이러한 작동을 테스트하기 위해서, 유닛 테스트를 작성하겠습니다.
 
 ```ts
 expect(() => {
@@ -92,81 +92,81 @@ expect(() => {
 }).toThrow();
 ```
 
-Unfortunately if our tests are written in TypeScript, TypeScript will give us an error!
+불행히도 위의 테스트가 TypeScript에서 작성된다면, TypeScript는 오류를 발생시킬 것입니다!
 
 ```ts
     doStuff(123, 456);
 //          ~~~
-// error: Type 'number' is not assignable to type 'string'.
+// 오류: 'number' 타입은 'string' 타입에 할당할 수 없습니다.
 ```
 
-That's why TypeScript 3.9 brings a new feature: `// @ts-expect-error` comments.
-When a line is prefixed with a `// @ts-expect-error` comment, TypeScript will suppress that error from being reported;
-but if there's no error, TypeScript will report that `// @ts-expect-error` wasn't necessary.
+그래서 TypeScript 3.9는 새로운 기능을 도입했습니다: `// @ts-expect-error` 주석.
+라인 앞에 '// @ts-expect-error' 주석이 붙어 있을 경우, TypeScript는 해당 오류를 보고하는 것을 멈춥니다;
+그러나 오류가 존재하지 않으면, TypeScript는 `// @ts-expect-error`가 필요하지 않다고 보고할 것입니다.
 
-As a quick example, the following code is okay
+간단한 예로, 다음 코드는 괜찮습니다
 
 ```ts
 // @ts-expect-error
 console.log(47 * "octopus");
 ```
 
-while the following code
+그러나 다음 코드는
 
 ```ts
 // @ts-expect-error
 console.log(1 + 1);
 ```
 
-results in the error
+오류로 이어질 것입니다
 
 ```
 Unused '@ts-expect-error' directive.
 ```
 
-We'd like to extend a big thanks to [Josh Goldberg](https://github.com/JoshuaKGoldberg), the contributor who implemented this feature.
-For more information, you can take a look at [the `ts-expect-error` pull request](https://github.com/microsoft/TypeScript/pull/36014).
+이 기능을 구현한 컨트리뷰터, [Josh Goldberg](https://github.com/JoshuaKGoldberg)에게 큰 감사를 드립니다.
+자세한 내용은 [the `ts-expect-error` pull request](https://github.com/microsoft/TypeScript/pull/36014)를 참고하세요.
 
-### `ts-ignore` or `ts-expect-error`?
+### `ts-ignore` 또는 `ts-expect-error`? (`ts-ignore` or `ts-expect-error`?)
 
-In some ways `// @ts-expect-error` can act as a suppression comment, similar to `// @ts-ignore`.
-The difference is that `// @ts-ignore` will do nothing if the following line is error-free.
+어떤 점에서는 `// @ts-expect-error`가 `// @ts-ignore`과 유사하게 억제 주석(suppression comment)으로 작용할 수 있습니다.
+차이점은 `// @ts-ignore`는 다음 행에 오류가 없을 경우 아무것도 하지 않는다는 것입니다.
 
-You might be tempted to switch existing `// @ts-ignore` comments over to `// @ts-expect-error`, and you might be wondering which is appropriate for future code.
-While it's entirely up to you and your team, we have some ideas of which to pick in certain situations.
+기존 `// @ts-ignore` 주석을 `// @ts-expect-error`로 바꾸고 싶은 마음이 들 수 있으며, 향후 코드에 무엇이 적합한지 궁금할 수 있습니다.
+전적으로 당신과 당신 팀의 선택이지만, 우리는 어떤 상황에서 어떤 것을 선택할 것인지에 대한 몇 가지 아이디어를 가지고 있습니다.
 
-Pick `ts-expect-error` if:
+`ts-expect-error`를 선택하세요 만약:
 
-* you're writing test code where you actually want the type system to error on an operation
-* you expect a fix to be coming in fairly quickly and you just need a quick workaround
-* you're in a reasonably-sized project with a proactive team that wants to remove suppression comments as soon affected code is valid again
+* 타입 시스템이 작동에 대한 오류를 발생시키는 테스트 코드 작성을 원하는 경우
+* 수정이 빨리 이루어지길 원하며 빠른 해결책이 필요한 경우
+* 오류가 발생한 코드가 다시 유효해지면 바로 억제 주석을 삭제하길 원하는 혁신적인 팀이 이끄는 적당한-크기의 프로젝트에서 작업하는 경우
 
-Pick `ts-ignore` if:
+`ts-ignore`를 선택하세요 만약:
 
-* you have an a larger project and and new errors have appeared in code with no clear owner
-* you are in the middle of an upgrade between two different versions of TypeScript, and a line of code errors in one version but not another.
-* you honestly don't have the time to decide which of these options is better.
+* 더 큰 프로젝트를 갖고 있고 코드에서 발생한 새로운 오류의 명확한 책임자를 찾기 힘든 경우
+* TypeScript의 두 가지 버전 사이에서 업그레이드하는 중이고, 한 버전에서는 코드 오류가 발생하지만 나머지 버전에서는 그렇지 않은 경우
+* 솔직히 어떤 옵션 더 나은지 결정할 시간이 없는 경우
 
-## Uncalled Function Checks in Conditional Expressions
+## <span id="uncalled-function-checks-in-conditional-expressions" /> 조건문에서 호출되지 않은 함수 체크 (Uncalled Function Checks in Conditional Expressions)
 
-In TypeScript 3.7 we introduced *uncalled function checks* to report an error when you've forgotten to call a function.
+TypeScript 3.7에서 함수 호출을 잊어버렸을 경우 오류를 보고하기 위해 *호출되지 않은 함수 체크*를 도입했습니다.
 
 ```ts
 function hasImportantPermissions(): boolean {
     // ...
 }
 
-// Oops!
+// 이런!
 if (hasImportantPermissions) {
 //  ~~~~~~~~~~~~~~~~~~~~~~~
-// This condition will always return true since the function is always defined.
-// Did you mean to call it instead?
+// hasImportantPermissions 함수가 항상 정의되어 있기 때문에, 이 조건문은 항상 true를 반환합니다.
+// 대신 이것을 호출하려 하셨나요?
     deleteAllTheImportantFiles();
 }
 ```
 
-However, this error only applied to conditions in `if` statements.
-Thanks to [a pull request](https://github.com/microsoft/TypeScript/pull/36402) from [Alexander Tarasyuk](https://github.com/a-tarasyuk), this feature is also now supported in ternary conditionals (i.e. the `cond ? trueExpr : falseExpr` syntax).
+그러나, 이 오류는 `if` 문의 조건에만 적용됩니다.
+[Alexander Tarasyuk](https://github.com/a-tarasyuk)의 [a pull request](https://github.com/microsoft/TypeScript/pull/36402) 덕분에, 이 기능은 삼항 조건 연산자도 지원하게 되었습니다 (예. `cond ? trueExpr : falseExpr` 구문).
 
 ```ts
 declare function listFilesOfDirectory(dirPath: string): string[];
@@ -180,16 +180,16 @@ function getAllFiles(startFileName: string) {
     function traverse(currentPath: string) {
         return isDirectory ?
         //     ~~~~~~~~~~~
-        // This condition will always return true
-        // since the function is always defined.
-        // Did you mean to call it instead?
+        // isDirectory 함수가 항상 정의되어 있기 때문에,
+        // 이 조건은 항상 true를 반환합니다
+        // 대신 이것을 호출하려 하셨나요?
             listFilesOfDirectory(currentPath).forEach(traverse) :
             result.push(currentPath);
     }
 }
 ```
 
-https://github.com/microsoft/TypeScript/issues/36048
+https://github.com/microso0ft/TypeScript/issues/36048
 
 ## Editor Improvements
 
