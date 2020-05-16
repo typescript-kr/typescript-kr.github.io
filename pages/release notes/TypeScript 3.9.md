@@ -200,7 +200,7 @@ TypeScript 컴파일러는 주요 에디터의 TypeScript 작성 경험뿐만 �
 * Visual Studio 2017/2019 에는 [SDK 설치 프로그램] 과 [MSBuild 설치](https://www.nuget.org/packages/Microsoft.TypeScript.MSBuild)가 있습니다.
 * Sublime Text 3은 [다른 버전의 TypeScript 선택]((https://github.com/microsoft/TypeScript-Sublime-Plugin#note-using-different-versions-of-typescript))을 지원합니다.
 
-### <span id="commonjs-auto-imports-in-javascript" /> JavaScript에서 CommonJs 자동-import (CommonJS Auto-Imports in JavaScript)
+### <span id="commonjs-auto-imports-in-javascript" /> JavaScript에서 CommonJS 자동-import (CommonJS Auto-Imports in JavaScript)
 
 CommonJS 모듈을 사용하는 JavaScript 파일에서 자동-import 기능이 크게 개선되었습니다.
 
