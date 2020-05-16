@@ -181,7 +181,7 @@ function getAllFiles(startFileName: string) {
         return isDirectory ?
         //     ~~~~~~~~~~~
         // isDirectory 함수가 항상 정의되어 있기 때문에,
-        // 이 조건은 항상 true를 반환합니다
+        // 이 조건문은 항상 true를 반환합니다
         // 대신 이것을 호출하려 하셨나요?
             listFilesOfDirectory(currentPath).forEach(traverse) :
             result.push(currentPath);
