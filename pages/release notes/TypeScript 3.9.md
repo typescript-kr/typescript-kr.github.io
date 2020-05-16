@@ -71,7 +71,7 @@ While there's still room for improvement, we hope this work translates to a snap
 
 ## <span id="-ts-expect-error-comments" /> `// @ts-expect-error` 주석 (`// @ts-expect-error` Comments)
 
-TypeScript에 라이브러리를 작성하고 퍼블릭 API의 일부분으로 `doStuff`라는 함수를 export 한다고 상상해보세요.
+TypeScript로 라이브러리를 작성하고 퍼블릭 API의 일부분으로 `doStuff`라는 함수를 export 한다고 상상해보세요.
 TypeScript 사용자가 타입-체크 오류를 받을 수 있도록 `doStuff` 함수의 타입은 두 개의 `string`을 갖는다고 선언하지만, 또한 JavaScript 사용자에게 유용한 오류를 제공하기 위해 런타임 오류 체크를 합니다 (개발 빌드 시에만 가능).
 
 ```ts
