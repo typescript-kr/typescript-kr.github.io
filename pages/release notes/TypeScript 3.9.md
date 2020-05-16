@@ -189,7 +189,7 @@ function getAllFiles(startFileName: string) {
 }
 ```
 
-https://github.com/microso0ft/TypeScript/issues/36048
+https://github.com/microsoft/TypeScript/issues/36048
 
 ## Editor Improvements
 
