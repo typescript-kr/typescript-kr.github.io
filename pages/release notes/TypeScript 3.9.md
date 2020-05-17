@@ -40,7 +40,7 @@ async function visitZoo(lionExhibit: Promise<Lion>, sealExhibit: Promise<Seal | 
 
 ### `awaited` 타입은 무엇입니까? (What About the `awaited` Type?)
 
-이슈 트래커와 설계 회의 노트를 보면, [`awaited`이라는 새로운 연산자](https://github.com/microsoft/TypeScript/pull/35998)에 대한 일부 작업을 알 수도 있습니다.
+이슈 트래커와 설계 회의 노트를 봐왔다면, [`awaited` 라는 새로운 연산자](https://github.com/microsoft/TypeScript/pull/35998)에 대한 일부 작업을 알고 있을 것입니다.
 이 타입 연산자의 목표는 JavaScript에서 `Promise`를 푸는 방식을 정확하게 모델링 하는 것입니다.
 
 처음에는 TypeScript 3.9에서 `awaited`을 제공할 것으로 예상했지만, 기존 코드 베이스와 함께 초기 TypeScript 빌드를 실행함으로써 모든 사용자에게 원활하게 배포하기 전에 이 기능에 더 많은 설계 작업이 필요하다는 사실을 알았습니다.
