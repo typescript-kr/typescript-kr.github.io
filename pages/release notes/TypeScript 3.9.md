@@ -9,7 +9,7 @@
     * [Support for "Solution Style" `tsconfig.json` Files](#support-for-solution-style-tsconfigjson-files)
 * [Breaking Changes](#breaking-changes)
 
-## <span id="improvements-in-inference-and-promiseall" /> 추론과 `Promise.all` 개선 (`Improvements in Inference and `Promise.all`)
+## <span id="improvements-in-inference-and-promiseall" /> 추론과 `Promise.all` 개선 (Improvements in Inference and `Promise.all`)
 
 최신 버전의 TypeScript(약 3.7)는 `Promise.all` 및 `Promise.race`와 같은 함수 선언이 업데이트되었습니다.
 운이 안 좋게도, 특히 `null` 또는 `undefined`와 값을 혼합할 때, 약간의 회귀가 발생했습니다.
