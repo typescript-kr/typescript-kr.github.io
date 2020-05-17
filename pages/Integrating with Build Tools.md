@@ -25,7 +25,9 @@ npm install @babel/cli @babel/core @babel/preset-typescript --save-dev
   "presets": ["@babel/preset-typescript"]
 }
 ```
+
 ### 커맨드 라인 인터페이스 사용
+
 ```sh
 ./node_modules/.bin/babel --out-file bundle.js src/index.ts
 ```
@@ -42,6 +44,7 @@ npm install @babel/cli @babel/core @babel/preset-typescript --save-dev
 ```
 
 ### 커맨드 라인 인터페이스 사용
+
 ```sh
 npm run build
 ```
