@@ -44,7 +44,7 @@ async function visitZoo(lionExhibit: Promise<Lion>, sealExhibit: Promise<Seal | 
 이 타입 연산자의 목표는 JavaScript에서 `Promise`를 푸는 방식을 정확하게 모델링 하는 것입니다.
 
 처음에는 TypeScript 3.9에서 `awaited`을 제공할 것으로 예상했지만, 기존 코드 베이스와 함께 초기 TypeScript 빌드를 실행함으로써 모든 사용자에게 원활하게 배포하기 전에 이 기능에 더 많은 설계 작업이 필요하다는 사실을 알았습니다.
-결과적으로 더 많은 확신이 생기면 주요 브랜치에 기능을 추가하기로 결정했습니다.
+결과적으로, 더 확실해질 때까지 메인 브랜치에서 이 기능을 빼기로 결정했습니다.
 이 기능에 대해 더 많은 실험을 할 예정이지만, 이번 릴리스에서는 제공하지 않습니다.
 
 ## <span id="speed-improvements" /> 속도 향상 (Speed Improvements)
