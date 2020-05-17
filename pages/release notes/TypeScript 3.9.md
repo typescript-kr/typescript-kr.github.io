@@ -1,5 +1,5 @@
-* [Improvements in Inference and `Promise.all`](#improvements-in-inference-and-promiseall)
-* [Speed Improvements](#speed-improvements)
+* [추론과 `Promise.all` 개선](#improvements-in-inference-and-promiseall)
+* [속도 향상](#speed-improvements)
 * [`// @ts-expect-error` 주석](#-ts-expect-error-comments)
 * [조건문에서 호출되지 않은 함수 체크](#uncalled-function-checks-in-conditional-expressions)
 * [에디터 개선](#editor-improvements)
@@ -9,10 +9,10 @@
     * [`tsconfig.json` 파일 "솔루션 스타일" 지원](#support-for-solution-style-tsconfigjson-files)
 * [Breaking Changes](#breaking-changes)
 
-## Improvements in Inference and `Promise.all`
+## <span id="improvements-in-inference-and-promiseall" /> 추론과 `Promise.all` 개선 (Improvements in Inference and `Promise.all`)
 
-Recent versions of TypeScript (around 3.7) have had updates to the declarations of functions like `Promise.all` and `Promise.race`.
-Unfortunately, that introduced a few regressions, especially when mixing in values with `null` or `undefined`.
+최신 버전의 TypeScript(약 3.7)는 `Promise.all` 및 `Promise.race`와 같은 함수 선언이 업데이트되었습니다.
+운이 안 좋게도, 특히 `null` 또는 `undefined`와 값을 혼합할 때, 약간의 회귀가 발생했습니다.
 
 ```ts
 interface Lion {
@@ -25,33 +25,33 @@ interface Seal {
 
 async function visitZoo(lionExhibit: Promise<Lion>, sealExhibit: Promise<Seal | undefined>) {
     let [lion, seal] = await Promise.all([lionExhibit, sealExhibit]);
-    lion.roar(); // uh oh
+    lion.roar(); // 오 이런
 //  ~~~~
-// Object is possibly 'undefined'.
+// 객체는 아마도 'undefined' 일 것입니다.
 }
 ```
 
-This is strange behavior!
-The fact that `sealExhibit` contained an `undefined` somehow poisoned type of `lion` to include `undefined`.
+이건 이상한 행동입니다!
+`sealExhibit`가 `undefined`를 포함하는 것은 어떻게든 `lion` 타입에 `undefined`를 주입합니다.
 
-Thanks to [a pull request](https://github.com/microsoft/TypeScript/pull/34501) from [Jack Bates](https://github.com/jablko), this has been fixed with improvements in our inference process in TypeScript 3.9.
-The above no longer errors.
-If you've been stuck on older versions of TypeScript due to issues around `Promise`s, we encourage you to give 3.9 a shot!
+[Jack Bates](https://github.com/jablko)의 [pull request](https://github.com/microsoft/TypeScript/pull/34501) 덕분에, TypeScript 3.9의 추론 프로세스가 개선되었습니다.
+위 오류는 더 이상 발생하지 않습니다.
+`Promise`와 관련된 문제로 인해 이전 버전의 TypeScript에서 고생했다면, 3.9를 사용하는 것이 좋습니다.
 
-### What About the `awaited` Type?
+### `awaited` 타입은 무엇입니까? (What About the `awaited` Type?)
 
-If you've been following our issue tracker and design meeting notes, you might be aware of some work around [a new type operator called `awaited`](https://github.com/microsoft/TypeScript/pull/35998).
-This goal of this type operator is to accurately model the way that `Promise` unwrapping works in JavaScript.
+이슈 트래커와 설계 회의 노트를 봐왔다면, [`awaited` 라는 새로운 연산자](https://github.com/microsoft/TypeScript/pull/35998)에 대한 일부 작업을 알고 있을 것입니다.
+이 타입 연산자의 목표는 JavaScript에서 `Promise`를 푸는 방식을 정확하게 모델링 하는 것입니다.
 
-We initially anticipated shipping `awaited` in TypeScript 3.9, but as we've run early TypeScript builds with existing codebases, we've realized that the feature needs more design work before we can roll it out to everyone smoothly.
-As a result, we've decided to pull the feature out of our main branch until we feel more confident.
-We'll be experimenting more with the feature, but we won't be shipping it as part of this release.
+처음에는 TypeScript 3.9에서 `awaited`을 제공할 것으로 예상했지만, 기존 코드 베이스와 함께 초기 TypeScript 빌드를 실행함으로써 모든 사용자에게 원활하게 배포하기 전에 이 기능에 더 많은 설계 작업이 필요하다는 사실을 알았습니다.
+결과적으로, 더 확실해질 때까지 메인 브랜치에서 이 기능을 빼기로 결정했습니다.
+이 기능에 대해 더 많은 실험을 할 예정이지만, 이번 릴리스에서는 제공하지 않습니다.
 
-## Speed Improvements
+## <span id="speed-improvements" /> 속도 향상 (Speed Improvements)
 
-TypeScript 3.9 ships with many new speed improvements.
-Our team has been focusing on performance after observing extremely poor editing/compilation speed with packages like material-ui and styled-components.
-We've dived deep here, with a series of different pull requests that optimize certain pathological cases involving large unions, intersections, conditional types, and mapped types.
+TypeScript 3.9는 많은 새로운 속도 향상 기능이 포함되어 있습니다.
+우리 팀은 material-ui 및 styled-components와 같은 패키지를 사용할 때 편집 / 컴파일 속도가 매우 열악한 것을 확인한 후 성능에 중점을 두었습니다.
+거대한 유니언, 인터섹션, 조건별 타입 그리고 매핑된 타입과 관련된 특정 병리학적 사례를 최적화하는 다양한 pull request로 심층 분석했습니다.
 
 * https://github.com/microsoft/TypeScript/pull/36576
 * https://github.com/microsoft/TypeScript/pull/36590
@@ -60,14 +60,14 @@ We've dived deep here, with a series of different pull requests that optimize ce
 * https://github.com/microsoft/TypeScript/pull/36754
 * https://github.com/microsoft/TypeScript/pull/36696
 
-Each of these pull requests gains about a 5-10% reduction in compile times on certain codebases.
-In total, we believe we've achieved around a 40% reduction in material-ui's compile time!
+이러한 각 pull request는 특정 코드 베이스에서 컴파일 시간이 약 5-10% 단축됩니다.
+전체적으로 material-ui의 컴파일 시간이 약 40% 단축되었습니다!
 
-We also have some changes to file renaming functionality in editor scenarios.
-We heard from the Visual Studio Code team that when renaming a file, just figuring out which import statements needed to be updated could take between 5 to 10 seconds.
-TypeScript 3.9 addresses this issue by [changing the internals of how the compiler and language service caches file lookups](https://github.com/microsoft/TypeScript/pull/37055).
+또한 에디터 시나리오에서 파일 이름 변경 기능이 일부 변경되었습니다.
+우리는 Visual Studio Code 팀으로부터 파일 이름을 바꿀 때 어떤 import 문을 업데이트해야 하는지 파악하는데 5초에서 10초가 소요될 수 있다고 들었습니다.
+TypeScript 3.9는 [컴파일러 및 언어 서비스가 파일 조회를 캐싱 하는 방식의 내부 변경](https://github.com/microsoft/TypeScript/pull/37055)을 통해 이 문제를 해결합니다.
 
-While there's still room for improvement, we hope this work translates to a snappier experience for everyone!
+여전히 개선의 여지가 있지만, 이 작업이 모든 사람들에게 보다 빠른 경험으로 이어지기를 바랍니다!
 
 ## <span id="-ts-expect-error-comments" /> `// @ts-expect-error` 주석 (`// @ts-expect-error` Comments)
 
