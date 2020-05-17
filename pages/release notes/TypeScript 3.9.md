@@ -101,7 +101,7 @@ expect(() => {
 ```
 
 그래서 TypeScript 3.9는 새로운 기능을 도입했습니다: `// @ts-expect-error` 주석.
-라인 앞에 '// @ts-expect-error' 주석이 붙어 있을 경우, TypeScript는 해당 오류를 보고하는 것을 멈춥니다;
+라인 앞에 `// @ts-expect-error` 주석이 붙어 있을 경우, TypeScript는 해당 오류를 보고하는 것을 멈춥니다;
 그러나 오류가 존재하지 않으면, TypeScript는 `// @ts-expect-error`가 필요하지 않다고 보고할 것입니다.
 
 간단한 예로, 다음 코드는 괜찮습니다
