@@ -2,11 +2,11 @@
 * [Speed Improvements](#speed-improvements)
 * [`// @ts-expect-error` 주석](#-ts-expect-error-comments)
 * [조건문에서 호출되지 않은 함수 체크](#uncalled-function-checks-in-conditional-expressions)
-* [Editor Improvements](#editor-improvements)
-    * [CommonJS Auto-Imports in JavaScript](#commonjs-auto-imports-in-javascript)
-    * [Code Actions Preserve Newlines](#code-actions-preserve-newlines)
-    * [Quick Fixes for Missing Return Expressions](#quick-fixes-for-missing-return-expressions)
-    * [Support for "Solution Style" `tsconfig.json` Files](#support-for-solution-style-tsconfigjson-files)
+* [에디터 개선](#editor-improvements)
+    * [JavaScript에서 CommonJS 자동-Imports](#commonjs-auto-imports-in-javascript)
+    * [코드 작업 개행 유지](#code-actions-preserve-newlines)
+    * [누락된 반환문 빠른 수정](#quick-fixes-for-missing-return-expressions)
+    * [`tsconfig.json` 파일 "솔루션 스타일" 지원](#support-for-solution-style-tsconfigjson-files)
 * [Breaking Changes](#breaking-changes)
 
 ## Improvements in Inference and `Promise.all`
@@ -191,58 +191,58 @@ function getAllFiles(startFileName: string) {
 
 https://github.com/microsoft/TypeScript/issues/36048
 
-## Editor Improvements
+## <span id="editor-improvements" /> 에디터 개선 (Editor Improvements)
 
-The TypeScript compiler not only powers the TypeScript editing experience in most major editors, it also powers the JavaScript experience in the Visual Studio family of editors and more.
-Using new TypeScript/JavaScript functionality in your editor will differ depending on your editor, but
+TypeScript 컴파일러는 주요 에디터의 TypeScript 작성 경험뿐만 아니라, Visual Studio 계열 에디터의 JavaScript 작성 경험에도 영향을 줍니다.
+에디터에서 새로운 TypeScript/JavaScript 기능을 사용하는 것은 에디터에 따라 다르겠지만
 
-* Visual Studio Code supports [selecting different versions of TypeScript](https://code.visualstudio.com/docs/typescript/typescript-compiling#_using-the-workspace-version-of-typescript). Alternatively, there's the [JavaScript/TypeScript Nightly Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next) to stay on the bleeding edge (which is typically very stable).
-* Visual Studio 2017/2019 have [the SDK installers above] and [MSBuild installs](https://www.nuget.org/packages/Microsoft.TypeScript.MSBuild).
-* Sublime Text 3 supports [selecting different versions of TypeScript](https://github.com/microsoft/TypeScript-Sublime-Plugin#note-using-different-versions-of-typescript)
+* Visual Studio Code는 [다른 버전의 TypeScript 선택](https://code.visualstudio.com/docs/typescript/typescript-compiling#_using-the-workspace-version-of-typescript)을 지원합니다. 또는, 최신으로 유지하기 위한 [JavaScript/TypeScript Nightly Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next)도 있습니다.(대체로 안정적입니다.)
+* Visual Studio 2017/2019 에는 [SDK 설치 프로그램] 과 [MSBuild 설치](https://www.nuget.org/packages/Microsoft.TypeScript.MSBuild)가 있습니다.
+* Sublime Text 3은 [다른 버전의 TypeScript 선택]((https://github.com/microsoft/TypeScript-Sublime-Plugin#note-using-different-versions-of-typescript))을 지원합니다.
 
-### CommonJS Auto-Imports in JavaScript
+### <span id="commonjs-auto-imports-in-javascript" /> JavaScript에서 CommonJS 자동-import (CommonJS Auto-Imports in JavaScript)
 
-One great new improvement is in auto-imports in JavaScript files using CommonJS modules.
+CommonJS 모듈을 사용하는 JavaScript 파일에서 자동-import 기능이 크게 개선되었습니다.
 
-In older versions, TypeScript always assumed that regardless of your file, you wanted an ECMAScript-style import like
+이전 버전에서는, TypeScript는 항상 파일에 관계없이 ECMAScript-스타일의 import를 원한다고 가정했습니다.
 
 ```js
 import * as fs from "fs";
 ```
 
-However, not everyone is targeting ECMAScript-style modules when writing JavaScript files.
-Plenty of users still use CommonJS-style `require(...)` imports like so
+하지만, 모든 사람이 JavaScript 파일을 쓸 때 ECMAScript-스타일의 모듈을 원하는 것은 아닙니다.
+많은 사용자가 여전히 CommonJS-스타일의 `require(...)` import를 사용하고 있습니다.
 
 ```js
 const fs = require("fs");
 ```
 
-TypeScript now automatically detects the types of imports you're using to keep your file's style clean and consistent.
+이제 TypeScript는 파일 스타일을 깔끔하고 일관되게 유지하기 위해서 사용 중인 import 유형을 자동으로 검색합니다.
 
 <video src="https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2020/03/ERkaliGU0AA5anJ1.mp4"></video>
 
-For more details on the change, see [the corresponding pull request](https://github.com/microsoft/TypeScript/pull/37027).
+이 변경에 대한 자세한 내용은, [해당 pull request](https://github.com/microsoft/TypeScript/pull/37027)를 참고하세요.
 
-### Code Actions Preserve Newlines
+### <span id="code-actions-preserve-newlines" /> 코드 작업 개행 유지 (Code Actions Preserve Newlines)
 
-TypeScript's refactorings and quick fixes often didn't do a great job of preserving newlines.
-As a really basic example, take the following code.
+TypeScript의 리팩터링과 빠른 수정은 종종 개행을 유지하는데 큰 역할을 하지는 않았습니다.
+기본적인 예로 다음 코드를 보겠습니다.
 
 ```ts
 const maxValue = 100;
 
-/*start*/
+/*시작*/
 for (let i = 0; i <= maxValue; i++) {
-    // First get the squared value.
+    // 먼저 제곱 값을 구한다.
     let square = i ** 2;
 
-    // Now print the squared value.
+    // 제곱 값을 출력한다.
     console.log(square);
 }
-/*end*/
+/*끝*/
 ```
 
-If we highlighted the range from `/*start*/` to `/*end*/` in our editor to extract to a new function, we'd end up with code like the following.
+에디터에서 `/*시작*/` 에서 `/*끝*/` 까지 범위를 강조하여 새로운 함수로 추출하면, 다음과 같은 코드가 됩니다.
 
 ```ts
 const maxValue = 100;
@@ -251,18 +251,18 @@ printSquares();
 
 function printSquares() {
     for (let i = 0; i <= maxValue; i++) {
-        // First get the squared value.
+        // 먼저 제곱 값을 구한다.
         let square = i ** 2;
-        // Now print the squared value.
+        // 제곱 값을 출력한다.
         console.log(square);
     }
 }
 ```
 
-![Extracting the for loop to a function in older versions of TypeScript. A newline is not preserved.](https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2020/03/printSquaresWithoutNewlines-3.9.gif.gif)
+![이전 버전의 TypeScript에선 함수로 루프 추출은. 개행을 유지하지 않습니다.](https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2020/03/printSquaresWithoutNewlines-3.9.gif.gif)
 
-That's not ideal - we had a blank line between each statement in our `for` loop, but the refactoring got rid of it!
-TypeScript 3.9 does a little more work to preserve what we write.
+이건 이상적이지 않습니다 - `for` 루프에서 각각의 문 사이에 빈 줄이 있었지만 리팩터링이 없애버렸습니다!
+TypeScript 3.9은 우리가 작성한 것을 보존하기 위해 조금 더 작업을 합니다.
 
 ```ts
 const maxValue = 100;
@@ -271,41 +271,41 @@ printSquares();
 
 function printSquares() {
     for (let i = 0; i <= maxValue; i++) {
-        // First get the squared value.
+        // 먼저 제곱 값을 구한다.
         let square = i ** 2;
 
-        // Now print the squared value.
+        // 제곱값을 출력한다.
         console.log(square);
     }
 }
 ```
 
-![Extracting the for loop to a function in TypeScript 3.9. A newline is preserved.](https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2020/03/printSquaresWithNewlines-3.9.gif.gif)
+![TypeScript 3.9의 함수에 대한 루프 추출. 개행이 보존됨](https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2020/03/printSquaresWithNewlines-3.9.gif.gif)
 
-You can see more about the implementation [in this pull request](https://github.com/microsoft/TypeScript/pull/36688)
+[이 pull request](https://github.com/microsoft/TypeScript/pull/36688)에서 구현에 대해 더 자세히 볼 수 있습니다.
 
-### Quick Fixes for Missing Return Expressions
+### <span id="quick-fixes-for-missing-return-expressions" /> 누락된 반환 문 빠른 수정 (Quick Fixes for Missing Return Expressions)
 
-There are occasions where we might forget to return the value of the last statement in a function, especially when adding curly braces to arrow functions.
+특히 화살표 함수에 중괄호를 추가할 때, 함수의 마지막 문의 값을 반환하는 것을 잊는 경우가 있습니다.
 
 ```ts
-// before
+// 이전
 let f1 = () => 42
 
-// oops - not the same!
+// 실수 - 동일하지 않음!
 let f2 = () => { 42 }
 ```
 
-Thanks to [a pull request](https://github.com/microsoft/TypeScript/pull/26434) from community member [Wenlu Wang](https://github.com/Kingwl), TypeScript can provide a quick-fix to add missing `return` statements, remove curly braces, or add parentheses to arrow function bodies that look suspiciously like object literals.
+커뮤니티 멤버인 [Wenlu Wang](https://github.com/Kingwl)의 [pull request](https://github.com/microsoft/TypeScript/pull/26434) 덕분에, TypeScript는 누락된 `return` 문을 추가하거나, 중괄호를 제거하거나, 객체 리터럴 처럼 보이는 화살표 함수 몸체에 괄호를 추가하는 빠른-수정을 제공할 수 있습니다.
 
-![TypeScript fixing an error where no expression is returned by adding a `return` statement or removing curly braces.](https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2020/04/missingReturnValue-3-9.gif)
+![TypeScript는 `return` 문을 추가하거나 중괄호를 제거하여 식이 반환되지 않는 오류를 수정합니다.](https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2020/04/missingReturnValue-3-9.gif)
 
-### Support for "Solution Style" `tsconfig.json` Files
+### <span id="support-for-solution-style-tsconfigjson-files" /> `tsconfig.json` 파일 "솔루션 스타일" 지원 (Support for "Solution Style" `tsconfig.json` Files)
 
-Editors need to figure out which configuration file a file belongs to so that it can apply the appropriate options and figure out which other files are included in the current "project".
-By default, editors powered by TypeScript's language server do this by walking up each parent directory to find a `tsconfig.json`.
+에디터는 파일이 어떤 설정 파일에 속하는지 파악하여 적절한 옵션을 적용할 수 있도록 하고 현재 "프로젝트"에 어떤 다른 파일이 포함되어 있는지 파악해야 합니다.
+기본적으로, TypeScript의 언어 서버가 영향을 주는 에디터는 각 상위 디렉터리를 따라 올라가 `tsconfig.json`을 찾음으로써 이 작업을 수행합니다.
 
-One case where this slightly fell over is when a `tsconfig.json` simply existed to reference other `tsconfig.json` files.
+이 문제가 다소 실패하는 경우 중 하나는 tsconfig.json이 단순히 다른 tsconfig.json 파일을 참조하기 위해 존재할 때였습니다.
 
 ```json5
 // tsconfig.json
@@ -319,11 +319,11 @@ One case where this slightly fell over is when a `tsconfig.json` simply existed 
 }
 ```
 
-This file that really does nothing but manage other project files is often called a "solution" in some environments.
-Here, none of these `tsconfig.*.json` files get picked up by the server, but we'd really like the language server to understand that the current `.ts` file probably belongs to one of the mentioned projects in this root `tsconfig.json`.
+다른 프로젝트 파일을 관리만 하는 이 파일은 어떤 환경에서는 종종 "솔루션"이라고 불립니다.
+여기서 `tsconfig.*.json` 파일 중 어떤 파일도 서버에 의해 검색되지 않지만, 현재 `.ts` 파일이 루트의 `tsconfig.json`에 언급된 프로젝트 중 하나에 속한다는 것을 언어 서버가 이해하기를 원합니다.
 
-TypeScript 3.9 adds support to editing scenarios for this configuration.
-For more details, take a look at [the pull request that added this functionality](https://github.com/microsoft/TypeScript/pull/37239).
+TypeScript 3.9 는 이 설정에 대한 시나리오 수정을 지원합니다.
+더 자세한 사항은, [이 기능을 추가한 pull request](https://github.com/microsoft/TypeScript/pull/37239)를 확인하세요.
 
 ## Breaking Changes
 
