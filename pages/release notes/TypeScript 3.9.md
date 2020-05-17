@@ -1,12 +1,12 @@
 * [추론과 `Promise.all` 개선](#improvements-in-inference-and-promiseall)
 * [속도 향상](#speed-improvements)
-* [`// @ts-expect-error` Comments](#-ts-expect-error-comments)
-* [Uncalled Function Checks in Conditional Expressions](#uncalled-function-checks-in-conditional-expressions)
-* [Editor Improvements](#editor-improvements)
-    * [CommonJS Auto-Imports in JavaScript](#commonjs-auto-imports-in-javascript)
-    * [Code Actions Preserve Newlines](#code-actions-preserve-newlines)
-    * [Quick Fixes for Missing Return Expressions](#quick-fixes-for-missing-return-expressions)
-    * [Support for "Solution Style" `tsconfig.json` Files](#support-for-solution-style-tsconfigjson-files)
+* [`// @ts-expect-error` 주석](#-ts-expect-error-comments)
+* [조건문에서 호출되지 않은 함수 체크](#uncalled-function-checks-in-conditional-expressions)
+* [에디터 개선](#editor-improvements)
+    * [JavaScript에서 CommonJS 자동-Imports](#commonjs-auto-imports-in-javascript)
+    * [코드 작업 개행 유지](#code-actions-preserve-newlines)
+    * [누락된 반환문 빠른 수정](#quick-fixes-for-missing-return-expressions)
+    * [`tsconfig.json` 파일 "솔루션 스타일" 지원](#support-for-solution-style-tsconfigjson-files)
 * [Breaking Changes](#breaking-changes)
 
 ## <span id="improvements-in-inference-and-promiseall" /> 추론과 `Promise.all` 개선 (Improvements in Inference and `Promise.all`)
@@ -69,22 +69,22 @@ TypeScript 3.9는 [컴파일러 및 언어 서비스가 파일 조회를 캐싱 
 
 여전히 개선의 여지가 있지만, 이 작업이 모든 사람들에게 보다 빠른 경험으로 이어지기를 바랍니다!
 
-## `// @ts-expect-error` Comments
+## <span id="-ts-expect-error-comments" /> `// @ts-expect-error` 주석 (`// @ts-expect-error` Comments)
 
-Imagine that we're writing a library in TypeScript and we're exporting some function called `doStuff` as part of our public API.
-The function's types declare that it takes two `string`s so that other TypeScript users can get type-checking errors, but it also does a runtime check (maybe only in development builds) to give JavaScript users a helpful error.
+TypeScript로 라이브러리를 작성하고 퍼블릭 API의 일부분으로 `doStuff`라는 함수를 export 한다고 상상해보세요.
+TypeScript 사용자가 타입-체크 오류를 받을 수 있도록 `doStuff` 함수의 타입은 두 개의 `string`을 갖는다고 선언하지만, 또한 JavaScript 사용자에게 유용한 오류를 제공하기 위해 런타임 오류 체크를 합니다 (개발 빌드 시에만 가능).
 
 ```ts
 function doStuff(abc: string, xyz: string) {
     assert(typeof abc === "string");
     assert(typeof xyz === "string");
 
-    // do some stuff
+    // 어떤 작업을 하세요
 }
 ```
 
-So TypeScript users will get a helpful red squiggle and an error message when they misuse this function, and JavaScript users will get an assertion error.
-We'd like to test this behavior, so we'll write a unit test.
+그래서 TypeScript 사용자는 함수를 잘못 사용할 경우 유용한 빨간 오류 밑줄과 오류 메시지를 받게 되며, JavaScript 사용자는 단언 오류를 얻게 됩니다.
+이러한 작동을 테스트하기 위해서, 유닛 테스트를 작성하겠습니다.
 
 ```ts
 expect(() => {
@@ -92,81 +92,81 @@ expect(() => {
 }).toThrow();
 ```
 
-Unfortunately if our tests are written in TypeScript, TypeScript will give us an error!
+불행히도 위의 테스트가 TypeScript에서 작성된다면, TypeScript는 오류를 발생시킬 것입니다!
 
 ```ts
     doStuff(123, 456);
 //          ~~~
-// error: Type 'number' is not assignable to type 'string'.
+// 오류: 'number' 타입은 'string' 타입에 할당할 수 없습니다.
 ```
 
-That's why TypeScript 3.9 brings a new feature: `// @ts-expect-error` comments.
-When a line is prefixed with a `// @ts-expect-error` comment, TypeScript will suppress that error from being reported;
-but if there's no error, TypeScript will report that `// @ts-expect-error` wasn't necessary.
+그래서 TypeScript 3.9는 새로운 기능을 도입했습니다: `// @ts-expect-error` 주석.
+라인 앞에 `// @ts-expect-error` 주석이 붙어 있을 경우, TypeScript는 해당 오류를 보고하는 것을 멈춥니다;
+그러나 오류가 존재하지 않으면, TypeScript는 `// @ts-expect-error`가 필요하지 않다고 보고할 것입니다.
 
-As a quick example, the following code is okay
+간단한 예로, 다음 코드는 괜찮습니다
 
 ```ts
 // @ts-expect-error
 console.log(47 * "octopus");
 ```
 
-while the following code
+그러나 다음 코드는
 
 ```ts
 // @ts-expect-error
 console.log(1 + 1);
 ```
 
-results in the error
+오류로 이어질 것입니다
 
 ```
 Unused '@ts-expect-error' directive.
 ```
 
-We'd like to extend a big thanks to [Josh Goldberg](https://github.com/JoshuaKGoldberg), the contributor who implemented this feature.
-For more information, you can take a look at [the `ts-expect-error` pull request](https://github.com/microsoft/TypeScript/pull/36014).
+이 기능을 구현한 컨트리뷰터, [Josh Goldberg](https://github.com/JoshuaKGoldberg)에게 큰 감사를 드립니다.
+자세한 내용은 [the `ts-expect-error` pull request](https://github.com/microsoft/TypeScript/pull/36014)를 참고하세요.
 
-### `ts-ignore` or `ts-expect-error`?
+### `ts-ignore` 또는 `ts-expect-error`? (`ts-ignore` or `ts-expect-error`?)
 
-In some ways `// @ts-expect-error` can act as a suppression comment, similar to `// @ts-ignore`.
-The difference is that `// @ts-ignore` will do nothing if the following line is error-free.
+어떤 점에서는 `// @ts-expect-error`가 `// @ts-ignore`과 유사하게 억제 주석(suppression comment)으로 작용할 수 있습니다.
+차이점은 `// @ts-ignore`는 다음 행에 오류가 없을 경우 아무것도 하지 않는다는 것입니다.
 
-You might be tempted to switch existing `// @ts-ignore` comments over to `// @ts-expect-error`, and you might be wondering which is appropriate for future code.
-While it's entirely up to you and your team, we have some ideas of which to pick in certain situations.
+기존 `// @ts-ignore` 주석을 `// @ts-expect-error`로 바꾸고 싶은 마음이 들 수 있으며, 향후 코드에 무엇이 적합한지 궁금할 수 있습니다.
+전적으로 당신과 당신 팀의 선택이지만, 우리는 어떤 상황에서 어떤 것을 선택할 것인지에 대한 몇 가지 아이디어를 가지고 있습니다.
 
-Pick `ts-expect-error` if:
+다음 경우라면 `ts-expect-error`를 선택하세요:
 
-* you're writing test code where you actually want the type system to error on an operation
-* you expect a fix to be coming in fairly quickly and you just need a quick workaround
-* you're in a reasonably-sized project with a proactive team that wants to remove suppression comments as soon affected code is valid again
+* 타입 시스템이 작동에 대한 오류를 발생시키는 테스트 코드 작성을 원하는 경우
+* 수정이 빨리 이루어지길 원하며 빠른 해결책이 필요한 경우
+* 오류가 발생한 코드가 다시 유효해지면 바로 억제 주석을 삭제하길 원하는 혁신적인 팀이 이끄는 적당한-크기의 프로젝트에서 작업하는 경우
 
-Pick `ts-ignore` if:
+다음 경우라면 `ts-ignore`를 선택하세요:
 
-* you have an a larger project and and new errors have appeared in code with no clear owner
-* you are in the middle of an upgrade between two different versions of TypeScript, and a line of code errors in one version but not another.
-* you honestly don't have the time to decide which of these options is better.
+* 더 큰 프로젝트를 갖고 있고 코드에서 발생한 새로운 오류의 명확한 책임자를 찾기 힘든 경우
+* TypeScript의 두 가지 버전 사이에서 업그레이드하는 중이고, 한 버전에서는 코드 오류가 발생하지만 나머지 버전에서는 그렇지 않은 경우
+* 솔직히 어떤 옵션 더 나은지 결정할 시간이 없는 경우
 
-## Uncalled Function Checks in Conditional Expressions
+## <span id="uncalled-function-checks-in-conditional-expressions" /> 조건문에서 호출되지 않은 함수 체크 (Uncalled Function Checks in Conditional Expressions)
 
-In TypeScript 3.7 we introduced *uncalled function checks* to report an error when you've forgotten to call a function.
+TypeScript 3.7에서 함수 호출을 잊어버렸을 경우 오류를 보고하기 위해 *호출되지 않은 함수 체크*를 도입했습니다.
 
 ```ts
 function hasImportantPermissions(): boolean {
     // ...
 }
 
-// Oops!
+// 이런!
 if (hasImportantPermissions) {
 //  ~~~~~~~~~~~~~~~~~~~~~~~
-// This condition will always return true since the function is always defined.
-// Did you mean to call it instead?
+// hasImportantPermissions 함수가 항상 정의되어 있기 때문에, 이 조건문은 항상 true를 반환합니다.
+// 대신 이것을 호출하려 하셨나요?
     deleteAllTheImportantFiles();
 }
 ```
 
-However, this error only applied to conditions in `if` statements.
-Thanks to [a pull request](https://github.com/microsoft/TypeScript/pull/36402) from [Alexander Tarasyuk](https://github.com/a-tarasyuk), this feature is also now supported in ternary conditionals (i.e. the `cond ? trueExpr : falseExpr` syntax).
+그러나, 이 오류는 `if` 문의 조건에만 적용됩니다.
+[Alexander Tarasyuk](https://github.com/a-tarasyuk)의 [a pull request](https://github.com/microsoft/TypeScript/pull/36402) 덕분에, 이 기능은 삼항 조건 연산자도 지원하게 되었습니다 (예. `cond ? trueExpr : falseExpr` 구문).
 
 ```ts
 declare function listFilesOfDirectory(dirPath: string): string[];
@@ -180,9 +180,9 @@ function getAllFiles(startFileName: string) {
     function traverse(currentPath: string) {
         return isDirectory ?
         //     ~~~~~~~~~~~
-        // This condition will always return true
-        // since the function is always defined.
-        // Did you mean to call it instead?
+        // isDirectory 함수가 항상 정의되어 있기 때문에,
+        // 이 조건문은 항상 true를 반환합니다
+        // 대신 이것을 호출하려 하셨나요?
             listFilesOfDirectory(currentPath).forEach(traverse) :
             result.push(currentPath);
     }
@@ -191,58 +191,58 @@ function getAllFiles(startFileName: string) {
 
 https://github.com/microsoft/TypeScript/issues/36048
 
-## Editor Improvements
+## <span id="editor-improvements" /> 에디터 개선 (Editor Improvements)
 
-The TypeScript compiler not only powers the TypeScript editing experience in most major editors, it also powers the JavaScript experience in the Visual Studio family of editors and more.
-Using new TypeScript/JavaScript functionality in your editor will differ depending on your editor, but
+TypeScript 컴파일러는 주요 에디터의 TypeScript 작성 경험뿐만 아니라, Visual Studio 계열 에디터의 JavaScript 작성 경험에도 영향을 줍니다.
+에디터에서 새로운 TypeScript/JavaScript 기능을 사용하는 것은 에디터에 따라 다르겠지만
 
-* Visual Studio Code supports [selecting different versions of TypeScript](https://code.visualstudio.com/docs/typescript/typescript-compiling#_using-the-workspace-version-of-typescript). Alternatively, there's the [JavaScript/TypeScript Nightly Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next) to stay on the bleeding edge (which is typically very stable).
-* Visual Studio 2017/2019 have [the SDK installers above] and [MSBuild installs](https://www.nuget.org/packages/Microsoft.TypeScript.MSBuild).
-* Sublime Text 3 supports [selecting different versions of TypeScript](https://github.com/microsoft/TypeScript-Sublime-Plugin#note-using-different-versions-of-typescript)
+* Visual Studio Code는 [다른 버전의 TypeScript 선택](https://code.visualstudio.com/docs/typescript/typescript-compiling#_using-the-workspace-version-of-typescript)을 지원합니다. 또는, 최신으로 유지하기 위한 [JavaScript/TypeScript Nightly Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next)도 있습니다.(대체로 안정적입니다.)
+* Visual Studio 2017/2019 에는 [SDK 설치 프로그램] 과 [MSBuild 설치](https://www.nuget.org/packages/Microsoft.TypeScript.MSBuild)가 있습니다.
+* Sublime Text 3은 [다른 버전의 TypeScript 선택]((https://github.com/microsoft/TypeScript-Sublime-Plugin#note-using-different-versions-of-typescript))을 지원합니다.
 
-### CommonJS Auto-Imports in JavaScript
+### <span id="commonjs-auto-imports-in-javascript" /> JavaScript에서 CommonJS 자동-import (CommonJS Auto-Imports in JavaScript)
 
-One great new improvement is in auto-imports in JavaScript files using CommonJS modules.
+CommonJS 모듈을 사용하는 JavaScript 파일에서 자동-import 기능이 크게 개선되었습니다.
 
-In older versions, TypeScript always assumed that regardless of your file, you wanted an ECMAScript-style import like
+이전 버전에서는, TypeScript는 항상 파일에 관계없이 ECMAScript-스타일의 import를 원한다고 가정했습니다.
 
 ```js
 import * as fs from "fs";
 ```
 
-However, not everyone is targeting ECMAScript-style modules when writing JavaScript files.
-Plenty of users still use CommonJS-style `require(...)` imports like so
+하지만, 모든 사람이 JavaScript 파일을 쓸 때 ECMAScript-스타일의 모듈을 원하는 것은 아닙니다.
+많은 사용자가 여전히 CommonJS-스타일의 `require(...)` import를 사용하고 있습니다.
 
 ```js
 const fs = require("fs");
 ```
 
-TypeScript now automatically detects the types of imports you're using to keep your file's style clean and consistent.
+이제 TypeScript는 파일 스타일을 깔끔하고 일관되게 유지하기 위해서 사용 중인 import 유형을 자동으로 검색합니다.
 
 <video src="https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2020/03/ERkaliGU0AA5anJ1.mp4"></video>
 
-For more details on the change, see [the corresponding pull request](https://github.com/microsoft/TypeScript/pull/37027).
+이 변경에 대한 자세한 내용은, [해당 pull request](https://github.com/microsoft/TypeScript/pull/37027)를 참고하세요.
 
-### Code Actions Preserve Newlines
+### <span id="code-actions-preserve-newlines" /> 코드 작업 개행 유지 (Code Actions Preserve Newlines)
 
-TypeScript's refactorings and quick fixes often didn't do a great job of preserving newlines.
-As a really basic example, take the following code.
+TypeScript의 리팩터링과 빠른 수정은 종종 개행을 유지하는데 큰 역할을 하지는 않았습니다.
+기본적인 예로 다음 코드를 보겠습니다.
 
 ```ts
 const maxValue = 100;
 
-/*start*/
+/*시작*/
 for (let i = 0; i <= maxValue; i++) {
-    // First get the squared value.
+    // 먼저 제곱 값을 구한다.
     let square = i ** 2;
 
-    // Now print the squared value.
+    // 제곱 값을 출력한다.
     console.log(square);
 }
-/*end*/
+/*끝*/
 ```
 
-If we highlighted the range from `/*start*/` to `/*end*/` in our editor to extract to a new function, we'd end up with code like the following.
+에디터에서 `/*시작*/` 에서 `/*끝*/` 까지 범위를 강조하여 새로운 함수로 추출하면, 다음과 같은 코드가 됩니다.
 
 ```ts
 const maxValue = 100;
@@ -251,18 +251,18 @@ printSquares();
 
 function printSquares() {
     for (let i = 0; i <= maxValue; i++) {
-        // First get the squared value.
+        // 먼저 제곱 값을 구한다.
         let square = i ** 2;
-        // Now print the squared value.
+        // 제곱 값을 출력한다.
         console.log(square);
     }
 }
 ```
 
-![Extracting the for loop to a function in older versions of TypeScript. A newline is not preserved.](https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2020/03/printSquaresWithoutNewlines-3.9.gif.gif)
+![이전 버전의 TypeScript에선 함수로 루프 추출은. 개행을 유지하지 않습니다.](https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2020/03/printSquaresWithoutNewlines-3.9.gif.gif)
 
-That's not ideal - we had a blank line between each statement in our `for` loop, but the refactoring got rid of it!
-TypeScript 3.9 does a little more work to preserve what we write.
+이건 이상적이지 않습니다 - `for` 루프에서 각각의 문 사이에 빈 줄이 있었지만 리팩터링이 없애버렸습니다!
+TypeScript 3.9은 우리가 작성한 것을 보존하기 위해 조금 더 작업을 합니다.
 
 ```ts
 const maxValue = 100;
@@ -271,41 +271,41 @@ printSquares();
 
 function printSquares() {
     for (let i = 0; i <= maxValue; i++) {
-        // First get the squared value.
+        // 먼저 제곱 값을 구한다.
         let square = i ** 2;
 
-        // Now print the squared value.
+        // 제곱값을 출력한다.
         console.log(square);
     }
 }
 ```
 
-![Extracting the for loop to a function in TypeScript 3.9. A newline is preserved.](https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2020/03/printSquaresWithNewlines-3.9.gif.gif)
+![TypeScript 3.9의 함수에 대한 루프 추출. 개행이 보존됨](https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2020/03/printSquaresWithNewlines-3.9.gif.gif)
 
-You can see more about the implementation [in this pull request](https://github.com/microsoft/TypeScript/pull/36688)
+[이 pull request](https://github.com/microsoft/TypeScript/pull/36688)에서 구현에 대해 더 자세히 볼 수 있습니다.
 
-### Quick Fixes for Missing Return Expressions
+### <span id="quick-fixes-for-missing-return-expressions" /> 누락된 반환 문 빠른 수정 (Quick Fixes for Missing Return Expressions)
 
-There are occasions where we might forget to return the value of the last statement in a function, especially when adding curly braces to arrow functions.
+특히 화살표 함수에 중괄호를 추가할 때, 함수의 마지막 문의 값을 반환하는 것을 잊는 경우가 있습니다.
 
 ```ts
-// before
+// 이전
 let f1 = () => 42
 
-// oops - not the same!
+// 실수 - 동일하지 않음!
 let f2 = () => { 42 }
 ```
 
-Thanks to [a pull request](https://github.com/microsoft/TypeScript/pull/26434) from community member [Wenlu Wang](https://github.com/Kingwl), TypeScript can provide a quick-fix to add missing `return` statements, remove curly braces, or add parentheses to arrow function bodies that look suspiciously like object literals.
+커뮤니티 멤버인 [Wenlu Wang](https://github.com/Kingwl)의 [pull request](https://github.com/microsoft/TypeScript/pull/26434) 덕분에, TypeScript는 누락된 `return` 문을 추가하거나, 중괄호를 제거하거나, 객체 리터럴 처럼 보이는 화살표 함수 몸체에 괄호를 추가하는 빠른-수정을 제공할 수 있습니다.
 
-![TypeScript fixing an error where no expression is returned by adding a `return` statement or removing curly braces.](https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2020/04/missingReturnValue-3-9.gif)
+![TypeScript는 `return` 문을 추가하거나 중괄호를 제거하여 식이 반환되지 않는 오류를 수정합니다.](https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2020/04/missingReturnValue-3-9.gif)
 
-### Support for "Solution Style" `tsconfig.json` Files
+### <span id="support-for-solution-style-tsconfigjson-files" /> `tsconfig.json` 파일 "솔루션 스타일" 지원 (Support for "Solution Style" `tsconfig.json` Files)
 
-Editors need to figure out which configuration file a file belongs to so that it can apply the appropriate options and figure out which other files are included in the current "project".
-By default, editors powered by TypeScript's language server do this by walking up each parent directory to find a `tsconfig.json`.
+에디터는 파일이 어떤 설정 파일에 속하는지 파악하여 적절한 옵션을 적용할 수 있도록 하고 현재 "프로젝트"에 어떤 다른 파일이 포함되어 있는지 파악해야 합니다.
+기본적으로, TypeScript의 언어 서버가 영향을 주는 에디터는 각 상위 디렉터리를 따라 올라가 `tsconfig.json`을 찾음으로써 이 작업을 수행합니다.
 
-One case where this slightly fell over is when a `tsconfig.json` simply existed to reference other `tsconfig.json` files.
+이 문제가 다소 실패하는 경우 중 하나는 tsconfig.json이 단순히 다른 tsconfig.json 파일을 참조하기 위해 존재할 때였습니다.
 
 ```json5
 // tsconfig.json
@@ -319,11 +319,11 @@ One case where this slightly fell over is when a `tsconfig.json` simply existed 
 }
 ```
 
-This file that really does nothing but manage other project files is often called a "solution" in some environments.
-Here, none of these `tsconfig.*.json` files get picked up by the server, but we'd really like the language server to understand that the current `.ts` file probably belongs to one of the mentioned projects in this root `tsconfig.json`.
+다른 프로젝트 파일을 관리만 하는 이 파일은 어떤 환경에서는 종종 "솔루션"이라고 불립니다.
+여기서 `tsconfig.*.json` 파일 중 어떤 파일도 서버에 의해 검색되지 않지만, 현재 `.ts` 파일이 루트의 `tsconfig.json`에 언급된 프로젝트 중 하나에 속한다는 것을 언어 서버가 이해하기를 원합니다.
 
-TypeScript 3.9 adds support to editing scenarios for this configuration.
-For more details, take a look at [the pull request that added this functionality](https://github.com/microsoft/TypeScript/pull/37239).
+TypeScript 3.9 는 이 설정에 대한 시나리오 수정을 지원합니다.
+더 자세한 사항은, [이 기능을 추가한 pull request](https://github.com/microsoft/TypeScript/pull/37239)를 확인하세요.
 
 ## Breaking Changes
 
