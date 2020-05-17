@@ -236,7 +236,7 @@ for (let i = 0; i <= maxValue; i++) {
     // 먼저 제곱 값을 구한다.
     let square = i ** 2;
 
-    // 제곱값을 출력한다.
+    // 제곱 값을 출력한다.
     console.log(square);
 }
 /*끝*/
