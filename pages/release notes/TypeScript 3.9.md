@@ -464,7 +464,7 @@ TypeScript 3.9에서는, 타입 시스템이 더 공격적입니다 - `kind` 프
 관찰한 대부분의 오류는 잘못된 타입 선언과 일치하는 것으로 보입니다.
 자세한 내용은 [원문 pull request](https://github.com/microsoft/TypeScript/pull/36696)를 보세요.
 
-### Getters/Setter는 더 이상 열거하지 않습니다 (Getters/Setters are No Longer Enumerable)
+### Getters/Setters는 더 이상 열거하지 않습니다 (Getters/Setters are No Longer Enumerable)
 
 이전 버전의 TypeScript에서, 클래스의 `get`과 `set` 접근자는 열거 가능한 방법으로 방출되었습니다; 하지만, `get`과 `set`은 열거할 수 없다는 ECMAScript 사양을 따르지 않았습니다.
 결과적으로, ES5와 ES2015를 타겟팅 하는 TypeScript 코드는 동작이 다를 수 있습니다.
