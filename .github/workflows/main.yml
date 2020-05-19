@@ -1,7 +1,7 @@
 name: Create Pull Request
 on:
   schedule:
-    - cron: '0 15 * *  1'
+    - cron: '0 15 * *  2'
 jobs:
   createPullRequest:
     runs-on: ubuntu-latest
