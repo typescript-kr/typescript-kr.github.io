@@ -394,7 +394,7 @@ let directions = <span>Navigate to: Menu Bar > Tools > Options</div>
 
 ```ts
 interface A {
-    a: number; // 'number' 인것에 주목
+    a: number; // 'number' 인 것에 주목
 }
 
 interface B {
