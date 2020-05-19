@@ -7,7 +7,7 @@
     * [코드 작업 개행 유지](#code-actions-preserve-newlines)
     * [누락된 반환문 빠른 수정](#quick-fixes-for-missing-return-expressions)
     * [`tsconfig.json` 파일 "솔루션 스타일" 지원](#support-for-solution-style-tsconfigjson-files)
-* [Breaking Changes](#breaking-changes)
+* [주요 변경 사항](#주요-변경-사항-breaking-changes)
 
 ## <span id="improvements-in-inference-and-promiseall" /> 추론과 `Promise.all` 개선 (Improvements in Inference and `Promise.all`)
 
@@ -325,59 +325,59 @@ let f2 = () => { 42 }
 TypeScript 3.9 는 이 설정에 대한 시나리오 수정을 지원합니다.
 더 자세한 사항은, [이 기능을 추가한 pull request](https://github.com/microsoft/TypeScript/pull/37239)를 확인하세요.
 
-## Breaking Changes
+## 주요 변경 사항 (Breaking Changes)
 
-### Parsing Differences in Optional Chaining and Non-Null Assertions
+### 선택적 체이닝과 널이 아닌 단언에서 파싱 차이점 (Parsing Differences in Optional Chaining and Non-Null Assertions)
 
-TypeScript recently implemented the optional chaining operator, but we've received user feedback that the behavior of optional chaining (`?.`) with the non-null assertion operator (`!`) is extremely counter-intuitive.
+최근에 TypeScript는 선택적 체이닝 연산자를 도입했지만, 널이 아닌 단언 연산자 (`!`)와 함께 사용하는 선택적 체이닝 (`?.`)의 동작이 매우 직관적이지 않다는 사용자 피드백을 받았습니다.
 
-Specifically, in previous versions, the code
+구체적으로, 이전 버전에서는 코드가
 
 ```ts
 foo?.bar!.baz
 ```
 
-was interpreted to be equivalent to the following JavaScript.
+다음 JavaScript와 동일하게 해석되었습니다.
 
 ```js
 (foo?.bar).baz
 ```
 
-In the above code the parentheses stop the "short-circuiting" behavior of optional chaining, so if `foo` is `undefined`, accessing `baz` will cause a runtime error.
+위에 코드에서 괄호는 선택적 체이닝의 "단락" 동작을 중단합니다, 그래서 만약 `foo`가 `undefined`이면, `baz`에 접근하는 것은 런타임 오류를 발생시킵니다.
 
-The Babel team who pointed this behavior out, and most users who provided feedback to us, believe that this behavior is wrong.
-We do too!
-The thing we heard the most was that the `!` operator should just "disappear" since the intent was to remove `null` and `undefined` from the type of `bar`.
+이 동작을 지적한 바벨팀과 피드백을 준 대부분의 사용자들은 이 동작이 잘못되었다고 생각합니다.
+저희도 그렇게 생각합니다!
+`bar`의 타입에서 `null`과 `undefined`를 제거하는 것이 의도이기 때문에 가장 많이 들은 말은 `!` 연산자는 그냥 "사라져야 한다"입니다.
 
-In other words, most people felt that the original snippet should be interpreted as
+즉, 대부분의 사람들은 원본 문장이 다음과 같이
 
 ```js
 foo?.bar.baz
 ```
 
-which just evaluates to `undefined` when `foo` is `undefined`.
+`foo`가 `undefined`일 때, 그냥 `undefined`로 평가하는 것으로 해석되어야 한다고 생각합니다
 
-This is a breaking change, but we believe most code was written with the new interpretation in mind.
-Users who want to revert to the old behavior can add explicit parentheses around the left side of the `!` operator.
+이것이 주요 변경 사항이지만, 대부분의 코드가 새로운 해석을 염두에 두고 작성되었다고 생각합니다.
+이전 동작으로 되돌리고 싶은 사용자는 `!` 연산자 왼쪽에 명시적인 괄호를 추가할 수 있습니다.
 
 ```ts
 (foo?.bar)!.baz
 ```
 
-### `}` and `>` are Now Invalid JSX Text Characters
+### `}` 와 `>` 는 이제 유효하지 않은 JSX 텍스트 문자입니다 (`}` and `>` are Now Invalid JSX Text Characters)
 
-The JSX Specification forbids the use of the `}` and `>` characters in text positions.
-TypeScript and Babel have both decided to enforce this rule to be more comformant.
-The new way to insert these characters is to use an HTML escape code (e.g. `<span> 2 &gt 1 </div>`) or insert an expression with a string literal (e.g. `<span> 2 {">"} 1 </div>`).
+JSX 명세서에는 텍스트 위치에 `}`와 `>` 문자의 사용을 금지합니다.
+TypeScript와 바벨은 이 규칙을 더 적합하게 적용하기로 결정했습니다.
+이 문자를 넣기 위한 새로운 방법은 HTML 이스케이프 코드를 사용하거나 (예를 들어, `<span> 2 &gt 1 </div>`) 문자열 리터럴로 표현식을 넣는 것입니다 (예를 들어, `<span> 2 {">"} 1 </div`).
 
-Luckily, thanks to the [pull request](https://github.com/microsoft/TypeScript/pull/36636) enforcing this from [Brad Zacher](https://github.com/bradzacher), you'll get an error message along the lines of
+다행히, [Brad Zacher](https://github.com/bradzacher)의 [pull request](https://github.com/microsoft/TypeScript/pull/36636) 덕분에, 다음 문장과 함께 오류 메시지를 받을 수 있습니다
 
 ```
 Unexpected token. Did you mean `{'>'}` or `&gt;`?
 Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
 ```
 
-For example:
+예를 들어:
 
 ```tsx
 let directions = <span>Navigate to: Menu Bar > Tools > Options</div>
@@ -385,16 +385,16 @@ let directions = <span>Navigate to: Menu Bar > Tools > Options</div>
 // Unexpected token. Did you mean `{'>'}` or `&gt;`?
 ```
 
-That error message came with a handy quick fix, and thanks to [Alexander Tarasyuk](https://github.com/a-tarasyuk), [you can apply these changes in bulk](https://github.com/microsoft/TypeScript/pull/37436) if you have a lot of errors.
+이 오류 메시지는 편리하고 빠른 수정과 함께 제공되고 [Alexander Tarasyuk](https://github.com/a-tarasyuk) 덕분에, 많은 오류가 있으면 [이 변경사항을 일괄 적용 할 수 있습니다](https://github.com/microsoft/TypeScript/pull/37436).
 
-### Stricter Checks on Intersections and Optional Properties
+### 교집합과 선택적 프로퍼티에 대한 더 엄격해진 검사 (Stricter Checks on Intersections and Optional Properties)
 
-Generally, an intersection type like `A & B` is assignable to `C` if either `A` or `B` is assignable to `C`; however, sometimes that has problems with optional properties.
-For example, take the following:
+일반적으로, `A & B`와 같은 교차 타입은 `A` 또는 `B`가 `C`에 할당할 수 있으면, `A & B`는 `C`에 할당할 수 있습니다; 하지만, 가끔 선택적 프로퍼티에서 문제가 생깁니다.
+예를 들어, 다음을 봅시다:
 
 ```ts
 interface A {
-    a: number; // notice this is 'number'
+    a: number; // 'number' 인 것에 주목
 }
 
 interface B {
@@ -402,7 +402,7 @@ interface B {
 }
 
 interface C {
-    a?: boolean; // notice this is 'boolean'
+    a?: boolean; // 'boolean' 인것에 주목
     b: string;
 }
 
@@ -412,23 +412,23 @@ declare let y: C;
 y = x;
 ```
 
-In previous versions of TypeScript, this was allowed because while `A` was totally incompatible with `C`, `B` *was* compatible with `C`.
+이전 버전의 TypeScript에서는, `A`가 `C`와 완전히 호환되지 않지만, `B`가 `C`와 호환 *되었기* 때문에 허용되었습니다.
 
-In TypeScript 3.9, so long as every type in an intersection is a concrete object type, the type system will consider all of the properties at once.
-As a result, TypeScript will see that the `a` property of `A & B` is incompatible with that of `C`:
+TypeScript 3.9에서는, 교집합 안의 모든 타입이 구제적인 객체 타입이면, 타입 시스템은 모든 프로퍼티를 한 번에 고려합니다.
+결과적으로, TypeScript는 `A & B`의 `a` 프로퍼티는 `C`의 `a` 프로퍼티와 호환되지 않는다고 봅니다:
 
 ```
-Type 'A & B' is not assignable to type 'C'.
-  Types of property 'a' are incompatible.
-    Type 'number' is not assignable to type 'boolean | undefined'.
+'A & B' 타입은 'C' 타입에 할당할 수 없습니다.
+  'a' 프로퍼티의 타입은 호환되지 않습니다.
+    'number' 타입은 'boolean | undefined' 타입에 할당할 수 없습니다.
 ```
 
-For more information on this change, [see the corresponding pull request](https://github.com/microsoft/TypeScript/pull/37195).
+이 변경사항에 대한 자세한 정보는, [해당 pull request](https://github.com/microsoft/TypeScript/pull/37195)를 참조하세요.
 
-### Intersections Reduced By Discriminant Properties
+### 판별 프로퍼티로 줄어든 교집합 (Intersections Reduced By Discriminant Properties)
 
-There are a few cases where you might end up with types that describe values that just don't exist.
-For example
+존재하지 않는 값을 기술하는 타입으로 끝날 수 있는 몇 가지 경우가 있습니다.
+예를 들어
 
 ```ts
 declare function smushObjects<T, U>(x: T, y: U): T & U;
@@ -450,50 +450,50 @@ let z = smushObjects(x, y);
 console.log(z.kind);
 ```
 
-This code is slightly weird because there's really no way to create an intersection of a `Circle` and a `Square` - they have two incompatible `kind` fields.
-In previous versions of TypeScript, this code was allowed and the type of `kind` itself was `never` because `"circle" & "square"` described a set of values that could `never` exist.
+이 코드는 `Circle`과 `Square`의 교집합을 생성할 방법이 전혀 없기 때문에 약간 이상합니다 - 호환되지 않는 두 `kind` 필드가 있습니다.
+이전 버전의 TypeScript에서는, 이 코드는 허용되었고 `"circle" & "square"`가 `절대(never)` 존재할 수 없는 값의 집합을 기술했기 때문에 `kind` 자체의 타입은 `never`였습니다.
 
-In TypeScript 3.9, the type system is more aggressive here - it notices that it's impossible to intersect `Circle` and `Square` because of their `kind` properties.
-So instead of collapsing the type of `z.kind` to `never`, it collapses the type of `z` itself (`Circle & Square`) to `never`.
-That means the above code now errors with:
+TypeScript 3.9에서는, 타입 시스템이 더 공격적입니다 - `kind` 프로퍼티 때문에 `Circle`과 `Square`를 교차하는 것이 불가능하다는 것을 알고 있습니다.
+그래서 `z.kind`를 `never`로 축소하는 대신, `z` 자체(`Circle & Square`) 타입을 `never`로 축소합니다.
+즉 위의 코드는 다음과 같은 오류를 발생합니다:
 
 ```
-Property 'kind' does not exist on type 'never'.
+'kind' 프로퍼티는 'never' 타입에 존재하지 않습니다.
 ```
 
-Most of the breaks we observed seem to correspond with slightly incorrect type declarations.
-For more details, [see the original pull request](https://github.com/microsoft/TypeScript/pull/36696).
+관찰한 대부분의 오류는 잘못된 타입 선언과 일치하는 것으로 보입니다.
+자세한 내용은 [원문 pull request](https://github.com/microsoft/TypeScript/pull/36696)를 보세요.
 
-### Getters/Setters are No Longer Enumerable
+### Getters/Setters는 더 이상 열거하지 않습니다 (Getters/Setters are No Longer Enumerable)
 
-In older versions of TypeScript, `get` and `set` accessors in classes were emitted in a way that made them enumerable; however, this wasn't compliant with the ECMAScript specification which states that they must be non-enumerable.
-As a result, TypeScript code that targeted ES5 and ES2015 could differ in behavior.
+이전 버전의 TypeScript에서, 클래스의 `get`과 `set` 접근자는 열거 가능한 방법으로 방출되었습니다; 하지만, `get`과 `set`은 열거할 수 없다는 ECMAScript 사양을 따르지 않았습니다.
+결과적으로, ES5와 ES2015를 타겟팅 하는 TypeScript 코드는 동작이 다를 수 있습니다.
 
-Thanks to [a pull request](https://github.com/microsoft/TypeScript/pull/32264) from GitHub user [pathurs](https://github.com/pathurs), TypeScript 3.9 now conforms more closely with ECMAScript in this regard.
+깃허브 사용자 [pathurs](https://github.com/pathurs)의 [pull request](https://github.com/microsoft/TypeScript/pull/32264) 덕분에, TypeScript 3.9는 이와 관련하여 ECMAScript와 더 밀접하게 호환됩니다.
 
-### Type Parameters That Extend `any` No Longer Act as `any`
+### `any`로 확장된 타입 매개변수는 더 이상 `any` 처럼 행동하지 않음 (Type Parameters That Extend `any` No Longer Act as `any`)
 
-In previous versions of TypeScript, a type parameter constrained to `any` could be treated as `any`.
+이전 버전의 TypeScript에서 `any`로 제한된 타입 매개변수는 `any`로 다룰 수 있었습니다.
 
 ```ts
 function foo<T extends any>(arg: T) {
-    arg.spfjgerijghoied; // no error!
+    arg.spfjgerijghoied; // 오류가 아님!
 }
 ```
 
-This was an oversight, so TypeScript 3.9 takes a more conservative approach and issues an error on these questionable operations.
+이는 실수였습니다, 그래서 TypeScript 3.9에서는 더 보수적인 접근을 취하고 이런 의심스러운 작업에 대해 오류를 발생시킵니다.
 
 ```ts
 function foo<T extends any>(arg: T) {
     arg.spfjgerijghoied;
     //  ~~~~~~~~~~~~~~~
-    // Property 'spfjgerijghoied' does not exist on type 'T'.
+    // 'spfjgerijghoied' 프로퍼티는 'T' 타입에 존재하지 않습니다.
 }
 ```
 
-### `export *` is Always Retained
+### `export *`은 항상 유지됩니다 (`export *` is Always Retained)
 
-In previous TypeScript versions, declarations like `export * from "foo"` would be dropped in our JavaScript output if `foo` didn't export any values.
-This sort of emit is problematic because it's type-directed and can't be emulated by Babel.
-TypeScript 3.9 will always emit these `export *` declarations.
-In practice, we don't expect this to break much existing code.
+이전 TypeScript 버전에서 `export * from "foo"` 같은 선언은 `foo`가 어떠한 값도 export 하지 않으면 JavaScript 출력에서 제외되었습니다.
+이런 내보내기는 타입-지향적이고 바벨에서 에뮬레이트 될 수 없기 때문에 문제가 됩니다.
+TypeScrip 3.9는 이런 `export *` 선언을 항상 내보냅니다.
+실제로 이 변화가 기존 코드를 깨뜨릴 것이라고 생각하지 않습니다.
