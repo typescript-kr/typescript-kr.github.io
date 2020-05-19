@@ -337,7 +337,7 @@ TypeScript 3.9 는 이 설정에 대한 시나리오 수정을 지원합니다.
 foo?.bar!.baz
 ```
 
-다음 JavaScript와 동등하게 해석되었습니다.
+다음 JavaScript와 동일하게 해석되었습니다.
 
 ```js
 (foo?.bar).baz
