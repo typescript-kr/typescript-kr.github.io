@@ -26,7 +26,7 @@ import * as converter from "../converter";
 assert.areEqual(converter.celsiusToFahrenheit(0), 32);
 ```
 
-이전에는 이 구조가 단일 tsconfig 파일을 사용했다면 어색하게 동작했습니다:
+이전에는, 단일 tsconfig 파일을 사용한 경우 이 구조가 어색하게 동작했습니다:
 
 * 구현 파일을 테스트 파일에 import 하는 것이 가능합니다
 * 아마도 원치 않았겠지만 `src`가 출력 폴더 이름에 나타나지 않고는 `test`와 `src`를 동시에 빌드 하는 것이 불가능합니다
