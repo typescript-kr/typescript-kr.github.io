@@ -788,7 +788,20 @@
         
         
     
-        <li class="chapter " data-level="6.1" data-path="release notes/TypeScript 3.8.html">
+        <li class="chapter " data-level="6.1" data-path="release notes/TypeScript 3.9.html">
+            
+                <a href="release notes/TypeScript 3.9.html">
+            
+                    
+                    TypeScript 3.9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="release notes/TypeScript 3.8.html">
             
                 <a href="release notes/TypeScript 3.8.html">
             
@@ -848,6 +861,7 @@
                                 
                                 <p>&#xBE4C;&#xB4DC; &#xB3C4;&#xAD6C;&#xB4E4;</p>
 <ul>
+<li><a href="#babel">Babel</a></li>
 <li><a href="#browserify">Browserify</a></li>
 <li><a href="#duo">Duo</a></li>
 <li><a href="#grunt">Grunt</a></li>
@@ -857,6 +871,28 @@
 <li><a href="#msbuild">MSBuild</a></li>
 <li><a href="#nuget">NuGet</a></li>
 </ul>
+<h1 id="babel">Babel</h1>
+<h3 id="&#xC124;&#xCE58;">&#xC124;&#xCE58;</h3>
+<pre><code class="lang-sh"><span class="cm-builtin">npm</span> install @babel/cli @babel/core @babel/preset-typescript <span class="cm-attribute">--save</span><span class="cm-attribute">-dev</span>
+</code></pre>
+<h3 id="babelrc">.babelrc</h3>
+<pre><code class="lang-js">{
+  <span class="cm-string">&quot;presets&quot;</span>: [<span class="cm-string">&quot;@babel/preset-typescript&quot;</span>]
+}
+</code></pre>
+<h3 id="&#xCEE4;&#xB9E8;&#xB4DC;-&#xB77C;&#xC778;-&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;-&#xC0AC;&#xC6A9;">&#xCEE4;&#xB9E8;&#xB4DC; &#xB77C;&#xC778; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4; &#xC0AC;&#xC6A9;</h3>
+<pre><code class="lang-sh">./node_modules/.bin/babel <span class="cm-attribute">--out</span><span class="cm-attribute">-file</span> bundle.js src/index.ts
+</code></pre>
+<h3 id="packagejson">package.json</h3>
+<pre><code class="lang-js">{
+  <span class="cm-string">&quot;scripts&quot;</span>: {
+    <span class="cm-string">&quot;build&quot;</span>: <span class="cm-string">&quot;babel --out-file bundle.js main.ts&quot;</span>
+  },
+}
+</code></pre>
+<h3 id="&#xCEE4;&#xB9E8;&#xB4DC;-&#xB77C;&#xC778;-&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;-&#xC0AC;&#xC6A9;">&#xCEE4;&#xB9E8;&#xB4DC; &#xB77C;&#xC778; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4; &#xC0AC;&#xC6A9;</h3>
+<pre><code class="lang-sh"><span class="cm-builtin">npm</span> run build
+</code></pre>
 <h1 id="browserify">Browserify</h1>
 <h3 id="&#xC124;&#xCE58;">&#xC124;&#xCE58;</h3>
 <pre><code class="lang-sh"><span class="cm-builtin">npm</span> install tsify
@@ -895,7 +931,7 @@
     .<span class="cm-property">use</span>(<span class="cm-variable">typescript</span>())
     .<span class="cm-property">run</span>(<span class="cm-keyword">function</span> (<span class="cm-def">err</span>, <span class="cm-def">results</span>) {
         <span class="cm-keyword">if</span> (<span class="cm-variable-2">err</span>) <span class="cm-keyword">throw</span> <span class="cm-variable-2">err</span>;
-        <span class="cm-comment">// &#xCEF4;&#xD30C;&#xC77C;&#xB41C; &#xACB0;&#xACFC;&#xB97C; &#xCD9C;&#xB825; &#xD30C;&#xC77C;&#xC5D0; &#xC791;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.</span>
+        <span class="cm-comment">// &#xCEF4;&#xD30C;&#xC77C;&#xB41C; &#xACB0;&#xACFC;&#xB97C; &#xCD9C;&#xB825; &#xD30C;&#xC77C;&#xC5D0; &#xC791;&#xC131;&#xD569;&#xB2C8;&#xB2E4;</span>
         <span class="cm-variable">fs</span>.<span class="cm-property">writeFileSync</span>(<span class="cm-variable">out</span>, <span class="cm-variable-2">results</span>.<span class="cm-property">code</span>);
     });
 </code></pre>
@@ -922,7 +958,7 @@
 <h3 id="&#xC124;&#xCE58;">&#xC124;&#xCE58;</h3>
 <pre><code class="lang-sh"><span class="cm-builtin">npm</span> install gulp-typescript
 </code></pre>
-<h3 id="basic-gulpfilejs">Basic gulpfile.js</h3>
+<h3 id="&#xAE30;&#xBCF8;-gulpfilejs">&#xAE30;&#xBCF8; gulpfile.js</h3>
 <pre><code class="lang-js"><span class="cm-keyword">var</span> <span class="cm-variable">gulp</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;gulp&quot;</span>);
 <span class="cm-keyword">var</span> <span class="cm-variable">ts</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;gulp-typescript&quot;</span>);
 
@@ -946,7 +982,25 @@
 <h3 id="&#xC124;&#xCE58;">&#xC124;&#xCE58;</h3>
 <pre><code class="lang-sh"><span class="cm-builtin">npm</span> install ts-loader <span class="cm-attribute">--save</span><span class="cm-attribute">-dev</span>
 </code></pre>
-<h3 id="&#xAE30;&#xBCF8;-webpackconfigjs">&#xAE30;&#xBCF8; webpack.config.js</h3>
+<h3 id="webpack-2-&#xC0AC;&#xC6A9;-&#xC2DC;-&#xAE30;&#xBCF8;-webpackconfigjs">Webpack 2 &#xC0AC;&#xC6A9; &#xC2DC; &#xAE30;&#xBCF8; webpack.config.js</h3>
+<pre><code class="lang-js"><span class="cm-keyword">module</span>.<span class="cm-variable">exports</span> <span class="cm-operator">=</span> {
+    <span class="cm-property">entry</span>: <span class="cm-string">&quot;./src/index.tsx&quot;</span>,
+    <span class="cm-property">output</span>: {
+        <span class="cm-property">path</span>: <span class="cm-string">&apos;/&apos;</span>,
+        <span class="cm-property">filename</span>: <span class="cm-string">&quot;bundle.js&quot;</span>
+    },
+    <span class="cm-property">resolve</span>: {
+        <span class="cm-property">extensions</span>: [<span class="cm-string">&quot;.tsx&quot;</span>, <span class="cm-string">&quot;.ts&quot;</span>, <span class="cm-string">&quot;.js&quot;</span>, <span class="cm-string">&quot;.json&quot;</span>]
+    },
+    <span class="cm-keyword">module</span>: {
+        <span class="cm-variable">rules</span>: [
+            <span class="cm-comment">// &apos;.ts&apos; &#xB610;&#xB294; &apos;.tsx&apos; &#xD655;&#xC7A5;&#xC790;&#xB97C; &#xAC00;&#xC9C4; &#xBAA8;&#xB4E0; &#xD30C;&#xC77C;&#xC740; &apos;ts-loader&apos;&#xC5D0; &#xC758;&#xD574; &#xCC98;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;.</span>
+            { <span class="cm-variable">test</span>: <span class="cm-string-2">/\.tsx?$/</span>, <span class="cm-variable">use</span>: [<span class="cm-string">&quot;ts-loader&quot;</span>], <span class="cm-variable">exclude</span>: <span class="cm-string-2">/node_modules/</span> }
+        ]
+    }
+}
+</code></pre>
+<h3 id="webpack-1-&#xC0AC;&#xC6A9;-&#xC2DC;-&#xAE30;&#xBCF8;-webpackconfigjs">Webpack 1 &#xC0AC;&#xC6A9; &#xC2DC; &#xAE30;&#xBCF8; webpack.config.js</h3>
 <pre><code class="lang-js"><span class="cm-keyword">module</span>.<span class="cm-variable">exports</span> <span class="cm-operator">=</span> {
     <span class="cm-property">entry</span>: <span class="cm-string">&quot;./src/index.tsx&quot;</span>,
     <span class="cm-property">output</span>: {
@@ -970,10 +1024,10 @@
 <li><a href="https://www.npmjs.com/package/awesome-typescript-loader" target="_blank">awesome-typescript-loader</a></li>
 </ul>
 <h1 id="msbuild">MSBuild</h1>
-<p>&#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xD30C;&#xC77C;&#xC744; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD558;&#xC5EC; &#xB85C;&#xCEEC;&#xC5D0; &#xC124;&#xCE58;&#xB41C; <code>Microsoft.TypeScript.Default.props</code> (&#xB9E8; &#xC704;)&#xC640; <code>Microsoft.TypeScript.targets</code> (&#xB9E8; &#xC544;&#xB798;) &#xD30C;&#xC77C;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xB3C4;&#xB85D; &#xD558;&#xC138;&#xC694;:</p>
+<p>&#xB85C;&#xCEEC;&#xC5D0; &#xC124;&#xCE58;&#xB41C; <code>Microsoft.TypeScript.Default.props</code> (&#xB9E8; &#xC704;)&#xC640; <code>Microsoft.TypeScript.targets</code> (&#xB9E8; &#xC544;&#xB798;) &#xD30C;&#xC77C;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xB3C4;&#xB85D; &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xD30C;&#xC77C;&#xC744; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD558;&#xC138;&#xC694;:</p>
 <pre><code class="lang-xml"><span class="cm-meta">&lt;?xml</span> <span class="cm-meta">version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">Project</span> <span class="cm-attribute">ToolsVersion</span>=<span class="cm-string">&quot;4.0&quot;</span> <span class="cm-attribute">DefaultTargets</span>=<span class="cm-string">&quot;Build&quot;</span> <span class="cm-attribute">xmlns</span>=<span class="cm-string">&quot;http://schemas.microsoft.com/developer/msbuild/2003&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
-  <span class="cm-comment">&lt;!-- &#xD558;&#xB2E8;&#xC5D0; &#xAE30;&#xBCF8; props &#xD3EC;&#xD568; --&gt;</span>
+  <span class="cm-comment">&lt;!-- &#xD558;&#xB2E8;&#xC5D0; default props &#xD3EC;&#xD568; --&gt;</span>
   <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">Import</span>
       <span class="cm-attribute">Project</span>=<span class="cm-string">&quot;$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props&quot;</span>
       <span class="cm-attribute">Condition</span>=<span class="cm-string">&quot;Exists(&apos;$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props&apos;)&quot;</span> <span class="cm-tagcm-bracket">/&gt;</span>
@@ -988,7 +1042,7 @@
     <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">TypeScriptSourceMap</span><span class="cm-tagcm-bracket">&gt;</span>false<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">TypeScriptSourceMap</span><span class="cm-tagcm-bracket">&gt;</span>
   <span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">PropertyGroup</span><span class="cm-tagcm-bracket">&gt;</span>
 
-  <span class="cm-comment">&lt;!-- &#xD558;&#xB2E8;&#xC5D0; &#xAE30;&#xBCF8; &#xB300;&#xC0C1; &#xD3EC;&#xD568; --&gt;</span>
+  <span class="cm-comment">&lt;!-- &#xD558;&#xB2E8;&#xC5D0; default targets &#xD3EC;&#xD568; --&gt;</span>
   <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">Import</span>
       <span class="cm-attribute">Project</span>=<span class="cm-string">&quot;$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets&quot;</span>
       <span class="cm-attribute">Condition</span>=<span class="cm-string">&quot;Exists(&apos;$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets&apos;)&quot;</span> <span class="cm-tagcm-bracket">/&gt;</span>
@@ -1002,7 +1056,7 @@
 <li><code>Install</code> &#xD074;&#xB9AD;</li>
 <li>&#xC124;&#xCE58;&#xAC00; &#xC644;&#xB8CC;&#xB418;&#xBA74; &#xB2E4;&#xC2DC; &#xBE4C;&#xB4DC; &#xD558;&#xC138;&#xC694;!</li>
 </ul>
-<p>&#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="http://docs.nuget.org/Consume/Package-Manager-Dialog" target="_blank">&#xD328;&#xD0A4;&#xC9C0; &#xB9E4;&#xB2C8;&#xC800; &#xB2E4;&#xC774;&#xC5BC;&#xB85C;&#xADF8;</a>&#xC640; <a href="https://github.com/Microsoft/TypeScript/wiki/Nightly-drops#using-nuget-with-msbuild" target="_blank">NuGet&#xACFC; nightly builds &#xC0AC;&#xC6A9;</a></p>
+<p>&#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="http://docs.nuget.org/Consume/Package-Manager-Dialog" target="_blank">&#xD328;&#xD0A4;&#xC9C0; &#xB9E4;&#xB2C8;&#xC800; &#xB2E4;&#xC774;&#xC5BC;&#xB85C;&#xADF8;</a>&#xC640; <a href="https://github.com/Microsoft/TypeScript/wiki/Nightly-drops#using-nuget-with-msbuild" target="_blank">NuGet&#xACFC; nightly builds &#xC0AC;&#xC6A9;</a>&#xC744; &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;</p>
 
                                 
                                 </section>
@@ -1046,7 +1100,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"빌드 도구와 통합","level":"5.5","depth":1,"next":{"title":"Nightly 빌드","level":"5.6","depth":1,"path":"pages/Nightly Builds.md","ref":"pages/Nightly Builds.md","articles":[]},"previous":{"title":"MSBuild에서의 컴파일러 옵션","level":"5.4","depth":1,"path":"pages/Compiler Options in MSBuild.md","ref":"pages/Compiler Options in MSBuild.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/Integrating with Build Tools.md","mtime":"2020-04-24T14:20:22.843Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-13T15:58:00.482Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"빌드 도구와 통합","level":"5.5","depth":1,"next":{"title":"Nightly 빌드","level":"5.6","depth":1,"path":"pages/Nightly Builds.md","ref":"pages/Nightly Builds.md","articles":[]},"previous":{"title":"MSBuild에서의 컴파일러 옵션","level":"5.4","depth":1,"path":"pages/Compiler Options in MSBuild.md","ref":"pages/Compiler Options in MSBuild.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/Integrating with Build Tools.md","mtime":"2020-05-26T11:06:28.454Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-26T11:07:13.656Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
