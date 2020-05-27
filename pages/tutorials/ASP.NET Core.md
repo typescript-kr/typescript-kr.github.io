@@ -4,7 +4,7 @@
 ## ASP.NET 코어 및 TypeScript 설치 (Install ASP.NET Core and TypeScript)
 먼저 필요한 경우에는 [ASP.NET Core](https://dotnet.microsoft.com/apps/aspnet)를 설치합니다.이 퀵 스타트 가이드를 위해서는 Visual Studio 2015 또는 2017이 필요합니다.
 
-다음으로 사용 중인 VisualStudio에 최신 TypeScript가 설치되지 않은 경우 [여기서 설치](https://www.typescriptlang.org/index.html#download-links)할 수 있습니다.
+다음으로 사용 중인 Visual Studio에 최신 TypeScript가 설치되지 않은 경우 [여기서 설치](https://www.typescriptlang.org/index.html#download-links)할 수 있습니다.
 
 ## 새 프로젝트 만들기 (Create a new project)
 1. **File** 선택합니다
@@ -27,7 +27,7 @@
 ![](../../assets/images/tutorials/aspnet/workingsite.png)
 
 ## 서버 설정 (Set up the server)
-다음 과 같이 들어가 **Dependencies > Manage NuGet Packages > Browse.** `Microsoft.AspNetCore.StaticFiles`와 `Microsoft.TypeScript.MSBuild`를 검색하여 설치합니다:
+다음과 같이 들어가 **Dependencies > Manage NuGet Packages > Browse.** `Microsoft.AspNetCore.StaticFiles`와 `Microsoft.TypeScript.MSBuild`를 검색하여 설치합니다:
 
 ![](../../assets/images/tutorials/aspnet/downloaddependency.png)
 
@@ -79,7 +79,7 @@ function sayHello() {
 
 ![](../../assets/images/tutorials/aspnet/tsconfig.png)
 
-기본 `tsconfig.json`를 다음으로 대체하세요:
+기본 `tsconfig.json`를 다음으로 대체합니다:
 ```
 {
   "compilerOptions": {
@@ -94,7 +94,7 @@ function sayHello() {
   "compileOnSave": true
 }
 ```
-* `onEmitOnError` : 오류 발생시 아웃풋을 내보내지 않습니다.
+* `onEmitOnError` : 오류 발생 시 아웃풋을 내보내지 않습니다.
 * `noImplicitAny` : 표현과 선언에 암묵적으로 `any` 타입을 사용한 경우 오류가 발생합니다.
 * `sourceMap` : `.map` 파일 생성합니다.
 * `target` : ECMAScript 타겟 버전을 명시합니다. 
