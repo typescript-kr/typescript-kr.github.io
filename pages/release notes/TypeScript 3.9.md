@@ -31,7 +31,7 @@ async function visitZoo(lionExhibit: Promise<Lion>, sealExhibit: Promise<Seal | 
 }
 ```
 
-이건 이상한 행동입니다!
+이 동작은 이상합니다!
 `sealExhibit`가 `undefined`를 포함하는 것은 어떻게든 `lion` 타입에 `undefined`를 주입합니다.
 
 [Jack Bates](https://github.com/jablko)의 [pull request](https://github.com/microsoft/TypeScript/pull/34501) 덕분에, TypeScript 3.9의 추론 프로세스가 개선되었습니다.
@@ -497,3 +497,39 @@ function foo<T extends any>(arg: T) {
 이런 내보내기는 타입-지향적이고 바벨에서 에뮬레이트 될 수 없기 때문에 문제가 됩니다.
 TypeScrip 3.9는 이런 `export *` 선언을 항상 내보냅니다.
 실제로 이 변화가 기존 코드를 깨뜨릴 것이라고 생각하지 않습니다.
+
+### 더 많은 libdom.d.ts 개선 (More libdom.d.ts refinements)
+
+Web IDL 파일로부터 바로 TypeScript의 내장 .d.ts. 라이브러리 (lib.d.ts 및 제품군)가 생성될 수 있도록 DOM 규격으로부터 TypeScript의 내장 .d.ts. 라이브러리를 옮기는 작업을 계속 진행하고 있습니다.
+그 결과 미디어 액세스와 관련된 일부 벤더별 타입이 제거되었습니다.
+
+프로젝트의 ambient *.d.ts 파일에 이 파일을 추가하면 다시 복구할 수 있습니다:
+
+```ts
+interface HTMLVideoElement {
+  msFrameStep(forward: boolean): void;
+  msInsertVideoEffect(activatableClassId: string, effectRequired: boolean, config?: any): void;
+  msSetVideoRectangle(left: number, top: number, right: number, bottom: number): void;
+  webkitEnterFullScreen(): void;
+  webkitEnterFullscreen(): void;
+  webkitExitFullScreen(): void;
+  webkitExitFullscreen(): void;
+
+  msHorizontalMirror: boolean;
+  readonly msIsLayoutOptimalForPlayback: boolean;
+  readonly msIsStereo3D: boolean;
+  msStereo3DPackingMode: string;
+  msStereo3DRenderMode: string;
+  msZoom: boolean;
+  onMSVideoFormatChanged: ((this: HTMLVideoElement, ev: Event) => any) | null;
+  onMSVideoFrameStepCompleted: ((this: HTMLVideoElement, ev: Event) => any) | null;
+  onMSVideoOptimalLayoutChanged: ((this: HTMLVideoElement, ev: Event) => any) | null;
+  webkitDisplayingFullscreen: boolean;
+  webkitSupportsFullscreen: boolean;
+}
+
+interface MediaError {
+  readonly msExtendedCode: number;
+  readonly MS_MEDIA_ERR_ENCRYPTED: number;
+}
+```
