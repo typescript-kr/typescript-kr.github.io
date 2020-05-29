@@ -61,7 +61,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 ![](../../assets/images/tutorials/aspnet/tsfile.png)
 
-## 예제 코드 추가 (Add example code)
+### 예제 코드 추가 (Add example code)
 
 app.ts에 다음 코드를 입력하십시오
 
@@ -73,7 +73,7 @@ function sayHello() {
 }
 ```
 
-## 빌드 설정 (Set up the build)
+### 빌드 설정 (Set up the build)
 
 *TypeScript 컴파일러 설정*
 
