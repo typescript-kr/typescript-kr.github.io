@@ -500,7 +500,7 @@ TypeScrip 3.9는 이런 `export *` 선언을 항상 내보냅니다.
 
 ### 더 많은 libdom.d.ts 개선 (More libdom.d.ts refinements)
 
-Web IDL 파일로부터 바로 TypeScript의 내장 .d.ts. 라이브러리 (lib.d.ts 및 제품군)가 생성될 수 있도록 DOM 규격으로부터 TypeScript의 내장 .d.ts. 라이브러리를 옮기는 작업을 계속 진행하고 있습니다.
+Web IDL 파일에서 바로 TypeScript의 내장 .d.ts. 라이브러리 (lib.d.ts 및 제품군)가 생성될 수 있도록 DOM 규격의 TypeScript의 내장 .d.ts. 라이브러리를 옮기는 작업을 계속 진행하고 있습니다.
 그 결과 미디어 액세스와 관련된 일부 벤더별 타입이 제거되었습니다.
 
 프로젝트의 ambient *.d.ts 파일에 이 파일을 추가하면 다시 복구할 수 있습니다:
