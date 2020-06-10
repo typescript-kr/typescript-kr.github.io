@@ -7,7 +7,7 @@
 npm install -g typescript@next
 ```
 
-## MSBuild에 NuGet 사용 (Using NuGet with MSBuild)
+## MSBuild에 NuGet 사용하기 (Using NuGet with MSBuild)
 
 > 주의사항: NuGet 패키지를 사용하도록 프로젝트를 구성해야 합니다.
 [NuGet를 사용하도록 MSBuild 프로젝트 구성](https://github.com/Microsoft/TypeScript/wiki/Configuring-MSBuild-projects-to-use-NuGet)을 참조하십시오.
