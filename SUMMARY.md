@@ -4,11 +4,11 @@
 
 ## 튜토리얼
 
-* [5분 안에 보는 TypeScript](pages/tutorials/TypeScript in 5 minutes.md)
-* [ASP.NET Core](pages/tutorials/ASP.NET Core.md)
-* [걸프](pages/tutorials/Gulp.md)
-* [JavaScript에서 마이그레이션](pages/tutorials/Migrating from JavaScript.md)
-* [리액트 & 웹팩](pages/tutorials/React & Webpack.md)
+* [5분 안에 보는 TypeScript](pages/tutorials/typeScript-in-5-minutes.md)
+* [ASP.NET Core](pages/tutorials/ASP.NET-core.md)
+* [걸프](pages/tutorials/gulp.md)
+* [JavaScript에서 마이그레이션](pages/tutorials/migrating-from-javascript.md)
+* [리액트 & 웹팩](pages/tutorials/react-&-webpack.md)
 
 ## 핸드북
 
@@ -57,13 +57,13 @@
 ## 프로젝트 환경설정
 
 * [tsconfig.json](pages/tsconfig.json.md)
-* [컴파일러 옵션](pages/Compiler Options.md)
-* [프로젝트 레퍼런스](pages/Project References.md)
-* [MSBuild에서의 컴파일러 옵션](pages/Compiler Options in MSBuild.md)
-* [빌드 도구와 통합](pages/Integrating with Build Tools.md)
-* [Nightly 빌드](pages/Nightly Builds.md)
+* [컴파일러 옵션](pages/compiler-options.md)
+* [프로젝트 레퍼런스](pages/project-references.md)
+* [MSBuild에서의 컴파일러 옵션](pages/compiler-options-in-msbuild.md)
+* [빌드 도구와 통합](pages/integrating-with-build-tools.md)
+* [Nightly 빌드](pages/nightly-builds.md)
 
 ## 릴리즈 노트
 
-* [TypeScript 3.9](pages/release notes/TypeScript 3.9.md)
-* [TypeScript 3.8](pages/release notes/TypeScript 3.8.md)
+* [TypeScript 3.9](pages/release-notes/typescript-3.9.md)
+* [TypeScript 3.8](pages/release-notes/typescript-3.8.md)
