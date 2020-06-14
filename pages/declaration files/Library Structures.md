@@ -271,7 +271,7 @@ console.log(y.reverseAndSort());
 
 [`global-modifying-module.d.ts`](./templates/global-modifying-module.d.ts.md) 템플릿을 사용하세요.
 
-# 의존성 사용하기 (Consuming Dependencies)
+# <span id="consuming-dependencies" /> 의존성 사용하기 (Consuming Dependencies)
 
 라이브러리가 몇 가지 의존성을 가지고 있을 수 있습니다.
 이번 섹션에서는 선언 파일 안에 의존성을 import 하는 방법을 설명합니다.
@@ -320,7 +320,7 @@ UMD 라이브러리에 대한 의존성 선언에 `/// <reference` 디렉티브�
 
 # 각주 (Footnotes)
 
-## 이름 충돌 방지하기 (Preventing Name Conflicts)
+## <span id="preventing-name-conflicts" /> 이름 충돌 방지하기 (Preventing Name Conflicts)
 
 전역 선언 파일을 작성할 때, 전역 스코프에 많은 타입을 정의할 수 있다는 점을 유의하세요.
 많은 선언 파일이 프로젝트 내에 있을 때, 해결할 수 없는 이름 충돌이 발생할 수 있으므로 이를 사용하지 않는 것이 좋습니다.
@@ -343,7 +343,7 @@ interface CatsKittySettings { }
 
 이 가이드는 선언 파일 사용자가 중단하지 않고 라이브러리를 UMD로 전환할 수 있도록 합니다.
 
-## ES6가 모듈 플러그인에 미치는 영향 (The Impact of ES6 on Module Plugins)
+## <span id="the-impact-of-es6-on-module-plugins" /> ES6가 모듈 플러그인에 미치는 영향 (The Impact of ES6 on Module Plugins)
 
 어떤 플러그인은 기존 모듈에 최상위 export를 추가하거나 수정합니다.
 CommonJS와 다른 로더에서는 허용되지만, ES6 모듈은 불변하다고 간주되기에 이 패턴은 불가능합니다.

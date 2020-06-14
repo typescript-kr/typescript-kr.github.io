@@ -79,7 +79,7 @@ npm에 선언 파일을 배포하는 방법은 크게 두 가지가 있습니다
 ....
 ```
 
-더 자세한 내용을 위해 [의존성 사용하기](./Library%20Structures.md#consuming-dependencies) 섹션을 다시 보십시오.
+더 자세한 내용을 위해 [의존성 사용하기](./Library Structures.md#consuming-dependencies) 섹션을 다시 보십시오.
 
 ### 의존적인 선언 패키징하기 (Packaging dependent declarations)
 

@@ -17,7 +17,7 @@ function reverse(s: String): String;
 function reverse(s: string): string;
 ```
 
-`Object` 대신에, [TypeScript 2.2 에 추가된](../release%20notes/TypeScript%202.2.md#object-type) 비-원시형 `object`타입을 사용*하세요*.
+`Object` 대신에, [TypeScript 2.2 에 추가된](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-2.html#object-type) 비-원시형 `object`타입을 사용*하세요*.
 
 ## 제네릭 (Generics)
 
