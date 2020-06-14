@@ -11,7 +11,7 @@ TypeScript 2.0 이상에서 타입 선언을 가져오는데 npm 이외의 도�
 npm install --save @types/lodash
 ```
 
-[Publishing](./Publishing.md)에서 설명한 데로 npm 패키지에 이미 선언 파일이 포함되어 있다면, `@types` 패키지를 설치할 필요는 없다는 걸 유의하세요.
+[Publishing](./publishing.md)에서 설명한 데로 npm 패키지에 이미 선언 파일이 포함되어 있다면, `@types` 패키지를 설치할 필요는 없다는 걸 유의하세요.
 
 # 사용하기 (Consuming)
 

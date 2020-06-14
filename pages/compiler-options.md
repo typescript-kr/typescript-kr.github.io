@@ -31,8 +31,8 @@ tsconfig의 컴파일러 옵션에 대한 더 많은 정보를 찾는다면, 베
 `--allowUnusedLabels`                          | `boolean` | `false`                        | 사용되지 않는 레이블에 대한 오류를 보고하지 않습니다.
 `--alwaysStrict`                               | `boolean` | `false`                        | strict mode에서 파싱하고 각 소스 파일에 대해 `"use strict"`를 내보냅니다.
 `--assumeChangesOnlyAffectDirectDependencies`  | `boolean` | `false`                        | 파일 안에서의 변경은 파일이 직접 의존하는 파일에만 영향을 미친다고 가정하고 '--incremental' 및 '-watch'로 다시 컴파일 합니다.
-`--baseUrl`                                    | `string`  |                                | 비-상대적 모듈 이름을 해석하기 위한 기본 디렉터리. 자세한 내용은 [모듈 해석 문서](./Module%20Resolution.md#base-url)을 참조하세요.
-`--build`<br/>`-b`                             | `boolean` | `false`                        | [프로젝트 레퍼런스](./Project%20References.md)에서 지정한 이 프로젝트와 프로젝트의 모든 의존성을 빌드 합니다. 이 플래그는 이 페이지의 다른 플래그들과는 호환되지 않음에 유의하세요 자세한 내용은 [여기](./Project%20References.md)를 보세요.
+`--baseUrl`                                    | `string`  |                                | 비-상대적 모듈 이름을 해석하기 위한 기본 디렉터리. 자세한 내용은 [모듈 해석 문서](./module-resolution.md#base-url)을 참조하세요.
+`--build`<br/>`-b`                             | `boolean` | `false`                        | [프로젝트 레퍼런스](./project-references.md)에서 지정한 이 프로젝트와 프로젝트의 모든 의존성을 빌드 합니다. 이 플래그는 이 페이지의 다른 플래그들과는 호환되지 않음에 유의하세요 자세한 내용은 [여기](./project-references.md)를 보세요.
 `--charset`                                    | `string`  | `"utf8"`                       | 입력 파일의 문자 집합입니다.
 `--checkJs`                                    | `boolean` | `false`                        | `.js` 파일에 오류를 보고합니다. `--allowJs`와 함께 사용하세요.
 `--composite`                                  | `boolean` | `true`                         | TypeScript가 프로젝트를 컴파일하기 위해 참조된 프로젝트의 출력을 찾을 위치를 결정할 수 있는지 확인합니다.
@@ -58,7 +58,7 @@ tsconfig의 컴파일러 옵션에 대한 더 많은 정보를 찾는다면, 베
 `--inlineSources`                              | `boolean` | `false`                        | 단일 파일 내에서 소스 맵과 함께 소스를 내보냅니다. `--inlineSourceMap` 또는 `--sourceMap`을 설정해야 합니다.
 `--init`                                       |           |                                | TypeScript 프로젝트를 초기화하고 `tsconfig.json` 파일을 생성합니다.
 `--isolatedModules`                            | `boolean` | `false`                        | 추가 검사를 수행하여 별도의 컴파일 (예를 들어 [`트랜스파일된 모듈`](https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API#a-simple-transform-function) 혹은 [@babel/plugin-transform-typescript](https://babeljs.io/docs/en/babel-plugin-transform-typescript)) 이 안전한지 확인합니다.
-`--jsx`                                        | `string`  | `"Preserve"`                   | `.tsx` 파일에서 JSX 지원: `"React"`, `"Preserve"`, `"react-native"`. [JSX](./JSX.md)를 확인하세요.
+`--jsx`                                        | `string`  | `"Preserve"`                   | `.tsx` 파일에서 JSX 지원: `"React"`, `"Preserve"`, `"react-native"`. [JSX](./jsx.md)를 확인하세요.
 `--jsxFactory`                                 | `string`  | `"React.createElement"`        | 리액트 JSX 방출을 대상으로 할 때 사용할 JSX 팩토리 함수를 지정합니다. 예: `React.createElement` 또는 `h`.
 `--keyofStringsOnly`                           | `boolean` | `false`                        | `keyof`를 문자열 값으로 된 프로퍼티 이름에만 적용합니다 (숫자나 심벌에서는 안됨).
 `--useDefineForClassFields`                    | `boolean` | `false`                        | 클래스 필드를 ECMAScript-표준 시맨틱으로 내보냅니다.
@@ -69,7 +69,7 @@ tsconfig의 컴파일러 옵션에 대한 더 많은 정보를 찾는다면, 베
 `--mapRoot`                                    | `string`  |                                | 디버거가 생성된 위치가 아닌 맵 파일의 위치를 지정합니다. .map 파일이 .js 파일과 다른 위치에 런타임 시 위치할 경우 이 옵션을 사용하세요. 지정된 위치는 sourceMap에 포함되어 맵 파일이 위치할 디버거를 지정합니다. 이 플래그는 지정된 경로를 작성하지 않고 해당 위치에 맵 파일을 생성합니다. 대신 파일을 지정된 경로로 이동하는 빌드 후 단계를 작성하십시오.
 `--maxNodeModuleJsDepth`                       | `number`  | `0`                            | node_modules 및 로드 JavaScript 파일 아래에서 검색할 최대 의존성 깊이. `--allowJs`에만 적용됩니다.
 `--module`<br/>`-m`                            | `string`  | `target === "ES3" or "ES5" ? "CommonJS" : "ES6"`   | 모듈 코드 생성 지정: `"None"`, `"CommonJS"`, `"AMD"`, `"System"`, `"UMD"`, `"ES6"`, `"ES2015"` 또는 `"ESNext"`.<br/>► `"AMD"`와 `"System"`만 `--outFile`과 함께 사용할 수 있습니다.<br/>► `"ES6"`와 `"ES2015"` 값은 `"ES5"` 또는 이하를 대상으로 할 때 사용할 수 있습니다.
-`--moduleResolution`                           | `string`  | `module === "AMD" or "System" or "ES6" ?  "Classic" : "Node"`                    | 모듈 해석 방법 결정. Node.js/io.js 스타일 해석의 경우, `"Node"` 또는 `"Classic"` 중 하나입니다. 자세한 내용은 [모듈 해석 문서](./Module%20Resolution.md)를 참조하세요.
+`--moduleResolution`                           | `string`  | `module === "AMD" or "System" or "ES6" ?  "Classic" : "Node"`                    | 모듈 해석 방법 결정. Node.js/io.js 스타일 해석의 경우, `"Node"` 또는 `"Classic"` 중 하나입니다. 자세한 내용은 [모듈 해석 문서](./module-resolution.md)를 참조하세요.
 `--newLine`                                    | `string`  | *(플랫폼 별)*          | 파일을 내보낼 때 사용되는 지정된 라인 끝의 시퀀스 사용: `"crlf"` (윈도우) 또는 `"lf"` (유닉스)."
 `--noEmit`                                     | `boolean` | `false`                        | 출력을 내보내지 않습니다.
 `--noEmitHelpers`                              | `boolean` | `false`                        | 컴파일된 출력에서는 `__extends`와 같은 커스텀 헬퍼 함수를 생성하지 않습니다.
@@ -88,7 +88,7 @@ tsconfig의 컴파일러 옵션에 대한 더 많은 정보를 찾는다면, 베
 ~~`--out`~~                                    | `string`  |                                | 더 이상 사용하지 않습니다. `--outFile`을 대신 사용합니다.
 `--outDir`                                     | `string`  |                                | 출력 구조를 디렉토리로 리다이렉트합니다.
 `--outFile`                                    | `string`  |                                | 출력을 단일 파일로 연결하여 방출합니다. 연결의 순서는 컴파일러에 전달된 파일 목록과 트리플-슬래시 참조 그리고 import와 함께 결정됩니다. 자세한 내용은 [출력 파일 순서 문서](https://github.com/Microsoft/TypeScript/wiki/FAQ#how-do-i-control-file-ordering-in-combined-output---out-)를 참조하세요.
-`paths`<sup>[2]</sup>                          | `Object`  |                                | `baseUrl`을 기준으로 관련된 위치에 모듈 이름의 경로 매핑 목록을 나열합니다. 자세한 내용은 [모듈 해석 문서](./Module%20Resolution.md#path-mapping)를 참조하세요.
+`paths`<sup>[2]</sup>                          | `Object`  |                                | `baseUrl`을 기준으로 관련된 위치에 모듈 이름의 경로 매핑 목록을 나열합니다. 자세한 내용은 [모듈 해석 문서](./module-resolution.md#path-mapping)를 참조하세요.
 `--preserveConstEnums`                         | `boolean` | `false`                        | 생성된 코드에 const enum 선언을 지우지 않습니다. 자세한 내용은 [const 열거형 문서](https://github.com/Microsoft/TypeScript/blob/master/doc/spec.md#94-constant-enum-declarations)를 참조하세요.
 `--preserveSymlinks`                            | `boolean` | `false`                       | symlinks를 실제 경로로 해석하지 않습니다. symlinked된 파일을 실제 파일처럼 다룹니다.
 `--preserveWatchOutput`                        | `boolean` | `false`                        | 스크린을 지우는 대신에 예전 콘솔 출력을 감시 모드로 남겨둡니다
@@ -98,9 +98,9 @@ tsconfig의 컴파일러 옵션에 대한 더 많은 정보를 찾는다면, 베
 `--removeComments`                             | `boolean` | `false`                        | `/*!`로 시작하는 copy-right 헤더 주석을 제외한 모든 주석을 제거합니다.
 `--resolveJsonModule`                          | `boolean` | `false`                        | `.json` 확장자로 import된 모듈을 포함합니다.
 `--rootDir`                                    | `string`  | *(공통 루트 디렉토리는 input files 리스트에서 처리됩니다)*   | 입력 파일의 루트 디렉토리를 지정합니다. `--outDir`로 출력 디렉토리 구조를 제어하기 위해서만 사용합니다.
-`rootDirs`<sup>[2]</sup>                       | `string[]`|                                | 런타임 시 결합된 컨텐츠가 프로젝트의 구조를 나타내는 <i>루트</i> 폴더 목록입니다. 자세한 내용은 [모듈 해석 문서](./Module%20Resolution.md#virtual-directories-with-rootdirs)를 참조하세요.
+`rootDirs`<sup>[2]</sup>                       | `string[]`|                                | 런타임 시 결합된 컨텐츠가 프로젝트의 구조를 나타내는 <i>루트</i> 폴더 목록입니다. 자세한 내용은 [모듈 해석 문서](./module-resolution.md#virtual-directories-with-rootdirs)를 참조하세요.
 `--showConfig`                                 | `boolean` | `false`                        | 다른 입력 옵션 및 구성 파일을 사용하여 빌드를 실제로 실행하는 대신 출력에 마지막 암시적 구성 파일을 표시하십시오.
-`--skipDefaultLibCheck`                        | `boolean` | `false`                        | 더 이상 사용하지 않습니다. `--skipLibCheck`를 대신 사용합니다.<br/>[기본 라이브러리 선언 파일](./Triple-Slash%20Directives.md#-reference-no-default-libtrue)의 타입 검사를 건너뜁니다.
+`--skipDefaultLibCheck`                        | `boolean` | `false`                        | 더 이상 사용하지 않습니다. `--skipLibCheck`를 대신 사용합니다.<br/>[기본 라이브러리 선언 파일](./triple-slash-directives.md#-reference-no-default-libtrue)의 타입 검사를 건너뜁니다.
 `--skipLibCheck`                               | `boolean` | `false`                        | 모든 선언 파일(`*.d.ts`)의 타입 검사를 건너뜁니다.
 `--sourceMap`                                  | `boolean` | `false`                        | 해당하는 `.map` 파일을 생성합니다.
 `--sourceRoot`                                 | `string`  |                                | 디버거가 소스 위치 대신 TypeScript 파일을 찾아야 하는 위치를 지정합니다. 설계 시점에 소스가 아닌 런타임에 소스가 있는 경우 이 옵션을 사용하세요. 지정한 위치는 소스 파일이 위치할 디버깅 위치를 지정하기 위해 소스 맵에 포함됩니다.
@@ -117,7 +117,7 @@ tsconfig의 컴파일러 옵션에 대한 더 많은 정보를 찾는다면, 베
 `--types`                                      | `string[]`|                                | 타입 정의가 포함될 이름의 목록. 자세한 내용은 [@types, --typeRoots 및 --types](./tsconfig.json.md#types-typeroots-and-types)를 참조하세요.
 `--typeRoots`                                  | `string[]`|                                | 타입 정의가 포함될 폴더의 목록. 자세한 내용은 [@types, --typeRoots 및 --types](./tsconfig.json.md#types-typeroots-and-types)를 참조하세요.
 `--version`<br/>`-v`                           |           |                                | 컴파일러의 버전을 출력합니다.
-`--watch`<br/>`-w`                             |           |                                | 컴파일러를 감시 모드로 실행합니다. 입력 파일을 감시하여 변경 시 다시 컴파일합니다. 감시 파일과 디렉터리의 구현은 환경 변수를 사용하여 구성합니다. 더 자세한 내용은 [감시 구성하기](./Configuring%20Watch.md)를 보세요.
+`--watch`<br/>`-w`                             |           |                                | 컴파일러를 감시 모드로 실행합니다. 입력 파일을 감시하여 변경 시 다시 컴파일합니다. 감시 파일과 디렉터리의 구현은 환경 변수를 사용하여 구성합니다. 더 자세한 내용은 [감시 구성하기](./configuring-watch.md)를 보세요.
 
 * <sup>[1]</sup> 이 옵션은 실험단계입니다.
 * <sup>[2]</sup> 이 옵션은 `tsconfig.json`에서만 허용되며 커맨드 라인에서는 허용되지 않습니다.
@@ -125,4 +125,4 @@ tsconfig의 컴파일러 옵션에 대한 더 많은 정보를 찾는다면, 베
 ## 관련사항 (Related)
 
 * [`tsconfig.json`](./tsconfig.json.md) 파일에서 컴파일러 옵션 설정하기
-* [MSBuild projects](./Compiler%20Options%20in%20MSBuild.md) 프로젝트에서 컴파일러 옵션 설정하기
+* [MSBuild projects](./compiler-options-in-msbuild.md) 프로젝트에서 컴파일러 옵션 설정하기

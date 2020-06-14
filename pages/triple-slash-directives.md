@@ -71,7 +71,7 @@ DOM API 또는`Symbol` 또는 `Iterable`과 같은 내장 JS 런타임 생성자
 "foo".padStart(4);
 ```
 
-## `/// <reference no-default-lib="true"/>`
+## <span id="-reference-no-default-libtrue" /> `/// <reference no-default-lib="true"/>`
 
 이 지시어는 파일을 *기본 라이브러리*라고 표시합니다.
 이 주석은 `lib.d.ts`와 이를 변형한 것들의 맨 상단에서 볼 수 있습니다.

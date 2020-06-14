@@ -79,7 +79,7 @@ TypeScript가 프로젝트를 이해하는 것으로부터 몇 가지 큰 혜택
 
 ## Gulp
 
-만약 Gulp를 어떤 방식으로 사용하고 있다면, TypeScript와 [Gulp를 사용하는 방법](./Gulp.md)과 Browserify, Babelify, Uglify 같은 일반적인 빌드 툴과 통합하는 방법에 대한 튜토리얼이 있습니다.
+만약 Gulp를 어떤 방식으로 사용하고 있다면, TypeScript와 [Gulp를 사용하는 방법](./gulp.md)과 Browserify, Babelify, Uglify 같은 일반적인 빌드 툴과 통합하는 방법에 대한 튜토리얼이 있습니다.
 그곳에서 더 많은 내용을 볼 수 있습니다.
 
 ## Webpack
@@ -130,7 +130,7 @@ awesome-typescript-loader는 다른 로더가 `.js` 파일을 처리하기 전�
 Webpack을 위한 또 다른 TypeScript 로더, [ts-loader](https://github.com/TypeStrong/ts-loader)도 같습니다.
 [여기](https://github.com/s-panferov/awesome-typescript-loader#differences-between-ts-loader)에서 둘 사이의 차이점을 읽을 수 있습니다.
 
-[React와 Webpack 튜토리얼](./React%20&%20Webpack.md)에서 Webpack 사용에 관한 예제를 볼 수 있습니다.
+[React와 Webpack 튜토리얼](./react-&-webpack.md)에서 Webpack 사용에 관한 예제를 볼 수 있습니다.
 
 # TypeScript 파일로 이동하기 (Moving to TypeScript Files)
 

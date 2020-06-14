@@ -1,8 +1,7 @@
 # TypeScript-Handbook 한글 문서
 
 [![Build Status](https://api.travis-ci.com/typescript-kr/typescript-kr.github.io.svg?branch=master)](https://travis-ci.com/github/typescript-kr/typescript-kr.github.io) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-22-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-22-orange.svg)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![Release Date](https://img.shields.io/github/release-date/typescript-kr/typescript-kr.github.io)](https://github.com/typescript-kr/typescript-kr.github.io/releases)<!-- RELEASE-DATE-BADGE:END -->
 [![Stars](https://img.shields.io/github/stars/typescript-kr/typescript-kr.github.io)](https://github.com/typescript-kr/typescript-kr.github.io/stargazers)<!-- STARS-BADGE:END -->
 
@@ -32,7 +31,7 @@
     <td align="center"><a href="https://github.com/yeonjuan/dev-blog"><img src="https://avatars3.githubusercontent.com/u/41323220?v=4" width="80px;" alt=""/><br /><sub><b>YeonJuan</b></sub></a><br /><a href="#translation-yeonjuan" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/Bumkeyy"><img src="https://avatars0.githubusercontent.com/u/16663226?v=4" width="80px;" alt=""/><br /><sub><b>Kibeom Kwon</b></sub></a><br /><a href="#translation-Bumkeyy" title="Translation">🌍</a></td>
     <td align="center"><a href="https://guyeol.github.io"><img src="https://avatars3.githubusercontent.com/u/7357413?v=4" width="80px;" alt=""/><br /><sub><b>GuyeolJeong</b></sub></a><br /><a href="#translation-guyeol" title="Translation">🌍</a></td>
-    <td align="center"><a href="https://github.com/dvlprsh"><img src="https://avatars1.githubusercontent.com/u/48552752?v=4" width="80px;" alt=""/><br /><sub><b>seoheePark</b></sub></a><br /><a href="#translation-dvlprsh" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/dvlprsh"><img src="https://avatars1.githubusercontent.com/u/48552752?v=4" width="80px;" alt=""/><br /><sub><b>Seohee Park</b></sub></a><br /><a href="#translation-dvlprsh" title="Translation">🌍</a></td>
     <td align="center"><a href="https://devjang.github.io"><img src="https://avatars1.githubusercontent.com/u/23068523?v=4" width="80px;" alt=""/><br /><sub><b>poco.j</b></sub></a><br /><a href="#translation-devJang" title="Translation">🌍</a></td>
     <td align="center"><a href="http://ysm.sh"><img src="https://avatars2.githubusercontent.com/u/18487241?v=4" width="80px;" alt=""/><br /><sub><b>Sungmin Chris Yang</b></sub></a><br /><a href="#translation-ysm0622" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/publisherKim"><img src="https://avatars1.githubusercontent.com/u/20119283?v=4" width="80px;" alt=""/><br /><sub><b>publisherKim</b></sub></a><br /><a href="#translation-publisherKim" title="Translation">🌍</a></td>

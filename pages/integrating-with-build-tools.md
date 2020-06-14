@@ -264,7 +264,7 @@ module.exports = {
 </Project>
 ```
 
-MSBuild 컴파일러 옵션 정의에 대한 자세한 내용: [MSBuild 프로젝트의 컴파일러 옵션 설정](./Compiler%20Options%20in%20MSBuild.md)
+MSBuild 컴파일러 옵션 정의에 대한 자세한 내용: [MSBuild 프로젝트의 컴파일러 옵션 설정](./compiler-options-in-msbuild.md)
 
 # NuGet
 

@@ -207,7 +207,7 @@ TypeScript 컴파일러는 최종 출력을 생성하기위해 소스에 발생�
 
 baseUrl에 대한 더 많은 문서는 [RequireJS](http://requirejs.org/docs/api.html#config-baseUrl)와 [SystemJS](https://github.com/systemjs/systemjs/blob/master/docs/config-api.md#baseurl) 문서에서 찾으실 수 있습니다.
 
-### 경로 매핑 (Path mapping)
+### <span id="path-mapping" /> 경로 매핑 (Path mapping)
 
 가끔 모듈이 *baseUrl* 아래에 위치하지 않는 경우가 있습니다.
 예를 들어, `"jquery"` 모듈의 import는 런타임에 `"node_modules/jquery/dist/jquery.slim.min.js"`로 번역됩니다.
@@ -286,7 +286,7 @@ import 'folder2/file3':
  6. 대체의 결과가 비-상대적 이름 - *baseUrl*과 결합 -> `projectRoot/generated/folder2/file3.ts`
  7. 파일이 존재. 완료.
 
-### `rootDirs` 가상 디렉터리 (Virtual Directories with `rootDirs`)
+### <span id="virtual-directories-with-rootdirs" /> `rootDirs` 가상 디렉터리 (Virtual Directories with `rootDirs`)
 
 때때로 컴파일 타임에 여러 디렉터리의 프로젝트 소스가 모두 결합되어 단일 출력 디렉터리를 생성합니다.
 여러 소스 디렉터리가 "가상" 디렉터리를 생성하는 것으로 보입니다.
