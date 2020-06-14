@@ -29,7 +29,7 @@
 * [네임스페이스와 모듈](pages/namespaces-and-modules.md)
 * [모듈 해석](pages/module-resolution.md)
 * [선언 병합](pages/declaration-merging.md)
-* [JSX](pages/JSX.md)
+* [JSX](pages/jsx.md)
 * [데코레이터](pages/decorators.md)
 * [믹스인](pages/mixins.md)
 * [트리플-슬래시 지시자](pages/triple-slash-directives.md)
