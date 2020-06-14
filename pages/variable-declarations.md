@@ -417,7 +417,7 @@ kitty.numLives--;
 
 위와 같은 상황을 피하기 위해 특별한 조치를 취하지 않는 한, `const` 변수의 내부 상태는 여전히 수정 가능합니다.
 다행히, TypeScript를 사용하면 객체의 멤버가 `읽기 전용(readonly)`이라고 지정할 수 있습니다.
-[Interfaces 챕터](.interfaces.md)에 자세히 설명되어 있습니다.
+[Interfaces 챕터](./interfaces.md)에 자세히 설명되어 있습니다.
 
 # `let` vs. `const`
 

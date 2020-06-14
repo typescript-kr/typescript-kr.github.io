@@ -54,7 +54,7 @@ function color(value: string) { // 데코레이터 팩토리
 }
 ```
 
-> 참고&emsp; 아래 [메서드 데코레이터](#메서드-데코레이터-mehod-decorators)에서 데코레이터 팩토리에 대한 자세한 예를 볼 수 있습니다.
+> 참고&emsp; 아래 [메서드 데코레이터](#메서드-데코레이터-method-decorators)에서 데코레이터 팩토리에 대한 자세한 예를 볼 수 있습니다.
 
 ## 데코레이터 합성 (Decorator Composition)
 

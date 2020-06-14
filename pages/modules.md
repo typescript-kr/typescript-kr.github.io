@@ -850,7 +850,7 @@ test(c, "001+010="); // 3 출력
 모듈 내에서 두 개의 객체가 같은 이름을 가질만한 이유는 없습니다.
 사용 측면에서 특정 모듈의 사용자는 모듈을 참조하는데 사용할 이름을 선택하므로 우연한 이름 충돌은 불가능합니다.
 
-> 모듈과 네임스페이스에 대한 자세한 내용은 [Namespaces and Modules](./Namespaces%20and%20Modules.md)를 참고하세요
+> 모듈과 네임스페이스에 대한 자세한 내용은 [Namespaces and Modules](./namespaces-and-modules.md)를 참고하세요
 
 ## 위험 신호 (Red Flags)
 
