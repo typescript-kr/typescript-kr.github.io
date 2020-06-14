@@ -62,6 +62,7 @@
 * [MSBuild에서의 컴파일러 옵션](pages/compiler-options-in-msbuild.md)
 * [빌드 도구와 통합](pages/integrating-with-build-tools.md)
 * [Nightly 빌드](pages/nightly-builds.md)
+* [configuring-watch (en)](pages/configuring-watch.md)
 
 ## 릴리즈 노트
 
