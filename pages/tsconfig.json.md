@@ -71,7 +71,7 @@ TSConfig Reference beta을 확인하세요.
 
 ## 상세 설명 (Details)
 
-`"compilerOptions"` 속성은 생략될 수 있으며 생략하면 컴파일러의 기본 값이 사용됩니다. 지원되는 전체 목록은 [컴파일러 옵션](./Compiler%20Options.md)를 참고하세요.
+`"compilerOptions"` 속성은 생략될 수 있으며 생략하면 컴파일러의 기본 값이 사용됩니다. 지원되는 전체 목록은 [컴파일러 옵션](./compiler-options.md)를 참고하세요.
 
 `"files"` 속성은 상대 또는 절대 파일 경로 목록을 갖습니다.  
 `"include"`와 `"exclude"` 속성은 glob과 유사한 파일 패턴 목록을 갖습니다.  
@@ -101,7 +101,7 @@ glob 패턴의 구분에 `*` 또는 `. *`만 있다면, 지원하는 확장자 �
 
 커맨드 라인에 지정된 컴파일러 옵션은 `tsconfig.json` 파일에 지정된 옵션을 오버라이드합니다.
 
-## `@types`, `typeRoots` 및 `types` (`@types`, `typeRoots` and `types`)
+## <span id="types-typeroots-and-types" /> `@types`, `typeRoots` 및 `types` (`@types`, `typeRoots` and `types`)
 
 기본적으로 *보이는* 모든 "`@types`"  패키지가 컴파일에 포함됩니다.  
 동봉된 모든 폴더의 `node_modules/@types` 패키지는 표시된 것으로 간주됩니다.  
