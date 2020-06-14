@@ -1,7 +1,7 @@
 이 가이드는 고품질의 TypeScript 선언 파일을 작성하는 방법을 알려주기 위해 작성되었습니다.
 
 이 가이드는, TypeScript 언어에 대한 기본 지식이 있다고 가정합니다.
-만약 기본 지식이 없다면, [TypeScript 핸드북](../Basic Types.md)을 반드시 읽고
+만약 기본 지식이 없다면, [TypeScript 핸드북](../basic-types.md)을 반드시 읽고
   기본 개념, 특히 타입과 네임스페이스에 익숙해져야 합니다.
 
 # 섹션 (Sections)
