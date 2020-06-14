@@ -105,7 +105,7 @@ TypeScript를 개발 의존성으로  설치했다는 것에 유의하세요.
 }
 ```
 
-`tsconfig.json` 파일에 대한 자세한 내용은 [여기](./tsconfig.json.md)를 참조하세요.
+`tsconfig.json` 파일에 대한 자세한 내용은 [여기](../tsconfig.json.md)를 참조하세요.
 
 # 코드 작성하기 (Write some code)
 
