@@ -19,6 +19,20 @@
 
 그 밖에도 다양한 의견 및 피드백은 언제나 환영합니다:)
 
+## 2020 오픈소스 컨트리뷰톤 멘티 모집 (2020.6.1 ~ 7.6)
+공개 SW 포탈에서 현재 오픈소스 프로젝트 관련해서 멘티를 모집하고 있습니다.  
+오픈소스 프로젝트에 기여해 보고자 하는 마음이 있었지만 막상 도전하기 어려우셨다면 2020 오픈소스 컨트리뷰톤 참여를 추천드립니다 😄
+
+[오픈소스 컨트리뷰톤이란?](https://www.oss.kr/contributhon)
+
+<a href="https://www.oss.kr/contributhon_project/show/0c290a4d-e97d-4281-b5d3-4fbc1cc8b152"><img src="./assets/images/readme/oss-image.jpg"  width="300"></a>
+
+Github에 대해 아직 잘 모르시거나  
+이제 개발을 시작하는 초보 개발자시거나  
+TypeScript에 대해 공부를 하고 싶거나  
+TypeScript Handbook에 대해 번역 리뷰를 하고 싶으신 분이 있다면  
+강력하게 추천합니다! [신청하기](https://www.oss.kr/contributhon_project/show/0c290a4d-e97d-4281-b5d3-4fbc1cc8b152)
+
 ## 컨트리뷰터 목록 ✨
 
 도움 주셔서 감사합니다. ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
