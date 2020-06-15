@@ -27,10 +27,10 @@
 
 <a href="https://www.oss.kr/contributhon_project/show/0c290a4d-e97d-4281-b5d3-4fbc1cc8b152"><img src="./assets/images/readme/oss-image.jpg"  width="300"></a>
 
-Github에 대해 아직 잘 모르시거나
-이제 개발을 시작하는 초보 개발자시거나
-TypeScript에 대해 공부를 하고 싶거나
-TypeScript Handbook에 대해 번역 리뷰를 하고 싶으신 분이 있다면
+Github에 대해 아직 잘 모르시거나  
+이제 개발을 시작하는 초보 개발자시거나  
+TypeScript에 대해 공부를 하고 싶거나  
+TypeScript Handbook에 대해 번역 리뷰를 하고 싶으신 분이 있다면  
 강력하게 추천합니다! [신청하기](https://www.oss.kr/contributhon_project/show/0c290a4d-e97d-4281-b5d3-4fbc1cc8b152)
 
 ## 컨트리뷰터 목록 ✨
