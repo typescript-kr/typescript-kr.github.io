@@ -145,7 +145,7 @@ function buildName(firstName: string, lastName = "Smith") {
     return firstName + " " + lastName;
 }
 
-let result1 = buildName("Bob");                  // 올바르게 동작, "Bod Smith" 반환
+let result1 = buildName("Bob");                  // 올바르게 동작, "Bob Smith" 반환
 let result2 = buildName("Bob", undefined);       // 여전히 동작, 역시 "Bob Smith" 반환
 let result3 = buildName("Bob", "Adams", "Sr.");  // 오류, 너무 많은 매개변수
 let result4 = buildName("Bob", "Adams");         // 정확함
