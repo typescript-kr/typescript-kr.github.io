@@ -1,8 +1,8 @@
-## 개요
+## 개요 (Overview)
 
-컴파일러 옵션은 MSBuild 프로젝트 내의 MSBuild 속성을 사용하여 지정할 수 있습니다.
+컴파일러 옵션은 MSBuild 프로젝트 내의 MSBuild 프로퍼티를 사용하여 지정할 수 있습니다.
 
-## 예제
+## 예제 (Example)
 
 ```XML
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
@@ -18,9 +18,9 @@
       Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
 ```
 
-## 맵핑
+## 맵핑 (Mappings)
 
-컴파일러 옵션                              | MSBuild 속성 이름                      | 허용된 값
+컴파일러 옵션                              | MSBuild 프로퍼티 이름                      | 허용된 값
 ---------------------------------------------|--------------------------------------------|-----------------
 `--allowJs`                                  | *MSBuild에서 지원되지 않습니다*                 |
 `--allowSyntheticDefaultImports`             | TypeScriptAllowSyntheticDefaultImports     | boolean
@@ -35,6 +35,8 @@
 `--disableSizeLimit`                         | *MSBuild에서 지원되지 않습니다*                 |
 `--emitBOM`                                  | TypeScriptEmitBOM                          | boolean
 `--emitDecoratorMetadata`                    | TypeScriptEmitDecoratorMetadata            | boolean
+`--emitDeclarationOnly`                      | TypeScriptEmitDeclarationOnly              | boolean
+`--esModuleInterop`                          | TypeScriptESModuleInterop                  | boolean
 `--experimentalAsyncFunctions`               | TypeScriptExperimentalAsyncFunctions       | boolean
 `--experimentalDecorators`                   | TypeScriptExperimentalDecorators           | boolean
 `--forceConsistentCasingInFileNames`         | TypeScriptForceConsistentCasingInFileNames | boolean
@@ -87,6 +89,7 @@
 `--strict`                                   | TypeScriptStrict                           | boolean
 `--strictFunctionTypes`                      | TypeScriptStrictFunctionTypes              | boolean
 `--strictNullChecks`                         | TypeScriptStrictNullChecks                 | boolean
+`--strictPropertyInitialization`             | TypeScriptStrictPropertyInitialization     | boolean
 `--stripInternal`                            | TypeScriptStripInternal                    | boolean
 `--suppressExcessPropertyErrors`             |  TypeScriptSuppressExcessPropertyErrors    | boolean
 `--suppressImplicitAnyIndexErrors`           | TypeScriptSuppressImplicitAnyIndexErrors   | boolean
@@ -94,25 +97,25 @@
 `--traceResolution`                          | *MSBuild에서 지원되지 않습니다*                 |
 `--types`                                    | *MSBuild에서 지원되지 않습니다*                 |
 `--typeRoots`                                | *MSBuild에서 지원되지 않습니다*                 |
+`--useDefineForClassFields`                  | TypeScriptUseDefineForClassFields          | boolean
 `--watch`                                    | *MSBuild에서 지원되지 않습니다*                 |
 *MSBuild 전용 옵션*                        | TypeScriptAdditionalFlags                  | *모든 컴파일러 옵션*
 
-## 여러분의 Visual Studio 버전에서 지원되는 기능은 무엇일까요?
+## 나의 Visual Studio 버전에서 지원하는 것은? (What is supported in my version of Visual Studio?)
 
 `C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets` 파일을 확인하세요.  
 MSBuild XML 태그와 `tsc` 컴파일러 옵션 사이의 신뢰할 수 있는 맵핑이 여기에 있습니다.
 
-## ToolsVersion
+## 툴버전 (ToolsVersion)
 
-프로젝트 파일의 `<TypeScriptToolsVersion>1.7</TypeScriptToolsVersion>` 속성 값은 빌드하는 데 사용할 컴파일러 버전을 식별합니다 (이 예제에서는 1.7).  
+프로젝트 파일의 `<TypeScriptToolsVersion>1.7</TypeScriptToolsVersion>` 프로퍼티 값은 빌드하는 데 사용할 컴파일러 버전을 식별합니다 (이 예제에서는 1.7).  
 이렇게 하면 프로젝트가 다른 컴퓨터에 있는 동일한 버전의 컴파일러에 대한 빌드를 허용합니다.
 
-만약 `TypeScriptToolsVersion`이 지정되지 않으면 설치된 최신 컴파일러 버전을 사용하여 빌드합니다.
+만약 `TypeScriptToolsVersion`이 지정되지 않으면, 설치된 최신 컴파일러 버전을 사용하여 빌드합니다.
 
-최신 버전의 TS를 사용하는 사용자에게는 첫 로드 시 프로젝트를 업그레이드하라는 메시지가 표시됩니다
+최신 버전의 TS를 사용하는 사용자에게는, 첫 로드 시 프로젝트를 업그레이드하라는 메시지가 표시됩니다.
 
 ## TypeScriptCompileBlocked
 
-다른 빌드 도구를 사용하여 프로젝트 (예: 걸프, 그런트 등) 그리고 개발을 위한 VS와 디버깅 환경을 사용하는 경우 프로젝트에서 `<TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>`를 설정하세요.
-
-이렇게 하면 모든 편집 지원이 제공되지만 F5키를 눌러도 빌드가 지원되지 않습니다.
+다른 빌드 도구를 사용하여 프로젝트 (예: gulp, grunt 등) 그리고 개발을 위한 VS와 디버깅 환경을 사용하는 경우 프로젝트에서 `<TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>`를 설정하세요.
+이렇게 하면 모든 편집 지원이 제공되지만 F5키를 눌러도 빌드되지 않습니다.
