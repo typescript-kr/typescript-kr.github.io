@@ -224,7 +224,7 @@ let n: null = null;
 
 유니언 타입은 상급 주제로, 이후 챕터에서 다룹니다.
 
-> As a note: 가능한 경우 `--structNullChecks`를 사용할 것을 권장합니다. 하지만 핸드북의 목적에 따라, 사용하지 않는다고 가정합니다.
+> As a note: 가능한 경우 `--strictNullChecks`를 사용할 것을 권장합니다. 하지만 핸드북의 목적에 따라, 사용하지 않는다고 가정합니다.
 
 # Never
 
