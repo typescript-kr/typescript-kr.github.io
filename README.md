@@ -1,7 +1,7 @@
 # TypeScript-Handbook 한글 문서
 
 [![Build Status](https://api.travis-ci.com/typescript-kr/typescript-kr.github.io.svg?branch=master)](https://travis-ci.com/github/typescript-kr/typescript-kr.github.io) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-23-orange.svg)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-24-orange.svg)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![Release Date](https://img.shields.io/github/release-date/typescript-kr/typescript-kr.github.io)](https://github.com/typescript-kr/typescript-kr.github.io/releases)<!-- RELEASE-DATE-BADGE:END -->
 [![Stars](https://img.shields.io/github/stars/typescript-kr/typescript-kr.github.io)](https://github.com/typescript-kr/typescript-kr.github.io/stargazers)<!-- STARS-BADGE:END -->
 
@@ -69,6 +69,7 @@ TypeScript Handbook에 대해 번역 리뷰를 하고 싶으신 분이 있다면
     <td align="center"><a href="https://github.com/lcm6528"><img src="https://avatars2.githubusercontent.com/u/6929166?v=4" width="80px;" alt=""/><br /><sub><b>changmin Lee</b></sub></a><br /><a href="#translation-lcm6528" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/nmsohn"><img src="https://avatars0.githubusercontent.com/u/20067736?v=4" width="80px;" alt=""/><br /><sub><b>Hahn</b></sub></a><br /><a href="#translation-nmsohn" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/33577"><img src="https://avatars3.githubusercontent.com/u/34697855?v=4" width="80px;" alt=""/><br /><sub><b>33577</b></sub></a><br /><a href="#translation-33577" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/j0urneyK"><img src="https://avatars3.githubusercontent.com/u/62772873?v=4" width="80px;" alt=""/><br /><sub><b>Journey K</b></sub></a><br /><a href="#translation-j0urneyK" title="Translation">🌍</a></td>
   </tr>
 </table>
 
