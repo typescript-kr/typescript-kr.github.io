@@ -1,8 +1,7 @@
 # TypeScript-Handbook 한글 문서
 
 [![Build Status](https://api.travis-ci.com/typescript-kr/typescript-kr.github.io.svg?branch=master)](https://travis-ci.com/github/typescript-kr/typescript-kr.github.io) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-24-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-24-orange.svg)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![Release Date](https://img.shields.io/github/release-date/typescript-kr/typescript-kr.github.io)](https://github.com/typescript-kr/typescript-kr.github.io/releases)<!-- RELEASE-DATE-BADGE:END -->
 [![Stars](https://img.shields.io/github/stars/typescript-kr/typescript-kr.github.io)](https://github.com/typescript-kr/typescript-kr.github.io/stargazers)<!-- STARS-BADGE:END -->
 
