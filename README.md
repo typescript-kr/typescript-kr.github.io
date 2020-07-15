@@ -19,20 +19,6 @@
 
 그 밖에도 다양한 의견 및 피드백은 언제나 환영합니다:)
 
-## 2020 오픈소스 컨트리뷰톤 멘티 모집 (2020.6.1 ~ 7.6)
-공개 SW 포탈에서 현재 오픈소스 프로젝트 관련해서 멘티를 모집하고 있습니다.  
-오픈소스 프로젝트에 기여해 보고자 하는 마음이 있었지만 막상 도전하기 어려우셨다면 2020 오픈소스 컨트리뷰톤 참여를 추천드립니다 😄
-
-[오픈소스 컨트리뷰톤이란?](https://www.oss.kr/contributhon)
-
-<a href="https://www.oss.kr/contributhon_project/show/0c290a4d-e97d-4281-b5d3-4fbc1cc8b152"><img src="./assets/images/readme/oss-image.jpg"  width="300"></a>
-
-Github에 대해 아직 잘 모르시거나  
-이제 개발을 시작하는 초보 개발자시거나  
-TypeScript에 대해 공부를 하고 싶거나  
-TypeScript Handbook에 대해 번역 리뷰를 하고 싶으신 분이 있다면  
-강력하게 추천합니다! [신청하기](https://www.oss.kr/contributhon_project/show/0c290a4d-e97d-4281-b5d3-4fbc1cc8b152)
-
 ## 컨트리뷰터 목록 ✨
 
 도움 주셔서 감사합니다. ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -43,7 +29,7 @@ TypeScript Handbook에 대해 번역 리뷰를 하고 싶으신 분이 있다면
 <table>
   <tr>
     <td align="center"><a href="https://github.com/yeonjuan/dev-blog"><img src="https://avatars3.githubusercontent.com/u/41323220?v=4" width="80px;" alt=""/><br /><sub><b>YeonJuan</b></sub></a><br /><a href="#translation-yeonjuan" title="Translation">🌍</a></td>
-    <td align="center"><a href="https://github.com/Bumkeyy"><img src="https://avatars0.githubusercontent.com/u/16663226?v=4" width="80px;" alt=""/><br /><sub><b>Kibeom Kwon</b></sub></a><br /><a href="#translation-Bumkeyy" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://bumkeyy.gitbook.io/bumkeyy-code/"><img src="https://avatars0.githubusercontent.com/u/16663226?v=4" width="80px;" alt=""/><br /><sub><b>Kibeom Kwon</b></sub></a><br /><a href="#translation-Bumkeyy" title="Translation">🌍</a></td>
     <td align="center"><a href="https://guyeol.github.io"><img src="https://avatars3.githubusercontent.com/u/7357413?v=4" width="80px;" alt=""/><br /><sub><b>GuyeolJeong</b></sub></a><br /><a href="#translation-guyeol" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/dvlprsh"><img src="https://avatars1.githubusercontent.com/u/48552752?v=4" width="80px;" alt=""/><br /><sub><b>Seohee Park</b></sub></a><br /><a href="#translation-dvlprsh" title="Translation">🌍</a></td>
     <td align="center"><a href="https://devjang.github.io"><img src="https://avatars1.githubusercontent.com/u/23068523?v=4" width="80px;" alt=""/><br /><sub><b>poco.j</b></sub></a><br /><a href="#translation-devJang" title="Translation">🌍</a></td>
