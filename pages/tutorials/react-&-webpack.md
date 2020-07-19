@@ -178,7 +178,7 @@ ReactDOM.render(
 ```
 
 우리는 `node_modules` 안에 들어있는 파일을 포함시킵니다.
-React와 React-DOM의 npm 패키지에는 웹 페이지에 포함 할 수 있는 독립형 `.js` 파일이 있으며, 보다 빠르게 이동하기 위해 직접 찹조합니다.
+React와 React-DOM의 npm 패키지에는 웹 페이지에 포함 할 수 있는 독립형 `.js` 파일이 있으며, 보다 빠르게 이동하기 위해 직접 참조합니다.
 이런 파일을 다른 디렉토리에 복사하거나, CDN(Content Delivery Network)에서 호스팅합니다.
 Facebook은 CDN-호스트 버전의 React를 제공하며, [여기에서 자세한 내용을 읽을 수 있습니다](http://facebook.github.io/react/downloads.html#development-vs.-production-builds).
 
