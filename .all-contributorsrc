@@ -225,6 +225,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "planetis",
+      "name": "planetis",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/62644942?v=4",
+      "profile": "https://github.com/planetis",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 8,
