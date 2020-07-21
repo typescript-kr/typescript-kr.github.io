@@ -1,0 +1,1406 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>TS for JS Programmers(en) · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+				<meta name="generator" content="GitBook 3.2.3">
+				<meta property="og:title" content="TypeScript 한글 문서">
+        <meta property="og:image" content="https://avatars1.githubusercontent.com/u/37781342?s=200&v=4">
+        <meta property="og:description" content="TypeScript 한글 번역 문서입니다">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight-1/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-forkmegithub/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../assets/css/website.css">
+        
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../../assets/css/atom-one-dark.css" />
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ts-for-oopers.html" />
+    
+    
+    <link rel="prev" href="ts-for-the-new-programmer.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">시작하기</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="ts-for-the-new-programmer.html">
+            
+                <a href="ts-for-the-new-programmer.html">
+            
+                    
+                    TS for the New Programmer(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2" data-path="ts-for-js-programmers.html">
+            
+                <a href="ts-for-js-programmers.html">
+            
+                    
+                    TS for JS Programmers(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="ts-for-oopers.html">
+            
+                <a href="ts-for-oopers.html">
+            
+                    
+                    TS for OOP Programmers(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="ts-for-functional-programmers.html">
+            
+                <a href="ts-for-functional-programmers.html">
+            
+                    
+                    TS for Functional Programmers(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="typescript-in-5-minutes.html">
+            
+                <a href="typescript-in-5-minutes.html">
+            
+                    
+                    5분 안에 보는 TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">핸드북</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../the-handbook.html">
+            
+                <a href="../the-handbook.html">
+            
+                    
+                    핸드북이란(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../basic-types.html">
+            
+                <a href="../basic-types.html">
+            
+                    
+                    기본 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../interfaces.html">
+            
+                <a href="../interfaces.html">
+            
+                    
+                    인터페이스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../functions.html">
+            
+                <a href="../functions.html">
+            
+                    
+                    함수
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../literal-types.html">
+            
+                <a href="../literal-types.html">
+            
+                    
+                    리터럴 타입(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../unions-and-intersections.html">
+            
+                <a href="../unions-and-intersections.html">
+            
+                    
+                    유니언과 교차 타입(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../classes.html">
+            
+                <a href="../classes.html">
+            
+                    
+                    클래스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../enums.html">
+            
+                <a href="../enums.html">
+            
+                    
+                    열거형
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="../generics.html">
+            
+                <a href="../generics.html">
+            
+                    
+                    제네릭
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">핸드북 레퍼런스</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../advanced-types.html">
+            
+                <a href="../advanced-types.html">
+            
+                    
+                    고급 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../declaration-merging.html">
+            
+                <a href="../declaration-merging.html">
+            
+                    
+                    선언 병합
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../decorators.html">
+            
+                <a href="../decorators.html">
+            
+                    
+                    데코레이터
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../utility-types.html">
+            
+                <a href="../utility-types.html">
+            
+                    
+                    유틸리티 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../iterators-and-generators.html">
+            
+                <a href="../iterators-and-generators.html">
+            
+                    
+                    이터레이터와 제네레이터
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../jsx.html">
+            
+                <a href="../jsx.html">
+            
+                    
+                    JSX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../mixins.html">
+            
+                <a href="../mixins.html">
+            
+                    
+                    믹스인
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="../modules.html">
+            
+                <a href="../modules.html">
+            
+                    
+                    모듈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="../module-resolution.html">
+            
+                <a href="../module-resolution.html">
+            
+                    
+                    모듈 해석
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="../namespaces.html">
+            
+                <a href="../namespaces.html">
+            
+                    
+                    네임스페이스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="../namespaces-and-modules.html">
+            
+                <a href="../namespaces-and-modules.html">
+            
+                    
+                    네임스페이스와 모듈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="../symbols.html">
+            
+                <a href="../symbols.html">
+            
+                    
+                    심볼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="../triple-slash-directives.html">
+            
+                <a href="../triple-slash-directives.html">
+            
+                    
+                    트리플-슬래시 지시자
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="../type-compatibility.html">
+            
+                <a href="../type-compatibility.html">
+            
+                    
+                    타입 호환성
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="../type-inference.html">
+            
+                <a href="../type-inference.html">
+            
+                    
+                    타입 추론
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="dom-manipulation.html">
+            
+                <a href="dom-manipulation.html">
+            
+                    
+                    타입스크립트와 DOM(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="../variable-declarations.html">
+            
+                <a href="../variable-declarations.html">
+            
+                    
+                    변수 선언
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">튜토리얼</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="asp.net-core.html">
+            
+                <a href="asp.net-core.html">
+            
+                    
+                    ASP.NET Core
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="gulp.html">
+            
+                <a href="gulp.html">
+            
+                    
+                    걸프
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="migrating-from-javascript.html">
+            
+                <a href="migrating-from-javascript.html">
+            
+                    
+                    JavaScript에서 마이그레이션
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="babel-with-typescript.html">
+            
+                <a href="babel-with-typescript.html">
+            
+                    
+                    TypeScript와 Babel 사용하기(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="react-&-webpack.html">
+            
+                <a href="react-&-webpack.html">
+            
+                    
+                    리액트 & 웹팩
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">릴리즈 노트</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../release-notes/typescript-3.9.html">
+            
+                <a href="../release-notes/typescript-3.9.html">
+            
+                    
+                    TypeScript 3.9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../release-notes/typescript-3.8.html">
+            
+                <a href="../release-notes/typescript-3.8.html">
+            
+                    
+                    TypeScript 3.8
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">선언 파일</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../declaration-files/introduction.html">
+            
+                <a href="../declaration-files/introduction.html">
+            
+                    
+                    소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../declaration-files/by-example.html">
+            
+                <a href="../declaration-files/by-example.html">
+            
+                    
+                    By Example
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../declaration-files/dos-and-don-ts.html">
+            
+                <a href="../declaration-files/dos-and-don-ts.html">
+            
+                    
+                    Do's and Don'ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../declaration-files/deep-dive.html">
+            
+                <a href="../declaration-files/deep-dive.html">
+            
+                    
+                    Deep Dive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../declaration-files/library-structures.html">
+            
+                <a href="../declaration-files/library-structures.html">
+            
+                    
+                    Library Structures
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../declaration-files/templates.html">
+            
+                <a href="../declaration-files/templates.html">
+            
+                    
+                    Templates
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.6.1" data-path="../declaration-files/templates/global-modifying-module.d.ts.html">
+            
+                <a href="../declaration-files/templates/global-modifying-module.d.ts.html">
+            
+                    
+                    global-modifying-module.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6.2" data-path="../declaration-files/templates/global-plugin.d.ts.html">
+            
+                <a href="../declaration-files/templates/global-plugin.d.ts.html">
+            
+                    
+                    global-plugin.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6.3" data-path="../declaration-files/templates/global.d.ts.html">
+            
+                <a href="../declaration-files/templates/global.d.ts.html">
+            
+                    
+                    global.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6.4" data-path="../declaration-files/templates/module-class.d.ts.html">
+            
+                <a href="../declaration-files/templates/module-class.d.ts.html">
+            
+                    
+                    module-class.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6.5" data-path="../declaration-files/templates/module-function.d.ts.html">
+            
+                <a href="../declaration-files/templates/module-function.d.ts.html">
+            
+                    
+                    module-function.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6.6" data-path="../declaration-files/templates/module-plugin.d.ts.html">
+            
+                <a href="../declaration-files/templates/module-plugin.d.ts.html">
+            
+                    
+                    module-plugin.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6.7" data-path="../declaration-files/templates/module.d.ts.html">
+            
+                <a href="../declaration-files/templates/module.d.ts.html">
+            
+                    
+                    module.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../declaration-files/publishing.html">
+            
+                <a href="../declaration-files/publishing.html">
+            
+                    
+                    Publishing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8" data-path="../declaration-files/consumption.html">
+            
+                <a href="../declaration-files/consumption.html">
+            
+                    
+                    Consumption
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">자바스크립트</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../intro-to-js-with-ts.html">
+            
+                <a href="../intro-to-js-with-ts.html">
+            
+                    
+                    JavaScript에 TypeScript 적용하기(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../type-checking-javaScript-files.html">
+            
+                <a href="../type-checking-javaScript-files.html">
+            
+                    
+                    JavaScript 파일 타입 검사
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../jsdoc-reference.html">
+            
+                <a href="../jsdoc-reference.html">
+            
+                    
+                    JSDoc 레퍼런스(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../declaration-files/creating-dts-files-from-js.html">
+            
+                <a href="../declaration-files/creating-dts-files-from-js.html">
+            
+                    
+                    .js 파일에서 d.ts 파일 만들기(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">프로젝트 환경설정</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../tsconfig.json.html">
+            
+                <a href="../tsconfig.json.html">
+            
+                    
+                    tsconfig.json
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../compiler-options.html">
+            
+                <a href="../compiler-options.html">
+            
+                    
+                    컴파일러 옵션
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../project-references.html">
+            
+                <a href="../project-references.html">
+            
+                    
+                    프로젝트 레퍼런스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="../compiler-options-in-msbuild.html">
+            
+                <a href="../compiler-options-in-msbuild.html">
+            
+                    
+                    MSBuild에서의 컴파일러 옵션
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="../integrating-with-build-tools.html">
+            
+                <a href="../integrating-with-build-tools.html">
+            
+                    
+                    빌드 도구와 통합
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.6" data-path="../configuring-watch.html">
+            
+                <a href="../configuring-watch.html">
+            
+                    
+                    configuring-watch (en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7" data-path="../nightly-builds.html">
+            
+                <a href="../nightly-builds.html">
+            
+                    
+                    Nightly 빌드
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >TS for JS Programmers(en)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>The relationship between TypeScript and JavaScript is rather unique among modern programming languages.
+TypeScript sits as a layer on-top of JavaScript, offering the features of JavaScript and then adds its own layer on top of that. This layer is the TypeScript type system.</p>
+<p>JavaScript already has a set of language primitives like <code>string</code>, <code>number</code>, <code>object</code>, <code>undefined</code> etc, however there are no ahead-of-time checks that these are consistently assigned across your whole codebase. TypeScript acts as that layer.</p>
+<p>This means that your existing working JavaScript code is also TypeScript code, however TypeScript&apos;s type-checker might highlight discrepancies between what you thought was happening and what the JavaScript language does.</p>
+<p>This tutorial tries to give you a 5 minute overview of the type-system, with a focus on understanding the type-system language extensions which TypeScript adds.</p>
+<h2 id="types-by-inference">Types by Inference</h2>
+<p>TypeScript knows the JavaScript language and will generate types for you in many cases.
+For example in creating a variable and assigning it to a particular value, TypeScript will use the value as its type.</p>
+<p>```ts twoslash
+let helloWorld = &quot;Hello World&quot;;
+//  ^?</p>
+<pre><code>
+By understanding how JavaScript works, TypeScript can build a type-system which accepts JavaScript code but has types. This offers a type-system without needing to add extra characters to make types explicit in your code. Which is how TypeScript knows that `helloWorld` is a `string` in the above example.
+
+It&apos;s quite possible that you have used VS Code with JavaScript, and had editor auto-completion as you worked.
+That is because the understanding of JavaScript baked into TypeScript has been used under-the-hood to improve working with JavaScript.
+
+## Defining Types
+
+JavaScript is a dynamic language which allows for a lot of design patterns. Some design patterns can be hard to provide types for automatically (because they might use dynamic programming) in those cases TypeScript supports an extension of the JavaScript language which offers places for you to tell TypeScript what the types should be.
+
+Here is an example of creating an object which has an inferred type which includes `name: string` and `id: number`:
+
+```ts twoslash
+const user = {
+  name: &quot;Hayes&quot;,
+  id: 0,
+};
+</code></pre><p>An explicit way to describe this object&apos;s shape is via an <code>interface</code> declaration:</p>
+<p>```ts twoslash
+interface User {
+  name: string;
+  id: number;
+}</p>
+<pre><code>
+You can then declare that a JavaScript object conforms to that shape of your new `interface` by using syntax like `: TypeName` after a variable declaration:
+
+```ts twoslash
+interface User {
+  name: string;
+  id: number;
+}
+// ---cut---
+const user: User = {
+  name: &quot;Hayes&quot;,
+  id: 0,
+};
+</code></pre><p>TypeScript will warn you if you provide an object which doesn&apos;t match the interface you have provided:</p>
+<p>```ts twoslash
+// @errors: 2322
+interface User {
+  name: string;
+  id: number;
+}</p>
+<p>const user: User = {
+  username: &quot;Hayes&quot;,
+  id: 0,
+};</p>
+<pre><code>
+Because JavaScript supports classes and object-oriented programming, so does TypeScript - an interface declaration can also be used with classes:
+
+```ts twoslash
+interface User {
+  name: string;
+  id: number;
+}
+
+class UserAccount {
+  name: string;
+  id: number;
+
+  constructor(name: string, id: number) {
+    this.name = name;
+    this.id = id;
+  }
+}
+
+const user: User = new UserAccount(&quot;Murphy&quot;, 1);
+</code></pre><p>Interfaces can be used to annotate parameters and return values to functions:</p>
+<p>```ts twoslash
+// @noErrors
+interface User {
+  name: string;
+  id: number;
+}
+// ---cut---
+function getAdminUser(): User {
+  //...
+}</p>
+<p>function deleteUser(user: User) {
+  // ...
+}</p>
+<pre><code>
+There are already a small set of primitive types available in JavaScript: `boolean`, `bigint`, `null`, `number`, `string`, `symbol`, `object` and `undefined`, which you can use in an interface. TypeScript extends this list with a few more. for example: `any` (allow anything), [`unknown`](/en/play#example/unknown-and-never) (ensure someone using this type declares what the type is), [`never`](/en/play#example/unknown-and-never) (it&apos;s not possible that this type could happen) `void` (a function which returns `undefined` or has no return value).
+
+You&apos;ll see quite quickly that there are two syntaxes for building types: [Interfaces and Types](/play/?e=83#example/types-vs-interfaces) - you should prefer `interface`, and use `type` when you need specific features.
+
+## Composing Types
+
+Similar to how you would create larger complex objects by composing them together TypeScript has tools for doing this with types.
+The two most popular techniques you would use in everyday code to create new types by working with many smaller types are Unions and Generics.
+
+### Unions
+
+A union is a way to declare that a type could be one of many types. For example, you could describe a `boolean` type as being either `true` or `false`:
+
+```ts twoslash
+type MyBool = true | false;
+</code></pre><p><em>Note:</em> If you hover over <code>MyBool</code> above, you&apos;ll see that it is classed as <code>boolean</code> - that&apos;s a property of the Structural Type System, which we&apos;ll get to later.</p>
+<p>One of the most popular use-cases for union types is to describe a set of <code>string</code>s or <code>number</code>s <a href="../../docs/handbook/literal-types.html">literal</a> which a value is allowed to be:</p>
+<p>```ts twoslash
+type WindowStates = &quot;open&quot; | &quot;closed&quot; | &quot;minimized&quot;;
+type LockStates = &quot;locked&quot; | &quot;unlocked&quot;;
+type OddNumbersUnderTen = 1 | 3 | 5 | 7 | 9;</p>
+<pre><code>
+Unions provide a way to handle different types too, for example you may have a function which accepts an `array` or a `string`.
+
+```ts twoslash
+function getLength(obj: string | string[]) {
+  return obj.length;
+}
+</code></pre><p>TypeScript understands how code changes what the variable could be with time, you can use these checks to narrow the type down.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Predicate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>string</td>
+<td><code>typeof s === &quot;string&quot;</code></td>
+</tr>
+<tr>
+<td>number</td>
+<td><code>typeof n === &quot;number&quot;</code></td>
+</tr>
+<tr>
+<td>boolean</td>
+<td><code>typeof b === &quot;boolean&quot;</code></td>
+</tr>
+<tr>
+<td>undefined</td>
+<td><code>typeof undefined === &quot;undefined&quot;</code></td>
+</tr>
+<tr>
+<td>function</td>
+<td><code>typeof f === &quot;function&quot;</code></td>
+</tr>
+<tr>
+<td>array</td>
+<td><code>Array.isArray(a)</code></td>
+</tr>
+</tbody>
+</table>
+<p>For example, you could differentiate between a <code>string</code> and an <code>array</code>, using <code>typeof obj === &quot;string&quot;</code> and TypeScript will know what the object is down different code paths.</p>
+<!-- prettier-ignore -->
+<p>```ts twoslash
+function wrapInArray(obj: string | string[]) {
+  if (typeof obj === &quot;string&quot;) {
+    return [obj];
+//          ^?
+  } else {
+    return obj;
+  }
+}</p>
+<pre><code>
+### Generics
+
+You can get very deep into the TypeScript generic system, but at a 1 minute high-level explanation, generics are a way to provide variables to types.
+
+A common example is an array, an array without generics could contain anything. An array with generics can describe what values are inside in the array.
+
+```ts
+type StringArray = Array&lt;string&gt;;
+type NumberArray = Array&lt;number&gt;;
+type ObjectWithNameArray = Array&lt;{ name: string }&gt;;
+</code></pre><p>You can declare your own types which use generics:</p>
+<p>```ts twoslash
+// @errors: 2345
+interface Backpack<type> {
+  add: (obj: Type) =&gt; void;
+  get: () =&gt; Type;
+}</type></p>
+<p>// This line is a shortcut to tell TypeScript there is a
+// constant called <code>backpack</code>, and to not worry about where it came from
+declare const backpack: Backpack<string>;</string></p>
+<p>// object is a string, because we declared it above as the variable part of Backpack
+const object = backpack.get();</p>
+<p>// Due to backpack variable being a string, you cannot pass a number to the add function
+backpack.add(23);</p>
+<pre><code>
+## Structural Type System
+
+One of TypeScript&apos;s core principles is that type checking focuses on the _shape_ which values have.
+This is sometimes called &quot;duck typing&quot; or &quot;structural typing&quot;.
+
+In a structural type system if two objects have the same shape, they are considered the same.
+
+```ts twoslash
+interface Point {
+  x: number;
+  y: number;
+}
+
+function printPoint(p: Point) {
+  console.log(`${p.x}, ${p.y}`);
+}
+
+// prints &quot;12, 26&quot;
+const point = { x: 12, y: 26 };
+printPoint(point);
+</code></pre><p>The <code>point</code> variable is never declared to be a <code>Point</code> type, but TypeScript compares the shape of <code>point</code> to the shape of <code>Point</code> in the type-check.
+Because they both have the same shape, then it passes.</p>
+<p>The shape matching only requires a subset of the object&apos;s fields to match.</p>
+<p>```ts twoslash
+// @errors: 2345
+interface Point {
+  x: number;
+  y: number;
+}</p>
+<p>function printPoint(p: Point) {
+  console.log(<code>${p.x}, ${p.y}</code>);
+}
+// ---cut---
+const point3 = { x: 12, y: 26, z: 89 };
+printPoint(point3); // prints &quot;12, 26&quot;</p>
+<p>const rect = { x: 33, y: 3, width: 30, height: 80 };
+printPoint(rect); // prints &quot;33, 3&quot;</p>
+<p>const color = { hex: &quot;#187ABF&quot; };</p>
+<p>printPoint(color);</p>
+<pre><code>
+Finally, to really nail this point down, structurally there is no difference between how classes and objects conform to shapes:
+
+```ts twoslash
+// @errors: 2345
+interface Point {
+  x: number;
+  y: number;
+}
+
+function printPoint(p: Point) {
+  console.log(`${p.x}, ${p.y}`);
+}
+// ---cut---
+class VirtualPoint {
+  x: number;
+  y: number;
+
+  constructor(x: number, y: number) {
+    this.x = x;
+    this.y = y;
+  }
+}
+
+const newVPoint = new VirtualPoint(13, 56);
+printPoint(newVPoint); // prints &quot;13, 56&quot;
+</code></pre><p>If the object or class has all the required properties, then TypeScript will say they match regardless of the implementation details.</p>
+<h2 id="next-steps">Next Steps</h2>
+<p>This doc is a high level 5 minute overview of the sort of syntax and tools you would use in everyday code. From here you should:</p>
+<ul>
+<li>Read the full Handbook <a href="../../docs/handbook/intro.html">from start to finish</a> (30m)</li>
+<li>Explore the <a href="../../play#show-examples">Playground examples</a>.</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ts-for-the-new-programmer.html" class="navigation navigation-prev " aria-label="Previous page: TS for the New Programmer(en)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ts-for-oopers.html" class="navigation navigation-next " aria-label="Next page: TS for OOP Programmers(en)">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"TS for JS Programmers(en)","layout":"docs","permalink":"/docs/handbook/typescript-in-5-minutes.html","oneline":"Learn how TypeScript extends JavaScript","level":"2.2","depth":1,"next":{"title":"TS for OOP Programmers(en)","level":"2.3","depth":1,"path":"pages/tutorials/ts-for-oopers.md","ref":"pages/tutorials/ts-for-oopers.md","articles":[]},"previous":{"title":"TS for the New Programmer(en)","level":"2.1","depth":1,"path":"pages/tutorials/ts-for-the-new-programmer.md","ref":"pages/tutorials/ts-for-the-new-programmer.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/tutorials/ts-for-js-programmers.md","mtime":"2020-07-21T11:06:58.456Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-21T11:07:47.397Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-forkmegithub/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    
+
+    </body>
+</html>

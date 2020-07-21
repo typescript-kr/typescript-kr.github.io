@@ -1,0 +1,1279 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>타입스크립트와 DOM(en) · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+				<meta name="generator" content="GitBook 3.2.3">
+				<meta property="og:title" content="TypeScript 한글 문서">
+        <meta property="og:image" content="https://avatars1.githubusercontent.com/u/37781342?s=200&v=4">
+        <meta property="og:description" content="TypeScript 한글 번역 문서입니다">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight-1/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-forkmegithub/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../assets/css/website.css">
+        
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../../assets/css/atom-one-dark.css" />
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../variable-declarations.html" />
+    
+    
+    <link rel="prev" href="../type-inference.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">시작하기</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="ts-for-the-new-programmer.html">
+            
+                <a href="ts-for-the-new-programmer.html">
+            
+                    
+                    TS for the New Programmer(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="ts-for-js-programmers.html">
+            
+                <a href="ts-for-js-programmers.html">
+            
+                    
+                    TS for JS Programmers(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="ts-for-oopers.html">
+            
+                <a href="ts-for-oopers.html">
+            
+                    
+                    TS for OOP Programmers(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="ts-for-functional-programmers.html">
+            
+                <a href="ts-for-functional-programmers.html">
+            
+                    
+                    TS for Functional Programmers(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="typescript-in-5-minutes.html">
+            
+                <a href="typescript-in-5-minutes.html">
+            
+                    
+                    5분 안에 보는 TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">핸드북</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../the-handbook.html">
+            
+                <a href="../the-handbook.html">
+            
+                    
+                    핸드북이란(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../basic-types.html">
+            
+                <a href="../basic-types.html">
+            
+                    
+                    기본 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../interfaces.html">
+            
+                <a href="../interfaces.html">
+            
+                    
+                    인터페이스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../functions.html">
+            
+                <a href="../functions.html">
+            
+                    
+                    함수
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../literal-types.html">
+            
+                <a href="../literal-types.html">
+            
+                    
+                    리터럴 타입(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../unions-and-intersections.html">
+            
+                <a href="../unions-and-intersections.html">
+            
+                    
+                    유니언과 교차 타입(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../classes.html">
+            
+                <a href="../classes.html">
+            
+                    
+                    클래스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../enums.html">
+            
+                <a href="../enums.html">
+            
+                    
+                    열거형
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="../generics.html">
+            
+                <a href="../generics.html">
+            
+                    
+                    제네릭
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">핸드북 레퍼런스</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../advanced-types.html">
+            
+                <a href="../advanced-types.html">
+            
+                    
+                    고급 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../declaration-merging.html">
+            
+                <a href="../declaration-merging.html">
+            
+                    
+                    선언 병합
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../decorators.html">
+            
+                <a href="../decorators.html">
+            
+                    
+                    데코레이터
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../utility-types.html">
+            
+                <a href="../utility-types.html">
+            
+                    
+                    유틸리티 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../iterators-and-generators.html">
+            
+                <a href="../iterators-and-generators.html">
+            
+                    
+                    이터레이터와 제네레이터
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../jsx.html">
+            
+                <a href="../jsx.html">
+            
+                    
+                    JSX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../mixins.html">
+            
+                <a href="../mixins.html">
+            
+                    
+                    믹스인
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="../modules.html">
+            
+                <a href="../modules.html">
+            
+                    
+                    모듈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="../module-resolution.html">
+            
+                <a href="../module-resolution.html">
+            
+                    
+                    모듈 해석
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="../namespaces.html">
+            
+                <a href="../namespaces.html">
+            
+                    
+                    네임스페이스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="../namespaces-and-modules.html">
+            
+                <a href="../namespaces-and-modules.html">
+            
+                    
+                    네임스페이스와 모듈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="../symbols.html">
+            
+                <a href="../symbols.html">
+            
+                    
+                    심볼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="../triple-slash-directives.html">
+            
+                <a href="../triple-slash-directives.html">
+            
+                    
+                    트리플-슬래시 지시자
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="../type-compatibility.html">
+            
+                <a href="../type-compatibility.html">
+            
+                    
+                    타입 호환성
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="../type-inference.html">
+            
+                <a href="../type-inference.html">
+            
+                    
+                    타입 추론
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.16" data-path="dom-manipulation.html">
+            
+                <a href="dom-manipulation.html">
+            
+                    
+                    타입스크립트와 DOM(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="../variable-declarations.html">
+            
+                <a href="../variable-declarations.html">
+            
+                    
+                    변수 선언
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">튜토리얼</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="asp.net-core.html">
+            
+                <a href="asp.net-core.html">
+            
+                    
+                    ASP.NET Core
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="gulp.html">
+            
+                <a href="gulp.html">
+            
+                    
+                    걸프
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="migrating-from-javascript.html">
+            
+                <a href="migrating-from-javascript.html">
+            
+                    
+                    JavaScript에서 마이그레이션
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="babel-with-typescript.html">
+            
+                <a href="babel-with-typescript.html">
+            
+                    
+                    TypeScript와 Babel 사용하기(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="react-&-webpack.html">
+            
+                <a href="react-&-webpack.html">
+            
+                    
+                    리액트 & 웹팩
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">릴리즈 노트</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../release-notes/typescript-3.9.html">
+            
+                <a href="../release-notes/typescript-3.9.html">
+            
+                    
+                    TypeScript 3.9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../release-notes/typescript-3.8.html">
+            
+                <a href="../release-notes/typescript-3.8.html">
+            
+                    
+                    TypeScript 3.8
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">선언 파일</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../declaration-files/introduction.html">
+            
+                <a href="../declaration-files/introduction.html">
+            
+                    
+                    소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../declaration-files/by-example.html">
+            
+                <a href="../declaration-files/by-example.html">
+            
+                    
+                    By Example
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../declaration-files/dos-and-don-ts.html">
+            
+                <a href="../declaration-files/dos-and-don-ts.html">
+            
+                    
+                    Do's and Don'ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../declaration-files/deep-dive.html">
+            
+                <a href="../declaration-files/deep-dive.html">
+            
+                    
+                    Deep Dive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../declaration-files/library-structures.html">
+            
+                <a href="../declaration-files/library-structures.html">
+            
+                    
+                    Library Structures
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../declaration-files/templates.html">
+            
+                <a href="../declaration-files/templates.html">
+            
+                    
+                    Templates
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.6.1" data-path="../declaration-files/templates/global-modifying-module.d.ts.html">
+            
+                <a href="../declaration-files/templates/global-modifying-module.d.ts.html">
+            
+                    
+                    global-modifying-module.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6.2" data-path="../declaration-files/templates/global-plugin.d.ts.html">
+            
+                <a href="../declaration-files/templates/global-plugin.d.ts.html">
+            
+                    
+                    global-plugin.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6.3" data-path="../declaration-files/templates/global.d.ts.html">
+            
+                <a href="../declaration-files/templates/global.d.ts.html">
+            
+                    
+                    global.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6.4" data-path="../declaration-files/templates/module-class.d.ts.html">
+            
+                <a href="../declaration-files/templates/module-class.d.ts.html">
+            
+                    
+                    module-class.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6.5" data-path="../declaration-files/templates/module-function.d.ts.html">
+            
+                <a href="../declaration-files/templates/module-function.d.ts.html">
+            
+                    
+                    module-function.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6.6" data-path="../declaration-files/templates/module-plugin.d.ts.html">
+            
+                <a href="../declaration-files/templates/module-plugin.d.ts.html">
+            
+                    
+                    module-plugin.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6.7" data-path="../declaration-files/templates/module.d.ts.html">
+            
+                <a href="../declaration-files/templates/module.d.ts.html">
+            
+                    
+                    module.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../declaration-files/publishing.html">
+            
+                <a href="../declaration-files/publishing.html">
+            
+                    
+                    Publishing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8" data-path="../declaration-files/consumption.html">
+            
+                <a href="../declaration-files/consumption.html">
+            
+                    
+                    Consumption
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">자바스크립트</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../intro-to-js-with-ts.html">
+            
+                <a href="../intro-to-js-with-ts.html">
+            
+                    
+                    JavaScript에 TypeScript 적용하기(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../type-checking-javaScript-files.html">
+            
+                <a href="../type-checking-javaScript-files.html">
+            
+                    
+                    JavaScript 파일 타입 검사
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../jsdoc-reference.html">
+            
+                <a href="../jsdoc-reference.html">
+            
+                    
+                    JSDoc 레퍼런스(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../declaration-files/creating-dts-files-from-js.html">
+            
+                <a href="../declaration-files/creating-dts-files-from-js.html">
+            
+                    
+                    .js 파일에서 d.ts 파일 만들기(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">프로젝트 환경설정</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../tsconfig.json.html">
+            
+                <a href="../tsconfig.json.html">
+            
+                    
+                    tsconfig.json
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../compiler-options.html">
+            
+                <a href="../compiler-options.html">
+            
+                    
+                    컴파일러 옵션
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../project-references.html">
+            
+                <a href="../project-references.html">
+            
+                    
+                    프로젝트 레퍼런스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="../compiler-options-in-msbuild.html">
+            
+                <a href="../compiler-options-in-msbuild.html">
+            
+                    
+                    MSBuild에서의 컴파일러 옵션
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="../integrating-with-build-tools.html">
+            
+                <a href="../integrating-with-build-tools.html">
+            
+                    
+                    빌드 도구와 통합
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.6" data-path="../configuring-watch.html">
+            
+                <a href="../configuring-watch.html">
+            
+                    
+                    configuring-watch (en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7" data-path="../nightly-builds.html">
+            
+                <a href="../nightly-builds.html">
+            
+                    
+                    Nightly 빌드
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >타입스크립트와 DOM(en)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="dom-manipulation">DOM Manipulation</h1>
+<h3 id="an-exploration-into-the-htmlelement-type"><em>An exploration into the <code>HTMLElement</code> type</em></h3>
+<p>In the 20+ years since its standardization, JavaScript has come a very long way. While in 2020, JavaScript can be used on servers, in data science, and even on IoT devices, it is important to remember its most popular use case: web browsers.</p>
+<p>Website are made up of HTML and/or XML documents. These documents are static, they do not change. The D<em>ocument Object Model (DOM) is</em> a programming interface implemented by browsers in order to make static websites functional. The DOM API can be used to change the document structure, style, and content. The API is so powerful that countless frontend frameworks (jQuery, React, Angular, etc.) have been developed around it in order to make dynamic websites even easier to develop.</p>
+<p>TypeScript is a typed superset of JavaScript, and it ships type definitions for the DOM API. These definitions are readily available in any default TypeScript project. Of the 20,000+ lines of definitions in <em>lib.dom.d.ts</em>, one stands out among the rest: <code>HTMLElement</code> . This type is the backbone for DOM manipulation with TypeScript.</p>
+<blockquote>
+<p>You can explore the source code for the <a href="https://github.com/microsoft/TypeScript/blob/master/lib/lib.dom.d.ts" target="_blank">DOM type definitions</a></p>
+</blockquote>
+<h2 id="basic-example">Basic Example</h2>
+<p>Given a simplified <em>index.html</em> file:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;&lt;title&gt;TypeScript Dom Manipulation&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+    &lt;!-- Assume index.js is the compiled output of index.ts --&gt;
+    &lt;script src=&quot;index.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>Lets explore a TypeScript script that adds a <code>&lt;p&gt;Hello, World&lt;/p&gt;</code> element to the <code>#app</code> element.</p>
+<pre><code class="lang-ts"><span class="cm-comment">// 1. Select the div element using the id property</span>
+<span class="cm-keyword">const</span> <span class="cm-variable">app</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">&quot;app&quot;</span>);
+
+<span class="cm-comment">// 2. Create a new &lt;p&gt;&lt;/p&gt; element programmatically</span>
+<span class="cm-keyword">const</span> <span class="cm-variable">p</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">createElement</span>(<span class="cm-string">&quot;p&quot;</span>);
+
+<span class="cm-comment">// 3. Add the text content</span>
+<span class="cm-variable">p</span>.<span class="cm-property">textContent</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;Hello, World!&quot;</span>;
+
+<span class="cm-comment">// 4. Append the p element to the div element</span>
+<span class="cm-variable">app</span><span class="cm-operator">?</span>.<span class="cm-variable">appendChild</span>(<span class="cm-variable">p</span>);
+</code></pre>
+<p>After compiling and running the <em>index.html</em> page, the resulting HTML will be:</p>
+<pre><code class="lang-html"><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">id</span>=<span class="cm-string">&quot;app&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
+  <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">p</span><span class="cm-tagcm-bracket">&gt;</span>Hello, World!<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">p</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
+</code></pre>
+<h2 id="the-document-interface">The <code>Document</code> Interface</h2>
+<p>The first line of the TypeScript code uses a global variable <code>document</code> , inspecting the variable shows it is defined by the <code>Document</code> interface from the <em>lib.dom.d.ts</em> file. The code snippet contains calls to two methods, <code>getElementById</code> and <code>createElement</code>.</p>
+<h3 id="documentgetelementbyid"><code>Document.getElementById</code></h3>
+<p>The definition for this method is as follows:</p>
+<pre><code class="lang-ts"><span class="cm-variable">getElementById</span>(<span class="cm-variable">elementId</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable">HTMLElement</span> <span class="cm-operator">|</span> <span class="cm-atom">null</span>;
+</code></pre>
+<p>Pass it an element id string and it will return either <code>HTMLElement</code> or <code>null</code> . This method introduces one of the most important types, <code>HTMLElement</code>. It serves as the base interface for every other element interface. For example, the <code>p</code> variable in the code example is of type <code>HTMLParagraphElement</code>. Also take note that this method can return <code>null</code>. This is because the method can&apos;t be certain pre-runtime if it will be able to actually find the specified element or not. In the last line of the code snippet, the new <em>optional chaining</em> operator is used in order to call <code>appendChild</code>.</p>
+<h3 id="documentcreateelement"><code>Document.createElement</code></h3>
+<p>The definition for this method is (I have omitted the <em>deprecated</em> definition):</p>
+<pre><code class="lang-ts"><span class="cm-variable">createElement</span><span class="cm-operator">&lt;</span><span class="cm-variable">K</span> <span class="cm-keyword">extends</span> <span class="cm-variable">keyof</span> <span class="cm-variable">HTMLElementTagNameMap</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">tagName</span>: <span class="cm-variable">K</span>, <span class="cm-variable">options</span><span class="cm-operator">?</span>: <span class="cm-variable">ElementCreationOptions</span>): <span class="cm-variable">HTMLElementTagNameMap</span>[<span class="cm-variable">K</span>];
+<span class="cm-variable">createElement</span>(<span class="cm-variable">tagName</span>: <span class="cm-variable-3">string</span>, <span class="cm-variable">options</span><span class="cm-operator">?</span>: <span class="cm-variable">ElementCreationOptions</span>): <span class="cm-variable">HTMLElement</span>;
+</code></pre>
+<p>This is an overloaded function definition. The second overload is simplest and works a lot like the <code>getElementById</code> method does. Pass it any <code>string</code> and it will return a standard HTMLElement. This definition is what enables developers to create unique HTML element tags.</p>
+<p>For example <code>document.createElement(&apos;xyz&apos;)</code> returns a <code>&lt;xyz&gt;&lt;/xyz&gt;</code> element, clearly not an element that is specified by the HTML specification.</p>
+<blockquote>
+<p>For those interested, you can interact with custom tag elements using the <code>document.getElementsByTagName</code></p>
+</blockquote>
+<p>For the first definition of <code>createElement</code>, it is using some advanced generic patterns. It is best understood broken down into chunks. Starting with the generic expression: <code>&lt;K extends keyof HTMLElementTagNameMap&gt;</code>. This expression defines a generic parameter <code>K</code> that is <em>constrained</em> to the keys of the interface <code>HTMLElementTagNameMap</code>. The map interface contains every specified HTML tag name and its corresponding type interface. For example here are the first 5 mapped values:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">HTMLElementTagNameMap</span> {
+    <span class="cm-string">&quot;a&quot;</span>: <span class="cm-variable">HTMLAnchorElement</span>;
+    <span class="cm-string">&quot;abbr&quot;</span>: <span class="cm-variable">HTMLElement</span>;
+    <span class="cm-string">&quot;address&quot;</span>: <span class="cm-variable">HTMLElement</span>;
+    <span class="cm-string">&quot;applet&quot;</span>: <span class="cm-variable">HTMLAppletElement</span>;
+    <span class="cm-string">&quot;area&quot;</span>: <span class="cm-variable">HTMLAreaElement</span>;
+        <span class="cm-meta">...</span>
+}
+</code></pre>
+<p>Some elements do not exhibit unique properties and so they just return <code>HTMLElement</code>, but other types do have unique properties and methods so they return their specific interface (which will extend from or implement <code>HTMLElement</code>).</p>
+<p>Now, for the remainder of the <code>createElement</code> definition: <code>(tagName: K, options?: ElementCreationOptions): HTMLElementTagNameMap[K]</code>. The first argument <code>tagName</code> is defined as the generic parameter <code>K</code> . The TypeScript interpreter is smart enough to <em>infer</em> the generic parameter from this argument. This means that the developer does not actually have to specify the generic parameter when using the method; whatever value is passed to the <code>tagName</code> argument will be inferred as <code>K</code> and thus can be used throughout the remainder of the definition. Which is exactly what happens; the return value <code>HTMLElementTagNameMap[K]</code> takes the <code>tagName</code> argument and uses it to return the corresponding type. This definition is how the <code>p</code> variable from the code snippet gets a type of <code>HTMLParagraphElement</code>. And if the code was <code>document.createElement(&apos;a&apos;)</code>, then it would be a element of type <code>HTMLAnchorElement</code>.</p>
+<h2 id="the-node-interface">The <code>Node</code> interface</h2>
+<p>The <code>document.getElementById</code> function returns an <code>HTMLElement</code>. <code>HTMLElement</code> interface extends the <code>Element</code> interface which extends the <code>Node</code> interface. This prototypal extension allows for all <code>HTMLElements</code> to utilize a subset of standard methods. In the code snippet, we use a property defined on the <code>Node</code> interface to append the new <code>p</code> element to the website.</p>
+<h3 id="nodeappendchild"><code>Node.appendChild</code></h3>
+<p>The last line of the code snippet is <code>app?.appendChild(p)</code>. The previous, <code>document.getElementById</code> , section detailed that the <em>optional chaining</em> operator is used here because <code>app</code> can potentially be null at runtime. The <code>appendChild</code> method is defined by:</p>
+<pre><code class="lang-ts"><span class="cm-variable">appendChild</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span> <span class="cm-keyword">extends</span> <span class="cm-variable">Node</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">newChild</span>: <span class="cm-variable">T</span>): <span class="cm-variable">T</span>;
+</code></pre>
+<p>This method works similarly to the <code>createElement</code> method as the generic parameter <code>T</code> is inferred from the <code>newChild</code> argument. <code>T</code> is <em>constrained</em> to another base interface <code>Node</code>.</p>
+<h2 id="difference-between-children-and-childnodes">Difference between <code>children</code> and <code>childNodes</code></h2>
+<p>Previously, this document details the <code>HTMLElement</code> interface extends from <code>Element</code> which extends from <code>Node</code>. In the DOM API there is a concept of <em>children</em> elements. For example in the following HTML, the <code>p</code> tags are children of the <code>div</code> element</p>
+<pre><code class="lang-tsx">&lt;div&gt;
+  &lt;p&gt;Hello, World&lt;/p&gt;
+  &lt;p&gt;TypeScript!&lt;/p&gt;
+&lt;/div&gt;;
+
+const div = document.getElementByTagName(&quot;div&quot;)[0];
+
+div.children;
+// HTMLCollection(2) [p, p]
+
+div.childNodes;
+// NodeList(2) [p, p]
+</code></pre>
+<p>After capturing the <code>div</code> element, the <code>children</code> prop will return a <code>HTMLCollection</code> list containing the <code>HTMLParagraphElements</code>. The <code>childNodes</code> property will return a similar <code>NodeList</code> list of nodes. Each <code>p</code> tag will still be of type <code>HTMLParagraphElements</code>, but the <code>NodeList</code> can contain additional <em>HTML nodes</em> that the <code>HTMLCollection</code> list cannot.</p>
+<p>Modify the html by removing one of the <code>p</code> tags, but keep the text.</p>
+<pre><code class="lang-tsx">&lt;div&gt;
+  &lt;p&gt;Hello, World&lt;/p&gt;
+  TypeScript!
+&lt;/div&gt;;
+
+const div = document.getElementByTagName(&quot;div&quot;)[0];
+
+div.children;
+// HTMLCOllection(1) [p]
+
+div.childNodes;
+// NodeList(2) [p, text]
+</code></pre>
+<p>See how both lists change. <code>children</code> now only contains the <code>&lt;p&gt;Hello, World&lt;/p&gt;</code> element, and the <code>childNodes</code> contains a <code>text</code> node rather than two <code>p</code> nodes. The <code>text</code> part of the <code>NodeList</code> is the literal <code>Node</code> containing the text <code>TypeScript!</code>. The <code>children</code> list does not contain this <code>Node</code> because it is not considered an <code>HTMLElement</code>.</p>
+<h2 id="the-queryselector-and-queryselectorall-methods">The <code>querySelector</code> and <code>querySelectorAll</code> methods</h2>
+<p>Both of these methods are great tools for getting lists of dom elements that fit a more unique set of constraints. They are defined in <em>lib.dom.d.ts</em> as:</p>
+<pre><code class="lang-ts"><span class="cm-comment">/**</span>
+<span class="cm-comment"> * Returns the first element that is a descendant of node that matches selectors.</span>
+<span class="cm-comment"> */</span>
+<span class="cm-variable">querySelector</span><span class="cm-operator">&lt;</span><span class="cm-variable">K</span> <span class="cm-keyword">extends</span> <span class="cm-variable">keyof</span> <span class="cm-variable">HTMLElementTagNameMap</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">selectors</span>: <span class="cm-variable">K</span>): <span class="cm-variable">HTMLElementTagNameMap</span>[<span class="cm-variable">K</span>] <span class="cm-operator">|</span> <span class="cm-atom">null</span>;
+<span class="cm-variable">querySelector</span><span class="cm-operator">&lt;</span><span class="cm-variable">K</span> <span class="cm-keyword">extends</span> <span class="cm-variable">keyof</span> <span class="cm-variable">SVGElementTagNameMap</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">selectors</span>: <span class="cm-variable">K</span>): <span class="cm-variable">SVGElementTagNameMap</span>[<span class="cm-variable">K</span>] <span class="cm-operator">|</span> <span class="cm-atom">null</span>;
+<span class="cm-variable">querySelector</span><span class="cm-operator">&lt;</span><span class="cm-variable">E</span> <span class="cm-keyword">extends</span> <span class="cm-variable">Element</span> <span class="cm-operator">=</span> <span class="cm-variable">Element</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">selectors</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable">E</span> <span class="cm-operator">|</span> <span class="cm-atom">null</span>;
+
+<span class="cm-comment">/**</span>
+<span class="cm-comment"> * Returns all element descendants of node that match selectors.</span>
+<span class="cm-comment"> */</span>
+<span class="cm-variable">querySelectorAll</span><span class="cm-operator">&lt;</span><span class="cm-variable">K</span> <span class="cm-keyword">extends</span> <span class="cm-variable">keyof</span> <span class="cm-variable">HTMLElementTagNameMap</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">selectors</span>: <span class="cm-variable">K</span>): <span class="cm-variable">NodeListOf</span><span class="cm-operator">&lt;</span><span class="cm-variable">HTMLElementTagNameMap</span>[<span class="cm-variable">K</span>]<span class="cm-operator">&gt;</span>;
+<span class="cm-variable">querySelectorAll</span><span class="cm-operator">&lt;</span><span class="cm-variable">K</span> <span class="cm-keyword">extends</span> <span class="cm-variable">keyof</span> <span class="cm-variable">SVGElementTagNameMap</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">selectors</span>: <span class="cm-variable">K</span>): <span class="cm-variable">NodeListOf</span><span class="cm-operator">&lt;</span><span class="cm-variable">SVGElementTagNameMap</span>[<span class="cm-variable">K</span>]<span class="cm-operator">&gt;</span>;
+<span class="cm-variable">querySelectorAll</span><span class="cm-operator">&lt;</span><span class="cm-variable">E</span> <span class="cm-keyword">extends</span> <span class="cm-variable">Element</span> <span class="cm-operator">=</span> <span class="cm-variable">Element</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">selectors</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable">NodeListOf</span><span class="cm-operator">&lt;</span><span class="cm-variable">E</span><span class="cm-operator">&gt;</span>;
+</code></pre>
+<p>The <code>querySelectorAll</code> definition is similar to <code>getElementByTagName</code>, except it returns a new type: <code>NodeListOf</code>. This return type is essentially a custom implementation of the standard JavaScript list element. Arguably, replacing <code>NodeListOf&lt;E&gt;</code> with <code>E[]</code> would result in a very similar user experience. <code>NodeListOf</code> only implements the following properties and methods: <code>length</code> , <code>item(index)</code>, <code>forEach((value, key, parent) =&gt; void)</code> , and numeric indexing. Additionally, this method returns a list of <em>elements</em> not <em>nodes</em>, which is what <code>NodeList</code> was returning from the <code>.childNodes</code> method. While this may appear as a discrepancy, take note that interface <code>Element</code> extends from <code>Node</code>.</p>
+<p>To see these methods in action modify the existing code to:</p>
+<pre><code class="lang-tsx">&lt;ul&gt;
+  &lt;li&gt;First :)&lt;/li&gt;
+  &lt;li&gt;Second!&lt;/li&gt;
+  &lt;li&gt;Third times a charm.&lt;/li&gt;
+&lt;/ul&gt;;
+
+const first = document.querySelector(&quot;li&quot;); // returns the first li element
+const all = document.querySelectorAll(&quot;li&quot;); // returns the list of all li elements
+</code></pre>
+<h2 id="interested-in-learning-more">Interested in learning more?</h2>
+<p>The best part about the <em>lib.dom.d.ts</em> type definitions is that they are reflective of the types annotated in the Mozilla Developer Network (MDN) documentation site. For example, the <code>HTMLElement</code> interface is documented by this <a href="https://developer.mozilla.org/docs/Web/API/HTMLElement" target="_blank">HTMLElement page</a> on MDN. These pages list all available properties, methods, and sometimes even examples. Another great aspect of the pages is that they provide links to the corresponding standard documents. Here is the link to the <a href="https://www.w3.org/TR/html52/dom.html#htmlelement" target="_blank">W3C Recommendation for HTMLElement</a>.</p>
+<p>Sources:</p>
+<ul>
+<li><a href="http://www.ecma-international.org/ecma-262/10.0/index.html" target="_blank">ECMA-262 Standard</a></li>
+<li><a href="https://developer.mozilla.org/docs/Web/API/Document_Object_Model/Introduction" target="_blank">Introduction to the DOM</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../type-inference.html" class="navigation navigation-prev " aria-label="Previous page: 타입 추론">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../variable-declarations.html" class="navigation navigation-next " aria-label="Next page: 변수 선언">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"타입스크립트와 DOM(en)","layout":"docs","permalink":"/docs/handbook/dom-manipulation.html","oneline":"Using the DOM with TypeScript","level":"4.16","depth":1,"next":{"title":"변수 선언","level":"4.17","depth":1,"path":"pages/variable-declarations.md","ref":"pages/variable-declarations.md","articles":[]},"previous":{"title":"타입 추론","level":"4.15","depth":1,"path":"pages/type-inference.md","ref":"pages/type-inference.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/tutorials/dom-manipulation.md","mtime":"2020-07-21T11:06:58.456Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-21T11:07:47.397Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-forkmegithub/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    
+
+    </body>
+</html>
