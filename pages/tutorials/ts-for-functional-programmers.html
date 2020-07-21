@@ -1,0 +1,1688 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>TS for Functional Programmers(en) · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+				<meta name="generator" content="GitBook 3.2.3">
+				<meta property="og:title" content="TypeScript 한글 문서">
+        <meta property="og:image" content="https://avatars1.githubusercontent.com/u/37781342?s=200&v=4">
+        <meta property="og:description" content="TypeScript 한글 번역 문서입니다">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight-1/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-forkmegithub/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../assets/css/website.css">
+        
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="../../assets/css/atom-one-dark.css" />
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="typescript-in-5-minutes.html" />
+    
+    
+    <link rel="prev" href="ts-for-oopers.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">시작하기</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="ts-for-the-new-programmer.html">
+            
+                <a href="ts-for-the-new-programmer.html">
+            
+                    
+                    TS for the New Programmer(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="ts-for-js-programmers.html">
+            
+                <a href="ts-for-js-programmers.html">
+            
+                    
+                    TS for JS Programmers(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="ts-for-oopers.html">
+            
+                <a href="ts-for-oopers.html">
+            
+                    
+                    TS for OOP Programmers(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.4" data-path="ts-for-functional-programmers.html">
+            
+                <a href="ts-for-functional-programmers.html">
+            
+                    
+                    TS for Functional Programmers(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="typescript-in-5-minutes.html">
+            
+                <a href="typescript-in-5-minutes.html">
+            
+                    
+                    5분 안에 보는 TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">핸드북</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../the-handbook.html">
+            
+                <a href="../the-handbook.html">
+            
+                    
+                    핸드북이란(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../basic-types.html">
+            
+                <a href="../basic-types.html">
+            
+                    
+                    기본 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../interfaces.html">
+            
+                <a href="../interfaces.html">
+            
+                    
+                    인터페이스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../functions.html">
+            
+                <a href="../functions.html">
+            
+                    
+                    함수
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../literal-types.html">
+            
+                <a href="../literal-types.html">
+            
+                    
+                    리터럴 타입(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../unions-and-intersections.html">
+            
+                <a href="../unions-and-intersections.html">
+            
+                    
+                    유니언과 교차 타입(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../classes.html">
+            
+                <a href="../classes.html">
+            
+                    
+                    클래스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../enums.html">
+            
+                <a href="../enums.html">
+            
+                    
+                    열거형
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="../generics.html">
+            
+                <a href="../generics.html">
+            
+                    
+                    제네릭
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">핸드북 레퍼런스</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../advanced-types.html">
+            
+                <a href="../advanced-types.html">
+            
+                    
+                    고급 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../declaration-merging.html">
+            
+                <a href="../declaration-merging.html">
+            
+                    
+                    선언 병합
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../decorators.html">
+            
+                <a href="../decorators.html">
+            
+                    
+                    데코레이터
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../utility-types.html">
+            
+                <a href="../utility-types.html">
+            
+                    
+                    유틸리티 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../iterators-and-generators.html">
+            
+                <a href="../iterators-and-generators.html">
+            
+                    
+                    이터레이터와 제네레이터
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../jsx.html">
+            
+                <a href="../jsx.html">
+            
+                    
+                    JSX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../mixins.html">
+            
+                <a href="../mixins.html">
+            
+                    
+                    믹스인
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="../modules.html">
+            
+                <a href="../modules.html">
+            
+                    
+                    모듈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="../module-resolution.html">
+            
+                <a href="../module-resolution.html">
+            
+                    
+                    모듈 해석
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="../namespaces.html">
+            
+                <a href="../namespaces.html">
+            
+                    
+                    네임스페이스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="../namespaces-and-modules.html">
+            
+                <a href="../namespaces-and-modules.html">
+            
+                    
+                    네임스페이스와 모듈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="../symbols.html">
+            
+                <a href="../symbols.html">
+            
+                    
+                    심볼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="../triple-slash-directives.html">
+            
+                <a href="../triple-slash-directives.html">
+            
+                    
+                    트리플-슬래시 지시자
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="../type-compatibility.html">
+            
+                <a href="../type-compatibility.html">
+            
+                    
+                    타입 호환성
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="../type-inference.html">
+            
+                <a href="../type-inference.html">
+            
+                    
+                    타입 추론
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="dom-manipulation.html">
+            
+                <a href="dom-manipulation.html">
+            
+                    
+                    타입스크립트와 DOM(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="../variable-declarations.html">
+            
+                <a href="../variable-declarations.html">
+            
+                    
+                    변수 선언
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">튜토리얼</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="asp.net-core.html">
+            
+                <a href="asp.net-core.html">
+            
+                    
+                    ASP.NET Core
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="gulp.html">
+            
+                <a href="gulp.html">
+            
+                    
+                    걸프
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="migrating-from-javascript.html">
+            
+                <a href="migrating-from-javascript.html">
+            
+                    
+                    JavaScript에서 마이그레이션
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="babel-with-typescript.html">
+            
+                <a href="babel-with-typescript.html">
+            
+                    
+                    TypeScript와 Babel 사용하기(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="react-&-webpack.html">
+            
+                <a href="react-&-webpack.html">
+            
+                    
+                    리액트 & 웹팩
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">릴리즈 노트</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../release-notes/typescript-3.9.html">
+            
+                <a href="../release-notes/typescript-3.9.html">
+            
+                    
+                    TypeScript 3.9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../release-notes/typescript-3.8.html">
+            
+                <a href="../release-notes/typescript-3.8.html">
+            
+                    
+                    TypeScript 3.8
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">선언 파일</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../declaration-files/introduction.html">
+            
+                <a href="../declaration-files/introduction.html">
+            
+                    
+                    소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../declaration-files/by-example.html">
+            
+                <a href="../declaration-files/by-example.html">
+            
+                    
+                    By Example
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../declaration-files/dos-and-don-ts.html">
+            
+                <a href="../declaration-files/dos-and-don-ts.html">
+            
+                    
+                    Do's and Don'ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../declaration-files/deep-dive.html">
+            
+                <a href="../declaration-files/deep-dive.html">
+            
+                    
+                    Deep Dive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../declaration-files/library-structures.html">
+            
+                <a href="../declaration-files/library-structures.html">
+            
+                    
+                    Library Structures
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../declaration-files/templates.html">
+            
+                <a href="../declaration-files/templates.html">
+            
+                    
+                    Templates
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.6.1" data-path="../declaration-files/templates/global-modifying-module.d.ts.html">
+            
+                <a href="../declaration-files/templates/global-modifying-module.d.ts.html">
+            
+                    
+                    global-modifying-module.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6.2" data-path="../declaration-files/templates/global-plugin.d.ts.html">
+            
+                <a href="../declaration-files/templates/global-plugin.d.ts.html">
+            
+                    
+                    global-plugin.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6.3" data-path="../declaration-files/templates/global.d.ts.html">
+            
+                <a href="../declaration-files/templates/global.d.ts.html">
+            
+                    
+                    global.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6.4" data-path="../declaration-files/templates/module-class.d.ts.html">
+            
+                <a href="../declaration-files/templates/module-class.d.ts.html">
+            
+                    
+                    module-class.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6.5" data-path="../declaration-files/templates/module-function.d.ts.html">
+            
+                <a href="../declaration-files/templates/module-function.d.ts.html">
+            
+                    
+                    module-function.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6.6" data-path="../declaration-files/templates/module-plugin.d.ts.html">
+            
+                <a href="../declaration-files/templates/module-plugin.d.ts.html">
+            
+                    
+                    module-plugin.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6.7" data-path="../declaration-files/templates/module.d.ts.html">
+            
+                <a href="../declaration-files/templates/module.d.ts.html">
+            
+                    
+                    module.d.ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../declaration-files/publishing.html">
+            
+                <a href="../declaration-files/publishing.html">
+            
+                    
+                    Publishing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8" data-path="../declaration-files/consumption.html">
+            
+                <a href="../declaration-files/consumption.html">
+            
+                    
+                    Consumption
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">자바스크립트</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../intro-to-js-with-ts.html">
+            
+                <a href="../intro-to-js-with-ts.html">
+            
+                    
+                    JavaScript에 TypeScript 적용하기(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../type-checking-javaScript-files.html">
+            
+                <a href="../type-checking-javaScript-files.html">
+            
+                    
+                    JavaScript 파일 타입 검사
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../jsdoc-reference.html">
+            
+                <a href="../jsdoc-reference.html">
+            
+                    
+                    JSDoc 레퍼런스(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../declaration-files/creating-dts-files-from-js.html">
+            
+                <a href="../declaration-files/creating-dts-files-from-js.html">
+            
+                    
+                    .js 파일에서 d.ts 파일 만들기(en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">프로젝트 환경설정</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../tsconfig.json.html">
+            
+                <a href="../tsconfig.json.html">
+            
+                    
+                    tsconfig.json
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../compiler-options.html">
+            
+                <a href="../compiler-options.html">
+            
+                    
+                    컴파일러 옵션
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../project-references.html">
+            
+                <a href="../project-references.html">
+            
+                    
+                    프로젝트 레퍼런스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="../compiler-options-in-msbuild.html">
+            
+                <a href="../compiler-options-in-msbuild.html">
+            
+                    
+                    MSBuild에서의 컴파일러 옵션
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="../integrating-with-build-tools.html">
+            
+                <a href="../integrating-with-build-tools.html">
+            
+                    
+                    빌드 도구와 통합
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.6" data-path="../configuring-watch.html">
+            
+                <a href="../configuring-watch.html">
+            
+                    
+                    configuring-watch (en)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7" data-path="../nightly-builds.html">
+            
+                <a href="../nightly-builds.html">
+            
+                    
+                    Nightly 빌드
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >TS for Functional Programmers(en)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>TypeScript began its life as an attempt to bring traditional object-oriented types
+to JavaScript so that the programmers at Microsoft could bring
+traditional object-oriented programs to the web. As it has developed, TypeScript&apos;s type
+system has evolved to model code written by native JavaScripters. The
+resulting system is powerful, interesting and messy.</p>
+<p>This introduction is designed for working Haskell or ML programmers
+who want to learn TypeScript. It describes how the type system of
+TypeScript differs from Haskell&apos;s type system. It also describes
+unique features of TypeScript&apos;s type system that arise from its
+modelling of JavaScript code.</p>
+<p>This introduction does not cover object-oriented programming. In
+practice, object-oriented programs in TypeScript are similar to those
+in other popular languages with OO features.</p>
+<h1 id="prerequisites">Prerequisites</h1>
+<p>In this introduction, I assume you know the following:</p>
+<ul>
+<li>How to program in JavaScript, the good parts.</li>
+<li>Type syntax of a C-descended language.</li>
+</ul>
+<p>If you need to learn the good parts of JavaScript, read
+<a href="http://shop.oreilly.com/product/9780596517748.do" target="_blank">JavaScript: The Good Parts</a>.
+You may be able to skip the book if you know how to write programs in
+a call-by-value lexically scoped language with lots of mutability and
+not much else.
+<a href="https://people.csail.mit.edu/jaffer/r4rs.pdf" target="_blank">R<sup>4</sup>RS Scheme</a> is a good example.</p>
+<p><a href="http://www.stroustrup.com/4th.html" target="_blank">The C++ Programming Language</a> is
+a good place to learn about C-style type syntax. Unlike C++,
+TypeScript uses postfix types, like so: <code>x: string</code> instead of <code>string x</code>.</p>
+<h1 id="concepts-not-in-haskell">Concepts not in Haskell</h1>
+<h2 id="built-in-types">Built-in types</h2>
+<p>JavaScript defines 7 built-in types:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Number</code></td>
+<td>a double-precision IEEE 754 floating point.</td>
+</tr>
+<tr>
+<td><code>String</code></td>
+<td>an immutable UTF-16 string.</td>
+</tr>
+<tr>
+<td><code>Boolean</code></td>
+<td><code>true</code> and <code>false</code>.</td>
+</tr>
+<tr>
+<td><code>Symbol</code></td>
+<td>a unique value usually used as a key.</td>
+</tr>
+<tr>
+<td><code>Null</code></td>
+<td>equivalent to the unit type.</td>
+</tr>
+<tr>
+<td><code>Undefined</code></td>
+<td>also equivalent to the unit type.</td>
+</tr>
+<tr>
+<td><code>Object</code></td>
+<td>similar to records.</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://developer.mozilla.org/docs/Web/JavaScript/Data_structures" target="_blank">See the MDN page for more detail</a>.</p>
+<p>TypeScript has corresponding primitive types for the built-in types:</p>
+<ul>
+<li><code>number</code></li>
+<li><code>string</code></li>
+<li><code>boolean</code></li>
+<li><code>symbol</code></li>
+<li><code>null</code></li>
+<li><code>undefined</code></li>
+<li><code>object</code></li>
+</ul>
+<h3 id="other-important-typescript-types">Other important TypeScript types</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>unknown</code></td>
+<td>the top type.</td>
+</tr>
+<tr>
+<td><code>never</code></td>
+<td>the bottom type.</td>
+</tr>
+<tr>
+<td>object literal</td>
+<td>eg <code>{ property: Type }</code></td>
+</tr>
+<tr>
+<td><code>void</code></td>
+<td>a subtype of <code>undefined</code> intended for use as a return type.</td>
+</tr>
+<tr>
+<td><code>T[]</code></td>
+<td>mutable arrays, also written <code>Array&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>[T, T]</code></td>
+<td>tuples, which are fixed-length but mutable</td>
+</tr>
+<tr>
+<td><code>(t: T) =&gt; U</code></td>
+<td>functions</td>
+</tr>
+</tbody>
+</table>
+<p>Notes:</p>
+<ol>
+<li><p>Function syntax includes parameter names. This is pretty hard to get used to!</p>
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">fst</span>: (<span class="cm-def">a</span>: <span class="cm-variable-3">any</span>, <span class="cm-variable">d</span>: <span class="cm-variable-3">any</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable-3">any</span> <span class="cm-operator">=</span> (<span class="cm-def">a</span>, <span class="cm-def">d</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable-2">a</span>;
+<span class="cm-comment">// or more precisely:</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">snd</span>: <span class="cm-operator">&lt;</span><span class="cm-variable">T</span>, <span class="cm-variable">U</span><span class="cm-operator">&gt;</span>(<span class="cm-def">a</span>: <span class="cm-variable">T</span>, <span class="cm-variable">d</span>: <span class="cm-variable">U</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">U</span> <span class="cm-operator">=</span> (<span class="cm-def">a</span>, <span class="cm-def">d</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable-2">d</span>;
+</code></pre>
+</li>
+<li><p>Object literal type syntax closely mirrors object literal value syntax:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">o</span>: { <span class="cm-variable">n</span>: <span class="cm-variable-3">number</span>; <span class="cm-variable">xs</span>: <span class="cm-variable">object</span>[] } <span class="cm-operator">=</span> { <span class="cm-property">n</span>: <span class="cm-number">1</span>, <span class="cm-property">xs</span>: [] };
+</code></pre>
+</li>
+<li><p><code>[T, T]</code> is a subtype of <code>T[]</code>. This is different than Haskell, where tuples are not related to lists.</p>
+</li>
+</ol>
+<h3 id="boxed-types">Boxed types</h3>
+<p>JavaScript has boxed equivalents of primitive types that contain the
+methods that programmers associate with those types. TypeScript
+reflects this with, for example, the difference between the primitive
+type <code>number</code> and the boxed type <code>Number</code>. The boxed types are rarely
+needed, since their methods return primitives.</p>
+<pre><code class="lang-ts">(<span class="cm-number">1</span>).<span class="cm-property">toExponential</span>();
+<span class="cm-comment">// equivalent to</span>
+<span class="cm-variable">Number</span>.<span class="cm-property">prototype</span>.<span class="cm-property">toExponential</span>.<span class="cm-property">call</span>(<span class="cm-number">1</span>);
+</code></pre>
+<p>Note that calling a method on a numeric literal requires it to be in
+parentheses to aid the parser.</p>
+<h2 id="gradual-typing">Gradual typing</h2>
+<p>TypeScript uses the type <code>any</code> whenever it can&apos;t tell what the type of
+an expression should be. Compared to <code>Dynamic</code>, calling <code>any</code> a type
+is an overstatement. It just turns off the type checker
+wherever it appears. For example, you can push any value into an
+<code>any[]</code> without marking the value in any way:</p>
+<p>```ts twoslash
+// with &quot;noImplicitAny&quot;: false in tsconfig.json, anys: any[]
+const anys = [];
+anys.push(1);
+anys.push(&quot;oh no&quot;);
+anys.push({ anything: &quot;goes&quot; });</p>
+<pre><code>
+And you can use an expression of type `any` anywhere:
+
+```ts
+anys.map(anys[1]); // oh no, &quot;oh no&quot; is not a function
+</code></pre><p><code>any</code> is contagious, too &#x2014; if you initialise a variable with an
+expression of type <code>any</code>, the variable has type <code>any</code> too.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">sepsis</span> <span class="cm-operator">=</span> <span class="cm-variable">anys</span>[<span class="cm-number">0</span>] <span class="cm-operator">+</span> <span class="cm-variable">anys</span>[<span class="cm-number">1</span>]; <span class="cm-comment">// this could mean anything</span>
+</code></pre>
+<p>To get an error when TypeScript produces an <code>any</code>, use
+<code>&quot;noImplicitAny&quot;: true</code>, or <code>&quot;strict&quot;: true</code> in <code>tsconfig.json</code>.</p>
+<h2 id="structural-typing">Structural typing</h2>
+<p>Structural typing is a familiar concept to most functional
+programmers, although Haskell and most MLs are not
+structurally typed. Its basic form is pretty simple:</p>
+<pre><code class="lang-ts"><span class="cm-comment">// @strict: false</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">o</span> <span class="cm-operator">=</span> { <span class="cm-property">x</span>: <span class="cm-string">&quot;hi&quot;</span>, <span class="cm-property">extra</span>: <span class="cm-number">1</span> }; <span class="cm-comment">// ok</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">o2</span>: { <span class="cm-variable">x</span>: <span class="cm-variable-3">string</span> } <span class="cm-operator">=</span> <span class="cm-variable">o</span>; <span class="cm-comment">// ok</span>
+</code></pre>
+<p>Here, the object literal <code>{ x: &quot;hi&quot;, extra: 1 }</code> has a matching
+literal type <code>{ x: string, extra: number }</code>. That
+type is assignable to <code>{ x: string }</code> since
+it has all the required properties and those properties have
+assignable types. The extra property doesn&apos;t prevent assignment, it
+just makes it a subtype of <code>{ x: string }</code>.</p>
+<p>Named types just give a name to a type; for assignability purposes
+there&apos;s no difference between the type alias <code>One</code> and the interface
+type <code>Two</code> below. They both have a property <code>p: string</code>. (Type aliases
+behave differently from interfaces with respect to recursive
+definitions and type parameters, however.)</p>
+<p>```ts twoslash
+// @errors: 2322
+type One = { p: string };
+interface Two {
+  p: string;
+}
+class Three {
+  p = &quot;Hello&quot;;
+}</p>
+<p>let x: One = { p: &quot;hi&quot; };
+let two: Two = x;
+two = new Three();</p>
+<pre><code>
+## Unions
+
+In TypeScript, union types are untagged. In other words, they are not
+discriminated unions like `data` in Haskell. However, you can often
+discriminate types in a union using built-in tags or other properties.
+
+```ts twoslash
+function start(
+  arg: string | string[] | (() =&gt; string) | { s: string }
+): string {
+  // this is super common in JavaScript
+  if (typeof arg === &quot;string&quot;) {
+    return commonCase(arg);
+  } else if (Array.isArray(arg)) {
+    return arg.map(commonCase).join(&quot;,&quot;);
+  } else if (typeof arg === &quot;function&quot;) {
+    return commonCase(arg());
+  } else {
+    return commonCase(arg.s);
+  }
+
+  function commonCase(s: string): string {
+    // finally, just convert a string to another string
+    return s;
+  }
+}
+</code></pre><p><code>string</code>, <code>Array</code> and <code>Function</code> have built-in type predicates,
+conveniently leaving the object type for the <code>else</code> branch. It is
+possible, however, to generate unions that are difficult to
+differentiate at runtime. For new code, it&apos;s best to build only
+discriminated unions.</p>
+<p>The following types have built-in predicates:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Predicate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>string</td>
+<td><code>typeof s === &quot;string&quot;</code></td>
+</tr>
+<tr>
+<td>number</td>
+<td><code>typeof n === &quot;number&quot;</code></td>
+</tr>
+<tr>
+<td>bigint</td>
+<td><code>typeof m === &quot;bigint&quot;</code></td>
+</tr>
+<tr>
+<td>boolean</td>
+<td><code>typeof b === &quot;boolean&quot;</code></td>
+</tr>
+<tr>
+<td>symbol</td>
+<td><code>typeof g === &quot;symbol&quot;</code></td>
+</tr>
+<tr>
+<td>undefined</td>
+<td><code>typeof undefined === &quot;undefined&quot;</code></td>
+</tr>
+<tr>
+<td>function</td>
+<td><code>typeof f === &quot;function&quot;</code></td>
+</tr>
+<tr>
+<td>array</td>
+<td><code>Array.isArray(a)</code></td>
+</tr>
+<tr>
+<td>object</td>
+<td><code>typeof o === &quot;object&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<p>Note that functions and arrays are objects at runtime, but have their
+own predicates.</p>
+<h3 id="intersections">Intersections</h3>
+<p>In addition to unions, TypeScript also has intersections:</p>
+<p>```ts twoslash
+type Combined = { a: number } &amp; { b: string };
+type Conflicting = { a: number } &amp; { a: string };</p>
+<pre><code>
+`Combined` has two properties, `a` and `b`, just as if they had been
+written as one object literal type. Intersection and union are
+recursive in case of conflicts, so `Conflicting.a: number &amp; string`.
+
+## Unit types
+
+Unit types are subtypes of primitive types that contain exactly one
+primitive value. For example, the string `&quot;foo&quot;` has the type
+`&quot;foo&quot;`. Since JavaScript has no built-in enums, it is common to use a set of
+well-known strings instead. Unions of string literal types allow
+TypeScript to type this pattern:
+
+```ts twoslash
+declare function pad(s: string, n: number, direction: &quot;left&quot; | &quot;right&quot;): string;
+pad(&quot;hi&quot;, 10, &quot;left&quot;);
+</code></pre><p>When needed, the compiler <em>widens</em> &#x2014; converts to a
+supertype &#x2014; the unit type to the primitive type, such as <code>&quot;foo&quot;</code>
+to <code>string</code>. This happens when using mutability, which can hamper some
+uses of mutable variables:</p>
+<p>```ts twoslash
+// @errors: 2345
+declare function pad(s: string, n: number, direction: &quot;left&quot; | &quot;right&quot;): string;
+// ---cut---
+let s = &quot;right&quot;;
+pad(&quot;hi&quot;, 10, s); // error: &apos;string&apos; is not assignable to &apos;&quot;left&quot; | &quot;right&quot;&apos;</p>
+<pre><code>
+Here&apos;s how the error happens:
+
+*-* `&quot;right&quot;: &quot;right&quot;`
+*-* `s: string` because `&quot;right&quot;` widens to `string` on assignment to a mutable variable.
+*-* `string` is not assignable to `&quot;left&quot; | &quot;right&quot;`
+
+You can work around this with a type annotation for `s`, but that
+in turn prevents assignments to `s` of variables that are not of type
+`&quot;left&quot; | &quot;right&quot;`.
+
+```ts twoslash
+declare function pad(s: string, n: number, direction: &quot;left&quot; | &quot;right&quot;): string;
+// ---cut---
+let s: &quot;left&quot; | &quot;right&quot; = &quot;right&quot;;
+pad(&quot;hi&quot;, 10, s);
+</code></pre><h1 id="concepts-similar-to-haskell">Concepts similar to Haskell</h1>
+<h2 id="contextual-typing">Contextual typing</h2>
+<p>TypeScript has some obvious places where it can infer types, like
+variable declarations:</p>
+<p>```ts twoslash
+let s = &quot;I&apos;m a string!&quot;;</p>
+<pre><code>
+But it also infers types in a few other places that you may not expect
+if you&apos;ve worked with other C-syntax languages:
+
+```ts twoslash
+declare function map&lt;T, U&gt;(f: (t: T) =&gt; U, ts: T[]): U[];
+let sns = map((n) =&gt; n.toString(), [1, 2, 3]);
+</code></pre><p>Here, <code>n: number</code> in this example also, despite the fact that <code>T</code> and <code>U</code>
+have not been inferred before the call. In fact, after <code>[1,2,3]</code> has
+been used to infer <code>T=number</code>, the return type of <code>n =&gt; n.toString()</code>
+is used to infer <code>U=string</code>, causing <code>sns</code> to have the type
+<code>string[]</code>.</p>
+<p>Note that inference will work in any order, but intellisense will only
+work left-to-right, so TypeScript prefers to declare <code>map</code> with the
+array first:</p>
+<p>```ts twoslash
+declare function map<t, u="">(ts: T[], f: (t: T) =&gt; U): U[];</t,></p>
+<pre><code>
+Contextual typing also works recursively through object literals, and
+on unit types that would otherwise be inferred as `string` or
+`number`. And it can infer return types from context:
+
+```ts twoslash
+declare function run&lt;T&gt;(thunk: (t: T) =&gt; void): T;
+let i: { inference: string } = run((o) =&gt; {
+  o.inference = &quot;INSERT STATE HERE&quot;;
+});
+</code></pre><p>The type of <code>o</code> is determined to be <code>{ inference: string }</code> because</p>
+<ol>
+<li>Declaration initialisers are contextually typed by the
+declaration&apos;s type: <code>{ inference: string }</code>.</li>
+<li>The return type of a call uses the contextual type for inferences,
+so the compiler infers that <code>T={ inference: string }</code>.</li>
+<li>Arrow functions use the contextual type to type their parameters,
+so the compiler gives <code>o: { inference: string }</code>.</li>
+</ol>
+<p>And it does so while you are typing, so that after typing <code>o.</code>, you
+get completions for the property <code>inference</code>, along with any other
+properties you&apos;d have in a real program.
+Altogether, this feature can make TypeScript&apos;s inference look a bit
+like a unifying type inference engine, but it is not.</p>
+<h2 id="type-aliases">Type aliases</h2>
+<p>Type aliases are mere aliases, just like <code>type</code> in Haskell. The
+compiler will attempt to use the alias name wherever it was used in
+the source code, but does not always succeed.</p>
+<p>```ts twoslash
+type Size = [number, number];
+let x: Size = [101.1, 999.9];</p>
+<pre><code>
+The closest equivalent to `newtype` is a _tagged intersection_:
+
+```ts
+type FString = string &amp; { __compileTimeOnly: any };
+</code></pre><p>An <code>FString</code> is just like a normal string, except that the compiler
+thinks it has a property named <code>__compileTimeOnly</code> that doesn&apos;t
+actually exist. This means that <code>FString</code> can still be assigned to
+<code>string</code>, but not the other way round.</p>
+<h2 id="discriminated-unions">Discriminated Unions</h2>
+<p>The closest equivalent to <code>data</code> is a union of types with discriminant
+properties, normally called discriminated unions in TypeScript:</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Shape</span> <span class="cm-operator">=</span>
+  <span class="cm-operator">|</span> { <span class="cm-property">kind</span>: <span class="cm-string">&quot;circle&quot;</span>; <span class="cm-variable">radius</span>: <span class="cm-variable-3">number</span> }
+  <span class="cm-operator">|</span> { <span class="cm-property">kind</span>: <span class="cm-string">&quot;square&quot;</span>; <span class="cm-variable">x</span>: <span class="cm-variable-3">number</span> }
+  <span class="cm-operator">|</span> { <span class="cm-property">kind</span>: <span class="cm-string">&quot;triangle&quot;</span>; <span class="cm-variable">x</span>: <span class="cm-variable-3">number</span>; <span class="cm-variable">y</span>: <span class="cm-variable-3">number</span> };
+</code></pre>
+<p>Unlike Haskell, the tag, or discriminant, is just a property in each
+object type. Each variant has an identical property with a different
+unit type. This is still a normal union type; the leading <code>|</code> is
+an optional part of the union type syntax. You can discriminate the
+members of the union using normal JavaScript code:</p>
+<p>```ts twoslash
+type Shape =
+  | { kind: &quot;circle&quot;; radius: number }
+  | { kind: &quot;square&quot;; x: number }
+  | { kind: &quot;triangle&quot;; x: number; y: number };</p>
+<p>function area(s: Shape) {
+  if (s.kind === &quot;circle&quot;) {
+    return Math.PI <em> s.radius </em> s.radius;
+  } else if (s.kind === &quot;square&quot;) {
+    return s.x <em> s.x;
+  } else {
+    return (s.x </em> s.y) / 2;
+  }
+}</p>
+<pre><code>
+Note that the return type of `area` is inferred to be `number` because
+TypeScript knows the function is total. If some variant is not
+covered, the return type of `area` will be `number | undefined` instead.
+
+Also, unlike Haskell, common properties show up in any union, so you
+can usefully discriminate multiple members of the union:
+
+```ts twoslash
+type Shape =
+  | { kind: &quot;circle&quot;; radius: number }
+  | { kind: &quot;square&quot;; x: number }
+  | { kind: &quot;triangle&quot;; x: number; y: number };
+// ---cut---
+function height(s: Shape) {
+  if (s.kind === &quot;circle&quot;) {
+    return 2 * s.radius;
+  } else {
+    // s.kind: &quot;square&quot; | &quot;triangle&quot;
+    return s.x;
+  }
+}
+</code></pre><h2 id="type-parameters">Type Parameters</h2>
+<p>Like most C-descended languages, TypeScript requires declaration of
+type parameters:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">liftArray</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">t</span>: <span class="cm-variable">T</span>): <span class="cm-variable">Array</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span> {
+  <span class="cm-keyword">return</span> [<span class="cm-variable">t</span>];
+}
+</code></pre>
+<p>There is no case requirement, but type parameters are conventionally
+single uppercase letters. Type parameters can also be constrained to a
+type, which behaves a bit like type class constraints:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">firstish</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span> <span class="cm-keyword">extends</span> { <span class="cm-variable">length</span>: <span class="cm-variable-3">number</span> }<span class="cm-operator">&gt;</span>(<span class="cm-variable">t1</span>: <span class="cm-variable">T</span>, <span class="cm-variable">t2</span>: <span class="cm-variable">T</span>): <span class="cm-variable">T</span> {
+  <span class="cm-keyword">return</span> <span class="cm-variable">t1</span>.<span class="cm-property">length</span> <span class="cm-operator">&gt;</span> <span class="cm-variable">t2</span>.<span class="cm-property">length</span> <span class="cm-operator">?</span> <span class="cm-variable">t1</span> : <span class="cm-variable">t2</span>;
+}
+</code></pre>
+<p>TypeScript can usually infer type arguments from a call based on the
+type of the arguments, so type arguments are usually not needed.</p>
+<p>Because TypeScript is structural, it doesn&apos;t need type parameters as
+much as nominal systems. Specifically, they are not needed to make a
+function polymorphic. Type parameters should only be used to
+<em>propagate</em> type information, such as constraining parameters to be
+the same type:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">length</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span> <span class="cm-keyword">extends</span> <span class="cm-variable">ArrayLike</span><span class="cm-operator">&lt;</span><span class="cm-variable">unknown</span><span class="cm-operator">&gt;&gt;</span>(<span class="cm-variable">t</span>: <span class="cm-variable">T</span>): <span class="cm-variable-3">number</span> {}
+
+<span class="cm-keyword">function</span> <span class="cm-variable">length</span>(<span class="cm-def">t</span>: <span class="cm-variable-3">ArrayLike</span><span class="cm-operator">&lt;</span><span class="cm-variable">unknown</span><span class="cm-operator">&gt;</span>): <span class="cm-variable-3">number</span> {}
+</code></pre>
+<p>In the first <code>length</code>, T is not necessary; notice that it&apos;s only
+referenced once, so it&apos;s not being used to constrain the type of the
+return value or other parameters.</p>
+<h3 id="higher-kinded-types">Higher-kinded types</h3>
+<p>TypeScript does not have higher kinded types, so the following is not legal:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">length</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span> <span class="cm-keyword">extends</span> <span class="cm-variable">ArrayLike</span><span class="cm-operator">&lt;</span><span class="cm-variable">unknown</span><span class="cm-operator">&gt;</span>, <span class="cm-variable">U</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">m</span>: <span class="cm-variable">T</span><span class="cm-operator">&lt;</span><span class="cm-variable">U</span><span class="cm-operator">&gt;</span>) {}
+</code></pre>
+<h3 id="point-free-programming">Point-free programming</h3>
+<p>Point-free programming &#x2014; heavy use of currying and function
+composition &#x2014; is possible in JavaScript, but can be verbose.
+In TypeScript, type inference often fails for point-free programs, so
+you&apos;ll end up specifying type parameters instead of value parameters. The
+result is so verbose that it&apos;s usually better to avoid point-free
+programming.</p>
+<h2 id="module-system">Module system</h2>
+<p>JavaScript&apos;s modern module syntax is a bit like Haskell&apos;s, except that
+any file with <code>import</code> or <code>export</code> is implicitly a module:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> { <span class="cm-variable">value</span>, <span class="cm-variable">Type</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;npm-package&quot;</span>;
+<span class="cm-keyword">import</span> { <span class="cm-variable">other</span>, <span class="cm-variable">Types</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;./local-package&quot;</span>;
+<span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">prefix</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;../lib/third-package&quot;</span>;
+</code></pre>
+<p>You can also import commonjs modules &#x2014; modules written using node.js&apos;
+module system:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-variable">f</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;single-function-package&quot;</span>);
+</code></pre>
+<p>You can export with an export list:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">export</span> { <span class="cm-variable">f</span> };
+
+<span class="cm-keyword">function</span> <span class="cm-variable">f</span>() {
+  <span class="cm-keyword">return</span> <span class="cm-variable">g</span>();
+}
+<span class="cm-keyword">function</span> <span class="cm-variable">g</span>() {} <span class="cm-comment">// g is not exported</span>
+</code></pre>
+<p>Or by marking each export individually:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">function</span> <span class="cm-variable">f</span> { <span class="cm-keyword">return</span> <span class="cm-variable">g</span>() }
+<span class="cm-keyword">function</span> <span class="cm-variable">g</span>() { }
+</code></pre>
+<p>The latter style is more common but both are allowed, even in the same
+file.</p>
+<h2 id="readonly-and-const"><code>readonly</code> and <code>const</code></h2>
+<p>In JavaScript, mutability is the default, although it allows variable
+declarations with <code>const</code> to declare that the <em>reference</em> is
+immutable. The referent is still mutable:</p>
+<pre><code class="lang-js"><span class="cm-keyword">const</span> <span class="cm-variable">a</span> <span class="cm-operator">=</span> [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>];
+<span class="cm-variable">a</span>.<span class="cm-property">push</span>(<span class="cm-number">102</span>); <span class="cm-comment">// ):</span>
+<span class="cm-variable">a</span>[<span class="cm-number">0</span>] <span class="cm-operator">=</span> <span class="cm-number">101</span>; <span class="cm-comment">// D:</span>
+</code></pre>
+<p>TypeScript additionally has a <code>readonly</code> modifier for properties.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">Rx</span> {
+  <span class="cm-variable">readonly</span> <span class="cm-variable">x</span>: <span class="cm-variable-3">number</span>;
+}
+<span class="cm-keyword">let</span> <span class="cm-variable">rx</span>: <span class="cm-variable-3">Rx</span> <span class="cm-operator">=</span> { <span class="cm-property">x</span>: <span class="cm-number">1</span> };
+<span class="cm-variable">rx</span>.<span class="cm-property">x</span> <span class="cm-operator">=</span> <span class="cm-number">12</span>; <span class="cm-comment">// error</span>
+</code></pre>
+<p>It also ships with a mapped type <code>Readonly&lt;T&gt;</code> that makes
+all properties <code>readonly</code>:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">X</span> {
+  <span class="cm-variable">x</span>: <span class="cm-variable-3">number</span>;
+}
+<span class="cm-keyword">let</span> <span class="cm-variable">rx</span>: <span class="cm-variable-3">Readonly</span><span class="cm-operator">&lt;</span><span class="cm-variable">X</span><span class="cm-operator">&gt;</span> <span class="cm-operator">=</span> { <span class="cm-property">x</span>: <span class="cm-number">1</span> };
+<span class="cm-variable">rx</span>.<span class="cm-property">x</span> <span class="cm-operator">=</span> <span class="cm-number">12</span>; <span class="cm-comment">// error</span>
+</code></pre>
+<p>And it has a specific <code>ReadonlyArray&lt;T&gt;</code> type that removes
+side-affecting methods and prevents writing to indices of the array,
+as well as special syntax for this type:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">a</span>: <span class="cm-variable-3">ReadonlyArray</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">number</span><span class="cm-operator">&gt;</span> <span class="cm-operator">=</span> [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>];
+<span class="cm-keyword">let</span> <span class="cm-variable">b</span>: <span class="cm-variable-3">readonly</span> <span class="cm-variable-3">number</span>[] <span class="cm-operator">=</span> [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>];
+<span class="cm-variable">a</span>.<span class="cm-property">push</span>(<span class="cm-number">102</span>); <span class="cm-comment">// error</span>
+<span class="cm-variable">b</span>[<span class="cm-number">0</span>] <span class="cm-operator">=</span> <span class="cm-number">101</span>; <span class="cm-comment">// error</span>
+</code></pre>
+<p>You can also use a const-assertion, which operates on arrays and
+object literals:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">a</span> <span class="cm-operator">=</span> [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>] <span class="cm-variable">as</span> <span class="cm-keyword">const</span>;
+<span class="cm-variable">a</span>.<span class="cm-property">push</span>(<span class="cm-number">102</span>); <span class="cm-comment">// error</span>
+<span class="cm-variable">a</span>[<span class="cm-number">0</span>] <span class="cm-operator">=</span> <span class="cm-number">101</span>; <span class="cm-comment">// error</span>
+</code></pre>
+<p>However, none of these options are the default, so they are not
+consistently used in TypeScript code.</p>
+<h2 id="next-steps">Next Steps</h2>
+<p>This doc is a high level overview of the syntax and types you would use in everyday code. From here you should:</p>
+<p><em>-</em> Read the full Handbook <a href="../../docs/handbook/intro.html">from start to finish</a> (30m)
+<em>-</em> Explore the <a href="../../play#show-examples">Playground examples</a>.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ts-for-oopers.html" class="navigation navigation-prev " aria-label="Previous page: TS for OOP Programmers(en)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="typescript-in-5-minutes.html" class="navigation navigation-next " aria-label="Next page: 5분 안에 보는 TypeScript">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"TS for Functional Programmers(en)","layout":"docs","permalink":"/docs/handbook/typescript-in-5-minutes-func.html","oneline":"Learn TypeScript if you have a background in functional programming","level":"2.4","depth":1,"next":{"title":"5분 안에 보는 TypeScript","level":"2.5","depth":1,"path":"pages/tutorials/typescript-in-5-minutes.md","ref":"pages/tutorials/typescript-in-5-minutes.md","articles":[]},"previous":{"title":"TS for OOP Programmers(en)","level":"2.3","depth":1,"path":"pages/tutorials/ts-for-oopers.md","ref":"pages/tutorials/ts-for-oopers.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/tutorials/ts-for-functional-programmers.md","mtime":"2020-07-21T11:06:58.456Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-21T11:07:47.397Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-forkmegithub/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    
+
+    </body>
+</html>
