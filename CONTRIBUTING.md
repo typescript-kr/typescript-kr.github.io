@@ -204,16 +204,3 @@ $ git push -f origin issue1234
 ### Step 6: Pull Request 보내기<a name="step6"></a>
 
 이제 Pull Request를 보낼 준비가 완료되었습니다. Fork된 레포지토리로 이동하여 [Github 문서](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)를 참고하여 Pull Request를 보냅니다.
-
-
-
-
-
-
-
-
-
-
-
-
-
