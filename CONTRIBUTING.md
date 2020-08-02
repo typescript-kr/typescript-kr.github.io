@@ -170,8 +170,8 @@ Pull Request를 보내기 전에 upstream 소스를 rebase해야 합니다. 이�
 
 ```sh
 $ git remote -v
-origin   https://github.com/myusername/typescript-kr.github.io.git (fetch)
-origin   https://github.com/myusername/typescript-kr.github.io.git (push)
+origin https://github.com/myusername/typescript-kr.github.io.git (fetch)
+origin https://github.com/myusername/typescript-kr.github.io.git (push)
 upstream # 이 라인은 나타나지 않을 수도 있다
 ```
 
