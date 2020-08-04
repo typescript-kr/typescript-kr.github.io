@@ -23,6 +23,7 @@
     "typescript": "^3.8.3"
   },
   "scripts": {
+    "pretest": "npm run build",
     "test": "npx markdownlint . && node ./bin/lint '**/*.md'",
     "lint": "npm run test",
     "lint-beta": "npm run build && node ./bin/lint '**/*.md'",
