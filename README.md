@@ -10,7 +10,7 @@
 
 ## 진행 상황
 
-번역 진행 상황은 [이곳](https://github.com/typescript-kr/typescript-kr.github.io/projects/1)을 통해 확인할 수 있습니다.
+번역 진행 상황은 [이곳](https://github.com/typescript-kr/typescript-kr.github.io/projects)을 통해 확인할 수 있습니다.
 
 ## 참여하기
 

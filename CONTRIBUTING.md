@@ -121,7 +121,103 @@ interface NumberDictionary {
 * [describe - 번역 팁](http://blog.daum.net/standards/442)
 
 
-## Pull Request
+# Pull Request
 
 * PR 전에 맞춤법 검사를 수행해 주세요.
 * PR은 최소 두 명의 메인테이너가 찬성하면 머지할 수 있습니다.
+
+## Working With Code
+
+PR을 보내는 프로세스는 매우 간단하며, 일반적으로 매번 동일한 패턴을 따릅니다.
+
+1. [새 브랜치 만들기](#step-1-새-브랜치-만들기)
+2. [수정하기](#step-2-수정하기)
+3. [Upstream으로부터 rebase하기](#step-3-upstream으로-부터-rebase하기)
+4. [테스트하기](#step-4-테스트하기)
+5. [변경 내용을 push하기](#step-5-변경-내용을-push-하기)
+6. [Pull Request 보내기](#step-6-pull-request-보내기)
+
+각 단계에 대한 자세한 내용은 아래에 있습니다.
+
+### Step 1: 새 브랜치 만들기
+
+PR을 보내기 위해 fork한 레포지토리에서 브랜치를 만듭니다. 브랜치 이름은 수정하려는 내용을 간단하게 표현합니다.
+
+```sh
+$ git checkout -b issue1234
+```
+
+이 브랜치에서는 해당 이슈에 관련된 수정을 해야합니다.
+
+**Note**: 여러 이슈에 대한 수정을 하나의 브랜치에서 수행하면 안됩니다. 이슈마다 각 브랜치를 생성하세요.
+
+### Step 2: 수정하기
+
+[번역 규칙](#번역-규칙)에 따라 문서를 번역 및 수정합니다. 번역이 완료되면 브랜치에 수정을 커밋합니다.
+
+```sh
+$ git add -A
+$ git commit
+```
+
+커밋 메시지는 커밋의 내용을 요약해서 입력합니다.
+
+### Step 3: Upstream으로 부터 rebase하기
+
+Pull Request를 보내기 전에 upstream 소스를 rebase해야 합니다. 이렇게 하면 최신 코드를 가져와 충돌을 피할 수 있습니다.
+
+먼저 remote 저장소를 확인합니다.
+
+```sh
+$ git remote -v
+origin https://github.com/myusername/typescript-kr.github.io.git (fetch)
+origin https://github.com/myusername/typescript-kr.github.io.git (push)
+upstream # 이 라인은 나타나지 않을 수도 있다
+```
+
+upstream이 설정되어 있지 않다면 upstream을 설정합니다.
+
+```sh
+$ git remote add upstream https://github.com/typescript-kr/typescript-kr.github.io.git
+```
+
+그 다음 upstream 소스를 rebase 합니다.
+
+```sh
+$ git fetch upstream
+$ git rebase upstream/master
+```
+
+### Step 4: 테스트하기
+
+현재 모든 문서에는 markdown lint가 적용되어 있습니다. 리베이스 이후에 테스트를 하여 린트 규칙을 확인합니다.
+
+```sh
+$ npm test
+```
+
+또한 local 환경에서 gitbook을 테스트할 수 있습니다.
+
+```sh
+$ npm run serve:gitbook
+```
+
+http://localhost:4000 에서 번경된 문서를 확인할 수 있습니다.
+
+### Step 5: 변경 내용을 Push 하기
+
+변경 내용을 clone한 레포지토리에 push합니다.
+
+```sh
+$ git push origin issue1234
+```
+
+일부 참조가 오래되어 push할 수 없다면 [rebase](#step-3-upstream으로-부터-rebase하기)를 통해 최신 코드를 가져온 후 다시 push 합니다.
+
+```sh
+$ git push -f origin issue1234
+```
+
+### Step 6: Pull Request 보내기
+
+이제 Pull Request를 보낼 준비가 완료되었습니다. Fork된 레포지토리로 이동하여 [Github 문서](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)를 참고하여 Pull Request를 보냅니다.
