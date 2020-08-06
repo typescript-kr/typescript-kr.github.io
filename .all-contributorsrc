@@ -234,6 +234,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "eomttt",
+      "name": "Hyuntae EOM",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/22593217?v=4",
+      "profile": "https://velog.io/@eomttt",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 8,
