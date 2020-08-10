@@ -1,7 +1,7 @@
 # TypeScript-Handbook 한글 문서
 
 [![Build Status](https://api.travis-ci.com/typescript-kr/typescript-kr.github.io.svg?branch=master)](https://travis-ci.com/github/typescript-kr/typescript-kr.github.io) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-26-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-27-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![Release Date](https://img.shields.io/github/release-date/typescript-kr/typescript-kr.github.io)](https://github.com/typescript-kr/typescript-kr.github.io/releases)<!-- RELEASE-DATE-BADGE:END -->
 [![Stars](https://img.shields.io/github/stars/typescript-kr/typescript-kr.github.io)](https://github.com/typescript-kr/typescript-kr.github.io/stargazers)<!-- STARS-BADGE:END -->
@@ -61,6 +61,7 @@
   <tr>
     <td align="center"><a href="https://github.com/planetis"><img src="https://avatars1.githubusercontent.com/u/62644942?v=4" width="80px;" alt=""/><br /><sub><b>planetis</b></sub></a><br /><a href="#translation-planetis" title="Translation">🌍</a></td>
     <td align="center"><a href="https://velog.io/@eomttt"><img src="https://avatars2.githubusercontent.com/u/22593217?v=4" width="80px;" alt=""/><br /><sub><b>Hyuntae EOM</b></sub></a><br /><a href="#translation-eomttt" title="Translation">🌍</a></td>
+    <td align="center"><a href="http://samsara-ku.github.io"><img src="https://avatars3.githubusercontent.com/u/59246456?v=4" width="80px;" alt=""/><br /><sub><b>Yunhoe, Ku</b></sub></a><br /><a href="#translation-samsara-ku" title="Translation">🌍</a></td>
   </tr>
 </table>
 
