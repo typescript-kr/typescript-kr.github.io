@@ -252,6 +252,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "realgoways",
+      "name": "realgo",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/15275415?v=4",
+      "profile": "https://github.com/realgoways",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 8,
