@@ -7,9 +7,9 @@ oneline: How to create a hybrid Babel + TypeScript project
 
 # Babel vs TypeScript의 `tsc`
 
-모던 JavaScript 프로젝트를 만들 때, 여러분은 TypeScript에서 JavaScript로 파일을 변환하는 올바른 방법이 무엇일까 고민하게 될 것입니다.
+모던 JavaScript 프로젝트를 만들 때, TypeScript에서 JavaScript로 파일을 변환하는 올바른 방법이 무엇일까 고민하게 될 것입니다.
 
-많은 경우 그 대답은 프로젝트에 따라 _"~에 달려있다"_ 또는 _"누군가 여러분 대신해서 결정했을지도 모른다`_ 가 될 것입니다. 만약 [tsdx](https://www.npmjs.com/package/tsdx), [Angular](https://angular.io/), [NestJS](https://nestjs.com/)처럼 이미 존재하는 프레임워크 혹은 [Getting Started](/docs/home)에 언급된 프레임워크를 사용하여 프로젝트를 만들고 있다면, 해결책은 여러분의 손에 달려있습니다.
+많은 경우 그 대답은 프로젝트에 따라 _"~에 달려있다"_ 또는 _"누군가 여러분 대신 결정했을지도 모른다`_ 가 될 것입니다. 만약 [tsdx](https://www.npmjs.com/package/tsdx), [Angular](https://angular.io/), [NestJS](https://nestjs.com/)와 같은 기존 프레임워크 또는 [Getting Started](/docs/home)에 언급된 프레임워크를 사용하여 프로젝트를 만들고 있다면 결정은 여러분의 손에 달려있습니다.
 
 하지만, 사용할만한 휴로스틱은 다음과 같습니다:
 
@@ -22,15 +22,15 @@ JavaScript 코드 베이스에서 TypeScript로 포팅되었을 수 있는 기�
 
 이 기술은, Babel의 [preset-typescript](https://babeljs.io/docs/en/babel-preset-typescript)을 사용하여 JS 파일을 생성한 후, TypeScript를 사용하여 타입 검사 및 `.d.ts` 파일을 생성하는 복합 식 접근 방식입니다.
 
-Babel의 TypeScript 지원을 사용하여 기존 빌드 파이프라인으로 작업할 수 있으며 Babel은 코드의 타입을 검사하지 않기 때문에 JS 출력 시간이 더 빨라질 것입니다.
+Babel의 TypeScript 지원을 사용하면 기존 빌드 파이프라인으로 작업할 수 있고 Babel이 코드 타입을 검사하지 않기 때문에 JS 출력 시간이 더 빨라질 가능성이 높습니다.
 
 #### 타입 검사와 d.ts 파일 생성
 
 Babel 사용의 단점은 TS를 JS로 전환하는 동안 타입 검사를 할 수 없다는 점입니다. 즉, 에디터에서 타입 오류를 잡지 못하고 상용 코드에 포함될 수도 있단 뜻입니다.
 
-게다가, Babel은 TypeScript에 대한 `.d.ts` 파일을 만들 수 없기 때문에 여러분의 프로젝트가 라이브러리라면 작업이 더 힘들어질 수 있습니다.
+또한, Babel은 TypeScript에 대한 `.d.ts` 파일을 만들 수 없기 때문에 여러분의 프로젝트가 라이브러리인 경우 작업하기가 더 어려워질 수 있습니다.
 
-이와 같은 문제를 수정하기 위해 TSC를 사용하여 프로젝트의 타입을 검사할 수 있는 명령어를 설정하고 싶을 것입니다. 이는 Babel 구성의 일부를 해당 [`tsconfig.json`](/tconfig)에 복사하고, 다음 플래그를 사용하도록 설정해줍니다:
+이러한 문제를 해결하려면 TSC를 사용하여 프로젝트의 타입을 검사할 수 있는 명령어를 설정하는 것이 좋습니다. 이는 Babel 구성의 일부를 해당 [`tsconfig.json`](/tconfig)에 복제하고, 다음 플래그가 활성화되었는지 확인하는 것을 의미합니다:
 
 ```json
 "compilerOptions": {
@@ -42,7 +42,7 @@ Babel 사용의 단점은 TS를 JS로 전환하는 동안 타입 검사를 할 �
 }
 ```
 
-해당 플래그에 대한 더 많은 정보는 다음을 참고해주세요:
+해당 플래그에 대한 자세한 내용은 다음을 참고해주세요:
 
 * [`isolatedModules`](/tsconfig#isolatedModules)
 * [`declaration`](/tsconfig#declaration), [`emitDeclarationOnly`](/tsconfig#emitDeclarationOnly)
