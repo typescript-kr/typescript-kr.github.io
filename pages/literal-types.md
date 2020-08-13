@@ -15,7 +15,7 @@ oneline: Using literal types with TypeScript
 `var` 또는 `let`으로 변수를 선언할 경우 이 변수의 값이 변경될 가능성이 있음을 컴파일러에게 알립니다.
 반면, `const`로 변수를 선언하게 되면 TypeScript에게 이 객체는 절대 변경되지 않음을 알립니다.
 
-```ts twoslash
+```ts
 // const를 사용하여 변수 helloworld가
 // 절대 변경되지 않음을 보장합니다.
 
@@ -33,7 +33,7 @@ let hiWorld = "Hi World";
 실제로 문자열 리터럴 타입은 유니언 타입, 타입 가드 그리고 타입 별칭과 잘 결합됩니다.
 이런 기능을 함께 사용하여 문자열로 enum과 비슷한 형태를 갖출 수 있습니다.
 
-```ts twoslash
+```ts
 // @errors: 2345
 type Easing = "ease-in" | "ease-out" | "ease-in-out";
 
@@ -76,7 +76,7 @@ function createElement(tagName: string): Element {
 
 TypeScript에는 위의 문자열 리터럴과 같은 역할을 하는 숫자형 리터럴 타입도 있습니다.
 
-```ts twoslash
+```ts
 function rollDice(): 1 | 2 | 3 | 4 | 5 | 6 {
   return (Math.floor(Math.random() * 6) + 1) as 1 | 2 | 3 | 4 | 5 | 6;
 }
@@ -86,7 +86,7 @@ const result = rollDice();
 
 이는 주로 설정값을 설명할 때 사용됩니다:
 
-```ts twoslash
+```ts
 /** loc/lat 좌표에 지도를 생성합니다. */
 declare function setupMap(config: MapConfig): void;
 // ---생략---
