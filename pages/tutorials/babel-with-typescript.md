@@ -11,7 +11,7 @@ oneline: How to create a hybrid Babel + TypeScript project
 
 많은 경우 그 대답은 프로젝트에 따라 _"~에 달려있다"_ 또는 _"누군가 여러분 대신 결정했을지도 모른다`_ 가 될 것입니다. 만약 [tsdx](https://www.npmjs.com/package/tsdx), [Angular](https://angular.io/), [NestJS](https://nestjs.com/)와 같은 기존 프레임워크 또는 [Getting Started](/docs/home)에 언급된 프레임워크를 사용하여 프로젝트를 만들고 있다면 결정은 여러분 손에 달려있습니다.
 
-하지만, 사용할만한 휴로스틱은 다음과 같습니다:
+하지만, 사용할만한 직관적인 방법은 다음과 같습니다:
 
 * 빌드 출력 결과와 소스 입력 파일이 거의 비슷한가요? `tsc`를 사용하세요.
 * 여러 잠재적인 결과물을 내는 빌드 파이프라인이 필요하신가요? `babel`로 트랜스파일링을 하고, `tsc`로 타입을 검사하세요.
