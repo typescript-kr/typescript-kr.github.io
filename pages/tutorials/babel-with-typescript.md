@@ -14,7 +14,7 @@ oneline: How to create a hybrid Babel + TypeScript project
 하지만, 사용할만한 휴로스틱은 다음과 같습니다:
 
 * 빌드 출력 결과와 소스 입력 파일이 거의 비슷한가요? `tsc`를 사용하세요.
-* 잠재 산출 결과물을 내는 빌드 파이프라인이 필요하신가요? `babel`로 트랜스파일링 (transpling)을 하고, `tsc`로 타입을 검사하세요.
+* 여러 잠재적인 결과물을 내는 빌드 파이프라인이 필요하신가요? `babel`로 트랜스파일링을 하고, `tsc`로 타입을 검사하세요.
 
 ## 트랜스파일링은 Babel, 타입은 `tsc` (Babel for transpiling, `tsc` for types)
 
