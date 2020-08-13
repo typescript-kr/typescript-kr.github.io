@@ -50,66 +50,66 @@ JavaScript가 처음 나왔을 때, 수십 줄 이상의 코드를 작성하는 
 대부분의 프로그래밍 언어는 이런 종류의 오류들이 발생하면 오류를 표출해주고, 일부는 코드가 실행되기 전인 컴파일 중에 오류를 표출해줍니다.
 작은 프로그램을 작성할 때에는, 이런 이상한 점들이 화를 돋구지만 관리는 가능합니다. 그러나 수백 또는 수천 줄의 어플리케이션들을 작성할 때에는, 이러한 지속적 놀라움들은 심각한 문제입니다.
 
-## TypeScript: A Static Type Checker
+## TypeScript: 정적 타입 검사자 (TypeScript: A Static Type Checker)
 
-We said earlier that some languages wouldn't allow those buggy programs to run at all.
-Detecting errors in code without running it is referred to as _static checking_.
-Determining what's an error and what's not based on the kinds of values being operated on is known as static _type_ checking.
+앞서 몇 언어는 버그가 많은 프로그램을 아예 실행시키지 않는다고 했습니다.
+프로그램을 실행시키지 않으면서 코드의 오류를 검출하는 것을 _정적 검사(checking)_이라고 합니다.
+어떤 것이 오류인지와 어떤 것이 연산 되는 값에 기인하지 않음을 정하는 것이 정적 _타입_ 검사입니다.
 
-TypeScript checks a program for errors before execution, and does so based on the _kinds of values_, it's a _static type checker_.
-For example, the last example above has an error because of the _type_ of `obj`.
-Here's the error TypeScript found:
+_정적 타입 검사자_인 TypeScript는 프로그램을 실행시키기 전에 _값의 종류_를 기반으로 프로그램의 오류를 찾습니다.
+예를 들어, 위의 마지막 예시에 오류가 있는 이유는 `obj`의 _타입_ 때문입니다.
+다음은 TypeScript에서 볼 수 있는 오류입니다:
 
-```ts twoslash
+```
 // @errors: 2551
 const obj = { width: 10, height: 15 };
 const area = obj.width * obj.heigth;
 ```
 
-### A Typed Superset of JavaScript
+### 타입이 있는 JavaScript의 상위집합 (A Typed Superset of JavaScript)
 
-How does TypeScript relate to JavaScript, though?
+그렇다면 TypeScript는 JavaScript와 어떤 관계일까요?
 
-#### Syntax
+#### 구문 (Syntax)
 
-TypeScript is a language that is a _superset_ of JavaScript: JS syntax is therefore legal TS.
-Syntax refers to the way we write text to form a program.
-For example, this code has a _syntax_ error because it's missing a `)`:
+TypeScript는 JS의 구문이 허용되는, JavaScript의 _상위집합_ 언어입니다.
+구문은 프로그램을 만들기 위해 코드를 작성하는 방법을 의미합니다.
+예를 들어, 다음 코드는 `)`이 없으므로 _구문_ 오류입니다:
 
-```ts twoslash
+```
 // @errors: 1005
 let a = (4
 ```
 
-TypeScript doesn't consider any JavaScript code to be an error because of its syntax.
-This means you can take any working JavaScript code and put it in a TypeScript file without worrying about exactly how it is written.
+TypeScript는 독특한 구문 때문에 JavaScript 코드를 오류로 보지 않습니다.
+즉, 어떻게 작성돼있는지 모르지만 작동하는 JavaScript 코드를 TypeScript 파일에 넣어도 잘 작동합니다.
 
-#### Types
+#### 타입 (Types)
 
-However, TypeScript is a _typed_ superset, meaning that it adds rules about how different kinds of values can be used.
-The earlier error about `obj.heigth` was not a _syntax_ error: it is an error of using some kind of value (a _type_) in an incorrect way.
+그러나 TypeScript는 다른 종류의 값들을 사용할 수 있는 방법이 추가된, _타입이 있는_ 상위집합입니다.
+위의 `obj.heigth` 오류는 _구문_ 오류가 아닌, 값의 종류(_타입_)를 잘못 사용해서 생긴 오류입니다.
 
-As another example, this is JavaScript code that you can run in your browser, and it _will_ print a value:
+또 다른 예시로, 아래와 같은 JavaScript 코드가 브라우저에서 실행될 때, 다음과 같은 값이 출력될 _것입니다_:
 
 ```js
 console.log(4 / []);
 ```
 
-This syntactically-legal program prints `NaN`.
-TypeScript, though, considers division of number by an array to be a nonsensical operation, and will issue an error:
+구문적으로 옳은(syntactically-legal) 위 코드는 JavaScript에서 `NaN`을 출력합니다.
+그러나 TypeScript는 배열로 숫자를 나누는 연산이 옳지 않다고 판단하고 오류를 발생시킵니다:
 
-```ts twoslash
+```
 // @errors: 2363
 console.log(4 / []);
 ```
 
-It's possible you really _did_ intend to divide a number by an array, perhaps just to see what happens, but most of the time, though, this is a programming mistake.
-TypeScript's type checker is designed to allow correct programs through while still catching as many common errors as possible.
-(Later, we'll learn about settings you can use to configure how strictly TypeScript checks your code.)
+실제로 어떤 일이 일어나는지 보려는 의도로 숫자를 배열로 나눌 수 _있지만_, 대부분은 프로그래밍 실수입니다.
+TypeScript의 타입 검사자는 최대한 많은 일반적인 오류를 검출하면서 올바른 프로그램을 만들 수 있게 설계되었습니다.
+(나중에 TypeScript가 코드를 얼마나 엄격하게 검사할 수 있는지에 대한 설정에 대해 알아봅시다.)
 
-If you move some code from a JavaScript file to a TypeScript file, you might see _type errors_ depending on how the code is written.
-These may be legitimate problems with the code, or TypeScript being overly conservative.
-Throughout this guide we'll demonstrate how to add various TypeScript syntax to eliminate such errors.
+만약 JavaScript 파일의 코드를 TypeScript 코드로 옮기면, 코드를 어떻게 작성했는지에 따라 _타입 오류_를 볼 수 있습니다.
+이는 코드상의 문제이거나, TypeScript의 타입 검사가 지나치게 엄격한 것일 수 있습니다.
+위와 같은 오류를 제거하기 위해 가이드는 다양한 TypeScript 구문을 추가하는 방법을 보여줍니다.
 
 #### Runtime Behavior
 
