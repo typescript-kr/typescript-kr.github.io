@@ -6,7 +6,7 @@ oneline: Using literal types with TypeScript
 ---
 
 리터럴 타입은 collective 타입의 구체적인 하위 타입입니다.
-이것이 의미하는 바는 타입 시스템안에서 `"Hello World"`는 `string`이지만, `string`은 `"Hello World"`가 아니란 것입니다.
+이것이 의미하는 바는 타입 시스템 안에서 `"Hello World"`는 `string`이지만, `string`은 `"Hello World"`가 아니란 것입니다.
 
 오늘날 TypeScript에는 문자열과 숫자, 두 가지 리터럴 타입이 있는데 이를 사용하면 문자열이나 숫자에 정확한 값을 지정할 수 있습니다.
 
@@ -30,7 +30,7 @@ let hiWorld = "Hi World";
 
 # 문자열 리터럴 타입 (String Literal Types)
 
-실제로 문자열 리터럴 타입은 유니온 타입, 타입 가드 그리고 타입 별칭과 잘 결합됩니다.
+실제로 문자열 리터럴 타입은 유니언 타입, 타입 가드 그리고 타입 별칭과 잘 결합됩니다.
 이런 기능을 함께 사용하여 문자열로 enum과 비슷한 형태를 갖출 수 있습니다.
 
 ```ts twoslash
@@ -84,7 +84,7 @@ function rollDice(): 1 | 2 | 3 | 4 | 5 | 6 {
 const result = rollDice();
 ```
 
-이는 주로 설정 값을 설명할 때 사용됩니다:
+이는 주로 설정값을 설명할 때 사용됩니다:
 
 ```ts twoslash
 /** loc/lat 좌표에 지도를 생성합니다. */
