@@ -5,18 +5,18 @@ permalink: /docs/handbook/literal-types.html
 oneline: Using literal types with TypeScript
 ---
 
-리터럴 타입은 collective 타입의 구체적인 하위 타입입니다.
+리터럴 타입은 집합 타입의 보다 구체적인 하위 타입입니다.
 이것이 의미하는 바는 타입 시스템 안에서 `"Hello World"`는 `string`이지만, `string`은 `"Hello World"`가 아니란 것입니다.
 
 오늘날 TypeScript에는 문자열과 숫자, 두 가지 리터럴 타입이 있는데 이를 사용하면 문자열이나 숫자에 정확한 값을 지정할 수 있습니다.
 
-# 리터럴 축소 (Literal Narrowing)
+# 리터럴 타입 좁히기 (Literal Narrowing)
 
 `var` 또는 `let`으로 변수를 선언할 경우 이 변수의 값이 변경될 가능성이 있음을 컴파일러에게 알립니다.
 반면, `const`로 변수를 선언하게 되면 TypeScript에게 이 객체는 절대 변경되지 않음을 알립니다.
 
 ```ts
-// const를 사용하여 변수 helloworld가
+// const를 사용하여 변수 helloWorld가
 // 절대 변경되지 않음을 보장합니다.
 
 // 따라서, TypeScript는 문자열이 아닌 "Hello World"로 타입을 정합니다.
@@ -26,7 +26,7 @@ const helloWorld = "Hello World";
 let hiWorld = "Hi World";
 ```
 
-무한한 수의 잠재적 케이스들 (문자열의 경우의 수는 무한대)을 유한한 수의 잠재적 케이스 (`helloWorld`의 경우의 수는 1개)로 줄여나가는 것을 축소 (narrowing)라 한다.
+무한한 수의 잠재적 케이스들 (문자열 값은 경우의 수가 무한대)을 유한한 수의 잠재적 케이스 (`helloWorld`의 경우: 1개)로 줄여나가는 것을 타입 좁히기 (narrowing)라 한다.
 
 # 문자열 리터럴 타입 (String Literal Types)
 
@@ -44,7 +44,7 @@ class UIElement {
     } else if (easing === "ease-out") {
     } else if (easing === "ease-in-out") {
     } else {
-      // 하지만 누군가는 타입을 무시하게된다면
+      // 하지만 누군가가 타입을 무시하게 된다면
       // 이곳에 도달하게 될 수 있습니다.
     }
   }
@@ -61,7 +61,7 @@ button.animate(0, 0, "uneasy");
 '"uneasy"' 타입은 '"ease-in" | "ease-out" | "ease-in-out"' 타입의 매개 변수에 할당할 수 없습니다.
 ```
 
-문자열 리터럴 타입은 중복 정의를 구별하는 것과 동일한 방법으로 사용될 수 있습니다:
+문자열 리터럴 타입은 오버로드를 구별하는 것과 동일한 방법으로 사용될 수 있습니다:
 
 ```ts
 function createElement(tagName: "img"): HTMLImageElement;
