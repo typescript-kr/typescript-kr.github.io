@@ -63,7 +63,7 @@
     <td align="center"><a href="https://velog.io/@eomttt"><img src="https://avatars2.githubusercontent.com/u/22593217?v=4" width="80px;" alt=""/><br /><sub><b>Hyuntae EOM</b></sub></a><br /><a href="#translation-eomttt" title="Translation">🌍</a></td>
     <td align="center"><a href="http://samsara-ku.github.io"><img src="https://avatars3.githubusercontent.com/u/59246456?v=4" width="80px;" alt=""/><br /><sub><b>Yunhoe, Ku</b></sub></a><br /><a href="#translation-samsara-ku" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/realgoways"><img src="https://avatars3.githubusercontent.com/u/15275415?v=4" width="80px;" alt=""/><br /><sub><b>realgo</b></sub></a><br /><a href="#translation-realgoways" title="Translation">🌍</a></td>
-    <td align="center"><a href="http://seohyun0120.tistory.com"><img src="https://avatars3.githubusercontent.com/u/35247295?v=4" width="80px;" alt=""/><br /><sub><b>Seohyun Yoon</b></sub></a><br /><a href="#translation-seohyun0120" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/seohyun0120"><img src="https://avatars3.githubusercontent.com/u/35247295?v=4" width="80px;" alt=""/><br /><sub><b>SeohyunYoon</b></sub></a><br /><a href="#translation-seohyun0120" title="Translation">🌍</a></td>
   </tr>
 </table>
 
