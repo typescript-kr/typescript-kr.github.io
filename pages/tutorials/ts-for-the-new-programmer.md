@@ -108,18 +108,18 @@ TypeScript의 타입 검사자는 최대한 많은 일반적인 오류를 검출
 (나중에 TypeScript가 코드를 얼마나 엄격하게 검사할 수 있는지에 대한 설정에 대해 알아봅시다.)
 
 만약 JavaScript 파일의 코드를 TypeScript 코드로 옮기면, 코드를 어떻게 작성했는지에 따라 _타입 오류_를 볼 수 있습니다.
-이는 코드상의 문제이거나, TypeScript의 타입 검사가 지나치게 엄격한 것일 수 있습니다.
+이는 코드상의 문제이거나, TypeScript가 지나치게 보수적인 것일 수 있습니다.
 위와 같은 오류를 제거하기 위해 가이드는 다양한 TypeScript 구문을 추가하는 방법을 보여줍니다.
 
-#### Runtime Behavior
+#### 런타임 특성 (Runtime Behavior)
 
-TypeScript is also a programming language that preserves the _runtime behavior_ of JavaScript.
-For example, dividing by zero in JavaScript produces `Infinity` instead of throwing a runtime exception.
-As a principle, TypeScript **never** changes the runtime behavior of JavaScript code.
+TypeScript는 JavaScript의 _런타임 특성(runtime behavior)_을 가진 프로그래밍 언어입니다.
+예를 들어, JavaScript에서 0으로 나누는 행동은 런타임 예외로 처리하지 않고 `Infinity`값을 반환합니다.
+논리적으로, TypeScript는 JavaScript 코드의 런타임 특성을 **절대** 변화시키지 않습니다.
 
-This means that if you move code from JavaScript to TypeScript, it is **guaranteed** to run the same way, even if TypeScript thinks that the code has type errors.
+즉 TypeScript가 코드에 타입 오류가 있음을 검출해도, JavaScript 코드를 TypeScript로 이동시키는 것은 같은 방식으로 실행시킬 것을 **보장합니다**
 
-Keeping the same runtime behavior as JavaScript is a foundational promise of TypeScript because it means you can easily transition between the two languages without worrying about subtle differences that might make your program stop working.
+JavaScript와 똑같은 런타임 행동을 유지하는 것은 프로그램 작동을 중단시킬 수 있는 미묘한 차이를 걱정하지 않아도 되기 때문에 TypeScript의 기본적인 약속입니다.
 
 <!--
 Missing subsection on the fact that TS extends JS to add syntax for type
@@ -127,16 +127,16 @@ specification.  (Since the immediately preceding text was raving about
 how JS code can be used in TS.)
 -->
 
-#### Erased Types
+#### 삭제된 타입 (Erased Types)
 
-Roughly speaking, once TypeScript's compiler is done with checking your code, it _erases_ the types to produce the resulting "compiled" code.
-This means that once your code is compiled, the resulting plain JS code has no type information.
+개략적으로, TypeScript의 컴파일러가 코드 검사를 마치면 타입을 _삭제해서_ 결과적으로 "컴파일된" 코드를 만듭니다.
+즉 코드가 한 번 컴파일되면, 결과로 나온 일반 JS 코드에는 타입 정보가 없습니다.
 
-This also means that TypeScript never changes the _behavior_ of your program based on the types it inferred.
-The bottom line is that while you might see type errors during compilation, the type system itself has no bearing on how your program works when it runs.
+타입 정보가 없는 것은 TypeScript가 추론한 타입에 따라 프로그램의 _특성_을 변화시키지 않는다는 의미입니다.
+결론적으로 컴파일 도중에는 타입 오류가 표출될 수 있지만, 타입 시스템 자체는 프로그램이 실행될 때 작동하는 방식과 관련이 없습니다.
 
-Finally, TypeScript doesn't provide any additional runtime libraries.
-Your programs will use the same standard library (or external libraries) as JavaScript programs, so there's no additional TypeScript-specific framework to learn.
+마지막으로, TypeScript는 추가 런타임 라이브러리를 제공하지 않습니다.
+TypeScript는 프로그램은 JavaScript 프로그램과 같은 표준 라이브러리 (또는 외부 라이브러리)를 사용하므로, TypeScript 관련 프레임워크를 추가로 공부할 필요가 없습니다.
 <!--
 Should extend this paragraph to say that there's an exception of
 allowing you to use newer JS features and transpile the code to an older
@@ -145,25 +145,25 @@ with an example --- something like `?.` would be good in showing readers
 that this document is maintained.)
 -->
 
-## Learning JavaScript and TypeScript
+## JavaScript와 TypeScript의 학습 (Learning JavaScript and TypeScript)
 
-We frequently see the question "Should I learn JavaScript or TypeScript?".
+종종 "JavaScript 또는 TypeScript를 배워야 할까요?"와 같은 질문을 볼 수 있습니다.
 
-The answer is that you can't learn TypeScript without learning JavaScript!
-TypeScript shares syntax and runtime behavior with JavaScript, so anything you learn about JavaScript is helping you learn TypeScript at the same time.
+정답은 JavaScript를 배우지 않고선 TypeScript를 배울 수 없다는 것입니다!
+TypeScript는 JavaScript와 구문과 런타임 특성을 공유하므로, JavaScript에서 배운 모든 것들은 동시에 TypeScript를 배울 때 도움이 될 것입니다.
 
-There are many, many resources available for programmers to learn JavaScript; you should _not_ ignore these resources if you're writing TypeScript.
-For example, there about 20 times more StackOverflow questions tagged `javascript` than `typescript`, but _all_ of the `javascript` questions also apply to TypeScript.
+프로그래머들을 위한 JavaScript 학습 자원이 많습니다; TypeScript를 작성할 때 그런 학습 자원을 무시해선 _안됩니다_.
+예를 들어 `javascript`태그가 붙은 질문들이 `typescript`태그가 붙은 질문보다 약 20배는 많지만, _모든_ `javascript`질문들은 TypeScript에도 적용할 수 있습니다.
 
-If you find yourself searching for something like "how to sort a list in TypeScript", remember: **TypeScript is JavaScript's runtime with a compile-time type checker**.
-The way you sort a list in TypeScript is the same way you do so in JavaScript.
-If you find a resource that uses TypeScript directly, that's great too, but don't limit yourself to thinking you need TypeScript-specific answers for everyday questions about how to accomplish runtime tasks.
+만약 "TypeScript에서 리스트를 정렬하는 법"과 같은 것을 찾는 경우, 기억하세요: **TypeScript는 컴파일-타임 타입 검사자가 있는 JavaScript의 런타임입니다**.
+리스트를 TypeScript에서 정렬하는 방법은 JavaScript에서 똑같은 방법으로 할 수 있습니다.
+만약 TypeScript를 직접적으로 사용하는 자원을 찾았다면 그것도 좋지만, 런타임 작업을 실행하기 위한 일상적인 질문을 TypeScript 관련 답변에만 제한시킬 필요는 없습니다.
 
 ---
 
-From here, we'd recommend learning some of the JavaScript fundamentals (the [JavaScript guide at the Mozilla Web Docs](https://developer.mozilla.org/docs/Web/JavaScript/Guide) is a good starting point.)
+여기서, JavaScript 기초 몇 가지를 배우는 것을 추천합니다 ([Mozilla 웹 문서의 JavaScript 가이드](https://developer.mozilla.org/docs/Web/JavaScript/Guide)가 괜찮겠네요.)
 
-Once you're feeling comfortable, you can come back to read [TypeScript for JavaScript Programmers](/docs/handbook/typescript-in-5-minutes.html), then start on [the handbook](/docs/handbook/intro.html) or explore the [Playground examples](/play#show-examples).
+익숙해지셨다면, 다시 돌아와서 [JavaScript 프로그래머들을 위한 TypeScript](/docs/handbook/typescript-in-5-minutes.html)을 읽어보시고, [핸드북](/docs/handbook/intro.html)을 시작하시거나 [예제](/play#show-examples)를 보세요.
 
 <!-- Note: I'll be happy to write the following... -->
 <!--
