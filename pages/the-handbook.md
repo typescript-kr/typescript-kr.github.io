@@ -5,14 +5,14 @@ permalink: /docs/handbook/intro.html
 oneline: Your first step to learn TypeScript
 ---
 
-## About this Handbook
+## 핸드북이란 (About this Handbook)
 
-Over 20 years after its introduction to the programming community, JavaScript is now one of the most widespread cross-platform languages ever created. Starting as a small scripting language for adding trivial interactivity to webpages, JavaScript has grown to be a language of choice for both frontend and backend applications of every size. While the size, scope, and complexity of programs written in JavaScript has grown exponentially, the ability of the JavaScript language to express the relationships between different units of code has not. Combined with JavaScript's rather peculiar runtime semantics, this mismatch between language and program complexity has made JavaScript development a difficult task to manage at scale.
+JavaScript는 프로그래밍 커뮤니티에 도입된 지 20년이 지난 지금, 가장 널리 퍼진 cross-platform 언어 중 하나입니다. JavaScript는 웹 페이지에 사소한 상호작용을 추가하기 위한 작은 스크립팅 언어로 시작하여, 모든 크기의 프런트엔드와 백엔드 애플리케이션에서 선택 가능한 언어로 성장했습니다. JavaScript로 작성된 프로그램의 크기, 스코프 및 복잡성은 기하급수적으로 커졌지만, 다른 코드 단위 간의 관계를 표현하는 JavaScript 언어의 능력은 그렇지 못했습니다. JavaScript의 다소 특이한 런타임 의미 체계(runtime semantics)와 결합하여, 언어와 프로그램 복잡성 간의 이러한 불일치는 JavaScript 개발을 규모에 맞게 관리하기 어려운 작업으로 만들었습니다.
 
-The most common kinds of errors that programmers write can be described as type errors: a certain kind of value was used where a different kind of value was expected. This could be due to simple typos, a failure to understand the API surface of a library, incorrect assumptions about runtime behavior, or other errors. The goal of TypeScript is to be a static typechecker for JavaScript programs - in other words, a tool that runs before your code runs (static) and ensure that the types of the program are correct (typechecked).
+프로그래머들이 쓰는 가장 일반적인 종류의 오류는 타입 오류로 설명할 수 있습니다: 다른 종류의 값이 예상되는 곳에 특정한 값이 사용된 경우입니다. 이는 단순한 오타, 라이브러리의 API surface를 이해하지 못한 것, 런타임 동작에 대한 부정확한 가정 또는 기타 오류 때문일 수 있습니다. TypeScript의 목표는 JavaScript 프로그램의 정적 typechecker 가 되는 것입니다. 즉, 코드가 실행되기 전에 실행하고(static), 프로그램 타입이 정확한지 확인하는 도구(typechecked)가 되는 것입니다.
 
-If you are coming to TypeScript without a JavaScript background, with the intention of TypeScript being your first language, we recommend you first start reading the documentation [on JavaScript at the Mozilla Web Docs](https://developer.mozilla.org/docs/Web/JavaScript/Guide).
-If you have experience in other languages, you should be able to pick up JavaScript syntax quite quickly by reading the handbook.
+JavaScript에 대한 배경지식 없이 TypeScript를 first language로 사용하려는 경우, 먼저 [Mozilla 웹 문서에서 JavaScript에 대한](https://developer.mozilla.org/docs/Web/JavaScript/Guide) 문서를 읽어 보는 것이 좋습니다.
+다른 언어에 대한 경험이 있다면, handbook을 읽으면 JavaScript 구문을 꽤 빠르게 익힐 수 있을 것입니다.
 
 ## How is this Handbook Structured
 
