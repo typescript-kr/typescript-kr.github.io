@@ -5,16 +5,28 @@ permalink: /docs/handbook/typescript-in-5-minutes.html
 oneline: Learn how TypeScript extends JavaScript
 ---
 
+<<<<<<< HEAD
 현대 프로그래밍 언어에서 TypeScript와 JavaScript의 관계는 다소 독특합니다.
 TypeScript은 JavaScript 위에 레이어로서 자리잡고 있는데, JavaScript의 기능들을 제공하면서 그 위에 자체 레이어를 추가합니다. 이 레이어가 TypeScript 타입 시스템입니다.
 
 JavaScript는 이미 `string`, `number`, `object`, `undefined` 같은 원시 타입을 가지고 있지만, 전체 코드베이스에 일관되게 할당되었는지는 미리 확인해 주지 않습니다. TypeScript는 이 레이어로서 동작합니다.
+=======
+현대 프로그래밍 언어에서 TypeScript와 JavaScript 사이의 관계는 다소 독특합니다.
+TypeScript은 JavaScript 위에 레이어로서 자리잡고 있는데, JavaScript의 기능들을 제공하면서 그 위에 자체 레이어를 추가합니다.
+이 레이어가 TypeScript 타입 시스템입니다.
+
+JavaScript는 이미 `string`, `number`, `object`, `undefined` 같은 원시 타입을 가지고 있지만, 이것이 전체 코드베이스에 일관되게 할당되었는지는 미리 확인해주지 않습니다. TypeScript는 이를 위한 레이어로 동작합니다.
+>>>>>>> ab2e42454878f207e9134190a8140a3a632365bb
 
 이는 이미 존재하고 잘 동작하는 JavaScript 코드는 동시에 TypeScript 코드라는 의미지만, TypeScript의 타입 검사기는 사용자가 생각한 일과 JavaScript가 실제로 하는 일 사이의 불일치를 강조할 수 있습니다.
 
 이 튜토리얼은 TypeScript가 추가하는 타입 시스템 언어 확장을 이해하는데 중점을 두고 타입 시스템에 대한 5분 개요를 제공합니다.
 
+<<<<<<< HEAD
 ## 타입 추론 (Types by Inference)
+=======
+## 타입 추론
+>>>>>>> ab2e42454878f207e9134190a8140a3a632365bb
 
 TypeScript는 JavaScript 언어를 알고 있으며 대부분의 경우 타입을 생성해줄 것입니다.
 예를 들어 변수를 생성하면서 동시에 특정 값에 할당하는 경우, TypeScript는 그 값을 해당 변수의 타입으로 사용할 것입니다.
@@ -25,12 +37,21 @@ let helloWorld = "Hello World";
 //  ^?
 ```
 
+<<<<<<< HEAD
 JavaScript가 동작하는 방식을 이해함으로써 TypeScript는 JavaScript 코드를 받아들이면서 타입을 가지는 타입 시스템을 구축할 수 있습니다. 이는 코드에서 타입을 명시하기 위해 추가로 문자를 사용할 필요가 없는 타입 시스템을 제공합니다. 이것이 위의 예제에서 TypeScript가 `helloWorld`가 `string`임을 알게 되는 방식입니다.
+=======
+JavaScript가 동작하는 방식을 이해함으로써 TypeScript는 JavaScript 코드를 받아들이면서 타입을 가지는 타입 시스템을 구축할 수 있습니다.
+이는 코드에서 타입을 명시하기 위해 추가로 문자를 사용할 필요가 없는 타입 시스템을 제공합니다. 이것이 위의 예제에서 TypeScript가 `helloWorld`가 `string`임을 알게 되는 방식입니다.
+>>>>>>> ab2e42454878f207e9134190a8140a3a632365bb
 
 JavaScript와 함께 VS Code를 사용하고 작업을 할 때 편집기의 자동 완성 기능을 사용해왔을 것입니다.
 이는 TypeScript에 필수불가결한 JavaScript에 대한 이해가 JavaScript 작업을 개선하기 위해 내부적으로 사용되었기 때문입니다.
 
+<<<<<<< HEAD
 ## 타입 정의하기 (Defining Types)
+=======
+## 타입 정의하기
+>>>>>>> ab2e42454878f207e9134190a8140a3a632365bb
 
 JavaScript는 다양한 디자인 패턴을 가능하게 하는 동적 언어입니다. 몇몇 디자인 패턴은 자동으로 타입을 제공하기 힘들 수 있는데 (동적 프로그래밍을 사용하고 있을 것이기 때문에) 이러한 경우에 TypeScript는 TypeScript에게 타입이 무엇이 되어야 하는지 명시 가능한 JavaScript 언어의 확장을 지원합니다.
 
