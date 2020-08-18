@@ -1049,79 +1049,76 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>A literal is a more concrete sub-type of a collective type.
-What this means is that <code>&quot;Hello World&quot;</code> is a <code>string</code>, but a <code>string</code> is not <code>&quot;Hello World&quot;</code> inside the type system.</p>
-<p>There are two sets of literal types available in TypeScript today, strings and numbers, by using literal types you can allow an exact value which a string or number must have.</p>
-<h1 id="literal-narrowing">Literal Narrowing</h1>
-<p>When you declare a variable via <code>var</code> or <code>let</code>, you are telling the compiler that there is the chance that this variable will change its contents.
-In contrast, using <code>const</code> to declare a variable will inform TypeScript that this object will never change.</p>
-<p>```ts twoslash
-// We&apos;re making a guarantee that this variable
-// helloWorld will never change, by using const.</p>
-<p>// So, TypeScript sets the type to be &quot;Hello World&quot; not string
-const helloWorld = &quot;Hello World&quot;;</p>
-<p>// On the other hand, a let can change, and so the compiler declares it a string
-let hiWorld = &quot;Hi World&quot;;</p>
-<pre><code>
-The process of going from an infinite number of potential cases (there are an infinite number of possible string values) to a smaller, finite number of potential case (in `helloWorld`&apos;s case: 1) is called narrowing.
+                                <p>&#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785;&#xC740; &#xC9D1;&#xD569; &#xD0C0;&#xC785;&#xC758; &#xBCF4;&#xB2E4; &#xAD6C;&#xCCB4;&#xC801;&#xC778; &#xD558;&#xC704; &#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC774;&#xAC83;&#xC774; &#xC758;&#xBBF8;&#xD558;&#xB294; &#xBC14;&#xB294; &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C; &#xC548;&#xC5D0;&#xC11C; <code>&quot;Hello World&quot;</code>&#xB294; <code>string</code>&#xC774;&#xC9C0;&#xB9CC;, <code>string</code>&#xC740; <code>&quot;Hello World&quot;</code>&#xAC00; &#xC544;&#xB2C8;&#xB780; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC624;&#xB298;&#xB0A0; TypeScript&#xC5D0;&#xB294; &#xBB38;&#xC790;&#xC5F4;&#xACFC; &#xC22B;&#xC790;, &#xB450; &#xAC00;&#xC9C0; &#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785;&#xC774; &#xC788;&#xB294;&#xB370; &#xC774;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xBB38;&#xC790;&#xC5F4;&#xC774;&#xB098; &#xC22B;&#xC790;&#xC5D0; &#xC815;&#xD655;&#xD55C; &#xAC12;&#xC744; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xB9AC;&#xD130;&#xB7F4;-&#xD0C0;&#xC785;-&#xC881;&#xD788;&#xAE30;-literal-narrowing">&#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785; &#xC881;&#xD788;&#xAE30; (Literal Narrowing)</h1>
+<p><code>var</code> &#xB610;&#xB294; <code>let</code>&#xC73C;&#xB85C; &#xBCC0;&#xC218;&#xB97C; &#xC120;&#xC5B8;&#xD560; &#xACBD;&#xC6B0; &#xC774; &#xBCC0;&#xC218;&#xC758; &#xAC12;&#xC774; &#xBCC0;&#xACBD;&#xB420; &#xAC00;&#xB2A5;&#xC131;&#xC774; &#xC788;&#xC74C;&#xC744; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xC5D0;&#xAC8C; &#xC54C;&#xB9BD;&#xB2C8;&#xB2E4;.
+&#xBC18;&#xBA74;, <code>const</code>&#xB85C; &#xBCC0;&#xC218;&#xB97C; &#xC120;&#xC5B8;&#xD558;&#xAC8C; &#xB418;&#xBA74; TypeScript&#xC5D0;&#xAC8C; &#xC774; &#xAC1D;&#xCCB4;&#xB294; &#xC808;&#xB300; &#xBCC0;&#xACBD;&#xB418;&#xC9C0; &#xC54A;&#xC74C;&#xC744; &#xC54C;&#xB9BD;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-comment">// const&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBCC0;&#xC218; helloWorld&#xAC00;</span>
+<span class="cm-comment">// &#xC808;&#xB300; &#xBCC0;&#xACBD;&#xB418;&#xC9C0; &#xC54A;&#xC74C;&#xC744; &#xBCF4;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;.</span>
 
-# String Literal Types
+<span class="cm-comment">// &#xB530;&#xB77C;&#xC11C;, TypeScript&#xB294; &#xBB38;&#xC790;&#xC5F4;&#xC774; &#xC544;&#xB2CC; &quot;Hello World&quot;&#xB85C; &#xD0C0;&#xC785;&#xC744; &#xC815;&#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-keyword">const</span> <span class="cm-variable">helloWorld</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;Hello World&quot;</span>;
 
-In practice string literal types combine nicely with union types, type guards, and type aliases.
-You can use these features together to get enum-like behavior with strings.
+<span class="cm-comment">// &#xBC18;&#xBA74;, let&#xC740; &#xBCC0;&#xACBD;&#xB420; &#xC218; &#xC788;&#xC73C;&#xBBC0;&#xB85C; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; &#xBB38;&#xC790;&#xC5F4;&#xC774;&#xB77C;&#xACE0; &#xC120;&#xC5B8;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">hiWorld</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;Hi World&quot;</span>;
+</code></pre>
+<p>&#xBB34;&#xD55C;&#xD55C; &#xC218;&#xC758; &#xC7A0;&#xC7AC;&#xC801; &#xCF00;&#xC774;&#xC2A4;&#xB4E4; (&#xBB38;&#xC790;&#xC5F4; &#xAC12;&#xC740; &#xACBD;&#xC6B0;&#xC758; &#xC218;&#xAC00; &#xBB34;&#xD55C;&#xB300;)&#xC744; &#xC720;&#xD55C;&#xD55C; &#xC218;&#xC758; &#xC7A0;&#xC7AC;&#xC801; &#xCF00;&#xC774;&#xC2A4; (<code>helloWorld</code>&#xC758; &#xACBD;&#xC6B0;: 1&#xAC1C;)&#xB85C; &#xC904;&#xC5EC;&#xB098;&#xAC00;&#xB294; &#xAC83;&#xC744; &#xD0C0;&#xC785; &#xC881;&#xD788;&#xAE30; (narrowing)&#xB77C; &#xD55C;&#xB2E4;.</p>
+<h1 id="&#xBB38;&#xC790;&#xC5F4;-&#xB9AC;&#xD130;&#xB7F4;-&#xD0C0;&#xC785;-string-literal-types">&#xBB38;&#xC790;&#xC5F4; &#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785; (String Literal Types)</h1>
+<p>&#xC2E4;&#xC81C;&#xB85C; &#xBB38;&#xC790;&#xC5F4; &#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785;&#xC740; &#xC720;&#xB2C8;&#xC5B8; &#xD0C0;&#xC785;, &#xD0C0;&#xC785; &#xAC00;&#xB4DC; &#xADF8;&#xB9AC;&#xACE0; &#xD0C0;&#xC785; &#xBCC4;&#xCE6D;&#xACFC; &#xC798; &#xACB0;&#xD569;&#xB429;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB7F0; &#xAE30;&#xB2A5;&#xC744; &#xD568;&#xAED8; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBB38;&#xC790;&#xC5F4;&#xB85C; enum&#xACFC; &#xBE44;&#xC2B7;&#xD55C; &#xD615;&#xD0DC;&#xB97C; &#xAC16;&#xCD9C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-comment">// @errors: 2345</span>
+<span class="cm-variable">type</span> <span class="cm-variable">Easing</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;ease-in&quot;</span> <span class="cm-operator">|</span> <span class="cm-string">&quot;ease-out&quot;</span> <span class="cm-operator">|</span> <span class="cm-string">&quot;ease-in-out&quot;</span>;
 
-```ts twoslash
-// @errors: 2345
-type Easing = &quot;ease-in&quot; | &quot;ease-out&quot; | &quot;ease-in-out&quot;;
-
-class UIElement {
-  animate(dx: number, dy: number, easing: Easing) {
-    if (easing === &quot;ease-in&quot;) {
-      // ...
-    } else if (easing === &quot;ease-out&quot;) {
-    } else if (easing === &quot;ease-in-out&quot;) {
-    } else {
-      // It&apos;s possible that someone could reach this
-      // by ignoring your types though.
+<span class="cm-keyword">class</span> <span class="cm-variable">UIElement</span> {
+  <span class="cm-property">animate</span>(<span class="cm-def">dx</span>: <span class="cm-variable-3">number</span>, <span class="cm-def">dy</span>: <span class="cm-variable-3">number</span>, <span class="cm-def">easing</span>: <span class="cm-variable-3">Easing</span>) {
+    <span class="cm-keyword">if</span> (<span class="cm-variable-2">easing</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;ease-in&quot;</span>) {
+      <span class="cm-comment">// ...</span>
+    } <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable-2">easing</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;ease-out&quot;</span>) {
+    } <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable-2">easing</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;ease-in-out&quot;</span>) {
+    } <span class="cm-keyword">else</span> {
+      <span class="cm-comment">// &#xD558;&#xC9C0;&#xB9CC; &#xB204;&#xAD70;&#xAC00;&#xAC00; &#xD0C0;&#xC785;&#xC744; &#xBB34;&#xC2DC;&#xD558;&#xAC8C; &#xB41C;&#xB2E4;&#xBA74;</span>
+      <span class="cm-comment">// &#xC774;&#xACF3;&#xC5D0; &#xB3C4;&#xB2EC;&#xD558;&#xAC8C; &#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
     }
   }
 }
 
-let button = new UIElement();
-button.animate(0, 0, &quot;ease-in&quot;);
-button.animate(0, 0, &quot;uneasy&quot;);
-</code></pre><p>You can pass any of the three allowed strings, but any other string will give the error</p>
-<pre><code>Argument of type &apos;&quot;uneasy&quot;&apos; is not assignable to parameter of type &apos;&quot;ease-in&quot; | &quot;ease-out&quot; | &quot;ease-in-out&quot;&apos;
-</code></pre><p>String literal types can be used in the same way to distinguish overloads:</p>
+<span class="cm-keyword">let</span> <span class="cm-variable">button</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">UIElement</span>();
+<span class="cm-variable">button</span>.<span class="cm-property">animate</span>(<span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-string">&quot;ease-in&quot;</span>);
+<span class="cm-variable">button</span>.<span class="cm-property">animate</span>(<span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-string">&quot;uneasy&quot;</span>);
+</code></pre>
+<p>&#xD5C8;&#xC6A9;&#xB41C; &#xC138; &#xAC1C;&#xC758; &#xBB38;&#xC790;&#xC5F4;&#xC774; &#xC544;&#xB2CC; &#xB2E4;&#xB978; &#xBB38;&#xC790;&#xC5F4;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAC8C; &#xB418;&#xBA74; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code>&apos;&quot;uneasy&quot;&apos; &#xD0C0;&#xC785;&#xC740; &apos;&quot;ease-in&quot; | &quot;ease-out&quot; | &quot;ease-in-out&quot;&apos; &#xD0C0;&#xC785;&#xC758; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xC5D0; &#xD560;&#xB2F9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
+</code></pre><p>&#xBB38;&#xC790;&#xC5F4; &#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785;&#xC740; &#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xB97C; &#xAD6C;&#xBCC4;&#xD558;&#xB294; &#xAC83;&#xACFC; &#xB3D9;&#xC77C;&#xD55C; &#xBC29;&#xBC95;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">createElement</span>(<span class="cm-def">tagName</span>: <span class="cm-string">&quot;img&quot;</span>): <span class="cm-variable">HTMLImageElement</span>;
 <span class="cm-keyword">function</span> <span class="cm-variable">createElement</span>(<span class="cm-def">tagName</span>: <span class="cm-string">&quot;input&quot;</span>): <span class="cm-variable">HTMLInputElement</span>;
-<span class="cm-comment">// ... more overloads ...</span>
+<span class="cm-comment">// ... &#xCD94;&#xAC00;&#xC801;&#xC778; &#xC911;&#xBCF5; &#xC815;&#xC758;&#xB4E4; ...</span>
 <span class="cm-keyword">function</span> <span class="cm-variable">createElement</span>(<span class="cm-def">tagName</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable">Element</span> {
-  <span class="cm-comment">// ... code goes here ...</span>
+  <span class="cm-comment">// ... &#xC5EC;&#xAE30;&#xC5D0; &#xB85C;&#xC9C1; &#xCD94;&#xAC00; ...</span>
 }
 </code></pre>
-<h1 id="numeric-literal-types">Numeric Literal Types</h1>
-<p>TypeScript also has numeric literal types, which act the same as the string literals above.</p>
-<p>```ts twoslash
-function rollDice(): 1 | 2 | 3 | 4 | 5 | 6 {
-  return (Math.floor(Math.random() * 6) + 1) as 1 | 2 | 3 | 4 | 5 | 6;
-}</p>
-<p>const result = rollDice();</p>
-<pre><code>
-A common case for their use is for describing config values:
-
-```ts twoslash
-/** Creates a map centered at loc/lat */
-declare function setupMap(config: MapConfig): void;
-// ---cut---
-interface MapConfig {
-  lng: number;
-  lat: number;
-  tileSize: 8 | 16 | 32;
+<h1 id="&#xC22B;&#xC790;&#xD615;-&#xB9AC;&#xD130;&#xB7F4;-&#xD0C0;&#xC785;-numeric-literal-types">&#xC22B;&#xC790;&#xD615; &#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785; (Numeric Literal Types)</h1>
+<p>TypeScript&#xC5D0;&#xB294; &#xC704;&#xC758; &#xBB38;&#xC790;&#xC5F4; &#xB9AC;&#xD130;&#xB7F4;&#xACFC; &#xAC19;&#xC740; &#xC5ED;&#xD560;&#xC744; &#xD558;&#xB294; &#xC22B;&#xC790;&#xD615; &#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">rollDice</span>(): <span class="cm-number">1</span> <span class="cm-operator">|</span> <span class="cm-number">2</span> <span class="cm-operator">|</span> <span class="cm-number">3</span> <span class="cm-operator">|</span> <span class="cm-number">4</span> <span class="cm-operator">|</span> <span class="cm-number">5</span> <span class="cm-operator">|</span> <span class="cm-number">6</span> {
+  <span class="cm-keyword">return</span> (<span class="cm-variable">Math</span>.<span class="cm-property">floor</span>(<span class="cm-variable">Math</span>.<span class="cm-property">random</span>() <span class="cm-operator">*</span> <span class="cm-number">6</span>) <span class="cm-operator">+</span> <span class="cm-number">1</span>) <span class="cm-variable">as</span> <span class="cm-number">1</span> <span class="cm-operator">|</span> <span class="cm-number">2</span> <span class="cm-operator">|</span> <span class="cm-number">3</span> <span class="cm-operator">|</span> <span class="cm-number">4</span> <span class="cm-operator">|</span> <span class="cm-number">5</span> <span class="cm-operator">|</span> <span class="cm-number">6</span>;
 }
 
-setupMap({ lng: -73.935242, lat: 40.73061, tileSize: 16 });
+<span class="cm-keyword">const</span> <span class="cm-variable">result</span> <span class="cm-operator">=</span> <span class="cm-variable">rollDice</span>();
 </code></pre>
+<p>&#xC774;&#xB294; &#xC8FC;&#xB85C; &#xC124;&#xC815;&#xAC12;&#xC744; &#xC124;&#xBA85;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-comment">/** loc/lat &#xC88C;&#xD45C;&#xC5D0; &#xC9C0;&#xB3C4;&#xB97C; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;. */</span>
+<span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">setupMap</span>(<span class="cm-def">config</span>: <span class="cm-variable-3">MapConfig</span>): <span class="cm-variable">void</span>;
+<span class="cm-comment">// ---&#xC0DD;&#xB7B5;---</span>
+<span class="cm-keyword">interface</span> <span class="cm-variable">MapConfig</span> {
+  <span class="cm-variable">lng</span>: <span class="cm-variable-3">number</span>;
+  <span class="cm-variable">lat</span>: <span class="cm-variable-3">number</span>;
+  <span class="cm-variable">tileSize</span>: <span class="cm-number">8</span> <span class="cm-operator">|</span> <span class="cm-number">16</span> <span class="cm-operator">|</span> <span class="cm-number">32</span>;
+}
+
+<span class="cm-variable">setupMap</span>({ <span class="cm-property">lng</span>: <span class="cm-operator">-</span><span class="cm-number">73.935242</span>, <span class="cm-property">lat</span>: <span class="cm-number">40.73061</span>, <span class="cm-property">tileSize</span>: <span class="cm-number">16</span> });
+</code></pre>
+
                                 
                                 </section>
                             
@@ -1164,7 +1161,7 @@ setupMap({ lng: -73.935242, lat: 40.73061, tileSize: 16 });
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"리터럴 타입(en)","layout":"docs","permalink":"/docs/handbook/literal-types.html","oneline":"Using literal types with TypeScript","level":"3.5","depth":1,"next":{"title":"유니언과 교차 타입(en)","level":"3.6","depth":1,"path":"pages/unions-and-intersections.md","ref":"pages/unions-and-intersections.md","articles":[]},"previous":{"title":"함수","level":"3.4","depth":1,"path":"pages/functions.md","ref":"pages/functions.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/literal-types.md","mtime":"2020-07-21T11:06:58.448Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-21T11:07:47.397Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"리터럴 타입(en)","layout":"docs","permalink":"/docs/handbook/literal-types.html","oneline":"Using literal types with TypeScript","level":"3.5","depth":1,"next":{"title":"유니언과 교차 타입(en)","level":"3.6","depth":1,"path":"pages/unions-and-intersections.md","ref":"pages/unions-and-intersections.md","articles":[]},"previous":{"title":"함수","level":"3.4","depth":1,"path":"pages/functions.md","ref":"pages/functions.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/literal-types.md","mtime":"2020-08-18T11:08:15.584Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-18T11:09:12.937Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
