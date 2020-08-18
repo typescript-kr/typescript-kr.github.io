@@ -5,22 +5,22 @@ permalink: /docs/handbook/typescript-in-5-minutes-oop.html
 oneline: Learn TypeScript if you have a background in object-oriented languages
 ---
 
-TypeScript is a popular choice for programmers accustomed to other languages with static typing, such as C# and Java.
+TypeScript는 C#, Java와 같이 정적 타이핑을 사용하는 언어에 익숙한 프로그래머들에게 인기 있는 선택입니다.
 
-TypeScript's type system offers many of the same benefits, such as better code completion, earlier detection of errors, and clearer communication between parts of your program.
-While TypeScript provides many familiar features for these developers, it's worth stepping back to see how JavaScript (and therefore TypeScript) differ from traditional OOP languages.
-Understanding these differences will help you write better JavaScript code, and avoid common pitfalls that programmers who go straight from C#/Java to TypeScript may fall in to.
+TypeScript의 타입 시스템은 더 나은 코드 완성, 오류의 조기 발견, 프로그램 부분 간의 더 명확한 통신과 같이 정적 타이핑이 가지는 많은 이점을 제공합니다.
+TypeScript는 이러한 개발자에게 친숙한 기능을 많이 제공하지만, JavaScript(또한 TypeScript도 마찬가지로)가 기존의 객체 지향 프로그래밍(OOP) 언어와 어떤 차이가 있는지 다시 살펴볼 필요가 있습니다.
+이러한 차이점을 이해하는 것은 더 나은 JavaScript 코드를 작성하는데 도움을 줄 것이고, C#/Java에서 TypeScript로 바로 입문한 프로그래머가 겪는 흔한 함정을 피할 수 있을 것입니다.
 
-## Co-learning JavaScript
+## JavaScript 함께 배우기 (Co-learning JavaScript)
 
-If you're familiar with JavaScript already but are primarily a Java or C# programmer, this introductory page can help explain some of the common misconceptions and pitfalls you might be susceptible to.
-Some of the ways that TypeScript models types are quite different from Java or C#, and it's important to keep these in mind when learning TypeScript.
+만약 JavaScript에 이미 익숙하지만 주로 Java또는 C#을 사용하는 프로그래머라면, 이 소개 페이지는 흔히 접할 수 있는 오해와 함정에 대한 설명에 도움을 줄 수 있습니다.
+TypeScript 모델이 유형화하는 방법 중 일부는 Java나 C#과 상당히 다르며, TypeScript를 학습하는 데에 있어 이 부분을 염두에 두는 것이 중요합니다.
 
-If you're a Java or C# programmer that is new to JavaScript in general, we recommend learning a little bit of JavaScript _without_ types first to understand JavaScript's runtime behaviors.
-Because TypeScript doesn't change how your code _runs_, you'll still have to learn how JavaScript works in order to write code that actually does something!
+만약 JavaScript를 처음 접하는 Java나 C# 프로그래머라면, JavaScript의 런타임 동작을 이해하기 위해 우선적으로 타입을 _제외한_ JavaScript의 일부분을 배우는 것이 좋습니다.
+TypeScript는 코드를 _실행하는_ 방식을 바꾸지 않기 때문에, 실제로 무언가 동작하는 코드를 작성하기 위해서는 여전히 JavaScript가 어떻게 작동하는지 배워야 합니다!
 
-It's important to remember that TypeScript uses the same _runtime_ as JavaScript, so any resources about how to accomplish specific runtime behavior (converting a string to a number, displaying an alert, writing a file to disk, etc.) will always apply equally well to TypeScript programs.
-Don't limit yourself to TypeScript-specific resources!
+TypeScript가 JavaScript와 동일한 _런타임_을 사용하므로, 특정한 런타임 동작(문자열을 숫자로 변환하기, 경고 표시, 디스크에 파일 쓰기 등)을 구현하려는 리소스는 항상 TypeScript 프로그램에 똑같이 잘 적용된다는 점을 기억하는 것은 매우 중요합니다.
+TypeScript에 특정된 리소스에만 제한을 두지 마십시오!
 
 ## Rethinking the Class
 
