@@ -1,7 +1,7 @@
 # TypeScript-Handbook 한글 문서
 
 [![Build Status](https://api.travis-ci.com/typescript-kr/typescript-kr.github.io.svg?branch=master)](https://travis-ci.com/github/typescript-kr/typescript-kr.github.io) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-30-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-31-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![Release Date](https://img.shields.io/github/release-date/typescript-kr/typescript-kr.github.io)](https://github.com/typescript-kr/typescript-kr.github.io/releases)<!-- RELEASE-DATE-BADGE:END -->
 [![Stars](https://img.shields.io/github/stars/typescript-kr/typescript-kr.github.io)](https://github.com/typescript-kr/typescript-kr.github.io/stargazers)<!-- STARS-BADGE:END -->
@@ -65,6 +65,7 @@
     <td align="center"><a href="https://github.com/realgoways"><img src="https://avatars3.githubusercontent.com/u/15275415?v=4" width="80px;" alt=""/><br /><sub><b>realgo</b></sub></a><br /><a href="#translation-realgoways" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/seohyun0120"><img src="https://avatars3.githubusercontent.com/u/35247295?v=4" width="80px;" alt=""/><br /><sub><b>SeohyunYoon</b></sub></a><br /><a href="#translation-seohyun0120" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/SeokHyeonChin"><img src="https://avatars1.githubusercontent.com/u/29259037?v=4" width="80px;" alt=""/><br /><sub><b>진석현</b></sub></a><br /><a href="#translation-SeokHyeonChin" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/ssMinji"><img src="https://avatars1.githubusercontent.com/u/44194800?v=4" width="80px;" alt=""/><br /><sub><b>ssMinji</b></sub></a><br /><a href="#translation-ssMinji" title="Translation">🌍</a></td>
   </tr>
 </table>
 
