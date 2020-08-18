@@ -53,7 +53,7 @@ JavaScript가 처음 나왔을 때, 수십 줄 이상의 코드를 작성하는 
 ## TypeScript: 정적 타입 검사자 (TypeScript: A Static Type Checker)
 
 앞서 몇 언어는 버그가 많은 프로그램을 아예 실행시키지 않는다고 했습니다.
-프로그램을 실행시키지 않으면서 코드의 오류를 검출하는 것을 _정적 검사(checking)_이라고 합니다.
+프로그램을 실행시키지 않으면서 코드의 오류를 검출하는 것을 _정적 검사_라고 합니다.
 어떤 것이 오류인지와 어떤 것이 연산 되는 값에 기인하지 않음을 정하는 것이 정적 _타입_ 검사입니다.
 
 _정적 타입 검사자_인 TypeScript는 프로그램을 실행시키기 전에 _값의 종류_를 기반으로 프로그램의 오류를 찾습니다.
@@ -66,13 +66,13 @@ const obj = { width: 10, height: 15 };
 const area = obj.width * obj.heigth;
 ```
 
-### 타입이 있는 JavaScript의 상위집합 (A Typed Superset of JavaScript)
+### 타입이 있는 JavaScript의 상위 집합 (A Typed Superset of JavaScript)
 
 그렇다면 TypeScript는 JavaScript와 어떤 관계일까요?
 
 #### 구문 (Syntax)
 
-TypeScript는 JS의 구문이 허용되는, JavaScript의 _상위집합_ 언어입니다.
+TypeScript는 JS의 구문이 허용되는, JavaScript의 _상위 집합_ 언어입니다.
 구문은 프로그램을 만들기 위해 코드를 작성하는 방법을 의미합니다.
 예를 들어, 다음 코드는 `)`이 없으므로 _구문_ 오류입니다:
 
@@ -86,7 +86,7 @@ TypeScript는 독특한 구문 때문에 JavaScript 코드를 오류로 보지 �
 
 #### 타입 (Types)
 
-그러나 TypeScript는 다른 종류의 값들을 사용할 수 있는 방법이 추가된, _타입이 있는_ 상위집합입니다.
+그러나 TypeScript는 다른 종류의 값들을 사용할 수 있는 방법이 추가된, _타입이 있는_ 상위 집합입니다.
 위의 `obj.heigth` 오류는 _구문_ 오류가 아닌, 값의 종류(_타입_)를 잘못 사용해서 생긴 오류입니다.
 
 또 다른 예시로, 아래와 같은 JavaScript 코드가 브라우저에서 실행될 때, 다음과 같은 값이 출력될 _것입니다_:
@@ -108,12 +108,12 @@ TypeScript의 타입 검사자는 최대한 많은 일반적인 오류를 검출
 (나중에 TypeScript가 코드를 얼마나 엄격하게 검사할 수 있는지에 대한 설정에 대해 알아봅시다.)
 
 만약 JavaScript 파일의 코드를 TypeScript 코드로 옮기면, 코드를 어떻게 작성했는지에 따라 _타입 오류_를 볼 수 있습니다.
-이는 코드상의 문제이거나, TypeScript가 지나치게 보수적인 것일 수 있습니다.
+이는 코드 상의 문제이거나, TypeScript가 지나치게 보수적인 것일 수 있습니다.
 위와 같은 오류를 제거하기 위해 가이드는 다양한 TypeScript 구문을 추가하는 방법을 보여줍니다.
 
 #### 런타임 특성 (Runtime Behavior)
 
-TypeScript는 JavaScript의 _런타임 특성(runtime behavior)_을 가진 프로그래밍 언어입니다.
+TypeScript는 JavaScript의 _런타임 특성_을 가진 프로그래밍 언어입니다.
 예를 들어, JavaScript에서 0으로 나누는 행동은 런타임 예외로 처리하지 않고 `Infinity`값을 반환합니다.
 논리적으로, TypeScript는 JavaScript 코드의 런타임 특성을 **절대** 변화시키지 않습니다.
 
