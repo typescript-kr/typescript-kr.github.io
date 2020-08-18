@@ -104,7 +104,7 @@ console.log(4 / []);
 ```
 
 실제로 어떤 일이 일어나는지 보려는 의도로 숫자를 배열로 나눌 수 _있지만_, 대부분은 프로그래밍 실수입니다.
-TypeScript의 타입 검사자는 최대한 많은 일반적인 오류를 검출하면서 올바른 프로그램을 만들 수 있게 설계되었습니다.
+TypeScript의 타입 검사자는 일반적인 오류를 최대한 많이 검출하면서 올바른 프로그램을 만들 수 있게 설계되었습니다.
 (나중에 TypeScript가 코드를 얼마나 엄격하게 검사할 수 있는지에 대한 설정에 대해 알아봅시다.)
 
 만약 JavaScript 파일의 코드를 TypeScript 코드로 옮기면, 코드를 어떻게 작성했는지에 따라 _타입 오류_를 볼 수 있습니다.
@@ -119,7 +119,7 @@ TypeScript는 JavaScript의 _런타임 특성_을 가진 프로그래밍 언어�
 
 즉 TypeScript가 코드에 타입 오류가 있음을 검출해도, JavaScript 코드를 TypeScript로 이동시키는 것은 같은 방식으로 실행시킬 것을 **보장합니다**
 
-JavaScript와 똑같은 런타임 행동을 유지하는 것은 프로그램 작동을 중단시킬 수 있는 미묘한 차이를 걱정하지 않아도 되기 때문에 TypeScript의 기본적인 약속입니다.
+JavaScript와 동일한 런타임 동작을 유지하는 것은 프로그램 작동을 중단시킬 수 있는 미묘한 차이를 걱정하지 않고 두 언어 간에 쉽게 전환할 수 있도록 하기 위한 TypeScript의 기본적인 약속입니다.
 
 <!--
 Missing subsection on the fact that TS extends JS to add syntax for type
@@ -145,7 +145,7 @@ with an example --- something like `?.` would be good in showing readers
 that this document is maintained.)
 -->
 
-## JavaScript와 TypeScript의 학습 (Learning JavaScript and TypeScript)
+## JavaScript와 TypeScript 학습 (Learning JavaScript and TypeScript)
 
 종종 "JavaScript 또는 TypeScript를 배워야 할까요?"와 같은 질문을 볼 수 있습니다.
 
@@ -153,7 +153,7 @@ that this document is maintained.)
 TypeScript는 JavaScript와 구문과 런타임 특성을 공유하므로, JavaScript에서 배운 모든 것들은 동시에 TypeScript를 배울 때 도움이 될 것입니다.
 
 프로그래머들을 위한 JavaScript 학습 자원이 많습니다; TypeScript를 작성할 때 그런 학습 자원을 무시해선 _안됩니다_.
-예를 들어 `javascript`태그가 붙은 질문들이 `typescript`태그가 붙은 질문보다 약 20배는 많지만, _모든_ `javascript`질문들은 TypeScript에도 적용할 수 있습니다.
+예를 들어 `javascript`태그가 붙은 질문이 `typescript`태그가 붙은 질문보다 약 20배는 많지만, _모든_ `javascript`질문은 TypeScript에도 적용할 수 있습니다.
 
 만약 "TypeScript에서 리스트를 정렬하는 법"과 같은 것을 찾는 경우, 기억하세요: **TypeScript는 컴파일-타임 타입 검사자가 있는 JavaScript의 런타임입니다**.
 리스트를 TypeScript에서 정렬하는 방법은 JavaScript에서 똑같은 방법으로 할 수 있습니다.
