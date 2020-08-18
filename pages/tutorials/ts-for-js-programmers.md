@@ -5,35 +5,35 @@ permalink: /docs/handbook/typescript-in-5-minutes.html
 oneline: Learn how TypeScript extends JavaScript
 ---
 
-The relationship between TypeScript and JavaScript is rather unique among modern programming languages.
-TypeScript sits as a layer on-top of JavaScript, offering the features of JavaScript and then adds its own layer on top of that. This layer is the TypeScript type system.
+현대 프로그래밍 언어에서 TypeScript와 JavaScript의 관계는 다소 독특합니다.
+TypeScript은 JavaScript 위에 레이어로서 자리잡고 있는데, JavaScript의 기능들을 제공하면서 그 위에 자체 레이어를 추가합니다. 이 레이어가 TypeScript 타입 시스템입니다.
 
-JavaScript already has a set of language primitives like `string`, `number`, `object`, `undefined` etc, however there are no ahead-of-time checks that these are consistently assigned across your whole codebase. TypeScript acts as that layer.
+JavaScript는 이미 `string`, `number`, `object`, `undefined` 같은 원시 타입을 가지고 있지만, 전체 코드베이스에 일관되게 할당되었는지는 미리 확인해 주지 않습니다. TypeScript는 이 레이어로서 동작합니다.
 
-This means that your existing working JavaScript code is also TypeScript code, however TypeScript's type-checker might highlight discrepancies between what you thought was happening and what the JavaScript language does.
+이는 이미 존재하고 잘 동작하는 JavaScript 코드는 동시에 TypeScript 코드라는 의미지만, TypeScript의 타입 검사기는 사용자가 생각한 일과 JavaScript가 실제로 하는 일 사이의 불일치를 강조할 수 있습니다.
 
-This tutorial tries to give you a 5 minute overview of the type-system, with a focus on understanding the type-system language extensions which TypeScript adds.
+이 튜토리얼은 TypeScript가 추가하는 타입 시스템 언어 확장을 이해하는데 중점을 두고 타입 시스템에 대한 5분 개요를 제공합니다.
 
-## Types by Inference
+## 타입 추론 (Types by Inference)
 
-TypeScript knows the JavaScript language and will generate types for you in many cases.
-For example in creating a variable and assigning it to a particular value, TypeScript will use the value as its type.
+TypeScript는 JavaScript 언어를 알고 있으며 대부분의 경우 타입을 생성해줄 것입니다.
+예를 들어 변수를 생성하면서 동시에 특정 값에 할당하는 경우, TypeScript는 그 값을 해당 변수의 타입으로 사용할 것입니다.
 
 ```ts twoslash
 let helloWorld = "Hello World";
 //  ^?
 ```
 
-By understanding how JavaScript works, TypeScript can build a type-system which accepts JavaScript code but has types. This offers a type-system without needing to add extra characters to make types explicit in your code. Which is how TypeScript knows that `helloWorld` is a `string` in the above example.
+JavaScript가 동작하는 방식을 이해함으로써 TypeScript는 JavaScript 코드를 받아들이면서 타입을 가지는 타입 시스템을 구축할 수 있습니다. 이는 코드에서 타입을 명시하기 위해 추가로 문자를 사용할 필요가 없는 타입 시스템을 제공합니다. 이것이 위의 예제에서 TypeScript가 `helloWorld`가 `string`임을 알게 되는 방식입니다.
 
-It's quite possible that you have used VS Code with JavaScript, and had editor auto-completion as you worked.
-That is because the understanding of JavaScript baked into TypeScript has been used under-the-hood to improve working with JavaScript.
+JavaScript와 함께 VS Code를 사용하고 작업을 할 때 편집기의 자동 완성 기능을 사용해왔을 것입니다.
+이는 TypeScript에 필수불가결한 JavaScript에 대한 이해가 JavaScript 작업을 개선하기 위해 내부적으로 사용되었기 때문입니다.
 
-## Defining Types
+## 타입 정의하기 (Defining Types)
 
-JavaScript is a dynamic language which allows for a lot of design patterns. Some design patterns can be hard to provide types for automatically (because they might use dynamic programming) in those cases TypeScript supports an extension of the JavaScript language which offers places for you to tell TypeScript what the types should be.
+JavaScript는 다양한 디자인 패턴을 가능하게 하는 동적 언어입니다. 몇몇 디자인 패턴은 자동으로 타입을 제공하기 힘들 수 있는데 (동적 프로그래밍을 사용하고 있을 것이기 때문에) 이러한 경우에 TypeScript는 TypeScript에게 타입이 무엇이 되어야 하는지 명시 가능한 JavaScript 언어의 확장을 지원합니다.
 
-Here is an example of creating an object which has an inferred type which includes `name: string` and `id: number`:
+다음은 `name: string`과 `id: number`을 포함하는 추론 타입을 가진 객체를 생성하는 예제입니다.
 
 ```ts twoslash
 const user = {
@@ -42,7 +42,7 @@ const user = {
 };
 ```
 
-An explicit way to describe this object's shape is via an `interface` declaration:
+이 객체의 형태를 명시적으로 나타내기 위해서는 `interface` 로 선언합니다.
 
 ```ts twoslash
 interface User {
@@ -51,7 +51,7 @@ interface User {
 }
 ```
 
-You can then declare that a JavaScript object conforms to that shape of your new `interface` by using syntax like `: TypeName` after a variable declaration:
+이제 변수 선언 뒤에  `: TypeName`의 구문을 사용해 JavaScript 객체가 새로운 `interface`의 형태를 따르고 있음을 선언할 수 있습니다.
 
 ```ts twoslash
 interface User {
@@ -65,7 +65,7 @@ const user: User = {
 };
 ```
 
-TypeScript will warn you if you provide an object which doesn't match the interface you have provided:
+해당 인터페이스에 맞지 않는 객체를 생성하면 TypeScript는 경고를 줍니다.
 
 ```ts twoslash
 // @errors: 2322
@@ -80,7 +80,7 @@ const user: User = {
 };
 ```
 
-Because JavaScript supports classes and object-oriented programming, so does TypeScript - an interface declaration can also be used with classes:
+JavaScript는 클래스와 객체 지향 프로그래밍을 지원하기 때문에, TypeScript 또한 동일합니다. - 인터페이스는 클래스로도 선언할 수 있습니다.
 
 ```ts twoslash
 interface User {
@@ -101,7 +101,7 @@ class UserAccount {
 const user: User = new UserAccount("Murphy", 1);
 ```
 
-Interfaces can be used to annotate parameters and return values to functions:
+인터페이스는 함수에서 매개변수와 리턴 값을 명시하는데 사용되기도 합니다.
 
 ```ts twoslash
 // @noErrors
@@ -119,9 +119,9 @@ function deleteUser(user: User) {
 }
 ```
 
-There are already a small set of primitive types available in JavaScript: `boolean`, `bigint`, `null`, `number`, `string`, `symbol`, `object` and `undefined`, which you can use in an interface. TypeScript extends this list with a few more. for example: `any` (allow anything), [`unknown`](/en/play#example/unknown-and-never) (ensure someone using this type declares what the type is), [`never`](/en/play#example/unknown-and-never) (it's not possible that this type could happen) `void` (a function which returns `undefined` or has no return value).
+JavaScript에서 사용할 수 있는 적은 종류의 원시 타입이 이미 있습니다.: `boolean`, `bigint`, `null`, `number`, `string`, `symbol`, `object`와 `undefined`는 인터페이스에서 사용할 수 있습니다. TypeScript는 몇 가지를 추기해 목록을 확장합니다. 예를 들어, `any` (무엇이든 허용합니다), [`unknown`](/en/play#example/unknown-and-never) (이 타입을 사용하는 사람이 타입이 무엇인지 선언했는가를 확인하십시오), [`never`](/en/play#example/unknown-and-never) (이 타입은 발생될 수 없습니다) `void` (`undefined`를 리턴하거나 리턴 값이 없는 함수).
 
-You'll see quite quickly that there are two syntaxes for building types: [Interfaces and Types](/play/?e=83#example/types-vs-interfaces) - you should prefer `interface`, and use `type` when you need specific features.
+타입을 구축하기 위한 두 가지 구문이 있다는 것을 꽤 빠르게 알 수 있을 것입니다.: [Interfaces and Types](/play/?e=83#example/types-vs-interfaces) - `interface`를 우선적으로 사용하고 특정 기능이 필요할 때 `type`을 사용해야 합니다.
 
 ## Composing Types
 
