@@ -5,7 +5,7 @@ permalink: /docs/handbook/intro.html
 oneline: Your first step to learn TypeScript
 ---
 
-## 핸드북이란 (About this Handbook)
+## 핸드북에 대해서 (About this Handbook)
 
 JavaScript는 프로그래밍 커뮤니티에 도입된 지 20년이 지난 지금, 가장 널리 퍼진 cross-platform 언어 중 하나입니다. JavaScript는 웹 페이지에 사소한 상호작용을 추가하기 위한 작은 스크립팅 언어로 시작하여, 모든 크기의 프런트엔드와 백엔드 애플리케이션에서 선택 가능한 언어로 성장했습니다. JavaScript로 작성된 프로그램의 크기, 스코프 및 복잡성은 기하급수적으로 커졌지만, 다른 코드 단위 간의 관계를 표현하는 JavaScript 언어의 능력은 그렇지 못했습니다. JavaScript의 다소 특이한 런타임 의미 체계(runtime semantics)와 결합하여, 언어와 프로그램 복잡성 간의 이러한 불일치는 JavaScript 개발을 규모에 맞게 관리하기 어려운 작업으로 만들었습니다.
 
