@@ -5,7 +5,7 @@ permalink: /docs/handbook/jsdoc-supported-types.html
 oneline: What JSDoc does TypeScript-powered JavaScript support?
 ---
 
-아래의 목록은 자바스크립트 파일 안의 타입 정보를 제공하기 위한 JSDoc 어노테이션을 사용할 때
+아래 목록은 자바스크립트 파일에 타입 정보 제공을 위해 JSDoc 어노테이션을 사용할 때
 현재 지원되는 구성의 개요를 다룹니다.
 
 아래 명시적으로 존재하지 않은 태그(예 `@async`)는 아직 지원되지 않습니다.
