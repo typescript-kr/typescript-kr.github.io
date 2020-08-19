@@ -49,7 +49,7 @@ var myElement = document.querySelector(selector);
 element.dataset.myData = "";
 ```
 
-`@type` 을 이용하여 union 타입을 지정할 수 있습니다. 예를 들어 string 혹은 boolean이 선택 가능한 공동체가 있습니다.
+`@type` 을 이용하여 union 타입을 지정할 수 있습니다. 예를 들어 어떤 것은 string 또는 boolean 일 수 있습니다.
 
 ```js
 /**
