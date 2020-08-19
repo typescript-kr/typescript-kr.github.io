@@ -306,7 +306,7 @@ function special(options) {
 const ok = (s) => !(s.length % 2);
 ```
 
-물론, 이런 유형들은 TypeScript 구문 안에서 `@typedef` 단 한 줄로 선언할 수 있습니다:
+물론, 이런 타입들은 TypeScript 구문에서 `@typedef` 단 한 줄로 선언할 수 있습니다:
 
 ```js
 /** @typedef {{ prop1: string, prop2: string, prop3?: number }} SpecialType */
