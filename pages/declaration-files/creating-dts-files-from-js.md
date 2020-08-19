@@ -16,7 +16,7 @@ TypeScript는 대부분의 JSDoc 태그를 지원하며, [참조](https://www.ty
 .d.ts 파일을 프로젝트에서 생성하려면, 다음과 같은 4단계를 거쳐야합니다:
 
 * 개발 의존성에 TypeScript 추가
-* TypeScript를 확인하기 위한 `tsconfig.json` 추가
+* TypeScript 설정을 위해 `tsconfig.json` 추가
 * JS 파일에 해당하는 d.ts 파일을 생성하기 위해 TypeScript 컴파일 실행
 * (선택적으로) 타입을 참조하기 위한 package.json 수정
 
