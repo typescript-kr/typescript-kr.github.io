@@ -315,7 +315,7 @@ const ok = (s) => !(s.length % 2);
 
 ## `@template`
 
-`@template` 태그를 사용하여 제네릭 함수들을 선언할 수 있습니다:
+`@template` 태그를 사용하여 제네릭 함수를 선언할 수 있습니다:
 
 ```js
 /**
