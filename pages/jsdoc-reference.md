@@ -6,7 +6,7 @@ oneline: What JSDoc does TypeScript-powered JavaScript support?
 ---
 
 아래의 목록은 자바스크립트 파일 안의 타입 정보를 제공하기 위한 JSDoc 어노테이션을 사용할 때
-현재 지원되는 구성의 개요를 다룹니다
+현재 지원되는 구성의 개요를 다룹니다.
 
 아래 명시적으로 존재하지 않은 태그(예 `@async`)는 아직 지원되지 않습니다.
 
@@ -90,7 +90,6 @@ var var9;
 
 ```js
 /**
- * A map-like object that maps arbitrary `string` properties to `number`s.
  * 맵 같은 object는 임의의 `string` 프로퍼티들을 `number`로 바꿔줍니다.
  *
  * @type {Object.<string, number>}
@@ -215,7 +214,7 @@ var x = require("./accounts").userAccount;
 매개변수는 이름 주변에 대괄호와 함께 선택적으로 선언됩니다:
 
 ```js
-// 매개변수들은 다양한 구문형식으로 선언될 수 있습니다.
+// 매개변수들은 다양한 구문형식으로 선언될 수 있습니다
 /**
  * @param {string}  p1 - string 매개변수.
  * @param {string=} p2 - 선택적 매개변수 (클로저 구문)
@@ -347,7 +346,7 @@ const c = id({});
 
 ```js
 /**
- * @template {string} K - K 는 string 혹은 string 리터럴이어야합니다.
+ * @template {string} K - K 는 string 혹은 string 리터럴이어야합니다
  * @template {{ serious(): string }} Seriousalizable - serious 메서드가 있어야합니다
  * @param {K} key
  * @param {Seriousalizable} object
@@ -380,7 +379,7 @@ class C {
     /** @type {number} */
     this.size;
 
-    this.initialize(data); // 오류가 난다면, 이니셜 라이저는 string을 예상합니다.
+    this.initialize(data); // 오류가 난다면, 이니셜 라이저는 string을 예상합니다
   }
   /**
    * @param {string} s
