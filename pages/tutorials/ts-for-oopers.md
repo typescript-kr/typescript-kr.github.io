@@ -19,62 +19,62 @@ TypeScript 모델이 유형화하는 방법 중 일부는 Java나 C#과 상당�
 만약 JavaScript를 처음 접하는 Java나 C# 프로그래머라면, JavaScript의 런타임 동작을 이해하기 위해 우선적으로 타입을 _제외한_ JavaScript의 일부분을 배우는 것이 좋습니다.
 TypeScript는 코드를 _실행하는_ 방식을 바꾸지 않기 때문에, 실제로 무언가 동작하는 코드를 작성하기 위해서는 여전히 JavaScript가 어떻게 작동하는지 배워야 합니다!
 
-TypeScript가 JavaScript와 동일한 _런타임_을 사용하므로, 특정한 런타임 동작(문자열을 숫자로 변환하기, 경고 표시, 디스크에 파일 쓰기 등)을 구현하려는 리소스는 항상 TypeScript 프로그램에 똑같이 잘 적용된다는 점을 기억하는 것은 매우 중요합니다.
+TypeScript가 JavaScript와 동일한 *런타임*을 사용하므로, 특정한 런타임 동작(문자열을 숫자로 변환하기, 경고 표시, 디스크에 파일 쓰기 등)을 구현하려는 리소스는 항상 TypeScript 프로그램에 똑같이 잘 적용된다는 점을 기억하는 것은 매우 중요합니다.
 TypeScript에 특정된 리소스에만 제한을 두지 마십시오!
 
-## Rethinking the Class
+## 클래스 다시 생각하기 (Rethinking the Class)
 
-C# and Java are what we might call _mandatory OOP_ languages.
-In these languages, the _class_ is the basic unit of code organization, and also the basic container of all data _and_ behavior at runtime.
-Forcing all functionality and data to be held in classes can be a good domain model for some problems, but not every domain _needs_ to be represented this way.
+C#과 Java는 _의무적 OOP_ 언어라고 부릅니다.
+이러한 언어에서 클래스는 코드 구성의 기본 단위일 뿐만 아니라 런타임의 모든 데이터 _그리고_ 동작의 기본적인 컨테이너입니다.
+기능과 데이터를 전부 클래스에 무리하게 담는 것은 일부 문제에 대해선 좋은 도메인 모델이 될 수 있지만, 도메인이 모두 이러한 방식으로 표현될 *필요*는 없습니다.
 
-### Free Functions and Data
+### 자유로운 함수와 데이터 (Free Functions and Data)
 
-In JavaScript, functions can live anywhere, and data can be passed around freely without being inside a pre-defined `class` or `struct`.
-This flexibility is extremely powerful.
-"Free" functions (those not associated with a class) working over data without an implied OOP hierarchy tends to be the preferred model for writing programs in JavaScript.
+JavaScript에서 함수는 어디에나 있을 수 있고, 데이터를 미리 정의된 ‘클래스’나 ‘구조체’에 속하지 않고 자유롭게 전달할 수 있습니다.
+이러한 유연성은 대단히 효과적입니다.
+묵시적인 OOP 계층 없이 데이터를 처리하는 “자유로운” (클래스와 연관되지 않은) 함수는 JavaScript로 프로그램을 작성하기 위한 모델로 선호됩니다.
 
-### Static Classes
+### 정적 클래스 (Static Classes)
 
-Additionally, certain constructs from C# and Java such as singletons and static classes are unnecessary in TypeScript.
+추가적으로, C#과 Java가 가지는 싱글턴(singleton)과 정적 클래스와 같은 특정 생성자는 TypeScript에서 불필요합니다.
 
-## OOP in TypeScript
+## TypeScript의 객체지향프로그래밍 (OOP in TypeScript)
 
-That said, you can still use classes if you like!
-Some problems are well-suited to being solved by a traditional OOP hierarchy, and TypeScript's support for JavaScript classes will make these models even more powerful.
-TypeScript supports many common patterns such as implementing interfaces, inheritance, and static methods.
+하지만, 원한다면 계속 클래스를 사용해도 됩니다!
+일부 문제는 기존의 OOP 계층으로 해결하기 적합하며, TypeScript가 JavaScript의 클래스를 지원하므로 이러한 모델을 더 효과적으로 만듭니다.
+TypeScript는 인터페이스, 상속, 정적 메서드 구현과 같은 일반적인 양식을 지원합니다.
 
-We'll cover classes later in this guide.
+우리는 이 가이드의 뒷부분에서 클래스에 대해 다룰 것입니다.
 
-## Rethinking Types
+## 타입 다시 생각하기 (Rethinking Types)
 
-TypeScript's understanding of a _type_ is actually quite different from C# or Java's.
-Let's explore some differences.
+TypeScript의 *타입*에 대한 이해는 사실 C#이나 Java와 상당히 다릅니다.
+몇 가지 차이점을 살펴봅시다.
 
 ### Nominal Reified Type Systems
 
-In C# or Java, any given value or object has one exact type - either `null`, a primitive, or a known class type.
-We can call methods like `value.GetType()` or `value.getClass()` to query the exact type at runtime.
-The definition of this type will reside in a class somewhere with some name, and we can't use two classes with similar shapes in lieu of each other unless there's an explicit inheritance relationship or commonly-implemented interface.
+C# 또는 Java에서 주어진 값이나 객체는 기본형인 ‘null’, 또는 정의된 클래스 타입 중 정확히 하나의 타입을 가집니다.
+런타임 시점에서 정확한 타입을 묻기 위해 `value.GetType()` 또는 `value.getClass()`와 같은 메서드를 호출할 수 있습니다.
+이러한 타입의 정의는 특정한 이름을 갖고 클래스의 어딘가 존재하며, 명시적인 상속관계나 공통적으로 구현된 인터페이스가 없는 이상 두 클래스가 유사한 형태를 가졌다 해도 서로 대체하여 사용할 수 없습니다.
 
-These aspects describe a _reified, nominal_ type system.
-The types we wrote in the code are present at runtime, and the types are related via their declarations, not their structures.
+이러한 양상은 *reified, nominal* 타입 시스템을 설명합니다.
+코드에서 사용한 타입은 런타임 시점에 존재하며, 타입은 구조가 아닌 선언을 통해 연관 지어집니다.
 
-### Types as Sets
+### 집합으로서의 타입 (Types as Sets)
 
-In C# or Java, it's meaningful to think of a one-to-one correspondence between runtime types and their compile-time declarations.
+C# 또는 Java에서 런타임 타입과 그것의 컴파일 타임 선언 사이의 일대일 대응관계를 생각하는 것은 중요합니다.
 
-In TypeScript, it's better to think of a type as a _set of values_ that share something in common.
-Because types are just sets, a particular value can belong to _many_ sets at the same time.
+TypeScript에서 타입은 공통의 무언가를 공유하는 *값의 집합*으로 생각하는 것이 좋습니다.
+타입은 집합에 불과하기 때문에, 특정한 값은 동시에 _수많은_ 집합에 속할 수 있습니다.
 
-Once you start thinking of types as sets, certain operations become very natural.
-For example, in C#, it's awkward to pass around a value that is _either_ a `string` or `int`, because there isn't a single type that represents this sort of value.
+일단 타입을 집합으로 생각하기 시작하면, 특정 연산이 매우 자연스러워집니다.
+예를 들어, C#에서는 ‘문자열’과 ‘정수’ *둘 다 가능한* 값의 경우를 나타내는 타입이 전혀 없기 때문에 이 값을 인자로 전달하는 것은 이상합니다.
 
-In TypeScript, this becomes very natural once you realize that every type is just a set.
-How do you describe a value that either belongs in the `string` set or the `number` set?
-It simply belongs to the _union_ of those sets: `string | number`.
+TypeScript에서 모든 타입이 단순히 집합이라는 것을 깨닫는 순간 이는 매우 자연스러워집니다.
+‘문자열’ 집합 또는 ‘숫자’ 집합에 속할 수 있는 값을 어떻게 설명하시겠습니까?
+이것은 단순히 그 집합들의 *union*: ‘string | number’에 속합니다.
 
-TypeScript provides a number of mechanisms to work with types in a set-theoretic way, and you'll find them more intuitive if you think of types as sets.
+TypeScript는 집합론에 의거한 타입을 이용하는 여러 방법들을 제공하며. 타입을 집합으로 생각하기 시작하면 더 직관적입니다.
 
 ### Erased Structural Types
 
