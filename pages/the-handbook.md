@@ -12,7 +12,7 @@ JavaScript는 프로그래밍 커뮤니티에 도입된 지 20년이 지난 지�
 프로그래머들이 쓰는 가장 일반적인 종류의 오류는 타입 오류로 설명할 수 있습니다: 다른 종류의 값이 예상되는 곳에 특정한 값이 사용된 경우입니다. 이는 단순한 오타, 라이브러리의 API를 이해하지 못한 것, 런타임 동작에 대한 부정확한 가정 또는 기타 오류 때문일 수 있습니다. TypeScript의 목표는 JavaScript 프로그램의 정적 타입 검사자(typechecker) 가 되는 것입니다. 즉, 코드가 실행되기 전에 실행하고(정적), 프로그램 타입이 정확한지 확인하는 도구(타입 검사)가 되는 것입니다.
 
 JavaScript에 대한 배경지식 없이 TypeScript를 첫 번째 언어로 사용하려는 경우, 먼저 [Mozilla 웹 문서에서 JavaScript에 대한](https://developer.mozilla.org/docs/Web/JavaScript/Guide) 문서를 읽어 보는 것이 좋습니다.
-다른 언어에 대한 경험이 있다면, handbook을 읽으면 JavaScript 구문을 꽤 빠르게 익힐 수 있을 것입니다.
+다른 언어에 대한 경험이 있다면, 핸드북을 읽으면서 JavaScript 구문을 꽤 빠르게 익힐 수 있을 것입니다.
 
 ## How is this Handbook Structured
 
