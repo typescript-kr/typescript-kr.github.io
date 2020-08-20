@@ -100,7 +100,7 @@ var stringToNumber;
 var arrayLike;
 ```
 
-앞의 두 구문은 TypeScript의 타입인 `{ [x: string]: number }` 와 `{ [x: number]: any }`를 동일하게 이해합니다. 컴파일러는 이 구문들을 둘 다 이해합니다.
+앞의 두 타입은 TypeScript의 타입인 `{ [x: string]: number }` 와 `{ [x: number]: any }`를 동일합니다. 컴파일러는 이 두 구문을 모두 이해합니다.
 
 TypeScript나 클로저 구문을 사용하여 함수 타입을 지정할 수 있습니다:
 
