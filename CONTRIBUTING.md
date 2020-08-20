@@ -88,7 +88,7 @@ interface NumberDictionary {
 
 | 영어 | 번역 |  기타 |
 | --- | --- | --- |
-| type | 타입 | TypeScript 언어에서 지칭하는 타입의 경우 "타입"으로 번역, 그 외에는 유형', '모양', '생김새'등 번역해서 사용 |
+| type | 타입 | TypeScript 언어에서 지칭하는 타입의 경우 "타입"으로 번역, 그 외에는 '유형', '모양', '생김새'등 번역해서 사용 |
 | property | 프로퍼티 | - |
 | parameter | 매개변수 | 인자라고 부르기도 함 |
 | assertion | 단언 | - |
