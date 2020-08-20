@@ -36,7 +36,7 @@ JavaScript에서 함수는 어디에나 있을 수 있고, 데이터를 미리 �
 
 ### 정적 클래스 (Static Classes)
 
-추가적으로, C#과 Java가 가지는 싱글턴(singleton)과 정적 클래스와 같은 특정 생성자는 TypeScript에서 불필요합니다.
+추가적으로, C#과 Java의 싱글턴과 정적 클래스같은 특정 구조는 TypeScript에서 필요하지 않습니다.
 
 ## TypeScript의 객체지향프로그래밍 (OOP in TypeScript)
 
