@@ -8,7 +8,7 @@ oneline: What JSDoc does TypeScript-powered JavaScript support?
 아래 목록은 자바스크립트 파일에 타입 정보 제공을 위해 JSDoc 어노테이션을 사용할 때
 현재 지원되는 구성의 개요를 다룹니다.
 
-아래 명시적으로 존재하지 않은 태그(예 `@async`)는 아직 지원되지 않습니다.
+아래 명시적으로 나열되지 않은 태그(예 `@async`)는 아직 지원되지 않습니다.
 
 * `@type`
 * `@param` (또는 `@arg` 또는 `@argument`)
