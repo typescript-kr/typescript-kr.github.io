@@ -22,7 +22,7 @@ oneline: What JSDoc does TypeScript-powered JavaScript support?
 * `@enum`
 
 의미는 일반적으로 [jsdoc.app](https://jsdoc.app)에서 제공하는 태그의 의미와 같거나 상위 집합입니다.
-아래 코드는 무엇이 다른지 차이점을 설명하고 각 태그의 예시를 제공합니다.
+아래 코드는 각 태그의 차이점을 설명하고 예시를 제공합니다.
 
 **Note:** 당신은 [playground를 통하여 JSDoc를 볼 수 있습니다](/play?useJavaScript=truee=4#example/jsdoc-support).
 
