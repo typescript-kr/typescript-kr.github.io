@@ -38,7 +38,7 @@ JavaScript에서 함수는 어디에나 있을 수 있고, 데이터를 미리 �
 
 추가적으로, C#과 Java의 싱글턴과 정적 클래스같은 특정 구조는 TypeScript에서 필요하지 않습니다.
 
-## TypeScript의 객체지향프로그래밍 (OOP in TypeScript)
+## TypeScript의 OOP (OOP in TypeScript)
 
 즉, 원한다면 계속 클래스를 사용해도 됩니다!
 일부 문제는 기존의 OOP 계층으로 해결하기 적합하며, TypeScript가 JavaScript의 클래스를 지원하므로 이러한 모델을 더 효과적으로 만듭니다.
