@@ -45,7 +45,7 @@ TSConfig는 컴파일러 플래그를 구성하고 파일을 찾을 위치를 �
     emitDeclarationOnly: true,
     // 타입은 이 디렉터리 안에 존재해야 합니다.
     // 해당 설정을 제거하면,
-    // .d.ts 파일이 .js파일 옆에 생성됩니다.
+    // .d.ts 파일이 .js 파일 옆에 생성됩니다.
     outDir: "dist",
   },
 }
