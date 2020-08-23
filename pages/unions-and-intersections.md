@@ -35,7 +35,7 @@ padLeft("Hello world", 4); // "Hello world"를 반환합니다.
 ```
 
 위 예제에서 `padLeft`의 문제는 매개변수 `padding`이 `any` 타입으로 되어있다는 것입니다.
-즉, `숫자`나 `문자열` 둘 다 아닌 인수로 함수를 호출할 수 있다는 것이고, TypeScript는 이를 괜찮다고 받아들일 것입니다.
+즉, `number`나 `string` 둘 다 아닌 인수로 함수를 호출할 수 있다는 것이고, TypeScript는 이를 괜찮다고 받아들일 것입니다.
 
 ```ts
 declare function padLeft(value: string, padding: any): string;
