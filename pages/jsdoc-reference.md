@@ -243,7 +243,7 @@ function ab() {}
 
 ## `@typedef`, `@callback`, and `@param`
 
-`@typedef` 는 복잡한 타입을 정의할때 사용합니다.
+`@typedef` 는 복잡한 타입을 정의할 때 사용합니다.
 마치 `@param`과 비슷하게 동작합니다.
 
 ```js
