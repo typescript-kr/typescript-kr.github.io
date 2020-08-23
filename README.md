@@ -1,7 +1,7 @@
 # TypeScript-Handbook 한글 문서
 
 [![Build Status](https://api.travis-ci.com/typescript-kr/typescript-kr.github.io.svg?branch=master)](https://travis-ci.com/github/typescript-kr/typescript-kr.github.io) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-33-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-34-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![Release Date](https://img.shields.io/github/release-date/typescript-kr/typescript-kr.github.io)](https://github.com/typescript-kr/typescript-kr.github.io/releases)<!-- RELEASE-DATE-BADGE:END -->
 [![Stars](https://img.shields.io/github/stars/typescript-kr/typescript-kr.github.io)](https://github.com/typescript-kr/typescript-kr.github.io/stargazers)<!-- STARS-BADGE:END -->
@@ -70,6 +70,7 @@
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/zigsong"><img src="https://avatars2.githubusercontent.com/u/44080404?v=4" width="80px;" alt=""/><br /><sub><b>jieun song</b></sub></a><br /><a href="#translation-zigsong" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://blog.naver.com/owjs3901"><img src="https://avatars1.githubusercontent.com/u/12480623?v=4" width="80px;" alt=""/><br /><sub><b>Jung Min O</b></sub></a><br /><a href="#translation-owjs3901" title="Translation">🌍</a></td>
   </tr>
 </table>
 
