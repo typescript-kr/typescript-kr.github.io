@@ -320,7 +320,7 @@ const ok = (s) => !(s.length % 2);
 ```js
 /**
  * @template T
- * @param {T} x - 제네릭 매개변수는 리턴타입과 같게 됩니다
+ * @param {T} x - 제네릭 매개변수는 리턴 타입과 같게 됩니다
  * @return {T}
  */
 function id(x) {
