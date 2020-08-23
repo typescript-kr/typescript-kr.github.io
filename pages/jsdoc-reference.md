@@ -437,7 +437,7 @@ c.size;
 var result = C(1);
 ```
 
-> Note: 오류 메시지는 오직 JS 기반 코드와 [a JSConfig](/docs/handbook/tsconfig-json.html) 그리고 [`checkJs`](/tsconfig#checkJs) 가 활성화 되어야 합니다.
+> Note: 오류 메시지는 [a JSConfig](/docs/handbook/tsconfig-json.html) 및 [`checkJs`](/tsconfig#checkJs)가 활성화된 상태에서만 JS 코드 베이스에 나타납니다.
 
 With `@constructor`, `this` is checked inside the constructor function `C`, so you will get suggestions for the `initialize` method and an error if you pass it a number. Your editor may also show warnings if you call `C` instead of constructing it.
 
