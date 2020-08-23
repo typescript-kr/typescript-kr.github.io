@@ -220,7 +220,7 @@ var x = require("./accounts").userAccount;
  * @param {string=} p2 - 선택적 매개변수 (클로저 구문)
  * @param {string} [p3] - 또다른 선택적 매개변수 (JSDoc 구문).
  * @param {string} [p4="test"] - 기본값과 선택적 매개변수
- * @return {string} 이것은 결과값입니다
+ * @return {string} 이것은 결과 값입니다
  */
 function stringsStringStrings(p1, p2, p3, p4) {
   // TODO
