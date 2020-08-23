@@ -418,7 +418,7 @@ function C(data) {
   /** @type {string | null} */
   this.title = null;
 
-  // 만약 다른곳에 선언되어있다면 어노테이션으로 표기할 수 있습니다.
+  // 만약 다른 곳에 선언되어 있다면 어노테이션으로 표기할 수 있습니다.
   /** @type {number} */
   this.size;
 
