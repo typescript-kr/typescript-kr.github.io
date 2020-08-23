@@ -346,7 +346,7 @@ const c = id({});
 
 ```js
 /**
- * @template {string} K - K 는 string 혹은 string 리터럴이어야합니다
+ * @template {string} K - K는 string 혹은 string 리터럴이어야 합니다
  * @template {{ serious(): string }} Seriousalizable - serious 메서드가 있어야합니다
  * @param {K} key
  * @param {Seriousalizable} object
