@@ -5,7 +5,7 @@ permalink: /docs/handbook/typescript-in-5-minutes-func.html
 oneline: Learn TypeScript if you have a background in functional programming
 ---
 
-타입스크립트는 웹에 전통적인 객체 지향 프로그램를 가져오기 위해서
+TypeScript는 웹에 전통적인 객체 지향 프로그램를 가져오기 위해서
 마이크로소프트 프로그래머들이 JavaScript에 전통적인 객체 지향 타입을
 가져오기 위한 시도로 시작되었습니다. 개발되어 가면서 TypeScript의
 타입 시스템은 네이티브 자바스크립터가 작성한 모델 코드로 발전되었습니다.
@@ -15,20 +15,20 @@ oneline: Learn TypeScript if you have a background in functional programming
 위해 만들어졌습니다. 하스켈 타입 시스템과 TypeScript 시스템 타입이
 어떻게 다른지 설명하기 위해서입니다.
 JavaScript 코드의 모델링에서 발생하는 TypeScript 타입 시스템의
-독특한 특징들 또한 설명합니다.
+독특한 특징을 설명합니다.
 
 이 소개에서는 객체 지향 프로그래밍을 다루지 않습니다.
 실제로, TypeScript에 있는 객체 지향 프로그램은 OO 기능들이 있는 인기 있는
 언어들과 유사합니다.
 
-# 전제조건
+# 전제조건 (Prerequisites)
 
 본 서론에서는 다음과 같은 내용을 알고 있아야 힙니다:
 
 * 좋은 JavaScript 프로그램를 짜는 방법.
-* C 구전 언어의 타입 구문.
+* C 계열 언어의 타입 구문.
 
-자바스크립트의 좋은 코드 짜는 법을 배우고 싶다면
+JavaScript의 좋은 코드 짜는 법을 배우고 싶다면
 [JavaScript: The Good Parts](http://shop.oreilly.com/product/9780596517748.do)를 읽으세요.
 많은 가변성을 가진 call-by-value 렉시컬한 스코프 언어로
 프로그램을 작성하는 방법을 알고 있다면 굳이 책을 안 읽어도
@@ -37,23 +37,23 @@ JavaScript 코드의 모델링에서 발생하는 TypeScript 타입 시스템의
 
 [C++ 프로그래밍 언어](http://www.stroustrup.com/4th.html)는
 C-스타일 타입 구문에 대해서 배우기 좋습니다.
-C++ 달리 TypeScript 후위 타입을 사용합니다, 예를 들면: `x: string` 대신에 `string x`.
+C++ 달리 TypeScript 후위 타입을 사용합니다, 예를 들면: `string x` 대신에 `x: string`.
 
-# 하스켈에 없는 타입
+# 하스켈에 없는 타입 (Concepts not in Haskell)
 
-## 내장 타입들
+## 내장 타입들 (Concepts not in Haskell)
 
-JavaScript에서는 내장된 7개 타입을 정의한다:
+JavaScript에서는 7개의 내장 타입을 정의합니다:
 
 | 타입         | 설명                                         |
 | ----------- | ------------------------------------------- |
 | `Number`    | 배정밀도 IEEE 754 부동소수점.                    |
-| `String`    | 수정불가능한 UTF-16 문자열.                      |
+| `String`    | 수정 불가능한 UTF-16 문자열.                     |
 | `Boolean`   | `true` 와  `false`.                          |
 | `Symbol`    | 보통 키로 사용하는 고유한 값                       |
 | `Null`      | 단위 타입과 동등.                               |
 | `Undefined` | 또한 단위 타입과 동등.                           |
-| `Object`    | 레코드들과 유사한 것.                            |
+| `Object`    | 레코드와 유사한 것.                             |
 
 [자세한 내용을 위해서 MDN 페이지를 봐주세요](https://developer.mozilla.org/docs/Web/JavaScript/Data_structures).
 
@@ -67,21 +67,21 @@ TypeScript에는 기본 내장된 타입에 해당하는 원시 타입이 있습
 * `undefined`
 * `object`
 
-### 다른 중요한 TypeScript 타입
+### 다른 중요한 TypeScript 타입 (Other important TypeScript types)
 
 | 타입            | 설명                                                         |
 | -------------- | ----------------------------------------------------------- |
 | `unknown`      | 최상위 타입.                                                   |
 | `never`        | 하위 타입.                                                     |
-| 객체 리터럴       | eg `{ property: Type }`                                     |
+| 객체 리터럴       | 예, `{ property: Type }`                                     |
 | `void`         | 리턴 타입으로 사용하기 위해 의도된 `undefined` 의 서브타입.             |
 | `T[]`          | 수정가능한 배열들, 또한 `Array<T>` 으로 사용가능                      |
-| `[T, T]`       | 고정된 길이의 tuples이지만 수정가능                                 |
+| `[T, T]`       | 고정된 길이지만 수정 가능한 튜플                                     |
 | `(t: T) => U`  | 함수                                                          |
 
 유의하세요:
 
-1. 함수 구문 매개변수 이름을 포함하는 함수 구문. 상당히 사용하기 어렵습니다!
+1. 함수 구문 매개변수 이름을 포함하는 함수 구문. 익숙해지기 꽤 어렵습니다!
 
    ```ts
    let fst: (a: any, d: any) => any = (a, d) => a;
@@ -97,13 +97,13 @@ TypeScript에는 기본 내장된 타입에 해당하는 원시 타입이 있습
 
 3. `[T, T]` 는 `T[]` 의 서브타입입니다. 하스켈과는 다르게, 튜플은 리스트들과 관련이 없습니다.
 
-### 박스 형태 타입
+### 박스 형태 타입 (Boxed types)
 
-JavaScript는 프로그래머들이 해당 타입에 접근할 수 있는 메소드들을
+JavaScript는 프로그래머들이 해당 타입에 접근할 수 있는 메소드를
 포함하는 원시타입을 동등하게 박스해 왔습니다. 예를 들면, 원시 형태의
 `number` 과 박스 형태 타입의 `Number`의 다른 점을 TypeScript는
 반영해왔습니다.
-박스 형태 타입은 메소드들이 원시 타입을 리턴할 때 아주 드물게 필요합니다.
+박스 형태 타입은 메소드가 원시 타입을 반환할 때 아주 드물게 필요합니다.
 
 ```ts
 (1).toExponential();
@@ -114,9 +114,9 @@ Number.prototype.toExponential.call(1);
 숫자 리터럴에서 메서드를 호출하려면 파서를 지원하기 위해 메서드를 괄호
 안에 넣어야 한다는 점에 유의하십시오.
 
-## 점진적인 타이핑
+## 점진적인 타이핑 (Gradual typing)
 
-TypeScript는 표현식 타입을 사용할 수 없을 때마다 `any` 타입을
+TypeScript는 표현식의 타입을 알 수 없을 때마다 `any` 타입을
 사용합니다. `Dynamic`와 비교하면,`any` 는 타입이라고 부르기에
 과하다고 할 수도 있습니다.
 이 타입이 나타날 때마다 타입을 체크하지 않습니다. 예를 들어, `any[]`
