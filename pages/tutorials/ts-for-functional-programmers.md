@@ -146,11 +146,11 @@ let sepsis = anys[0] + anys[1]; // this could mean anything
 To get an error when TypeScript produces an `any`, use
 `"noImplicitAny": true`, or `"strict": true` in `tsconfig.json`.
 
-## 구조적인 타이핑
+## 구조적인 타이핑 (Structural typing)
 
-구조적인 타이핑은 대부분의 함수형 프로그래머들에게 비슷한 개념입니다.
-하스켈이나 대부분의 ML은 구조적으로 타입하지 않습니다.
-가장 기본적인 흔한 예입니다:
+비록 하스켈과 대부분의 ML은 구조적으로 타이핑하지 않지만,
+구조적 타이핑은 대부분의 함수형 프로그래머에게는 익숙한 개념입니다.
+기본 형태는 아주 간단합니다:
 
 ```ts
 // @strict: false
@@ -158,16 +158,16 @@ let o = { x: "hi", extra: 1 }; // 성공
 let o2: { x: string } = o; // 성공
 ```
 
-여기서 객체 리터럴 `{ x: "hi", extra: 1 }`은 리터럴 타입인
-`{ x: string, extra: number }` 을 매칭합니다. 이
-타입에 요구되는 속성과 속성은 할당가능한 타입을 가지고 있기 때문에
-`{ x: string }` 에 할당이 가능합니다.
-나머지 속성은 할당되지 않아, `{ x: string }`의 서브타입을
+여기서, 객체 리터럴 `{ x: "hi", extra : 1 }`에 매치되는
+`{ x : string, extra : number }` 가 있습니다. 이
+타입은 필수 프로퍼티가 모두 있고 해당 프로퍼티에 할당 가능한 타입이 있으므로
+`{ x : string }` 에 할당할 수 있습니다.
+나머지 프로퍼티는 할당을 막지 않고, `{x : string}`의 서브타입으로
 만듭니다.
 
 네임드 타입들은 타입에서 이름을 붙일 뿐입니다. 할당을 위해서라면 타입 별칭
  `One` 과 인터페이스 타입 `Two` 사이에는 별 다른 점이 없습니다.
-둘 다 속성 `p: string`를 가지고 있습니다.
+둘 다 `p: string` 프로퍼티를 가지고 있습니다.
 (단, 타입 별칭은 재귀 정의와 타입 매개변수에 관련한 인터페이스에서는 다르게
 동작합니다.)
 
@@ -186,17 +186,17 @@ let two: Two = x;
 two = new Three();
 ```
 
-## 유니언
+## 유니언 (Unions)
 
 TypeScript에서 유니언 타입은 태그되지 않습니다. 다르게 말하면,
 하스켈에서 `data` 와 달리 유니언은 구별하지 않습니다.
-그러나 다른 속성이나 내장된 태그를 사용하는 유니언으로 타입을 구별할 수 있습니다.
+그러나 다른 프로퍼티나 내장된 태그를 사용하는 유니언으로 타입을 구별할 수 있습니다.
 
 ```ts
 function start(
   arg: string | string[] | (() => string) | { s: string }
 ): string {
-  // 자바스크립트에서 가장 흔합니다
+  // JavaScript에서 아주 일반적입니다
   if (typeof arg === "string") {
     return commonCase(arg);
   } else if (Array.isArray(arg)) {
@@ -250,13 +250,13 @@ type Conflicting = { a: number } & { a: string };
 `a` 와 `b` 두 개의 속성을 가지고 있습니다. 교집합과 유니언은 재귀적인
 케이스에서 충돌을 일으켜서 `Conflicting.a: number & string` 입니다.
 
-## 유니언 타입
+## 유니언 타입 (Unit types)
 
-유니언 타입은 명확하게 하나의 원시값을 포함하고 있는 원시 타입의 서브타입입니다.
+유니언 타입은 정확히 하나의 원시 값을 포함하고 있는 원시 타입의 서브타입입니다.
 예를 들면, 문자열 `"foo"` 는 타입 `"foo"`를 가지고 있습니다.
-자바스크립트는 내장된 enum이 없기 때문에 잘 알려진 문자열 세트를
+JavaScript는 내장된 enum이 없기 때문에 잘 알려진 문자열 세트를
 대신해서 쓰는게 흔합니다.
-문자열 리터럴 타입 유니언은 타입스크립트에서 이 패턴을 따라갑니다:
+문자열 리터럴 타입 유니언은 TypeScript에서 이 패턴을 따라갑니다:
 
 ```ts
 declare function pad(s: string, n: number, direction: "left" | "right"): string;
