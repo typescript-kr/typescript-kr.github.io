@@ -1,15 +1,15 @@
-Compiler supports configuring how to watch files and directories using the environment variables.
+컴파일러는 환경 변수를 사용하여 파일과 디렉터리를 감시하는 방법 구성을 지원합니다.
 
-## Configuring file watching using environment variable `TSC_WATCHFILE`
+## 환경 변수 `TSC_WATCHFILE`을 사용하여 파일 감시 설정 (Configuring file watching using environment variable `TSC_WATCHFILE`)
 
-Option                                         | Description
+옵션                                            | 설명
 -----------------------------------------------|----------------------------------------------------------------------
-`PriorityPollingInterval`                      | Use `fs.watchFile` but use different polling intervals for source files, config files and missing files
-`DynamicPriorityPolling`                       | Use a dynamic queue where in the frequently modified files will be polled at shorter interval and the files unchanged will be polled less frequently
-`UseFsEvents`                                  | Use `fs.watch` which uses file system events (but might not be accurate on different OS) to get the notifications for the file changes/creation/deletion. Note that few OS eg. linux has limit on number of watches and failing to create watcher using `fs.watch` will result it in creating using `fs.watchFile`
-`UseFsEventsWithFallbackDynamicPolling`        | This option is similar to `UseFsEvents` except on failing to create watch using `fs.watch`, the fallback watching happens through dynamic polling queues (as explained in `DynamicPriorityPolling`)
-`UseFsEventsOnParentDirectory`                 | This option watches parent directory of the file with `fs.watch` (using file system events) thus being low on CPU but can compromise accuracy.
-default (no value specified)                   | If environment variable `TSC_NONPOLLING_WATCHER` is set to true, watches parent directory of files (just like `UseFsEventsOnParentDirectory`). Otherwise watch files using `fs.watchFile` with `250ms` as the timeout for any file
+`PriorityPollingInterval`                      | `fs.watchFile`을 사용하지만 소스 파일, 설정 파일 및 누락된 파일에 대해 다른 폴링 주기(polling intervals)를 사용합니다.
+`DynamicPriorityPolling`                       | 자주 수정되는 파일을 자주 폴링하고 변경되지 않은 파일을 덜 자주 폴링 하는 동적 큐(dynamic queue)를 사용합니다.
+`UseFsEvents`                                  | 파일 시스템 이벤트를 사용하는 `fs.watch`를 사용하여 파일 변경/생성/삭제에 대한 알림을 받습니다. (`fs.watch`는 OS마다 다르게 작동할 수 있습니다.) 예를 들어. 리눅스는 감시자(watcher) 수에 제한이 있으며 `fs.watch`를 사용하여 watcher를 만들지 못하면, `fs.watchFile`를 대신 사용하여 감시자를 만들게 됩니다.
+`UseFsEventsWithFallbackDynamicPolling`        | 이 옵션은 `fs.watch`를 사용하여 감시자를 만들지 못한 경우 폴링이 동적 큐를 통해 수행된다는 것을 제외하고는 `UseFsEvents` 옵션과 비슷합니다.(동적 큐에 대한 것은 `DynamicPriorityPolling`옵션에서 설명하였습니다.).
+`UseFsEventsOnParentDirectory`                 | 이 옵션은 'fs.watch'(파일 시스템 이벤트 사용하는)로 파일의 상위 디렉터리를 감시합니다. 다만, CPU 사용량이 늘어나고 정확도는 떨어질 수 있습니다.
+default (no value specified)                   | 환경 변수`TSC_NONPOLLING_WATCHER`가 true로 설정되면 파일의 상위 디렉터리를 감시합니다. (`UseFsEventsOnParentDirectory`와 동일).false 일 때는 `fs.watchFile`을 사용하여 `250ms` 시간 제한과 함께 모든 파일들을 감시합니다.
 
 ## Configuring directory watching using environment variable `TSC_WATCHDIRECTORY`
 
