@@ -223,15 +223,15 @@ function networkStatus(state: NetworkState): string {
 }
 ```
 
-# Intersection Types
+# 교차 타입 (Intersection Types)
 
-Intersection types are closely related to union types, but they are used very differently.
-An intersection type combines multiple types into one.
-This allows you to add together existing types to get a single type that has all the features you need.
-For example, `Person & Serializable & Loggable` is a type which is all of `Person` _and_ `Serializable` _and_ `Loggable`.
-That means an object of this type will have all members of all three types.
+교차 타입은 유니언 타입과 밀접한 관련이 있지만, 사용 방법은 매우 다릅니다.
+교차 타입은 여러 타입을 하나로 결합합니다.
+기존 타입을 합쳐 필요한 모든 기능을 가진 하나의 타입을 얻을 수 있습니다.
+예를 들어, `Person & Serializable & Loggable`은 `Person` _과_ `Serializable` _그리고_ `Loggable`입니다.
+즉, 이 타입의 객체는 세 가지 타입의 모든 멤버를 갖게 됩니다.
 
-For example, if you had networking requests with consistent error handling then you could separate out the error handling into it's own type which is merged with types which correspond to a single response type.
+예를 들어, 동일한 에러 핸들링을 하게 되는 여러 네트워크 요청이 있다면 해당 에러 핸들링을 분리하여 하나의 응답 타입에 대응하는 타입들로 결합된 자체 타입으로 만들 수 있습니다.
 
 ```ts
 interface ErrorHandling {
@@ -247,8 +247,8 @@ interface ArtistsData {
   artists: { name: string }[];
 }
 
-// These interfaces are composed to have
-// consistent error handling, and their own data.
+// 이 인터페이스들은
+// 하나의 에러 핸들링과 그들 자체의 데이터로 구성됩니다.
 
 type ArtworksResponse = ArtworksData & ErrorHandling;
 type ArtistsResponse = ArtistsData & ErrorHandling;
@@ -263,9 +263,9 @@ const handleArtistsResponse = (response: ArtistsResponse) => {
 };
 ```
 
-## Mixins via Intersections
+## 교차 타입을 통한 믹스인 (Mixins via Intersections)
 
-Intersections are used to implement the [mixin pattern](/docs/handbook/mixins.html):
+교차 타입들은 [믹스인 패턴](/docs/handbook/mixins.html)을 실행하기 위해 사용됩니다.
 
 ```ts
 class Person {
@@ -282,7 +282,7 @@ class ConsoleLogger implements Loggable {
   }
 }
 
-// Takes two objects and merges them together
+// 두 객체를 받아 하나로 합칩니다.
 function extend<First extends {}, Second extends {}>(
   first: First,
   second: Second
