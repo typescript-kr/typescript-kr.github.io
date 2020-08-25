@@ -25,10 +25,10 @@ JavaScript 코드의 모델링에서 발생하는 TypeScript 타입 시스템의
 
 본 서론에서는 다음과 같은 내용을 알고 있아야 힙니다:
 
-* 좋은 JavaScript 프로그램를 짜는 방법.
+* 좋은 JavaScript 프로그램를 작성하는 방법.
 * C 계열 언어의 타입 구문.
 
-JavaScript의 좋은 코드 짜는 법을 배우고 싶다면
+JavaScript의 좋은 코드 작성하는 법을 배우고 싶다면
 [JavaScript: The Good Parts](http://shop.oreilly.com/product/9780596517748.do)를 읽으세요.
 많은 가변성을 가진 call-by-value 렉시컬한 스코프 언어로
 프로그램을 작성하는 방법을 알고 있다면 굳이 책을 안 읽어도
@@ -37,7 +37,7 @@ JavaScript의 좋은 코드 짜는 법을 배우고 싶다면
 
 [C++ 프로그래밍 언어](http://www.stroustrup.com/4th.html)는
 C-스타일 타입 구문에 대해서 배우기 좋습니다.
-C++ 달리 TypeScript 후위 타입을 사용합니다, 예를 들면: `string x` 대신에 `x: string`.
+C++ 달리 TypeScript는 후위 타입을 사용합니다, 예를 들면: `string x` 대신에 `x: string`.
 
 # 하스켈에 없는 타입 (Concepts not in Haskell)
 
