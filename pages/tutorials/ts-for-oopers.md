@@ -36,7 +36,7 @@ OOP 계층과 상관 없이 데이터를 처리하는 “자유로운” (클래
 
 ### 정적 클래스 (Static Classes)
 
-추가적으로, C#과 Java의 싱글턴과 정적 클래스같은 특정 구조는 TypeScript에서 필요하지 않습니다.
+추가적으로, C#과 Java의 싱글턴과 정적 클래스 같은 특정 구조는 TypeScript에서 필요하지 않습니다.
 
 ## TypeScript의 OOP (OOP in TypeScript)
 
