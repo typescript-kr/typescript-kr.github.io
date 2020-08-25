@@ -293,30 +293,30 @@ let s: "left" | "right" = "right";
 pad("hi", 10, s);
 ```
 
-# 하스켈과 비슷한 개념
+# 하스켈과 비슷한 개념 (Concepts similar to Haskell)
 
 ## 문맥적인 타이핑 (Contextual typing)
 
 TypeScript는 변수 선언과 같이 타입을 추론할 수 있는
-몇 가지 방법이 있습니다:
+몇 가지 분명한 방법이 있습니다:
 
 ```ts
 let s = "I'm a string!";
 ```
 
 하지만 다른 C- 계열 언어로 작업한 적이 있다면 예상하지 못했던
-다른 방법으로 타입을 추론가능합니다:
+다른 방법으로 타입 추론이 가능합니다:
 
 ```ts
 declare function map<T, U>(f: (t: T) => U, ts: T[]): U[];
 let sns = map((n) => n.toString(), [1, 2, 3]);
 ```
 
-여기에 예시인 `n: number` 에서 또한,`T` 과 `U`는 호출 전이라서
-유출하기 힘들었음에도 불구하고.
-실제로 `[1,2,3]` 으로 `T=number`을 추론하고 나서,
-`n => n.toString()`의 리턴 타입은 `U=string`으로 추론하며,
-`sns` 은 `string[]`을 가지도록 합니다.
+여기에 예시인 `n: number` 에서 또한, `T` 과 `U`는 호출 전이라서
+추론되지 않았음에도 불구하고.
+실제로 `[1,2,3]` 으로 `T=number`을 추론한 다음에,
+`n => n.toString()`의 리턴 타입으로 `U=string`을 추론하며,
+`sns` 가 `string[]` 타입을 가지도록 합니다.
 
 추론은 어떤 순서로든 동작하겠지만, intellisense은 왼쪽에서 오른쪽으로만
 동작하고, 그래서 TypeScript는 먼저 배열과 함께 `map` 선언하는 것을
@@ -328,7 +328,7 @@ declare function map<T, U>(ts: T[], f: (t: T) => U): U[];
 
 문맥상 타이핑은 또한 객체 리터럴로 재귀적일 때 작동합니다. 그렇지 않으면
 `string` 이나 `number`으로 추론가능한 유닛 타입으로 작동합니다.
-내용으로 리턴 타입을 추론가능합니다:
+그리고 문맥을 통해서 리턴 타입을 추론할 수 있습니다:
 
 ```ts
 declare function run<T>(thunk: (t: T) => void): T;
@@ -339,8 +339,8 @@ let i: { inference: string } = run((o) => {
 
 `o` 의 타입은 `{ inference: string }` 으로 결정되었습니다. 왜냐면
 
-1. 선언 초기화는 선언 타입에 따라서 문맥적으로
-   입력됩니다: `{ inference: string }`.
+1. 선언 초기화는 선언 타입: `{ inference: string }`에 따라서
+   문맥적으로 타입이 정해집니다.
 2. 호출하는 리턴 타입은 추론을 위한 문맥적인 타입을 사용하며, 또한
    컴파일러는 `T={ inference: string }`으로 추론가능합니다.
 3. 화살표 함수는 매개변수에 입력하여 문맥상 타입을 사용므로,
