@@ -51,7 +51,7 @@ TypeScript는 인터페이스, 상속, 정적 메서드 구현과 같은 많은 
 TypeScript의 *타입*에 대한 이해는 사실 C#이나 Java와 상당히 다릅니다.
 몇 가지 차이점을 살펴봅시다.
 
-### Nominal Reified Type Systems
+### 이름으로 구체화된 타입 시스템 (Nominal Reified Type Systems)
 
 C#과 Java에서 주어진 값과 객체는 ‘null’, 원시 타입, 또는 정의된 클래스 타입 중 정확하게 하나의 타입을 가집니다.
 런타임 시점에서 정확한 타입을 묻기 위해 `value.GetType()` 또는 `value.getClass()`와 같은 메서드를 호출할 수 있습니다.
