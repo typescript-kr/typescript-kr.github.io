@@ -14,28 +14,28 @@ JavaScript는 프로그래밍 커뮤니티에 도입된 지 20년이 지난 지�
 JavaScript에 대한 배경지식 없이 TypeScript를 첫 번째 언어로 사용한다면, 먼저 [Mozilla 웹 문서에서 JavaScript에 대한](https://developer.mozilla.org/docs/Web/JavaScript/Guide) 문서를 읽어 보는 것이 좋습니다.
 다른 언어에 대한 경험이 있다면, 핸드북을 읽으면서 JavaScript 구문을 꽤 빠르게 익힐 수 있을 것입니다.
 
-## How is this Handbook Structured
+## 핸드북은 어떻게 구성되어 있는가? (How is this Handbook Structured)
 
-The handbook is split into two sections:
+핸드북은 두 영역으로 나뉩니다:
 
-* **The Handbook**
+* **핸드북**
 
-  The TypeScript Handbook is intended to be a comprehensive document that explains TypeScript to everyday programmers. You can read the handbook by going from top to bottom in the left-hand navigation.
+  TypeScript 핸드북은 많은 프로그래머들에게 TypeScript를 설명하는 종합적인 문서입니다. 왼쪽 메뉴를 통해 위에서 아래로 이동하며 읽을 수 있습니다. 
 
-  You should expect each chapter or page to provide you with a strong understanding of the given concepts. The TypeScript Handbook is not a complete language specification, but it is intended to be a comprehensive guide to all of the language's features and behaviors.
+  각 장 또는 페이지가 주어진 개념에 대해 자세한 설명을 제공할 것으로 예상할 수 있습니다. TypeScript 핸드북은 언어에 대한 완전한 설명서는 아니지만, 모든 특징과 동작에 대한 종합적인 가이드입니다.
 
-  A reader who completes the walkthrough should be able to:
+  실습을 완료한 독자는 다음을 수행할 수 있어야 합니다:
 
-  * Read and understand commonly-used TypeScript syntax and patterns
-  * Explain the effects of important compiler options
-  * Correctly predict type system behavior in most cases
-  * Write a .d.ts declaration for a simple function, object, or class
+  * 일반적으로 사용하는 TypeScript 구문 및 패턴을 읽고 이해하기
+  * 중요한 컴파일러 옵션의 영향 설명하기
+  * 대부분의 경우에서 타입 시스템 동작을 올바르게 예측하기
+  * 간단한 함수, 객체 또는 클래스에 대한 .d.ts 선언 작성하기
 
-  In the interests of clarity and brevity, the main content of the Handbook will not explore every edge case or minutiae of the features being covered. You can find more details on particular concepts in the reference articles.
+  핸드북의 주요 내용은 명확성과 간결성을 위해, 다루어지고 있는 특징의 모든 극단적인 경우 또는 세부 사항을 탐구하지는 않습니다. 참고문헌에서 특정 개념에 대한 자세한 내용을 찾아볼 수 있습니다.
 
-* **The Handbook Reference**
+* **핸드북 레퍼런스**
 
-  The handbook reference is built to provide a richer understanding of how a particular part of TypeScript works. You can read it top-to-bottom, but each section aims to provide a deeper explanation of a single concept - meaning there is no aim for continuity.
+  핸드북 레퍼런스는 TypeScript의 특정 부분이 어떻게 작동하는지 풍부한 이해를 제공하기 위해 작성되었습니다. 위에서 아래로 읽을 수 있지만, 연속적으로 설명하는 것이 아니라, 각 섹션은 단일 개념에 대한 더 깊은 설명 제공을 목표로 합니다.
 
 ### Non-Goals
 
