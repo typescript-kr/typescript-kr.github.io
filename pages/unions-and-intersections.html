@@ -1049,93 +1049,85 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>So far, the handbook has covered types which are atomic objects.
-However, as you model more types you find yourself looking for tools which let you compose or combine existing types instead of creating them from scratch.</p>
-<p>Intersection and Union types are one of the ways in which you can compose types.</p>
-<h1 id="union-types">Union Types</h1>
-<p>Occasionally, you&apos;ll run into a library that expects a parameter to be either a <code>number</code> or a <code>string</code>.
-For instance, take the following function:</p>
-<p>```ts twoslash
-/**</p>
-<ul>
-<li>Takes a string and adds &quot;padding&quot; to the left.</li>
-<li>If &apos;padding&apos; is a string, then &apos;padding&apos; is appended to the left side.</li>
-<li>If &apos;padding&apos; is a number, then that number of spaces is added to the left side.
-*/
-function padLeft(value: string, padding: any) {
-if (typeof padding === &quot;number&quot;) {
- return Array(padding + 1).join(&quot; &quot;) + value;
-}
-if (typeof padding === &quot;string&quot;) {
- return padding + value;
-}
-throw new Error(<code>Expected string or number, got &apos;${padding}&apos;.</code>);
-}</li>
-</ul>
-<p>padLeft(&quot;Hello world&quot;, 4); // returns &quot;    Hello world&quot;</p>
-<pre><code>
-The problem with `padLeft` in the above example is that its `padding` parameter is typed as `any`.
-That means that we can call it with an argument that&apos;s neither a `number` nor a `string`, but TypeScript will be okay with it.
-
-```ts twoslash
-declare function padLeft(value: string, padding: any): string;
-// ---cut---
-// passes at compile time, fails at runtime.
-let indentedString = padLeft(&quot;Hello world&quot;, true);
-</code></pre><p>In traditional object-oriented code, we might abstract over the two types by creating a hierarchy of types.
-While this is much more explicit, it&apos;s also a little bit overkill.
-One of the nice things about the original version of <code>padLeft</code> was that we were able to just pass in primitives.
-That meant that usage was simple and concise.
-This new approach also wouldn&apos;t help if we were just trying to use a function that already exists elsewhere.</p>
-<p>Instead of <code>any</code>, we can use a <em>union type</em> for the <code>padding</code> parameter:</p>
-<p>```ts twoslash
-// @errors: 2345
-/**</p>
-<ul>
-<li>Takes a string and adds &quot;padding&quot; to the left.</li>
-<li>If &apos;padding&apos; is a string, then &apos;padding&apos; is appended to the left side.</li>
-<li>If &apos;padding&apos; is a number, then that number of spaces is added to the left side.
-*/
-function padLeft(value: string, padding: string | number) {
-// ...
-}</li>
-</ul>
-<p>let indentedString = padLeft(&quot;Hello world&quot;, true);</p>
-<pre><code>
-A union type describes a value that can be one of several types.
-We use the vertical bar (`|`) to separate each type, so `number | string | boolean` is the type of a value that can be a `number`, a `string`, or a `boolean`.
-
-## Unions with Common Fields
-
-If we have a value that is a union type, we can only access members that are common to all types in the union.
-
-```ts twoslash
-// @errors: 2339
-
-interface Bird {
-  fly(): void;
-  layEggs(): void;
+                                <p>&#xC9C0;&#xAE08;&#xAE4C;&#xC9C0;, &#xD578;&#xB4DC;&#xBD81;&#xC740; &#xC6D0;&#xC790; &#xAC1D;&#xCCB4;&#xC758; &#xD0C0;&#xC785;&#xB4E4;&#xC744; &#xB2E4;&#xB904;&#xC654;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xD558;&#xC9C0;&#xB9CC;, &#xB354; &#xB9CE;&#xC740; &#xD0C0;&#xC785;&#xC744; &#xBAA8;&#xB378;&#xB9C1;&#xD560;&#xC218;&#xB85D; &#xCC98;&#xC74C;&#xBD80;&#xD130; &#xD0C0;&#xC785;&#xC744; &#xB9CC;&#xB4E4;&#xC5B4;&#xB0B4;&#xAE30;&#xBCF4;&#xB2E4;&#xB294; &#xC774;&#xBBF8; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xD0C0;&#xC785;&#xC744; &#xAD6C;&#xC131;&#xD558;&#xAC70;&#xB098; &#xACB0;&#xD569;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xB4E4;&#xC744; &#xCC3E;&#xAC8C; &#xB420; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xAD50;&#xCC28; &#xD0C0;&#xC785;&#xACFC; &#xC720;&#xB2C8;&#xC5B8; &#xD0C0;&#xC785;&#xC740; &#xD0C0;&#xC785;&#xC744; &#xAD6C;&#xC131;&#xD560; &#xC218; &#xC788;&#xB294; &#xBC29;&#xBC95; &#xC911; &#xD558;&#xB098;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xC720;&#xB2C8;&#xC5B8;-&#xD0C0;&#xC785;-union-types">&#xC720;&#xB2C8;&#xC5B8; &#xD0C0;&#xC785; (Union Types)</h1>
+<p>&#xAC00;&#xB054;, <code>number</code>&#xB098; <code>string</code>&#xC744; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB85C; &#xAE30;&#xB300;&#xD558;&#xB294; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, &#xB2E4;&#xC74C; &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-comment">/**</span>
+<span class="cm-comment"> * &#xBB38;&#xC790;&#xC5F4;&#xC744; &#xBC1B;&#xACE0; &#xC67C;&#xCABD;&#xC5D0; &quot;padding&quot;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-comment"> * &#xB9CC;&#xC57D; &apos;padding&apos;&#xC774; &#xBB38;&#xC790;&#xC5F4;&#xC774;&#xB77C;&#xBA74;, &apos;padding&apos;&#xC740; &#xC67C;&#xCABD;&#xC5D0; &#xB354;&#xD574;&#xC9C8; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-comment"> * &#xB9CC;&#xC57D; &apos;padding&apos;&#xC774; &#xC22B;&#xC790;&#xB77C;&#xBA74;, &#xADF8; &#xC22B;&#xC790;&#xB9CC;&#xD07C;&#xC758; &#xACF5;&#xBC31;&#xC774; &#xC67C;&#xCABD;&#xC5D0; &#xB354;&#xD574;&#xC9C8; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-comment"> */</span>
+<span class="cm-keyword">function</span> <span class="cm-variable">padLeft</span>(<span class="cm-def">value</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">padding</span>: <span class="cm-variable-3">any</span>) {
+  <span class="cm-keyword">if</span> (<span class="cm-keyword">typeof</span> <span class="cm-variable-2">padding</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;number&quot;</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-variable">Array</span>(<span class="cm-variable-2">padding</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>).<span class="cm-property">join</span>(<span class="cm-string">&quot; &quot;</span>) <span class="cm-operator">+</span> <span class="cm-variable-2">value</span>;
+  }
+  <span class="cm-keyword">if</span> (<span class="cm-keyword">typeof</span> <span class="cm-variable-2">padding</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;string&quot;</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-variable-2">padding</span> <span class="cm-operator">+</span> <span class="cm-variable-2">value</span>;
+  }
+  <span class="cm-keyword">throw</span> <span class="cm-keyword">new</span> <span class="cm-variable">Error</span>(<span class="cm-string-2">`Expected string or number, got &apos;${</span><span class="cm-variable-2">padding</span><span class="cm-string-2">}</span><span class="cm-string-2">&apos;.`</span>);
 }
 
-interface Fish {
-  swim(): void;
-  layEggs(): void;
+<span class="cm-variable">padLeft</span>(<span class="cm-string">&quot;Hello world&quot;</span>, <span class="cm-number">4</span>); <span class="cm-comment">// &quot;Hello world&quot;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</span>
+</code></pre>
+<p>&#xC704; &#xC608;&#xC81C;&#xC5D0;&#xC11C; <code>padLeft</code>&#xC758; &#xBB38;&#xC81C;&#xB294; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; <code>padding</code>&#xC774; <code>any</code> &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xB418;&#xC5B4;&#xC788;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC989;, <code>number</code>&#xB098; <code>string</code> &#xB458; &#xB2E4; &#xC544;&#xB2CC; &#xC778;&#xC218;&#xB85C; &#xD568;&#xC218;&#xB97C; &#xD638;&#xCD9C;&#xD560; &#xC218; &#xC788;&#xB2E4;&#xB294; &#xAC83;&#xC774;&#xACE0;, TypeScript&#xB294; &#xC774;&#xB97C; &#xAD1C;&#xCC2E;&#xB2E4;&#xACE0; &#xBC1B;&#xC544;&#xB4E4;&#xC77C; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">padLeft</span>(<span class="cm-def">value</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">padding</span>: <span class="cm-variable-3">any</span>): <span class="cm-variable-3">string</span>;
+<span class="cm-comment">// ---&#xC0DD;&#xB7B5;---</span>
+<span class="cm-comment">// &#xCEF4;&#xD30C;&#xC77C; &#xD0C0;&#xC784;&#xC5D0;&#xB294; &#xD1B5;&#xACFC;&#xD558;&#xC9C0;&#xB9CC;, &#xB7F0;&#xD0C0;&#xC784;&#xC5D0;&#xB294; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">indentedString</span> <span class="cm-operator">=</span> <span class="cm-variable">padLeft</span>(<span class="cm-string">&quot;Hello world&quot;</span>, <span class="cm-atom">true</span>);
+</code></pre>
+<p>&#xC804;&#xD1B5;&#xC801;&#xC778; &#xAC1D;&#xCCB4;&#xC9C0;&#xD5A5; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C;, &#xD0C0;&#xC785;&#xC758; &#xACC4;&#xCE35;&#xC744; &#xC0DD;&#xC131;&#xD558;&#xC5EC; &#xB450; &#xD0C0;&#xC785;&#xC744; &#xCD94;&#xC0C1;&#xD654;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB294; &#xB354; &#xBA85;&#xC2DC;&#xC801;&#xC77C; &#xC218;&#xB294; &#xC788;&#xC9C0;&#xB9CC;, &#xC870;&#xAE08; &#xACFC;&#xD558;&#xB2E4;&#xACE0; &#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xAE30;&#xC874; &#xBC29;&#xBC95;&#xC758; <code>padLeft</code>&#xC5D0;&#xC11C; &#xC88B;&#xC740; &#xC810; &#xC911; &#xD558;&#xB098;&#xB294; &#xC6D0;&#xC2DC; &#xAC12;&#xC744; &#xB2E8;&#xC9C0; &#xC804;&#xB2EC;&#xD560; &#xC218; &#xC788;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC989; &#xC0AC;&#xC6A9;&#xBC95;&#xC774; &#xAC04;&#xB2E8;&#xD558;&#xACE0; &#xAC04;&#xACB0;&#xD569;&#xB2C8;&#xB2E4;.
+&#xB610;&#xD55C; &#xC774; &#xC0C8;&#xB85C;&#xC6B4; &#xBC29;&#xBC95;&#xC740; &#xB2E8;&#xC9C0; &#xB2E4;&#xB978; &#xACF3;&#xC5D0; &#xC774;&#xBBF8; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0;&#xC790; &#xD560; &#xB54C; &#xB3C4;&#xC6C0;&#xC774; &#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>any</code> &#xB300;&#xC2E0;&#xC5D0;, <em>&#xC720;&#xB2C8;&#xC5B8; &#xD0C0;&#xC785;</em>&#xC744; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; <code>padding</code>&#xC5D0; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-comment">// @errors: 2345</span>
+<span class="cm-comment">/**</span>
+<span class="cm-comment"> * &#xBB38;&#xC790;&#xC5F4;&#xC744; &#xBC1B;&#xACE0; &#xC67C;&#xCABD;&#xC5D0; &quot;padding&quot;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-comment"> * &#xB9CC;&#xC57D; &apos;padding&apos;&#xC774; &#xBB38;&#xC790;&#xC5F4;&#xC774;&#xB77C;&#xBA74;, &apos;padding&apos;&#xC740; &#xC67C;&#xCABD;&#xC5D0; &#xB354;&#xD574;&#xC9C8; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-comment"> * &#xB9CC;&#xC57D; &apos;padding&apos;&#xC774; &#xC22B;&#xC790;&#xB77C;&#xBA74;, &#xADF8; &#xC22B;&#xC790;&#xB9CC;&#xD07C;&#xC758; &#xACF5;&#xBC31;&#xC774; &#xC67C;&#xCABD;&#xC5D0; &#xB354;&#xD574;&#xC9C8; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-comment"> */</span>
+<span class="cm-keyword">function</span> <span class="cm-variable">padLeft</span>(<span class="cm-def">value</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">padding</span>: <span class="cm-variable-3">string</span> <span class="cm-operator">|</span> <span class="cm-variable-3">number</span>) {
+  <span class="cm-comment">// ...</span>
 }
 
-declare function getSmallPet(): Fish | Bird;
+<span class="cm-keyword">let</span> <span class="cm-variable">indentedString</span> <span class="cm-operator">=</span> <span class="cm-variable">padLeft</span>(<span class="cm-string">&quot;Hello world&quot;</span>, <span class="cm-atom">true</span>);
+</code></pre>
+<p>&#xC720;&#xB2C8;&#xC5B8; &#xD0C0;&#xC785;&#xC740; &#xC5EC;&#xB7EC; &#xD0C0;&#xC785; &#xC911; &#xD558;&#xB098;&#xAC00; &#xB420; &#xC218; &#xC788;&#xB294; &#xAC12;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC138;&#xB85C; &#xB9C9;&#xB300; (<code>|</code>)&#xB85C; &#xAC01; &#xD0C0;&#xC785;&#xC744; &#xAD6C;&#xBD84;&#xD558;&#xC5EC;, <code>number | string | boolean</code>&#xC740; &#xAC12;&#xC758; &#xD0C0;&#xC785;&#xC774; <code>number</code>, <code>string</code> &#xD639;&#xC740; <code>boolean</code>&#xC774; &#xB420; &#xC218; &#xC788;&#xC74C;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xACF5;&#xD1B5;-&#xD544;&#xB4DC;&#xB97C;-&#xAC16;&#xB294;-&#xC720;&#xB2C8;&#xC5B8;-unions-with-common-fields">&#xACF5;&#xD1B5; &#xD544;&#xB4DC;&#xB97C; &#xAC16;&#xB294; &#xC720;&#xB2C8;&#xC5B8; (Unions with Common Fields)</h2>
+<p>&#xC720;&#xB2C8;&#xC5B8; &#xD0C0;&#xC785;&#xC778; &#xAC12;&#xC774; &#xC788;&#xC73C;&#xBA74;, &#xC720;&#xB2C8;&#xC5B8;&#xC5D0; &#xC788;&#xB294; &#xBAA8;&#xB4E0; &#xD0C0;&#xC785;&#xC5D0; &#xACF5;&#xD1B5;&#xC778; &#xBA64;&#xBC84;&#xB4E4;&#xC5D0;&#xB9CC; &#xC811;&#xADFC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-comment">// @errors: 2339</span>
 
-let pet = getSmallPet();
-pet.layEggs();
+<span class="cm-keyword">interface</span> <span class="cm-variable">Bird</span> {
+  <span class="cm-variable">fly</span>(): <span class="cm-variable">void</span>;
+  <span class="cm-variable">layEggs</span>(): <span class="cm-variable">void</span>;
+}
 
-// Only available in one of the two possible types
-pet.swim();
-</code></pre><p>Union types can be a bit tricky here, but it just takes a bit of intuition to get used to.
-If a value has the type <code>A | B</code>, we only know for <em>certain</em> that it has members that both <code>A</code> <em>and</em> <code>B</code> have.
-In this example, <code>Bird</code> has a member named <code>fly</code>.
-We can&apos;t be sure whether a variable typed as <code>Bird | Fish</code> has a <code>fly</code> method.
-If the variable is really a <code>Fish</code> at runtime, then calling <code>pet.fly()</code> will fail.</p>
-<h2 id="discriminating-unions">Discriminating Unions</h2>
-<p>A common technique for working with unions is to have a single field which uses literal types which you can use to let TypeScript narrow down the possible current type. For example, we&apos;re going to create a union of three types which have a single shared field.</p>
+<span class="cm-keyword">interface</span> <span class="cm-variable">Fish</span> {
+  <span class="cm-variable">swim</span>(): <span class="cm-variable">void</span>;
+  <span class="cm-variable">layEggs</span>(): <span class="cm-variable">void</span>;
+}
+
+<span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">getSmallPet</span>(): <span class="cm-variable">Fish</span> <span class="cm-operator">|</span> <span class="cm-variable">Bird</span>;
+
+<span class="cm-keyword">let</span> <span class="cm-variable">pet</span> <span class="cm-operator">=</span> <span class="cm-variable">getSmallPet</span>();
+<span class="cm-variable">pet</span>.<span class="cm-property">layEggs</span>();
+
+<span class="cm-comment">// &#xB450; &#xAC1C;&#xC758; &#xC7A0;&#xC7AC;&#xC801;&#xC778; &#xD0C0;&#xC785; &#xC911; &#xD558;&#xB098;&#xC5D0;&#xC11C;&#xB9CC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-variable">pet</span>.<span class="cm-property">swim</span>();
+</code></pre>
+<p>&#xC5EC;&#xAE30;&#xC11C; &#xC720;&#xB2C8;&#xC5B8; &#xD0C0;&#xC785;&#xC740; &#xC57D;&#xAC04; &#xAE4C;&#xB2E4;&#xB85C;&#xC6B8; &#xC218; &#xC788;&#xC73C;&#xB098;, &#xC775;&#xC219;&#xD574;&#xC9C0;&#xB294; &#xB370; &#xC57D;&#xAC04;&#xC758; &#xC9C1;&#xAD00;&#xB9CC; &#xC788;&#xC73C;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.
+&#xB9CC;&#xC57D; &#xAC12;&#xC774; <code>A | B</code> &#xD0C0;&#xC785;&#xC744; &#xAC16;&#xACE0; &#xC788;&#xC73C;&#xBA74;, <em>&#xD655;&#xC2E0;&#xD560;</em> &#xC218; &#xC788;&#xB294; &#xAC83;&#xC740; &#xADF8; &#xAC12;&#xC774; <code>A</code><em>&#xC640;</em><code>B</code> &#xB458; &#xB2E4; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294; &#xBA64;&#xBC84;&#xB4E4;&#xC744; &#xAC16;&#xACE0; &#xC788;&#xB2E4;&#xB294; &#xAC83;&#xBFD0;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC774; &#xC608;&#xC81C;&#xC5D0;&#xC11C;, <code>Bird</code>&#xB294; <code>fly</code>&#xB77C;&#xB294; &#xBA64;&#xBC84;&#xB97C; &#xAC16;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+<code>Bird | Fish</code>&#xB85C; &#xD0C0;&#xC785;&#xC774; &#xC9C0;&#xC815;&#xB41C; &#xBCC0;&#xC218;&#xAC00; <code>fly</code> &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294;&#xC9C0; &#xD655;&#xC2E0;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB9CC;&#xC57D; &#xBCC0;&#xC218;&#xAC00; &#xC2E4;&#xC81C;&#xB85C; &#xB7F0;&#xD0C0;&#xC784;&#xC5D0; <code>Fish</code>&#xC774;&#xBA74;, <code>pet.fly()</code>&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC624;&#xB958;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xC720;&#xB2C8;&#xC5B8;-&#xAD6C;&#xBCC4;&#xD558;&#xAE30;-discriminating-unions">&#xC720;&#xB2C8;&#xC5B8; &#xAD6C;&#xBCC4;&#xD558;&#xAE30; (Discriminating Unions)</h2>
+<p>&#xC720;&#xB2C8;&#xC5B8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xB370; &#xC788;&#xC5B4;&#xC11C; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xAE30;&#xC220;&#xC740; TypeScript&#xAC00; &#xD604;&#xC7AC; &#xAC00;&#xB2A5;&#xD55C; &#xD0C0;&#xC785; &#xCD94;&#xB860;&#xC758; &#xBC94;&#xC704;&#xB97C; &#xC881;&#xD600;&#xB098;&#xAC00;&#xAC8C; &#xD574;&#xC904; &#xC218; &#xC788;&#xB294; &#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785;&#xC744; &#xAC16;&#xB294; &#xB2E8;&#xC77C; &#xD544;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xC5B4;, &#xD558;&#xB098;&#xC758; &#xACF5;&#xD1B5; &#xD544;&#xB4DC;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294; &#xC138; &#xAC00;&#xC9C0; &#xD0C0;&#xC785;&#xC758; &#xC720;&#xB2C8;&#xC5B8;&#xC744; &#xB9CC;&#xB4E4;&#xC5B4; &#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">NetworkLoadingState</span> <span class="cm-operator">=</span> {
   <span class="cm-property">state</span>: <span class="cm-string">&quot;loading&quot;</span>;
 };
@@ -1154,44 +1146,14 @@ If the variable is really a <code>Fish</code> at runtime, then calling <code>pet
   };
 };
 
-<span class="cm-comment">// Create a type which represents only one of the above types</span>
-<span class="cm-comment">// but you aren&apos;t sure which it is yet.</span>
+<span class="cm-comment">// &#xC704; &#xD0C0;&#xC785;&#xB4E4; &#xC911; &#xB2E8; &#xD558;&#xB098;&#xB97C; &#xB300;&#xD45C;&#xD558;&#xB294; &#xD0C0;&#xC785;&#xC744; &#xB9CC;&#xB4E4;&#xC5C8;&#xC9C0;&#xB9CC;,</span>
+<span class="cm-comment">// &#xADF8;&#xAC83;&#xC774; &#xBB34;&#xC5C7;&#xC5D0; &#xD574;&#xB2F9;&#xD558;&#xB294;&#xC9C0; &#xC544;&#xC9C1; &#xD655;&#xC2E4;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
 <span class="cm-variable">type</span> <span class="cm-variable">NetworkState</span> <span class="cm-operator">=</span>
   <span class="cm-operator">|</span> <span class="cm-variable">NetworkLoadingState</span>
   <span class="cm-operator">|</span> <span class="cm-variable">NetworkFailedState</span>
   <span class="cm-operator">|</span> <span class="cm-variable">NetworkSuccessState</span>;
 </code></pre>
-<style type="text/css">
-.markdown table.tg  {
-  border-collapse:collapse;
-  width: 100%;
-  text-align: center;
-  display: table;
-}
-
-.tg th {
-  border-bottom: 1px solid black;
-  padding: 8px;
-  padding-bottom: 0;
-}
-
-.tg tbody, .tg tr {
-  width: 100%;
-}
-
-.tg .highlight {
-  background-color: #F3F3F3;
-}
-
-@media (prefers-color-scheme: dark) {
-  .tg .highlight {
-    background-color: #424242;
-  }
-}
-
-</style>
-
-<p>All of the above types have a field named <code>state</code>, and then they also have their own fields:</p>
+<p>&#xC704; &#xD0C0;&#xC785;&#xB4E4;&#xC740; &#xBAA8;&#xB450; <code>state</code>&#xB77C;&#xB294; &#xD544;&#xB4DC;&#xB97C; &#xAC16;&#xACE0; &#xC788;&#xC73C;&#xBA70;, &#xADF8;&#xB4E4; &#xAC01;&#xC790;&#xB9CC;&#xC758; &#xD544;&#xB4DC;&#xB3C4; &#xAC16;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <table class="tg" width="100%">
   <tbody>
     <tr>
@@ -1212,8 +1174,8 @@ If the variable is really a <code>Fish</code> at runtime, then calling <code>pet
     </tbody>
 </table>
 
-<p>Given the <code>state</code> field is common in every type inside <code>NetworkState</code> - it is safe for your code to access without an existence check.</p>
-<p>With <code>state</code> as a literal type, you can compare the value of <code>state</code> to the equivalent string and TypeScript will know which type is currently being used.</p>
+<p><code>state</code> &#xD544;&#xB4DC;&#xAC00; <code>NetworkState</code> &#xC548;&#xC758; &#xBAA8;&#xB4E0; &#xD0C0;&#xC785;&#xC5D0; &#xACF5;&#xD1B5;&#xC73C;&#xB85C; &#xC874;&#xC7AC;&#xD55C;&#xB2E4;&#xB294; &#xC810;&#xC744; &#xC548;&#xB2E4;&#xBA74; - &#xC874;&#xC7AC; &#xC5EC;&#xBD80;&#xB97C; &#xCCB4;&#xD06C;&#xD558;&#xC9C0; &#xC54A;&#xACE0;&#xB3C4; &#xC811;&#xADFC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785;&#xC73C;&#xB85C;&#xC11C; <code>state</code>&#xB97C; &#xAC16;&#xACE0; &#xC788;&#xB2E4;&#xBA74;, <code>state</code>&#xC758; &#xAC12;&#xC740; &#xB300;&#xC751;&#xD558;&#xB294; &#xB3D9;&#xC77C;&#xD55C; &#xBB38;&#xC790;&#xC5F4;&#xACFC; &#xB300;&#xC870;&#xB418;&#xACE0; TypeScript&#xB294; &#xD604;&#xC7AC; &#xC5B4;&#xB5A4; &#xD0C0;&#xC785;&#xC774; &#xC0AC;&#xC6A9;&#xB418;&#xACE0; &#xC788;&#xB294;&#xC9C0; &#xC54C; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <table class="tg" width="100%">
   <tbody>
     <tr>
@@ -1229,90 +1191,91 @@ If the variable is really a <code>Fish</code> at runtime, then calling <code>pet
     </tbody>
 </table>
 
-<p>In this case, you can use a <code>switch</code> statement to narrow down which type is represented at runtime:</p>
-<p>```ts twoslash
-// @errors: 2339
-type NetworkLoadingState = {
-  state: &quot;loading&quot;;
-};</p>
-<p>type NetworkFailedState = {
-  state: &quot;failed&quot;;
-  code: number;
-};</p>
-<p>type NetworkSuccessState = {
-  state: &quot;success&quot;;
-  response: {
-    title: string;
-    duration: number;
-    summary: string;
+<p>&#xC774; &#xACBD;&#xC6B0;, &#xB7F0;&#xD0C0;&#xC784;&#xC5D0; &#xB098;&#xD0C0;&#xB098;&#xB294; &#xD0C0;&#xC785;&#xC758; &#xBC94;&#xC704;&#xB97C; &#xC881;&#xD788;&#xAE30; &#xC704;&#xD558;&#xC5EC; <code>switch</code>&#xBB38;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-comment">// @errors: 2339</span>
+<span class="cm-variable">type</span> <span class="cm-variable">NetworkLoadingState</span> <span class="cm-operator">=</span> {
+  <span class="cm-property">state</span>: <span class="cm-string">&quot;loading&quot;</span>;
+};
+
+<span class="cm-variable">type</span> <span class="cm-variable">NetworkFailedState</span> <span class="cm-operator">=</span> {
+  <span class="cm-property">state</span>: <span class="cm-string">&quot;failed&quot;</span>;
+  <span class="cm-variable">code</span>: <span class="cm-variable-3">number</span>;
+};
+
+<span class="cm-variable">type</span> <span class="cm-variable">NetworkSuccessState</span> <span class="cm-operator">=</span> {
+  <span class="cm-property">state</span>: <span class="cm-string">&quot;success&quot;</span>;
+  <span class="cm-variable">response</span>: {
+    <span class="cm-variable">title</span>: <span class="cm-variable-3">string</span>;
+    <span class="cm-variable">duration</span>: <span class="cm-variable-3">number</span>;
+    <span class="cm-variable">summary</span>: <span class="cm-variable-3">string</span>;
   };
 };
-// ---cut---
-type NetworkState =
-  | NetworkLoadingState
-  | NetworkFailedState
-  | NetworkSuccessState;</p>
-<p>function networkStatus(state: NetworkState): string {
-  // Right now TypeScript does not know which of the three
-  // potential types state could be.</p>
-<p>  // Trying to access a property which isn&apos;t shared
-  // across all types will raise an error
-  state.code;</p>
-<p>  // By switching on state, TypeScript can narrow the union
-  // down in code flow analysis
-  switch (state.state) {
-    case &quot;loading&quot;:
-      return &quot;Downloading...&quot;;
-    case &quot;failed&quot;:
-      // The type must be NetworkFailedState here,
-      // so accessing the <code>code</code> field is safe
-      return <code>Error ${state.code} downloading</code>;
-    case &quot;success&quot;:
-      return <code>Downloaded ${state.response.title} - ${state.response.summary}</code>;
-  }
-}</p>
-<pre><code>
-# Intersection Types
+<span class="cm-comment">// ---&#xC0DD;&#xB7B5;---</span>
+<span class="cm-variable">type</span> <span class="cm-variable">NetworkState</span> <span class="cm-operator">=</span>
+  <span class="cm-operator">|</span> <span class="cm-variable">NetworkLoadingState</span>
+  <span class="cm-operator">|</span> <span class="cm-variable">NetworkFailedState</span>
+  <span class="cm-operator">|</span> <span class="cm-variable">NetworkSuccessState</span>;
 
-Intersection types are closely related to union types, but they are used very differently.
+<span class="cm-keyword">function</span> <span class="cm-variable">networkStatus</span>(<span class="cm-def">state</span>: <span class="cm-variable-3">NetworkState</span>): <span class="cm-variable-3">string</span> {
+  <span class="cm-comment">// &#xD604;&#xC7AC; TypeScript&#xB294; &#xC14B; &#xC911; &#xC5B4;&#xB5A4; &#xAC83;&#xC774;</span>
+  <span class="cm-comment">// state&#xAC00; &#xB420; &#xC218; &#xC788;&#xB294; &#xC7A0;&#xC7AC;&#xC801;&#xC778; &#xD0C0;&#xC785;&#xC778;&#xC9C0; &#xC54C; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+
+  <span class="cm-comment">// &#xBAA8;&#xB4E0; &#xD0C0;&#xC785;&#xC5D0; &#xACF5;&#xC720;&#xB418;&#xC9C0; &#xC54A;&#xB294; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0; &#xC811;&#xADFC;&#xD558;&#xB824;&#xB294; &#xC2DC;&#xB3C4;&#xB294;</span>
+  <span class="cm-comment">// &#xC624;&#xB958;&#xB97C; &#xBC1C;&#xC0DD;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;.</span>
+  <span class="cm-variable">state</span>.<span class="cm-property">code</span>;
+
+  <span class="cm-comment">// state&#xC5D0; swtich&#xBB38;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC;, TypeScript&#xB294; &#xCF54;&#xB4DC; &#xD750;&#xB984;&#xC744; &#xBD84;&#xC11D;&#xD558;&#xBA74;&#xC11C;</span>
+  <span class="cm-comment">// &#xC720;&#xB2C8;&#xC5B8; &#xD0C0;&#xC785;&#xC744; &#xC881;&#xD600;&#xB098;&#xAC08; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+  <span class="cm-keyword">switch</span> (<span class="cm-variable">state</span>.<span class="cm-property">state</span>) {
+    <span class="cm-keyword">case</span> <span class="cm-string">&quot;loading&quot;</span>:
+      <span class="cm-keyword">return</span> <span class="cm-string">&quot;Downloading...&quot;</span>;
+    <span class="cm-keyword">case</span> <span class="cm-string">&quot;failed&quot;</span>:
+      <span class="cm-comment">// &#xC5EC;&#xAE30;&#xC11C; &#xD0C0;&#xC785;&#xC740; NetworkFailedState&#xC77C; &#xAC83;&#xC774;&#xBA70;,</span>
+      <span class="cm-comment">// &#xB530;&#xB77C;&#xC11C; `code` &#xD544;&#xB4DC;&#xC5D0; &#xC811;&#xADFC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+      <span class="cm-keyword">return</span> <span class="cm-string-2">`Error ${</span><span class="cm-variable">state</span>.<span class="cm-property">code</span><span class="cm-string-2">}</span> <span class="cm-string-2">downloading`</span>;
+    <span class="cm-keyword">case</span> <span class="cm-string">&quot;success&quot;</span>:
+      <span class="cm-keyword">return</span> <span class="cm-string-2">`Downloaded ${</span><span class="cm-variable">state</span>.<span class="cm-property">response</span>.<span class="cm-property">title</span><span class="cm-string-2">}</span> <span class="cm-string-2">- ${</span><span class="cm-variable">state</span>.<span class="cm-property">response</span>.<span class="cm-property">summary</span><span class="cm-string-2">}</span><span class="cm-string-2">`</span>;
+  }
+}
+</code></pre>
+<h1 id="intersection-types">Intersection Types</h1>
+<p>Intersection types are closely related to union types, but they are used very differently.
 An intersection type combines multiple types into one.
 This allows you to add together existing types to get a single type that has all the features you need.
-For example, `Person &amp; Serializable &amp; Loggable` is a type which is all of `Person` _and_ `Serializable` _and_ `Loggable`.
-That means an object of this type will have all members of all three types.
-
-For example, if you had networking requests with consistent error handling then you could separate out the error handling into it&apos;s own type which is merged with types which correspond to a single response type.
-
-```ts twoslash
-interface ErrorHandling {
-  success: boolean;
-  error?: { message: string };
+For example, <code>Person &amp; Serializable &amp; Loggable</code> is a type which is all of <code>Person</code> <em>and</em> <code>Serializable</code> <em>and</em> <code>Loggable</code>.
+That means an object of this type will have all members of all three types.</p>
+<p>For example, if you had networking requests with consistent error handling then you could separate out the error handling into it&apos;s own type which is merged with types which correspond to a single response type.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">ErrorHandling</span> {
+  <span class="cm-variable">success</span>: <span class="cm-variable">boolean</span>;
+  <span class="cm-variable">error</span><span class="cm-operator">?</span>: { <span class="cm-variable">message</span>: <span class="cm-variable-3">string</span> };
 }
 
-interface ArtworksData {
-  artworks: { title: string }[];
+<span class="cm-keyword">interface</span> <span class="cm-variable">ArtworksData</span> {
+  <span class="cm-variable">artworks</span>: { <span class="cm-variable">title</span>: <span class="cm-variable-3">string</span> }[];
 }
 
-interface ArtistsData {
-  artists: { name: string }[];
+<span class="cm-keyword">interface</span> <span class="cm-variable">ArtistsData</span> {
+  <span class="cm-variable">artists</span>: { <span class="cm-variable">name</span>: <span class="cm-variable-3">string</span> }[];
 }
 
-// These interfaces are composed to have
-// consistent error handling, and their own data.
+<span class="cm-comment">// These interfaces are composed to have</span>
+<span class="cm-comment">// consistent error handling, and their own data.</span>
 
-type ArtworksResponse = ArtworksData &amp; ErrorHandling;
-type ArtistsResponse = ArtistsData &amp; ErrorHandling;
+<span class="cm-variable">type</span> <span class="cm-variable">ArtworksResponse</span> <span class="cm-operator">=</span> <span class="cm-variable">ArtworksData</span> <span class="cm-operator">&amp;</span> <span class="cm-variable">ErrorHandling</span>;
+<span class="cm-variable">type</span> <span class="cm-variable">ArtistsResponse</span> <span class="cm-operator">=</span> <span class="cm-variable">ArtistsData</span> <span class="cm-operator">&amp;</span> <span class="cm-variable">ErrorHandling</span>;
 
-const handleArtistsResponse = (response: ArtistsResponse) =&gt; {
-  if (response.error) {
-    console.error(response.error.message);
-    return;
+<span class="cm-keyword">const</span> <span class="cm-variable">handleArtistsResponse</span> <span class="cm-operator">=</span> (<span class="cm-def">response</span>: <span class="cm-variable">ArtistsResponse</span>) <span class="cm-operator">=&gt;</span> {
+  <span class="cm-keyword">if</span> (<span class="cm-variable-2">response</span>.<span class="cm-property">error</span>) {
+    <span class="cm-variable">console</span>.<span class="cm-property">error</span>(<span class="cm-variable-2">response</span>.<span class="cm-property">error</span>.<span class="cm-property">message</span>);
+    <span class="cm-keyword">return</span>;
   }
 
-  console.log(response.artists);
+  <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable-2">response</span>.<span class="cm-property">artists</span>);
 };
-</code></pre><h2 id="mixins-via-intersections">Mixins via Intersections</h2>
+</code></pre>
+<h2 id="mixins-via-intersections">Mixins via Intersections</h2>
 <p>Intersections are used to implement the <a href="../docs/handbook/mixins.html">mixin pattern</a>:</p>
-<p>```ts twoslash
+<p>```ts
 class Person {
   constructor(public name: string) {}
 }</p>
@@ -1344,7 +1307,7 @@ function extend<first extends="" {},="" second="" {}="">(
 }</first></first></p>
 <p>const jim = extend(new Person(&quot;Jim&quot;), ConsoleLogger.prototype);
 jim.log(jim.name);
-```</p>
+```-</p>
 
                                 
                                 </section>
@@ -1388,7 +1351,7 @@ jim.log(jim.name);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"유니언과 교차 타입(en)","layout":"docs","permalink":"/docs/handbook/unions-and-intersections.html","oneline":"How to use unions and intersection types in TypeScript","level":"3.6","depth":1,"next":{"title":"클래스","level":"3.7","depth":1,"path":"pages/classes.md","ref":"pages/classes.md","articles":[]},"previous":{"title":"리터럴 타입(en)","level":"3.5","depth":1,"path":"pages/literal-types.md","ref":"pages/literal-types.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/unions-and-intersections.md","mtime":"2020-08-18T11:08:15.596Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-18T11:09:12.937Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"유니언과 교차 타입(en)","layout":"docs","permalink":"/docs/handbook/unions-and-intersections.html","oneline":"How to use unions and intersection types in TypeScript","level":"3.6","depth":1,"next":{"title":"클래스","level":"3.7","depth":1,"path":"pages/classes.md","ref":"pages/classes.md","articles":[]},"previous":{"title":"리터럴 타입(en)","level":"3.5","depth":1,"path":"pages/literal-types.md","ref":"pages/literal-types.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/unions-and-intersections.md","mtime":"2020-08-25T11:08:38.809Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-25T11:09:32.460Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
