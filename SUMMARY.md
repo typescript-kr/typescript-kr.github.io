@@ -52,6 +52,7 @@
 
 ## 릴리즈 노트
 
+* [TypeScript 4.0](pages/release-notes/typescript-4.0.md)
 * [TypeScript 3.9](pages/release-notes/typescript-3.9.md)
 * [TypeScript 3.8](pages/release-notes/typescript-3.8.md)
 
