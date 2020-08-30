@@ -5,9 +5,9 @@ permalink: /docs/handbook/release-notes/typescript-4-0.html
 oneline: TypeScript 4.0 Release Notes
 ---
 
-## Variadic Tuple Types
+## 가변 인자 튜플 유형 (Variadic Tuple Types)
 
-Consider a function in JavaScript called `concat` that takes two array or tuple types and concatenates them together to make a new array.
+두 개의 배열 혹은 튜플 타입을 연결하여 새로운 배열을 만드는 JavaScript의 `concat` 함수에 대해서 생각해봅시다.
 
 ```js
 function concat(arr1, arr2) {
@@ -15,7 +15,7 @@ function concat(arr1, arr2) {
 }
 ```
 
-Also consider `tail`, that takes an array or tuple, and returns all elements but the first.
+또한, 배열이나 튜플을 변수로 입력받아 첫 번째 원소를 제외한 모든 원소를 반환해주는 `tail` 함수에 대해서도 생각해봅시다.
 
 ```js
 function tail(arg) {
@@ -24,9 +24,9 @@ function tail(arg) {
 }
 ```
 
-How would we type either of these in TypeScript?
+TypeScript에서는 이 두 함수의 타입을 어떻게 정의할 수 있을까요?
 
-For `concat`, the only valid thing we could do in older versions of the language was to try and write some overloads.
+`concat`의 경우, 이전 버전에서는 여러 개의 오버로드를 작성하는 방법이 유일했습니다.
 
 ```ts
 function concat(arr1: [], arr2: []): [];
@@ -38,8 +38,8 @@ function concat<A, B, C, D, E>(arr1: [A, B, C, D, E], arr2: []): [A, B, C, D, E]
 function concat<A, B, C, D, E, F>(arr1: [A, B, C, D, E, F], arr2: []): [A, B, C, D, E, F];)
 ```
 
-Uh...okay, that's...seven overloads for when the second array is always empty.
-Let's add some for when `arr2` has one argument.
+음... 네, 두 번째의 배열이 항상 비어있는 경우 작성된 7개의 오버로드들입니다.
+이때, `arr2`가 하나의 인자를 가지고 있는 경우를 추가해봅시다.
 
 <!-- prettier-ignore -->
 ```ts
@@ -52,26 +52,27 @@ function concat<A1, B1, C1, D1, E1, A2>(arr1: [A1, B1, C1, D1, E1], arr2: [A2]):
 function concat<A1, B1, C1, D1, E1, F1, A2>(arr1: [A1, B1, C1, D1, E1, F1], arr2: [A2]): [A1, B1, C1, D1, E1, F1, A2];
 ```
 
-We hope it's clear that this is getting unreasonable.
-Unfortunately, you'd also end up with the same sorts of issues typing a function like `tail`.
+이것이 지나치다는 것이 분명해지기를 바랍니다.
+안타깝게도, `tail`과 같은 함수를 타이핑할 때 이와 같은 비슷한 종류의 문제에 직면하게 될 것입니다.
 
-This is another case of what we like to call "death by a thousand overloads", and it doesn't even solve the problem generally.
-It only gives correct types for as many overloads as we care to write.
-If we wanted to make a catch-all case, we'd need an overload like the following:
+
+이것은 "천 개의 오버로드로 인한 죽음(death by a thousand overloads)"이라고 부르고 싶은 또다른 경우이며, 일반적으로 문제를 해결하지도 않습니다.
+우리가 작성하고자하는만큼의 오버로드에 한해서만 올바른 타입을 제공합니다.
+포괄적인 케이스를 만들고 싶다면, 다음과 같은 오버로드가 필요합니다.
 
 ```ts
 function concat<T, U>(arr1: T[], arr2: U[]): Array<T | U>;
 ```
 
-But that signature doesn't encode anything about the lengths of the input, or the order of the elements, when using tuples.
+그러나 해당 시그니처는 튜플을 사용할 때 입력의 길이나 요소의 순서에 대한 어떤 것도 인코딩하지 않습니다.
 
-TypeScript 4.0 brings two fundamental changes, along with inference improvements, to make typing these possible.
+TypeScript 4.0은 추론 개선과 함께 두 가지 핵심적인 변화를 가져와 이러한 타이핑을 가능하게 합니다.
 
-The first change is that spreads in tuple type syntax can now be generic.
-This means that we can represent higher-order operations on tuples and arrays even when we don't know the actual types we're operating over.
-When generic spreads are instantiated (or, replaced with a real type) in these tuple types, they can produce other sets of array and tuple types.
+첫 번째 변화는 튜플 타입 구문의 확장 연산자에서 제너릭 타입을 사용할 수 있다는 점입니다.
+이 것은 우리가 작동하는 실제 타입을 모르더라도 튜플과 배열에 대해 고차함수를 표현할 수 있다는 뜻입니다.
+이러한 튜플 타입에서 제너릭 확장 연산자가 인스턴스화(혹은, 실제 타입으로 대체)되면 또다른 배열이나 튜플 타입 세트를 생산할 수 있습니다.
 
-For example, that means we can type function like `tail`, without our "death by a thousand overloads" issue.
+예를 들어, `tail` 같은 함수를 "천 개의 오버로드로 인한 죽음(death by a thousand overloads)"이슈 없이 타이핑 할 수 있게 됩니다.
 
 ```ts
 function tail<T extends any[]>(arr: readonly [any, ...T]) {
@@ -83,41 +84,41 @@ const myTuple = [1, 2, 3, 4] as const;
 const myArray = ["hello", "world"];
 
 const r1 = tail(myTuple);
-//    ^?
+//    ^ = const r1: [2, 3, 4]
 
 const r2 = tail([...myTuple, ...myArray] as const);
-//    ^?
+//    ^ = const r2: [2, 3, 4, ...string[]]
 ```
 
-The second change is that rest elements can occur anywhere in a tuple - not just at the end!
+두 번째 변화는 나머지 요소가 끝뿐만 아니라 튜플의 어느 곳에서도 발생할 수 있다는 것입니다.
 
 ```ts
 type Strings = [string, string];
 type Numbers = [number, number];
 
 type StrStrNumNumBool = [...Strings, ...Numbers, boolean];
-//   ^?
+//   ^ = type StrStrNumNumBool = [string, string, number, number, boolean]
 ```
 
-Previously, TypeScript would issue an error like the following:
+이전에는, TypeScript는 다음과 같은 오류를 생성했었습니다:
 
 ```
 A rest element must be last in a tuple type.
 ```
 
-But with TypeScript 4.0, this restriction is relaxed.
+TypeScript 4.0에서는 이러한 제한이 완화되었습니다.
 
-Note that in cases when we spread in a type without a known length, the resulting type becomes unbounded as well, and all the following elements factor into the resulting rest element type.
+길이가 정해지지 않은 타입을 확장하려고할 때, 결과의 타입은 제한되지 않으며, 다음 모든 요소가 결과의 나머지 요소 타입에 포함되는 점에 유의하시기 바랍니다.
 
 ```ts
 type Strings = [string, string];
 type Numbers = number[];
 
 type Unbounded = [...Strings, ...Numbers, boolean];
-//   ^?
+//   ^ = type Unbounded = [string, string, ...(number | boolean)[]]
 ```
 
-By combining both of these behaviors together, we can write a single well-typed signature for `concat`:
+이 두 가지 동작을 함께 결합하여, `concat`에 대해 타입이 제대로 정의된 시그니처를 작성할 수 있습니다.
 
 ```ts
 type Arr = readonly any[];
@@ -127,12 +128,12 @@ function concat<T extends Arr, U extends Arr>(arr1: T, arr2: U): [...T, ...U] {
 }
 ```
 
-While that one signature is still a bit lengthy, it's just one signature that doesn't have to be repeated, and it gives predictable behavior on all arrays and tuples.
+하나의 시그니처가 조금 길더라도, 반복할 필요가 없는 하나의 시그니처일뿐이며, 모든 배열과 튜플에서 예측가능한 행동을 제공합니다.
 
-This functionality on its own is great, but it shines in more sophisticated scenarios too.
-For example, consider a function to [partially apply arguments](https://en.wikipedia.org/wiki/Partial_application) called `partialCall`.
-`partialCall` takes a function - let's call it `f` - along with the initial few arguments that `f` expects.
-It then returns a new function that takes any other arguments that `f` still needs, and calls `f` when it receives them.
+이 기능은 그 자체만으로도 훌륭하지만, 조금 더 정교한 시나리오에서도 빛을 발합니다.
+예를 들어,[함수의 매개변수를 부분적으로 적용하여 새로운 함수를 반환하는](https://en.wikipedia.org/wiki/Partial_application) `partialCall` 함수가 있다고 생각해봅시다.
+`partialCall`은 다음과 같은 함수를 가집니다. - `f`가 예상하는 몇 가지 인수와 함께 `f`라고 지정하겠습니다.
+그 후, `f`가 여전히 필요로하는 다른 인수를 가지고, 그것을 받을 때 `f`를 호출하는 새로운 함수를 반환합니다.
 
 ```js
 function partialCall(f, ...headArgs) {
@@ -140,7 +141,7 @@ function partialCall(f, ...headArgs) {
 }
 ```
 
-TypeScript 4.0 improves the inference process for rest parameters and rest tuple elements so that we can type this and have it "just work".
+TypeScript 4.0은 나머지 파라미터들과 튜플 원소들에 대한 추론 프로세스를 개선하여 타입을 지정할 수 있고 "그냥 동작"하도록 할 수 있습니다.
 
 ```ts
 type Arr = readonly unknown[];
@@ -153,7 +154,7 @@ function partialCall<T extends Arr, U extends Arr, R>(
 }
 ```
 
-In this case, `partialCall` understands which parameters it can and can't initially take, and returns functions that appropriately accept and reject anything left over.
+이 경우, `partialCall`은 처음에 취할 수 있는 파라미터와 할 수 없는 파라미터를 파악하고, 남은 것들은 적절히 수용하고 거부하는 함수들을 반환합니다.
 
 ```ts
 // @errors: 2345 2554 2554 2345
@@ -169,26 +170,29 @@ function partialCall<T extends Arr, U extends Arr, R>(
 const foo = (x: string, y: number, z: boolean) => {};
 
 const f1 = partialCall(foo, 100);
+// [Error] Argument of type 'number' is not assignable to parameter of type 'string'.
 
 const f2 = partialCall(foo, "hello", 100, true, "oops");
+// [Error] Expected 4 arguments, but got 5.
 
-// This works!
+// 작동합니다!
 const f3 = partialCall(foo, "hello");
-//    ^?
+//    ^ = const f3: (y: number, z: boolean) => void
 
-// What can we do with f3 now?
+// f3으로 뭘 할 수 있을까요?
 
-// Works!
+// 작동합니다!
 f3(123, true);
-
+// [Error] Expected 2 arguments, but got 0.
 f3();
 
 f3(123, "hello");
+// [Error] Argument of type 'string' is not assignable to parameter of type 'boolean'.
 ```
 
-Variadic tuple types enable a lot of new exciting patterns, especially around function composition.
-We expect we may be able to leverage it to do a better job type-checking JavaScript's built-in `bind` method.
-A handful of other inference improvements and patterns also went into this, and if you're interested in learning more, you can take a look at [the pull request](https://github.com/microsoft/TypeScript/pull/39094) for variadic tuples.
+가변 인자 튜플 타입은 특히 기능 구성과 관련하여 많은 새로운 흥미로운 패턴을 가능하게 합니다.
+우리는 JavaScript에 내장된 `bind` 메서드의 타입 체킹을 더 잘하기 위해 이를 활용할 수 있을 것이라고 기대합니다.
+몇 가지 다른 추론 개선 및 패턴들도 여기에 포함되어있으며, 가변 인자 튜플에 대해 더 알아보고 싶다면, [the pull request](https://github.com/microsoft/TypeScript/pull/39094)를 참고해보세요.
 
 ## Labeled Tuple Elements
 
