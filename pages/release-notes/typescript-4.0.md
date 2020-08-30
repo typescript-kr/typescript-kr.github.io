@@ -170,10 +170,8 @@ function partialCall<T extends Arr, U extends Arr, R>(
 const foo = (x: string, y: number, z: boolean) => {};
 
 const f1 = partialCall(foo, 100);
-// [Error] Argument of type 'number' is not assignable to parameter of type 'string'.
 
 const f2 = partialCall(foo, "hello", 100, true, "oops");
-// [Error] Expected 4 arguments, but got 5.
 
 // 작동합니다!
 const f3 = partialCall(foo, "hello");
@@ -183,11 +181,9 @@ const f3 = partialCall(foo, "hello");
 
 // 작동합니다!
 f3(123, true);
-// [Error] Expected 2 arguments, but got 0.
 f3();
 
 f3(123, "hello");
-// [Error] Argument of type 'string' is not assignable to parameter of type 'boolean'.
 ```
 
 가변 인자 튜플 타입은 특히 기능 구성과 관련하여 많은 새로운 흥미로운 패턴을 가능하게 합니다.
