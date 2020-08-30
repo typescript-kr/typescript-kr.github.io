@@ -180,6 +180,7 @@ const f3 = partialCall(foo, "hello");
 
 // 작동합니다!
 f3(123, true);
+
 f3();
 
 f3(123, "hello");
