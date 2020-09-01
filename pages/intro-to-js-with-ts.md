@@ -41,7 +41,7 @@ x = false; // 성공?!
 이전 코드 예시의 마지막 줄은 TypeScript에서 오류를 발생시키지만, JS 프로젝트에서는 기본적으로 오류를 발생시키지 않습니다.
 JavaScript 파일에서 오류를 실행하려면 다음을 추가해야 합니다: `.js` 파일의 첫 번째 줄에 `// @ts-check`를 추가하여 TypeScript가 이를 오류로 올리도록 해야 합니다.
 
-```js twoslash
+```js
 // @ts-check
 // @errors: 2322
 /** @type {number} */
