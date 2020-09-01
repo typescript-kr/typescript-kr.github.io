@@ -56,7 +56,7 @@ x = false; // 성공 아님
 
 TypeScript는 우리가 동의하지 않는 오류들을 제공할 수도 있는데, 이 경우 특정 줄 맨앞에 `// @ts-ignore` 또는 `// @ts-expect-error`를 추가하여 그 줄의 오류를 무시할 수 있습니다.
 
-```js twoslash
+```js
 // @ts-check
 /** @type {number} */
 var x;
