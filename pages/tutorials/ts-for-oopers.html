@@ -613,7 +613,20 @@
         
         
     
-        <li class="chapter " data-level="6.1" data-path="../release-notes/typescript-3.9.html">
+        <li class="chapter " data-level="6.1" data-path="../release-notes/typescript-4.0.html">
+            
+                <a href="../release-notes/typescript-4.0.html">
+            
+                    
+                    TypeScript 4.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../release-notes/typescript-3.9.html">
             
                 <a href="../release-notes/typescript-3.9.html">
             
@@ -626,7 +639,7 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="../release-notes/typescript-3.8.html">
+        <li class="chapter " data-level="6.3" data-path="../release-notes/typescript-3.8.html">
             
                 <a href="../release-notes/typescript-3.8.html">
             
@@ -1060,40 +1073,40 @@ TypeScript &#xBAA8;&#xB378;&#xC774; &#xC720;&#xD615;&#xD654;&#xD558;&#xB294; &#x
 TypeScript&#xB294; &#xCF54;&#xB4DC;&#xB97C; <em>&#xC2E4;&#xD589;&#xD558;&#xB294;</em> &#xBC29;&#xC2DD;&#xC744; &#xBC14;&#xAFB8;&#xC9C0; &#xC54A;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, &#xC2E4;&#xC81C;&#xB85C; &#xBB34;&#xC5B8;&#xAC00; &#xB3D9;&#xC791;&#xD558;&#xB294; &#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB294; &#xC5EC;&#xC804;&#xD788; JavaScript&#xAC00; &#xC5B4;&#xB5BB;&#xAC8C; &#xC791;&#xB3D9;&#xD558;&#xB294;&#xC9C0; &#xBC30;&#xC6CC;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;!</p>
 <p>TypeScript&#xAC00; JavaScript&#xC640; &#xB3D9;&#xC77C;&#xD55C; <em>&#xB7F0;&#xD0C0;&#xC784;</em>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBBC0;&#xB85C;, &#xD2B9;&#xC815;&#xD55C; &#xB7F0;&#xD0C0;&#xC784; &#xB3D9;&#xC791;(&#xBB38;&#xC790;&#xC5F4;&#xC744; &#xC22B;&#xC790;&#xB85C; &#xBCC0;&#xD658;&#xD558;&#xAE30;, &#xACBD;&#xACE0; &#xD45C;&#xC2DC;, &#xB514;&#xC2A4;&#xD06C;&#xC5D0; &#xD30C;&#xC77C; &#xC4F0;&#xAE30; &#xB4F1;)&#xC744; &#xAD6C;&#xD604;&#xD558;&#xB824;&#xB294; &#xB9AC;&#xC18C;&#xC2A4;&#xB294; &#xD56D;&#xC0C1; TypeScript &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC5D0; &#xB611;&#xAC19;&#xC774; &#xC798; &#xC801;&#xC6A9;&#xB41C;&#xB2E4;&#xB294; &#xC810;&#xC744; &#xAE30;&#xC5B5;&#xD558;&#xB294; &#xAC83;&#xC740; &#xB9E4;&#xC6B0; &#xC911;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.
 TypeScript&#xC5D0; &#xD2B9;&#xC815;&#xB41C; &#xB9AC;&#xC18C;&#xC2A4;&#xC5D0;&#xB9CC; &#xC81C;&#xD55C;&#xC744; &#xB450;&#xC9C0; &#xB9C8;&#xC2ED;&#xC2DC;&#xC624;!</p>
-<h2 id="rethinking-the-class">Rethinking the Class</h2>
-<p>C# and Java are what we might call <em>mandatory OOP</em> languages.
-In these languages, the <em>class</em> is the basic unit of code organization, and also the basic container of all data <em>and</em> behavior at runtime.
-Forcing all functionality and data to be held in classes can be a good domain model for some problems, but not every domain <em>needs</em> to be represented this way.</p>
-<h3 id="free-functions-and-data">Free Functions and Data</h3>
-<p>In JavaScript, functions can live anywhere, and data can be passed around freely without being inside a pre-defined <code>class</code> or <code>struct</code>.
-This flexibility is extremely powerful.
-&quot;Free&quot; functions (those not associated with a class) working over data without an implied OOP hierarchy tends to be the preferred model for writing programs in JavaScript.</p>
-<h3 id="static-classes">Static Classes</h3>
-<p>Additionally, certain constructs from C# and Java such as singletons and static classes are unnecessary in TypeScript.</p>
-<h2 id="oop-in-typescript">OOP in TypeScript</h2>
-<p>That said, you can still use classes if you like!
-Some problems are well-suited to being solved by a traditional OOP hierarchy, and TypeScript&apos;s support for JavaScript classes will make these models even more powerful.
-TypeScript supports many common patterns such as implementing interfaces, inheritance, and static methods.</p>
-<p>We&apos;ll cover classes later in this guide.</p>
-<h2 id="rethinking-types">Rethinking Types</h2>
-<p>TypeScript&apos;s understanding of a <em>type</em> is actually quite different from C# or Java&apos;s.
-Let&apos;s explore some differences.</p>
-<h3 id="nominal-reified-type-systems">Nominal Reified Type Systems</h3>
-<p>In C# or Java, any given value or object has one exact type - either <code>null</code>, a primitive, or a known class type.
-We can call methods like <code>value.GetType()</code> or <code>value.getClass()</code> to query the exact type at runtime.
-The definition of this type will reside in a class somewhere with some name, and we can&apos;t use two classes with similar shapes in lieu of each other unless there&apos;s an explicit inheritance relationship or commonly-implemented interface.</p>
-<p>These aspects describe a <em>reified, nominal</em> type system.
-The types we wrote in the code are present at runtime, and the types are related via their declarations, not their structures.</p>
-<h3 id="types-as-sets">Types as Sets</h3>
-<p>In C# or Java, it&apos;s meaningful to think of a one-to-one correspondence between runtime types and their compile-time declarations.</p>
-<p>In TypeScript, it&apos;s better to think of a type as a <em>set of values</em> that share something in common.
-Because types are just sets, a particular value can belong to <em>many</em> sets at the same time.</p>
-<p>Once you start thinking of types as sets, certain operations become very natural.
-For example, in C#, it&apos;s awkward to pass around a value that is <em>either</em> a <code>string</code> or <code>int</code>, because there isn&apos;t a single type that represents this sort of value.</p>
-<p>In TypeScript, this becomes very natural once you realize that every type is just a set.
-How do you describe a value that either belongs in the <code>string</code> set or the <code>number</code> set?
-It simply belongs to the <em>union</em> of those sets: <code>string | number</code>.</p>
-<p>TypeScript provides a number of mechanisms to work with types in a set-theoretic way, and you&apos;ll find them more intuitive if you think of types as sets.</p>
+<h2 id="&#xD074;&#xB798;&#xC2A4;-&#xB2E4;&#xC2DC;-&#xC0DD;&#xAC01;&#xD558;&#xAE30;-rethinking-the-class">&#xD074;&#xB798;&#xC2A4; &#xB2E4;&#xC2DC; &#xC0DD;&#xAC01;&#xD558;&#xAE30; (Rethinking the Class)</h2>
+<p>C#&#xACFC; Java&#xB294; <em>&#xC758;&#xBB34;&#xC801; OOP</em> &#xC5B8;&#xC5B4;&#xB77C;&#xACE0; &#xBD80;&#xB985;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB7EC;&#xD55C; &#xC5B8;&#xC5B4;&#xC5D0;&#xC11C; <em>&#xD074;&#xB798;&#xC2A4;</em>&#xB294; &#xCF54;&#xB4DC; &#xAD6C;&#xC131;&#xC758; &#xAE30;&#xBCF8; &#xB2E8;&#xC704;&#xC77C; &#xBFD0;&#xB9CC; &#xC544;&#xB2C8;&#xB77C; &#xB7F0;&#xD0C0;&#xC784; &#xC2DC; &#xBAA8;&#xB4E0; &#xB370;&#xC774;&#xD130; <em>&#xADF8;&#xB9AC;&#xACE0;</em> &#xB3D9;&#xC791;&#xC758; &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xCEE8;&#xD14C;&#xC774;&#xB108;&#xC785;&#xB2C8;&#xB2E4;.
+&#xAE30;&#xB2A5;&#xACFC; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC804;&#xBD80; &#xD074;&#xB798;&#xC2A4;&#xC5D0; &#xB2F4;&#xB3C4;&#xB85D; &#xAC15;&#xC81C;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC77C;&#xBD80; &#xBB38;&#xC81C;&#xC5D0; &#xB300;&#xD574;&#xC120; &#xC88B;&#xC740; &#xB3C4;&#xBA54;&#xC778; &#xBAA8;&#xB378;&#xC774; &#xB420; &#xC218; &#xC788;&#xC9C0;&#xB9CC;, &#xBAA8;&#xB4E0; &#xB3C4;&#xBA54;&#xC778;&#xC774; &#xC774;&#xB7EC;&#xD55C; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xD45C;&#xD604;&#xB420; <em>&#xD544;&#xC694;</em>&#xB294; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xC790;&#xC720;&#xB85C;&#xC6B4;-&#xD568;&#xC218;&#xC640;-&#xB370;&#xC774;&#xD130;-free-functions-and-data">&#xC790;&#xC720;&#xB85C;&#xC6B4; &#xD568;&#xC218;&#xC640; &#xB370;&#xC774;&#xD130; (Free Functions and Data)</h3>
+<p>JavaScript&#xC5D0;&#xC11C; &#xD568;&#xC218;&#xB294; &#xC5B4;&#xB514;&#xC5D0;&#xB098; &#xC788;&#xC744; &#xC218; &#xC788;&#xACE0;, &#xB370;&#xC774;&#xD130;&#xB97C; &#xBBF8;&#xB9AC; &#xC815;&#xC758;&#xB41C; &#x2018;class&#x2019;&#xB098; &#x2018;struct&#x2019;&#xC5D0; &#xC18D;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xC790;&#xC720;&#xB86D;&#xAC8C; &#xC804;&#xB2EC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB7EC;&#xD55C; &#xC720;&#xC5F0;&#xC131;&#xC740; &#xB9E4;&#xC6B0; &#xAC15;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.
+OOP &#xACC4;&#xCE35;&#xACFC; &#xC0C1;&#xAD00; &#xC5C6;&#xC774; &#xB370;&#xC774;&#xD130;&#xB97C; &#xCC98;&#xB9AC;&#xD558;&#xB294; &#x201C;&#xC790;&#xC720;&#xB85C;&#xC6B4;&#x201D; (&#xD074;&#xB798;&#xC2A4;&#xC640; &#xC5F0;&#xAD00;&#xB418;&#xC9C0; &#xC54A;&#xC740;) &#xD568;&#xC218;&#xB294; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC744; JavaScript&#xB85C; &#xC791;&#xC131;&#xD558;&#xB294; &#xBAA8;&#xB378;&#xB85C; &#xC120;&#xD638;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xC815;&#xC801;-&#xD074;&#xB798;&#xC2A4;-static-classes">&#xC815;&#xC801; &#xD074;&#xB798;&#xC2A4; (Static Classes)</h3>
+<p>&#xCD94;&#xAC00;&#xC801;&#xC73C;&#xB85C;, C#&#xACFC; Java&#xC758; &#xC2F1;&#xAE00;&#xD134;&#xACFC; &#xC815;&#xC801; &#xD074;&#xB798;&#xC2A4; &#xAC19;&#xC740; &#xD2B9;&#xC815; &#xAD6C;&#xC870;&#xB294; TypeScript&#xC5D0;&#xC11C; &#xD544;&#xC694;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 id="typescript&#xC758;-oop-oop-in-typescript">TypeScript&#xC758; OOP (OOP in TypeScript)</h2>
+<p>&#xC989;, &#xC6D0;&#xD55C;&#xB2E4;&#xBA74; &#xACC4;&#xC18D; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xB3C4; &#xB429;&#xB2C8;&#xB2E4;!
+&#xC77C;&#xBD80; &#xBB38;&#xC81C;&#xB294; &#xAE30;&#xC874;&#xC758; OOP &#xACC4;&#xCE35;&#xC73C;&#xB85C; &#xD574;&#xACB0;&#xD558;&#xAE30; &#xC801;&#xD569;&#xD558;&#xBA70;, TypeScript&#xAC00; JavaScript&#xC758; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC9C0;&#xC6D0;&#xD558;&#xBBC0;&#xB85C; &#xC774;&#xB7EC;&#xD55C; &#xBAA8;&#xB378;&#xC744; &#xB354; &#xD6A8;&#xACFC;&#xC801;&#xC73C;&#xB85C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;.
+TypeScript&#xB294; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;, &#xC0C1;&#xC18D;, &#xC815;&#xC801; &#xBA54;&#xC11C;&#xB4DC; &#xAD6C;&#xD604;&#xACFC; &#xAC19;&#xC740; &#xB9CE;&#xC740; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD328;&#xD134;&#xC744; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC6B0;&#xB9AC;&#xB294; &#xC774; &#xAC00;&#xC774;&#xB4DC;&#xC758; &#xB4B7;&#xBD80;&#xBD84;&#xC5D0;&#xC11C; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xB2E4;&#xB8F0; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xD0C0;&#xC785;-&#xB2E4;&#xC2DC;-&#xC0DD;&#xAC01;&#xD558;&#xAE30;-rethinking-types">&#xD0C0;&#xC785; &#xB2E4;&#xC2DC; &#xC0DD;&#xAC01;&#xD558;&#xAE30; (Rethinking Types)</h2>
+<p>TypeScript&#xC758; <em>&#xD0C0;&#xC785;</em>&#xC5D0; &#xB300;&#xD55C; &#xC774;&#xD574;&#xB294; &#xC0AC;&#xC2E4; C#&#xC774;&#xB098; Java&#xC640; &#xC0C1;&#xB2F9;&#xD788; &#xB2E4;&#xB985;&#xB2C8;&#xB2E4;.
+&#xBA87; &#xAC00;&#xC9C0; &#xCC28;&#xC774;&#xC810;&#xC744; &#xC0B4;&#xD3B4;&#xBD05;&#xC2DC;&#xB2E4;.</p>
+<h3 id="&#xC774;&#xB984;&#xC73C;&#xB85C;-&#xAD6C;&#xCCB4;&#xD654;&#xB41C;-&#xD0C0;&#xC785;-&#xC2DC;&#xC2A4;&#xD15C;-nominal-reified-type-systems">&#xC774;&#xB984;&#xC73C;&#xB85C; &#xAD6C;&#xCCB4;&#xD654;&#xB41C; &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C; (Nominal Reified Type Systems)</h3>
+<p>C#&#xACFC; Java&#xC5D0;&#xC11C; &#xC8FC;&#xC5B4;&#xC9C4; &#xAC12;&#xACFC; &#xAC1D;&#xCCB4;&#xB294; &#x2018;null&#x2019;, &#xC6D0;&#xC2DC; &#xD0C0;&#xC785;, &#xB610;&#xB294; &#xC815;&#xC758;&#xB41C; &#xD074;&#xB798;&#xC2A4; &#xD0C0;&#xC785; &#xC911; &#xC815;&#xD655;&#xD558;&#xAC8C; &#xD558;&#xB098;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9D1;&#xB2C8;&#xB2E4;.
+&#xB7F0;&#xD0C0;&#xC784; &#xC2DC;&#xC810;&#xC5D0;&#xC11C; &#xC815;&#xD655;&#xD55C; &#xD0C0;&#xC785;&#xC744; &#xBB3B;&#xAE30; &#xC704;&#xD574; <code>value.GetType()</code> &#xB610;&#xB294; <code>value.getClass()</code>&#xC640; &#xAC19;&#xC740; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB7EC;&#xD55C; &#xD0C0;&#xC785;&#xC758; &#xC815;&#xC758;&#xB294; &#xD2B9;&#xC815;&#xD55C; &#xC774;&#xB984;&#xC744; &#xAC16;&#xACE0; &#xD074;&#xB798;&#xC2A4;&#xC758; &#xC5B4;&#xB518;&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xBA70;, &#xBA85;&#xC2DC;&#xC801;&#xC778; &#xC0C1;&#xC18D;&#xAD00;&#xACC4;&#xB098; &#xACF5;&#xD1B5;&#xC801;&#xC73C;&#xB85C; &#xAD6C;&#xD604;&#xB41C; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xAC00; &#xC5C6;&#xB294; &#xC774;&#xC0C1; &#xB450; &#xD074;&#xB798;&#xC2A4;&#xAC00; &#xC720;&#xC0AC;&#xD55C; &#xD615;&#xD0DC;&#xB97C; &#xAC00;&#xC84C;&#xB2E4; &#xD574;&#xB3C4; &#xC11C;&#xB85C; &#xB300;&#xCCB4;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774;&#xB7EC;&#xD55C; &#xC591;&#xC0C1;&#xC740; <em>reified, nominal</em> &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;&#xC744; &#xC124;&#xBA85;&#xD569;&#xB2C8;&#xB2E4;.
+&#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD55C; &#xD0C0;&#xC785;&#xC740; &#xB7F0;&#xD0C0;&#xC784; &#xC2DC;&#xC810;&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xBA70;, &#xD0C0;&#xC785;&#xC740; &#xAD6C;&#xC870;&#xAC00; &#xC544;&#xB2CC; &#xC120;&#xC5B8;&#xC744; &#xD1B5;&#xD574; &#xC5F0;&#xAD00; &#xC9C0;&#xC5B4;&#xC9D1;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xC9D1;&#xD569;&#xC73C;&#xB85C;&#xC11C;&#xC758;-&#xD0C0;&#xC785;-types-as-sets">&#xC9D1;&#xD569;&#xC73C;&#xB85C;&#xC11C;&#xC758; &#xD0C0;&#xC785; (Types as Sets)</h3>
+<p>C# &#xB610;&#xB294; Java&#xC5D0;&#xC11C; &#xB7F0;&#xD0C0;&#xC784; &#xD0C0;&#xC785;&#xACFC; &#xD574;&#xB2F9; &#xCEF4;&#xD30C;&#xC77C; &#xD0C0;&#xC784; &#xC120;&#xC5B8; &#xC0AC;&#xC774;&#xC758; &#xC77C;&#xB300;&#xC77C; &#xB300;&#xC751;&#xAD00;&#xACC4;&#xB294; &#xC911;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>TypeScript&#xC5D0;&#xC11C; &#xD0C0;&#xC785;&#xC740; &#xACF5;&#xD1B5;&#xC758; &#xBB34;&#xC5B8;&#xAC00;&#xB97C; &#xACF5;&#xC720;&#xD558;&#xB294; <em>&#xAC12;&#xC758; &#xC9D1;&#xD569;</em>&#xC73C;&#xB85C; &#xC0DD;&#xAC01;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xD0C0;&#xC785;&#xC740; &#xC9D1;&#xD569;&#xC5D0; &#xBD88;&#xACFC;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, &#xD2B9;&#xC815;&#xD55C; &#xAC12;&#xC740; &#xB3D9;&#xC2DC;&#xC5D0; <em>&#xC218;&#xB9CE;&#xC740;</em> &#xC9D1;&#xD569;&#xC5D0; &#xC18D;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC77C;&#xB2E8; &#xD0C0;&#xC785;&#xC744; &#xC9D1;&#xD569;&#xC73C;&#xB85C; &#xC0DD;&#xAC01;&#xD558;&#xAE30; &#xC2DC;&#xC791;&#xD558;&#xBA74;, &#xD2B9;&#xC815; &#xC5F0;&#xC0B0;&#xC774; &#xB9E4;&#xC6B0; &#xC790;&#xC5F0;&#xC2A4;&#xB7EC;&#xC6CC;&#xC9D1;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, C#&#xC5D0;&#xC11C;&#xB294; &#x2018;string&#x2019;&#xACFC; &#x2018;int&#x2019; <em>&#xB458; &#xB2E4; &#xAC00;&#xB2A5;&#xD55C;</em> &#xD0C0;&#xC785;&#xC774; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC774; &#xAC12;&#xC744; &#xC778;&#xC790;&#xB85C; &#xC804;&#xB2EC;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC774;&#xC0C1;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>TypeScript&#xC5D0;&#xC11C; &#xBAA8;&#xB4E0; &#xD0C0;&#xC785;&#xC774; &#xB2E8;&#xC21C;&#xD788; &#xC9D1;&#xD569;&#xC774;&#xB77C;&#xB294; &#xAC83;&#xC744; &#xAE68;&#xB2EB;&#xB294; &#xC21C;&#xAC04; &#xC774;&#xB294; &#xB9E4;&#xC6B0; &#xC790;&#xC5F0;&#xC2A4;&#xB7EC;&#xC6CC;&#xC9D1;&#xB2C8;&#xB2E4;.
+&#x2018;string&#x2019; &#xC9D1;&#xD569; &#xB610;&#xB294; &#x2018;number&#x2019; &#xC9D1;&#xD569;&#xC5D0; &#xC18D;&#xD560; &#xC218; &#xC788;&#xB294; &#xAC12;&#xC744; &#xC5B4;&#xB5BB;&#xAC8C; &#xC124;&#xBA85;&#xD558;&#xC2DC;&#xACA0;&#xC2B5;&#xB2C8;&#xAE4C;?
+&#xC774; &#xAC12;&#xC740; &#xB2E8;&#xC21C;&#xD788; &#xADF8; &#xC9D1;&#xD569;&#xB4E4;&#xC758; <em>&#xC720;&#xB2C8;&#xC5B8;</em>: &#x2018;string | number&#x2019;&#xC5D0; &#xC18D;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>TypeScript&#xB294; &#xC9D1;&#xD569;&#xB860;&#xC5D0; &#xC758;&#xAC70;&#xD574; &#xD0C0;&#xC785;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xC5EC;&#xB7EC; &#xBC29;&#xBC95;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xBA70;, &#xD0C0;&#xC785;&#xC744; &#xC9D1;&#xD569;&#xC73C;&#xB85C; &#xC0DD;&#xAC01;&#xD558;&#xB294; &#xAC83;&#xC774; &#xB354; &#xC9C1;&#xAD00;&#xC801;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h3 id="erased-structural-types">Erased Structural Types</h3>
 <p>In TypeScript, objects are <em>not</em> of a single exact type.
 For example, if we construct an object that satisfies an interface, we can use that object where that interface is expected even though there was no declarative relationship between the two.</p>
@@ -1225,7 +1238,7 @@ For example, <code>typeof (new Car())</code> will be <code>&quot;object&quot;</c
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"TS for OOP Programmers(en)","layout":"docs","permalink":"/docs/handbook/typescript-in-5-minutes-oop.html","oneline":"Learn TypeScript if you have a background in object-oriented languages","level":"2.3","depth":1,"next":{"title":"TS for Functional Programmers(en)","level":"2.4","depth":1,"path":"pages/tutorials/ts-for-functional-programmers.md","ref":"pages/tutorials/ts-for-functional-programmers.md","articles":[]},"previous":{"title":"TS for JS Programmers(en)","level":"2.2","depth":1,"path":"pages/tutorials/ts-for-js-programmers.md","ref":"pages/tutorials/ts-for-js-programmers.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/tutorials/ts-for-oopers.md","mtime":"2020-08-25T11:08:38.805Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-25T11:09:32.460Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"TS for OOP Programmers(en)","layout":"docs","permalink":"/docs/handbook/typescript-in-5-minutes-oop.html","oneline":"Learn TypeScript if you have a background in object-oriented languages","level":"2.3","depth":1,"next":{"title":"TS for Functional Programmers(en)","level":"2.4","depth":1,"path":"pages/tutorials/ts-for-functional-programmers.md","ref":"pages/tutorials/ts-for-functional-programmers.md","articles":[]},"previous":{"title":"TS for JS Programmers(en)","level":"2.2","depth":1,"path":"pages/tutorials/ts-for-js-programmers.md","ref":"pages/tutorials/ts-for-js-programmers.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/tutorials/ts-for-oopers.md","mtime":"2020-09-01T11:09:30.649Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-01T11:10:27.709Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
