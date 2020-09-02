@@ -55,7 +55,7 @@ JavaScript에서는 7개의 내장 타입을 정의합니다:
 | `Undefined` | 또한 단위 타입과 동등.                           |
 | `Object`    | 레코드와 유사한 것.                             |
 
-[자세한 내용을 위해서 MDN 페이지를 봐주세요](https://developer.mozilla.org/docs/Web/JavaScript/Data_structures).
+[자세한 내용은 MDN 페이지를 참고하세요](https://developer.mozilla.org/docs/Web/JavaScript/Data_structures).
 
 TypeScript에는 기본 내장된 타입에 해당하는 원시 타입이 있습니다:
 
