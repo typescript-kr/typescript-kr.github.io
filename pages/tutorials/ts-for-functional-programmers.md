@@ -588,5 +588,5 @@ a[0] = 101; // error
 
 이 문서는 일상적인 코드에서 높은 수준의 구문과 타입에 대한 개요를 담고 있습니다. 여기서부터는 아래를 참고하시면 됩니다:
 
-*-* 전체 핸드북을 읽으세요 [from start to finish](/docs/handbook/intro.html) (30m)
-*-* [Playground examples](/play#show-examples)를 말합니다.
+*-* 전체 핸드북을 [처음부터 끝까지](/docs/handbook/intro.html) 읽으세요 (30m)
+*-* [Playground 예시](/play#show-examples)를 보세요.
