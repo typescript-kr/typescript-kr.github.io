@@ -507,7 +507,7 @@ commonjs 모듈로 가져올 수 있습니다 &mdash; node.js' 모듈 시스템�
 import f = require("single-function-package");
 ```
 
-내보낼 목록으로 내보낼 수 있습니다:
+export 목록으로 내보낼 수 있습니다:
 
 ```ts
 export { f };
