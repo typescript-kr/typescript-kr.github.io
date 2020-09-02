@@ -491,7 +491,7 @@ TypeScript에서 포인트-프리 프로그래밍에 대한 타입 추론이 실
 
 ## 모듈 시스템 (Module system)
 
-`import` 또는 `export`가 포함된 파일이 암시적으로 모듈이라는 점을 제외하면 
+`import` 또는 `export`가 포함된 파일이 암시적으로 모듈이라는 점을 제외하면
 JavaScript의 최신 모듈 구문은 Haskell과 약간 유사합니다:
 
 ```ts
