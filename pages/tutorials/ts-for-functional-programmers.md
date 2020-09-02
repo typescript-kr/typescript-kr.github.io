@@ -540,7 +540,7 @@ a.push(102); // ):
 a[0] = 101; // D:
 ```
 
-TypeScript은 추가적으로 `readonly` 수정용으로 속성을 위해 넣어줄 수 있습니다.
+TypeScript는 추가적으로 프로퍼티에 `readonly` 제어자를 사용할 수 있습니다.
 
 ```ts
 interface Rx {
