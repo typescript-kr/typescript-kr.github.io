@@ -525,7 +525,7 @@ export function f { return g() }
 function g() { }
 ```
 
-후자 스타일이 더 흔하지만 심지어 같은 파일에서도 둘 다
+후자의 스타일이 더 일반적이지만 같은 파일 내에서도 둘 다
 허용됩니다.
 
 ## `readonly` 와 `const` (`readonly` and `const`)
