@@ -25,7 +25,7 @@ JavaScript 코드의 모델링에서 발생하는 TypeScript 타입 시스템의
 
 본 서론에서는 다음 사항을 알고 있다고 가정합니다:
 
-* 좋은 JavaScript 프로그램를 작성하는 방법.
+* JavaScript로 프로그래밍 하기 위한 핵심 개념.
 * C 계열 언어의 타입 구문.
 
 JavaScript의 핵심 개념을 배우고 싶다면
