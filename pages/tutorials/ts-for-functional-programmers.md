@@ -28,8 +28,8 @@ JavaScript 코드의 모델링에서 발생하는 TypeScript 타입 시스템의
 * 좋은 JavaScript 프로그램를 작성하는 방법.
 * C 계열 언어의 타입 구문.
 
-JavaScript의 좋은 코드 작성하는 법을 배우고 싶다면
-[JavaScript: The Good Parts](http://shop.oreilly.com/product/9780596517748.do)를 읽으세요.
+JavaScript의 핵심 개념을 배우고 싶다면
+[JavaScript: The Good Parts](http://shop.oreilly.com/product/9780596517748.do)를 추천합니다.
 많은 가변성을 가진 call-by-value 렉시컬한 스코프 언어로
 프로그램을 작성하는 방법을 알고 있다면 굳이 책을 안 읽어도
 상관없습니다.
