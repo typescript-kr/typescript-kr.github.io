@@ -480,7 +480,7 @@ TypeScript는 상위 유형의 타입이 없습니다. 그러므로 다음과 �
 function length<T extends ArrayLike<unknown>, U>(m: T<U>) {}
 ```
 
-### 포인트 없는 프로그래밍 (Point-free programming)
+### 포인트-프리 프로그래밍 (Point-free programming)
 
 포인트 없는 프로그래밍 &mdash; 커링 및 함수 구성의 과도한 사용
 &mdash; JavaScript에서 가능하지만 장황할 수 있습니다.
