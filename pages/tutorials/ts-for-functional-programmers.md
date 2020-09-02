@@ -468,7 +468,7 @@ function length<T extends ArrayLike<unknown>>(t: T): number {}
 function length(t: ArrayLike<unknown>): number {}
 ```
 
-첫번째 `length`에서 T는 필요로 하지 않습니다; 오직 한 번만 참고하며,
+첫 번째 `length`에서 T는 필요하지 않습니다; 오직 한 번만 참조되며,
 다른 매개변수나 리턴 값의 타입을 제한하는데 사용되지 않는다는 것을
 알아둬야 합니다.
 
