@@ -41,7 +41,7 @@ C++ 달리 TypeScript는 후위 타입을 사용합니다, 예를 들면: `strin
 
 # Haskell에는 없는 개념 (Concepts not in Haskell)
 
-## 내장 타입들 (Concepts not in Haskell)
+## 내장 타입 (Built-in types)
 
 JavaScript에서는 7개의 내장 타입을 정의합니다:
 
