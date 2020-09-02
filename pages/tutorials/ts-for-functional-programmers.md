@@ -50,7 +50,7 @@ JavaScript에서는 7개의 내장 타입을 정의합니다:
 | `Number`    | 배정밀도 IEEE 754 부동소수점.                    |
 | `String`    | 수정 불가능한 UTF-16 문자열.                     |
 | `Boolean`   | `true` 와  `false`.                          |
-| `Symbol`    | 보통 키로 사용하는 고유한 값                       |
+| `Symbol`    | 보통 키로 사용하는 고유한 값.                       |
 | `Null`      | 단위 타입과 동등.                               |
 | `Undefined` | 또한 단위 타입과 동등.                           |
 | `Object`    | 레코드와 유사한 것.                             |
