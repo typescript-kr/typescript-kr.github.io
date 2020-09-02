@@ -550,7 +550,7 @@ let rx: Rx = { x: 1 };
 rx.x = 12; // error
 ```
 
-매핑된 타입 `Readonly<T>` 은 모든 속성을 `readonly` 으로
+매핑된 타입 `Readonly<T>` 은 모든 프로퍼티를 `readonly` 으로
 만들어 버립니다:
 
 ```ts
