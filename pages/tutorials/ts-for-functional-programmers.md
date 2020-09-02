@@ -39,7 +39,7 @@ JavaScript의 핵심 개념을 배우고 싶다면
 C-스타일 타입 구문에 대해서 배우기 좋습니다.
 C++ 달리 TypeScript는 후위 타입을 사용합니다, 예를 들면: `string x` 대신에 `x: string`.
 
-# 하스켈에 없는 타입 (Concepts not in Haskell)
+# Haskell에는 없는 개념 (Concepts not in Haskell)
 
 ## 내장 타입들 (Concepts not in Haskell)
 
