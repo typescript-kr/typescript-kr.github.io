@@ -123,38 +123,38 @@ JavaScript에서 사용할 수 있는 적은 종류의 원시 타입이 이미 �
 
 타입을 구축하기 위한 두 가지 구문이 있다는 것을 꽤 빠르게 알 수 있을 것입니다.: [Interfaces and Types](/play/?e=83#example/types-vs-interfaces) - `interface`를 우선적으로 사용하고 특정 기능이 필요할 때 `type`을 사용해야 합니다.
 
-## Composing Types
+## 타입 구성 (Composing Types)
 
-Similar to how you would create larger complex objects by composing them together TypeScript has tools for doing this with types.
-The two most popular techniques you would use in everyday code to create new types by working with many smaller types are Unions and Generics.
+크고 복잡한 객체들을 함께 구성하여 만드는 방법과 비슷하게 TypeScript에 타입으로 수행하는 도구가 있습니다.
+많고 작은 타입을 이용하여 새 타입을 작성하기 위해 일상적인 코드에서 가장 많이 사용되는 두 가지 코드는 유니언(Union)과 제네릭(Generic)입니다.
 
-### Unions
+### 유니언 (Unions)
 
-A union is a way to declare that a type could be one of many types. For example, you could describe a `boolean` type as being either `true` or `false`:
+유니언은 타입이 여러 타입 중 하나일 수 있음을 선언하는 방법입니다. 예를 들어, `boolean` 타입을 `true` 또는 `false`로 설명할 수 있습니다:
 
-```ts twoslash
+```
 type MyBool = true | false;
 ```
 
-_Note:_ If you hover over `MyBool` above, you'll see that it is classed as `boolean` - that's a property of the Structural Type System, which we'll get to later.
+_참고:_ `MyBool`위에 마우스를 올린다면, `boolean`으로 분류된 것을 볼 수 있습니다 - 구조적 타입 시스템의 프로퍼티며, 나중에 살펴보겠습니다.
 
-One of the most popular use-cases for union types is to describe a set of `string`s or `number`s [literal](/docs/handbook/literal-types.html) which a value is allowed to be:
+유니언 타입이 가장 많이 사용된 사례 중 하나는 값이 다음과 같이 허용되는 `string` 또는 `number`의 [리터럴](/docs/handbook/literal-types.html)집합을 설명하는 것입니다:
 
-```ts twoslash
+```
 type WindowStates = "open" | "closed" | "minimized";
 type LockStates = "locked" | "unlocked";
 type OddNumbersUnderTen = 1 | 3 | 5 | 7 | 9;
 ```
 
-Unions provide a way to handle different types too, for example you may have a function which accepts an `array` or a `string`.
+유니언은 다양한 타입을 처리하는 방법을 제공하는데, 예를 들어 `array` 또는 `string`을 받는 함수가 있을 수 있습니다.
 
-```ts twoslash
+```
 function getLength(obj: string | string[]) {
   return obj.length;
 }
 ```
 
-TypeScript understands how code changes what the variable could be with time, you can use these checks to narrow the type down.
+TypeScript는 코드가 시간에 따라 변수가 변경되는 방식을 이해하며, 이러한 검사를 사용해 타입을 골라낼 수 있습니다.
 
 | Type      | Predicate                          |
 | --------- | ---------------------------------- |
@@ -165,10 +165,10 @@ TypeScript understands how code changes what the variable could be with time, yo
 | function  | `typeof f === "function"`          |
 | array     | `Array.isArray(a)`                 |
 
-For example, you could differentiate between a `string` and an `array`, using `typeof obj === "string"` and TypeScript will know what the object is down different code paths.
+예를 들어, `typeof obj === "string"`을 이용하여 `string`과 `array`를 구분할 수 있으며 TypeScript는 객체가 다른 코드 경로에 있음을 알게 됩니다.
 
 <!-- prettier-ignore -->
-```ts twoslash
+```
 function wrapInArray(obj: string | string[]) {
   if (typeof obj === "string") {
     return [obj];
@@ -179,11 +179,10 @@ function wrapInArray(obj: string | string[]) {
 }
 ```
 
-### Generics
+### 제네릭 (Generics)
 
-You can get very deep into the TypeScript generic system, but at a 1 minute high-level explanation, generics are a way to provide variables to types.
-
-A common example is an array, an array without generics could contain anything. An array with generics can describe what values are inside in the array.
+TypeScript 제네릭 시스템에 대해 자세히 알아볼 수 있지만, 1분 정도의 수준 높은 설명을 하기 위해, 제네릭은 타입에 변수를 제공하는 방법입니다.
+배열이 일반적인 예시이며, 제네릭이 없는 배열은 어떤 것이든 포함할 수 있습니다. 제네릭이 있는 배열은 배열 안의 값을 설명할 수 있습니다.
 
 ```ts
 type StringArray = Array<string>;
@@ -191,34 +190,33 @@ type NumberArray = Array<number>;
 type ObjectWithNameArray = Array<{ name: string }>;
 ```
 
-You can declare your own types which use generics:
+제네릭을 사용하는 고유 타입을 선언할 수 있습니다:
 
-```ts twoslash
+```
 // @errors: 2345
 interface Backpack<Type> {
   add: (obj: Type) => void;
   get: () => Type;
 }
 
-// This line is a shortcut to tell TypeScript there is a
-// constant called `backpack`, and to not worry about where it came from
-declare const backpack: Backpack<string>;
+// 이 줄은 TypeScript에 `backpack`이라는 상수가 있음을 알리는 지름길이며
+// const backpakc: Backpack<string>이 어디서 왔는지 걱정할 필요가 없습니다.
 
-// object is a string, because we declared it above as the variable part of Backpack
+// 위에서 Backpack의 변수 부분으로 선언해서, object는 string입니다.
 const object = backpack.get();
 
-// Due to backpack variable being a string, you cannot pass a number to the add function
+// backpack 변수가 string이므로, add 함수에 number를 전달할 수 없습니다.
 backpack.add(23);
 ```
 
-## Structural Type System
+## 구조적 타입 시스템 (Structural Type System)
 
-One of TypeScript's core principles is that type checking focuses on the _shape_ which values have.
-This is sometimes called "duck typing" or "structural typing".
+TypeScript의 핵심 원칙 중 하나는 타입 검사가 값이 있는 _형태_에 집중한다는 것입니다.
+이는 때때로 "덕 타이핑(duck typing)" 또는 "구조적 타이핑" 이라고 불립니다.
 
-In a structural type system if two objects have the same shape, they are considered the same.
+구조적 타입 시스템에서 두 객체가 같은 형태를 가지면 같은 것으로 간주됩니다.
 
-```ts twoslash
+```
 interface Point {
   x: number;
   y: number;
@@ -228,17 +226,17 @@ function printPoint(p: Point) {
   console.log(`${p.x}, ${p.y}`);
 }
 
-// prints "12, 26"
+// "12, 26"를 출력합니다
 const point = { x: 12, y: 26 };
 printPoint(point);
 ```
 
-The `point` variable is never declared to be a `Point` type, but TypeScript compares the shape of `point` to the shape of `Point` in the type-check.
-Because they both have the same shape, then it passes.
+`point`변수는 `Point`타입으로 선언된 적이 없지만, TypeScript는 타입 검사에서 `point`의 형태와 `Point`의 형태를 비교합니다.
+둘 다 같은 형태이기 때문에, 통과합니다.
 
-The shape matching only requires a subset of the object's fields to match.
+형태 일치에는 일치시킬 객체의 필드의 하위 집합만 필요합니다.
 
-```ts twoslash
+```
 // @errors: 2345
 interface Point {
   x: number;
@@ -260,9 +258,9 @@ const color = { hex: "#187ABF" };
 printPoint(color);
 ```
 
-Finally, to really nail this point down, structurally there is no difference between how classes and objects conform to shapes:
+마지막으로, 정확하게 마무리 짓기 위해, 구조적으로 클래스와 객체가 형태를 따르는 방법에는 차이가 없습니다:
 
-```ts twoslash
+```
 // @errors: 2345
 interface Point {
   x: number;
@@ -287,11 +285,11 @@ const newVPoint = new VirtualPoint(13, 56);
 printPoint(newVPoint); // prints "13, 56"
 ```
 
-If the object or class has all the required properties, then TypeScript will say they match regardless of the implementation details.
+객체 또는 클래스에 필요한 모든 속성이 존재한다면, TypeScript는 구현 세부 정보에 관계없이 일치하게 봅니다.
 
-## Next Steps
+## 다음 단계 (Next Steps)
 
-This doc is a high level 5 minute overview of the sort of syntax and tools you would use in everyday code. From here you should:
+해당 문서는 일상적인 코드에서 사용하는 구문 및 도구의 종류에 대한 수준 높은 5분 개요입니다. 여기에서:
 
-* Read the full Handbook [from start to finish](/docs/handbook/intro.html) (30m)
-* Explore the [Playground examples](/play#show-examples).
+* 완성된 핸드북을 읽으세요 [from start to finish](/docs/handbook/intro.html) (30분)
+* [Playground examples](/play#show-examples)을 탐색하세요.
