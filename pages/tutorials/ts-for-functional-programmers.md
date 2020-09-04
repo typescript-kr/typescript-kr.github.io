@@ -282,8 +282,9 @@ pad("hi", 10, s); // 오류: 'string'은 '"left" | "right"'에 할당할 수 없
 *-* `s: string` 은 `"right"` 가 수정가능한 변수에 할당될 때 `string` 으로 확장이 가능합니다.
 *-* `string` 은 `"left" | "right"`에 할당할 수 없습니다.
 
-`s`에 타입 표기하여 해결가능하지만, 그 결과 `"left" | "right"`이 타입이 아니라
-변수 `s`에 할당되는 걸 막을 수 있습니다.
+`s`에 타입 표기를 사용하여 해결 가능하지만,
+그 결과 `"left" | "right"` 타입이 아닌 변수가
+`s`에 할당되는 것을 방지하게 됩니다.
 
 ```ts
 declare function pad(s: string, n: number, direction: "left" | "right"): string;
