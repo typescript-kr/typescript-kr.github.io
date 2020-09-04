@@ -146,32 +146,32 @@ let sepsis = anys[0] + anys[1]; // this could mean anything
 To get an error when TypeScript produces an `any`, use
 `"noImplicitAny": true`, or `"strict": true` in `tsconfig.json`.
 
-## Structural typing
+## 구조적인 타이핑 (Structural typing)
 
-Structural typing is a familiar concept to most functional
-programmers, although Haskell and most MLs are not
-structurally typed. Its basic form is pretty simple:
+비록 하스켈과 대부분의 ML은 구조적으로 타이핑하지 않지만,
+구조적 타이핑은 대부분의 함수형 프로그래머에게는 익숙한 개념입니다.
+기본 형태는 아주 간단합니다:
 
 ```ts
 // @strict: false
-let o = { x: "hi", extra: 1 }; // ok
-let o2: { x: string } = o; // ok
+let o = { x: "hi", extra: 1 }; // 성공
+let o2: { x: string } = o; // 성공
 ```
 
-Here, the object literal `{ x: "hi", extra: 1 }` has a matching
-literal type `{ x: string, extra: number }`. That
-type is assignable to `{ x: string }` since
-it has all the required properties and those properties have
-assignable types. The extra property doesn't prevent assignment, it
-just makes it a subtype of `{ x: string }`.
+여기서, 객체 리터럴 `{ x: "hi", extra : 1 }`에 매치되는
+`{ x : string, extra : number }` 가 있습니다. 이
+타입은 필수 프로퍼티가 모두 있고 해당 프로퍼티에 할당 가능한 타입이 있으므로
+`{ x : string }` 에 할당할 수 있습니다.
+나머지 프로퍼티는 할당을 막지 않고, `{x : string}`의 서브타입으로
+만듭니다.
 
-Named types just give a name to a type; for assignability purposes
-there's no difference between the type alias `One` and the interface
-type `Two` below. They both have a property `p: string`. (Type aliases
-behave differently from interfaces with respect to recursive
-definitions and type parameters, however.)
+네임드 타입들은 타입에서 이름을 붙일 뿐입니다. 할당을 위해서라면 타입 별칭
+ `One` 과 인터페이스 타입 `Two` 사이에는 별 다른 점이 없습니다.
+둘 다 `p: string` 프로퍼티를 가지고 있습니다.
+(단, 타입 별칭은 재귀 정의와 타입 매개변수에 관련한 인터페이스에서는 다르게
+동작합니다.)
 
-```ts twoslash
+```ts
 // @errors: 2322
 type One = { p: string };
 interface Two {
@@ -186,17 +186,17 @@ let two: Two = x;
 two = new Three();
 ```
 
-## Unions
+## 유니언 (Unions)
 
-In TypeScript, union types are untagged. In other words, they are not
-discriminated unions like `data` in Haskell. However, you can often
-discriminate types in a union using built-in tags or other properties.
+TypeScript에서 유니언 타입은 태그되지 않습니다. 다르게 말하면,
+하스켈에서 `data` 와 달리 유니언은 구별하지 않습니다.
+그러나 다른 프로퍼티나 내장된 태그를 사용하는 유니언으로 타입을 구별할 수 있습니다.
 
-```ts twoslash
+```ts
 function start(
   arg: string | string[] | (() => string) | { s: string }
 ): string {
-  // this is super common in JavaScript
+  // JavaScript에서 아주 일반적입니다
   if (typeof arg === "string") {
     return commonCase(arg);
   } else if (Array.isArray(arg)) {
@@ -208,21 +208,21 @@ function start(
   }
 
   function commonCase(s: string): string {
-    // finally, just convert a string to another string
+    // 마지막으로, 다른 문자열로 변환합니다
     return s;
   }
 }
 ```
 
-`string`, `Array` and `Function` have built-in type predicates,
-conveniently leaving the object type for the `else` branch. It is
-possible, however, to generate unions that are difficult to
-differentiate at runtime. For new code, it's best to build only
-discriminated unions.
+`string`, `Array` 와 `Function` 은  타입 조건자가
+내장되어 있고, `else` 브랜치를 위한 객체 타입은 편의를 위해
+남겨두는 게 좋습니다.
+그러나 런타임에 구별하기 어려운 유니언을 생성할 수 있습니다.
+새로운 코드의 경우, 구별하는 유니언만 구축하는 게 가장 좋습니다.
 
-The following types have built-in predicates:
+다음 타입들은 조건자를 가지고 있다:
 
-| Type      | Predicate                          |
+| 타입       | 조건자                               |
 | --------- | ---------------------------------- |
 | string    | `typeof s === "string"`            |
 | number    | `typeof n === "number"`            |
@@ -234,59 +234,59 @@ The following types have built-in predicates:
 | array     | `Array.isArray(a)`                 |
 | object    | `typeof o === "object"`            |
 
-Note that functions and arrays are objects at runtime, but have their
-own predicates.
+함수와 배열은 런타임에서 객체이지만 고유의 조건자를 가지고 있다는 걸
+기록합시다.
 
-### Intersections
+### 교집합
 
-In addition to unions, TypeScript also has intersections:
+유니언과 더불어 TypeScript은 교집합까지 가지고 있습니다:
 
-```ts twoslash
+```ts
 type Combined = { a: number } & { b: string };
 type Conflicting = { a: number } & { a: string };
 ```
 
-`Combined` has two properties, `a` and `b`, just as if they had been
-written as one object literal type. Intersection and union are
-recursive in case of conflicts, so `Conflicting.a: number & string`.
+`Combined` 은 마치 하나의 객체 리터럴 타입으로 작성된 것 처럼
+`a` 와 `b` 두 개의 속성을 가지고 있습니다. 교집합과 유니언은 재귀적인
+케이스에서 충돌을 일으켜서 `Conflicting.a: number & string` 입니다.
 
-## Unit types
+## 유니언 타입 (Unit types)
 
-Unit types are subtypes of primitive types that contain exactly one
-primitive value. For example, the string `"foo"` has the type
-`"foo"`. Since JavaScript has no built-in enums, it is common to use a set of
-well-known strings instead. Unions of string literal types allow
-TypeScript to type this pattern:
+유니언 타입은 정확히 하나의 원시 값을 포함하고 있는 원시 타입의 서브타입입니다.
+예를 들면, 문자열 `"foo"` 는 타입 `"foo"`를 가지고 있습니다.
+JavaScript는 내장된 enum이 없기 때문에 잘 알려진 문자열 세트를
+대신해서 쓰는게 흔합니다.
+문자열 리터럴 타입 유니언은 TypeScript에서 이 패턴을 따라갑니다:
 
-```ts twoslash
+```ts
 declare function pad(s: string, n: number, direction: "left" | "right"): string;
 pad("hi", 10, "left");
 ```
 
-When needed, the compiler _widens_ &mdash; converts to a
-supertype &mdash; the unit type to the primitive type, such as `"foo"`
-to `string`. This happens when using mutability, which can hamper some
-uses of mutable variables:
+필요한 경우에 컴파일러로 확장가능합니다_ &mdash; 상위 타입으로
+변환합니다 &mdash; 원시 타입에서 유닛 타입으로, `string`에서 `"foo"`으로
+수정가능할 때 일어나며, 수정가능한 변수를 일부 사용할 때 제대로
+동작하지 않을 수 있습니다:
 
-```ts twoslash
+```ts
 // @errors: 2345
 declare function pad(s: string, n: number, direction: "left" | "right"): string;
 // ---cut---
 let s = "right";
-pad("hi", 10, s); // error: 'string' is not assignable to '"left" | "right"'
+pad("hi", 10, s); // 오류: 'string'은 '"left" | "right"'에 할당할 수 없습니다.
 ```
 
-Here's how the error happens:
+이런 에러가 나타날 수 있습니다:
 
 *-* `"right": "right"`
-*-* `s: string` because `"right"` widens to `string` on assignment to a mutable variable.
-*-* `string` is not assignable to `"left" | "right"`
+*-* `s: string` 은 `"right"` 가 수정가능한 변수에 할당될 때 `string` 으로 확장이 가능합니다.
+*-* `string` 은 `"left" | "right"`에 할당할 수 없습니다.
 
-You can work around this with a type annotation for `s`, but that
-in turn prevents assignments to `s` of variables that are not of type
-`"left" | "right"`.
+`s`에 타입 표기를 사용하여 해결 가능하지만,
+그 결과 `"left" | "right"` 타입이 아닌 변수가
+`s`에 할당되는 것을 방지하게 됩니다.
 
-```ts twoslash
+```ts
 declare function pad(s: string, n: number, direction: "left" | "right"): string;
 // ---cut---
 let s: "left" | "right" = "right";
