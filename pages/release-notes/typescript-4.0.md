@@ -259,9 +259,9 @@ function foo(x: [first: string, second: number]) {
     // 주의: 'first'와 'second'에 대해 이름 지을 필요 없음
     const [a, b] = x;
     a
-//  ^?
+//  ^ = const a: string
     b
-//  ^?
+//  ^ = const b: number
 }
 ```
 
