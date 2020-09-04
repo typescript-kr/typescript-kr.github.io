@@ -613,7 +613,20 @@
         
         
     
-        <li class="chapter " data-level="6.1" data-path="release-notes/typescript-3.9.html">
+        <li class="chapter " data-level="6.1" data-path="release-notes/typescript-4.0.html">
+            
+                <a href="release-notes/typescript-4.0.html">
+            
+                    
+                    TypeScript 4.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="release-notes/typescript-3.9.html">
             
                 <a href="release-notes/typescript-3.9.html">
             
@@ -626,7 +639,7 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="release-notes/typescript-3.8.html">
+        <li class="chapter " data-level="6.3" data-path="release-notes/typescript-3.8.html">
             
                 <a href="release-notes/typescript-3.8.html">
             
@@ -1049,27 +1062,27 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>The list below outlines which constructs are currently supported
-when using JSDoc annotations to provide type information in JavaScript files.</p>
-<p>Note any tags which are not explicitly listed below (such as <code>@async</code>) are not yet supported.</p>
+                                <p>&#xC544;&#xB798; &#xBAA9;&#xB85D;&#xC740; JavaScript &#xD30C;&#xC77C;&#xC5D0; &#xD0C0;&#xC785; &#xC815;&#xBCF4; &#xC81C;&#xACF5;&#xC744; &#xC704;&#xD574; JSDoc &#xC5B4;&#xB178;&#xD14C;&#xC774;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;
+&#xD604;&#xC7AC; &#xC9C0;&#xC6D0;&#xB418;&#xB294; &#xAD6C;&#xC131;&#xC758; &#xAC1C;&#xC694;&#xB97C; &#xB2E4;&#xB8F9;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC544;&#xB798; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xB098;&#xC5F4;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xD0DC;&#xADF8;(&#xC608; <code>@async</code>)&#xB294; &#xC544;&#xC9C1; &#xC9C0;&#xC6D0;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <ul>
 <li><code>@type</code></li>
-<li><code>@param</code> (or <code>@arg</code> or <code>@argument</code>)</li>
-<li><code>@returns</code> (or <code>@return</code>)</li>
+<li><code>@param</code> (&#xB610;&#xB294; <code>@arg</code> &#xB610;&#xB294; <code>@argument</code>)</li>
+<li><code>@returns</code> (&#xB610;&#xB294; <code>@return</code>)</li>
 <li><code>@typedef</code></li>
 <li><code>@callback</code></li>
 <li><code>@template</code></li>
-<li><code>@class</code> (or <code>@constructor</code>)</li>
+<li><code>@class</code> (&#xB610;&#xB294; <code>@constructor</code>)</li>
 <li><code>@this</code></li>
-<li><code>@extends</code> (or <code>@augments</code>)</li>
+<li><code>@extends</code> (&#xB610;&#xB294; <code>@augments</code>)</li>
 <li><code>@enum</code></li>
 </ul>
-<p>The meaning is usually the same, or a superset, of the meaning of the tag given at <a href="https://jsdoc.app" target="_blank">jsdoc.app</a>.
-The code below describes the differences and gives some example usage of each tag.</p>
-<p><strong>Note:</strong> You can use <a href="../play#example/jsdoc-support">the playground to explore JSDoc support</a>.</p>
+<p>&#xC758;&#xBBF8;&#xB294; &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; <a href="https://jsdoc.app" target="_blank">jsdoc.app</a>&#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xD0DC;&#xADF8;&#xC758; &#xC758;&#xBBF8;&#xC640; &#xAC19;&#xAC70;&#xB098; &#xC0C1;&#xC704; &#xC9D1;&#xD569;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC544;&#xB798; &#xCF54;&#xB4DC;&#xB294; &#xAC01; &#xD0DC;&#xADF8;&#xC758; &#xCC28;&#xC774;&#xC810;&#xC744; &#xC124;&#xBA85;&#xD558;&#xACE0; &#xC608;&#xC2DC;&#xB97C; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><strong>Note:</strong> <a href="../play#example/jsdoc-support">JSDoc &#xC9C0;&#xC6D0;&#xC744; &#xD0D0;&#xC0C9;&#xD558;&#xB294; playground</a>&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h2 id="type"><code>@type</code></h2>
-<p>You can use the &quot;@type&quot; tag and reference a type name (either primitive, defined in a TypeScript declaration, or in a JSDoc &quot;@typedef&quot; tag).
-You can use most JSDoc types and any TypeScript type, from <a href="../docs/handbook/basic-types.html">the most basic like <code>string</code></a> to <a href="../docs/handbook/advanced-types.html">the most advanced, like conditional types</a>.</p>
+<p>&quot;@type&quot; &#xD0DC;&#xADF8;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD0C0;&#xC785;&#xC758; &#xC774;&#xB984;&#xC744; &#xCC38;&#xC870;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; (&#xB2E4;&#xC74C; &#xACBD;&#xC6B0; &#xC911; &#xD558;&#xB098;&#xC778; &#xC6D0;&#xC2DC; &#xD0C0;&#xC785;&#xACFC; TypeScript&#xC5D0; &#xC815;&#xC758;&#xB418;&#xC5B4;&#xC788;&#xAC70;&#xB098; JSDoc &quot;@typedef&quot; &#xD0DC;&#xADF8;&#xB85C; &#xC815;&#xC758;&#xB418;&#xC5B4;&#xC788;&#xAC70;&#xB098;).
+&#xB2F9;&#xC2E0;&#xC740; &#xB300;&#xBD80;&#xBD84; JSDoc &#xD0C0;&#xC785;&#xB4E4;&#xC774;&#xB098; TypeScript &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;,<a href="../docs/handbook/basic-types.html">&#xAE30;&#xC874;&#xC5D0; &#xB9CE;&#xC774; &#xC0AC;&#xC6A9;&#xD558;&#xB294; <code>string</code></a>&#xBD80;&#xD130; <a href="../docs/handbook/advanced-types.html">&#xC870;&#xAC74;&#xBD80; &#xD0C0;&#xC785;&#xC778; &#xACE0;&#xAE09; &#xD0C0;&#xC785;</a>&#xAE4C;&#xC9C0;.</p>
 <pre><code class="lang-js"><span class="cm-comment">/**</span>
 <span class="cm-comment"> * @type {string}</span>
 <span class="cm-comment"> */</span>
@@ -1086,19 +1099,19 @@ You can use most JSDoc types and any TypeScript type, from <a href="../docs/hand
 <span class="cm-keyword">var</span> <span class="cm-variable">myElement</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">querySelector</span>(<span class="cm-variable">selector</span>);
 <span class="cm-variable">element</span>.<span class="cm-property">dataset</span>.<span class="cm-property">myData</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;&quot;</span>;
 </code></pre>
-<p><code>@type</code> can specify a union type &#x2014; for example, something can be either a string or a boolean.</p>
+<p><code>@type</code> &#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xC720;&#xB2C8;&#xC5B8; &#xD0C0;&#xC785;&#xC744; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xC5B4; &#xC5B4;&#xB5A4; &#xAC83;&#xC740; string &#xB610;&#xB294; boolean &#xC77C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-js"><span class="cm-comment">/**</span>
 <span class="cm-comment"> * @type {(string | boolean)}</span>
 <span class="cm-comment"> */</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">sb</span>;
 </code></pre>
-<p>Note that parentheses are optional for union types.</p>
+<p>&#xAD04;&#xD638;&#xB294; &#xC720;&#xB2C8;&#xC5B8; &#xD0C0;&#xC785;&#xC5D0; &#xB300;&#xD55C; &#xC120;&#xD0DD; &#xC0AC;&#xD56D;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-js"><span class="cm-comment">/**</span>
 <span class="cm-comment"> * @type {string | boolean}</span>
 <span class="cm-comment"> */</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">sb</span>;
 </code></pre>
-<p>You can specify array types using a variety of syntaxes:</p>
+<p>&#xB2E4;&#xC591;&#xD55C; &#xAD6C;&#xBB38;&#xC744; &#xD1B5;&#xD558;&#xC5EC; &#xBC30;&#xC5F4; &#xD0C0;&#xC785;&#xC744; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-js"><span class="cm-comment">/** @type {number[]} */</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">ns</span>;
 <span class="cm-comment">/** @type {Array.&lt;number&gt;} */</span>
@@ -1106,14 +1119,14 @@ You can use most JSDoc types and any TypeScript type, from <a href="../docs/hand
 <span class="cm-comment">/** @type {Array&lt;number&gt;} */</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">nas</span>;
 </code></pre>
-<p>You can also specify object literal types.
-For example, an object with properties &apos;a&apos; (string) and &apos;b&apos; (number) uses the following syntax:</p>
+<p>&#xB610;&#xD55C; &#xAC1D;&#xCCB4; &#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785;&#xB4E4;&#xB3C4; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xC5D0; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &apos;a&apos; (string) &#xC640; &apos;b&apos; (number)&#xC744; &#xC0AC;&#xC6A9;&#xD55C; &#xACBD;&#xC6B0; &#xB2E4;&#xC74C; &#xAD6C;&#xBB38;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-js"><span class="cm-comment">/** @type {{ a: string, b: number }} */</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">var9</span>;
 </code></pre>
-<p>You can specify map-like and array-like objects using string and number index signatures, using either standard JSDoc syntax or TypeScript syntax.</p>
+<p>&#xB2F9;&#xC2E0;&#xC740; JSDoc &#xAD6C;&#xBB38;&#xC774;&#xB098; TypeScript &#xAD6C;&#xBB38;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBB38;&#xC790;&#xC5F4; &#xBC0F; &#xC22B;&#xC790; &#xC778;&#xB371;&#xC2A4; &#xB9F5;&#xACFC; &#xBC30;&#xC5F4;&#xACFC; &#xBE44;&#xC2B7;&#xD55C; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB97C; &#xD45C;&#xC2DC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-js"><span class="cm-comment">/**</span>
-<span class="cm-comment"> * A map-like object that maps arbitrary `string` properties to `number`s.</span>
+<span class="cm-comment"> * &#xB9F5; &#xAC19;&#xC740; object&#xB294; &#xC784;&#xC758;&#xC758; `string` &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB4E4;&#xC744; `number`&#xB85C; &#xBC14;&#xAFD4;&#xC90D;&#xB2C8;&#xB2E4;.</span>
 <span class="cm-comment"> *</span>
 <span class="cm-comment"> * @type {Object.&lt;string, number&gt;}</span>
 <span class="cm-comment"> */</span>
@@ -1122,41 +1135,41 @@ For example, an object with properties &apos;a&apos; (string) and &apos;b&apos; 
 <span class="cm-comment">/** @type {Object.&lt;number, object&gt;} */</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">arrayLike</span>;
 </code></pre>
-<p>The preceding two types are equivalent to the TypeScript types <code>{ [x: string]: number }</code> and <code>{ [x: number]: any }</code>. The compiler understands both syntaxes.</p>
-<p>You can specify function types using either TypeScript or Closure syntax:</p>
-<pre><code class="lang-js"><span class="cm-comment">/** @type {function(string, boolean): number} Closure syntax */</span>
+<p>&#xC55E;&#xC758; &#xB450; &#xD0C0;&#xC785;&#xC740; TypeScript&#xC758; &#xD0C0;&#xC785;&#xC778; <code>{ [x: string]: number }</code> &#xC640; <code>{ [x: number]: any }</code>&#xB97C; &#xB3D9;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;. &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; &#xC774; &#xB450; &#xAD6C;&#xBB38;&#xC744; &#xBAA8;&#xB450; &#xC774;&#xD574;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>TypeScript&#xB098; &#xD074;&#xB85C;&#xC800; &#xAD6C;&#xBB38;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD568;&#xC218; &#xD0C0;&#xC785;&#xC744; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-js"><span class="cm-comment">/** @type {function(string, boolean): number} &#xD074;&#xB85C;&#xC800; &#xAD6C;&#xBB38; */</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">sbn</span>;
-<span class="cm-comment">/** @type {(s: string, b: boolean) =&gt; number} TypeScript syntax */</span>
+<span class="cm-comment">/** @type {(s: string, b: boolean) =&gt; number} TypeScript &#xAD6C;&#xBB38; */</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">sbn2</span>;
 </code></pre>
-<p>Or you can just use the unspecified <code>Function</code> type:</p>
+<p>&#xD639;&#xC740; &#xD2B9;&#xC815;&#xD558;&#xC9C0; &#xC54A;&#xC740; <code>Function</code> &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-js"><span class="cm-comment">/** @type {Function} */</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">fn7</span>;
 <span class="cm-comment">/** @type {function} */</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">fn6</span>;
 </code></pre>
-<p>Other types from Closure also work:</p>
+<p>&#xD074;&#xB85C;&#xC800;&#xC758; &#xB2E4;&#xB978; &#xD0C0;&#xC785;&#xB4E4; &#xB610;&#xD55C; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-js"><span class="cm-comment">/**</span>
-<span class="cm-comment"> * @type {*} - can be &apos;any&apos; type</span>
+<span class="cm-comment"> * @type {*} - &apos;any&apos; &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xC4F8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;</span>
 <span class="cm-comment"> */</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">star</span>;
 <span class="cm-comment">/**</span>
-<span class="cm-comment"> * @type {?} - unknown type (same as &apos;any&apos;)</span>
+<span class="cm-comment"> * @type {?} - &#xC54C; &#xC218; &#xC5C6;&#xB294; &#xD0C0;&#xC785; (&apos;any&apos;&#xC640; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;)</span>
 <span class="cm-comment"> */</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">question</span>;
 </code></pre>
-<h3 id="casts">Casts</h3>
-<p>TypeScript borrows cast syntax from Closure.
-This lets you cast types to other types by adding a <code>@type</code> tag before any parenthesized expression.</p>
+<h3 id="&#xD615;&#xBCC0;&#xD658;-casts">&#xD615;&#xBCC0;&#xD658; (Casts)</h3>
+<p>TypeScript&#xB294; &#xD074;&#xB85C;&#xC800; &#xAD6C;&#xBB38;&#xC744; &#xCC28;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB807;&#xAC8C; &#xD558;&#xBA74; &#xAD04;&#xD638;&#xB85C; &#xBB36;&#xC778; &#xD45C;&#xD604;&#xC2DD; &#xC55E;&#xC5D0; <code>@type</code> &#xD0DC;&#xADF8;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xB2E4;&#xB978; &#xC720;&#xD615;&#xC73C;&#xB85C; &#xD615;&#xBCC0;&#xD658;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-js"><span class="cm-comment">/**</span>
 <span class="cm-comment"> * @type {number | string}</span>
 <span class="cm-comment"> */</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">numberOrString</span> <span class="cm-operator">=</span> <span class="cm-variable">Math</span>.<span class="cm-property">random</span>() <span class="cm-operator">&lt;</span> <span class="cm-number">0.5</span> <span class="cm-operator">?</span> <span class="cm-string">&quot;hello&quot;</span> : <span class="cm-number">100</span>;
 <span class="cm-keyword">var</span> <span class="cm-variable">typeAssertedNumber</span> <span class="cm-operator">=</span> <span class="cm-comment">/** @type {number} */</span> (<span class="cm-variable">numberOrString</span>);
 </code></pre>
-<h3 id="import-types">Import types</h3>
-<p>You can also import declarations from other files using import types.
-This syntax is TypeScript-specific and differs from the JSDoc standard:</p>
+<h3 id="&#xD0C0;&#xC785;-&#xAC00;&#xC838;&#xC624;&#xAE30;-import-types">&#xD0C0;&#xC785; &#xAC00;&#xC838;&#xC624;&#xAE30; (Import types)</h3>
+<p>&#xB2E4;&#xB978; &#xD30C;&#xC77C;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC788;&#xB294; &#xD0C0;&#xC785;&#xB4E4;&#xC740; import &#xC120;&#xC5B8;&#xC744; &#xD1B5;&#xD558;&#xC5EC; &#xAC00;&#xC838;&#xC62C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774; &#xAD6C;&#xBB38;&#xC740; TypeScript&#xC5D0; &#xB530;&#xB77C; &#xB2E4;&#xB974;&#xBA70; JSDoc &#xD45C;&#xC900;&#xACFC; &#xB2E4;&#xB985;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-js"><span class="cm-comment">// @filename: types.d.ts</span>
 <span class="cm-keyword">export</span> <span class="cm-variable">type</span> <span class="cm-variable">Pet</span> <span class="cm-operator">=</span> {
   <span class="cm-property">name</span>: <span class="cm-variable">string</span>,
@@ -1170,7 +1183,7 @@ This syntax is TypeScript-specific and differs from the JSDoc standard:</p>
   <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string-2">`Walking ${</span><span class="cm-variable-2">p</span>.<span class="cm-property">name</span><span class="cm-string-2">}</span><span class="cm-string-2">...`</span>);
 }
 </code></pre>
-<p>import types can also be used in type alias declarations:</p>
+<p>&#xAC00;&#xC838;&#xC628; &#xD0C0;&#xC785;&#xB4E4; &#xB610;&#xD55C; &#xBCC4;&#xCE6D; &#xC120;&#xC5B8;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-js"><span class="cm-comment">// @filename: types.d.ts</span>
 <span class="cm-keyword">export</span> <span class="cm-variable">type</span> <span class="cm-variable">Pet</span> <span class="cm-operator">=</span> {
   <span class="cm-property">name</span>: <span class="cm-variable">string</span>,
@@ -1187,7 +1200,7 @@ This syntax is TypeScript-specific and differs from the JSDoc standard:</p>
 <span class="cm-keyword">var</span> <span class="cm-variable">myPet</span>;
 <span class="cm-variable">myPet</span>.<span class="cm-property">name</span>;
 </code></pre>
-<p>import types can be used to get the type of a value from a module if you don&apos;t know the type, or if it has a large type that is annoying to type:</p>
+<p>&#xB9CC;&#xC57D; &#xC54C; &#xC218; &#xC5C6;&#xB294; &#xD0C0;&#xC785;&#xC774;&#xAC70;&#xB098; &#xB108;&#xBB34; &#xD070; &#xD0C0;&#xC785;&#xC77C; &#xACBD;&#xC6B0; &#xBAA8;&#xB4C8;&#xC5D0;&#xC11C; &#xC5BB;&#xC5B4;&#xC628; &#xAC12;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-js"><span class="cm-comment">// @filename: accounts.d.ts</span>
 <span class="cm-keyword">export</span> <span class="cm-keyword">const</span> <span class="cm-variable">userAccount</span> <span class="cm-operator">=</span> {
   <span class="cm-property">name</span>: <span class="cm-string">&quot;Name&quot;</span>,
@@ -1206,22 +1219,22 @@ This syntax is TypeScript-specific and differs from the JSDoc standard:</p>
 <span class="cm-comment"> */</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;./accounts&quot;</span>).<span class="cm-property">userAccount</span>;
 </code></pre>
-<h2 id="param-and-returns"><code>@param</code> and <code>@returns</code></h2>
-<p><code>@param</code> uses the same type syntax as <code>@type</code>, but adds a parameter name.
-The parameter may also be declared optional by surrounding the name with square brackets:</p>
-<pre><code class="lang-js"><span class="cm-comment">// Parameters may be declared in a variety of syntactic forms</span>
+<h2 id="param-&#xACFC;-returns"><code>@param</code> &#xACFC; <code>@returns</code></h2>
+<p><code>@param</code>&#xC740; &#xD0C0;&#xC785; &#xAD6C;&#xBB38;&#xC778; <code>@type</code>&#xACFC; &#xB3D9;&#xC77C;&#xD558;&#xAC8C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;, &#xD558;&#xC9C0;&#xB9CC; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xC774;&#xB984;&#xC744; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB294; &#xC774;&#xB984; &#xC8FC;&#xBCC0;&#xC5D0; &#xB300;&#xAD04;&#xD638;&#xC640; &#xD568;&#xAED8; &#xC120;&#xD0DD;&#xC801;&#xC73C;&#xB85C; &#xC120;&#xC5B8;&#xB429;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-js"><span class="cm-comment">// &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB4E4;&#xC740; &#xB2E4;&#xC591;&#xD55C; &#xAD6C;&#xBB38;&#xD615;&#xC2DD;&#xC73C;&#xB85C; &#xC120;&#xC5B8;&#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;</span>
 <span class="cm-comment">/**</span>
-<span class="cm-comment"> * @param {string}  p1 - A string param.</span>
-<span class="cm-comment"> * @param {string=} p2 - An optional param (Closure syntax)</span>
-<span class="cm-comment"> * @param {string} [p3] - Another optional param (JSDoc syntax).</span>
-<span class="cm-comment"> * @param {string} [p4=&quot;test&quot;] - An optional param with a default value</span>
-<span class="cm-comment"> * @return {string} This is the result</span>
+<span class="cm-comment"> * @param {string}  p1 - string &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;.</span>
+<span class="cm-comment"> * @param {string=} p2 - &#xC120;&#xD0DD;&#xC801; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; (&#xD074;&#xB85C;&#xC800; &#xAD6C;&#xBB38;)</span>
+<span class="cm-comment"> * @param {string} [p3] - &#xB610;&#xB2E4;&#xB978; &#xC120;&#xD0DD;&#xC801; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; (JSDoc &#xAD6C;&#xBB38;).</span>
+<span class="cm-comment"> * @param {string} [p4=&quot;test&quot;] - &#xAE30;&#xBCF8;&#xAC12;&#xACFC; &#xC120;&#xD0DD;&#xC801; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;</span>
+<span class="cm-comment"> * @return {string} &#xC774;&#xAC83;&#xC740; &#xACB0;&#xACFC; &#xAC12;&#xC785;&#xB2C8;&#xB2E4;</span>
 <span class="cm-comment"> */</span>
 <span class="cm-keyword">function</span> <span class="cm-variable">stringsStringStrings</span>(<span class="cm-def">p1</span>, <span class="cm-def">p2</span>, <span class="cm-def">p3</span>, <span class="cm-def">p4</span>) {
   <span class="cm-comment">// TODO</span>
 }
 </code></pre>
-<p>Likewise, for the return type of a function:</p>
+<p>&#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C;, &#xD568;&#xC218;&#xC758; &#xBC18;&#xD658;&#xD615;&#xC77C; &#xACBD;&#xC6B0;:</p>
 <pre><code class="lang-js"><span class="cm-comment">/**</span>
 <span class="cm-comment"> * @return {PromiseLike&lt;string&gt;}</span>
 <span class="cm-comment"> */</span>
@@ -1233,36 +1246,36 @@ The parameter may also be declared optional by surrounding the name with square 
 <span class="cm-keyword">function</span> <span class="cm-variable">ab</span>() {}
 </code></pre>
 <h2 id="typedef-callback-and-param"><code>@typedef</code>, <code>@callback</code>, and <code>@param</code></h2>
-<p><code>@typedef</code> may be used to define complex types.
-Similar syntax works with <code>@param</code>.</p>
+<p><code>@typedef</code> &#xB294; &#xBCF5;&#xC7A1;&#xD55C; &#xD0C0;&#xC785;&#xC744; &#xC815;&#xC758;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.
+&#xB9C8;&#xCE58; <code>@param</code>&#xACFC; &#xBE44;&#xC2B7;&#xD558;&#xAC8C; &#xB3D9;&#xC791;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-js"><span class="cm-comment">/**</span>
-<span class="cm-comment"> * @typedef {Object} SpecialType - creates a new type named &apos;SpecialType&apos;</span>
-<span class="cm-comment"> * @property {string} prop1 - a string property of SpecialType</span>
-<span class="cm-comment"> * @property {number} prop2 - a number property of SpecialType</span>
-<span class="cm-comment"> * @property {number=} prop3 - an optional number property of SpecialType</span>
-<span class="cm-comment"> * @prop {number} [prop4] - an optional number property of SpecialType</span>
-<span class="cm-comment"> * @prop {number} [prop5=42] - an optional number property of SpecialType with default</span>
+<span class="cm-comment"> * @typedef {Object} SpecialType - &#xC0C8;&#xB85C;&#xC6B4; &#xD0C0;&#xC785;&#xC778; &apos;SpecialType&apos;&#xC744; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;</span>
+<span class="cm-comment"> * @property {string} prop1 - SpecialType&#xC758; string &#xD504;&#xB85C;&#xD37C;&#xD2F0;</span>
+<span class="cm-comment"> * @property {number} prop2 - SpecialType&#xC758; number &#xD504;&#xB85C;&#xD37C;&#xD2F0;</span>
+<span class="cm-comment"> * @property {number=} prop3 - SpecialType&#xC758; &#xC120;&#xD0DD;&#xC801; number &#xD504;&#xB85C;&#xD37C;&#xD2F0;</span>
+<span class="cm-comment"> * @prop {number} [prop4] - SpecialType&#xC758; &#xC120;&#xD0DD;&#xC801; number &#xD504;&#xB85C;&#xD37C;&#xD2F0;</span>
+<span class="cm-comment"> * @prop {number} [prop5=42] - SpecialType&#xC758; &#xAE30;&#xBCF8;&#xAC12;&#xC774; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xC120;&#xD0DD;&#xC801; number &#xD504;&#xB85C;&#xD37C;&#xD2F0;</span>
 <span class="cm-comment"> */</span>
 
 <span class="cm-comment">/** @type {SpecialType} */</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">specialTypeObject</span>;
 <span class="cm-variable">specialTypeObject</span>.<span class="cm-property">prop3</span>;
 </code></pre>
-<p>You can use either <code>object</code> or <code>Object</code> on the first line.</p>
+<p><code>object</code> &#xD639;&#xC740; <code>Object</code>&#xB97C; &#xCCAB; &#xBC88;&#xC9F8; &#xC904;&#xC5D0; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-js"><span class="cm-comment">/**</span>
-<span class="cm-comment"> * @typedef {object} SpecialType1 - creates a new type named &apos;SpecialType&apos;</span>
-<span class="cm-comment"> * @property {string} prop1 - a string property of SpecialType</span>
-<span class="cm-comment"> * @property {number} prop2 - a number property of SpecialType</span>
-<span class="cm-comment"> * @property {number=} prop3 - an optional number property of SpecialType</span>
+<span class="cm-comment"> * @typedef {object} SpecialType1 - &#xC0C8;&#xB85C;&#xC6B4; &#xD0C0;&#xC785;&#xC778; &apos;SpecialType&apos;&#xC744; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;</span>
+<span class="cm-comment"> * @property {string} prop1 - SpecialType&#xC758; string &#xD504;&#xB85C;&#xD37C;&#xD2F0;</span>
+<span class="cm-comment"> * @property {number} prop2 - SpecialType&#xC758; number &#xD504;&#xB85C;&#xD37C;&#xD2F0;</span>
+<span class="cm-comment"> * @property {number=} prop3 - SpecialType&#xC758; &#xC120;&#xD0DD;&#xC801; number &#xD504;&#xB85C;&#xD37C;&#xD2F0;</span>
 <span class="cm-comment"> */</span>
 
 <span class="cm-comment">/** @type {SpecialType1} */</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">specialTypeObject1</span>;
 </code></pre>
-<p><code>@param</code> allows a similar syntax for one-off type specifications.
-Note that the nested property names must be prefixed with the name of the parameter:</p>
+<p><code>@param</code> &#xC740; &#xD55C; &#xBC88;&#xB9CC; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xD0C0;&#xC785;&#xACFC; &#xBE44;&#xC2B7;&#xD55C; &#xAD6C;&#xBB38;&#xC744; &#xD5C8;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.
+&#xD3EC;&#xD568;&#xB41C; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC758; &#xC774;&#xB984;&#xC740; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xC758; &#xC774;&#xB984;&#xC744; &#xC811;&#xB450;&#xC0AC;&#xB85C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-js"><span class="cm-comment">/**</span>
-<span class="cm-comment"> * @param {Object} options - The shape is the same as SpecialType above</span>
+<span class="cm-comment"> * @param {Object} options - &#xC704;&#xC758; SpecialType&#xC640; &#xBE44;&#xC2B7;&#xD569;&#xB2C8;&#xB2E4;.</span>
 <span class="cm-comment"> * @param {string} options.prop1</span>
 <span class="cm-comment"> * @param {number} options.prop2</span>
 <span class="cm-comment"> * @param {number=} options.prop3</span>
@@ -1273,7 +1286,7 @@ Note that the nested property names must be prefixed with the name of the parame
   <span class="cm-keyword">return</span> (<span class="cm-variable-2">options</span>.<span class="cm-property">prop4</span> <span class="cm-operator">||</span> <span class="cm-number">1001</span>) <span class="cm-operator">+</span> <span class="cm-variable-2">options</span>.<span class="cm-property">prop5</span>;
 }
 </code></pre>
-<p><code>@callback</code> is similar to <code>@typedef</code>, but it specifies a function type instead of an object type:</p>
+<p><code>@callback</code>&#xC740; <code>@typedef</code>&#xC640; &#xBE44;&#xC2B7;&#xD569;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC774;&#xAC83;&#xC740; object &#xD0C0;&#xC785; &#xB300;&#xC2E0; &#xD2B9;&#xC815;&#xD55C; function &#xD0C0;&#xC785;&#xC744; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-js"><span class="cm-comment">/**</span>
 <span class="cm-comment"> * @callback Predicate</span>
 <span class="cm-comment"> * @param {string} data</span>
@@ -1284,15 +1297,15 @@ Note that the nested property names must be prefixed with the name of the parame
 <span class="cm-comment">/** @type {Predicate} */</span>
 <span class="cm-keyword">const</span> <span class="cm-variable">ok</span> <span class="cm-operator">=</span> (<span class="cm-def">s</span>) <span class="cm-operator">=&gt;</span> <span class="cm-operator">!</span>(<span class="cm-variable-2">s</span>.<span class="cm-property">length</span> <span class="cm-operator">%</span> <span class="cm-number">2</span>);
 </code></pre>
-<p>Of course, any of these types can be declared using TypeScript syntax in a single-line <code>@typedef</code>:</p>
+<p>&#xBB3C;&#xB860;, &#xC774;&#xB7F0; &#xD0C0;&#xC785;&#xB4E4;&#xC740; TypeScript &#xAD6C;&#xBB38;&#xC5D0;&#xC11C; <code>@typedef</code> &#xB2E8; &#xD55C; &#xC904;&#xB85C; &#xC120;&#xC5B8;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-js"><span class="cm-comment">/** @typedef {{ prop1: string, prop2: string, prop3?: number }} SpecialType */</span>
 <span class="cm-comment">/** @typedef {(data: string, index?: number) =&gt; boolean} Predicate */</span>
 </code></pre>
 <h2 id="template"><code>@template</code></h2>
-<p>You can declare generic functions with the <code>@template</code> tag:</p>
+<p><code>@template</code> &#xD0DC;&#xADF8;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC81C;&#xB124;&#xB9AD; &#xD568;&#xC218;&#xB97C; &#xC120;&#xC5B8;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-js"><span class="cm-comment">/**</span>
 <span class="cm-comment"> * @template T</span>
-<span class="cm-comment"> * @param {T} x - A generic parameter that flows through to the return type</span>
+<span class="cm-comment"> * @param {T} x - &#xC81C;&#xB124;&#xB9AD; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB294; &#xB9AC;&#xD134; &#xD0C0;&#xC785;&#xACFC; &#xAC19;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;</span>
 <span class="cm-comment"> * @return {T}</span>
 <span class="cm-comment"> */</span>
 <span class="cm-keyword">function</span> <span class="cm-variable">id</span>(<span class="cm-def">x</span>) {
@@ -1303,17 +1316,17 @@ Note that the nested property names must be prefixed with the name of the parame
 <span class="cm-keyword">const</span> <span class="cm-variable">b</span> <span class="cm-operator">=</span> <span class="cm-variable">id</span>(<span class="cm-number">123</span>);
 <span class="cm-keyword">const</span> <span class="cm-variable">c</span> <span class="cm-operator">=</span> <span class="cm-variable">id</span>({});
 </code></pre>
-<p>Use comma or multiple tags to declare multiple type parameters:</p>
+<p>&#xCF64;&#xB9C8; &#xD639;&#xC740; &#xC5EC;&#xB7EC; &#xD0DC;&#xADF8;&#xB97C; &#xD1B5;&#xD558;&#xC5EC; &#xC5EC;&#xB7EC; &#xD0C0;&#xC785;&#xC758; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC120;&#xC5B8;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-js"><span class="cm-comment">/**</span>
 <span class="cm-comment"> * @template T,U,V</span>
 <span class="cm-comment"> * @template W,X</span>
 <span class="cm-comment"> */</span>
 </code></pre>
-<p>You can also specify a type constraint before the type parameter name.
-Only the first type parameter in a list is constrained:</p>
+<p>&#xB610;&#xD55C; &#xD2B9;&#xC815;&#xD55C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xC55E;&#xC5D0; &#xD0C0;&#xC785;&#xC744; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xC911; &#xC624;&#xC9C1; &#xCCAB; &#xBC88;&#xC9F8; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB9CC; &#xC81C;&#xD55C;&#xB429;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-js"><span class="cm-comment">/**</span>
-<span class="cm-comment"> * @template {string} K - K must be a string or string literal</span>
-<span class="cm-comment"> * @template {{ serious(): string }} Seriousalizable - must have a serious method</span>
+<span class="cm-comment"> * @template {string} K - K&#xB294; string &#xD639;&#xC740; string &#xB9AC;&#xD130;&#xB7F4;&#xC774;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;</span>
+<span class="cm-comment"> * @template {{ serious(): string }} Seriousalizable - serious &#xBA54;&#xC11C;&#xB4DC;&#xAC00; &#xC788;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;</span>
 <span class="cm-comment"> * @param {K} key</span>
 <span class="cm-comment"> * @param {Seriousalizable} object</span>
 <span class="cm-comment"> */</span>
@@ -1321,26 +1334,26 @@ Only the first type parameter in a list is constrained:</p>
   <span class="cm-comment">// ????</span>
 }
 </code></pre>
-<p>Declaring generic classes or types is unsupported.</p>
-<h2 id="classes">Classes</h2>
-<p>Classes can be declared as ES6 classes.</p>
+<p>&#xC81C;&#xB124;&#xB9AD; &#xD074;&#xB798;&#xC2A4; &#xD639;&#xC740; &#xD0C0;&#xC785; &#xC120;&#xC5B8;&#xC740; &#xC9C0;&#xC6D0;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xD074;&#xB798;&#xC2A4;-classes">&#xD074;&#xB798;&#xC2A4; (Classes)</h2>
+<p>&#xD074;&#xB798;&#xC2A4;&#xB294; ES6 &#xD074;&#xB798;&#xC2A4;&#xB85C; &#xC120;&#xC5B8;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-js"><span class="cm-keyword">class</span> <span class="cm-variable">C</span> {
   <span class="cm-comment">/**</span>
 <span class="cm-comment">   * @param {number} data</span>
 <span class="cm-comment">   */</span>
   <span class="cm-property">constructor</span>(<span class="cm-def">data</span>) {
-    <span class="cm-comment">// property types can be inferred</span>
+    <span class="cm-comment">// &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xD0C0;&#xC785;&#xC740; &#xCD94;&#xB860;&#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;</span>
     <span class="cm-keyword">this</span>.<span class="cm-property">name</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;foo&quot;</span>;
 
-    <span class="cm-comment">// or set explicitly</span>
+    <span class="cm-comment">// &#xB610;&#xB294; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xC120;&#xC5B8;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;</span>
     <span class="cm-comment">/** @type {string | null} */</span>
     <span class="cm-keyword">this</span>.<span class="cm-property">title</span> <span class="cm-operator">=</span> <span class="cm-atom">null</span>;
 
-    <span class="cm-comment">// or simply annotated, if they&apos;re set elsewhere</span>
+    <span class="cm-comment">// &#xB9CC;&#xC57D; &#xB2E4;&#xB978; &#xACF3;&#xC5D0; &#xC120;&#xC5B8;&#xB418;&#xC5B4; &#xC788;&#xB2E4;&#xBA74; &#xC5B4;&#xB178;&#xD14C;&#xC774;&#xC158;&#xC73C;&#xB85C; &#xD45C;&#xAE30;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
     <span class="cm-comment">/** @type {number} */</span>
     <span class="cm-keyword">this</span>.<span class="cm-property">size</span>;
 
-    <span class="cm-keyword">this</span>.<span class="cm-property">initialize</span>(<span class="cm-variable-2">data</span>); <span class="cm-comment">// Should error, initializer expects a string</span>
+    <span class="cm-keyword">this</span>.<span class="cm-property">initialize</span>(<span class="cm-variable-2">data</span>); <span class="cm-comment">// &#xC624;&#xB958;&#xAC00; &#xB09C;&#xB2E4;&#xBA74;, &#xC774;&#xB2C8;&#xC15C; &#xB77C;&#xC774;&#xC800;&#xB294; string&#xC744; &#xC608;&#xC0C1;&#xD569;&#xB2C8;&#xB2E4;</span>
   }
   <span class="cm-comment">/**</span>
 <span class="cm-comment">   * @param {string} s</span>
@@ -1352,14 +1365,14 @@ Only the first type parameter in a list is constrained:</p>
 
 <span class="cm-keyword">var</span> <span class="cm-variable">c</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">C</span>(<span class="cm-number">0</span>);
 
-<span class="cm-comment">// C should only be called with new, but</span>
-<span class="cm-comment">// because it is JavaScript, this is allowed and</span>
-<span class="cm-comment">// considered an &apos;any&apos;.</span>
+<span class="cm-comment">// C&#xB294; new &#xC640; &#xD568;&#xAED8; &#xD638;&#xCD9C;&#xB418;&#xC5B4;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;</span>
+<span class="cm-comment">// &#xD558;&#xC9C0;&#xB9CC; &#xC774;&#xAC74; JavaScript&#xC774;&#xACE0;, &#xC774;&#xAC83;&#xC740; &#xD5C8;&#xC6A9;&#xB418;&#xBA70;</span>
+<span class="cm-comment">// &apos;any&apos;&#xB85C; &#xAC04;&#xC8FC;&#xB429;&#xB2C8;&#xB2E4;.</span>
 <span class="cm-keyword">var</span> <span class="cm-variable">result</span> <span class="cm-operator">=</span> <span class="cm-variable">C</span>(<span class="cm-number">1</span>);
 </code></pre>
-<p>They can also be declared as constructor functions, as described in the next section:</p>
+<p>&#xB2E4;&#xC74C; &#xC139;&#xC158;&#xC5D0; &#xC124;&#xBA85;&#xB41C; &#xB300;&#xB85C; &#xC0DD;&#xC131;&#xC790; &#xD568;&#xC218;&#xB97C; &#xC120;&#xC5B8;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <h2 id="constructor"><code>@constructor</code></h2>
-<p>The compiler infers constructor functions based on this-property assignments, but you can make checking stricter and suggestions better if you add a <code>@constructor</code> tag:</p>
+<p>&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; &#xC18D;&#xC131; &#xD560;&#xB2F9;&#xC744; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC0DD;&#xC131;&#xC790; &#xD568;&#xC218;&#xB97C; &#xCD94;&#xB860;&#xD569;&#xB2C8;&#xB2E4;, &#xD558;&#xC9C0;&#xB9CC; <code>@constructor</code> &#xD0DC;&#xADF8;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xB354; &#xC5C4;&#xACA9;&#xD55C; &#xAC80;&#xC0AC;&#xC640; &#xC81C;&#xC548; &#xC0AC;&#xD56D;&#xC744; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-js"><span class="cm-comment">// @checkJs</span>
 <span class="cm-comment">// @errors: 2345 2348</span>
 <span class="cm-comment">/**</span>
@@ -1367,14 +1380,14 @@ Only the first type parameter in a list is constrained:</p>
 <span class="cm-comment"> * @param {number} data</span>
 <span class="cm-comment"> */</span>
 <span class="cm-keyword">function</span> <span class="cm-variable">C</span>(<span class="cm-def">data</span>) {
-  <span class="cm-comment">// property types can be inferred</span>
+  <span class="cm-comment">// &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xD0C0;&#xC785;&#xC740; &#xCD94;&#xB860;&#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;</span>
   <span class="cm-keyword">this</span>.<span class="cm-property">name</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;foo&quot;</span>;
 
-  <span class="cm-comment">// or set explicitly</span>
+  <span class="cm-comment">// &#xB610;&#xB294; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xC120;&#xC5B8;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;</span>
   <span class="cm-comment">/** @type {string | null} */</span>
   <span class="cm-keyword">this</span>.<span class="cm-property">title</span> <span class="cm-operator">=</span> <span class="cm-atom">null</span>;
 
-  <span class="cm-comment">// or simply annotated, if they&apos;re set elsewhere</span>
+  <span class="cm-comment">// &#xB9CC;&#xC57D; &#xB2E4;&#xB978; &#xACF3;&#xC5D0; &#xC120;&#xC5B8;&#xB418;&#xC5B4; &#xC788;&#xB2E4;&#xBA74; &#xC5B4;&#xB178;&#xD14C;&#xC774;&#xC158;&#xC73C;&#xB85C; &#xD45C;&#xAE30;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
   <span class="cm-comment">/** @type {number} */</span>
   <span class="cm-keyword">this</span>.<span class="cm-property">size</span>;
 
@@ -1393,7 +1406,7 @@ Only the first type parameter in a list is constrained:</p>
 <span class="cm-keyword">var</span> <span class="cm-variable">result</span> <span class="cm-operator">=</span> <span class="cm-variable">C</span>(<span class="cm-number">1</span>);
 </code></pre>
 <blockquote>
-<p>Note: Error messages only show up in JS codebases with <a href="../docs/handbook/tsconfig-json.html">a JSConfig</a> and <a href="../tsconfig#checkJs"><code>checkJs</code></a> enabled.</p>
+<p>Note: &#xC624;&#xB958; &#xBA54;&#xC2DC;&#xC9C0;&#xB294; <a href="../docs/handbook/tsconfig-json.html">a JSConfig</a> &#xBC0F; <a href="../tsconfig#checkJs"><code>checkJs</code></a>&#xAC00; &#xD65C;&#xC131;&#xD654;&#xB41C; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C;&#xB9CC; JS &#xCF54;&#xB4DC; &#xBCA0;&#xC774;&#xC2A4;&#xC5D0; &#xB098;&#xD0C0;&#xB0A9;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
 <p>With <code>@constructor</code>, <code>this</code> is checked inside the constructor function <code>C</code>, so you will get suggestions for the <code>initialize</code> method and an error if you pass it a number. Your editor may also show warnings if you call <code>C</code> instead of constructing it.</p>
 <p>Unfortunately, this means that constructor functions that are also callable cannot use <code>@constructor</code>.</p>
@@ -1596,7 +1609,7 @@ If it is off, then <code>number</code> is nullable.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"JSDoc 레퍼런스(en)","layout":"docs","permalink":"/docs/handbook/jsdoc-supported-types.html","oneline":"What JSDoc does TypeScript-powered JavaScript support?","level":"8.3","depth":1,"next":{"title":".js 파일에서 d.ts 파일 만들기(en)","level":"8.4","depth":1,"path":"pages/declaration-files/creating-dts-files-from-js.md","ref":"pages/declaration-files/creating-dts-files-from-js.md","articles":[]},"previous":{"title":"JavaScript 파일 타입 검사","level":"8.2","depth":1,"path":"pages/type-checking-javaScript-files.md","ref":"pages/type-checking-javaScript-files.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/jsdoc-reference.md","mtime":"2020-08-18T11:08:15.584Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-18T11:09:12.937Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"JSDoc 레퍼런스(en)","layout":"docs","permalink":"/docs/handbook/jsdoc-supported-types.html","oneline":"What JSDoc does TypeScript-powered JavaScript support?","level":"8.3","depth":1,"next":{"title":".js 파일에서 d.ts 파일 만들기(en)","level":"8.4","depth":1,"path":"pages/declaration-files/creating-dts-files-from-js.md","ref":"pages/declaration-files/creating-dts-files-from-js.md","articles":[]},"previous":{"title":"JavaScript 파일 타입 검사","level":"8.2","depth":1,"path":"pages/type-checking-javaScript-files.md","ref":"pages/type-checking-javaScript-files.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/jsdoc-reference.md","mtime":"2020-09-01T11:09:30.641Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-01T11:10:27.709Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

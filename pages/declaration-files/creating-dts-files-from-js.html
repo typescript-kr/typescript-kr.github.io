@@ -613,7 +613,20 @@
         
         
     
-        <li class="chapter " data-level="6.1" data-path="../release-notes/typescript-3.9.html">
+        <li class="chapter " data-level="6.1" data-path="../release-notes/typescript-4.0.html">
+            
+                <a href="../release-notes/typescript-4.0.html">
+            
+                    
+                    TypeScript 4.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../release-notes/typescript-3.9.html">
             
                 <a href="../release-notes/typescript-3.9.html">
             
@@ -626,7 +639,7 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="../release-notes/typescript-3.8.html">
+        <li class="chapter " data-level="6.3" data-path="../release-notes/typescript-3.8.html">
             
                 <a href="../release-notes/typescript-3.8.html">
             
@@ -1049,64 +1062,64 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p><a href="../../docs/handbook/release-notes/typescript-3-7.html#--declaration-and---allowjs">With TypeScript 3.7</a>,
-TypeScript added support for generating .d.ts files from JavaScript using JSDoc syntax.</p>
-<p>This set up means you can own the editor experience of TypeScript-powered editors without porting your project to TypeScript, or having to maintain .d.ts files in your codebase.
-TypeScript supports most JSDoc tags, you can find <a href="../../docs/handbook/type-checking-javascript-files.html#supported-jsdoc">the reference here</a>.</p>
-<h2 id="setting-up-your-project-to-emit-dts-files">Setting up your Project to emit .d.ts files</h2>
-<p>To add creation of .d.ts files in your project, you will need to do up-to four steps:</p>
+                                <p><a href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-7.html#--declaration-and---allowjs" target="_blank">TypeScript 3.7&#xC5D0;&#xC11C;</a>,
+TypeScript&#xB294; JSDoc &#xAD6C;&#xBB38;&#xC744; &#xC0AC;&#xC6A9;&#xD55C; JavaScript&#xC5D0;&#xC11C; .d.ts &#xD30C;&#xC77C;&#xC744; &#xC0DD;&#xC131;&#xD560; &#xC218; &#xC788;&#xAC8C; &#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC989; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; TypeScript&#xC5D0; &#xC774;&#xC2DD;&#xD558;&#xAC70;&#xB098;(porting) &#xCF54;&#xB4DC;&#xBCA0;&#xC774;&#xC2A4;&#xC5D0; .d.ts &#xD30C;&#xC77C;&#xC744; &#xC720;&#xC9C0;&#xD558;&#xC9C0; &#xC54A;&#xACE0;&#xB3C4; TypeScript &#xAE30;&#xBC18; &#xD3B8;&#xC9D1;&#xAE30;&#xC758; &#xD658;&#xACBD;&#xC744; &#xC720;&#xC9C0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+TypeScript&#xB294; &#xB300;&#xBD80;&#xBD84;&#xC758; JSDoc &#xD0DC;&#xADF8;&#xB97C; &#xC9C0;&#xC6D0;&#xD558;&#xBA70;, <a href="https://www.typescriptlang.org/docs/handbook/type-checking-javascript-files.html#supported-jsdoc" target="_blank">&#xCC38;&#xC870;</a>&#xC5D0;&#xC11C; &#xCC3E;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 id="dts-&#xD30C;&#xC77C;-&#xC0DD;&#xC131;&#xC744;-&#xC704;&#xD55C;-&#xD504;&#xB85C;&#xC81D;&#xD2B8;-&#xC124;&#xC815;-setting-up-your-project-to-emit-dts-files">.d.ts &#xD30C;&#xC77C; &#xC0DD;&#xC131;&#xC744; &#xC704;&#xD55C; &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xC124;&#xC815; (Setting up your Project to emit .d.ts files)</h2>
+<p>.d.ts &#xD30C;&#xC77C;&#xC744; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0;&#xC11C; &#xC0DD;&#xC131;&#xD558;&#xB824;&#xBA74;, &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; 4&#xB2E8;&#xACC4;&#xB97C; &#xAC70;&#xCCD0;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <ul>
-<li>Add TypeScript to your dev dependencies</li>
-<li>Add a <code>tsconfig.json</code> to configure TypeScript</li>
-<li>Run the TypeScript compiler to generate the corresponding d.ts files for JS files</li>
-<li>(optional) Edit your package.json to reference the types</li>
+<li>&#xAC1C;&#xBC1C; &#xC758;&#xC874;&#xC131;&#xC5D0; TypeScript &#xCD94;&#xAC00;</li>
+<li>TypeScript &#xC124;&#xC815;&#xC744; &#xC704;&#xD574; <code>tsconfig.json</code> &#xCD94;&#xAC00;</li>
+<li>JS &#xD30C;&#xC77C;&#xC5D0; &#xD574;&#xB2F9;&#xD558;&#xB294; d.ts &#xD30C;&#xC77C;&#xC744; &#xC0DD;&#xC131;&#xD558;&#xAE30; &#xC704;&#xD574; TypeScript &#xCEF4;&#xD30C;&#xC77C; &#xC2E4;&#xD589;</li>
+<li>(&#xC120;&#xD0DD;&#xC801;&#xC73C;&#xB85C;) &#xD0C0;&#xC785;&#xC744; &#xCC38;&#xC870;&#xD558;&#xAE30; &#xC704;&#xD55C; package.json &#xC218;&#xC815;</li>
 </ul>
-<h3 id="adding-typescript">Adding TypeScript</h3>
-<p>You can learn how to do this in our <a href="../../download">installation page</a>.</p>
+<h3 id="typescript-&#xCD94;&#xAC00;-adding-typescript">TypeScript &#xCD94;&#xAC00; (Adding TypeScript)</h3>
+<p><a href="https://www.typescriptlang.org/download" target="_blank">&#xC124;&#xCE58; &#xD398;&#xC774;&#xC9C0;</a>&#xC5D0;&#xC11C; &#xBC29;&#xBC95;&#xC744; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h3 id="tsconfig">TSConfig</h3>
-<p>The TSConfig is a json5 file which configures both your compiler flags, and declare where to find files.
-In this case, you will want a file like the following:</p>
+<p>TSConfig&#xB294; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xD50C;&#xB798;&#xADF8;&#xB97C; &#xAD6C;&#xC131;&#xD558;&#xACE0; &#xD30C;&#xC77C;&#xC744; &#xCC3E;&#xC744; &#xC704;&#xCE58;&#xB97C; &#xC120;&#xC5B8;&#xD558;&#xB294; json5 &#xD30C;&#xC77C;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC704;&#xC640; &#xAC19;&#xC740; &#xACBD;&#xC6B0;, &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xD30C;&#xC77C;&#xC774; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-json5">{
-  // Change this to match your project
+  // &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0; &#xC54C;&#xB9DE;&#xAC8C; &#xC218;&#xC815;&#xD558;&#xC138;&#xC694;.
   include: [&quot;src/**/*&quot;],
 
   compilerOptions: {
-    // Tells TypeScript to read JS files, as
-    // normally they are ignored as source files
+    // &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xC18C;&#xC2A4; &#xD30C;&#xC77C;&#xB85C; &#xBB34;&#xC2DC;&#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;,
+    // TypeScript&#xAC00; JS &#xD30C;&#xC77C;&#xC744; &#xC77D;&#xB3C4;&#xB85D; &#xC9C0;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.
     allowJs: true,
-    // Generate d.ts files
+    // d.ts &#xD30C;&#xC77C;&#xC744; &#xC0DD;&#xC131;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;.
     declaration: true,
-    // This compiler run should
-    // only output d.ts files
+    // &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC2E4;&#xD589;&#xC774; &#xC624;&#xC9C1;
+    // d.ts &#xD30C;&#xC77C;&#xB9CC; &#xCD9C;&#xB825;&#xD558;&#xAC8C; &#xD569;&#xB2C8;&#xB2E4;.
     emitDeclarationOnly: true,
-    // Types should go into this directory.
-    // Removing this would place the .d.ts files
-    // next to the .js files
+    // &#xD0C0;&#xC785;&#xC740; &#xC774; &#xB514;&#xB809;&#xD130;&#xB9AC; &#xC548;&#xC5D0; &#xC874;&#xC7AC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.
+    // &#xD574;&#xB2F9; &#xC124;&#xC815;&#xC744; &#xC81C;&#xAC70;&#xD558;&#xBA74;,
+    // .d.ts &#xD30C;&#xC77C;&#xC774; .js &#xD30C;&#xC77C; &#xC606;&#xC5D0; &#xC0DD;&#xC131;&#xB429;&#xB2C8;&#xB2E4;.
     outDir: &quot;dist&quot;,
   },
 }
 </code></pre>
-<p>You can learn more about the options in the <a href="../../reference">tsconfig reference</a>.
-An alternative to using a TSConfig file is the CLI, this is the same behavior as a CLI command.</p>
+<p><a href="../../reference">tsconfig &#xCC38;&#xC870;</a>&#xC5D0;&#xC11C; &#xB354; &#xB9CE;&#xC740; &#xC635;&#xC158;&#xC744; &#xCC3E;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+TSConfig &#xD30C;&#xC77C;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xB300;&#xC2E0; CLI&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-sh">npx typescript src/**/*.js <span class="cm-attribute">--declaration</span> <span class="cm-attribute">--allowJs</span> <span class="cm-attribute">--emitDeclarationOnly</span> <span class="cm-attribute">--outDir</span> types
 </code></pre>
-<h2 id="run-the-compiler">Run the compiler</h2>
-<p>You can learn how to do this in our <a href="../../download">installation page</a>.
-You want to make sure these files are included in your package if you have the files in your project&apos;s <code>.gitignore</code>.</p>
-<h2 id="editing-the-packagejson">Editing the package.json</h2>
-<p>TypeScript replicates the node resolution for modules in a <code>package.json</code>, with an additional step for finding .d.ts files.
-Roughly, the resolution will first check the optional <code>&quot;types&quot;</code> field, then the <code>&quot;main&quot;</code> field, and finally will try <code>index.d.ts</code> in the root.</p>
+<h2 id="&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;-&#xC2E4;&#xD589;-run-the-compiler">&#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC2E4;&#xD589; (Run the compiler)</h2>
+<p><a href="https://www.typescriptlang.org/download" target="_blank">&#xC124;&#xCE58; &#xD398;&#xC774;&#xC9C0;</a>&#xC5D0;&#xC11C; &#xBC29;&#xBC95;&#xC744; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC758; <code>.gitignore</code>&#xC5D0; &#xD30C;&#xC77C;&#xC774; &#xC788;&#xC744; &#xB54C;, &#xC774;&#xB7EC;&#xD55C; &#xD30C;&#xC77C;&#xB4E4;&#xC774; &#xD328;&#xD0A4;&#xC9C0;&#xC5D0; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="packagejson-&#xC218;&#xC815;-editing-the-packagejson">package.json &#xC218;&#xC815; (Editing the package.json)</h2>
+<p>TypeScript&#xB294; .d.ts &#xD30C;&#xC77C;&#xC744; &#xCC3E;&#xAE30; &#xC704;&#xD55C; &#xCD94;&#xAC00; &#xB2E8;&#xACC4;&#xC640; &#xD568;&#xAED8; <code>package.json</code>&#xC758; &#xBAA8;&#xB4C8;&#xC5D0; &#xB300;&#xD55C; &#xB178;&#xB4DC; &#xAD00;&#xACC4;(node resolution)&#xB97C; &#xBCF5;&#xC81C;&#xD569;&#xB2C8;&#xB2E4;.
+&#xB300;&#xB7B5;&#xC801;&#xC73C;&#xB85C; &#xBA3C;&#xC800; &#xC120;&#xD0DD;&#xC801;&#xC778; <code>&quot;types&quot;</code> &#xD544;&#xB4DC;&#xB97C; &#xD655;&#xC778; &#xD6C4;, &#xB2E4;&#xC74C;&#xC740; <code>&quot;main&quot;</code>, &#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; &#xB8E8;&#xD2B8;&#xC5D0;&#xC11C; <code>index.d.ts</code>&#xB97C; &#xD655;&#xC778;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <table>
 <thead>
 <tr>
 <th style="text-align:left">Package.json</th>
-<th style="text-align:left">Location of default .d.ts</th>
+<th style="text-align:left">&#xAE30;&#xBCF8; .d.ts&#xC758; &#xC704;&#xCE58;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">No &quot;types&quot; field</td>
-<td style="text-align:left">checks &quot;main&quot;, then index.d.ts</td>
+<td style="text-align:left">&quot;types&quot; &#xD544;&#xB4DC; &#xC5C6;&#xC74C;</td>
+<td style="text-align:left">&quot;main&quot; &#xD655;&#xC778; &#xD6C4;, index.d.ts &#xD655;&#xC778;</td>
 </tr>
 <tr>
 <td style="text-align:left">&quot;types&quot;: &quot;main.d.ts&quot;</td>
@@ -1118,17 +1131,17 @@ Roughly, the resolution will first check the optional <code>&quot;types&quot;</c
 </tr>
 </tbody>
 </table>
-<p>If absent, then &quot;main&quot; is used</p>
+<p>type &#xD544;&#xB4DC;&#xAC00; &#xC5C6;&#xB2E4;&#xBA74;, &quot;main&quot;&#xC73C;&#xB85C; &#xB118;&#xC5B4;&#xAC11;&#xB2C8;&#xB2E4;.</p>
 <table>
 <thead>
 <tr>
 <th style="text-align:left">Package.json</th>
-<th style="text-align:left">Location of default .d.ts</th>
+<th style="text-align:left">&#xAE30;&#xBCF8; .d.ts&#xC758; &#xC704;&#xCE58;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">No &quot;main&quot; field</td>
+<td style="text-align:left">&quot;main&quot; &#xD544;&#xB4DC; &#xC5C6;&#xC74C;</td>
 <td style="text-align:left">index.d.ts</td>
 </tr>
 <tr>
@@ -1141,8 +1154,8 @@ Roughly, the resolution will first check the optional <code>&quot;types&quot;</c
 </tr>
 </tbody>
 </table>
-<h2 id="tips">Tips</h2>
-<p>If you&apos;d like to write tests for your .d.ts files, try <a href="https://github.com/SamVerschueren/tsd" target="_blank">tsd</a>.</p>
+<h2 id="&#xD301;-tips">&#xD301; (Tips)</h2>
+<p>.d.ts&#xC758; &#xD14C;&#xC2A4;&#xD2B8;&#xB97C; &#xC791;&#xC131;&#xD558;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74;, <a href="https://github.com/SamVerschueren/tsd" target="_blank">tsd</a>&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xBCF4;&#xC138;&#xC694;.</p>
 
                                 
                                 </section>
@@ -1186,7 +1199,7 @@ Roughly, the resolution will first check the optional <code>&quot;types&quot;</c
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":".js 파일에서 d.ts 파일 만들기(en)","layout":"docs","permalink":"/docs/handbook/declaration-files/dts-from-js.html","oneline":"How to add d.ts generation to JavaScript projects","level":"8.4","depth":1,"next":{"title":"tsconfig.json","level":"9.1","depth":1,"path":"pages/tsconfig.json.md","ref":"pages/tsconfig.json.md","articles":[]},"previous":{"title":"JSDoc 레퍼런스(en)","level":"8.3","depth":1,"path":"pages/jsdoc-reference.md","ref":"pages/jsdoc-reference.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/declaration-files/creating-dts-files-from-js.md","mtime":"2020-08-18T11:08:15.580Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-18T11:09:12.937Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":".js 파일에서 d.ts 파일 만들기(en)","layout":"docs","permalink":"/docs/handbook/declaration-files/dts-from-js.html","oneline":"How to add d.ts generation to JavaScript projects","level":"8.4","depth":1,"next":{"title":"tsconfig.json","level":"9.1","depth":1,"path":"pages/tsconfig.json.md","ref":"pages/tsconfig.json.md","articles":[]},"previous":{"title":"JSDoc 레퍼런스(en)","level":"8.3","depth":1,"path":"pages/jsdoc-reference.md","ref":"pages/jsdoc-reference.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/declaration-files/creating-dts-files-from-js.md","mtime":"2020-09-01T11:09:30.633Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-01T11:10:27.709Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -37,6 +37,7 @@
 <url> <loc>https://typescript-kr.github.io/pages/tutorials/migrating-from-javascript.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://typescript-kr.github.io/pages/tutorials/babel-with-typescript.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://typescript-kr.github.io/pages/tutorials/react-&amp;-webpack.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://typescript-kr.github.io/pages/release-notes/typescript-4.0.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://typescript-kr.github.io/pages/release-notes/typescript-3.9.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://typescript-kr.github.io/pages/release-notes/typescript-3.8.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://typescript-kr.github.io/pages/declaration-files/introduction.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>

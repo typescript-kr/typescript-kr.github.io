@@ -432,10 +432,10 @@ function height(s: Shape) {
 }
 ```
 
-## Type Parameters
+## 타입 매개변수 (Type Parameters)
 
-Like most C-descended languages, TypeScript requires declaration of
-type parameters:
+대부분의 C-계열 언어처럼, TypeScript는 타입 매개변수의 선언을
+요구합니다:
 
 ```ts
 function liftArray<T>(t: T): Array<T> {
@@ -443,9 +443,9 @@ function liftArray<T>(t: T): Array<T> {
 }
 ```
 
-There is no case requirement, but type parameters are conventionally
-single uppercase letters. Type parameters can also be constrained to a
-type, which behaves a bit like type class constraints:
+대소문자에 대한 요구 조건은 없지만, 타입 매개 변수는 일반적으로 단일 대문자입니다.
+타입 매개 변수는 타입 클래스 제약과 비슷하게 동작하는
+타입으로 제한될 수 있습니다.
 
 ```ts
 function firstish<T extends { length: number }>(t1: T, t2: T): T {
@@ -453,14 +453,14 @@ function firstish<T extends { length: number }>(t1: T, t2: T): T {
 }
 ```
 
-TypeScript can usually infer type arguments from a call based on the
-type of the arguments, so type arguments are usually not needed.
+TypeScript는 일반적으로 인자 타입에 기반하여 호출로부터 타입 인자를 추론할 수 있기 때문에
+대게 타입 인자를 필요로 하지 않습니다.
 
-Because TypeScript is structural, it doesn't need type parameters as
-much as nominal systems. Specifically, they are not needed to make a
-function polymorphic. Type parameters should only be used to
-_propagate_ type information, such as constraining parameters to be
-the same type:
+왜냐하면 TypeScript는 구조적이기 때문에, 이름 기반의 시스템만큼 타입 매개 변수를 필요로
+하지 않습니다. 특히 함수를 다형성으로 만들
+필요는 없습니다. 타입 매개변수는 매개변수를 같은 타입으로
+제한하는 것처럼 타입 정보를 _전파하는데만_
+쓰여야 합니다:
 
 ```ts
 function length<T extends ArrayLike<unknown>>(t: T): number {}
@@ -468,31 +468,31 @@ function length<T extends ArrayLike<unknown>>(t: T): number {}
 function length(t: ArrayLike<unknown>): number {}
 ```
 
-In the first `length`, T is not necessary; notice that it's only
-referenced once, so it's not being used to constrain the type of the
-return value or other parameters.
+첫 번째 `length`에서 T는 필요하지 않습니다; 오직 한 번만 참조되며,
+다른 매개변수나 리턴 값의 타입을 제한하는데 사용되지 않는다는 것을
+알아둬야 합니다.
 
-### Higher-kinded types
+### 상위 유형의 타입 (Higher-kinded types)
 
-TypeScript does not have higher kinded types, so the following is not legal:
+TypeScript는 상위 유형의 타입이 없습니다. 그러므로 다음과 같이 하는 건 허용하지 않습니다:
 
 ```ts
 function length<T extends ArrayLike<unknown>, U>(m: T<U>) {}
 ```
 
-### Point-free programming
+### 포인트-프리 프로그래밍 (Point-free programming)
 
-Point-free programming &mdash; heavy use of currying and function
-composition &mdash; is possible in JavaScript, but can be verbose.
-In TypeScript, type inference often fails for point-free programs, so
-you'll end up specifying type parameters instead of value parameters. The
-result is so verbose that it's usually better to avoid point-free
-programming.
+포인트-프리 프로그래밍은 &mdash; 커링 및 함수 합성의 과도한 사용
+&mdash; JavaScript에서 가능하지만 장황할 수 있습니다.
+TypeScript에서 포인트-프리 프로그래밍에 대한 타입 추론이 실패하는 경우가 많으므로,
+값 매개변수 대신 타입 매개변수를 지정하게 됩니다.
+그 결과는 너무 장황해서 보통 포인트-프리 프로그래밍은 피하는 게
+좋습니다.
 
-## Module system
+## 모듈 시스템 (Module system)
 
-JavaScript's modern module syntax is a bit like Haskell's, except that
-any file with `import` or `export` is implicitly a module:
+`import` 또는 `export`가 포함된 파일이 암시적으로 모듈이라는 점을 제외하면
+JavaScript의 최신 모듈 구문은 Haskell과 약간 유사합니다:
 
 ```ts
 import { value, Type } from "npm-package";
@@ -500,14 +500,14 @@ import { other, Types } from "./local-package";
 import * as prefix from "../lib/third-package";
 ```
 
-You can also import commonjs modules &mdash; modules written using node.js'
-module system:
+commonjs 모듈로 가져올 수 있습니다 &mdash; node.js' 모듈 시스템으로
+사용된 모듈:
 
 ```ts
 import f = require("single-function-package");
 ```
 
-You can export with an export list:
+export 목록으로 내보낼 수 있습니다:
 
 ```ts
 export { f };
@@ -518,21 +518,21 @@ function f() {
 function g() {} // g is not exported
 ```
 
-Or by marking each export individually:
+또는 개별적으로 표시해서:
 
 ```ts
 export function f { return g() }
 function g() { }
 ```
 
-The latter style is more common but both are allowed, even in the same
-file.
+후자의 스타일이 더 일반적이지만 같은 파일 내에서도 둘 다
+허용됩니다.
 
-## `readonly` and `const`
+## `readonly` 와 `const` (`readonly` and `const`)
 
-In JavaScript, mutability is the default, although it allows variable
-declarations with `const` to declare that the _reference_ is
-immutable. The referent is still mutable:
+JavaScript에서, 수정 가능함이 기본이지만,
+_참조_가 수정 불가능함을 선언하기 위해 `const`로 변수를 선언할 수 있습니다.
+참조 대상은 여전히 수정 가능합니다:
 
 ```js
 const a = [1, 2, 3];
@@ -540,7 +540,7 @@ a.push(102); // ):
 a[0] = 101; // D:
 ```
 
-TypeScript additionally has a `readonly` modifier for properties.
+TypeScript는 추가적으로 프로퍼티에 `readonly` 제어자를 사용할 수 있습니다.
 
 ```ts
 interface Rx {
@@ -550,8 +550,8 @@ let rx: Rx = { x: 1 };
 rx.x = 12; // error
 ```
 
-It also ships with a mapped type `Readonly<T>` that makes
-all properties `readonly`:
+매핑된 타입 `Readonly<T>` 은 모든 프로퍼티를 `readonly` 으로
+만들어 버립니다:
 
 ```ts
 interface X {
@@ -561,9 +561,9 @@ let rx: Readonly<X> = { x: 1 };
 rx.x = 12; // error
 ```
 
-And it has a specific `ReadonlyArray<T>` type that removes
-side-affecting methods and prevents writing to indices of the array,
-as well as special syntax for this type:
+그리고 부작용을 일으키는 메서드를 제거하고 배열 인덱스에 대한 변경을 방지하는
+특정 `ReadonlyArray<T>` 타입과,
+이 타입에 대한 특수 구문이 있습니다:
 
 ```ts
 let a: ReadonlyArray<number> = [1, 2, 3];
@@ -572,8 +572,8 @@ a.push(102); // error
 b[0] = 101; // error
 ```
 
-You can also use a const-assertion, which operates on arrays and
-object literals:
+배열과 객체 리터럴에서 동작하는 const-assertion만
+사용할 수 있습니다:
 
 ```ts
 let a = [1, 2, 3] as const;
@@ -581,12 +581,12 @@ a.push(102); // error
 a[0] = 101; // error
 ```
 
-However, none of these options are the default, so they are not
-consistently used in TypeScript code.
+그러나 이러한 기능들은 기본적인 기능이 아니므로 TypeScript 코드에
+일관적으로 사용하지 않아도 됩니다.
 
-## Next Steps
+## 다음 단계 (Next Steps)
 
-This doc is a high level overview of the syntax and types you would use in everyday code. From here you should:
+이 문서는 일상적인 코드에서 높은 수준의 구문과 타입에 대한 개요를 담고 있습니다. 여기서부터는 아래를 참고하시면 됩니다:
 
-*-* Read the full Handbook [from start to finish](/docs/handbook/intro.html) (30m)
-*-* Explore the [Playground examples](/play#show-examples).
+*-* 전체 핸드북을 [처음부터 끝까지](/docs/handbook/intro.html) 읽으세요 (30m)
+*-* [Playground 예시](/play#show-examples)를 보세요.

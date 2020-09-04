@@ -613,7 +613,20 @@
         
         
     
-        <li class="chapter " data-level="6.1" data-path="release-notes/typescript-3.9.html">
+        <li class="chapter " data-level="6.1" data-path="release-notes/typescript-4.0.html">
+            
+                <a href="release-notes/typescript-4.0.html">
+            
+                    
+                    TypeScript 4.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="release-notes/typescript-3.9.html">
             
                 <a href="release-notes/typescript-3.9.html">
             
@@ -626,7 +639,7 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="release-notes/typescript-3.8.html">
+        <li class="chapter " data-level="6.3" data-path="release-notes/typescript-3.8.html">
             
                 <a href="release-notes/typescript-3.8.html">
             
@@ -1049,54 +1062,51 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>The type system in TypeScript has different levels of strictness when working with a codebase:</p>
+                                <p>TypeScript&#xC758; &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;&#xC740; &#xCF54;&#xB4DC;&#xBCA0;&#xC774;&#xC2A4;&#xB85C; &#xC791;&#xC5C5;&#xD560; &#xB54C; &#xC5C4;&#xACA9;&#xD568;&#xC758; &#xB808;&#xBCA8;&#xC774; &#xB2E4;&#xB985;&#xB2C8;&#xB2E4;</p>
 <ul>
-<li>A type-system based only on inference with JavaScript code</li>
-<li>Incremental typing in JavaScript <a href="../docs/handbook/jsdoc-supported-types.html">via JSDoc</a></li>
-<li>Using <code>// @ts-check</code> in a JavaScript file</li>
-<li>TypeScript code</li>
-<li>TypeScript with <a href="../tsconfig#strict"><code>strict</code></a> enabled</li>
+<li>&#xC624;&#xC9C1; JavaScript &#xCF54;&#xB4DC;&#xC758; &#xCD94;&#xB860;&#xC744; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xD558;&#xB294; &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;</li>
+<li><a href="../docs/handbook/jsdoc-supported-types.html">JSDoc&#xB97C; &#xD1B5;&#xD55C;</a> JavaScript&#xC5D0;&#xC11C;&#xC758; Incremental typing</li>
+<li>JavaScript&#xC5D0;&#xC11C;&#xC758; <code>// @ts-check</code> &#xC0AC;&#xC6A9;</li>
+<li>TypeScript &#xCF54;&#xB4DC;</li>
+<li><a href="../tsconfig#strict"><code>strict</code></a>&#xC774; &#xD65C;&#xC131;&#xD654;&#xB41C; TypeScript</li>
 </ul>
-<p>Each step represents a move towards a safer type-system, but not every project needs that level of verification.</p>
-<h2 id="typescript-with-javascript">TypeScript with JavaScript</h2>
-<p>This is when you use an editor which uses TypeScript to provide tooling like auto-complete, jump to symbol and refactoring tools like rename.
-The <a href="..">homepage</a> has a list of editors which have TypeScript plugins.</p>
-<h2 id="providing-type-hints-in-js-via-jsdoc">Providing Type Hints in JS via JSDoc</h2>
-<p>In a <code>.js</code> file, types can often be inferred. When types can&apos;t be inferred, they can be specified using JSDoc syntax.</p>
-<p>JSDoc annotations come before a declaration will be used to set the type of that declaration. For example:</p>
-<p>```js twoslash
-/<em>* @type {number} </em>/
-var x;</p>
-<p>x = 0; // OK
-x = false; // OK?!</p>
-<pre><code>
-You can find the full list of supported JSDoc patterns [in JSDoc Supported Types](/docs/handbook/jsdoc-supported-types.html).
+<p>&#xAC01; &#xB2E8;&#xACC4;&#xB294; &#xD0C0;&#xC785;&#xC2DC;&#xC2A4;&#xD15C;&#xC744; &#xB354; &#xC548;&#xC804;&#xD558;&#xAC8C; &#xB9CC;&#xB4E4;&#xC9C0;&#xB9CC;, &#xBC18;&#xB4DC;&#xC2DC; &#xBAA8;&#xB4E0; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xAC00; &#xC774; &#xC218;&#xC900;&#xC5D0; &#xB9DE;&#xB294; &#xAC80;&#xC99D;&#xC744; &#xD544;&#xC694;&#xB85C; &#xD558;&#xB294; &#xAC83;&#xC740; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;.</p>
+<h2 id="javascript&#xB97C;-&#xD65C;&#xC6A9;&#xD55C;-typescript-typescript-with-javascript">JavaScript&#xB97C; &#xD65C;&#xC6A9;&#xD55C; TypeScript (TypeScript with JavaScript)</h2>
+<p>&#xC774;&#xB294; &#xC790;&#xB3D9; &#xC644;&#xC131;, &#xC2EC;&#xBC8C;&#xB85C; &#xC774;&#xB3D9; &#xBC0F; &#xC774;&#xB984; &#xBC14;&#xAFB8;&#xAE30;&#xC640; &#xAC19;&#xC740; &#xB9AC;&#xD329;&#xD1A0;&#xB9C1; &#xD234;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; TypeScript&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC5D0;&#xB514;&#xD130;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; &#xC720;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.
+<a href="..">&#xD648;&#xD398;&#xC774;&#xC9C0;</a>&#xC5D0;&#xB294; TypeScript &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xB4E4;&#xC774; &#xC788;&#xB294; &#xD3B8;&#xC9D1;&#xC790; &#xBAA9;&#xB85D;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 id="jsdoc&#xC744;-&#xD1B5;&#xD558;&#xC5EC;-js&#xC5D0;-&#xD0C0;&#xC785;-&#xD78C;&#xD2B8;-&#xC81C;&#xACF5;&#xD558;&#xAE30;-providing-type-hints-in-js-via-jsdoc">JSDoc&#xC744; &#xD1B5;&#xD558;&#xC5EC; JS&#xC5D0; &#xD0C0;&#xC785; &#xD78C;&#xD2B8; &#xC81C;&#xACF5;&#xD558;&#xAE30; (Providing Type Hints in JS via JSDoc)</h2>
+<p><code>.js</code> &#xD30C;&#xC77C;&#xC5D0;&#xC11C;&#xB294;, &#xC885;&#xC885; &#xD0C0;&#xC785;&#xB4E4;&#xC744; &#xC720;&#xCD94;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD0C0;&#xC785;&#xB4E4;&#xC744; &#xC720;&#xCD94;&#xD560; &#xC218; &#xC5C6;&#xB294; &#xACBD;&#xC6B0;, JSDoc &#xAD6C;&#xBB38;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xAD6C;&#xCCB4;&#xC801;&#xC73C;&#xB85C; &#xC54C;&#xB9B4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>JSDoc &#xC8FC;&#xC11D;&#xC740; &#xC120;&#xC5B8; &#xC55E;&#xC5D0; &#xC704;&#xCE58;&#xD558;&#xBA70; &#xD2B9;&#xC815; &#xC120;&#xC5B8;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xC124;&#xC815;&#xD558;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xC5B4;:</p>
+<pre><code class="lang-js"><span class="cm-comment">/** @type {number} */</span>
+<span class="cm-keyword">var</span> <span class="cm-variable">x</span>;
 
-## `@ts-check`
+<span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-comment">// &#xC131;&#xACF5;</span>
+<span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-atom">false</span>; <span class="cm-comment">// &#xC131;&#xACF5;?!</span>
+</code></pre>
+<p>&#xC9C0;&#xC6D0;&#xB418;&#xB294; JSDoc &#xD328;&#xD134;&#xC758; &#xC804;&#xCCB4; &#xBAA9;&#xB85D;&#xC740; <a href="../docs/handbook/jsdoc-supported-types.html">JSDoc&#xAC00; &#xC9C0;&#xC6D0;&#xD558;&#xB294; &#xD0C0;&#xC785;&#xC5D0;&#xC11C;</a> &#xCC3E;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 id="ts-check"><code>@ts-check</code></h2>
+<p>&#xC774;&#xC804; &#xCF54;&#xB4DC; &#xC608;&#xC2DC;&#xC758; &#xB9C8;&#xC9C0;&#xB9C9; &#xC904;&#xC740; TypeScript&#xC5D0;&#xC11C; &#xC624;&#xB958;&#xB97C; &#xBC1C;&#xC0DD;&#xC2DC;&#xD0A4;&#xC9C0;&#xB9CC;, JS &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0;&#xC11C;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC624;&#xB958;&#xB97C; &#xBC1C;&#xC0DD;&#xC2DC;&#xD0A4;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
+JavaScript &#xD30C;&#xC77C;&#xC5D0;&#xC11C; &#xC624;&#xB958;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xB824;&#xBA74; &#xB2E4;&#xC74C;&#xC744; &#xCD94;&#xAC00;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;: <code>.js</code> &#xD30C;&#xC77C;&#xC758; &#xCCAB; &#xBC88;&#xC9F8; &#xC904;&#xC5D0; <code>// @ts-check</code>&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xC5EC; TypeScript&#xAC00; &#xC774;&#xB97C; &#xC624;&#xB958;&#xB85C; &#xC62C;&#xB9AC;&#xB3C4;&#xB85D; &#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-js"><span class="cm-comment">// @ts-check</span>
+<span class="cm-comment">// @errors: 2322</span>
+<span class="cm-comment">/** @type {number} */</span>
+<span class="cm-keyword">var</span> <span class="cm-variable">x</span>;
 
-The last line of the previous code sample would raise an error in TypeScript, but it doesn&apos;t by default in a JS project.
-To enable errors in your JavaScript files add: `// @ts-check` to the first line in your `.js` files to have TypeScript raise it as an error.
+<span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-comment">// &#xC131;&#xACF5;</span>
+<span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-atom">false</span>; <span class="cm-comment">// &#xC131;&#xACF5; &#xC544;&#xB2D8;</span>
+</code></pre>
+<p>&#xB9CC;&#xC77C; &#xC624;&#xB958;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xB824;&#xB294; JavaScript &#xD30C;&#xC77C;&#xC774; &#xB9CE;&#xC740; &#xACBD;&#xC6B0;, <a href="../docs/handbook/tsconfig-json.html"><code>jsconfig.json</code></a> &#xC5ED;&#xC2DC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xD30C;&#xC77C;&#xC5D0; <code>// @ts-nocheck</code> &#xCF54;&#xBA58;&#xD2B8;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xBA74; &#xC77C;&#xBD80; &#xD30C;&#xC77C; &#xD655;&#xC778;&#xC744; &#xAC74;&#xB108;&#xB6F8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>TypeScript&#xB294; &#xC6B0;&#xB9AC;&#xAC00; &#xB3D9;&#xC758;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xC624;&#xB958;&#xB4E4;&#xC744; &#xC81C;&#xACF5;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xB294;&#xB370;, &#xC774; &#xACBD;&#xC6B0; &#xD2B9;&#xC815; &#xC904; &#xB9E8;&#xC55E;&#xC5D0; <code>// @ts-ignore</code> &#xB610;&#xB294; <code>// @ts-expect-error</code>&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xADF8; &#xC904;&#xC758; &#xC624;&#xB958;&#xB97C; &#xBB34;&#xC2DC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-js"><span class="cm-comment">// @ts-check</span>
+<span class="cm-comment">/** @type {number} */</span>
+<span class="cm-keyword">var</span> <span class="cm-variable">x</span>;
 
-```js twoslash
-// @ts-check
-// @errors: 2322
-/** @type {number} */
-var x;
-
-x = 0; // OK
-x = false; // Not OK
-</code></pre><p>If you have a lot of JavaScript files you want to add errors to then you can switch to using a <a href="../docs/handbook/tsconfig-json.html"><code>jsconfig.json</code></a>.
-You can skip checking some files by adding a <code>// @ts-nocheck</code> comment to files.</p>
-<p>TypeScript may offer you errors which you disagree with, in those cases you can ignore errors on specific lines by adding <code>// @ts-ignore</code> or <code>// @ts-expect-error</code> on the preceding line.</p>
-<p>```js twoslash
-// @ts-check
-/<em>* @type {number} </em>/
-var x;</p>
-<p>x = 0; // OK
-// @ts-expect-error
-x = false; // Not OK
-```</p>
-<p>To learn more about how JavaScript is interpreted by TypeScript read <a href="../docs/handbook/type-checking-javascript-files.html">How TS Type Checks JS</a></p>
+<span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-comment">// &#xC131;&#xACF5;</span>
+<span class="cm-comment">// @ts-expect-error</span>
+<span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-atom">false</span>; <span class="cm-comment">// &#xC131;&#xACF5; &#xC544;&#xB2D8;</span>
+</code></pre>
+<p>JavaScript&#xB97C; TypeScript&#xB85C; &#xD574;&#xC11D;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC5D0; &#xB300;&#xD55C; &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="../docs/handbook/type-checking-javascript-files.html">TS Type&#xC774; JS&#xB97C; &#xCCB4;&#xD06C;&#xD558;&#xB294; &#xBC29;&#xBC95;</a>&#xC744; &#xCC38;&#xACE0;&#xD558;&#xC2DC;&#xAE30; &#xBC14;&#xB78D;&#xB2C8;&#xB2E4;.</p>
 
                                 
                                 </section>
@@ -1140,7 +1150,7 @@ x = false; // Not OK
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"JavaScript에 TypeScript 적용하기(en)","layout":"docs","permalink":"/docs/handbook/intro-to-js-ts.html","oneline":"How to add type checking to JavaScript files using TypeScript","level":"8.1","depth":1,"next":{"title":"JavaScript 파일 타입 검사","level":"8.2","depth":1,"path":"pages/type-checking-javaScript-files.md","ref":"pages/type-checking-javaScript-files.md","articles":[]},"previous":{"title":"Consumption","level":"7.8","depth":1,"path":"pages/declaration-files/consumption.md","ref":"pages/declaration-files/consumption.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/intro-to-js-with-ts.md","mtime":"2020-08-18T11:08:15.584Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-18T11:09:12.937Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"제목":"TypeScript를 활용한 JS 프로젝트(JS Projects Utilizing TypeScript)","레이아웃":"문서","고유 링크":"/docs/handbook/intro-to-js-ts.html","한 줄 설명":"TypeScript를 사용하여 JavaScript 파일에 유형 확인을 추가하는 방법","title":"JavaScript에 TypeScript 적용하기(en)","level":"8.1","depth":1,"next":{"title":"JavaScript 파일 타입 검사","level":"8.2","depth":1,"path":"pages/type-checking-javaScript-files.md","ref":"pages/type-checking-javaScript-files.md","articles":[]},"previous":{"title":"Consumption","level":"7.8","depth":1,"path":"pages/declaration-files/consumption.md","ref":"pages/declaration-files/consumption.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/intro-to-js-with-ts.md","mtime":"2020-09-01T11:09:30.641Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-01T11:10:27.709Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
