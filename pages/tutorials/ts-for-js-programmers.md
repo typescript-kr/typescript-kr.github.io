@@ -125,7 +125,7 @@ JavaScript에서 사용할 수 있는 적은 종류의 원시 타입이 이미 �
 
 ## 타입 구성 (Composing Types)
 
-크고 복잡한 객체들을 함께 구성하여 만드는 방법과 비슷하게 TypeScript에 타입으로 수행하는 도구가 있습니다.
+객체들을 조합하여 더 크고 복잡한 객체를 만드는 방법과 유사하게 TypeScript에 타입으로 이를 수행하는 도구가 있습니다.
 많고 작은 타입을 이용하여 새 타입을 작성하기 위해 일상적인 코드에서 가장 많이 사용되는 두 가지 코드는 유니언(Union)과 제네릭(Generic)입니다.
 
 ### 유니언 (Unions)
@@ -182,6 +182,7 @@ function wrapInArray(obj: string | string[]) {
 ### 제네릭 (Generics)
 
 TypeScript 제네릭 시스템에 대해 자세히 알아볼 수 있지만, 1분 정도의 수준 높은 설명을 하기 위해, 제네릭은 타입에 변수를 제공하는 방법입니다.
+
 배열이 일반적인 예시이며, 제네릭이 없는 배열은 어떤 것이든 포함할 수 있습니다. 제네릭이 있는 배열은 배열 안의 값을 설명할 수 있습니다.
 
 ```ts
@@ -291,5 +292,5 @@ printPoint(newVPoint); // prints "13, 56"
 
 해당 문서는 일상적인 코드에서 사용하는 구문 및 도구의 종류에 대한 수준 높은 5분 개요입니다. 여기에서:
 
-* 완성된 핸드북을 읽으세요 [from start to finish](/docs/handbook/intro.html) (30분)
-* [Playground examples](/play#show-examples)을 탐색하세요.
+* 전체 핸드북을 읽으세요 [처음부터 끝까지](/docs/handbook/intro.html) 읽으세요(30분)
+* [Playground 예시](/play#show-examples)를 탐색하세요.
