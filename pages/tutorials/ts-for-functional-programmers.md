@@ -318,8 +318,8 @@ let sns = map((n) => n.toString(), [1, 2, 3]);
 `n => n.toString()`의 리턴 타입으로 `U=string`을 추론하여,
 `sns`가 `string[]` 타입을 가지도록 합니다.
 
-추론은 어떤 순서로든 동작하겠지만, intellisense은 왼쪽에서 오른쪽으로만
-동작하고, 그래서 TypeScript는 먼저 배열과 함께 `map` 선언하는 것을
+추론은 어떤 순서로든 작동하지만, intellisense는 왼쪽에서 오른쪽으로만
+작동하므로, TypeScript는 배열과 함께 `map`을 먼저 선언하는 것을
 선호합니다:
 
 ```ts
