@@ -374,7 +374,7 @@ type FString = string & { __compileTimeOnly: any };
 `FString` 은 아직 `string`에 할당가능하지만,
 그 반대는 불가능하는 걸 의마합니다.
 
-## 구별하는 유니언 (Discriminated Unions)
+## 판별 유니언 (Discriminated Unions)
 
 `data` 에서 가장 유사한 점은 구별하는 속성과 함께 타입 유니언이며,
 보통은 TypeScript에서 구별하는 유니언이라고 불립니다:
