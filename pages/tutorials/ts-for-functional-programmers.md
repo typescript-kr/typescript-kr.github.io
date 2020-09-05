@@ -293,91 +293,91 @@ let s: "left" | "right" = "right";
 pad("hi", 10, s);
 ```
 
-# Concepts similar to Haskell
+# Haskell과 비슷한 개념 (Concepts similar to Haskell)
 
-## Contextual typing
+## 문맥적인 타이핑 (Contextual typing)
 
-TypeScript has some obvious places where it can infer types, like
-variable declarations:
+TypeScript는 변수 선언과 같이 타입을 추론할 수 있는
+몇 가지 분명한 방법이 있습니다:
 
-```ts twoslash
+```ts
 let s = "I'm a string!";
 ```
 
-But it also infers types in a few other places that you may not expect
-if you've worked with other C-syntax languages:
+하지만 다른 C-계열 언어로 작업한 적이 있다면 예상하지 못했던
+다른 방법으로 타입 추론이 가능합니다:
 
-```ts twoslash
+```ts
 declare function map<T, U>(f: (t: T) => U, ts: T[]): U[];
 let sns = map((n) => n.toString(), [1, 2, 3]);
 ```
 
-Here, `n: number` in this example also, despite the fact that `T` and `U`
-have not been inferred before the call. In fact, after `[1,2,3]` has
-been used to infer `T=number`, the return type of `n => n.toString()`
-is used to infer `U=string`, causing `sns` to have the type
-`string[]`.
+여기에서, 이 예시의 `n: number`에서 또한, `T` 과 `U`는 호출 전에
+추론되지 않았음에도 불구하고.
+실제로 `[1,2,3]` 으로 `T=number`을 추론한 다음에,
+`n => n.toString()`의 리턴 타입으로 `U=string`을 추론하여,
+`sns`가 `string[]` 타입을 가지도록 합니다.
 
-Note that inference will work in any order, but intellisense will only
-work left-to-right, so TypeScript prefers to declare `map` with the
-array first:
+추론은 어떤 순서로든 작동하지만, intellisense는 왼쪽에서 오른쪽으로만
+작동하므로, TypeScript는 배열과 함께 `map`을 먼저 선언하는 것을
+선호합니다:
 
-```ts twoslash
+```ts
 declare function map<T, U>(ts: T[], f: (t: T) => U): U[];
 ```
 
-Contextual typing also works recursively through object literals, and
-on unit types that would otherwise be inferred as `string` or
-`number`. And it can infer return types from context:
+문맥적인 타이핑은 또한 객체 리터럴을 통해 재귀적으로 작동하며, 그렇지 않으면
+`string`이나 `number`로 추론 가능한 유닛 타입으로 작동합니다.
+그리고 문맥을 통해서 리턴 타입을 추론할 수 있습니다:
 
-```ts twoslash
+```ts
 declare function run<T>(thunk: (t: T) => void): T;
 let i: { inference: string } = run((o) => {
   o.inference = "INSERT STATE HERE";
 });
 ```
 
-The type of `o` is determined to be `{ inference: string }` because
+`o` 의 타입은 `{ inference: string }` 으로 결정되었습니다. 왜냐하면
 
-1. Declaration initialisers are contextually typed by the
-   declaration's type: `{ inference: string }`.
-2. The return type of a call uses the contextual type for inferences,
-   so the compiler infers that `T={ inference: string }`.
-3. Arrow functions use the contextual type to type their parameters,
-   so the compiler gives `o: { inference: string }`.
+1. 선언 이니셜라이저는 선언 타입: `{ inference: string }`에 따라서
+   문맥적으로 타입이 정해집니다.
+2. 호출의 리턴 타입은 추론을 위해 문맥적인 타입을 사용하기 때문에,
+   컴파일러는 `T={ inference: string }`으로 추론합니다.
+3. 화살표 함수는 매개변수에 타입을 지정하기 위해 문맥적인 타입을 사용하므로,
+   컴파일러는 `o: { inference: string }`를 제공합니다.
 
-And it does so while you are typing, so that after typing `o.`, you
-get completions for the property `inference`, along with any other
-properties you'd have in a real program.
-Altogether, this feature can make TypeScript's inference look a bit
-like a unifying type inference engine, but it is not.
+입력하는 동안, `o.` 를 타이핑 후에,
+실제 프로그램에 있는 다른 속성과 함께 속성 `inference` 으로
+보완할 수 있습니다.
+이 기능은 TypeScript의 추론을 통해 통합적인 타입 추론 엔진처럼
+보이겠지만, 그렇지 않습니다.
 
-## Type aliases
+## 타입 별칭 (Type aliases)
 
-Type aliases are mere aliases, just like `type` in Haskell. The
-compiler will attempt to use the alias name wherever it was used in
-the source code, but does not always succeed.
+타입 별칭은 Haskell의 `type`과 마찬가지로 단순한 별칭입니다.
+컴파일러는 소스 코드에서 사용된 별칭 이름을 사용하려고
+시도하지만 항상 성공하지는 않습니다.
 
-```ts twoslash
+```ts
 type Size = [number, number];
 let x: Size = [101.1, 999.9];
 ```
 
-The closest equivalent to `newtype` is a _tagged intersection_:
+`newtype`과 가장 유사한 것은 _태그된 교차 타입(tagged intersection)_ 입니다:
 
 ```ts
 type FString = string & { __compileTimeOnly: any };
 ```
 
-An `FString` is just like a normal string, except that the compiler
-thinks it has a property named `__compileTimeOnly` that doesn't
-actually exist. This means that `FString` can still be assigned to
-`string`, but not the other way round.
+`FString`은 컴파일러가 실제로는 존재하지 않는 `__compileTimeOnly`라는
+프로퍼티를 가지고 있다고 생각하는 점을 제외하면 일반 문자열과 같습니다.
+`FString`은 여전히 `string`에 할당 가능하지만,
+그 반대는 불가능하다는 것을 의미합니다.
 
-## Discriminated Unions
+## 판별 유니언 (Discriminated Unions)
 
-The closest equivalent to `data` is a union of types with discriminant
-properties, normally called discriminated unions in TypeScript:
+`data`와 가장 유사한 것은 보통 TypeScript에서 판별 유니언이라 불리는,
+ 판별 프로퍼티를 갖는 타입의 유니언입니다:
 
 ```ts
 type Shape =
@@ -386,13 +386,13 @@ type Shape =
   | { kind: "triangle"; x: number; y: number };
 ```
 
-Unlike Haskell, the tag, or discriminant, is just a property in each
-object type. Each variant has an identical property with a different
-unit type. This is still a normal union type; the leading `|` is
-an optional part of the union type syntax. You can discriminate the
-members of the union using normal JavaScript code:
+하스켈과 달리, 태그 또는 판별은 각각 객체 타입에서 단지 속성에 불구합니다.
+특이 케이스는 다른 유닛 타입과 함께 동일한 속성을 가집니다.
+아직 평범한 유니언타입입니다; 리드하는 `|` 는
+유니언 타입 구문의 선택적인 부분입니다. 유니언을 사용하는 평범한 JavaScript
+코드로 구별가능합니다:
 
-```ts twoslash
+```ts
 type Shape =
   | { kind: "circle"; radius: number }
   | { kind: "square"; x: number }
@@ -409,14 +409,14 @@ function area(s: Shape) {
 }
 ```
 
-Note that the return type of `area` is inferred to be `number` because
-TypeScript knows the function is total. If some variant is not
-covered, the return type of `area` will be `number | undefined` instead.
+`area` 의 리턴 타입은 `number` 를 나타내는데, TypeScript가 함수가 전체라는
+걸 알고 있기 때문에 유의해야할 필요가 있습니다. 몇몇 특이 케이스가 커버되지 않으면
+`area` 의 리턴 타입은 `number | undefined` 으로 대신될 것입니다.
 
-Also, unlike Haskell, common properties show up in any union, so you
-can usefully discriminate multiple members of the union:
+또한, 하스켈과 달리 흔한 속성들은 어떤 유니언에도 나타나며,
+그래서 유용하게 여러 개의 유니언 구분가능합니다:
 
-```ts twoslash
+```ts
 type Shape =
   | { kind: "circle"; radius: number }
   | { kind: "square"; x: number }
