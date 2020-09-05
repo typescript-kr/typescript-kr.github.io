@@ -337,7 +337,7 @@ let i: { inference: string } = run((o) => {
 });
 ```
 
-`o` 의 타입은 `{ inference: string }` 으로 결정되었습니다. 왜냐면
+`o` 의 타입은 `{ inference: string }` 으로 결정되었습니다. 왜냐하면
 
 1. 선언 초기화는 선언 타입: `{ inference: string }`에 따라서
    문맥적으로 타입이 정해집니다.
