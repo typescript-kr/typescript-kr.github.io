@@ -613,7 +613,20 @@
         
         
     
-        <li class="chapter " data-level="6.1" data-path="../release-notes/typescript-3.9.html">
+        <li class="chapter " data-level="6.1" data-path="../release-notes/typescript-4.0.html">
+            
+                <a href="../release-notes/typescript-4.0.html">
+            
+                    
+                    TypeScript 4.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../release-notes/typescript-3.9.html">
             
                 <a href="../release-notes/typescript-3.9.html">
             
@@ -626,7 +639,7 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="../release-notes/typescript-3.8.html">
+        <li class="chapter " data-level="6.3" data-path="../release-notes/typescript-3.8.html">
             
                 <a href="../release-notes/typescript-3.8.html">
             
@@ -1084,68 +1097,60 @@ JavaScript&#xAC00; &#xCC98;&#xC74C; &#xB098;&#xC654;&#xC744; &#xB54C;, &#xC218;&
 </ul>
 <p>&#xB300;&#xBD80;&#xBD84;&#xC758; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D; &#xC5B8;&#xC5B4;&#xB294; &#xC774;&#xB7F0; &#xC885;&#xB958;&#xC758; &#xC624;&#xB958;&#xB4E4;&#xC774; &#xBC1C;&#xC0DD;&#xD558;&#xBA74; &#xC624;&#xB958;&#xB97C; &#xD45C;&#xCD9C;&#xD574;&#xC8FC;&#xACE0;, &#xC77C;&#xBD80;&#xB294; &#xCF54;&#xB4DC;&#xAC00; &#xC2E4;&#xD589;&#xB418;&#xAE30; &#xC804;&#xC778; &#xCEF4;&#xD30C;&#xC77C; &#xC911;&#xC5D0; &#xC624;&#xB958;&#xB97C; &#xD45C;&#xCD9C;&#xD574;&#xC90D;&#xB2C8;&#xB2E4;.
 &#xC791;&#xC740; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC744; &#xC791;&#xC131;&#xD560; &#xB54C;&#xC5D0;&#xB294;, &#xC774;&#xB7F0; &#xC774;&#xC0C1;&#xD55C; &#xC810;&#xB4E4;&#xC774; &#xD654;&#xB97C; &#xB3CB;&#xAD6C;&#xC9C0;&#xB9CC; &#xAD00;&#xB9AC;&#xB294; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098; &#xC218;&#xBC31; &#xB610;&#xB294; &#xC218;&#xCC9C; &#xC904;&#xC758; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xB4E4;&#xC744; &#xC791;&#xC131;&#xD560; &#xB54C;&#xC5D0;&#xB294;, &#xC774;&#xB7EC;&#xD55C; &#xC9C0;&#xC18D;&#xC801; &#xB180;&#xB77C;&#xC6C0;&#xB4E4;&#xC740; &#xC2EC;&#xAC01;&#xD55C; &#xBB38;&#xC81C;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<h2 id="typescript-a-static-type-checker">TypeScript: A Static Type Checker</h2>
-<p>We said earlier that some languages wouldn&apos;t allow those buggy programs to run at all.
-Detecting errors in code without running it is referred to as <em>static checking</em>.
-Determining what&apos;s an error and what&apos;s not based on the kinds of values being operated on is known as static <em>type</em> checking.</p>
-<p>TypeScript checks a program for errors before execution, and does so based on the <em>kinds of values</em>, it&apos;s a <em>static type checker</em>.
-For example, the last example above has an error because of the <em>type</em> of <code>obj</code>.
-Here&apos;s the error TypeScript found:</p>
-<p>```ts twoslash
-// @errors: 2551
+<h2 id="typescript-&#xC815;&#xC801;-&#xD0C0;&#xC785;-&#xAC80;&#xC0AC;&#xC790;-typescript-a-static-type-checker">TypeScript: &#xC815;&#xC801; &#xD0C0;&#xC785; &#xAC80;&#xC0AC;&#xC790; (TypeScript: A Static Type Checker)</h2>
+<p>&#xC55E;&#xC11C; &#xBA87; &#xC5B8;&#xC5B4;&#xB294; &#xBC84;&#xADF8;&#xAC00; &#xB9CE;&#xC740; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC744; &#xC544;&#xC608; &#xC2E4;&#xD589;&#xC2DC;&#xD0A4;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;&#xACE0; &#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC744; &#xC2E4;&#xD589;&#xC2DC;&#xD0A4;&#xC9C0; &#xC54A;&#xC73C;&#xBA74;&#xC11C; &#xCF54;&#xB4DC;&#xC758; &#xC624;&#xB958;&#xB97C; &#xAC80;&#xCD9C;&#xD558;&#xB294; &#xAC83;&#xC744; <em>&#xC815;&#xC801; &#xAC80;&#xC0AC;</em>&#xB77C;&#xACE0; &#xD569;&#xB2C8;&#xB2E4;.
+&#xC5B4;&#xB5A4; &#xAC83;&#xC774; &#xC624;&#xB958;&#xC778;&#xC9C0;&#xC640; &#xC5B4;&#xB5A4; &#xAC83;&#xC774; &#xC5F0;&#xC0B0; &#xB418;&#xB294; &#xAC12;&#xC5D0; &#xAE30;&#xC778;&#xD558;&#xC9C0; &#xC54A;&#xC74C;&#xC744; &#xC815;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC815;&#xC801; <em>&#xD0C0;&#xC785;</em> &#xAC80;&#xC0AC;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p><em>&#xC815;&#xC801; &#xD0C0;&#xC785; &#xAC80;&#xC0AC;&#xC790;</em>&#xC778; TypeScript&#xB294; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC744; &#xC2E4;&#xD589;&#xC2DC;&#xD0A4;&#xAE30; &#xC804;&#xC5D0; <em>&#xAC12;&#xC758; &#xC885;&#xB958;</em>&#xB97C; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC758; &#xC624;&#xB958;&#xB97C; &#xCC3E;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, &#xC704;&#xC758; &#xB9C8;&#xC9C0;&#xB9C9; &#xC608;&#xC2DC;&#xC5D0; &#xC624;&#xB958;&#xAC00; &#xC788;&#xB294; &#xC774;&#xC720;&#xB294; <code>obj</code>&#xC758; <em>&#xD0C0;&#xC785;</em> &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.
+&#xB2E4;&#xC74C;&#xC740; TypeScript&#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xB294; &#xC624;&#xB958;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code>// @errors: 2551
 const obj = { width: 10, height: 15 };
-const area = obj.width * obj.heigth;</p>
-<pre><code>
-### A Typed Superset of JavaScript
-
-How does TypeScript relate to JavaScript, though?
-
-#### Syntax
-
-TypeScript is a language that is a _superset_ of JavaScript: JS syntax is therefore legal TS.
-Syntax refers to the way we write text to form a program.
-For example, this code has a _syntax_ error because it&apos;s missing a `)`:
-
-```ts twoslash
-// @errors: 1005
+const area = obj.width * obj.heigth;
+</code></pre><h3 id="&#xD0C0;&#xC785;&#xC774;-&#xC788;&#xB294;-javascript&#xC758;-&#xC0C1;&#xC704;-&#xC9D1;&#xD569;-a-typed-superset-of-javascript">&#xD0C0;&#xC785;&#xC774; &#xC788;&#xB294; JavaScript&#xC758; &#xC0C1;&#xC704; &#xC9D1;&#xD569; (A Typed Superset of JavaScript)</h3>
+<p>&#xADF8;&#xB807;&#xB2E4;&#xBA74; TypeScript&#xB294; JavaScript&#xC640; &#xC5B4;&#xB5A4; &#xAD00;&#xACC4;&#xC77C;&#xAE4C;&#xC694;?</p>
+<h4 id="&#xAD6C;&#xBB38;-syntax">&#xAD6C;&#xBB38; (Syntax)</h4>
+<p>TypeScript&#xB294; JS&#xC758; &#xAD6C;&#xBB38;&#xC774; &#xD5C8;&#xC6A9;&#xB418;&#xB294;, JavaScript&#xC758; <em>&#xC0C1;&#xC704; &#xC9D1;&#xD569;</em> &#xC5B8;&#xC5B4;&#xC785;&#xB2C8;&#xB2E4;.
+&#xAD6C;&#xBB38;&#xC740; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC744; &#xB9CC;&#xB4E4;&#xAE30; &#xC704;&#xD574; &#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, &#xB2E4;&#xC74C; &#xCF54;&#xB4DC;&#xB294; <code>)</code>&#xC774; &#xC5C6;&#xC73C;&#xBBC0;&#xB85C; <em>&#xAD6C;&#xBB38;</em> &#xC624;&#xB958;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code>// @errors: 1005
 let a = (4
-</code></pre><p>TypeScript doesn&apos;t consider any JavaScript code to be an error because of its syntax.
-This means you can take any working JavaScript code and put it in a TypeScript file without worrying about exactly how it is written.</p>
-<h4 id="types">Types</h4>
-<p>However, TypeScript is a <em>typed</em> superset, meaning that it adds rules about how different kinds of values can be used.
-The earlier error about <code>obj.heigth</code> was not a <em>syntax</em> error: it is an error of using some kind of value (a <em>type</em>) in an incorrect way.</p>
-<p>As another example, this is JavaScript code that you can run in your browser, and it <em>will</em> print a value:</p>
+</code></pre><p>TypeScript&#xB294; &#xB3C5;&#xD2B9;&#xD55C; &#xAD6C;&#xBB38; &#xB54C;&#xBB38;&#xC5D0; JavaScript &#xCF54;&#xB4DC;&#xB97C; &#xC624;&#xB958;&#xB85C; &#xBCF4;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC989;, &#xC5B4;&#xB5BB;&#xAC8C; &#xC791;&#xC131;&#xB3FC;&#xC788;&#xB294;&#xC9C0; &#xBAA8;&#xB974;&#xC9C0;&#xB9CC; &#xC791;&#xB3D9;&#xD558;&#xB294; JavaScript &#xCF54;&#xB4DC;&#xB97C; TypeScript &#xD30C;&#xC77C;&#xC5D0; &#xB123;&#xC5B4;&#xB3C4; &#xC798; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="&#xD0C0;&#xC785;-types">&#xD0C0;&#xC785; (Types)</h4>
+<p>&#xADF8;&#xB7EC;&#xB098; TypeScript&#xB294; &#xB2E4;&#xB978; &#xC885;&#xB958;&#xC758; &#xAC12;&#xB4E4;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; &#xBC29;&#xBC95;&#xC774; &#xCD94;&#xAC00;&#xB41C;, <em>&#xD0C0;&#xC785;&#xC774; &#xC788;&#xB294;</em> &#xC0C1;&#xC704; &#xC9D1;&#xD569;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC704;&#xC758; <code>obj.heigth</code> &#xC624;&#xB958;&#xB294; <em>&#xAD6C;&#xBB38;</em> &#xC624;&#xB958;&#xAC00; &#xC544;&#xB2CC;, &#xAC12;&#xC758; &#xC885;&#xB958;(<em>&#xD0C0;&#xC785;</em>)&#xB97C; &#xC798;&#xBABB; &#xC0AC;&#xC6A9;&#xD574;&#xC11C; &#xC0DD;&#xAE34; &#xC624;&#xB958;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB610; &#xB2E4;&#xB978; &#xC608;&#xC2DC;&#xB85C;, &#xC544;&#xB798;&#xC640; &#xAC19;&#xC740; JavaScript &#xCF54;&#xB4DC;&#xAC00; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xC11C; &#xC2E4;&#xD589;&#xB420; &#xB54C;, &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xAC12;&#xC774; &#xCD9C;&#xB825;&#xB420; <em>&#xAC83;&#xC785;&#xB2C8;&#xB2E4;</em>:</p>
 <pre><code class="lang-js"><span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-number">4</span> <span class="cm-operator">/</span> []);
 </code></pre>
-<p>This syntactically-legal program prints <code>NaN</code>.
-TypeScript, though, considers division of number by an array to be a nonsensical operation, and will issue an error:</p>
-<p><code>ts twoslash
-// @errors: 2363
-console.log(4 / []);</code></p>
-<p>It&apos;s possible you really <em>did</em> intend to divide a number by an array, perhaps just to see what happens, but most of the time, though, this is a programming mistake.
-TypeScript&apos;s type checker is designed to allow correct programs through while still catching as many common errors as possible.
-(Later, we&apos;ll learn about settings you can use to configure how strictly TypeScript checks your code.)</p>
-<p>If you move some code from a JavaScript file to a TypeScript file, you might see <em>type errors</em> depending on how the code is written.
-These may be legitimate problems with the code, or TypeScript being overly conservative.
-Throughout this guide we&apos;ll demonstrate how to add various TypeScript syntax to eliminate such errors.</p>
-<h4 id="runtime-behavior">Runtime Behavior</h4>
-<p>TypeScript is also a programming language that preserves the <em>runtime behavior</em> of JavaScript.
-For example, dividing by zero in JavaScript produces <code>Infinity</code> instead of throwing a runtime exception.
-As a principle, TypeScript <strong>never</strong> changes the runtime behavior of JavaScript code.</p>
-<p>This means that if you move code from JavaScript to TypeScript, it is <strong>guaranteed</strong> to run the same way, even if TypeScript thinks that the code has type errors.</p>
-<p>Keeping the same runtime behavior as JavaScript is a foundational promise of TypeScript because it means you can easily transition between the two languages without worrying about subtle differences that might make your program stop working.</p>
+<p>&#xAD6C;&#xBB38;&#xC801;&#xC73C;&#xB85C; &#xC633;&#xC740;(syntactically-legal) &#xC704; &#xCF54;&#xB4DC;&#xB294; JavaScript&#xC5D0;&#xC11C; <code>NaN</code>&#xC744; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.
+&#xADF8;&#xB7EC;&#xB098; TypeScript&#xB294; &#xBC30;&#xC5F4;&#xB85C; &#xC22B;&#xC790;&#xB97C; &#xB098;&#xB204;&#xB294; &#xC5F0;&#xC0B0;&#xC774; &#xC633;&#xC9C0; &#xC54A;&#xB2E4;&#xACE0; &#xD310;&#xB2E8;&#xD558;&#xACE0; &#xC624;&#xB958;&#xB97C; &#xBC1C;&#xC0DD;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code>// @errors: 2363
+console.log(4 / []);
+</code></pre><p>&#xC2E4;&#xC81C;&#xB85C; &#xC5B4;&#xB5A4; &#xC77C;&#xC774; &#xC77C;&#xC5B4;&#xB098;&#xB294;&#xC9C0; &#xBCF4;&#xB824;&#xB294; &#xC758;&#xB3C4;&#xB85C; &#xC22B;&#xC790;&#xB97C; &#xBC30;&#xC5F4;&#xB85C; &#xB098;&#xB20C; &#xC218; <em>&#xC788;&#xC9C0;&#xB9CC;</em>, &#xB300;&#xBD80;&#xBD84;&#xC740; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D; &#xC2E4;&#xC218;&#xC785;&#xB2C8;&#xB2E4;.
+TypeScript&#xC758; &#xD0C0;&#xC785; &#xAC80;&#xC0AC;&#xC790;&#xB294; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xC624;&#xB958;&#xB97C; &#xCD5C;&#xB300;&#xD55C; &#xB9CE;&#xC774; &#xAC80;&#xCD9C;&#xD558;&#xBA74;&#xC11C; &#xC62C;&#xBC14;&#xB978; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC744; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xAC8C; &#xC124;&#xACC4;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.
+(&#xB098;&#xC911;&#xC5D0; TypeScript&#xAC00; &#xCF54;&#xB4DC;&#xB97C; &#xC5BC;&#xB9C8;&#xB098; &#xC5C4;&#xACA9;&#xD558;&#xAC8C; &#xAC80;&#xC0AC;&#xD560; &#xC218; &#xC788;&#xB294;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC124;&#xC815;&#xC5D0; &#xB300;&#xD574; &#xC54C;&#xC544;&#xBD05;&#xC2DC;&#xB2E4;.)</p>
+<p>&#xB9CC;&#xC57D; JavaScript &#xD30C;&#xC77C;&#xC758; &#xCF54;&#xB4DC;&#xB97C; TypeScript &#xCF54;&#xB4DC;&#xB85C; &#xC62E;&#xAE30;&#xBA74;, &#xCF54;&#xB4DC;&#xB97C; &#xC5B4;&#xB5BB;&#xAC8C; &#xC791;&#xC131;&#xD588;&#xB294;&#xC9C0;&#xC5D0; &#xB530;&#xB77C; <em>&#xD0C0;&#xC785; &#xC624;&#xB958;</em>&#xB97C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB294; &#xCF54;&#xB4DC; &#xC0C1;&#xC758; &#xBB38;&#xC81C;&#xC774;&#xAC70;&#xB098;, TypeScript&#xAC00; &#xC9C0;&#xB098;&#xCE58;&#xAC8C; &#xBCF4;&#xC218;&#xC801;&#xC778; &#xAC83;&#xC77C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC704;&#xC640; &#xAC19;&#xC740; &#xC624;&#xB958;&#xB97C; &#xC81C;&#xAC70;&#xD558;&#xAE30; &#xC704;&#xD574; &#xAC00;&#xC774;&#xB4DC;&#xB294; &#xB2E4;&#xC591;&#xD55C; TypeScript &#xAD6C;&#xBB38;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;.</p>
+<h4 id="&#xB7F0;&#xD0C0;&#xC784;-&#xD2B9;&#xC131;-runtime-behavior">&#xB7F0;&#xD0C0;&#xC784; &#xD2B9;&#xC131; (Runtime Behavior)</h4>
+<p>TypeScript&#xB294; JavaScript&#xC758; <em>&#xB7F0;&#xD0C0;&#xC784; &#xD2B9;&#xC131;</em>&#xC744; &#xAC00;&#xC9C4; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D; &#xC5B8;&#xC5B4;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, JavaScript&#xC5D0;&#xC11C; 0&#xC73C;&#xB85C; &#xB098;&#xB204;&#xB294; &#xD589;&#xB3D9;&#xC740; &#xB7F0;&#xD0C0;&#xC784; &#xC608;&#xC678;&#xB85C; &#xCC98;&#xB9AC;&#xD558;&#xC9C0; &#xC54A;&#xACE0; <code>Infinity</code>&#xAC12;&#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.
+&#xB17C;&#xB9AC;&#xC801;&#xC73C;&#xB85C;, TypeScript&#xB294; JavaScript &#xCF54;&#xB4DC;&#xC758; &#xB7F0;&#xD0C0;&#xC784; &#xD2B9;&#xC131;&#xC744; <strong>&#xC808;&#xB300;</strong> &#xBCC0;&#xD654;&#xC2DC;&#xD0A4;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC989; TypeScript&#xAC00; &#xCF54;&#xB4DC;&#xC5D0; &#xD0C0;&#xC785; &#xC624;&#xB958;&#xAC00; &#xC788;&#xC74C;&#xC744; &#xAC80;&#xCD9C;&#xD574;&#xB3C4;, JavaScript &#xCF54;&#xB4DC;&#xB97C; TypeScript&#xB85C; &#xC774;&#xB3D9;&#xC2DC;&#xD0A4;&#xB294; &#xAC83;&#xC740; &#xAC19;&#xC740; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xC2E4;&#xD589;&#xC2DC;&#xD0AC; &#xAC83;&#xC744; <strong>&#xBCF4;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;</strong></p>
+<p>JavaScript&#xC640; &#xB3D9;&#xC77C;&#xD55C; &#xB7F0;&#xD0C0;&#xC784; &#xB3D9;&#xC791;&#xC744; &#xC720;&#xC9C0;&#xD558;&#xB294; &#xAC83;&#xC740; &#xD504;&#xB85C;&#xADF8;&#xB7A8; &#xC791;&#xB3D9;&#xC744; &#xC911;&#xB2E8;&#xC2DC;&#xD0AC; &#xC218; &#xC788;&#xB294; &#xBBF8;&#xBB18;&#xD55C; &#xCC28;&#xC774;&#xB97C; &#xAC71;&#xC815;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xB450; &#xC5B8;&#xC5B4; &#xAC04;&#xC5D0; &#xC27D;&#xAC8C; &#xC804;&#xD658;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD558;&#xAE30; &#xC704;&#xD55C; TypeScript&#xC758; &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xC57D;&#xC18D;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <!--
 Missing subsection on the fact that TS extends JS to add syntax for type
 specification.  (Since the immediately preceding text was raving about
 how JS code can be used in TS.)
 -->
-<h4 id="erased-types">Erased Types</h4>
-<p>Roughly speaking, once TypeScript&apos;s compiler is done with checking your code, it <em>erases</em> the types to produce the resulting &quot;compiled&quot; code.
-This means that once your code is compiled, the resulting plain JS code has no type information.</p>
-<p>This also means that TypeScript never changes the <em>behavior</em> of your program based on the types it inferred.
-The bottom line is that while you might see type errors during compilation, the type system itself has no bearing on how your program works when it runs.</p>
-<p>Finally, TypeScript doesn&apos;t provide any additional runtime libraries.
-Your programs will use the same standard library (or external libraries) as JavaScript programs, so there&apos;s no additional TypeScript-specific framework to learn.
+<h4 id="&#xC0AD;&#xC81C;&#xB41C;-&#xD0C0;&#xC785;-erased-types">&#xC0AD;&#xC81C;&#xB41C; &#xD0C0;&#xC785; (Erased Types)</h4>
+<p>&#xAC1C;&#xB7B5;&#xC801;&#xC73C;&#xB85C;, TypeScript&#xC758; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xAC00; &#xCF54;&#xB4DC; &#xAC80;&#xC0AC;&#xB97C; &#xB9C8;&#xCE58;&#xBA74; &#xD0C0;&#xC785;&#xC744; <em>&#xC0AD;&#xC81C;&#xD574;&#xC11C;</em> &#xACB0;&#xACFC;&#xC801;&#xC73C;&#xB85C; &quot;&#xCEF4;&#xD30C;&#xC77C;&#xB41C;&quot; &#xCF54;&#xB4DC;&#xB97C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;.
+&#xC989; &#xCF54;&#xB4DC;&#xAC00; &#xD55C; &#xBC88; &#xCEF4;&#xD30C;&#xC77C;&#xB418;&#xBA74;, &#xACB0;&#xACFC;&#xB85C; &#xB098;&#xC628; &#xC77C;&#xBC18; JS &#xCF54;&#xB4DC;&#xC5D0;&#xB294; &#xD0C0;&#xC785; &#xC815;&#xBCF4;&#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD0C0;&#xC785; &#xC815;&#xBCF4;&#xAC00; &#xC5C6;&#xB294; &#xAC83;&#xC740; TypeScript&#xAC00; &#xCD94;&#xB860;&#xD55C; &#xD0C0;&#xC785;&#xC5D0; &#xB530;&#xB77C; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC758; <em>&#xD2B9;&#xC131;</em>&#xC744; &#xBCC0;&#xD654;&#xC2DC;&#xD0A4;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;&#xB294; &#xC758;&#xBBF8;&#xC785;&#xB2C8;&#xB2E4;.
+&#xACB0;&#xB860;&#xC801;&#xC73C;&#xB85C; &#xCEF4;&#xD30C;&#xC77C; &#xB3C4;&#xC911;&#xC5D0;&#xB294; &#xD0C0;&#xC785; &#xC624;&#xB958;&#xAC00; &#xD45C;&#xCD9C;&#xB420; &#xC218; &#xC788;&#xC9C0;&#xB9CC;, &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C; &#xC790;&#xCCB4;&#xB294; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC774; &#xC2E4;&#xD589;&#xB420; &#xB54C; &#xC791;&#xB3D9;&#xD558;&#xB294; &#xBC29;&#xC2DD;&#xACFC; &#xAD00;&#xB828;&#xC774; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C;, TypeScript&#xB294; &#xCD94;&#xAC00; &#xB7F0;&#xD0C0;&#xC784; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
+TypeScript&#xB294; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC740; JavaScript &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xACFC; &#xAC19;&#xC740; &#xD45C;&#xC900; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; (&#xB610;&#xB294; &#xC678;&#xBD80; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;)&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBBC0;&#xB85C;, TypeScript &#xAD00;&#xB828; &#xD504;&#xB808;&#xC784;&#xC6CC;&#xD06C;&#xB97C; &#xCD94;&#xAC00;&#xB85C; &#xACF5;&#xBD80;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
 <!--
 Should extend this paragraph to say that there's an exception of
 allowing you to use newer JS features and transpile the code to an older
@@ -1153,18 +1158,18 @@ JS, and this might add small stubs of functionality when needed.  (Maybe
 with an example --- something like `?.` would be good in showing readers
 that this document is maintained.)
 --></p>
-<h2 id="learning-javascript-and-typescript">Learning JavaScript and TypeScript</h2>
-<p>We frequently see the question &quot;Should I learn JavaScript or TypeScript?&quot;.</p>
-<p>The answer is that you can&apos;t learn TypeScript without learning JavaScript!
-TypeScript shares syntax and runtime behavior with JavaScript, so anything you learn about JavaScript is helping you learn TypeScript at the same time.</p>
-<p>There are many, many resources available for programmers to learn JavaScript; you should <em>not</em> ignore these resources if you&apos;re writing TypeScript.
-For example, there about 20 times more StackOverflow questions tagged <code>javascript</code> than <code>typescript</code>, but <em>all</em> of the <code>javascript</code> questions also apply to TypeScript.</p>
-<p>If you find yourself searching for something like &quot;how to sort a list in TypeScript&quot;, remember: <strong>TypeScript is JavaScript&apos;s runtime with a compile-time type checker</strong>.
-The way you sort a list in TypeScript is the same way you do so in JavaScript.
-If you find a resource that uses TypeScript directly, that&apos;s great too, but don&apos;t limit yourself to thinking you need TypeScript-specific answers for everyday questions about how to accomplish runtime tasks.</p>
+<h2 id="javascript&#xC640;-typescript-&#xD559;&#xC2B5;-learning-javascript-and-typescript">JavaScript&#xC640; TypeScript &#xD559;&#xC2B5; (Learning JavaScript and TypeScript)</h2>
+<p>&#xC885;&#xC885; &quot;JavaScript &#xB610;&#xB294; TypeScript&#xB97C; &#xBC30;&#xC6CC;&#xC57C; &#xD560;&#xAE4C;&#xC694;?&quot;&#xC640; &#xAC19;&#xC740; &#xC9C8;&#xBB38;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC815;&#xB2F5;&#xC740; JavaScript&#xB97C; &#xBC30;&#xC6B0;&#xC9C0; &#xC54A;&#xACE0;&#xC120; TypeScript&#xB97C; &#xBC30;&#xC6B8; &#xC218; &#xC5C6;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;!
+TypeScript&#xB294; JavaScript&#xC640; &#xAD6C;&#xBB38;&#xACFC; &#xB7F0;&#xD0C0;&#xC784; &#xD2B9;&#xC131;&#xC744; &#xACF5;&#xC720;&#xD558;&#xBBC0;&#xB85C;, JavaScript&#xC5D0;&#xC11C; &#xBC30;&#xC6B4; &#xBAA8;&#xB4E0; &#xAC83;&#xB4E4;&#xC740; &#xB3D9;&#xC2DC;&#xC5D0; TypeScript&#xB97C; &#xBC30;&#xC6B8; &#xB54C; &#xB3C4;&#xC6C0;&#xC774; &#xB420; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD504;&#xB85C;&#xADF8;&#xB798;&#xBA38;&#xB4E4;&#xC744; &#xC704;&#xD55C; JavaScript &#xD559;&#xC2B5; &#xC790;&#xC6D0;&#xC774; &#xB9CE;&#xC2B5;&#xB2C8;&#xB2E4;; TypeScript&#xB97C; &#xC791;&#xC131;&#xD560; &#xB54C; &#xADF8;&#xB7F0; &#xD559;&#xC2B5; &#xC790;&#xC6D0;&#xC744; &#xBB34;&#xC2DC;&#xD574;&#xC120; <em>&#xC548;&#xB429;&#xB2C8;&#xB2E4;</em>.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4; <code>javascript</code>&#xD0DC;&#xADF8;&#xAC00; &#xBD99;&#xC740; &#xC9C8;&#xBB38;&#xC774; <code>typescript</code>&#xD0DC;&#xADF8;&#xAC00; &#xBD99;&#xC740; &#xC9C8;&#xBB38;&#xBCF4;&#xB2E4; &#xC57D; 20&#xBC30;&#xB294; &#xB9CE;&#xC9C0;&#xB9CC;, <em>&#xBAA8;&#xB4E0;</em> <code>javascript</code>&#xC9C8;&#xBB38;&#xC740; TypeScript&#xC5D0;&#xB3C4; &#xC801;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB9CC;&#xC57D; &quot;TypeScript&#xC5D0;&#xC11C; &#xB9AC;&#xC2A4;&#xD2B8;&#xB97C; &#xC815;&#xB82C;&#xD558;&#xB294; &#xBC95;&quot;&#xACFC; &#xAC19;&#xC740; &#xAC83;&#xC744; &#xCC3E;&#xB294; &#xACBD;&#xC6B0;, &#xAE30;&#xC5B5;&#xD558;&#xC138;&#xC694;: <strong>TypeScript&#xB294; &#xCEF4;&#xD30C;&#xC77C;-&#xD0C0;&#xC784; &#xD0C0;&#xC785; &#xAC80;&#xC0AC;&#xC790;&#xAC00; &#xC788;&#xB294; JavaScript&#xC758; &#xB7F0;&#xD0C0;&#xC784;&#xC785;&#xB2C8;&#xB2E4;</strong>.
+&#xB9AC;&#xC2A4;&#xD2B8;&#xB97C; TypeScript&#xC5D0;&#xC11C; &#xC815;&#xB82C;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC740; JavaScript&#xC5D0;&#xC11C; &#xB611;&#xAC19;&#xC740; &#xBC29;&#xBC95;&#xC73C;&#xB85C; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB9CC;&#xC57D; TypeScript&#xB97C; &#xC9C1;&#xC811;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC790;&#xC6D0;&#xC744; &#xCC3E;&#xC558;&#xB2E4;&#xBA74; &#xADF8;&#xAC83;&#xB3C4; &#xC88B;&#xC9C0;&#xB9CC;, &#xB7F0;&#xD0C0;&#xC784; &#xC791;&#xC5C5;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xC77C;&#xC0C1;&#xC801;&#xC778; &#xC9C8;&#xBB38;&#xC744; TypeScript &#xAD00;&#xB828; &#xB2F5;&#xBCC0;&#xC5D0;&#xB9CC; &#xC81C;&#xD55C;&#xC2DC;&#xD0AC; &#xD544;&#xC694;&#xB294; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <hr>
-<p>From here, we&apos;d recommend learning some of the JavaScript fundamentals (the <a href="https://developer.mozilla.org/docs/Web/JavaScript/Guide" target="_blank">JavaScript guide at the Mozilla Web Docs</a> is a good starting point.)</p>
-<p>Once you&apos;re feeling comfortable, you can come back to read <a href="../../docs/handbook/typescript-in-5-minutes.html">TypeScript for JavaScript Programmers</a>, then start on <a href="../../docs/handbook/intro.html">the handbook</a> or explore the <a href="../../play#show-examples">Playground examples</a>.</p>
+<p>&#xC5EC;&#xAE30;&#xC11C;, JavaScript &#xAE30;&#xCD08; &#xBA87; &#xAC00;&#xC9C0;&#xB97C; &#xBC30;&#xC6B0;&#xB294; &#xAC83;&#xC744; &#xCD94;&#xCC9C;&#xD569;&#xB2C8;&#xB2E4; (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Guide" target="_blank">Mozilla &#xC6F9; &#xBB38;&#xC11C;&#xC758; JavaScript &#xAC00;&#xC774;&#xB4DC;</a>&#xAC00; &#xAD1C;&#xCC2E;&#xACA0;&#xB124;&#xC694;.)</p>
+<p>&#xC775;&#xC219;&#xD574;&#xC9C0;&#xC168;&#xB2E4;&#xBA74;, &#xB2E4;&#xC2DC; &#xB3CC;&#xC544;&#xC640;&#xC11C; <a href="../../docs/handbook/typescript-in-5-minutes.html">JavaScript &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBA38;&#xB4E4;&#xC744; &#xC704;&#xD55C; TypeScript</a>&#xC744; &#xC77D;&#xC5B4;&#xBCF4;&#xC2DC;&#xACE0;, <a href="../../docs/handbook/intro.html">&#xD578;&#xB4DC;&#xBD81;</a>&#xC744; &#xC2DC;&#xC791;&#xD558;&#xC2DC;&#xAC70;&#xB098; <a href="../../play#show-examples">&#xC608;&#xC81C;</a>&#xB97C; &#xBCF4;&#xC138;&#xC694;.</p>
 <!-- Note: I'll be happy to write the following... -->
 <!--
 ## Types
@@ -1225,7 +1230,7 @@ If you find a resource that uses TypeScript directly, that&apos;s great too, but
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"TS for the New Programmer(en)","layout":"docs","permalink":"/docs/handbook/typescript-from-scratch.html","oneline":"Learn TypeScript from scratch","level":"2.1","depth":1,"next":{"title":"TS for JS Programmers(en)","level":"2.2","depth":1,"path":"pages/tutorials/ts-for-js-programmers.md","ref":"pages/tutorials/ts-for-js-programmers.md","articles":[]},"previous":{"title":"소개","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/tutorials/ts-for-the-new-programmer.md","mtime":"2020-08-18T11:08:15.592Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-18T11:09:12.937Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"TS for the New Programmer(en)","layout":"docs","permalink":"/docs/handbook/typescript-from-scratch.html","oneline":"Learn TypeScript from scratch","level":"2.1","depth":1,"next":{"title":"TS for JS Programmers(en)","level":"2.2","depth":1,"path":"pages/tutorials/ts-for-js-programmers.md","ref":"pages/tutorials/ts-for-js-programmers.md","articles":[]},"previous":{"title":"소개","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/tutorials/ts-for-the-new-programmer.md","mtime":"2020-09-01T11:09:30.649Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-01T11:10:27.709Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

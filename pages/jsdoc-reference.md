@@ -5,31 +5,31 @@ permalink: /docs/handbook/jsdoc-supported-types.html
 oneline: What JSDoc does TypeScript-powered JavaScript support?
 ---
 
-The list below outlines which constructs are currently supported
-when using JSDoc annotations to provide type information in JavaScript files.
+아래 목록은 JavaScript 파일에 타입 정보 제공을 위해 JSDoc 어노테이션을 사용할 때
+현재 지원되는 구성의 개요를 다룹니다.
 
-Note any tags which are not explicitly listed below (such as `@async`) are not yet supported.
+아래 명시적으로 나열되지 않은 태그(예 `@async`)는 아직 지원되지 않습니다.
 
 * `@type`
-* `@param` (or `@arg` or `@argument`)
-* `@returns` (or `@return`)
+* `@param` (또는 `@arg` 또는 `@argument`)
+* `@returns` (또는 `@return`)
 * `@typedef`
 * `@callback`
 * `@template`
-* `@class` (or `@constructor`)
+* `@class` (또는 `@constructor`)
 * `@this`
-* `@extends` (or `@augments`)
+* `@extends` (또는 `@augments`)
 * `@enum`
 
-The meaning is usually the same, or a superset, of the meaning of the tag given at [jsdoc.app](https://jsdoc.app).
-The code below describes the differences and gives some example usage of each tag.
+의미는 일반적으로 [jsdoc.app](https://jsdoc.app)에서 제공하는 태그의 의미와 같거나 상위 집합입니다.
+아래 코드는 각 태그의 차이점을 설명하고 예시를 제공합니다.
 
-**Note:** You can use [the playground to explore JSDoc support](/play?useJavaScript=truee=4#example/jsdoc-support).
+**Note:** [JSDoc 지원을 탐색하는 playground](/play?useJavaScript=truee=4#example/jsdoc-support)를 사용할 수 있습니다.
 
 ## `@type`
 
-You can use the "@type" tag and reference a type name (either primitive, defined in a TypeScript declaration, or in a JSDoc "@typedef" tag).
-You can use most JSDoc types and any TypeScript type, from [the most basic like `string`](/docs/handbook/basic-types.html) to [the most advanced, like conditional types](/docs/handbook/advanced-types.html).
+"@type" 태그를 사용하여 타입의 이름을 참조할 수 있습니다 (다음 경우 중 하나인 원시 타입과 TypeScript에 정의되어있거나 JSDoc "@typedef" 태그로 정의되어있거나).
+당신은 대부분 JSDoc 타입들이나 TypeScript 타입을 사용할 것입니다,[기존에 많이 사용하는 `string`](/docs/handbook/basic-types.html)부터 [조건부 타입인 고급 타입](/docs/handbook/advanced-types.html)까지.
 
 ```js
 /**
@@ -49,7 +49,7 @@ var myElement = document.querySelector(selector);
 element.dataset.myData = "";
 ```
 
-`@type` can specify a union type &mdash; for example, something can be either a string or a boolean.
+`@type` 을 이용하여 유니언 타입을 지정할 수 있습니다. 예를 들어 어떤 것은 string 또는 boolean 일 수 있습니다.
 
 ```js
 /**
@@ -58,7 +58,7 @@ element.dataset.myData = "";
 var sb;
 ```
 
-Note that parentheses are optional for union types.
+괄호는 유니언 타입에 대한 선택 사항입니다.
 
 ```js
 /**
@@ -67,7 +67,7 @@ Note that parentheses are optional for union types.
 var sb;
 ```
 
-You can specify array types using a variety of syntaxes:
+다양한 구문을 통하여 배열 타입을 지정할 수 있습니다:
 
 ```js
 /** @type {number[]} */
@@ -78,19 +78,19 @@ var nds;
 var nas;
 ```
 
-You can also specify object literal types.
-For example, an object with properties 'a' (string) and 'b' (number) uses the following syntax:
+또한 객체 리터럴 타입들도 지정할 수 있습니다.
+예를 들어, 오브젝트에 프로퍼티 'a' (string) 와 'b' (number)을 사용한 경우 다음 구문을 사용합니다:
 
 ```js
 /** @type {{ a: string, b: number }} */
 var var9;
 ```
 
-You can specify map-like and array-like objects using string and number index signatures, using either standard JSDoc syntax or TypeScript syntax.
+당신은 JSDoc 구문이나 TypeScript 구문을 사용하여 문자열 및 숫자 인덱스 맵과 배열과 비슷한 오브젝트를 표시할 수 있습니다.
 
 ```js
 /**
- * A map-like object that maps arbitrary `string` properties to `number`s.
+ * 맵 같은 object는 임의의 `string` 프로퍼티들을 `number`로 바꿔줍니다.
  *
  * @type {Object.<string, number>}
  */
@@ -100,18 +100,18 @@ var stringToNumber;
 var arrayLike;
 ```
 
-The preceding two types are equivalent to the TypeScript types `{ [x: string]: number }` and `{ [x: number]: any }`. The compiler understands both syntaxes.
+앞의 두 타입은 TypeScript의 타입인 `{ [x: string]: number }` 와 `{ [x: number]: any }`를 동일합니다. 컴파일러는 이 두 구문을 모두 이해합니다.
 
-You can specify function types using either TypeScript or Closure syntax:
+TypeScript나 클로저 구문을 사용하여 함수 타입을 지정할 수 있습니다:
 
 ```js
-/** @type {function(string, boolean): number} Closure syntax */
+/** @type {function(string, boolean): number} 클로저 구문 */
 var sbn;
-/** @type {(s: string, b: boolean) => number} TypeScript syntax */
+/** @type {(s: string, b: boolean) => number} TypeScript 구문 */
 var sbn2;
 ```
 
-Or you can just use the unspecified `Function` type:
+혹은 특정하지 않은 `Function` 타입을 사용할 수 있습니다:
 
 ```js
 /** @type {Function} */
@@ -120,23 +120,23 @@ var fn7;
 var fn6;
 ```
 
-Other types from Closure also work:
+클로저의 다른 타입들 또한 작동합니다:
 
 ```js
 /**
- * @type {*} - can be 'any' type
+ * @type {*} - 'any' 타입으로 쓸 수 있습니다
  */
 var star;
 /**
- * @type {?} - unknown type (same as 'any')
+ * @type {?} - 알 수 없는 타입 ('any'와 같습니다)
  */
 var question;
 ```
 
-### Casts
+### 형변환 (Casts)
 
-TypeScript borrows cast syntax from Closure.
-This lets you cast types to other types by adding a `@type` tag before any parenthesized expression.
+TypeScript는 클로저 구문을 차용합니다.
+이렇게 하면 괄호로 묶인 표현식 앞에 `@type` 태그를 추가하여 다른 유형으로 형변환할 수 있습니다.
 
 ```js
 /**
@@ -146,10 +146,10 @@ var numberOrString = Math.random() < 0.5 ? "hello" : 100;
 var typeAssertedNumber = /** @type {number} */ (numberOrString);
 ```
 
-### Import types
+### 타입 가져오기 (Import types)
 
-You can also import declarations from other files using import types.
-This syntax is TypeScript-specific and differs from the JSDoc standard:
+다른 파일에서 사용하고 있는 타입들은 import 선언을 통하여 가져올 수 있습니다.
+이 구문은 TypeScript에 따라 다르며 JSDoc 표준과 다릅니다:
 
 ```js
 // @filename: types.d.ts
@@ -166,7 +166,7 @@ function walk(p) {
 }
 ```
 
-import types can also be used in type alias declarations:
+가져온 타입들 또한 별칭 선언에서 사용할 수 있습니다:
 
 ```js
 // @filename: types.d.ts
@@ -186,7 +186,7 @@ var myPet;
 myPet.name;
 ```
 
-import types can be used to get the type of a value from a module if you don't know the type, or if it has a large type that is annoying to type:
+만약 알 수 없는 타입이거나 너무 큰 타입일 경우 모듈에서 얻어온 값의 타입을 사용할 수 있습니다:
 
 ```js
 // @filename: accounts.d.ts
@@ -208,26 +208,26 @@ export const userAccount = {
 var x = require("./accounts").userAccount;
 ```
 
-## `@param` and `@returns`
+## `@param` 과 `@returns`
 
-`@param` uses the same type syntax as `@type`, but adds a parameter name.
-The parameter may also be declared optional by surrounding the name with square brackets:
+`@param`은 타입 구문인 `@type`과 동일하게 사용합니다, 하지만 매개변수 이름을 추가할 수 있습니다.
+매개변수는 이름 주변에 대괄호와 함께 선택적으로 선언됩니다:
 
 ```js
-// Parameters may be declared in a variety of syntactic forms
+// 매개변수들은 다양한 구문형식으로 선언될 수 있습니다
 /**
- * @param {string}  p1 - A string param.
- * @param {string=} p2 - An optional param (Closure syntax)
- * @param {string} [p3] - Another optional param (JSDoc syntax).
- * @param {string} [p4="test"] - An optional param with a default value
- * @return {string} This is the result
+ * @param {string}  p1 - string 매개변수.
+ * @param {string=} p2 - 선택적 매개변수 (클로저 구문)
+ * @param {string} [p3] - 또다른 선택적 매개변수 (JSDoc 구문).
+ * @param {string} [p4="test"] - 기본값과 선택적 매개변수
+ * @return {string} 이것은 결과 값입니다
  */
 function stringsStringStrings(p1, p2, p3, p4) {
   // TODO
 }
 ```
 
-Likewise, for the return type of a function:
+마찬가지로, 함수의 반환형일 경우:
 
 ```js
 /**
@@ -243,17 +243,17 @@ function ab() {}
 
 ## `@typedef`, `@callback`, and `@param`
 
-`@typedef` may be used to define complex types.
-Similar syntax works with `@param`.
+`@typedef` 는 복잡한 타입을 정의할 때 사용합니다.
+마치 `@param`과 비슷하게 동작합니다.
 
 ```js
 /**
- * @typedef {Object} SpecialType - creates a new type named 'SpecialType'
- * @property {string} prop1 - a string property of SpecialType
- * @property {number} prop2 - a number property of SpecialType
- * @property {number=} prop3 - an optional number property of SpecialType
- * @prop {number} [prop4] - an optional number property of SpecialType
- * @prop {number} [prop5=42] - an optional number property of SpecialType with default
+ * @typedef {Object} SpecialType - 새로운 타입인 'SpecialType'을 생성합니다
+ * @property {string} prop1 - SpecialType의 string 프로퍼티
+ * @property {number} prop2 - SpecialType의 number 프로퍼티
+ * @property {number=} prop3 - SpecialType의 선택적 number 프로퍼티
+ * @prop {number} [prop4] - SpecialType의 선택적 number 프로퍼티
+ * @prop {number} [prop5=42] - SpecialType의 기본값이 존재하는 선택적 number 프로퍼티
  */
 
 /** @type {SpecialType} */
@@ -261,26 +261,26 @@ var specialTypeObject;
 specialTypeObject.prop3;
 ```
 
-You can use either `object` or `Object` on the first line.
+`object` 혹은 `Object`를 첫 번째 줄에 사용할 수 있습니다.
 
 ```js
 /**
- * @typedef {object} SpecialType1 - creates a new type named 'SpecialType'
- * @property {string} prop1 - a string property of SpecialType
- * @property {number} prop2 - a number property of SpecialType
- * @property {number=} prop3 - an optional number property of SpecialType
+ * @typedef {object} SpecialType1 - 새로운 타입인 'SpecialType'을 생성합니다
+ * @property {string} prop1 - SpecialType의 string 프로퍼티
+ * @property {number} prop2 - SpecialType의 number 프로퍼티
+ * @property {number=} prop3 - SpecialType의 선택적 number 프로퍼티
  */
 
 /** @type {SpecialType1} */
 var specialTypeObject1;
 ```
 
-`@param` allows a similar syntax for one-off type specifications.
-Note that the nested property names must be prefixed with the name of the parameter:
+`@param` 은 한 번만 사용하는 타입과 비슷한 구문을 허용합니다.
+포함된 프로퍼티의 이름은 파라미터의 이름을 접두사로 사용해야 합니다:
 
 ```js
 /**
- * @param {Object} options - The shape is the same as SpecialType above
+ * @param {Object} options - 위의 SpecialType와 비슷합니다.
  * @param {string} options.prop1
  * @param {number} options.prop2
  * @param {number=} options.prop3
@@ -292,7 +292,7 @@ function special(options) {
 }
 ```
 
-`@callback` is similar to `@typedef`, but it specifies a function type instead of an object type:
+`@callback`은 `@typedef`와 비슷합니다. 하지만 이것은 object 타입 대신 특정한 function 타입을 지정합니다:
 
 ```js
 /**
@@ -306,7 +306,7 @@ function special(options) {
 const ok = (s) => !(s.length % 2);
 ```
 
-Of course, any of these types can be declared using TypeScript syntax in a single-line `@typedef`:
+물론, 이런 타입들은 TypeScript 구문에서 `@typedef` 단 한 줄로 선언할 수 있습니다:
 
 ```js
 /** @typedef {{ prop1: string, prop2: string, prop3?: number }} SpecialType */
@@ -315,12 +315,12 @@ Of course, any of these types can be declared using TypeScript syntax in a singl
 
 ## `@template`
 
-You can declare generic functions with the `@template` tag:
+`@template` 태그를 사용하여 제네릭 함수를 선언할 수 있습니다:
 
 ```js
 /**
  * @template T
- * @param {T} x - A generic parameter that flows through to the return type
+ * @param {T} x - 제네릭 매개변수는 리턴 타입과 같게 됩니다
  * @return {T}
  */
 function id(x) {
@@ -332,7 +332,7 @@ const b = id(123);
 const c = id({});
 ```
 
-Use comma or multiple tags to declare multiple type parameters:
+콤마 혹은 여러 태그를 통하여 여러 타입의 매개변수를 선언할 수 있습니다:
 
 ```js
 /**
@@ -341,13 +341,13 @@ Use comma or multiple tags to declare multiple type parameters:
  */
 ```
 
-You can also specify a type constraint before the type parameter name.
-Only the first type parameter in a list is constrained:
+또한 특정한 매개변수 앞에 타입을 지정할 수 있습니다.
+매개변수 중 오직 첫 번째 매개변수만 제한됩니다:
 
 ```js
 /**
- * @template {string} K - K must be a string or string literal
- * @template {{ serious(): string }} Seriousalizable - must have a serious method
+ * @template {string} K - K는 string 혹은 string 리터럴이어야 합니다
+ * @template {{ serious(): string }} Seriousalizable - serious 메서드가 있어야 합니다
  * @param {K} key
  * @param {Seriousalizable} object
  */
@@ -356,11 +356,11 @@ function seriousalize(key, object) {
 }
 ```
 
-Declaring generic classes or types is unsupported.
+제네릭 클래스 혹은 타입 선언은 지원되지 않습니다.
 
-## Classes
+## 클래스 (Classes)
 
-Classes can be declared as ES6 classes.
+클래스는 ES6 클래스로 선언할 수 있습니다.
 
 ```js
 class C {
@@ -368,18 +368,18 @@ class C {
    * @param {number} data
    */
   constructor(data) {
-    // property types can be inferred
+    // 프로퍼티 타입은 추론될 수 있습니다
     this.name = "foo";
 
-    // or set explicitly
+    // 또는 명시적으로 선언할 수도 있습니다
     /** @type {string | null} */
     this.title = null;
 
-    // or simply annotated, if they're set elsewhere
+    // 만약 다른 곳에 선언되어 있다면 어노테이션으로 표기할 수 있습니다.
     /** @type {number} */
     this.size;
 
-    this.initialize(data); // Should error, initializer expects a string
+    this.initialize(data); // 오류가 난다면, 이니셜 라이저는 string을 예상합니다
   }
   /**
    * @param {string} s
@@ -391,17 +391,17 @@ class C {
 
 var c = new C(0);
 
-// C should only be called with new, but
-// because it is JavaScript, this is allowed and
-// considered an 'any'.
+// C는 new 와 함께 호출되어야합니다
+// 하지만 이건 JavaScript이고, 이것은 허용되며
+// 'any'로 간주됩니다.
 var result = C(1);
 ```
 
-They can also be declared as constructor functions, as described in the next section:
+다음 섹션에 설명된 대로 생성자 함수를 선언할 수 있습니다:
 
 ## `@constructor`
 
-The compiler infers constructor functions based on this-property assignments, but you can make checking stricter and suggestions better if you add a `@constructor` tag:
+컴파일러는 속성 할당을 기반으로 생성자 함수를 추론합니다, 하지만 `@constructor` 태그를 사용하면 더 엄격한 검사와 제안 사항을 확인할 수 있습니다:
 
 ```js
 // @checkJs
@@ -411,14 +411,14 @@ The compiler infers constructor functions based on this-property assignments, bu
  * @param {number} data
  */
 function C(data) {
-  // property types can be inferred
+  // 프로퍼티 타입은 추론될 수 있습니다
   this.name = "foo";
 
-  // or set explicitly
+  // 또는 명시적으로 선언할 수도 있습니다
   /** @type {string | null} */
   this.title = null;
 
-  // or simply annotated, if they're set elsewhere
+  // 만약 다른 곳에 선언되어 있다면 어노테이션으로 표기할 수 있습니다.
   /** @type {number} */
   this.size;
 
@@ -437,7 +437,7 @@ c.size;
 var result = C(1);
 ```
 
-> Note: Error messages only show up in JS codebases with [a JSConfig](/docs/handbook/tsconfig-json.html) and [`checkJs`](/tsconfig#checkJs) enabled.
+> Note: 오류 메시지는 [a JSConfig](/docs/handbook/tsconfig-json.html) 및 [`checkJs`](/tsconfig#checkJs)가 활성화된 상태에서만 JS 코드 베이스에 나타납니다.
 
 With `@constructor`, `this` is checked inside the constructor function `C`, so you will get suggestions for the `initialize` method and an error if you pass it a number. Your editor may also show warnings if you call `C` instead of constructing it.
 
