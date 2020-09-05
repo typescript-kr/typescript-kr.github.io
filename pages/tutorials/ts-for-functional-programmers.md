@@ -293,7 +293,7 @@ let s: "left" | "right" = "right";
 pad("hi", 10, s);
 ```
 
-# 하스켈과 비슷한 개념 (Concepts similar to Haskell)
+# Haskell과 비슷한 개념 (Concepts similar to Haskell)
 
 ## 문맥적인 타이핑 (Contextual typing)
 
