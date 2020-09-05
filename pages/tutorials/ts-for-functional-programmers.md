@@ -363,7 +363,7 @@ type Size = [number, number];
 let x: Size = [101.1, 999.9];
 ```
 
-`newtype` 에서 가장 유사한 점은 _지정돤 교차점_ 이다:
+`newtype`과 가장 유사한 것은 _태그된 교차 타입(tagged intersection)_ 입니다:
 
 ```ts
 type FString = string & { __compileTimeOnly: any };
