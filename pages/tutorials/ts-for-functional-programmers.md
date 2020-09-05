@@ -369,10 +369,10 @@ let x: Size = [101.1, 999.9];
 type FString = string & { __compileTimeOnly: any };
 ```
 
-`FString` 은 컴퍼일러가 실제로 없는 네임드 `__compileTimeOnly` 가
-속성을 가지고 있다고 생각한다는 점을 제외하면 평범한 문자열입니다.
-`FString` 은 아직 `string`에 할당가능하지만,
-그 반대는 불가능하는 걸 의마합니다.
+`FString`은 컴파일러가 실제로는 존재하지 않는 `__compileTimeOnly`라는
+프로퍼티를 가지고 있다고 생각하는 점을 제외하면 일반 문자열과 같습니다.
+`FString`은 여전히 `string`에 할당 가능하지만,
+그 반대는 불가능하다는 것을 의미합니다.
 
 ## 판별 유니언 (Discriminated Unions)
 
