@@ -376,8 +376,8 @@ type FString = string & { __compileTimeOnly: any };
 
 ## 판별 유니언 (Discriminated Unions)
 
-`data` 에서 가장 유사한 점은 구별하는 속성과 함께 타입 유니언이며,
-보통은 TypeScript에서 구별하는 유니언이라고 불립니다:
+`data`와 가장 유사한 것은 보통 TypeScript에서 판별 유니언이라 불리는,
+ 판별 프로퍼티를 갖는 타입의 유니언입니다:
 
 ```ts
 type Shape =
