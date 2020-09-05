@@ -312,11 +312,11 @@ declare function map<T, U>(f: (t: T) => U, ts: T[]): U[];
 let sns = map((n) => n.toString(), [1, 2, 3]);
 ```
 
-여기에 예시인 `n: number` 에서 또한, `T` 과 `U`는 호출 전이라서
+여기에서, 이 예시의 `n: number`에서 또한, `T` 과 `U`는 호출 전에
 추론되지 않았음에도 불구하고.
 실제로 `[1,2,3]` 으로 `T=number`을 추론한 다음에,
-`n => n.toString()`의 리턴 타입으로 `U=string`을 추론하며,
-`sns` 가 `string[]` 타입을 가지도록 합니다.
+`n => n.toString()`의 리턴 타입으로 `U=string`을 추론하여,
+`sns`가 `string[]` 타입을 가지도록 합니다.
 
 추론은 어떤 순서로든 동작하겠지만, intellisense은 왼쪽에서 오른쪽으로만
 동작하고, 그래서 TypeScript는 먼저 배열과 함께 `map` 선언하는 것을
