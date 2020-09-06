@@ -5,59 +5,59 @@ permalink: /docs/handbook/typescript-in-5-minutes-func.html
 oneline: Learn TypeScript if you have a background in functional programming
 ---
 
-TypeScript began its life as an attempt to bring traditional object-oriented types
-to JavaScript so that the programmers at Microsoft could bring
-traditional object-oriented programs to the web. As it has developed, TypeScript's type
-system has evolved to model code written by native JavaScripters. The
-resulting system is powerful, interesting and messy.
+TypeScript는 웹에 전통적인 객체 지향 프로그램를 가져오기 위해서
+마이크로소프트 프로그래머들이 JavaScript에 전통적인 객체 지향 타입을
+가져오기 위한 시도로 시작되었습니다. 개발되어 가면서 TypeScript의
+타입 시스템은 네이티브 자바스크립터가 작성한 모델 코드로 발전되었습니다.
+결과적인 시스템은 강력하면서 흥미롭고 지저분합니다.
 
-This introduction is designed for working Haskell or ML programmers
-who want to learn TypeScript. It describes how the type system of
-TypeScript differs from Haskell's type system. It also describes
-unique features of TypeScript's type system that arise from its
-modelling of JavaScript code.
+이 소개는 TypeScript를 배우고자 하는 Haskell 또는 ML 프로그래머를
+위해 만들어졌습니다. Haskell 타입 시스템과 TypeScript 타입 시스템의
+차이를 설명합니다.
+또한 JavaScript 코드의 모델링에서 발생하는 TypeScript 타입 시스템의
+독특한 특징을 설명합니다.
 
-This introduction does not cover object-oriented programming. In
-practice, object-oriented programs in TypeScript are similar to those
-in other popular languages with OO features.
+이 소개에서는 객체 지향 프로그래밍을 다루지 않습니다.
+실제로, TypeScript의 객체 지향 프로그램은 OO 기능이 있는 다른 인기 언어의
+프로그램과 유사합니다.
 
-# Prerequisites
+# 전제조건 (Prerequisites)
 
-In this introduction, I assume you know the following:
+본 서론에서는 다음 사항을 알고 있다고 가정합니다:
 
-* How to program in JavaScript, the good parts.
-* Type syntax of a C-descended language.
+* JavaScript로 프로그래밍 하기 위한 핵심 개념.
+* C 계열 언어의 타입 구문.
 
-If you need to learn the good parts of JavaScript, read
-[JavaScript: The Good Parts](http://shop.oreilly.com/product/9780596517748.do).
-You may be able to skip the book if you know how to write programs in
-a call-by-value lexically scoped language with lots of mutability and
-not much else.
-[R<sup>4</sup>RS Scheme](https://people.csail.mit.edu/jaffer/r4rs.pdf) is a good example.
+JavaScript의 핵심 개념을 배우고 싶다면
+[JavaScript: The Good Parts](http://shop.oreilly.com/product/9780596517748.do)를 추천합니다.
+많은 가변성을 가진 call-by-value 렉시컬한 스코프 언어로
+프로그램을 작성하는 방법을 알고 있다면 굳이 책을 안 읽어도
+상관없습니다.
+[R<sup>4</sup>RS Scheme](https://people.csail.mit.edu/jaffer/r4rs.pdf)가 좋은 예입니다.
 
-[The C++ Programming Language](http://www.stroustrup.com/4th.html) is
-a good place to learn about C-style type syntax. Unlike C++,
-TypeScript uses postfix types, like so: `x: string` instead of `string x`.
+[C++ 프로그래밍 언어](http://www.stroustrup.com/4th.html)는
+C-스타일 타입 구문에 대해서 배우기 좋습니다.
+C++ 달리 TypeScript는 후위 타입을 사용합니다, 예를 들면: `string x` 대신에 `x: string`.
 
-# Concepts not in Haskell
+# Haskell에는 없는 개념 (Concepts not in Haskell)
 
-## Built-in types
+## 내장 타입 (Built-in types)
 
-JavaScript defines 7 built-in types:
+JavaScript에서는 7개의 내장 타입을 정의합니다:
 
-| Type        | Explanation                                 |
+| 타입         | 설명                                         |
 | ----------- | ------------------------------------------- |
-| `Number`    | a double-precision IEEE 754 floating point. |
-| `String`    | an immutable UTF-16 string.                 |
-| `Boolean`   | `true` and `false`.                         |
-| `Symbol`    | a unique value usually used as a key.       |
-| `Null`      | equivalent to the unit type.                |
-| `Undefined` | also equivalent to the unit type.           |
-| `Object`    | similar to records.                         |
+| `Number`    | 배정밀도 IEEE 754 부동소수점.                    |
+| `String`    | 수정 불가능한 UTF-16 문자열.                     |
+| `Boolean`   | `true` 와  `false`.                          |
+| `Symbol`    | 보통 키로 사용하는 고유한 값.                       |
+| `Null`      | 단위 타입과 동등.                               |
+| `Undefined` | 또한 단위 타입과 동등.                           |
+| `Object`    | 레코드와 유사한 것.                             |
 
-[See the MDN page for more detail](https://developer.mozilla.org/docs/Web/JavaScript/Data_structures).
+[자세한 내용은 MDN 페이지를 참고하세요](https://developer.mozilla.org/docs/Web/JavaScript/Data_structures).
 
-TypeScript has corresponding primitive types for the built-in types:
+TypeScript에는 기본 내장된 타입에 해당하는 원시 타입이 있습니다:
 
 * `number`
 * `string`
@@ -67,84 +67,84 @@ TypeScript has corresponding primitive types for the built-in types:
 * `undefined`
 * `object`
 
-### Other important TypeScript types
+### 다른 중요한 TypeScript 타입 (Other important TypeScript types)
 
-| Type           | Explanation                                                 |
+| 타입            | 설명                                                         |
 | -------------- | ----------------------------------------------------------- |
-| `unknown`      | the top type.                                               |
-| `never`        | the bottom type.                                            |
-| object literal | eg `{ property: Type }`                                     |
-| `void`         | a subtype of `undefined` intended for use as a return type. |
-| `T[]`          | mutable arrays, also written `Array<T>`                     |
-| `[T, T]`       | tuples, which are fixed-length but mutable                  |
-| `(t: T) => U`  | functions                                                   |
+| `unknown`      | 최상위 타입.                                                   |
+| `never`        | 하위 타입.                                                     |
+| 객체 리터럴       | 예, `{ property: Type }`                                     |
+| `void`         | 리턴 타입으로 사용하기 위해 의도된 `undefined` 의 서브타입.             |
+| `T[]`          | 수정가능한 배열들, 또한 `Array<T>` 으로 사용가능                      |
+| `[T, T]`       | 고정된 길이지만 수정 가능한 튜플                                     |
+| `(t: T) => U`  | 함수                                                          |
 
-Notes:
+유의하세요:
 
-1. Function syntax includes parameter names. This is pretty hard to get used to!
+1. 함수 구문에는 매개변수 이름이 포함되어 있습니다. 익숙해지기 꽤 어렵습니다!
 
    ```ts
    let fst: (a: any, d: any) => any = (a, d) => a;
-   // or more precisely:
+   // 또는 좀 더 정확하게 말하자면:
    let snd: <T, U>(a: T, d: U) => U = (a, d) => d;
    ```
 
-2. Object literal type syntax closely mirrors object literal value syntax:
+2. 객체 리터럴 타입 구문이 객체 리터럴 값 구문과 꽤 유사합니다:
 
    ```ts
    let o: { n: number; xs: object[] } = { n: 1, xs: [] };
    ```
 
-3. `[T, T]` is a subtype of `T[]`. This is different than Haskell, where tuples are not related to lists.
+3. `[T, T]` 는 `T[]` 의 서브타입입니다. Haskell과 달리, 튜플은 리스트와 관련이 없습니다.
 
-### Boxed types
+### 박스 형태 타입 (Boxed types)
 
-JavaScript has boxed equivalents of primitive types that contain the
-methods that programmers associate with those types. TypeScript
-reflects this with, for example, the difference between the primitive
-type `number` and the boxed type `Number`. The boxed types are rarely
-needed, since their methods return primitives.
+JavaScript는 프로그래머들이 해당 타입에 접근할 수 있는 메서드를
+포함하는 원시타입을 동등하게 박스해 왔습니다. 예를 들면, 원시 형태의
+`number` 과 박스 형태 타입의 `Number`의 다른 점을 TypeScript는
+반영해왔습니다.
+박스 형태 타입은 메서드가 원시 타입을 반환할 때 아주 드물게 필요합니다.
 
 ```ts
 (1).toExponential();
-// equivalent to
+// 동등하게
 Number.prototype.toExponential.call(1);
 ```
 
-Note that calling a method on a numeric literal requires it to be in
-parentheses to aid the parser.
+숫자 리터럴에서 메서드를 호출하려면 파서를 지원하기 위해 메서드를 괄호
+안에 넣어야 한다는 점에 유의하십시오.
 
-## Gradual typing
+## 점진적인 타이핑 (Gradual typing)
 
-TypeScript uses the type `any` whenever it can't tell what the type of
-an expression should be. Compared to `Dynamic`, calling `any` a type
-is an overstatement. It just turns off the type checker
-wherever it appears. For example, you can push any value into an
-`any[]` without marking the value in any way:
+TypeScript는 표현식의 타입을 알 수 없을 때마다 `any` 타입을
+사용합니다. `Dynamic`와 비교하면,`any` 는 타입이라고 부르기에
+과하다고 할 수도 있습니다.
+이 타입이 나타날 때마다 타입을 체크하지 않습니다. 예를 들어, `any[]`
+에 어떤 값이든 체크하지 않고 넣어도 상관없습니다:
 
-```ts twoslash
-// with "noImplicitAny": false in tsconfig.json, anys: any[]
+```ts
+// tsconfig.json 파일에 "noImplicitAny": false 를 삽입, anys: any[]
 const anys = [];
 anys.push(1);
 anys.push("oh no");
 anys.push({ anything: "goes" });
 ```
 
-And you can use an expression of type `any` anywhere:
+그리고 `any` 타입은 어디서든 간에 사용가능합니다:
 
 ```ts
-anys.map(anys[1]); // oh no, "oh no" is not a function
+anys.map(anys[1]); // 오 안되죠, "oh no" 함수가 아닙니다.
 ```
 
-`any` is contagious, too &mdash; if you initialise a variable with an
-expression of type `any`, the variable has type `any` too.
+`any` 전염될 수 있는데, 역시 &mdash; 만약에 `any` 타입의 표현식과 함께 변수를 초기화하면,
+변수 역시 `any` 타입을 가집니다.
 
 ```ts
-let sepsis = anys[0] + anys[1]; // this could mean anything
+let sepsis = anys[0] + anys[1]; // 어떤 의미로도 가능합니다.
 ```
 
-To get an error when TypeScript produces an `any`, use
-`"noImplicitAny": true`, or `"strict": true` in `tsconfig.json`.
+TypeScript는 `any`를 제공할 때 에러가 발생되면,
+`tsconfig.json`에서 `"noImplicitAny": true` 또는 `"strict": true`를 설정해야 합니다.
 
 ## 구조적인 타이핑 (Structural typing)
 
