@@ -190,12 +190,12 @@ f3(123, "hello");
 우리는 JavaScript에 내장된 `bind` 메서드의 타입 체킹을 더 잘하기 위해 이를 활용할 수 있을 것이라고 기대합니다.
 몇 가지 다른 추론 개선 및 패턴들도 여기에 포함되어 있으며, 가변 인자 튜플에 대해 더 알아보고 싶다면, [the pull request](https://github.com/microsoft/TypeScript/pull/39094)를 참고해보세요.
 
-## Labeled Tuple Elements
+## 라벨링된 튜플 요소 (Labeled Tuple Elements)
 
-Improving the experience around tuple types and parameter lists is important because it allows us to get strongly typed validation around common JavaScript idioms - really just slicing and dicing argument lists and passing them to other functions.
-The idea that we can use tuple types for rest parameters is one place where this is crucial.
+튜플 타입과 매개 변수 목록에 대해 개선하는 것은 일반적인 JavaScript 관용구에 대한 타입 유효성 검사를 강화시켜주기 때문에 중요합니다 - 실제로 인수 목록을 자르고 다른 함수로 전달만 해주면 됩니다.
+나머지 매개 변수(rest parameter)에 튜플 타입을 사용할 수 있다는 생각은 아주 중요합니다.
 
-For example, the following function that uses a tuple type as a rest parameter...
+예를 들어, 튜플 타입을 나머지 매개 변수로 사용하는 다음 함수는...
 
 ```ts
 function foo(...args: [string, number]): void {
@@ -203,7 +203,7 @@ function foo(...args: [string, number]): void {
 }
 ```
 
-...should appear no different from the following function...
+...다음 함수와 다르지 않아야 합니다...
 
 ```ts
 function foo(arg0: string, arg1: number): void {
@@ -211,7 +211,7 @@ function foo(arg0: string, arg1: number): void {
 }
 ```
 
-...for any caller of `foo`.
+...`foo`의 모든 호출자에 대해서도.
 
 ```ts
 // @errors: 2554
@@ -225,52 +225,52 @@ foo("hello", 42, true);
 foo("hello");
 ```
 
-There is one place where the differences begin to become observable though: readability.
-In the first example, we have no parameter names for the first and second elements.
-While these have no impact on type-checking, the lack of labels on tuple positions can make them harder to use - harder to communicate our intent.
+그러나 차이점이 보이기 시작한 부분은: 가독성입니다.
+첫 번째 예시에서는, 첫 번째와 두 번째 요소에 대한 매개 변수 이름이 없습니다.
+타입-검사에는 전혀 영향이 없지만, 튜플 위치에 라벨이 없는 것은 사용하기 어렵게 만듭니다 - 의도를 전달하기 어렵습니다.
 
-That's why in TypeScript 4.0, tuples types can now provide labels.
+TypeScript 4.0에서 튜플 타입에 라벨을 제공하는 이유입니다.
 
 ```ts
 type Range = [start: number, end: number];
 ```
 
-To deepen the connection between parameter lists and tuple types, the syntax for rest elements and optional elements mirrors the syntax for parameter lists.
+매개 변수 목록과 튜플 타입 사이의 연결을 강화하기 위해, 나머지 요소와 선택적 요소에 대한 구문이 매개 변수 목록의 구문을 반영합니다.
 
 ```ts
 type Foo = [first: number, second?: string, ...rest: any[]];
 ```
 
-There are a few rules when using labeled tuples.
-For one, when labeling a tuple element, all other elements in the tuple must also be labeled.
+라벨링 된 튜플을 사용할 때는 몇 가지 규칙이 있습니다.
+하나는 튜플 요소를 라벨링 할 때, 튜플에 있는 다른 모든 요소들 역시 라벨링 되어야 합니다.
 
 ```ts
 // @errors: 5084
 type Bar = [first: string, number];
 ```
 
-It's worth noting - labels don't require us to name our variables differently when destructuring.
-They're purely there for documentation and tooling.
+당연하게도 - 라벨은 구조 분해할 때 변수 이름을 다르게 지정할 필요가 없습니다.
+이것은 순전히 문서화와 도구를 위해 필요합니다.
 
 ```ts
 function foo(x: [first: string, second: number]) {
     // ...
 
-    // note: we didn't need to name these 'first' and 'second'
+    // 주의: 'first'와 'second'에 대해 이름 지을 필요 없음
     const [a, b] = x;
     a
-//  ^?
+//  ^ = const a: string
     b
-//  ^?
+//  ^ = const b: number
 }
 ```
 
-Overall, labeled tuples are handy when taking advantage of patterns around tuples and argument lists, along with implementing overloads in a type-safe way.
-In fact, TypeScript's editor support will try to display them as overloads when possible.
+전반적으로, 라벨링 된 튜플은 안전한 타입 방식으로 오버로드를 구현하는 것과 튜플과 인수 목록의 패턴을 활용할 때 편리합니다.
+사실, TypeScript 에디터 지원은 가능한 경우 오버로드로 표시하려 합니다.
 
-![Signature help displaying a union of labeled tuples as in a parameter list as two signatures](https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2020/08/signatureHelpLabeledTuples.gif)
+![라벨링된 튜플의 유니언을 매개변수 목록에서처럼 두 가지 시그니처로 보여주는 시그니처 도움말](https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2020/08/signatureHelpLabeledTuples.gif)
 
-To learn more, check out [the pull request](https://github.com/microsoft/TypeScript/pull/38234) for labeled tuple elements.
+더 알고 싶으시면, 라벨링된 튜플 요소에 대한 [풀 리퀘스트](https://github.com/microsoft/TypeScript/pull/38234)를 확인해보세요
 
 ## Class Property Inference from Constructors
 
