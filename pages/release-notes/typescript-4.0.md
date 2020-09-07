@@ -192,7 +192,7 @@ A handful of other inference improvements and patterns also went into this, and 
 
 ## 라벨링된 튜플 요소 (Labeled Tuple Elements)
 
-튜플 타입과 매개 변수 목록의 경험을 개선하는 것은 일반적인 JavaScript 관용구에 대한 타입 유효성 검사를 강화시켜주기 때문에 중요합니다 - 실제로 인수 목록을 자르고 다른 함수로 전달만 해주면 됩니다.
+튜플 타입과 매개 변수 목록에 대해 개선하는 것은 일반적인 JavaScript 관용구에 대한 타입 유효성 검사를 강화시켜주기 때문에 중요합니다 - 실제로 인수 목록을 자르고 다른 함수로 전달만 해주면 됩니다.
 나머지 매개 변수(rest parameter)에 튜플 타입을 사용할 수 있다는 생각은 아주 중요합니다.
 
 예를 들어, 다음 함수는 튜플 타입을 나머지 매개 변수로 사용한 예시는...
