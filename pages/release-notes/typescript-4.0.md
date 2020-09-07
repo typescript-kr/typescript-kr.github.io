@@ -265,7 +265,7 @@ function foo(x: [first: string, second: number]) {
 }
 ```
 
-전반적으로, 라벨링 된 튜플은 안전한 타입 방식으로 오버로드를 구현하는 것과 튜플과 인수 목록의 패턴을 활용할 때 편리합니다
+전반적으로, 라벨링 된 튜플은 안전한 타입 방식으로 오버로드를 구현하는 것과 튜플과 인수 목록의 패턴을 활용할 때 편리합니다.
 사실, TypeScript 에디터 지원은 가능한 경우 오버로드로 표시하려 합니다.
 
 ![라벨링된 튜플의 유니언을 매개변수 목록에서처럼 두 가지 시그니처로 보여주는 시그니처 도움말](https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2020/08/signatureHelpLabeledTuples.gif)
