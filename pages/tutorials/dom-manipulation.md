@@ -103,7 +103,7 @@ interface HTMLElementTagNameMap {
 
 ## `Node` 인터페이스 (The `Node` interface)
 
-`document.getElementById` 함수는 `HTMLElement`를 반환합니다. `HTMLElement` 인터페이스는 `Node` 인터페이스를 확장하는 `Element` 인터페이스를 확장합니다. 이러한 프로토타입 확장은 모든 `HTMLElements`가 표준 메서드의 하위 집합을 활용할 수 있도록 합니다. 코드 스니펫에서는 `Node` 인터페이스에 정의된 속성을 사용하여 웹 사이트에 새 `p` 요소를 추가합니다.
+`document.getElementById` 함수는 `HTMLElement`를 반환합니다. `HTMLElement` 인터페이스는 `Node` 인터페이스를 확장한 `Element` 인터페이스를 확장합니다. 이러한 프로토타입 확장은 모든 `HTMLElements`가 표준 메서드의 하위 집합을 활용할 수 있도록 합니다. 코드 스니펫에서는 `Node` 인터페이스에 정의된 속성을 사용하여 웹 사이트에 새 `p` 요소를 추가합니다.
 
 ### `Node.appendChild`
 
