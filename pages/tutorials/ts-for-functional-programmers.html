@@ -1062,77 +1062,77 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>TypeScript began its life as an attempt to bring traditional object-oriented types
-to JavaScript so that the programmers at Microsoft could bring
-traditional object-oriented programs to the web. As it has developed, TypeScript&apos;s type
-system has evolved to model code written by native JavaScripters. The
-resulting system is powerful, interesting and messy.</p>
-<p>This introduction is designed for working Haskell or ML programmers
-who want to learn TypeScript. It describes how the type system of
-TypeScript differs from Haskell&apos;s type system. It also describes
-unique features of TypeScript&apos;s type system that arise from its
-modelling of JavaScript code.</p>
-<p>This introduction does not cover object-oriented programming. In
-practice, object-oriented programs in TypeScript are similar to those
-in other popular languages with OO features.</p>
-<h1 id="prerequisites">Prerequisites</h1>
-<p>In this introduction, I assume you know the following:</p>
+                                <p>TypeScript&#xB294; &#xC6F9;&#xC5D0; &#xC804;&#xD1B5;&#xC801;&#xC778; &#xAC1D;&#xCCB4; &#xC9C0;&#xD5A5; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xB97C; &#xAC00;&#xC838;&#xC624;&#xAE30; &#xC704;&#xD574;&#xC11C;
+&#xB9C8;&#xC774;&#xD06C;&#xB85C;&#xC18C;&#xD504;&#xD2B8; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBA38;&#xB4E4;&#xC774; JavaScript&#xC5D0; &#xC804;&#xD1B5;&#xC801;&#xC778; &#xAC1D;&#xCCB4; &#xC9C0;&#xD5A5; &#xD0C0;&#xC785;&#xC744;
+&#xAC00;&#xC838;&#xC624;&#xAE30; &#xC704;&#xD55C; &#xC2DC;&#xB3C4;&#xB85C; &#xC2DC;&#xC791;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;. &#xAC1C;&#xBC1C;&#xB418;&#xC5B4; &#xAC00;&#xBA74;&#xC11C; TypeScript&#xC758;
+&#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;&#xC740; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD130;&#xAC00; &#xC791;&#xC131;&#xD55C; &#xBAA8;&#xB378; &#xCF54;&#xB4DC;&#xB85C; &#xBC1C;&#xC804;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xACB0;&#xACFC;&#xC801;&#xC778; &#xC2DC;&#xC2A4;&#xD15C;&#xC740; &#xAC15;&#xB825;&#xD558;&#xBA74;&#xC11C; &#xD765;&#xBBF8;&#xB86D;&#xACE0; &#xC9C0;&#xC800;&#xBD84;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774; &#xC18C;&#xAC1C;&#xB294; TypeScript&#xB97C; &#xBC30;&#xC6B0;&#xACE0;&#xC790; &#xD558;&#xB294; Haskell &#xB610;&#xB294; ML &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBA38;&#xB97C;
+&#xC704;&#xD574; &#xB9CC;&#xB4E4;&#xC5B4;&#xC84C;&#xC2B5;&#xB2C8;&#xB2E4;. Haskell &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;&#xACFC; TypeScript &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;&#xC758;
+&#xCC28;&#xC774;&#xB97C; &#xC124;&#xBA85;&#xD569;&#xB2C8;&#xB2E4;.
+&#xB610;&#xD55C; JavaScript &#xCF54;&#xB4DC;&#xC758; &#xBAA8;&#xB378;&#xB9C1;&#xC5D0;&#xC11C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; TypeScript &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;&#xC758;
+&#xB3C5;&#xD2B9;&#xD55C; &#xD2B9;&#xC9D5;&#xC744; &#xC124;&#xBA85;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774; &#xC18C;&#xAC1C;&#xC5D0;&#xC11C;&#xB294; &#xAC1D;&#xCCB4; &#xC9C0;&#xD5A5; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC744; &#xB2E4;&#xB8E8;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC2E4;&#xC81C;&#xB85C;, TypeScript&#xC758; &#xAC1D;&#xCCB4; &#xC9C0;&#xD5A5; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC740; OO &#xAE30;&#xB2A5;&#xC774; &#xC788;&#xB294; &#xB2E4;&#xB978; &#xC778;&#xAE30; &#xC5B8;&#xC5B4;&#xC758;
+&#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xACFC; &#xC720;&#xC0AC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h1 id="&#xC804;&#xC81C;&#xC870;&#xAC74;-prerequisites">&#xC804;&#xC81C;&#xC870;&#xAC74; (Prerequisites)</h1>
+<p>&#xBCF8; &#xC11C;&#xB860;&#xC5D0;&#xC11C;&#xB294; &#xB2E4;&#xC74C; &#xC0AC;&#xD56D;&#xC744; &#xC54C;&#xACE0; &#xC788;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <ul>
-<li>How to program in JavaScript, the good parts.</li>
-<li>Type syntax of a C-descended language.</li>
+<li>JavaScript&#xB85C; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D; &#xD558;&#xAE30; &#xC704;&#xD55C; &#xD575;&#xC2EC; &#xAC1C;&#xB150;.</li>
+<li>C &#xACC4;&#xC5F4; &#xC5B8;&#xC5B4;&#xC758; &#xD0C0;&#xC785; &#xAD6C;&#xBB38;.</li>
 </ul>
-<p>If you need to learn the good parts of JavaScript, read
-<a href="http://shop.oreilly.com/product/9780596517748.do" target="_blank">JavaScript: The Good Parts</a>.
-You may be able to skip the book if you know how to write programs in
-a call-by-value lexically scoped language with lots of mutability and
-not much else.
-<a href="https://people.csail.mit.edu/jaffer/r4rs.pdf" target="_blank">R<sup>4</sup>RS Scheme</a> is a good example.</p>
-<p><a href="http://www.stroustrup.com/4th.html" target="_blank">The C++ Programming Language</a> is
-a good place to learn about C-style type syntax. Unlike C++,
-TypeScript uses postfix types, like so: <code>x: string</code> instead of <code>string x</code>.</p>
-<h1 id="concepts-not-in-haskell">Concepts not in Haskell</h1>
-<h2 id="built-in-types">Built-in types</h2>
-<p>JavaScript defines 7 built-in types:</p>
+<p>JavaScript&#xC758; &#xD575;&#xC2EC; &#xAC1C;&#xB150;&#xC744; &#xBC30;&#xC6B0;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74;
+<a href="http://shop.oreilly.com/product/9780596517748.do" target="_blank">JavaScript: The Good Parts</a>&#xB97C; &#xCD94;&#xCC9C;&#xD569;&#xB2C8;&#xB2E4;.
+&#xB9CE;&#xC740; &#xAC00;&#xBCC0;&#xC131;&#xC744; &#xAC00;&#xC9C4; call-by-value &#xB809;&#xC2DC;&#xCEEC;&#xD55C; &#xC2A4;&#xCF54;&#xD504; &#xC5B8;&#xC5B4;&#xB85C;
+&#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC744; &#xC791;&#xC131;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC54C;&#xACE0; &#xC788;&#xB2E4;&#xBA74; &#xAD73;&#xC774; &#xCC45;&#xC744; &#xC548; &#xC77D;&#xC5B4;&#xB3C4;
+&#xC0C1;&#xAD00;&#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
+<a href="https://people.csail.mit.edu/jaffer/r4rs.pdf" target="_blank">R<sup>4</sup>RS Scheme</a>&#xAC00; &#xC88B;&#xC740; &#xC608;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p><a href="http://www.stroustrup.com/4th.html" target="_blank">C++ &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D; &#xC5B8;&#xC5B4;</a>&#xB294;
+C-&#xC2A4;&#xD0C0;&#xC77C; &#xD0C0;&#xC785; &#xAD6C;&#xBB38;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xBC30;&#xC6B0;&#xAE30; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.
+C++ &#xB2EC;&#xB9AC; TypeScript&#xB294; &#xD6C4;&#xC704; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;, &#xC608;&#xB97C; &#xB4E4;&#xBA74;: <code>string x</code> &#xB300;&#xC2E0;&#xC5D0; <code>x: string</code>.</p>
+<h1 id="haskell&#xC5D0;&#xB294;-&#xC5C6;&#xB294;-&#xAC1C;&#xB150;-concepts-not-in-haskell">Haskell&#xC5D0;&#xB294; &#xC5C6;&#xB294; &#xAC1C;&#xB150; (Concepts not in Haskell)</h1>
+<h2 id="&#xB0B4;&#xC7A5;-&#xD0C0;&#xC785;-built-in-types">&#xB0B4;&#xC7A5; &#xD0C0;&#xC785; (Built-in types)</h2>
+<p>JavaScript&#xC5D0;&#xC11C;&#xB294; 7&#xAC1C;&#xC758; &#xB0B4;&#xC7A5; &#xD0C0;&#xC785;&#xC744; &#xC815;&#xC758;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <table>
 <thead>
 <tr>
-<th>Type</th>
-<th>Explanation</th>
+<th>&#xD0C0;&#xC785;</th>
+<th>&#xC124;&#xBA85;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Number</code></td>
-<td>a double-precision IEEE 754 floating point.</td>
+<td>&#xBC30;&#xC815;&#xBC00;&#xB3C4; IEEE 754 &#xBD80;&#xB3D9;&#xC18C;&#xC218;&#xC810;.</td>
 </tr>
 <tr>
 <td><code>String</code></td>
-<td>an immutable UTF-16 string.</td>
+<td>&#xC218;&#xC815; &#xBD88;&#xAC00;&#xB2A5;&#xD55C; UTF-16 &#xBB38;&#xC790;&#xC5F4;.</td>
 </tr>
 <tr>
 <td><code>Boolean</code></td>
-<td><code>true</code> and <code>false</code>.</td>
+<td><code>true</code> &#xC640;  <code>false</code>.</td>
 </tr>
 <tr>
 <td><code>Symbol</code></td>
-<td>a unique value usually used as a key.</td>
+<td>&#xBCF4;&#xD1B5; &#xD0A4;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACE0;&#xC720;&#xD55C; &#xAC12;.</td>
 </tr>
 <tr>
 <td><code>Null</code></td>
-<td>equivalent to the unit type.</td>
+<td>&#xB2E8;&#xC704; &#xD0C0;&#xC785;&#xACFC; &#xB3D9;&#xB4F1;.</td>
 </tr>
 <tr>
 <td><code>Undefined</code></td>
-<td>also equivalent to the unit type.</td>
+<td>&#xB610;&#xD55C; &#xB2E8;&#xC704; &#xD0C0;&#xC785;&#xACFC; &#xB3D9;&#xB4F1;.</td>
 </tr>
 <tr>
 <td><code>Object</code></td>
-<td>similar to records.</td>
+<td>&#xB808;&#xCF54;&#xB4DC;&#xC640; &#xC720;&#xC0AC;&#xD55C; &#xAC83;.</td>
 </tr>
 </tbody>
 </table>
-<p><a href="https://developer.mozilla.org/docs/Web/JavaScript/Data_structures" target="_blank">See the MDN page for more detail</a>.</p>
-<p>TypeScript has corresponding primitive types for the built-in types:</p>
+<p><a href="https://developer.mozilla.org/docs/Web/JavaScript/Data_structures" target="_blank">&#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; MDN &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;</a>.</p>
+<p>TypeScript&#xC5D0;&#xB294; &#xAE30;&#xBCF8; &#xB0B4;&#xC7A5;&#xB41C; &#xD0C0;&#xC785;&#xC5D0; &#xD574;&#xB2F9;&#xD558;&#xB294; &#xC6D0;&#xC2DC; &#xD0C0;&#xC785;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <ul>
 <li><code>number</code></li>
 <li><code>string</code></li>
@@ -1142,164 +1142,160 @@ TypeScript uses postfix types, like so: <code>x: string</code> instead of <code>
 <li><code>undefined</code></li>
 <li><code>object</code></li>
 </ul>
-<h3 id="other-important-typescript-types">Other important TypeScript types</h3>
+<h3 id="&#xB2E4;&#xB978;-&#xC911;&#xC694;&#xD55C;-typescript-&#xD0C0;&#xC785;-other-important-typescript-types">&#xB2E4;&#xB978; &#xC911;&#xC694;&#xD55C; TypeScript &#xD0C0;&#xC785; (Other important TypeScript types)</h3>
 <table>
 <thead>
 <tr>
-<th>Type</th>
-<th>Explanation</th>
+<th>&#xD0C0;&#xC785;</th>
+<th>&#xC124;&#xBA85;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>unknown</code></td>
-<td>the top type.</td>
+<td>&#xCD5C;&#xC0C1;&#xC704; &#xD0C0;&#xC785;.</td>
 </tr>
 <tr>
 <td><code>never</code></td>
-<td>the bottom type.</td>
+<td>&#xD558;&#xC704; &#xD0C0;&#xC785;.</td>
 </tr>
 <tr>
-<td>object literal</td>
-<td>eg <code>{ property: Type }</code></td>
+<td>&#xAC1D;&#xCCB4; &#xB9AC;&#xD130;&#xB7F4;</td>
+<td>&#xC608;, <code>{ property: Type }</code></td>
 </tr>
 <tr>
 <td><code>void</code></td>
-<td>a subtype of <code>undefined</code> intended for use as a return type.</td>
+<td>&#xB9AC;&#xD134; &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC758;&#xB3C4;&#xB41C; <code>undefined</code> &#xC758; &#xC11C;&#xBE0C;&#xD0C0;&#xC785;.</td>
 </tr>
 <tr>
 <td><code>T[]</code></td>
-<td>mutable arrays, also written <code>Array&lt;T&gt;</code></td>
+<td>&#xC218;&#xC815;&#xAC00;&#xB2A5;&#xD55C; &#xBC30;&#xC5F4;&#xB4E4;, &#xB610;&#xD55C; <code>Array&lt;T&gt;</code> &#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xAC00;&#xB2A5;</td>
 </tr>
 <tr>
 <td><code>[T, T]</code></td>
-<td>tuples, which are fixed-length but mutable</td>
+<td>&#xACE0;&#xC815;&#xB41C; &#xAE38;&#xC774;&#xC9C0;&#xB9CC; &#xC218;&#xC815; &#xAC00;&#xB2A5;&#xD55C; &#xD29C;&#xD50C;</td>
 </tr>
 <tr>
 <td><code>(t: T) =&gt; U</code></td>
-<td>functions</td>
+<td>&#xD568;&#xC218;</td>
 </tr>
 </tbody>
 </table>
-<p>Notes:</p>
+<p>&#xC720;&#xC758;&#xD558;&#xC138;&#xC694;:</p>
 <ol>
-<li><p>Function syntax includes parameter names. This is pretty hard to get used to!</p>
+<li><p>&#xD568;&#xC218; &#xAD6C;&#xBB38;&#xC5D0;&#xB294; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xC774;&#xB984;&#xC774; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC775;&#xC219;&#xD574;&#xC9C0;&#xAE30; &#xAF64; &#xC5B4;&#xB835;&#xC2B5;&#xB2C8;&#xB2E4;!</p>
 <pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">fst</span>: (<span class="cm-def">a</span>: <span class="cm-variable-3">any</span>, <span class="cm-variable">d</span>: <span class="cm-variable-3">any</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable-3">any</span> <span class="cm-operator">=</span> (<span class="cm-def">a</span>, <span class="cm-def">d</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable-2">a</span>;
-<span class="cm-comment">// or more precisely:</span>
+<span class="cm-comment">// &#xB610;&#xB294; &#xC880; &#xB354; &#xC815;&#xD655;&#xD558;&#xAC8C; &#xB9D0;&#xD558;&#xC790;&#xBA74;:</span>
 <span class="cm-keyword">let</span> <span class="cm-variable">snd</span>: <span class="cm-operator">&lt;</span><span class="cm-variable">T</span>, <span class="cm-variable">U</span><span class="cm-operator">&gt;</span>(<span class="cm-def">a</span>: <span class="cm-variable">T</span>, <span class="cm-variable">d</span>: <span class="cm-variable">U</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">U</span> <span class="cm-operator">=</span> (<span class="cm-def">a</span>, <span class="cm-def">d</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable-2">d</span>;
 </code></pre>
 </li>
-<li><p>Object literal type syntax closely mirrors object literal value syntax:</p>
+<li><p>&#xAC1D;&#xCCB4; &#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785; &#xAD6C;&#xBB38;&#xC774; &#xAC1D;&#xCCB4; &#xB9AC;&#xD130;&#xB7F4; &#xAC12; &#xAD6C;&#xBB38;&#xACFC; &#xAF64; &#xC720;&#xC0AC;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">o</span>: { <span class="cm-variable">n</span>: <span class="cm-variable-3">number</span>; <span class="cm-variable">xs</span>: <span class="cm-variable">object</span>[] } <span class="cm-operator">=</span> { <span class="cm-property">n</span>: <span class="cm-number">1</span>, <span class="cm-property">xs</span>: [] };
 </code></pre>
 </li>
-<li><p><code>[T, T]</code> is a subtype of <code>T[]</code>. This is different than Haskell, where tuples are not related to lists.</p>
+<li><p><code>[T, T]</code> &#xB294; <code>T[]</code> &#xC758; &#xC11C;&#xBE0C;&#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;. Haskell&#xACFC; &#xB2EC;&#xB9AC;, &#xD29C;&#xD50C;&#xC740; &#xB9AC;&#xC2A4;&#xD2B8;&#xC640; &#xAD00;&#xB828;&#xC774; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </li>
 </ol>
-<h3 id="boxed-types">Boxed types</h3>
-<p>JavaScript has boxed equivalents of primitive types that contain the
-methods that programmers associate with those types. TypeScript
-reflects this with, for example, the difference between the primitive
-type <code>number</code> and the boxed type <code>Number</code>. The boxed types are rarely
-needed, since their methods return primitives.</p>
+<h3 id="&#xBC15;&#xC2A4;-&#xD615;&#xD0DC;-&#xD0C0;&#xC785;-boxed-types">&#xBC15;&#xC2A4; &#xD615;&#xD0DC; &#xD0C0;&#xC785; (Boxed types)</h3>
+<p>JavaScript&#xB294; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBA38;&#xB4E4;&#xC774; &#xD574;&#xB2F9; &#xD0C0;&#xC785;&#xC5D0; &#xC811;&#xADFC;&#xD560; &#xC218; &#xC788;&#xB294; &#xBA54;&#xC11C;&#xB4DC;&#xB97C;
+&#xD3EC;&#xD568;&#xD558;&#xB294; &#xC6D0;&#xC2DC;&#xD0C0;&#xC785;&#xC744; &#xB3D9;&#xB4F1;&#xD558;&#xAC8C; &#xBC15;&#xC2A4;&#xD574; &#xC654;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xBA74;, &#xC6D0;&#xC2DC; &#xD615;&#xD0DC;&#xC758;
+<code>number</code> &#xACFC; &#xBC15;&#xC2A4; &#xD615;&#xD0DC; &#xD0C0;&#xC785;&#xC758; <code>Number</code>&#xC758; &#xB2E4;&#xB978; &#xC810;&#xC744; TypeScript&#xB294;
+&#xBC18;&#xC601;&#xD574;&#xC654;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xBC15;&#xC2A4; &#xD615;&#xD0DC; &#xD0C0;&#xC785;&#xC740; &#xBA54;&#xC11C;&#xB4DC;&#xAC00; &#xC6D0;&#xC2DC; &#xD0C0;&#xC785;&#xC744; &#xBC18;&#xD658;&#xD560; &#xB54C; &#xC544;&#xC8FC; &#xB4DC;&#xBB3C;&#xAC8C; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts">(<span class="cm-number">1</span>).<span class="cm-property">toExponential</span>();
-<span class="cm-comment">// equivalent to</span>
+<span class="cm-comment">// &#xB3D9;&#xB4F1;&#xD558;&#xAC8C;</span>
 <span class="cm-variable">Number</span>.<span class="cm-property">prototype</span>.<span class="cm-property">toExponential</span>.<span class="cm-property">call</span>(<span class="cm-number">1</span>);
 </code></pre>
-<p>Note that calling a method on a numeric literal requires it to be in
-parentheses to aid the parser.</p>
-<h2 id="gradual-typing">Gradual typing</h2>
-<p>TypeScript uses the type <code>any</code> whenever it can&apos;t tell what the type of
-an expression should be. Compared to <code>Dynamic</code>, calling <code>any</code> a type
-is an overstatement. It just turns off the type checker
-wherever it appears. For example, you can push any value into an
-<code>any[]</code> without marking the value in any way:</p>
-<p>```ts twoslash
-// with &quot;noImplicitAny&quot;: false in tsconfig.json, anys: any[]
-const anys = [];
-anys.push(1);
-anys.push(&quot;oh no&quot;);
-anys.push({ anything: &quot;goes&quot; });</p>
-<pre><code>
-And you can use an expression of type `any` anywhere:
-
-```ts
-anys.map(anys[1]); // oh no, &quot;oh no&quot; is not a function
-</code></pre><p><code>any</code> is contagious, too &#x2014; if you initialise a variable with an
-expression of type <code>any</code>, the variable has type <code>any</code> too.</p>
-<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">sepsis</span> <span class="cm-operator">=</span> <span class="cm-variable">anys</span>[<span class="cm-number">0</span>] <span class="cm-operator">+</span> <span class="cm-variable">anys</span>[<span class="cm-number">1</span>]; <span class="cm-comment">// this could mean anything</span>
+<p>&#xC22B;&#xC790; &#xB9AC;&#xD130;&#xB7F4;&#xC5D0;&#xC11C; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xB824;&#xBA74; &#xD30C;&#xC11C;&#xB97C; &#xC9C0;&#xC6D0;&#xD558;&#xAE30; &#xC704;&#xD574; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xAD04;&#xD638;
+&#xC548;&#xC5D0; &#xB123;&#xC5B4;&#xC57C; &#xD55C;&#xB2E4;&#xB294; &#xC810;&#xC5D0; &#xC720;&#xC758;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.</p>
+<h2 id="&#xC810;&#xC9C4;&#xC801;&#xC778;-&#xD0C0;&#xC774;&#xD551;-gradual-typing">&#xC810;&#xC9C4;&#xC801;&#xC778; &#xD0C0;&#xC774;&#xD551; (Gradual typing)</h2>
+<p>TypeScript&#xB294; &#xD45C;&#xD604;&#xC2DD;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xC54C; &#xC218; &#xC5C6;&#xC744; &#xB54C;&#xB9C8;&#xB2E4; <code>any</code> &#xD0C0;&#xC785;&#xC744;
+&#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. <code>Dynamic</code>&#xC640; &#xBE44;&#xAD50;&#xD558;&#xBA74;,<code>any</code> &#xB294; &#xD0C0;&#xC785;&#xC774;&#xB77C;&#xACE0; &#xBD80;&#xB974;&#xAE30;&#xC5D0;
+&#xACFC;&#xD558;&#xB2E4;&#xACE0; &#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774; &#xD0C0;&#xC785;&#xC774; &#xB098;&#xD0C0;&#xB0A0; &#xB54C;&#xB9C8;&#xB2E4; &#xD0C0;&#xC785;&#xC744; &#xCCB4;&#xD06C;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xC5B4;, <code>any[]</code>
+&#xC5D0; &#xC5B4;&#xB5A4; &#xAC12;&#xC774;&#xB4E0; &#xCCB4;&#xD06C;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xB123;&#xC5B4;&#xB3C4; &#xC0C1;&#xAD00;&#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-comment">// tsconfig.json &#xD30C;&#xC77C;&#xC5D0; &quot;noImplicitAny&quot;: false &#xB97C; &#xC0BD;&#xC785;, anys: any[]</span>
+<span class="cm-keyword">const</span> <span class="cm-variable">anys</span> <span class="cm-operator">=</span> [];
+<span class="cm-variable">anys</span>.<span class="cm-property">push</span>(<span class="cm-number">1</span>);
+<span class="cm-variable">anys</span>.<span class="cm-property">push</span>(<span class="cm-string">&quot;oh no&quot;</span>);
+<span class="cm-variable">anys</span>.<span class="cm-property">push</span>({ <span class="cm-property">anything</span>: <span class="cm-string">&quot;goes&quot;</span> });
 </code></pre>
-<p>To get an error when TypeScript produces an <code>any</code>, use
-<code>&quot;noImplicitAny&quot;: true</code>, or <code>&quot;strict&quot;: true</code> in <code>tsconfig.json</code>.</p>
-<h2 id="structural-typing">Structural typing</h2>
-<p>Structural typing is a familiar concept to most functional
-programmers, although Haskell and most MLs are not
-structurally typed. Its basic form is pretty simple:</p>
+<p>&#xADF8;&#xB9AC;&#xACE0; <code>any</code> &#xD0C0;&#xC785;&#xC740; &#xC5B4;&#xB514;&#xC11C;&#xB4E0; &#xAC04;&#xC5D0; &#xC0AC;&#xC6A9;&#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">anys</span>.<span class="cm-property">map</span>(<span class="cm-variable">anys</span>[<span class="cm-number">1</span>]); <span class="cm-comment">// &#xC624; &#xC548;&#xB418;&#xC8E0;, &quot;oh no&quot; &#xD568;&#xC218;&#xAC00; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;.</span>
+</code></pre>
+<p><code>any</code> &#xC804;&#xC5FC;&#xB420; &#xC218; &#xC788;&#xB294;&#xB370;, &#xC5ED;&#xC2DC; &#x2014; &#xB9CC;&#xC57D;&#xC5D0; <code>any</code> &#xD0C0;&#xC785;&#xC758; &#xD45C;&#xD604;&#xC2DD;&#xACFC; &#xD568;&#xAED8; &#xBCC0;&#xC218;&#xB97C; &#xCD08;&#xAE30;&#xD654;&#xD558;&#xBA74;,
+&#xBCC0;&#xC218; &#xC5ED;&#xC2DC; <code>any</code> &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9D1;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">sepsis</span> <span class="cm-operator">=</span> <span class="cm-variable">anys</span>[<span class="cm-number">0</span>] <span class="cm-operator">+</span> <span class="cm-variable">anys</span>[<span class="cm-number">1</span>]; <span class="cm-comment">// &#xC5B4;&#xB5A4; &#xC758;&#xBBF8;&#xB85C;&#xB3C4; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.</span>
+</code></pre>
+<p>TypeScript&#xB294; <code>any</code>&#xB97C; &#xC81C;&#xACF5;&#xD560; &#xB54C; &#xC5D0;&#xB7EC;&#xAC00; &#xBC1C;&#xC0DD;&#xB418;&#xBA74;,
+<code>tsconfig.json</code>&#xC5D0;&#xC11C; <code>&quot;noImplicitAny&quot;: true</code> &#xB610;&#xB294; <code>&quot;strict&quot;: true</code>&#xB97C; &#xC124;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xAD6C;&#xC870;&#xC801;&#xC778;-&#xD0C0;&#xC774;&#xD551;-structural-typing">&#xAD6C;&#xC870;&#xC801;&#xC778; &#xD0C0;&#xC774;&#xD551; (Structural typing)</h2>
+<p>&#xBE44;&#xB85D; &#xD558;&#xC2A4;&#xCF08;&#xACFC; &#xB300;&#xBD80;&#xBD84;&#xC758; ML&#xC740; &#xAD6C;&#xC870;&#xC801;&#xC73C;&#xB85C; &#xD0C0;&#xC774;&#xD551;&#xD558;&#xC9C0; &#xC54A;&#xC9C0;&#xB9CC;,
+&#xAD6C;&#xC870;&#xC801; &#xD0C0;&#xC774;&#xD551;&#xC740; &#xB300;&#xBD80;&#xBD84;&#xC758; &#xD568;&#xC218;&#xD615; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBA38;&#xC5D0;&#xAC8C;&#xB294; &#xC775;&#xC219;&#xD55C; &#xAC1C;&#xB150;&#xC785;&#xB2C8;&#xB2E4;.
+&#xAE30;&#xBCF8; &#xD615;&#xD0DC;&#xB294; &#xC544;&#xC8FC; &#xAC04;&#xB2E8;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-comment">// @strict: false</span>
-<span class="cm-keyword">let</span> <span class="cm-variable">o</span> <span class="cm-operator">=</span> { <span class="cm-property">x</span>: <span class="cm-string">&quot;hi&quot;</span>, <span class="cm-property">extra</span>: <span class="cm-number">1</span> }; <span class="cm-comment">// ok</span>
-<span class="cm-keyword">let</span> <span class="cm-variable">o2</span>: { <span class="cm-variable">x</span>: <span class="cm-variable-3">string</span> } <span class="cm-operator">=</span> <span class="cm-variable">o</span>; <span class="cm-comment">// ok</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">o</span> <span class="cm-operator">=</span> { <span class="cm-property">x</span>: <span class="cm-string">&quot;hi&quot;</span>, <span class="cm-property">extra</span>: <span class="cm-number">1</span> }; <span class="cm-comment">// &#xC131;&#xACF5;</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">o2</span>: { <span class="cm-variable">x</span>: <span class="cm-variable-3">string</span> } <span class="cm-operator">=</span> <span class="cm-variable">o</span>; <span class="cm-comment">// &#xC131;&#xACF5;</span>
 </code></pre>
-<p>Here, the object literal <code>{ x: &quot;hi&quot;, extra: 1 }</code> has a matching
-literal type <code>{ x: string, extra: number }</code>. That
-type is assignable to <code>{ x: string }</code> since
-it has all the required properties and those properties have
-assignable types. The extra property doesn&apos;t prevent assignment, it
-just makes it a subtype of <code>{ x: string }</code>.</p>
-<p>Named types just give a name to a type; for assignability purposes
-there&apos;s no difference between the type alias <code>One</code> and the interface
-type <code>Two</code> below. They both have a property <code>p: string</code>. (Type aliases
-behave differently from interfaces with respect to recursive
-definitions and type parameters, however.)</p>
-<p>```ts twoslash
-// @errors: 2322
-type One = { p: string };
-interface Two {
-  p: string;
+<p>&#xC5EC;&#xAE30;&#xC11C;, &#xAC1D;&#xCCB4; &#xB9AC;&#xD130;&#xB7F4; <code>{ x: &quot;hi&quot;, extra : 1 }</code>&#xC5D0; &#xB9E4;&#xCE58;&#xB418;&#xB294;
+<code>{ x : string, extra : number }</code> &#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;
+&#xD0C0;&#xC785;&#xC740; &#xD544;&#xC218; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xAC00; &#xBAA8;&#xB450; &#xC788;&#xACE0; &#xD574;&#xB2F9; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0; &#xD560;&#xB2F9; &#xAC00;&#xB2A5;&#xD55C; &#xD0C0;&#xC785;&#xC774; &#xC788;&#xC73C;&#xBBC0;&#xB85C;
+<code>{ x : string }</code> &#xC5D0; &#xD560;&#xB2F9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB098;&#xBA38;&#xC9C0; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB294; &#xD560;&#xB2F9;&#xC744; &#xB9C9;&#xC9C0; &#xC54A;&#xACE0;, <code>{x : string}</code>&#xC758; &#xC11C;&#xBE0C;&#xD0C0;&#xC785;&#xC73C;&#xB85C;
+&#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB124;&#xC784;&#xB4DC; &#xD0C0;&#xC785;&#xB4E4;&#xC740; &#xD0C0;&#xC785;&#xC5D0;&#xC11C; &#xC774;&#xB984;&#xC744; &#xBD99;&#xC77C; &#xBFD0;&#xC785;&#xB2C8;&#xB2E4;. &#xD560;&#xB2F9;&#xC744; &#xC704;&#xD574;&#xC11C;&#xB77C;&#xBA74; &#xD0C0;&#xC785; &#xBCC4;&#xCE6D;
+ <code>One</code> &#xACFC; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4; &#xD0C0;&#xC785; <code>Two</code> &#xC0AC;&#xC774;&#xC5D0;&#xB294; &#xBCC4; &#xB2E4;&#xB978; &#xC810;&#xC774; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB458; &#xB2E4; <code>p: string</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+(&#xB2E8;, &#xD0C0;&#xC785; &#xBCC4;&#xCE6D;&#xC740; &#xC7AC;&#xADC0; &#xC815;&#xC758;&#xC640; &#xD0C0;&#xC785; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC5D0; &#xAD00;&#xB828;&#xD55C; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC5D0;&#xC11C;&#xB294; &#xB2E4;&#xB974;&#xAC8C;
+&#xB3D9;&#xC791;&#xD569;&#xB2C8;&#xB2E4;.)</p>
+<pre><code class="lang-ts"><span class="cm-comment">// @errors: 2322</span>
+<span class="cm-variable">type</span> <span class="cm-variable">One</span> <span class="cm-operator">=</span> { <span class="cm-property">p</span>: <span class="cm-variable-3">string</span> };
+<span class="cm-keyword">interface</span> <span class="cm-variable">Two</span> {
+  <span class="cm-variable">p</span>: <span class="cm-variable-3">string</span>;
 }
-class Three {
-  p = &quot;Hello&quot;;
-}</p>
-<p>let x: One = { p: &quot;hi&quot; };
-let two: Two = x;
-two = new Three();</p>
-<pre><code>
-## Unions
+<span class="cm-keyword">class</span> <span class="cm-variable">Three</span> {
+  <span class="cm-property">p</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;Hello&quot;</span>;
+}
 
-In TypeScript, union types are untagged. In other words, they are not
-discriminated unions like `data` in Haskell. However, you can often
-discriminate types in a union using built-in tags or other properties.
-
-```ts twoslash
-function start(
-  arg: string | string[] | (() =&gt; string) | { s: string }
-): string {
-  // this is super common in JavaScript
-  if (typeof arg === &quot;string&quot;) {
-    return commonCase(arg);
-  } else if (Array.isArray(arg)) {
-    return arg.map(commonCase).join(&quot;,&quot;);
-  } else if (typeof arg === &quot;function&quot;) {
-    return commonCase(arg());
-  } else {
-    return commonCase(arg.s);
+<span class="cm-keyword">let</span> <span class="cm-variable">x</span>: <span class="cm-variable-3">One</span> <span class="cm-operator">=</span> { <span class="cm-property">p</span>: <span class="cm-string">&quot;hi&quot;</span> };
+<span class="cm-keyword">let</span> <span class="cm-variable">two</span>: <span class="cm-variable-3">Two</span> <span class="cm-operator">=</span> <span class="cm-variable">x</span>;
+<span class="cm-variable">two</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Three</span>();
+</code></pre>
+<h2 id="&#xC720;&#xB2C8;&#xC5B8;-unions">&#xC720;&#xB2C8;&#xC5B8; (Unions)</h2>
+<p>TypeScript&#xC5D0;&#xC11C; &#xC720;&#xB2C8;&#xC5B8; &#xD0C0;&#xC785;&#xC740; &#xD0DC;&#xADF8;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB2E4;&#xB974;&#xAC8C; &#xB9D0;&#xD558;&#xBA74;,
+&#xD558;&#xC2A4;&#xCF08;&#xC5D0;&#xC11C; <code>data</code> &#xC640; &#xB2EC;&#xB9AC; &#xC720;&#xB2C8;&#xC5B8;&#xC740; &#xAD6C;&#xBCC4;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xADF8;&#xB7EC;&#xB098; &#xB2E4;&#xB978; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB098; &#xB0B4;&#xC7A5;&#xB41C; &#xD0DC;&#xADF8;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC720;&#xB2C8;&#xC5B8;&#xC73C;&#xB85C; &#xD0C0;&#xC785;&#xC744; &#xAD6C;&#xBCC4;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">start</span>(
+  <span class="cm-def">arg</span>: <span class="cm-variable-3">string</span> <span class="cm-operator">|</span> <span class="cm-variable-3">string</span>[] <span class="cm-operator">|</span> (() <span class="cm-operator">=&gt;</span> <span class="cm-variable-3">string</span>) <span class="cm-operator">|</span> { <span class="cm-property">s</span>: <span class="cm-variable-3">string</span> }
+): <span class="cm-variable-3">string</span> {
+  <span class="cm-comment">// JavaScript&#xC5D0;&#xC11C; &#xC544;&#xC8FC; &#xC77C;&#xBC18;&#xC801;&#xC785;&#xB2C8;&#xB2E4;</span>
+  <span class="cm-keyword">if</span> (<span class="cm-keyword">typeof</span> <span class="cm-variable">arg</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;string&quot;</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-variable">commonCase</span>(<span class="cm-variable">arg</span>);
+  } <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable">Array</span>.<span class="cm-property">isArray</span>(<span class="cm-variable">arg</span>)) {
+    <span class="cm-keyword">return</span> <span class="cm-variable">arg</span>.<span class="cm-property">map</span>(<span class="cm-variable">commonCase</span>).<span class="cm-property">join</span>(<span class="cm-string">&quot;,&quot;</span>);
+  } <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-keyword">typeof</span> <span class="cm-variable">arg</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;function&quot;</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-variable">commonCase</span>(<span class="cm-variable">arg</span>());
+  } <span class="cm-keyword">else</span> {
+    <span class="cm-keyword">return</span> <span class="cm-variable">commonCase</span>(<span class="cm-variable">arg</span>.<span class="cm-property">s</span>);
   }
 
-  function commonCase(s: string): string {
-    // finally, just convert a string to another string
-    return s;
+  <span class="cm-keyword">function</span> <span class="cm-variable">commonCase</span>(<span class="cm-def">s</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable-3">string</span> {
+    <span class="cm-comment">// &#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C;, &#xB2E4;&#xB978; &#xBB38;&#xC790;&#xC5F4;&#xB85C; &#xBCC0;&#xD658;&#xD569;&#xB2C8;&#xB2E4;</span>
+    <span class="cm-keyword">return</span> <span class="cm-variable">s</span>;
   }
 }
-</code></pre><p><code>string</code>, <code>Array</code> and <code>Function</code> have built-in type predicates,
-conveniently leaving the object type for the <code>else</code> branch. It is
-possible, however, to generate unions that are difficult to
-differentiate at runtime. For new code, it&apos;s best to build only
-discriminated unions.</p>
-<p>The following types have built-in predicates:</p>
+</code></pre>
+<p><code>string</code>, <code>Array</code> &#xC640; <code>Function</code> &#xC740;  &#xD0C0;&#xC785; &#xC870;&#xAC74;&#xC790;&#xAC00;
+&#xB0B4;&#xC7A5;&#xB418;&#xC5B4; &#xC788;&#xACE0;, <code>else</code> &#xBE0C;&#xB79C;&#xCE58;&#xB97C; &#xC704;&#xD55C; &#xAC1D;&#xCCB4; &#xD0C0;&#xC785;&#xC740; &#xD3B8;&#xC758;&#xB97C; &#xC704;&#xD574;
+&#xB0A8;&#xACA8;&#xB450;&#xB294; &#xAC8C; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xADF8;&#xB7EC;&#xB098; &#xB7F0;&#xD0C0;&#xC784;&#xC5D0; &#xAD6C;&#xBCC4;&#xD558;&#xAE30; &#xC5B4;&#xB824;&#xC6B4; &#xC720;&#xB2C8;&#xC5B8;&#xC744; &#xC0DD;&#xC131;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC0C8;&#xB85C;&#xC6B4; &#xCF54;&#xB4DC;&#xC758; &#xACBD;&#xC6B0;, &#xAD6C;&#xBCC4;&#xD558;&#xB294; &#xC720;&#xB2C8;&#xC5B8;&#xB9CC; &#xAD6C;&#xCD95;&#xD558;&#xB294; &#xAC8C; &#xAC00;&#xC7A5; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C; &#xD0C0;&#xC785;&#xB4E4;&#xC740; &#xC870;&#xAC74;&#xC790;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;:</p>
 <table>
 <thead>
 <tr>
-<th>Type</th>
-<th>Predicate</th>
+<th>&#xD0C0;&#xC785;</th>
+<th>&#xC870;&#xAC74;&#xC790;</th>
 </tr>
 </thead>
 <tbody>
@@ -1341,218 +1337,202 @@ discriminated unions.</p>
 </tr>
 </tbody>
 </table>
-<p>Note that functions and arrays are objects at runtime, but have their
-own predicates.</p>
-<h3 id="intersections">Intersections</h3>
-<p>In addition to unions, TypeScript also has intersections:</p>
-<p>```ts twoslash
-type Combined = { a: number } &amp; { b: string };
-type Conflicting = { a: number } &amp; { a: string };</p>
-<pre><code>
-`Combined` has two properties, `a` and `b`, just as if they had been
-written as one object literal type. Intersection and union are
-recursive in case of conflicts, so `Conflicting.a: number &amp; string`.
-
-## Unit types
-
-Unit types are subtypes of primitive types that contain exactly one
-primitive value. For example, the string `&quot;foo&quot;` has the type
-`&quot;foo&quot;`. Since JavaScript has no built-in enums, it is common to use a set of
-well-known strings instead. Unions of string literal types allow
-TypeScript to type this pattern:
-
-```ts twoslash
-declare function pad(s: string, n: number, direction: &quot;left&quot; | &quot;right&quot;): string;
-pad(&quot;hi&quot;, 10, &quot;left&quot;);
-</code></pre><p>When needed, the compiler <em>widens</em> &#x2014; converts to a
-supertype &#x2014; the unit type to the primitive type, such as <code>&quot;foo&quot;</code>
-to <code>string</code>. This happens when using mutability, which can hamper some
-uses of mutable variables:</p>
-<p>```ts twoslash
-// @errors: 2345
-declare function pad(s: string, n: number, direction: &quot;left&quot; | &quot;right&quot;): string;
-// ---cut---
-let s = &quot;right&quot;;
-pad(&quot;hi&quot;, 10, s); // error: &apos;string&apos; is not assignable to &apos;&quot;left&quot; | &quot;right&quot;&apos;</p>
-<pre><code>
-Here&apos;s how the error happens:
-
-*-* `&quot;right&quot;: &quot;right&quot;`
-*-* `s: string` because `&quot;right&quot;` widens to `string` on assignment to a mutable variable.
-*-* `string` is not assignable to `&quot;left&quot; | &quot;right&quot;`
-
-You can work around this with a type annotation for `s`, but that
-in turn prevents assignments to `s` of variables that are not of type
-`&quot;left&quot; | &quot;right&quot;`.
-
-```ts twoslash
-declare function pad(s: string, n: number, direction: &quot;left&quot; | &quot;right&quot;): string;
-// ---cut---
-let s: &quot;left&quot; | &quot;right&quot; = &quot;right&quot;;
-pad(&quot;hi&quot;, 10, s);
-</code></pre><h1 id="concepts-similar-to-haskell">Concepts similar to Haskell</h1>
-<h2 id="contextual-typing">Contextual typing</h2>
-<p>TypeScript has some obvious places where it can infer types, like
-variable declarations:</p>
-<p>```ts twoslash
-let s = &quot;I&apos;m a string!&quot;;</p>
-<pre><code>
-But it also infers types in a few other places that you may not expect
-if you&apos;ve worked with other C-syntax languages:
-
-```ts twoslash
-declare function map&lt;T, U&gt;(f: (t: T) =&gt; U, ts: T[]): U[];
-let sns = map((n) =&gt; n.toString(), [1, 2, 3]);
-</code></pre><p>Here, <code>n: number</code> in this example also, despite the fact that <code>T</code> and <code>U</code>
-have not been inferred before the call. In fact, after <code>[1,2,3]</code> has
-been used to infer <code>T=number</code>, the return type of <code>n =&gt; n.toString()</code>
-is used to infer <code>U=string</code>, causing <code>sns</code> to have the type
-<code>string[]</code>.</p>
-<p>Note that inference will work in any order, but intellisense will only
-work left-to-right, so TypeScript prefers to declare <code>map</code> with the
-array first:</p>
-<p>```ts twoslash
-declare function map<t, u="">(ts: T[], f: (t: T) =&gt; U): U[];</t,></p>
-<pre><code>
-Contextual typing also works recursively through object literals, and
-on unit types that would otherwise be inferred as `string` or
-`number`. And it can infer return types from context:
-
-```ts twoslash
-declare function run&lt;T&gt;(thunk: (t: T) =&gt; void): T;
-let i: { inference: string } = run((o) =&gt; {
-  o.inference = &quot;INSERT STATE HERE&quot;;
+<p>&#xD568;&#xC218;&#xC640; &#xBC30;&#xC5F4;&#xC740; &#xB7F0;&#xD0C0;&#xC784;&#xC5D0;&#xC11C; &#xAC1D;&#xCCB4;&#xC774;&#xC9C0;&#xB9CC; &#xACE0;&#xC720;&#xC758; &#xC870;&#xAC74;&#xC790;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;&#xB294; &#xAC78;
+&#xAE30;&#xB85D;&#xD569;&#xC2DC;&#xB2E4;.</p>
+<h3 id="&#xAD50;&#xC9D1;&#xD569;">&#xAD50;&#xC9D1;&#xD569;</h3>
+<p>&#xC720;&#xB2C8;&#xC5B8;&#xACFC; &#xB354;&#xBD88;&#xC5B4; TypeScript&#xC740; &#xAD50;&#xC9D1;&#xD569;&#xAE4C;&#xC9C0; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Combined</span> <span class="cm-operator">=</span> { <span class="cm-property">a</span>: <span class="cm-variable-3">number</span> } <span class="cm-operator">&amp;</span> { <span class="cm-property">b</span>: <span class="cm-variable-3">string</span> };
+<span class="cm-variable">type</span> <span class="cm-variable">Conflicting</span> <span class="cm-operator">=</span> { <span class="cm-property">a</span>: <span class="cm-variable-3">number</span> } <span class="cm-operator">&amp;</span> { <span class="cm-property">a</span>: <span class="cm-variable-3">string</span> };
+</code></pre>
+<p><code>Combined</code> &#xC740; &#xB9C8;&#xCE58; &#xD558;&#xB098;&#xC758; &#xAC1D;&#xCCB4; &#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xC791;&#xC131;&#xB41C; &#xAC83; &#xCC98;&#xB7FC;
+<code>a</code> &#xC640; <code>b</code> &#xB450; &#xAC1C;&#xC758; &#xC18D;&#xC131;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xAD50;&#xC9D1;&#xD569;&#xACFC; &#xC720;&#xB2C8;&#xC5B8;&#xC740; &#xC7AC;&#xADC0;&#xC801;&#xC778;
+&#xCF00;&#xC774;&#xC2A4;&#xC5D0;&#xC11C; &#xCDA9;&#xB3CC;&#xC744; &#xC77C;&#xC73C;&#xCF1C;&#xC11C; <code>Conflicting.a: number &amp; string</code> &#xC785;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xC720;&#xB2C8;&#xC5B8;-&#xD0C0;&#xC785;-unit-types">&#xC720;&#xB2C8;&#xC5B8; &#xD0C0;&#xC785; (Unit types)</h2>
+<p>&#xC720;&#xB2C8;&#xC5B8; &#xD0C0;&#xC785;&#xC740; &#xC815;&#xD655;&#xD788; &#xD558;&#xB098;&#xC758; &#xC6D0;&#xC2DC; &#xAC12;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC788;&#xB294; &#xC6D0;&#xC2DC; &#xD0C0;&#xC785;&#xC758; &#xC11C;&#xBE0C;&#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xBA74;, &#xBB38;&#xC790;&#xC5F4; <code>&quot;foo&quot;</code> &#xB294; &#xD0C0;&#xC785; <code>&quot;foo&quot;</code>&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+JavaScript&#xB294; &#xB0B4;&#xC7A5;&#xB41C; enum&#xC774; &#xC5C6;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC798; &#xC54C;&#xB824;&#xC9C4; &#xBB38;&#xC790;&#xC5F4; &#xC138;&#xD2B8;&#xB97C;
+&#xB300;&#xC2E0;&#xD574;&#xC11C; &#xC4F0;&#xB294;&#xAC8C; &#xD754;&#xD569;&#xB2C8;&#xB2E4;.
+&#xBB38;&#xC790;&#xC5F4; &#xB9AC;&#xD130;&#xB7F4; &#xD0C0;&#xC785; &#xC720;&#xB2C8;&#xC5B8;&#xC740; TypeScript&#xC5D0;&#xC11C; &#xC774; &#xD328;&#xD134;&#xC744; &#xB530;&#xB77C;&#xAC11;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">pad</span>(<span class="cm-def">s</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">n</span>: <span class="cm-variable-3">number</span>, <span class="cm-def">direction</span>: <span class="cm-string">&quot;left&quot;</span> <span class="cm-operator">|</span> <span class="cm-string">&quot;right&quot;</span>): <span class="cm-variable-3">string</span>;
+<span class="cm-variable">pad</span>(<span class="cm-string">&quot;hi&quot;</span>, <span class="cm-number">10</span>, <span class="cm-string">&quot;left&quot;</span>);
+</code></pre>
+<p>&#xD544;&#xC694;&#xD55C; &#xACBD;&#xC6B0;&#xC5D0; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB85C; &#xD655;&#xC7A5;&#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;_ &#x2014; &#xC0C1;&#xC704; &#xD0C0;&#xC785;&#xC73C;&#xB85C;
+&#xBCC0;&#xD658;&#xD569;&#xB2C8;&#xB2E4; &#x2014; &#xC6D0;&#xC2DC; &#xD0C0;&#xC785;&#xC5D0;&#xC11C; &#xC720;&#xB2DB; &#xD0C0;&#xC785;&#xC73C;&#xB85C;, <code>string</code>&#xC5D0;&#xC11C; <code>&quot;foo&quot;</code>&#xC73C;&#xB85C;
+&#xC218;&#xC815;&#xAC00;&#xB2A5;&#xD560; &#xB54C; &#xC77C;&#xC5B4;&#xB098;&#xBA70;, &#xC218;&#xC815;&#xAC00;&#xB2A5;&#xD55C; &#xBCC0;&#xC218;&#xB97C; &#xC77C;&#xBD80; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; &#xC81C;&#xB300;&#xB85C;
+&#xB3D9;&#xC791;&#xD558;&#xC9C0; &#xC54A;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-comment">// @errors: 2345</span>
+<span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">pad</span>(<span class="cm-def">s</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">n</span>: <span class="cm-variable-3">number</span>, <span class="cm-def">direction</span>: <span class="cm-string">&quot;left&quot;</span> <span class="cm-operator">|</span> <span class="cm-string">&quot;right&quot;</span>): <span class="cm-variable-3">string</span>;
+<span class="cm-comment">// ---cut---</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">s</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;right&quot;</span>;
+<span class="cm-variable">pad</span>(<span class="cm-string">&quot;hi&quot;</span>, <span class="cm-number">10</span>, <span class="cm-variable">s</span>); <span class="cm-comment">// &#xC624;&#xB958;: &apos;string&apos;&#xC740; &apos;&quot;left&quot; | &quot;right&quot;&apos;&#xC5D0; &#xD560;&#xB2F9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+</code></pre>
+<p>&#xC774;&#xB7F0; &#xC5D0;&#xB7EC;&#xAC00; &#xB098;&#xD0C0;&#xB0A0; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<p><em>-</em> <code>&quot;right&quot;: &quot;right&quot;</code>
+<em>-</em> <code>s: string</code> &#xC740; <code>&quot;right&quot;</code> &#xAC00; &#xC218;&#xC815;&#xAC00;&#xB2A5;&#xD55C; &#xBCC0;&#xC218;&#xC5D0; &#xD560;&#xB2F9;&#xB420; &#xB54C; <code>string</code> &#xC73C;&#xB85C; &#xD655;&#xC7A5;&#xC774; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.
+<em>-</em> <code>string</code> &#xC740; <code>&quot;left&quot; | &quot;right&quot;</code>&#xC5D0; &#xD560;&#xB2F9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>s</code>&#xC5D0; &#xD0C0;&#xC785; &#xD45C;&#xAE30;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD574;&#xACB0; &#xAC00;&#xB2A5;&#xD558;&#xC9C0;&#xB9CC;,
+&#xADF8; &#xACB0;&#xACFC; <code>&quot;left&quot; | &quot;right&quot;</code> &#xD0C0;&#xC785;&#xC774; &#xC544;&#xB2CC; &#xBCC0;&#xC218;&#xAC00;
+<code>s</code>&#xC5D0; &#xD560;&#xB2F9;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBC29;&#xC9C0;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">pad</span>(<span class="cm-def">s</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">n</span>: <span class="cm-variable-3">number</span>, <span class="cm-def">direction</span>: <span class="cm-string">&quot;left&quot;</span> <span class="cm-operator">|</span> <span class="cm-string">&quot;right&quot;</span>): <span class="cm-variable-3">string</span>;
+<span class="cm-comment">// ---cut---</span>
+<span class="cm-keyword">let</span> <span class="cm-variable">s</span>: <span class="cm-string">&quot;left&quot;</span> <span class="cm-operator">|</span> <span class="cm-string">&quot;right&quot;</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;right&quot;</span>;
+<span class="cm-variable">pad</span>(<span class="cm-string">&quot;hi&quot;</span>, <span class="cm-number">10</span>, <span class="cm-variable">s</span>);
+</code></pre>
+<h1 id="haskell&#xACFC;-&#xBE44;&#xC2B7;&#xD55C;-&#xAC1C;&#xB150;-concepts-similar-to-haskell">Haskell&#xACFC; &#xBE44;&#xC2B7;&#xD55C; &#xAC1C;&#xB150; (Concepts similar to Haskell)</h1>
+<h2 id="&#xBB38;&#xB9E5;&#xC801;&#xC778;-&#xD0C0;&#xC774;&#xD551;-contextual-typing">&#xBB38;&#xB9E5;&#xC801;&#xC778; &#xD0C0;&#xC774;&#xD551; (Contextual typing)</h2>
+<p>TypeScript&#xB294; &#xBCC0;&#xC218; &#xC120;&#xC5B8;&#xACFC; &#xAC19;&#xC774; &#xD0C0;&#xC785;&#xC744; &#xCD94;&#xB860;&#xD560; &#xC218; &#xC788;&#xB294;
+&#xBA87; &#xAC00;&#xC9C0; &#xBD84;&#xBA85;&#xD55C; &#xBC29;&#xBC95;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">s</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;I&apos;m a string!&quot;</span>;
+</code></pre>
+<p>&#xD558;&#xC9C0;&#xB9CC; &#xB2E4;&#xB978; C-&#xACC4;&#xC5F4; &#xC5B8;&#xC5B4;&#xB85C; &#xC791;&#xC5C5;&#xD55C; &#xC801;&#xC774; &#xC788;&#xB2E4;&#xBA74; &#xC608;&#xC0C1;&#xD558;&#xC9C0; &#xBABB;&#xD588;&#xB358;
+&#xB2E4;&#xB978; &#xBC29;&#xBC95;&#xC73C;&#xB85C; &#xD0C0;&#xC785; &#xCD94;&#xB860;&#xC774; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">map</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span>, <span class="cm-variable">U</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">f</span>: (<span class="cm-variable">t</span>: <span class="cm-variable">T</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">U</span>, <span class="cm-variable">ts</span>: <span class="cm-variable">T</span>[]): <span class="cm-variable">U</span>[];
+<span class="cm-keyword">let</span> <span class="cm-variable">sns</span> <span class="cm-operator">=</span> <span class="cm-variable">map</span>((<span class="cm-def">n</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable-2">n</span>.<span class="cm-property">toString</span>(), [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>]);
+</code></pre>
+<p>&#xC5EC;&#xAE30;&#xC5D0;&#xC11C;, &#xC774; &#xC608;&#xC2DC;&#xC758; <code>n: number</code>&#xC5D0;&#xC11C; &#xB610;&#xD55C;, <code>T</code> &#xACFC; <code>U</code>&#xB294; &#xD638;&#xCD9C; &#xC804;&#xC5D0;
+&#xCD94;&#xB860;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xC74C;&#xC5D0;&#xB3C4; &#xBD88;&#xAD6C;&#xD558;&#xACE0;.
+&#xC2E4;&#xC81C;&#xB85C; <code>[1,2,3]</code> &#xC73C;&#xB85C; <code>T=number</code>&#xC744; &#xCD94;&#xB860;&#xD55C; &#xB2E4;&#xC74C;&#xC5D0;,
+<code>n =&gt; n.toString()</code>&#xC758; &#xB9AC;&#xD134; &#xD0C0;&#xC785;&#xC73C;&#xB85C; <code>U=string</code>&#xC744; &#xCD94;&#xB860;&#xD558;&#xC5EC;,
+<code>sns</code>&#xAC00; <code>string[]</code> &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C0;&#xB3C4;&#xB85D; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xCD94;&#xB860;&#xC740; &#xC5B4;&#xB5A4; &#xC21C;&#xC11C;&#xB85C;&#xB4E0; &#xC791;&#xB3D9;&#xD558;&#xC9C0;&#xB9CC;, intellisense&#xB294; &#xC67C;&#xCABD;&#xC5D0;&#xC11C; &#xC624;&#xB978;&#xCABD;&#xC73C;&#xB85C;&#xB9CC;
+&#xC791;&#xB3D9;&#xD558;&#xBBC0;&#xB85C;, TypeScript&#xB294; &#xBC30;&#xC5F4;&#xACFC; &#xD568;&#xAED8; <code>map</code>&#xC744; &#xBA3C;&#xC800; &#xC120;&#xC5B8;&#xD558;&#xB294; &#xAC83;&#xC744;
+&#xC120;&#xD638;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">map</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span>, <span class="cm-variable">U</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">ts</span>: <span class="cm-variable">T</span>[], <span class="cm-variable">f</span>: (<span class="cm-variable">t</span>: <span class="cm-variable">T</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">U</span>): <span class="cm-variable">U</span>[];
+</code></pre>
+<p>&#xBB38;&#xB9E5;&#xC801;&#xC778; &#xD0C0;&#xC774;&#xD551;&#xC740; &#xB610;&#xD55C; &#xAC1D;&#xCCB4; &#xB9AC;&#xD130;&#xB7F4;&#xC744; &#xD1B5;&#xD574; &#xC7AC;&#xADC0;&#xC801;&#xC73C;&#xB85C; &#xC791;&#xB3D9;&#xD558;&#xBA70;, &#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xC73C;&#xBA74;
+<code>string</code>&#xC774;&#xB098; <code>number</code>&#xB85C; &#xCD94;&#xB860; &#xAC00;&#xB2A5;&#xD55C; &#xC720;&#xB2DB; &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;.
+&#xADF8;&#xB9AC;&#xACE0; &#xBB38;&#xB9E5;&#xC744; &#xD1B5;&#xD574;&#xC11C; &#xB9AC;&#xD134; &#xD0C0;&#xC785;&#xC744; &#xCD94;&#xB860;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">declare</span> <span class="cm-keyword">function</span> <span class="cm-variable">run</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">thunk</span>: (<span class="cm-variable">t</span>: <span class="cm-variable">T</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">void</span>): <span class="cm-variable">T</span>;
+<span class="cm-keyword">let</span> <span class="cm-variable">i</span>: { <span class="cm-variable">inference</span>: <span class="cm-variable-3">string</span> } <span class="cm-operator">=</span> <span class="cm-variable">run</span>((<span class="cm-def">o</span>) <span class="cm-operator">=&gt;</span> {
+  <span class="cm-variable-2">o</span>.<span class="cm-property">inference</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;INSERT STATE HERE&quot;</span>;
 });
-</code></pre><p>The type of <code>o</code> is determined to be <code>{ inference: string }</code> because</p>
+</code></pre>
+<p><code>o</code> &#xC758; &#xD0C0;&#xC785;&#xC740; <code>{ inference: string }</code> &#xC73C;&#xB85C; &#xACB0;&#xC815;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC65C;&#xB0D0;&#xD558;&#xBA74;</p>
 <ol>
-<li>Declaration initialisers are contextually typed by the
-declaration&apos;s type: <code>{ inference: string }</code>.</li>
-<li>The return type of a call uses the contextual type for inferences,
-so the compiler infers that <code>T={ inference: string }</code>.</li>
-<li>Arrow functions use the contextual type to type their parameters,
-so the compiler gives <code>o: { inference: string }</code>.</li>
+<li>&#xC120;&#xC5B8; &#xC774;&#xB2C8;&#xC15C;&#xB77C;&#xC774;&#xC800;&#xB294; &#xC120;&#xC5B8; &#xD0C0;&#xC785;: <code>{ inference: string }</code>&#xC5D0; &#xB530;&#xB77C;&#xC11C;
+&#xBB38;&#xB9E5;&#xC801;&#xC73C;&#xB85C; &#xD0C0;&#xC785;&#xC774; &#xC815;&#xD574;&#xC9D1;&#xB2C8;&#xB2E4;.</li>
+<li>&#xD638;&#xCD9C;&#xC758; &#xB9AC;&#xD134; &#xD0C0;&#xC785;&#xC740; &#xCD94;&#xB860;&#xC744; &#xC704;&#xD574; &#xBB38;&#xB9E5;&#xC801;&#xC778; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;,
+&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; <code>T={ inference: string }</code>&#xC73C;&#xB85C; &#xCD94;&#xB860;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>&#xD654;&#xC0B4;&#xD45C; &#xD568;&#xC218;&#xB294; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC5D0; &#xD0C0;&#xC785;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xAE30; &#xC704;&#xD574; &#xBB38;&#xB9E5;&#xC801;&#xC778; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBBC0;&#xB85C;,
+&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; <code>o: { inference: string }</code>&#xB97C; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.</li>
 </ol>
-<p>And it does so while you are typing, so that after typing <code>o.</code>, you
-get completions for the property <code>inference</code>, along with any other
-properties you&apos;d have in a real program.
-Altogether, this feature can make TypeScript&apos;s inference look a bit
-like a unifying type inference engine, but it is not.</p>
-<h2 id="type-aliases">Type aliases</h2>
-<p>Type aliases are mere aliases, just like <code>type</code> in Haskell. The
-compiler will attempt to use the alias name wherever it was used in
-the source code, but does not always succeed.</p>
-<p>```ts twoslash
-type Size = [number, number];
-let x: Size = [101.1, 999.9];</p>
-<pre><code>
-The closest equivalent to `newtype` is a _tagged intersection_:
-
-```ts
-type FString = string &amp; { __compileTimeOnly: any };
-</code></pre><p>An <code>FString</code> is just like a normal string, except that the compiler
-thinks it has a property named <code>__compileTimeOnly</code> that doesn&apos;t
-actually exist. This means that <code>FString</code> can still be assigned to
-<code>string</code>, but not the other way round.</p>
-<h2 id="discriminated-unions">Discriminated Unions</h2>
-<p>The closest equivalent to <code>data</code> is a union of types with discriminant
-properties, normally called discriminated unions in TypeScript:</p>
+<p>&#xC785;&#xB825;&#xD558;&#xB294; &#xB3D9;&#xC548;, <code>o.</code> &#xB97C; &#xD0C0;&#xC774;&#xD551; &#xD6C4;&#xC5D0;,
+&#xC2E4;&#xC81C; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC5D0; &#xC788;&#xB294; &#xB2E4;&#xB978; &#xC18D;&#xC131;&#xACFC; &#xD568;&#xAED8; &#xC18D;&#xC131; <code>inference</code> &#xC73C;&#xB85C;
+&#xBCF4;&#xC644;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774; &#xAE30;&#xB2A5;&#xC740; TypeScript&#xC758; &#xCD94;&#xB860;&#xC744; &#xD1B5;&#xD574; &#xD1B5;&#xD569;&#xC801;&#xC778; &#xD0C0;&#xC785; &#xCD94;&#xB860; &#xC5D4;&#xC9C4;&#xCC98;&#xB7FC;
+&#xBCF4;&#xC774;&#xACA0;&#xC9C0;&#xB9CC;, &#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xD0C0;&#xC785;-&#xBCC4;&#xCE6D;-type-aliases">&#xD0C0;&#xC785; &#xBCC4;&#xCE6D; (Type aliases)</h2>
+<p>&#xD0C0;&#xC785; &#xBCC4;&#xCE6D;&#xC740; Haskell&#xC758; <code>type</code>&#xACFC; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xB2E8;&#xC21C;&#xD55C; &#xBCC4;&#xCE6D;&#xC785;&#xB2C8;&#xB2E4;.
+&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB41C; &#xBCC4;&#xCE6D; &#xC774;&#xB984;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xACE0;
+&#xC2DC;&#xB3C4;&#xD558;&#xC9C0;&#xB9CC; &#xD56D;&#xC0C1; &#xC131;&#xACF5;&#xD558;&#xC9C0;&#xB294; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Size</span> <span class="cm-operator">=</span> [<span class="cm-variable-3">number</span>, <span class="cm-variable-3">number</span>];
+<span class="cm-keyword">let</span> <span class="cm-variable">x</span>: <span class="cm-variable-3">Size</span> <span class="cm-operator">=</span> [<span class="cm-number">101.1</span>, <span class="cm-number">999.9</span>];
+</code></pre>
+<p><code>newtype</code>&#xACFC; &#xAC00;&#xC7A5; &#xC720;&#xC0AC;&#xD55C; &#xAC83;&#xC740; <em>&#xD0DC;&#xADF8;&#xB41C; &#xAD50;&#xCC28; &#xD0C0;&#xC785;(tagged intersection)</em> &#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">FString</span> <span class="cm-operator">=</span> <span class="cm-variable-3">string</span> <span class="cm-operator">&amp;</span> { <span class="cm-property">__compileTimeOnly</span>: <span class="cm-variable-3">any</span> };
+</code></pre>
+<p><code>FString</code>&#xC740; &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xAC00; &#xC2E4;&#xC81C;&#xB85C;&#xB294; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xB294; <code>__compileTimeOnly</code>&#xB77C;&#xB294;
+&#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;&#xACE0; &#xC0DD;&#xAC01;&#xD558;&#xB294; &#xC810;&#xC744; &#xC81C;&#xC678;&#xD558;&#xBA74; &#xC77C;&#xBC18; &#xBB38;&#xC790;&#xC5F4;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.
+<code>FString</code>&#xC740; &#xC5EC;&#xC804;&#xD788; <code>string</code>&#xC5D0; &#xD560;&#xB2F9; &#xAC00;&#xB2A5;&#xD558;&#xC9C0;&#xB9CC;,
+&#xADF8; &#xBC18;&#xB300;&#xB294; &#xBD88;&#xAC00;&#xB2A5;&#xD558;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xD310;&#xBCC4;-&#xC720;&#xB2C8;&#xC5B8;-discriminated-unions">&#xD310;&#xBCC4; &#xC720;&#xB2C8;&#xC5B8; (Discriminated Unions)</h2>
+<p><code>data</code>&#xC640; &#xAC00;&#xC7A5; &#xC720;&#xC0AC;&#xD55C; &#xAC83;&#xC740; &#xBCF4;&#xD1B5; TypeScript&#xC5D0;&#xC11C; &#xD310;&#xBCC4; &#xC720;&#xB2C8;&#xC5B8;&#xC774;&#xB77C; &#xBD88;&#xB9AC;&#xB294;,
+ &#xD310;&#xBCC4; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xAC16;&#xB294; &#xD0C0;&#xC785;&#xC758; &#xC720;&#xB2C8;&#xC5B8;&#xC785;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Shape</span> <span class="cm-operator">=</span>
   <span class="cm-operator">|</span> { <span class="cm-property">kind</span>: <span class="cm-string">&quot;circle&quot;</span>; <span class="cm-variable">radius</span>: <span class="cm-variable-3">number</span> }
   <span class="cm-operator">|</span> { <span class="cm-property">kind</span>: <span class="cm-string">&quot;square&quot;</span>; <span class="cm-variable">x</span>: <span class="cm-variable-3">number</span> }
   <span class="cm-operator">|</span> { <span class="cm-property">kind</span>: <span class="cm-string">&quot;triangle&quot;</span>; <span class="cm-variable">x</span>: <span class="cm-variable-3">number</span>; <span class="cm-variable">y</span>: <span class="cm-variable-3">number</span> };
 </code></pre>
-<p>Unlike Haskell, the tag, or discriminant, is just a property in each
-object type. Each variant has an identical property with a different
-unit type. This is still a normal union type; the leading <code>|</code> is
-an optional part of the union type syntax. You can discriminate the
-members of the union using normal JavaScript code:</p>
-<p>```ts twoslash
-type Shape =
-  | { kind: &quot;circle&quot;; radius: number }
-  | { kind: &quot;square&quot;; x: number }
-  | { kind: &quot;triangle&quot;; x: number; y: number };</p>
-<p>function area(s: Shape) {
-  if (s.kind === &quot;circle&quot;) {
-    return Math.PI <em> s.radius </em> s.radius;
-  } else if (s.kind === &quot;square&quot;) {
-    return s.x <em> s.x;
-  } else {
-    return (s.x </em> s.y) / 2;
-  }
-}</p>
-<pre><code>
-Note that the return type of `area` is inferred to be `number` because
-TypeScript knows the function is total. If some variant is not
-covered, the return type of `area` will be `number | undefined` instead.
+<p>&#xD558;&#xC2A4;&#xCF08;&#xACFC; &#xB2EC;&#xB9AC;, &#xD0DC;&#xADF8; &#xB610;&#xB294; &#xD310;&#xBCC4;&#xC740; &#xAC01;&#xAC01; &#xAC1D;&#xCCB4; &#xD0C0;&#xC785;&#xC5D0;&#xC11C; &#xB2E8;&#xC9C0; &#xC18D;&#xC131;&#xC5D0; &#xBD88;&#xAD6C;&#xD569;&#xB2C8;&#xB2E4;.
+&#xD2B9;&#xC774; &#xCF00;&#xC774;&#xC2A4;&#xB294; &#xB2E4;&#xB978; &#xC720;&#xB2DB; &#xD0C0;&#xC785;&#xACFC; &#xD568;&#xAED8; &#xB3D9;&#xC77C;&#xD55C; &#xC18D;&#xC131;&#xC744; &#xAC00;&#xC9D1;&#xB2C8;&#xB2E4;.
+&#xC544;&#xC9C1; &#xD3C9;&#xBC94;&#xD55C; &#xC720;&#xB2C8;&#xC5B8;&#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;; &#xB9AC;&#xB4DC;&#xD558;&#xB294; <code>|</code> &#xB294;
+&#xC720;&#xB2C8;&#xC5B8; &#xD0C0;&#xC785; &#xAD6C;&#xBB38;&#xC758; &#xC120;&#xD0DD;&#xC801;&#xC778; &#xBD80;&#xBD84;&#xC785;&#xB2C8;&#xB2E4;. &#xC720;&#xB2C8;&#xC5B8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xD3C9;&#xBC94;&#xD55C; JavaScript
+&#xCF54;&#xB4DC;&#xB85C; &#xAD6C;&#xBCC4;&#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Shape</span> <span class="cm-operator">=</span>
+  <span class="cm-operator">|</span> { <span class="cm-property">kind</span>: <span class="cm-string">&quot;circle&quot;</span>; <span class="cm-variable">radius</span>: <span class="cm-variable-3">number</span> }
+  <span class="cm-operator">|</span> { <span class="cm-property">kind</span>: <span class="cm-string">&quot;square&quot;</span>; <span class="cm-variable">x</span>: <span class="cm-variable-3">number</span> }
+  <span class="cm-operator">|</span> { <span class="cm-property">kind</span>: <span class="cm-string">&quot;triangle&quot;</span>; <span class="cm-variable">x</span>: <span class="cm-variable-3">number</span>; <span class="cm-variable">y</span>: <span class="cm-variable-3">number</span> };
 
-Also, unlike Haskell, common properties show up in any union, so you
-can usefully discriminate multiple members of the union:
-
-```ts twoslash
-type Shape =
-  | { kind: &quot;circle&quot;; radius: number }
-  | { kind: &quot;square&quot;; x: number }
-  | { kind: &quot;triangle&quot;; x: number; y: number };
-// ---cut---
-function height(s: Shape) {
-  if (s.kind === &quot;circle&quot;) {
-    return 2 * s.radius;
-  } else {
-    // s.kind: &quot;square&quot; | &quot;triangle&quot;
-    return s.x;
+<span class="cm-keyword">function</span> <span class="cm-variable">area</span>(<span class="cm-def">s</span>: <span class="cm-variable-3">Shape</span>) {
+  <span class="cm-keyword">if</span> (<span class="cm-variable-2">s</span>.<span class="cm-property">kind</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;circle&quot;</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-variable">Math</span>.<span class="cm-property">PI</span> <span class="cm-operator">*</span> <span class="cm-variable-2">s</span>.<span class="cm-property">radius</span> <span class="cm-operator">*</span> <span class="cm-variable-2">s</span>.<span class="cm-property">radius</span>;
+  } <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable-2">s</span>.<span class="cm-property">kind</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;square&quot;</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-variable-2">s</span>.<span class="cm-property">x</span> <span class="cm-operator">*</span> <span class="cm-variable-2">s</span>.<span class="cm-property">x</span>;
+  } <span class="cm-keyword">else</span> {
+    <span class="cm-keyword">return</span> (<span class="cm-variable-2">s</span>.<span class="cm-property">x</span> <span class="cm-operator">*</span> <span class="cm-variable-2">s</span>.<span class="cm-property">y</span>) <span class="cm-operator">/</span> <span class="cm-number">2</span>;
   }
 }
-</code></pre><h2 id="type-parameters">Type Parameters</h2>
-<p>Like most C-descended languages, TypeScript requires declaration of
-type parameters:</p>
+</code></pre>
+<p><code>area</code> &#xC758; &#xB9AC;&#xD134; &#xD0C0;&#xC785;&#xC740; <code>number</code> &#xB97C; &#xB098;&#xD0C0;&#xB0B4;&#xB294;&#xB370;, TypeScript&#xAC00; &#xD568;&#xC218;&#xAC00; &#xC804;&#xCCB4;&#xB77C;&#xB294;
+&#xAC78; &#xC54C;&#xACE0; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC720;&#xC758;&#xD574;&#xC57C;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBA87;&#xBA87; &#xD2B9;&#xC774; &#xCF00;&#xC774;&#xC2A4;&#xAC00; &#xCEE4;&#xBC84;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBA74;
+<code>area</code> &#xC758; &#xB9AC;&#xD134; &#xD0C0;&#xC785;&#xC740; <code>number | undefined</code> &#xC73C;&#xB85C; &#xB300;&#xC2E0;&#xB420; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB610;&#xD55C;, &#xD558;&#xC2A4;&#xCF08;&#xACFC; &#xB2EC;&#xB9AC; &#xD754;&#xD55C; &#xC18D;&#xC131;&#xB4E4;&#xC740; &#xC5B4;&#xB5A4; &#xC720;&#xB2C8;&#xC5B8;&#xC5D0;&#xB3C4; &#xB098;&#xD0C0;&#xB098;&#xBA70;,
+&#xADF8;&#xB798;&#xC11C; &#xC720;&#xC6A9;&#xD558;&#xAC8C; &#xC5EC;&#xB7EC; &#xAC1C;&#xC758; &#xC720;&#xB2C8;&#xC5B8; &#xAD6C;&#xBD84;&#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Shape</span> <span class="cm-operator">=</span>
+  <span class="cm-operator">|</span> { <span class="cm-property">kind</span>: <span class="cm-string">&quot;circle&quot;</span>; <span class="cm-variable">radius</span>: <span class="cm-variable-3">number</span> }
+  <span class="cm-operator">|</span> { <span class="cm-property">kind</span>: <span class="cm-string">&quot;square&quot;</span>; <span class="cm-variable">x</span>: <span class="cm-variable-3">number</span> }
+  <span class="cm-operator">|</span> { <span class="cm-property">kind</span>: <span class="cm-string">&quot;triangle&quot;</span>; <span class="cm-variable">x</span>: <span class="cm-variable-3">number</span>; <span class="cm-variable">y</span>: <span class="cm-variable-3">number</span> };
+<span class="cm-comment">// ---cut---</span>
+<span class="cm-keyword">function</span> <span class="cm-variable">height</span>(<span class="cm-def">s</span>: <span class="cm-variable-3">Shape</span>) {
+  <span class="cm-keyword">if</span> (<span class="cm-variable-2">s</span>.<span class="cm-property">kind</span> <span class="cm-operator">===</span> <span class="cm-string">&quot;circle&quot;</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-number">2</span> <span class="cm-operator">*</span> <span class="cm-variable-2">s</span>.<span class="cm-property">radius</span>;
+  } <span class="cm-keyword">else</span> {
+    <span class="cm-comment">// s.kind: &quot;square&quot; | &quot;triangle&quot;</span>
+    <span class="cm-keyword">return</span> <span class="cm-variable-2">s</span>.<span class="cm-property">x</span>;
+  }
+}
+</code></pre>
+<h2 id="&#xD0C0;&#xC785;-&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;-type-parameters">&#xD0C0;&#xC785; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; (Type Parameters)</h2>
+<p>&#xB300;&#xBD80;&#xBD84;&#xC758; C-&#xACC4;&#xC5F4; &#xC5B8;&#xC5B4;&#xCC98;&#xB7FC;, TypeScript&#xB294; &#xD0C0;&#xC785; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC758; &#xC120;&#xC5B8;&#xC744;
+&#xC694;&#xAD6C;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">liftArray</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">t</span>: <span class="cm-variable">T</span>): <span class="cm-variable">Array</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span><span class="cm-operator">&gt;</span> {
   <span class="cm-keyword">return</span> [<span class="cm-variable">t</span>];
 }
 </code></pre>
-<p>There is no case requirement, but type parameters are conventionally
-single uppercase letters. Type parameters can also be constrained to a
-type, which behaves a bit like type class constraints:</p>
+<p>&#xB300;&#xC18C;&#xBB38;&#xC790;&#xC5D0; &#xB300;&#xD55C; &#xC694;&#xAD6C; &#xC870;&#xAC74;&#xC740; &#xC5C6;&#xC9C0;&#xB9CC;, &#xD0C0;&#xC785; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xB294; &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xB2E8;&#xC77C; &#xB300;&#xBB38;&#xC790;&#xC785;&#xB2C8;&#xB2E4;.
+&#xD0C0;&#xC785; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xB294; &#xD0C0;&#xC785; &#xD074;&#xB798;&#xC2A4; &#xC81C;&#xC57D;&#xACFC; &#xBE44;&#xC2B7;&#xD558;&#xAC8C; &#xB3D9;&#xC791;&#xD558;&#xB294;
+&#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xC81C;&#xD55C;&#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">firstish</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span> <span class="cm-keyword">extends</span> { <span class="cm-variable">length</span>: <span class="cm-variable-3">number</span> }<span class="cm-operator">&gt;</span>(<span class="cm-variable">t1</span>: <span class="cm-variable">T</span>, <span class="cm-variable">t2</span>: <span class="cm-variable">T</span>): <span class="cm-variable">T</span> {
   <span class="cm-keyword">return</span> <span class="cm-variable">t1</span>.<span class="cm-property">length</span> <span class="cm-operator">&gt;</span> <span class="cm-variable">t2</span>.<span class="cm-property">length</span> <span class="cm-operator">?</span> <span class="cm-variable">t1</span> : <span class="cm-variable">t2</span>;
 }
 </code></pre>
-<p>TypeScript can usually infer type arguments from a call based on the
-type of the arguments, so type arguments are usually not needed.</p>
-<p>Because TypeScript is structural, it doesn&apos;t need type parameters as
-much as nominal systems. Specifically, they are not needed to make a
-function polymorphic. Type parameters should only be used to
-<em>propagate</em> type information, such as constraining parameters to be
-the same type:</p>
+<p>TypeScript&#xB294; &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xC778;&#xC790; &#xD0C0;&#xC785;&#xC5D0; &#xAE30;&#xBC18;&#xD558;&#xC5EC; &#xD638;&#xCD9C;&#xB85C;&#xBD80;&#xD130; &#xD0C0;&#xC785; &#xC778;&#xC790;&#xB97C; &#xCD94;&#xB860;&#xD560; &#xC218; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;
+&#xB300;&#xAC8C; &#xD0C0;&#xC785; &#xC778;&#xC790;&#xB97C; &#xD544;&#xC694;&#xB85C; &#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC65C;&#xB0D0;&#xD558;&#xBA74; TypeScript&#xB294; &#xAD6C;&#xC870;&#xC801;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, &#xC774;&#xB984; &#xAE30;&#xBC18;&#xC758; &#xC2DC;&#xC2A4;&#xD15C;&#xB9CC;&#xD07C; &#xD0C0;&#xC785; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xB97C; &#xD544;&#xC694;&#xB85C;
+&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD2B9;&#xD788; &#xD568;&#xC218;&#xB97C; &#xB2E4;&#xD615;&#xC131;&#xC73C;&#xB85C; &#xB9CC;&#xB4E4;
+&#xD544;&#xC694;&#xB294; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD0C0;&#xC785; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB294; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xAC19;&#xC740; &#xD0C0;&#xC785;&#xC73C;&#xB85C;
+&#xC81C;&#xD55C;&#xD558;&#xB294; &#xAC83;&#xCC98;&#xB7FC; &#xD0C0;&#xC785; &#xC815;&#xBCF4;&#xB97C; <em>&#xC804;&#xD30C;&#xD558;&#xB294;&#xB370;&#xB9CC;</em>
+&#xC4F0;&#xC5EC;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">length</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span> <span class="cm-keyword">extends</span> <span class="cm-variable">ArrayLike</span><span class="cm-operator">&lt;</span><span class="cm-variable">unknown</span><span class="cm-operator">&gt;&gt;</span>(<span class="cm-variable">t</span>: <span class="cm-variable">T</span>): <span class="cm-variable-3">number</span> {}
 
 <span class="cm-keyword">function</span> <span class="cm-variable">length</span>(<span class="cm-def">t</span>: <span class="cm-variable-3">ArrayLike</span><span class="cm-operator">&lt;</span><span class="cm-variable">unknown</span><span class="cm-operator">&gt;</span>): <span class="cm-variable-3">number</span> {}
 </code></pre>
-<p>In the first <code>length</code>, T is not necessary; notice that it&apos;s only
-referenced once, so it&apos;s not being used to constrain the type of the
-return value or other parameters.</p>
-<h3 id="higher-kinded-types">Higher-kinded types</h3>
-<p>TypeScript does not have higher kinded types, so the following is not legal:</p>
+<p>&#xCCAB; &#xBC88;&#xC9F8; <code>length</code>&#xC5D0;&#xC11C; T&#xB294; &#xD544;&#xC694;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;; &#xC624;&#xC9C1; &#xD55C; &#xBC88;&#xB9CC; &#xCC38;&#xC870;&#xB418;&#xBA70;,
+&#xB2E4;&#xB978; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB098; &#xB9AC;&#xD134; &#xAC12;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xC81C;&#xD55C;&#xD558;&#xB294;&#xB370; &#xC0AC;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;&#xB294; &#xAC83;&#xC744;
+&#xC54C;&#xC544;&#xB46C;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xC0C1;&#xC704;-&#xC720;&#xD615;&#xC758;-&#xD0C0;&#xC785;-higher-kinded-types">&#xC0C1;&#xC704; &#xC720;&#xD615;&#xC758; &#xD0C0;&#xC785; (Higher-kinded types)</h3>
+<p>TypeScript&#xB294; &#xC0C1;&#xC704; &#xC720;&#xD615;&#xC758; &#xD0C0;&#xC785;&#xC774; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xBBC0;&#xB85C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD558;&#xB294; &#xAC74; &#xD5C8;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">length</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span> <span class="cm-keyword">extends</span> <span class="cm-variable">ArrayLike</span><span class="cm-operator">&lt;</span><span class="cm-variable">unknown</span><span class="cm-operator">&gt;</span>, <span class="cm-variable">U</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">m</span>: <span class="cm-variable">T</span><span class="cm-operator">&lt;</span><span class="cm-variable">U</span><span class="cm-operator">&gt;</span>) {}
 </code></pre>
-<h3 id="point-free-programming">Point-free programming</h3>
-<p>Point-free programming &#x2014; heavy use of currying and function
-composition &#x2014; is possible in JavaScript, but can be verbose.
-In TypeScript, type inference often fails for point-free programs, so
-you&apos;ll end up specifying type parameters instead of value parameters. The
-result is so verbose that it&apos;s usually better to avoid point-free
-programming.</p>
-<h2 id="module-system">Module system</h2>
-<p>JavaScript&apos;s modern module syntax is a bit like Haskell&apos;s, except that
-any file with <code>import</code> or <code>export</code> is implicitly a module:</p>
+<h3 id="&#xD3EC;&#xC778;&#xD2B8;-&#xD504;&#xB9AC;-&#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;-point-free-programming">&#xD3EC;&#xC778;&#xD2B8;-&#xD504;&#xB9AC; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D; (Point-free programming)</h3>
+<p>&#xD3EC;&#xC778;&#xD2B8;-&#xD504;&#xB9AC; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC740; &#x2014; &#xCEE4;&#xB9C1; &#xBC0F; &#xD568;&#xC218; &#xD569;&#xC131;&#xC758; &#xACFC;&#xB3C4;&#xD55C; &#xC0AC;&#xC6A9;
+&#x2014; JavaScript&#xC5D0;&#xC11C; &#xAC00;&#xB2A5;&#xD558;&#xC9C0;&#xB9CC; &#xC7A5;&#xD669;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+TypeScript&#xC5D0;&#xC11C; &#xD3EC;&#xC778;&#xD2B8;-&#xD504;&#xB9AC; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC5D0; &#xB300;&#xD55C; &#xD0C0;&#xC785; &#xCD94;&#xB860;&#xC774; &#xC2E4;&#xD328;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xAC00; &#xB9CE;&#xC73C;&#xBBC0;&#xB85C;,
+&#xAC12; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xB300;&#xC2E0; &#xD0C0;&#xC785; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC9C0;&#xC815;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
+&#xADF8; &#xACB0;&#xACFC;&#xB294; &#xB108;&#xBB34; &#xC7A5;&#xD669;&#xD574;&#xC11C; &#xBCF4;&#xD1B5; &#xD3EC;&#xC778;&#xD2B8;-&#xD504;&#xB9AC; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC740; &#xD53C;&#xD558;&#xB294; &#xAC8C;
+&#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xBAA8;&#xB4C8;-&#xC2DC;&#xC2A4;&#xD15C;-module-system">&#xBAA8;&#xB4C8; &#xC2DC;&#xC2A4;&#xD15C; (Module system)</h2>
+<p><code>import</code> &#xB610;&#xB294; <code>export</code>&#xAC00; &#xD3EC;&#xD568;&#xB41C; &#xD30C;&#xC77C;&#xC774; &#xC554;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xBAA8;&#xB4C8;&#xC774;&#xB77C;&#xB294; &#xC810;&#xC744; &#xC81C;&#xC678;&#xD558;&#xBA74;
+JavaScript&#xC758; &#xCD5C;&#xC2E0; &#xBAA8;&#xB4C8; &#xAD6C;&#xBB38;&#xC740; Haskell&#xACFC; &#xC57D;&#xAC04; &#xC720;&#xC0AC;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">import</span> { <span class="cm-variable">value</span>, <span class="cm-variable">Type</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;npm-package&quot;</span>;
 <span class="cm-keyword">import</span> { <span class="cm-variable">other</span>, <span class="cm-variable">Types</span> } <span class="cm-keyword">from</span> <span class="cm-string">&quot;./local-package&quot;</span>;
 <span class="cm-keyword">import</span> <span class="cm-operator">*</span> <span class="cm-variable">as</span> <span class="cm-variable">prefix</span> <span class="cm-variable">from</span> <span class="cm-string">&quot;../lib/third-package&quot;</span>;
 </code></pre>
-<p>You can also import commonjs modules &#x2014; modules written using node.js&apos;
-module system:</p>
+<p>commonjs &#xBAA8;&#xB4C8;&#xB85C; &#xAC00;&#xC838;&#xC62C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; &#x2014; node.js&apos; &#xBAA8;&#xB4C8; &#xC2DC;&#xC2A4;&#xD15C;&#xC73C;&#xB85C;
+&#xC0AC;&#xC6A9;&#xB41C; &#xBAA8;&#xB4C8;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">import</span> <span class="cm-variable">f</span> <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">&quot;single-function-package&quot;</span>);
 </code></pre>
-<p>You can export with an export list:</p>
+<p>export &#xBAA9;&#xB85D;&#xC73C;&#xB85C; &#xB0B4;&#xBCF4;&#xB0BC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">export</span> { <span class="cm-variable">f</span> };
 
 <span class="cm-keyword">function</span> <span class="cm-variable">f</span>() {
@@ -1560,55 +1540,55 @@ module system:</p>
 }
 <span class="cm-keyword">function</span> <span class="cm-variable">g</span>() {} <span class="cm-comment">// g is not exported</span>
 </code></pre>
-<p>Or by marking each export individually:</p>
+<p>&#xB610;&#xB294; &#xAC1C;&#xBCC4;&#xC801;&#xC73C;&#xB85C; &#xD45C;&#xC2DC;&#xD574;&#xC11C;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">export</span> <span class="cm-keyword">function</span> <span class="cm-variable">f</span> { <span class="cm-keyword">return</span> <span class="cm-variable">g</span>() }
 <span class="cm-keyword">function</span> <span class="cm-variable">g</span>() { }
 </code></pre>
-<p>The latter style is more common but both are allowed, even in the same
-file.</p>
-<h2 id="readonly-and-const"><code>readonly</code> and <code>const</code></h2>
-<p>In JavaScript, mutability is the default, although it allows variable
-declarations with <code>const</code> to declare that the <em>reference</em> is
-immutable. The referent is still mutable:</p>
+<p>&#xD6C4;&#xC790;&#xC758; &#xC2A4;&#xD0C0;&#xC77C;&#xC774; &#xB354; &#xC77C;&#xBC18;&#xC801;&#xC774;&#xC9C0;&#xB9CC; &#xAC19;&#xC740; &#xD30C;&#xC77C; &#xB0B4;&#xC5D0;&#xC11C;&#xB3C4; &#xB458; &#xB2E4;
+&#xD5C8;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<h2 id="readonly-&#xC640;-const-readonly-and-const"><code>readonly</code> &#xC640; <code>const</code> (<code>readonly</code> and <code>const</code>)</h2>
+<p>JavaScript&#xC5D0;&#xC11C;, &#xC218;&#xC815; &#xAC00;&#xB2A5;&#xD568;&#xC774; &#xAE30;&#xBCF8;&#xC774;&#xC9C0;&#xB9CC;,
+<em>&#xCC38;&#xC870;</em>&#xAC00; &#xC218;&#xC815; &#xBD88;&#xAC00;&#xB2A5;&#xD568;&#xC744; &#xC120;&#xC5B8;&#xD558;&#xAE30; &#xC704;&#xD574; <code>const</code>&#xB85C; &#xBCC0;&#xC218;&#xB97C; &#xC120;&#xC5B8;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xCC38;&#xC870; &#xB300;&#xC0C1;&#xC740; &#xC5EC;&#xC804;&#xD788; &#xC218;&#xC815; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-js"><span class="cm-keyword">const</span> <span class="cm-variable">a</span> <span class="cm-operator">=</span> [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>];
 <span class="cm-variable">a</span>.<span class="cm-property">push</span>(<span class="cm-number">102</span>); <span class="cm-comment">// ):</span>
 <span class="cm-variable">a</span>[<span class="cm-number">0</span>] <span class="cm-operator">=</span> <span class="cm-number">101</span>; <span class="cm-comment">// D:</span>
 </code></pre>
-<p>TypeScript additionally has a <code>readonly</code> modifier for properties.</p>
+<p>TypeScript&#xB294; &#xCD94;&#xAC00;&#xC801;&#xC73C;&#xB85C; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0; <code>readonly</code> &#xC81C;&#xC5B4;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">Rx</span> {
   <span class="cm-variable">readonly</span> <span class="cm-variable">x</span>: <span class="cm-variable-3">number</span>;
 }
 <span class="cm-keyword">let</span> <span class="cm-variable">rx</span>: <span class="cm-variable-3">Rx</span> <span class="cm-operator">=</span> { <span class="cm-property">x</span>: <span class="cm-number">1</span> };
 <span class="cm-variable">rx</span>.<span class="cm-property">x</span> <span class="cm-operator">=</span> <span class="cm-number">12</span>; <span class="cm-comment">// error</span>
 </code></pre>
-<p>It also ships with a mapped type <code>Readonly&lt;T&gt;</code> that makes
-all properties <code>readonly</code>:</p>
+<p>&#xB9E4;&#xD551;&#xB41C; &#xD0C0;&#xC785; <code>Readonly&lt;T&gt;</code> &#xC740; &#xBAA8;&#xB4E0; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; <code>readonly</code> &#xC73C;&#xB85C;
+&#xB9CC;&#xB4E4;&#xC5B4; &#xBC84;&#xB9BD;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">X</span> {
   <span class="cm-variable">x</span>: <span class="cm-variable-3">number</span>;
 }
 <span class="cm-keyword">let</span> <span class="cm-variable">rx</span>: <span class="cm-variable-3">Readonly</span><span class="cm-operator">&lt;</span><span class="cm-variable">X</span><span class="cm-operator">&gt;</span> <span class="cm-operator">=</span> { <span class="cm-property">x</span>: <span class="cm-number">1</span> };
 <span class="cm-variable">rx</span>.<span class="cm-property">x</span> <span class="cm-operator">=</span> <span class="cm-number">12</span>; <span class="cm-comment">// error</span>
 </code></pre>
-<p>And it has a specific <code>ReadonlyArray&lt;T&gt;</code> type that removes
-side-affecting methods and prevents writing to indices of the array,
-as well as special syntax for this type:</p>
+<p>&#xADF8;&#xB9AC;&#xACE0; &#xBD80;&#xC791;&#xC6A9;&#xC744; &#xC77C;&#xC73C;&#xD0A4;&#xB294; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xC81C;&#xAC70;&#xD558;&#xACE0; &#xBC30;&#xC5F4; &#xC778;&#xB371;&#xC2A4;&#xC5D0; &#xB300;&#xD55C; &#xBCC0;&#xACBD;&#xC744; &#xBC29;&#xC9C0;&#xD558;&#xB294;
+&#xD2B9;&#xC815; <code>ReadonlyArray&lt;T&gt;</code> &#xD0C0;&#xC785;&#xACFC;,
+&#xC774; &#xD0C0;&#xC785;&#xC5D0; &#xB300;&#xD55C; &#xD2B9;&#xC218; &#xAD6C;&#xBB38;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">a</span>: <span class="cm-variable-3">ReadonlyArray</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">number</span><span class="cm-operator">&gt;</span> <span class="cm-operator">=</span> [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>];
 <span class="cm-keyword">let</span> <span class="cm-variable">b</span>: <span class="cm-variable-3">readonly</span> <span class="cm-variable-3">number</span>[] <span class="cm-operator">=</span> [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>];
 <span class="cm-variable">a</span>.<span class="cm-property">push</span>(<span class="cm-number">102</span>); <span class="cm-comment">// error</span>
 <span class="cm-variable">b</span>[<span class="cm-number">0</span>] <span class="cm-operator">=</span> <span class="cm-number">101</span>; <span class="cm-comment">// error</span>
 </code></pre>
-<p>You can also use a const-assertion, which operates on arrays and
-object literals:</p>
+<p>&#xBC30;&#xC5F4;&#xACFC; &#xAC1D;&#xCCB4; &#xB9AC;&#xD130;&#xB7F4;&#xC5D0;&#xC11C; &#xB3D9;&#xC791;&#xD558;&#xB294; const-assertion&#xB9CC;
+&#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">a</span> <span class="cm-operator">=</span> [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>] <span class="cm-variable">as</span> <span class="cm-keyword">const</span>;
 <span class="cm-variable">a</span>.<span class="cm-property">push</span>(<span class="cm-number">102</span>); <span class="cm-comment">// error</span>
 <span class="cm-variable">a</span>[<span class="cm-number">0</span>] <span class="cm-operator">=</span> <span class="cm-number">101</span>; <span class="cm-comment">// error</span>
 </code></pre>
-<p>However, none of these options are the default, so they are not
-consistently used in TypeScript code.</p>
-<h2 id="next-steps">Next Steps</h2>
-<p>This doc is a high level overview of the syntax and types you would use in everyday code. From here you should:</p>
-<p><em>-</em> Read the full Handbook <a href="../../docs/handbook/intro.html">from start to finish</a> (30m)
-<em>-</em> Explore the <a href="../../play#show-examples">Playground examples</a>.</p>
+<p>&#xADF8;&#xB7EC;&#xB098; &#xC774;&#xB7EC;&#xD55C; &#xAE30;&#xB2A5;&#xB4E4;&#xC740; &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xAE30;&#xB2A5;&#xC774; &#xC544;&#xB2C8;&#xBBC0;&#xB85C; TypeScript &#xCF54;&#xB4DC;&#xC5D0;
+&#xC77C;&#xAD00;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xB2E4;&#xC74C;-&#xB2E8;&#xACC4;-next-steps">&#xB2E4;&#xC74C; &#xB2E8;&#xACC4; (Next Steps)</h2>
+<p>&#xC774; &#xBB38;&#xC11C;&#xB294; &#xC77C;&#xC0C1;&#xC801;&#xC778; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xB192;&#xC740; &#xC218;&#xC900;&#xC758; &#xAD6C;&#xBB38;&#xACFC; &#xD0C0;&#xC785;&#xC5D0; &#xB300;&#xD55C; &#xAC1C;&#xC694;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC5EC;&#xAE30;&#xC11C;&#xBD80;&#xD130;&#xB294; &#xC544;&#xB798;&#xB97C; &#xCC38;&#xACE0;&#xD558;&#xC2DC;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;:</p>
+<p><em>-</em> &#xC804;&#xCCB4; &#xD578;&#xB4DC;&#xBD81;&#xC744; <a href="../../docs/handbook/intro.html">&#xCC98;&#xC74C;&#xBD80;&#xD130; &#xB05D;&#xAE4C;&#xC9C0;</a> &#xC77D;&#xC73C;&#xC138;&#xC694; (30m)
+<em>-</em> <a href="../../play#show-examples">Playground &#xC608;&#xC2DC;</a>&#xB97C; &#xBCF4;&#xC138;&#xC694;.</p>
 
                                 
                                 </section>
@@ -1652,7 +1632,7 @@ consistently used in TypeScript code.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"TS for Functional Programmers(en)","layout":"docs","permalink":"/docs/handbook/typescript-in-5-minutes-func.html","oneline":"Learn TypeScript if you have a background in functional programming","level":"2.4","depth":1,"next":{"title":"5분 안에 보는 TypeScript","level":"2.5","depth":1,"path":"pages/tutorials/typescript-in-5-minutes.md","ref":"pages/tutorials/typescript-in-5-minutes.md","articles":[]},"previous":{"title":"TS for OOP Programmers(en)","level":"2.3","depth":1,"path":"pages/tutorials/ts-for-oopers.md","ref":"pages/tutorials/ts-for-oopers.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/tutorials/ts-for-functional-programmers.md","mtime":"2020-09-01T11:09:30.649Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-01T11:10:27.709Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"TS for Functional Programmers(en)","layout":"docs","permalink":"/docs/handbook/typescript-in-5-minutes-func.html","oneline":"Learn TypeScript if you have a background in functional programming","level":"2.4","depth":1,"next":{"title":"5분 안에 보는 TypeScript","level":"2.5","depth":1,"path":"pages/tutorials/typescript-in-5-minutes.md","ref":"pages/tutorials/typescript-in-5-minutes.md","articles":[]},"previous":{"title":"TS for OOP Programmers(en)","level":"2.3","depth":1,"path":"pages/tutorials/ts-for-oopers.md","ref":"pages/tutorials/ts-for-oopers.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/tutorials/ts-for-functional-programmers.md","mtime":"2020-09-08T11:09:52.340Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-08T11:11:14.122Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
