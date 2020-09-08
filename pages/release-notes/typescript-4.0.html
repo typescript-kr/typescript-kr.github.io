@@ -1062,20 +1062,20 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="variadic-tuple-types">Variadic Tuple Types</h2>
-<p>Consider a function in JavaScript called <code>concat</code> that takes two array or tuple types and concatenates them together to make a new array.</p>
+                                <h2 id="&#xAC00;&#xBCC0;-&#xC778;&#xC790;-&#xD29C;&#xD50C;-&#xD0C0;&#xC785;-variadic-tuple-types">&#xAC00;&#xBCC0; &#xC778;&#xC790; &#xD29C;&#xD50C; &#xD0C0;&#xC785; (Variadic Tuple Types)</h2>
+<p>&#xBC30;&#xC5F4;&#xC774;&#xB098; &#xD29C;&#xD50C; &#xD0C0;&#xC785; &#xB450; &#xAC1C;&#xB97C; &#xACB0;&#xD569;&#xD558;&#xC5EC; &#xC0C8;&#xB85C;&#xC6B4; &#xBC30;&#xC5F4;&#xC744; &#xB9CC;&#xB4DC;&#xB294; JavaScript&#xC758; <code>concat</code> &#xD568;&#xC218;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xC0DD;&#xAC01;&#xD574;&#xBD05;&#xC2DC;&#xB2E4;.</p>
 <pre><code class="lang-js"><span class="cm-keyword">function</span> <span class="cm-variable">concat</span>(<span class="cm-def">arr1</span>, <span class="cm-def">arr2</span>) {
   <span class="cm-keyword">return</span> [<span class="cm-meta">...</span><span class="cm-variable-2">arr1</span>, <span class="cm-meta">...</span><span class="cm-variable-2">arr2</span>];
 }
 </code></pre>
-<p>Also consider <code>tail</code>, that takes an array or tuple, and returns all elements but the first.</p>
+<p>&#xADF8;&#xB9AC;&#xACE0;, &#xBC30;&#xC5F4;&#xC774;&#xB098; &#xD29C;&#xD50C;&#xC744; &#xBCC0;&#xC218;&#xB85C; &#xC785;&#xB825;&#xBC1B;&#xC544; &#xCCAB; &#xBC88;&#xC9F8; &#xC6D0;&#xC18C;&#xB97C; &#xC81C;&#xC678;&#xD55C; &#xB098;&#xBA38;&#xC9C0;&#xB97C; &#xBC18;&#xD658;&#xD558;&#xB294; <code>tail</code> &#xD568;&#xC218;&#xC5D0; &#xB300;&#xD574;&#xC11C;&#xB3C4; &#xC0DD;&#xAC01;&#xD574;&#xBD05;&#xC2DC;&#xB2E4;.</p>
 <pre><code class="lang-js"><span class="cm-keyword">function</span> <span class="cm-variable">tail</span>(<span class="cm-def">arg</span>) {
   <span class="cm-keyword">const</span> [<span class="cm-def">_</span>, <span class="cm-meta">...</span><span class="cm-variable">result</span>] <span class="cm-operator">=</span> <span class="cm-variable-2">arg</span>;
   <span class="cm-keyword">return</span> <span class="cm-variable">result</span>;
 }
 </code></pre>
-<p>How would we type either of these in TypeScript?</p>
-<p>For <code>concat</code>, the only valid thing we could do in older versions of the language was to try and write some overloads.</p>
+<p>TypeScript&#xC5D0;&#xC11C;&#xB294; &#xC774; &#xB450; &#xD568;&#xC218;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xC5B4;&#xB5BB;&#xAC8C; &#xC815;&#xC758;&#xD560; &#xC218; &#xC788;&#xC744;&#xAE4C;&#xC694;?</p>
+<p><code>concat</code>&#xC758; &#xACBD;&#xC6B0;, &#xC774;&#xC804; &#xBC84;&#xC804;&#xC5D0;&#xC11C;&#xB294; &#xC5EC;&#xB7EC; &#xAC1C;&#xC758; &#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC774; &#xC720;&#xC77C;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">concat</span>(<span class="cm-def">arr1</span>: [], <span class="cm-variable">arr2</span>: []): [];
 <span class="cm-keyword">function</span> <span class="cm-variable">concat</span><span class="cm-operator">&lt;</span><span class="cm-variable">A</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">arr1</span>: [<span class="cm-variable">A</span>], <span class="cm-variable">arr2</span>: []): [<span class="cm-variable">A</span>];
 <span class="cm-keyword">function</span> <span class="cm-variable">concat</span><span class="cm-operator">&lt;</span><span class="cm-variable">A</span>, <span class="cm-variable">B</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">arr1</span>: [<span class="cm-variable">A</span>, <span class="cm-variable">B</span>], <span class="cm-variable">arr2</span>: []): [<span class="cm-variable">A</span>, <span class="cm-variable">B</span>];
@@ -1084,8 +1084,8 @@
 <span class="cm-keyword">function</span> <span class="cm-variable">concat</span><span class="cm-operator">&lt;</span><span class="cm-variable">A</span>, <span class="cm-variable">B</span>, <span class="cm-variable">C</span>, <span class="cm-variable">D</span>, <span class="cm-variable">E</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">arr1</span>: [<span class="cm-variable">A</span>, <span class="cm-variable">B</span>, <span class="cm-variable">C</span>, <span class="cm-variable">D</span>, <span class="cm-variable">E</span>], <span class="cm-variable">arr2</span>: []): [<span class="cm-variable">A</span>, <span class="cm-variable">B</span>, <span class="cm-variable">C</span>, <span class="cm-variable">D</span>, <span class="cm-variable">E</span>];
 <span class="cm-keyword">function</span> <span class="cm-variable">concat</span><span class="cm-operator">&lt;</span><span class="cm-variable">A</span>, <span class="cm-variable">B</span>, <span class="cm-variable">C</span>, <span class="cm-variable">D</span>, <span class="cm-variable">E</span>, <span class="cm-variable">F</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">arr1</span>: [<span class="cm-variable">A</span>, <span class="cm-variable">B</span>, <span class="cm-variable">C</span>, <span class="cm-variable">D</span>, <span class="cm-variable">E</span>, <span class="cm-variable">F</span>], <span class="cm-variable">arr2</span>: []): [<span class="cm-variable">A</span>, <span class="cm-variable">B</span>, <span class="cm-variable">C</span>, <span class="cm-variable">D</span>, <span class="cm-variable">E</span>, <span class="cm-variable">F</span>];)
 </code></pre>
-<p>Uh...okay, that&apos;s...seven overloads for when the second array is always empty.
-Let&apos;s add some for when <code>arr2</code> has one argument.</p>
+<p>&#xC74C;... &#xB124;, &#xC774; &#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xB4E4;&#xC758; &#xB450; &#xBC88;&#xC9F8; &#xBC30;&#xC5F4;&#xC740; &#xC804;&#xBD80; &#xBE44;&#xC5B4;&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB54C;, <code>arr2</code>&#xAC00; &#xD558;&#xB098;&#xC758; &#xC778;&#xC790;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294; &#xACBD;&#xC6B0;&#xB97C; &#xCD94;&#xAC00;&#xD574;&#xBD05;&#xC2DC;&#xB2E4;.</p>
 <!-- prettier-ignore -->
 <pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">concat</span><span class="cm-operator">&lt;</span><span class="cm-variable">A2</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">arr1</span>: [], <span class="cm-variable">arr2</span>: [<span class="cm-variable">A2</span>]): [<span class="cm-variable">A2</span>];
 <span class="cm-keyword">function</span> <span class="cm-variable">concat</span><span class="cm-operator">&lt;</span><span class="cm-variable">A1</span>, <span class="cm-variable">A2</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">arr1</span>: [<span class="cm-variable">A1</span>], <span class="cm-variable">arr2</span>: [<span class="cm-variable">A2</span>]): [<span class="cm-variable">A1</span>, <span class="cm-variable">A2</span>];
@@ -1095,19 +1095,19 @@ Let&apos;s add some for when <code>arr2</code> has one argument.</p>
 <span class="cm-keyword">function</span> <span class="cm-variable">concat</span><span class="cm-operator">&lt;</span><span class="cm-variable">A1</span>, <span class="cm-variable">B1</span>, <span class="cm-variable">C1</span>, <span class="cm-variable">D1</span>, <span class="cm-variable">E1</span>, <span class="cm-variable">A2</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">arr1</span>: [<span class="cm-variable">A1</span>, <span class="cm-variable">B1</span>, <span class="cm-variable">C1</span>, <span class="cm-variable">D1</span>, <span class="cm-variable">E1</span>], <span class="cm-variable">arr2</span>: [<span class="cm-variable">A2</span>]): [<span class="cm-variable">A1</span>, <span class="cm-variable">B1</span>, <span class="cm-variable">C1</span>, <span class="cm-variable">D1</span>, <span class="cm-variable">E1</span>, <span class="cm-variable">A2</span>];
 <span class="cm-keyword">function</span> <span class="cm-variable">concat</span><span class="cm-operator">&lt;</span><span class="cm-variable">A1</span>, <span class="cm-variable">B1</span>, <span class="cm-variable">C1</span>, <span class="cm-variable">D1</span>, <span class="cm-variable">E1</span>, <span class="cm-variable">F1</span>, <span class="cm-variable">A2</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">arr1</span>: [<span class="cm-variable">A1</span>, <span class="cm-variable">B1</span>, <span class="cm-variable">C1</span>, <span class="cm-variable">D1</span>, <span class="cm-variable">E1</span>, <span class="cm-variable">F1</span>], <span class="cm-variable">arr2</span>: [<span class="cm-variable">A2</span>]): [<span class="cm-variable">A1</span>, <span class="cm-variable">B1</span>, <span class="cm-variable">C1</span>, <span class="cm-variable">D1</span>, <span class="cm-variable">E1</span>, <span class="cm-variable">F1</span>, <span class="cm-variable">A2</span>];
 </code></pre>
-<p>We hope it&apos;s clear that this is getting unreasonable.
-Unfortunately, you&apos;d also end up with the same sorts of issues typing a function like <code>tail</code>.</p>
-<p>This is another case of what we like to call &quot;death by a thousand overloads&quot;, and it doesn&apos;t even solve the problem generally.
-It only gives correct types for as many overloads as we care to write.
-If we wanted to make a catch-all case, we&apos;d need an overload like the following:</p>
+<p>&#xC774;&#xB7F0; &#xC624;&#xBC84;&#xB85C;&#xB529; &#xD568;&#xC218;&#xB4E4;&#xC740; &#xBD84;&#xBA85; &#xBE44;&#xD569;&#xB9AC;&#xC801;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC548;&#xD0C0;&#xAE5D;&#xAC8C;&#xB3C4;, <code>tail</code> &#xD568;&#xC218;&#xB97C; &#xD0C0;&#xC774;&#xD551;&#xD560; &#xB54C;&#xB3C4; &#xC774;&#xC640; &#xBE44;&#xC2B7;&#xD55C; &#xBB38;&#xC81C;&#xC5D0; &#xC9C1;&#xBA74;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774;&#xAC83;&#xC740; &quot;&#xCC9C; &#xAC1C;&#xC758; &#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xB85C; &#xC778;&#xD55C; &#xC8FD;&#xC74C;(death by a thousand overloads)&quot;&#xC758; &#xD558;&#xB098;&#xC758; &#xACBD;&#xC6B0;&#xC774;&#xBA70;, &#xC2EC;&#xC9C0;&#xC5B4; &#xB300;&#xBD80;&#xBD84; &#xBB38;&#xC81C;&#xB97C; &#xD574;&#xACB0;&#xD558;&#xC9C0;&#xB3C4; &#xBABB;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC6B0;&#xB9AC;&#xAC00; &#xC791;&#xC131;&#xD558;&#xACE0;&#xC790; &#xD558;&#xB294; &#xB9CC;&#xD07C;&#xC758; &#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xC5D0; &#xD55C;&#xD574;&#xC11C;&#xB9CC; &#xC62C;&#xBC14;&#xB978; &#xD0C0;&#xC785;&#xC744; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.
+&#xD3EC;&#xAD04;&#xC801;&#xC778; &#xCF00;&#xC774;&#xC2A4;&#xB97C; &#xB9CC;&#xB4E4;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74;, &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xAC00; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">concat</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span>, <span class="cm-variable">U</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">arr1</span>: <span class="cm-variable">T</span>[], <span class="cm-variable">arr2</span>: <span class="cm-variable">U</span>[]): <span class="cm-variable">Array</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span> <span class="cm-operator">|</span> <span class="cm-variable">U</span><span class="cm-operator">&gt;</span>;
 </code></pre>
-<p>But that signature doesn&apos;t encode anything about the lengths of the input, or the order of the elements, when using tuples.</p>
-<p>TypeScript 4.0 brings two fundamental changes, along with inference improvements, to make typing these possible.</p>
-<p>The first change is that spreads in tuple type syntax can now be generic.
-This means that we can represent higher-order operations on tuples and arrays even when we don&apos;t know the actual types we&apos;re operating over.
-When generic spreads are instantiated (or, replaced with a real type) in these tuple types, they can produce other sets of array and tuple types.</p>
-<p>For example, that means we can type function like <code>tail</code>, without our &quot;death by a thousand overloads&quot; issue.</p>
+<p>&#xADF8;&#xB7EC;&#xB098; &#xC704; &#xC2DC;&#xADF8;&#xB2C8;&#xCC98;&#xB294; &#xD29C;&#xD50C;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; &#xC785;&#xB825; &#xAE38;&#xC774;&#xB098; &#xC694;&#xC18C; &#xC21C;&#xC11C;&#xC5D0; &#xB300;&#xD55C; &#xC5B4;&#xB5A4; &#xAC83;&#xB3C4; &#xCC98;&#xB9AC;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>TypeScript 4.0&#xC740; &#xD0C0;&#xC785; &#xCD94;&#xB860; &#xAC1C;&#xC120;&#xC744; &#xD3EC;&#xD568;&#xD55C; &#xB450; &#xAC00;&#xC9C0; &#xD575;&#xC2EC;&#xC801;&#xC778; &#xBCC0;&#xD654;&#xB97C; &#xB3C4;&#xC785;&#xD574; &#xC774;&#xB7EC;&#xD55C; &#xD0C0;&#xC774;&#xD551;&#xC744; &#xAC00;&#xB2A5;&#xD558;&#xB3C4;&#xB85D; &#xB9CC;&#xB4E4;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xCCAB; &#xBC88;&#xC9F8; &#xBCC0;&#xD654;&#xB294; &#xD29C;&#xD50C; &#xD0C0;&#xC785; &#xAD6C;&#xBB38;&#xC758; &#xC2A4;&#xD504;&#xB808;&#xB4DC; &#xC5F0;&#xC0B0;&#xC790;&#xC5D0;&#xC11C; &#xC81C;&#xB124;&#xB9AD; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;&#xB294; &#xC810;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC6B0;&#xB9AC;&#xAC00; &#xC791;&#xB3D9;&#xD558;&#xB294; &#xC2E4;&#xC81C; &#xD0C0;&#xC785;&#xC744; &#xBAA8;&#xB974;&#xB354;&#xB77C;&#xB3C4; &#xD29C;&#xD50C;&#xACFC; &#xBC30;&#xC5F4;&#xC5D0; &#xB300;&#xD55C; &#xACE0;&#xCC28;&#xD568;&#xC218;&#xB97C; &#xD45C;&#xD604;&#xD560; &#xC218; &#xC788;&#xB2E4;&#xB294; &#xB73B;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB7EC;&#xD55C; &#xD29C;&#xD50C; &#xD0C0;&#xC785;&#xC5D0;&#xC11C; &#xC81C;&#xB124;&#xB9AD; &#xC2A4;&#xD504;&#xB808;&#xB4DC; &#xC5F0;&#xC0B0;&#xC790;&#xAC00; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xD654;(&#xD639;&#xC740;, &#xC2E4;&#xC81C; &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xB300;&#xCCB4;)&#xB418;&#xBA74; &#xB610; &#xB2E4;&#xB978; &#xBC30;&#xC5F4;&#xC774;&#xB098; &#xD29C;&#xD50C; &#xD0C0;&#xC785; &#xC138;&#xD2B8;&#xB97C; &#xC0DD;&#xC0B0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, <code>tail</code> &#xAC19;&#xC740; &#xD568;&#xC218;&#xB97C; &quot;&#xCC9C; &#xAC1C;&#xC758; &#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xB85C; &#xC778;&#xD55C; &#xC8FD;&#xC74C;(death by a thousand overloads)&quot;&#xC774;&#xC288; &#xC5C6;&#xC774; &#xD0C0;&#xC774;&#xD551; &#xD560; &#xC218; &#xC788;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">tail</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span> <span class="cm-keyword">extends</span> <span class="cm-variable-3">any</span>[]<span class="cm-operator">&gt;</span>(<span class="cm-variable">arr</span>: <span class="cm-variable">readonly</span> [<span class="cm-variable-3">any</span>, <span class="cm-meta">...</span><span class="cm-variable">T</span>]) {
   <span class="cm-keyword">const</span> [<span class="cm-variable">_ignored</span>, <span class="cm-meta">...</span><span class="cm-variable">rest</span>] <span class="cm-operator">=</span> <span class="cm-variable">arr</span>;
   <span class="cm-keyword">return</span> <span class="cm-variable">rest</span>;
@@ -1117,45 +1117,45 @@ When generic spreads are instantiated (or, replaced with a real type) in these t
 <span class="cm-keyword">const</span> <span class="cm-variable">myArray</span> <span class="cm-operator">=</span> [<span class="cm-string">&quot;hello&quot;</span>, <span class="cm-string">&quot;world&quot;</span>];
 
 <span class="cm-keyword">const</span> <span class="cm-variable">r1</span> <span class="cm-operator">=</span> <span class="cm-variable">tail</span>(<span class="cm-variable">myTuple</span>);
-<span class="cm-comment">//    ^?</span>
+<span class="cm-comment">//    ^ = const r1: [2, 3, 4]</span>
 
 <span class="cm-keyword">const</span> <span class="cm-variable">r2</span> <span class="cm-operator">=</span> <span class="cm-variable">tail</span>([<span class="cm-meta">...</span><span class="cm-variable">myTuple</span>, <span class="cm-meta">...</span><span class="cm-variable">myArray</span>] <span class="cm-variable">as</span> <span class="cm-keyword">const</span>);
-<span class="cm-comment">//    ^?</span>
+<span class="cm-comment">//    ^ = const r2: [2, 3, 4, ...string[]]</span>
 </code></pre>
-<p>The second change is that rest elements can occur anywhere in a tuple - not just at the end!</p>
+<p>&#xB450; &#xBC88;&#xC9F8; &#xBCC0;&#xD654;&#xB294; &#xB098;&#xBA38;&#xC9C0; &#xC694;&#xC18C;&#xAC00; &#xB05D;&#xBFD0;&#xB9CC; &#xC544;&#xB2C8;&#xB77C; &#xD29C;&#xD50C;&#xC758; &#xC5B4;&#xB290; &#xACF3;&#xC5D0;&#xC11C;&#xB3C4; &#xBC1C;&#xC0DD;&#xD560; &#xC218; &#xC788;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Strings</span> <span class="cm-operator">=</span> [<span class="cm-variable-3">string</span>, <span class="cm-variable-3">string</span>];
 <span class="cm-variable">type</span> <span class="cm-variable">Numbers</span> <span class="cm-operator">=</span> [<span class="cm-variable-3">number</span>, <span class="cm-variable-3">number</span>];
 
 <span class="cm-variable">type</span> <span class="cm-variable">StrStrNumNumBool</span> <span class="cm-operator">=</span> [<span class="cm-meta">...</span><span class="cm-variable">Strings</span>, <span class="cm-meta">...</span><span class="cm-variable">Numbers</span>, <span class="cm-variable">boolean</span>];
-<span class="cm-comment">//   ^?</span>
+<span class="cm-comment">//   ^ = type StrStrNumNumBool = [string, string, number, number, boolean]</span>
 </code></pre>
-<p>Previously, TypeScript would issue an error like the following:</p>
+<p>&#xC774;&#xC804;&#xC5D0;&#xB294;, TypeScript&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC624;&#xB958;&#xB97C; &#xC0DD;&#xC131;&#xD588;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code>A rest element must be last in a tuple type.
-</code></pre><p>But with TypeScript 4.0, this restriction is relaxed.</p>
-<p>Note that in cases when we spread in a type without a known length, the resulting type becomes unbounded as well, and all the following elements factor into the resulting rest element type.</p>
+</code></pre><p>TypeScript 4.0&#xC5D0;&#xC11C;&#xB294; &#xC774;&#xB7EC;&#xD55C; &#xC81C;&#xD55C;&#xC774; &#xC644;&#xD654;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xAE38;&#xC774;&#xAC00; &#xC815;&#xD574;&#xC9C0;&#xC9C0; &#xC54A;&#xC740; &#xD0C0;&#xC785;&#xC744; &#xD655;&#xC7A5;&#xD558;&#xB824;&#xACE0;&#xD560; &#xB54C;, &#xACB0;&#xACFC;&#xC758; &#xD0C0;&#xC785;&#xC740; &#xC81C;&#xD55C;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBA70;, &#xB2E4;&#xC74C; &#xBAA8;&#xB4E0; &#xC694;&#xC18C;&#xAC00; &#xACB0;&#xACFC;&#xC758; &#xB098;&#xBA38;&#xC9C0; &#xC694;&#xC18C; &#xD0C0;&#xC785;&#xC5D0; &#xD3EC;&#xD568;&#xB418;&#xB294; &#xC810;&#xC5D0; &#xC720;&#xC758;&#xD558;&#xC2DC;&#xAE30; &#xBC14;&#xB78D;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Strings</span> <span class="cm-operator">=</span> [<span class="cm-variable-3">string</span>, <span class="cm-variable-3">string</span>];
 <span class="cm-variable">type</span> <span class="cm-variable">Numbers</span> <span class="cm-operator">=</span> <span class="cm-variable-3">number</span>[];
 
 <span class="cm-variable">type</span> <span class="cm-variable">Unbounded</span> <span class="cm-operator">=</span> [<span class="cm-meta">...</span><span class="cm-variable">Strings</span>, <span class="cm-meta">...</span><span class="cm-variable">Numbers</span>, <span class="cm-variable">boolean</span>];
-<span class="cm-comment">//   ^?</span>
+<span class="cm-comment">//   ^ = type Unbounded = [string, string, ...(number | boolean)[]]</span>
 </code></pre>
-<p>By combining both of these behaviors together, we can write a single well-typed signature for <code>concat</code>:</p>
+<p>&#xC774; &#xB450; &#xAC00;&#xC9C0; &#xB3D9;&#xC791;&#xC744; &#xD568;&#xAED8; &#xACB0;&#xD569;&#xD558;&#xC5EC;, <code>concat</code>&#xC5D0; &#xB300;&#xD574; &#xD0C0;&#xC785;&#xC774; &#xC81C;&#xB300;&#xB85C; &#xC815;&#xC758;&#xB41C; &#xC2DC;&#xADF8;&#xB2C8;&#xCC98;&#xB97C; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Arr</span> <span class="cm-operator">=</span> <span class="cm-variable">readonly</span> <span class="cm-variable-3">any</span>[];
 
 <span class="cm-keyword">function</span> <span class="cm-variable">concat</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span> <span class="cm-keyword">extends</span> <span class="cm-variable">Arr</span>, <span class="cm-variable">U</span> <span class="cm-keyword">extends</span> <span class="cm-variable">Arr</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">arr1</span>: <span class="cm-variable">T</span>, <span class="cm-variable">arr2</span>: <span class="cm-variable">U</span>): [<span class="cm-meta">...</span><span class="cm-variable">T</span>, <span class="cm-meta">...</span><span class="cm-variable">U</span>] {
   <span class="cm-keyword">return</span> [<span class="cm-meta">...</span><span class="cm-variable">arr1</span>, <span class="cm-meta">...</span><span class="cm-variable">arr2</span>];
 }
 </code></pre>
-<p>While that one signature is still a bit lengthy, it&apos;s just one signature that doesn&apos;t have to be repeated, and it gives predictable behavior on all arrays and tuples.</p>
-<p>This functionality on its own is great, but it shines in more sophisticated scenarios too.
-For example, consider a function to <a href="https://en.wikipedia.org/wiki/Partial_application" target="_blank">partially apply arguments</a> called <code>partialCall</code>.
-<code>partialCall</code> takes a function - let&apos;s call it <code>f</code> - along with the initial few arguments that <code>f</code> expects.
-It then returns a new function that takes any other arguments that <code>f</code> still needs, and calls <code>f</code> when it receives them.</p>
+<p>&#xD558;&#xB098;&#xC758; &#xC2DC;&#xADF8;&#xB2C8;&#xCC98;&#xAC00; &#xC870;&#xAE08; &#xAE38;&#xB354;&#xB77C;&#xB3C4;, &#xBC18;&#xBCF5;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xB294; &#xD558;&#xB098;&#xC758; &#xC2DC;&#xADF8;&#xB2C8;&#xCC98;&#xC77C; &#xBFD0;&#xC774;&#xBA70;, &#xBAA8;&#xB4E0; &#xBC30;&#xC5F4;&#xACFC; &#xD29C;&#xD50C;&#xC5D0;&#xC11C; &#xC608;&#xCE21; &#xAC00;&#xB2A5;&#xD55C; &#xD589;&#xB3D9;&#xC744; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774; &#xAE30;&#xB2A5;&#xC740; &#xADF8; &#xC790;&#xCCB4;&#xB9CC;&#xC73C;&#xB85C;&#xB3C4; &#xD6CC;&#xB96D;&#xD558;&#xC9C0;&#xB9CC;, &#xC870;&#xAE08; &#xB354; &#xC815;&#xAD50;&#xD55C; &#xC2DC;&#xB098;&#xB9AC;&#xC624;&#xC5D0;&#xC11C;&#xB3C4; &#xBE5B;&#xC744; &#xBC1C;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4;,<a href="https://en.wikipedia.org/wiki/Partial_application" target="_blank">&#xD568;&#xC218;&#xC758; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xBD80;&#xBD84;&#xC801;&#xC73C;&#xB85C; &#xC801;&#xC6A9;&#xD558;&#xC5EC; &#xC0C8;&#xB85C;&#xC6B4; &#xD568;&#xC218;&#xB97C; &#xBC18;&#xD658;&#xD558;&#xB294;</a> <code>partialCall</code> &#xD568;&#xC218;&#xAC00; &#xC788;&#xB2E4;&#xACE0; &#xC0DD;&#xAC01;&#xD574;&#xBD05;&#xC2DC;&#xB2E4;.
+<code>partialCall</code>&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xD568;&#xC218;&#xB97C; &#xAC00;&#xC9D1;&#xB2C8;&#xB2E4;. - <code>f</code>&#xAC00; &#xC608;&#xC0C1;&#xD558;&#xB294; &#xBA87; &#xAC00;&#xC9C0; &#xC778;&#xC218;&#xC640; &#xD568;&#xAED8; <code>f</code>&#xB77C;&#xACE0; &#xC9C0;&#xC815;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xADF8; &#xD6C4;, <code>f</code>&#xAC00; &#xC5EC;&#xC804;&#xD788; &#xD544;&#xC694;&#xB85C; &#xD558;&#xB294; &#xB2E4;&#xB978; &#xC778;&#xC218;&#xB97C; &#xAC00;&#xC9C0;&#xACE0;, &#xADF8;&#xAC83;&#xC744; &#xBC1B;&#xC744; &#xB54C; <code>f</code>&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xB294; &#xC0C8;&#xB85C;&#xC6B4; &#xD568;&#xC218;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-js"><span class="cm-keyword">function</span> <span class="cm-variable">partialCall</span>(<span class="cm-def">f</span>, <span class="cm-meta">...</span><span class="cm-def">headArgs</span>) {
   <span class="cm-keyword">return</span> (<span class="cm-meta">...</span><span class="cm-variable">tailArgs</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable-2">f</span>(<span class="cm-meta">...</span><span class="cm-variable-2">headArgs</span>, <span class="cm-meta">...</span><span class="cm-variable">tailArgs</span>);
 }
 </code></pre>
-<p>TypeScript 4.0 improves the inference process for rest parameters and rest tuple elements so that we can type this and have it &quot;just work&quot;.</p>
+<p>TypeScript 4.0&#xC740; &#xB098;&#xBA38;&#xC9C0; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB4E4;&#xACFC; &#xD29C;&#xD50C; &#xC6D0;&#xC18C;&#xB4E4;&#xC5D0; &#xB300;&#xD55C; &#xCD94;&#xB860; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB97C; &#xAC1C;&#xC120;&#xD558;&#xC5EC; &#xD0C0;&#xC785;&#xC744; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC788;&#xACE0; &quot;&#xADF8;&#xB0E5; &#xB3D9;&#xC791;&quot;&#xD558;&#xB3C4;&#xB85D; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Arr</span> <span class="cm-operator">=</span> <span class="cm-variable">readonly</span> <span class="cm-variable">unknown</span>[];
 
 <span class="cm-keyword">function</span> <span class="cm-variable">partialCall</span><span class="cm-operator">&lt;</span><span class="cm-variable">T</span> <span class="cm-keyword">extends</span> <span class="cm-variable">Arr</span>, <span class="cm-variable">U</span> <span class="cm-keyword">extends</span> <span class="cm-variable">Arr</span>, <span class="cm-variable">R</span><span class="cm-operator">&gt;</span>(
@@ -1165,7 +1165,7 @@ It then returns a new function that takes any other arguments that <code>f</code
   <span class="cm-keyword">return</span> (<span class="cm-meta">...</span><span class="cm-variable">tailArgs</span>: <span class="cm-variable">U</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">f</span>(<span class="cm-meta">...</span><span class="cm-variable">headArgs</span>, <span class="cm-meta">...</span><span class="cm-variable">tailArgs</span>);
 }
 </code></pre>
-<p>In this case, <code>partialCall</code> understands which parameters it can and can&apos;t initially take, and returns functions that appropriately accept and reject anything left over.</p>
+<p>&#xC774; &#xACBD;&#xC6B0;, <code>partialCall</code>&#xC740; &#xCC98;&#xC74C;&#xC5D0; &#xCDE8;&#xD560; &#xC218; &#xC788;&#xB294; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xC640; &#xD560; &#xC218; &#xC5C6;&#xB294; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB97C; &#xD30C;&#xC545;&#xD558;&#xACE0;, &#xB0A8;&#xC740; &#xAC83;&#xB4E4;&#xC740; &#xC801;&#xC808;&#xD788; &#xC218;&#xC6A9;&#xD558;&#xACE0; &#xAC70;&#xBD80;&#xD558;&#xB294; &#xD568;&#xC218;&#xB4E4;&#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-comment">// @errors: 2345 2554 2554 2345</span>
 <span class="cm-variable">type</span> <span class="cm-variable">Arr</span> <span class="cm-operator">=</span> <span class="cm-variable">readonly</span> <span class="cm-variable">unknown</span>[];
 
@@ -1182,36 +1182,36 @@ It then returns a new function that takes any other arguments that <code>f</code
 
 <span class="cm-keyword">const</span> <span class="cm-variable">f2</span> <span class="cm-operator">=</span> <span class="cm-variable">partialCall</span>(<span class="cm-variable">foo</span>, <span class="cm-string">&quot;hello&quot;</span>, <span class="cm-number">100</span>, <span class="cm-atom">true</span>, <span class="cm-string">&quot;oops&quot;</span>);
 
-<span class="cm-comment">// This works!</span>
+<span class="cm-comment">// &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;!</span>
 <span class="cm-keyword">const</span> <span class="cm-variable">f3</span> <span class="cm-operator">=</span> <span class="cm-variable">partialCall</span>(<span class="cm-variable">foo</span>, <span class="cm-string">&quot;hello&quot;</span>);
-<span class="cm-comment">//    ^?</span>
+<span class="cm-comment">//    ^ = const f3: (y: number, z: boolean) =&gt; void</span>
 
-<span class="cm-comment">// What can we do with f3 now?</span>
+<span class="cm-comment">// f3&#xC73C;&#xB85C; &#xBB58; &#xD560; &#xC218; &#xC788;&#xC744;&#xAE4C;&#xC694;?</span>
 
-<span class="cm-comment">// Works!</span>
+<span class="cm-comment">// &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;!</span>
 <span class="cm-variable">f3</span>(<span class="cm-number">123</span>, <span class="cm-atom">true</span>);
 
 <span class="cm-variable">f3</span>();
 
 <span class="cm-variable">f3</span>(<span class="cm-number">123</span>, <span class="cm-string">&quot;hello&quot;</span>);
 </code></pre>
-<p>Variadic tuple types enable a lot of new exciting patterns, especially around function composition.
-We expect we may be able to leverage it to do a better job type-checking JavaScript&apos;s built-in <code>bind</code> method.
-A handful of other inference improvements and patterns also went into this, and if you&apos;re interested in learning more, you can take a look at <a href="https://github.com/microsoft/TypeScript/pull/39094" target="_blank">the pull request</a> for variadic tuples.</p>
-<h2 id="labeled-tuple-elements">Labeled Tuple Elements</h2>
-<p>Improving the experience around tuple types and parameter lists is important because it allows us to get strongly typed validation around common JavaScript idioms - really just slicing and dicing argument lists and passing them to other functions.
-The idea that we can use tuple types for rest parameters is one place where this is crucial.</p>
-<p>For example, the following function that uses a tuple type as a rest parameter...</p>
+<p>&#xAC00;&#xBCC0; &#xC778;&#xC790; &#xD29C;&#xD50C; &#xD0C0;&#xC785;&#xC740; &#xD2B9;&#xD788; &#xAE30;&#xB2A5; &#xAD6C;&#xC131;&#xACFC; &#xAD00;&#xB828;&#xD558;&#xC5EC; &#xB9CE;&#xC740; &#xC0C8;&#xB85C;&#xC6B4; &#xD765;&#xBBF8;&#xB85C;&#xC6B4; &#xD328;&#xD134;&#xC744; &#xAC00;&#xB2A5;&#xD558;&#xAC8C; &#xD569;&#xB2C8;&#xB2E4;.
+&#xC6B0;&#xB9AC;&#xB294; JavaScript&#xC5D0; &#xB0B4;&#xC7A5;&#xB41C; <code>bind</code> &#xBA54;&#xC11C;&#xB4DC;&#xC758; &#xD0C0;&#xC785; &#xCCB4;&#xD0B9;&#xC744; &#xB354; &#xC798;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC774;&#xB97C; &#xD65C;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC744; &#xAC83;&#xC774;&#xB77C;&#xACE0; &#xAE30;&#xB300;&#xD569;&#xB2C8;&#xB2E4;.
+&#xBA87; &#xAC00;&#xC9C0; &#xB2E4;&#xB978; &#xCD94;&#xB860; &#xAC1C;&#xC120; &#xBC0F; &#xD328;&#xD134;&#xB4E4;&#xB3C4; &#xC5EC;&#xAE30;&#xC5D0; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xC73C;&#xBA70;, &#xAC00;&#xBCC0; &#xC778;&#xC790; &#xD29C;&#xD50C;&#xC5D0; &#xB300;&#xD574; &#xB354; &#xC54C;&#xC544;&#xBCF4;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74;, <a href="https://github.com/microsoft/TypeScript/pull/39094" target="_blank">the pull request</a>&#xB97C; &#xCC38;&#xACE0;&#xD574;&#xBCF4;&#xC138;&#xC694;.</p>
+<h2 id="&#xB77C;&#xBCA8;&#xB9C1;&#xB41C;-&#xD29C;&#xD50C;-&#xC694;&#xC18C;-labeled-tuple-elements">&#xB77C;&#xBCA8;&#xB9C1;&#xB41C; &#xD29C;&#xD50C; &#xC694;&#xC18C; (Labeled Tuple Elements)</h2>
+<p>&#xD29C;&#xD50C; &#xD0C0;&#xC785;&#xACFC; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218; &#xBAA9;&#xB85D;&#xC5D0; &#xB300;&#xD574; &#xAC1C;&#xC120;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC77C;&#xBC18;&#xC801;&#xC778; JavaScript &#xAD00;&#xC6A9;&#xAD6C;&#xC5D0; &#xB300;&#xD55C; &#xD0C0;&#xC785; &#xC720;&#xD6A8;&#xC131; &#xAC80;&#xC0AC;&#xB97C; &#xAC15;&#xD654;&#xC2DC;&#xCF1C;&#xC8FC;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC911;&#xC694;&#xD569;&#xB2C8;&#xB2E4; - &#xC2E4;&#xC81C;&#xB85C; &#xC778;&#xC218; &#xBAA9;&#xB85D;&#xC744; &#xC790;&#xB974;&#xACE0; &#xB2E4;&#xB978; &#xD568;&#xC218;&#xB85C; &#xC804;&#xB2EC;&#xB9CC; &#xD574;&#xC8FC;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.
+&#xB098;&#xBA38;&#xC9C0; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;(rest parameter)&#xC5D0; &#xD29C;&#xD50C; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;&#xB294; &#xC0DD;&#xAC01;&#xC740; &#xC544;&#xC8FC; &#xC911;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, &#xD29C;&#xD50C; &#xD0C0;&#xC785;&#xC744; &#xB098;&#xBA38;&#xC9C0; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xB2E4;&#xC74C; &#xD568;&#xC218;&#xB294;...</p>
 <pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">foo</span>(<span class="cm-meta">...</span><span class="cm-def">args</span>: [<span class="cm-variable-3">string</span>, <span class="cm-variable-3">number</span>]): <span class="cm-variable">void</span> {
   <span class="cm-comment">// ...</span>
 }
 </code></pre>
-<p>...should appear no different from the following function...</p>
+<p>...&#xB2E4;&#xC74C; &#xD568;&#xC218;&#xC640; &#xB2E4;&#xB974;&#xC9C0; &#xC54A;&#xC544;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;...</p>
 <pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">foo</span>(<span class="cm-def">arg0</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">arg1</span>: <span class="cm-variable-3">number</span>): <span class="cm-variable">void</span> {
   <span class="cm-comment">// ...</span>
 }
 </code></pre>
-<p>...for any caller of <code>foo</code>.</p>
+<p>...<code>foo</code>&#xC758; &#xBAA8;&#xB4E0; &#xD638;&#xCD9C;&#xC790;&#xC5D0; &#xB300;&#xD574;&#xC11C;&#xB3C4;.</p>
 <pre><code class="lang-ts"><span class="cm-comment">// @errors: 2554</span>
 <span class="cm-keyword">function</span> <span class="cm-variable">foo</span>(<span class="cm-def">arg0</span>: <span class="cm-variable-3">string</span>, <span class="cm-def">arg1</span>: <span class="cm-variable-3">number</span>): <span class="cm-variable">void</span> {
   <span class="cm-comment">// ...</span>
@@ -1222,37 +1222,37 @@ The idea that we can use tuple types for rest parameters is one place where this
 <span class="cm-variable">foo</span>(<span class="cm-string">&quot;hello&quot;</span>, <span class="cm-number">42</span>, <span class="cm-atom">true</span>);
 <span class="cm-variable">foo</span>(<span class="cm-string">&quot;hello&quot;</span>);
 </code></pre>
-<p>There is one place where the differences begin to become observable though: readability.
-In the first example, we have no parameter names for the first and second elements.
-While these have no impact on type-checking, the lack of labels on tuple positions can make them harder to use - harder to communicate our intent.</p>
-<p>That&apos;s why in TypeScript 4.0, tuples types can now provide labels.</p>
+<p>&#xADF8;&#xB7EC;&#xB098; &#xCC28;&#xC774;&#xC810;&#xC774; &#xBCF4;&#xC774;&#xAE30; &#xC2DC;&#xC791;&#xD55C; &#xBD80;&#xBD84;&#xC740;: &#xAC00;&#xB3C5;&#xC131;&#xC785;&#xB2C8;&#xB2E4;.
+&#xCCAB; &#xBC88;&#xC9F8; &#xC608;&#xC2DC;&#xC5D0;&#xC11C;&#xB294;, &#xCCAB; &#xBC88;&#xC9F8;&#xC640; &#xB450; &#xBC88;&#xC9F8; &#xC694;&#xC18C;&#xC5D0; &#xB300;&#xD55C; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218; &#xC774;&#xB984;&#xC774; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xD0C0;&#xC785;-&#xAC80;&#xC0AC;&#xC5D0;&#xB294; &#xC804;&#xD600; &#xC601;&#xD5A5;&#xC774; &#xC5C6;&#xC9C0;&#xB9CC;, &#xD29C;&#xD50C; &#xC704;&#xCE58;&#xC5D0; &#xB77C;&#xBCA8;&#xC774; &#xC5C6;&#xB294; &#xAC83;&#xC740; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC5B4;&#xB835;&#xAC8C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4; - &#xC758;&#xB3C4;&#xB97C; &#xC804;&#xB2EC;&#xD558;&#xAE30; &#xC5B4;&#xB835;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>TypeScript 4.0&#xC5D0;&#xC11C; &#xD29C;&#xD50C; &#xD0C0;&#xC785;&#xC5D0; &#xB77C;&#xBCA8;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xC774;&#xC720;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Range</span> <span class="cm-operator">=</span> [<span class="cm-variable">start</span>: <span class="cm-variable-3">number</span>, <span class="cm-variable">end</span>: <span class="cm-variable-3">number</span>];
 </code></pre>
-<p>To deepen the connection between parameter lists and tuple types, the syntax for rest elements and optional elements mirrors the syntax for parameter lists.</p>
+<p>&#xB9E4;&#xAC1C; &#xBCC0;&#xC218; &#xBAA9;&#xB85D;&#xACFC; &#xD29C;&#xD50C; &#xD0C0;&#xC785; &#xC0AC;&#xC774;&#xC758; &#xC5F0;&#xACB0;&#xC744; &#xAC15;&#xD654;&#xD558;&#xAE30; &#xC704;&#xD574;, &#xB098;&#xBA38;&#xC9C0; &#xC694;&#xC18C;&#xC640; &#xC120;&#xD0DD;&#xC801; &#xC694;&#xC18C;&#xC5D0; &#xB300;&#xD55C; &#xAD6C;&#xBB38;&#xC774; &#xB9E4;&#xAC1C; &#xBCC0;&#xC218; &#xBAA9;&#xB85D;&#xC758; &#xAD6C;&#xBB38;&#xC744; &#xBC18;&#xC601;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">Foo</span> <span class="cm-operator">=</span> [<span class="cm-variable">first</span>: <span class="cm-variable-3">number</span>, <span class="cm-variable">second</span><span class="cm-operator">?</span>: <span class="cm-variable-3">string</span>, <span class="cm-meta">...</span><span class="cm-variable">rest</span>: <span class="cm-variable-3">any</span>[]];
 </code></pre>
-<p>There are a few rules when using labeled tuples.
-For one, when labeling a tuple element, all other elements in the tuple must also be labeled.</p>
+<p>&#xB77C;&#xBCA8;&#xB9C1; &#xB41C; &#xD29C;&#xD50C;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xB294; &#xBA87; &#xAC00;&#xC9C0; &#xADDC;&#xCE59;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xD558;&#xB098;&#xB294; &#xD29C;&#xD50C; &#xC694;&#xC18C;&#xB97C; &#xB77C;&#xBCA8;&#xB9C1; &#xD560; &#xB54C;, &#xD29C;&#xD50C;&#xC5D0; &#xC788;&#xB294; &#xB2E4;&#xB978; &#xBAA8;&#xB4E0; &#xC694;&#xC18C;&#xB4E4; &#xC5ED;&#xC2DC; &#xB77C;&#xBCA8;&#xB9C1; &#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-comment">// @errors: 5084</span>
 <span class="cm-variable">type</span> <span class="cm-variable">Bar</span> <span class="cm-operator">=</span> [<span class="cm-variable">first</span>: <span class="cm-variable-3">string</span>, <span class="cm-variable-3">number</span>];
 </code></pre>
-<p>It&apos;s worth noting - labels don&apos;t require us to name our variables differently when destructuring.
-They&apos;re purely there for documentation and tooling.</p>
+<p>&#xB2F9;&#xC5F0;&#xD558;&#xAC8C;&#xB3C4; - &#xB77C;&#xBCA8;&#xC740; &#xAD6C;&#xC870; &#xBD84;&#xD574;&#xD560; &#xB54C; &#xBCC0;&#xC218; &#xC774;&#xB984;&#xC744; &#xB2E4;&#xB974;&#xAC8C; &#xC9C0;&#xC815;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774;&#xAC83;&#xC740; &#xC21C;&#xC804;&#xD788; &#xBB38;&#xC11C;&#xD654;&#xC640; &#xB3C4;&#xAD6C;&#xB97C; &#xC704;&#xD574; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">function</span> <span class="cm-variable">foo</span>(<span class="cm-def">x</span>: [<span class="cm-variable">first</span>: <span class="cm-variable-3">string</span>, <span class="cm-variable">second</span>: <span class="cm-variable-3">number</span>]) {
     <span class="cm-comment">// ...</span>
 
-    <span class="cm-comment">// note: we didn&apos;t need to name these &apos;first&apos; and &apos;second&apos;</span>
+    <span class="cm-comment">// &#xC8FC;&#xC758;: &apos;first&apos;&#xC640; &apos;second&apos;&#xC5D0; &#xB300;&#xD574; &#xC774;&#xB984; &#xC9C0;&#xC744; &#xD544;&#xC694; &#xC5C6;&#xC74C;</span>
     <span class="cm-keyword">const</span> [<span class="cm-def">a</span>, <span class="cm-def">b</span>] <span class="cm-operator">=</span> <span class="cm-variable-2">x</span>;
     <span class="cm-variable-2">a</span>
-<span class="cm-comment">//  ^?</span>
+<span class="cm-comment">//  ^ = const a: string</span>
     <span class="cm-variable-2">b</span>
-<span class="cm-comment">//  ^?</span>
+<span class="cm-comment">//  ^ = const b: number</span>
 }
 </code></pre>
-<p>Overall, labeled tuples are handy when taking advantage of patterns around tuples and argument lists, along with implementing overloads in a type-safe way.
-In fact, TypeScript&apos;s editor support will try to display them as overloads when possible.</p>
-<p><img src="https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2020/08/signatureHelpLabeledTuples.gif" alt="Signature help displaying a union of labeled tuples as in a parameter list as two signatures"></p>
-<p>To learn more, check out <a href="https://github.com/microsoft/TypeScript/pull/38234" target="_blank">the pull request</a> for labeled tuple elements.</p>
+<p>&#xC804;&#xBC18;&#xC801;&#xC73C;&#xB85C;, &#xB77C;&#xBCA8;&#xB9C1; &#xB41C; &#xD29C;&#xD50C;&#xC740; &#xC548;&#xC804;&#xD55C; &#xD0C0;&#xC785; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xB97C; &#xAD6C;&#xD604;&#xD558;&#xB294; &#xAC83;&#xACFC; &#xD29C;&#xD50C;&#xACFC; &#xC778;&#xC218; &#xBAA9;&#xB85D;&#xC758; &#xD328;&#xD134;&#xC744; &#xD65C;&#xC6A9;&#xD560; &#xB54C; &#xD3B8;&#xB9AC;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC0AC;&#xC2E4;, TypeScript &#xC5D0;&#xB514;&#xD130; &#xC9C0;&#xC6D0;&#xC740; &#xAC00;&#xB2A5;&#xD55C; &#xACBD;&#xC6B0; &#xC624;&#xBC84;&#xB85C;&#xB4DC;&#xB85C; &#xD45C;&#xC2DC;&#xD558;&#xB824; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><img src="https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2020/08/signatureHelpLabeledTuples.gif" alt="&#xB77C;&#xBCA8;&#xB9C1;&#xB41C; &#xD29C;&#xD50C;&#xC758; &#xC720;&#xB2C8;&#xC5B8;&#xC744; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xBAA9;&#xB85D;&#xC5D0;&#xC11C;&#xCC98;&#xB7FC; &#xB450; &#xAC00;&#xC9C0; &#xC2DC;&#xADF8;&#xB2C8;&#xCC98;&#xB85C; &#xBCF4;&#xC5EC;&#xC8FC;&#xB294; &#xC2DC;&#xADF8;&#xB2C8;&#xCC98; &#xB3C4;&#xC6C0;&#xB9D0;"></p>
+<p>&#xB354; &#xC54C;&#xACE0; &#xC2F6;&#xC73C;&#xC2DC;&#xBA74;, &#xB77C;&#xBCA8;&#xB9C1;&#xB41C; &#xD29C;&#xD50C; &#xC694;&#xC18C;&#xC5D0; &#xB300;&#xD55C; <a href="https://github.com/microsoft/TypeScript/pull/38234" target="_blank">&#xD480; &#xB9AC;&#xD018;&#xC2A4;&#xD2B8;</a>&#xB97C; &#xD655;&#xC778;&#xD574;&#xBCF4;&#xC138;&#xC694;</p>
 <h2 id="class-property-inference-from-constructors">Class Property Inference from Constructors</h2>
 <p>TypeScript 4.0 can now use control flow analysis to determine the types of properties in classes when <code>noImplicitAny</code> is enabled.</p>
 <!--prettier-ignore -->
@@ -1648,7 +1648,7 @@ As a result, for TypeScript 4.0 we&apos;ve made the decision to deprecate these 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"TypeScript 4.0","layout":"docs","permalink":"/docs/handbook/release-notes/typescript-4-0.html","oneline":"TypeScript 4.0 Release Notes","level":"6.1","depth":1,"next":{"title":"TypeScript 3.9","level":"6.2","depth":1,"path":"pages/release-notes/typescript-3.9.md","ref":"pages/release-notes/typescript-3.9.md","articles":[]},"previous":{"title":"리액트 & 웹팩","level":"5.5","depth":1,"path":"pages/tutorials/react-&-webpack.md","ref":"pages/tutorials/react-&-webpack.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/release-notes/typescript-4.0.md","mtime":"2020-09-01T11:09:30.645Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-01T11:10:27.709Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"TypeScript 4.0","layout":"docs","permalink":"/docs/handbook/release-notes/typescript-4-0.html","oneline":"TypeScript 4.0 Release Notes","level":"6.1","depth":1,"next":{"title":"TypeScript 3.9","level":"6.2","depth":1,"path":"pages/release-notes/typescript-3.9.md","ref":"pages/release-notes/typescript-3.9.md","articles":[]},"previous":{"title":"리액트 & 웹팩","level":"5.5","depth":1,"path":"pages/tutorials/react-&-webpack.md","ref":"pages/tutorials/react-&-webpack.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/release-notes/typescript-4.0.md","mtime":"2020-09-08T11:09:52.336Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-08T11:11:14.122Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
