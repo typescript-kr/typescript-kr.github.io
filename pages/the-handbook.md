@@ -37,21 +37,21 @@ JavaScript에 대한 배경지식 없이 TypeScript를 첫 번째 언어로 사�
 
   핸드북 레퍼런스는 TypeScript의 특정 부분이 어떻게 작동하는지 풍부한 이해를 제공하기 위해 작성되었습니다. 위에서 아래로 읽을 수 있지만, 연속적으로 설명하는 것이 아니라, 각 섹션은 단일 개념에 대한 더 깊은 설명 제공을 목표로 합니다.
 
-### Non-Goals
+### 잠재적인 목표 (Non-Goals)
 
-The Handbook is also intended to be a concise document that can be comfortably read in a few hours. Certain topics won't be covered in order to keep things short.
+핸드북은 몇 시간 안에 편하게 읽을 수 있는 간결한 문서로 제작되었습니다. 간결함을 유지하기 위해 특정 주제는 다루지 않습니다.
 
-Specifically, the Handbook does not fully introduce core JavaScript basics like functions, classes, and closures. Where appropriate, we'll include links to background reading that you can use to read up on those concepts.
+특히, 함수, 클래스, 클로저와 같은 JavaScript 핵심 개념을 전부 소개하지는 않습니다. 필요한 경우, 해당 개념을 읽는 데 사용할 수 있는 배경 자료 링크를 제시할 것입니다.
 
-The Handbook also isn't intended to be a replacement for a language specification. In some cases, edge cases or formal descriptions of behavior will be skipped in favor of high-level, easier-to-understand explanations. Instead, there are separate reference pages that more precisely and formally describe many aspects of TypeScript's behavior. The reference pages are not intended for readers unfamiliar with TypeScript, so they may use advanced terminology or reference topics you haven't read about yet.
+또한, 핸드북은 언어 명세를 대체하기 위함이 아닙니다. 경우에 따라서는, 대략적이고 이해하기 쉬운 설명을 위해, 에지 케이스나 동작의 형식적인 설명을 생략할 수 있습니다. 대신에, TypeScript 동작의 여러 측면을 보다 정확하고 공식적으로 설명하는 별도의 참조 페이지가 있습니다. 레퍼런스 페이지는 TypeScript에 익숙하지 않은 독자를 위한 것이 아니기 때문에, 아직 읽지 않은 고급 용어나 주제를 사용할 수 있습니다.
 
-Finally, the Handbook won't cover how TypeScript interacts with other tools, except where necessary. Topics like how to configure TypeScript with webpack, rollup, parcel, react, babel, closure, lerna, rush, bazel, preact, vue, angular, svelte, jquery, yarn, or npm are out of scope - you can find these resources elsewhere on the web.
+마지막으로, 필요한 경우를 제외하고는 TypeScript가 다른 도구와 어떻게 상호작용하는지는 다루지 않습니다. webpack, rollup, parcel, react, babel, closure, lerna, rush, bazel, preact, vue, angular, svelte, jquery, yarn, npm으로 TypeScript를 구성하는 방법은 다른 웹사이트에서 찾을 수 있습니다.
 
-## Get Started
+## 시작하기 (Get Started)
 
-Before getting started with [Basic Types](/docs/handbook/basic-types.html), we recommend reading one of the following introductory pages. These introductions are intended to highlight key similarities and differences between TypeScript and your favored programming language, and clear up common misconceptions specific to those languages.
+[기본 타입](/pages/basic-types.html)을 시작하기 전에, 다음의 소개 페이지 중 하나를 읽어보는 것이 좋습니다. TypeScript와 당신이 선호하는 프로그래밍 언어 간의 주요 유사점과 차이점을 강조하고, 해당 언어에 대한 일반적인 오해를 정리했습니다.
 
-* [TypeScript for New Programmers](/docs/handbook/typescript-from-scratch.html)
-* [TypeScript for JavaScript Programmers](/docs/handbook/typescript-in-5-minutes.html)
-* [TypeScript for OOP Programmers](/docs/handbook/typescript-in-5-minutes-oop.html)
-* [TypeScript for Functional Programmers](/docs/handbook/typescript-in-5-minutes-func.html)
+* [TypeScript for New Programmers](/pages/tutorials/ts-for-the-new-programmer.html)
+* [TypeScript for JavaScript Programmers](/pages/tutorials/ts-for-js-programmers.html)
+* [TypeScript for OOP Programmers](/pages/tutorials/ts-for-oopers.html)
+* [TypeScript for Functional Programmers](/pages/tutorials/ts-for-functional-programmers.html)
