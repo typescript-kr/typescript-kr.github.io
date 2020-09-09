@@ -272,14 +272,14 @@ function foo(x: [first: string, second: number]) {
 
 더 알고 싶으시면, 라벨링된 튜플 요소에 대한 [풀 리퀘스트](https://github.com/microsoft/TypeScript/pull/38234)를 확인해보세요
 
-## Class Property Inference from Constructors
+## 생성자로부터 클래스 프로퍼티 타입 추론하기 (Class Property Inference from Constructors)
 
-TypeScript 4.0 can now use control flow analysis to determine the types of properties in classes when `noImplicitAny` is enabled.
+TypeScript 4.0에서는 `noImplicitAny`가 활성화되었을 때 클래스 내의 프로퍼티 타입을 결정하기 위해 제어 흐름 분석을 사용할 수 있습니다.  
 
 <!--prettier-ignore -->
 ```ts
 class Square {
-  // Previously both of these were any
+  // 이전에 any로 추론했습니다.
   area;
 // ^?
   sideLength;
@@ -291,7 +291,7 @@ class Square {
 }
 ```
 
-In cases where not all paths of a constructor assign to an instance member, the property is considered to potentially be `undefined`.
+생성자의 모든 경로가 인스턴스 멤버에 할당한 것이 아닐 경우, 프로퍼티는 잠재적으로 `undefined`가 됩니다.
 
 <!--prettier-ignore -->
 ```ts
@@ -312,15 +312,15 @@ class Square {
 }
 ```
 
-In cases where you know better (e.g. you have an `initialize` method of some sort), you'll still need an explicit type annotation along with a definite assignment assertion (`!`) if you're in `strictPropertyInitialization`.
+더 많은 내용이 있는 경우(e.g. `initialize` 메서드 등이 있는 경우), `strictPropertyInitialization` 모드에서는 확정적 할당 단언(`!`)에 따라 명시적으로 타입을 선언해야 합니다.
 
 ```ts
 class Square {
-  // definite assignment assertion
+  // 확정적 할당 단언
   //        v
   sideLength!: number;
   //         ^^^^^^^^
-  // type annotation
+  // 타입 표기
 
   constructor(sideLength: number) {
     this.initialize(sideLength);
@@ -336,7 +336,7 @@ class Square {
 }
 ```
 
-For more details, [see the implementing pull request](https://github.com/microsoft/TypeScript/pull/379200).
+더 자세히 알고 싶다면, [코드를 실행하는 Pull Request를 보세요](https://github.com/microsoft/TypeScript/pull/379200).
 
 ## Short-Circuiting Assignment Operators
 
