@@ -117,7 +117,7 @@ This method works similarly to the `createElement` method as the generic paramet
 
 ## `children`과 `childNodes`의 차이점 (Difference between `children` and `childNodes`)
 
-이전에 이 문서는 `HTMLElement` 인터페이스가 `Node`로부터 확장된 `Element`에서 확장된 개념이라는 것을 기술하고 있었습니다. DOM API에는 _자식(children)_ 요소 개념이 있습니다. 예를 들어 HTML에서 `p` 태그는 `div` 요소의 자식입니다.
+이전에 이 문서는 `HTMLElement` 인터페이스가 `Node`로부터 확장된 `Element`에서 확장된 개념이라고 설명했습니다. DOM API에는 _자식(children)_ 요소 개념이 있습니다. 예를 들어 HTML에서 `p` 태그는 `div` 요소의 자식입니다.
 
 ```tsx
 <div>
