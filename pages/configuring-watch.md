@@ -1,30 +1,30 @@
-Compiler supports configuring how to watch files and directories using the environment variables.
+컴파일러는 환경 변수를 사용하여 파일과 디렉터리를 감시하는 방법 구성을 지원합니다.
 
-## Configuring file watching using environment variable `TSC_WATCHFILE`
+## 환경 변수 `TSC_WATCHFILE`을 사용하여 파일 감시 설정 (Configuring file watching using environment variable `TSC_WATCHFILE`)
 
-Option                                         | Description
+옵션                                            | 설명
 -----------------------------------------------|----------------------------------------------------------------------
-`PriorityPollingInterval`                      | Use `fs.watchFile` but use different polling intervals for source files, config files and missing files
-`DynamicPriorityPolling`                       | Use a dynamic queue where in the frequently modified files will be polled at shorter interval and the files unchanged will be polled less frequently
-`UseFsEvents`                                  | Use `fs.watch` which uses file system events (but might not be accurate on different OS) to get the notifications for the file changes/creation/deletion. Note that few OS eg. linux has limit on number of watches and failing to create watcher using `fs.watch` will result it in creating using `fs.watchFile`
-`UseFsEventsWithFallbackDynamicPolling`        | This option is similar to `UseFsEvents` except on failing to create watch using `fs.watch`, the fallback watching happens through dynamic polling queues (as explained in `DynamicPriorityPolling`)
-`UseFsEventsOnParentDirectory`                 | This option watches parent directory of the file with `fs.watch` (using file system events) thus being low on CPU but can compromise accuracy.
-default (no value specified)                   | If environment variable `TSC_NONPOLLING_WATCHER` is set to true, watches parent directory of files (just like `UseFsEventsOnParentDirectory`). Otherwise watch files using `fs.watchFile` with `250ms` as the timeout for any file
+`PriorityPollingInterval`                      | `fs.watchFile`을 사용하지만 소스 파일, 설정 파일 및 누락된 파일에 대해 다른 폴링 주기(polling intervals)를 사용합니다.
+`DynamicPriorityPolling`                       | 자주 수정되는 파일을 자주 폴링하고 변경되지 않은 파일을 덜 자주 폴링 하는 동적 큐를 사용합니다.
+`UseFsEvents`                                  | 파일 시스템 이벤트를 사용하는 `fs.watch`를 사용하여 파일 변경/생성/삭제에 대한 알림을 받습니다. (`fs.watch`는 OS마다 다르게 작동할 수 있습니다.) 예를 들어. 리눅스는 watcher 수에 제한이 있으며 `fs.watch`를 사용하여 watcher를 만들지 못하면, `fs.watchFile`를 대신 사용하여 watcher를 만들게 됩니다.
+`UseFsEventsWithFallbackDynamicPolling`        | 이 옵션은 `fs.watch`를 사용하여 감시자를 만들지 못한 경우 폴링이 동적 큐를 통해 수행된다는 것을 제외하고는 `UseFsEvents` 옵션과 비슷합니다.(동적 큐에 대한 것은 `DynamicPriorityPolling`옵션에서 설명하였습니다.).
+`UseFsEventsOnParentDirectory`                 | 이 옵션은 `fs.watch`(파일 시스템 이벤트 사용하는)로 파일의 상위 디렉터리를 감시합니다. 다만, CPU 사용량이 늘어나고 정확도는 떨어질 수 있습니다.
+default (no value specified)                   | 환경 변수`TSC_NONPOLLING_WATCHER`가 true로 설정되면 파일의 상위 디렉터리를 감시합니다. (`UseFsEventsOnParentDirectory`와 동일).false 일 때는 `fs.watchFile`을 사용하여 `250ms` 시간 제한과 함께 모든 파일들을 감시합니다.
 
-## Configuring directory watching using environment variable `TSC_WATCHDIRECTORY`
+## 환경 변수`TSC_WATCHDIRECTORY`를 사용하여 디렉터리 감시 설정 (Configuring directory watching using environment variable `TSC_WATCHDIRECTORY`)
 
-The watching of directory on platforms that don't support recursive directory watching natively in node, is supported through recursively creating directory watcher for the child directories using different options selected by `TSC_WATCHDIRECTORY`. Note that on platforms that support native recursive directory watching (e.g windows) the value of this environment variable is ignored.
+기본적으로 node에서 디렉터리의 재귀적인 감시를 지원하지 않는 플랫폼에서, 디렉터리 감시 기능은 `TSC_WATCHDIRECTORY`에서 선택한 다양한 옵션을 사용하여 하위 디렉터리에 대한 디렉터리 watcher를 재귀적으로 생성함으로써 지원됩니다. 기본적으로 재귀 디렉터리 감시(예: windows)를 지원하는 플랫폼에서는 이 환경 변수의 값이 무시됩니다.
 
-Option                                         | Description
+옵션                                            | 설명
 -----------------------------------------------|----------------------------------------------------------------------
-`RecursiveDirectoryUsingFsWatchFile`           | Use `fs.watchFile` to watch the directories and child directories which is a polling watch (consuming CPU cycles)
-`RecursiveDirectoryUsingDynamicPriorityPolling`| Use dynamic polling queue to poll changes to the directory and child directories.
-default (no value specified)                   | Use `fs.watch` to watch directories and child directories
+`RecursiveDirectoryUsingFsWatchFile`           | `fs.watchFile`을 사용하여 폴링 감시(CPU cycles 사용)인 디렉터리 및 하위 디렉터리를 감시합니다.
+`RecursiveDirectoryUsingDynamicPriorityPolling`| 동적 폴링 큐를 사용하여 디렉터리 및 하위 디렉터리에 대한 변경사항을 폴링 합니다.
+default (no value specified)                   | `fs.watch`를 사용하여 디렉터리 및 하위 디렉터리를 감시합니다.
 
-## Background
+## 배경 (Background)
 
-`--watch` implementation of the compiler relies on `fs.watch` and `fs.watchFile` provided by node, both of these methods have pros and cons.
+컴파일러의 `--watch` 구현은 node에서 제공하는 `fs.watch`와 `fs.watchFile`에 의존하며, 이 두 방법 모두 장단점이 있습니다.
 
-`fs.watch` uses file system events to notify the changes in the file/directory. But this is OS dependent and the notification is not completely reliable and does not work as expected on many OS. Also there could be limit on number of watches that can be created, eg. linux and we could exhaust it pretty quickly with programs that include large number of files. But because this uses file system events, there is not much CPU cycle involved. Compiler typically uses `fs.watch` to watch directories (eg. source directories included by config file, directories in which module resolution failed etc) These can handle the missing precision in notifying about the changes. But recursive watching is supported on only Windows and OSX. That means we need something to replace the recursive nature on other OS.
+`fs.watch`는 파일 시스템 이벤트를 사용하여 파일/디렉터리의 변경 사항을 알립니다. 하지만 OS에 따라 다르며, 알림은 완전히 믿을 수가 없고, 많은 OS에서 예상대로 동작하지 않습니다. 또한, 생성할 수 있는 watcher의 수에 제한이 있을 수 있으며(예: linux), 파일 수가 많은 프로그램을 사용하면 매우 빠르게 소진할 수 있습니다. 그러나 이 작업은 파일 시스템 이벤트를 사용하기 때문에 CPU cycle에 많이 관여하진 않습니다. 컴파일러는 일반적으로 `fs.watch`를 사용하여 디렉터리를 감시합니다. (예: 설정 파일에 포함된 소스 디렉터리, 모듈 확인을 실패한 디렉터리 ... 등) 변경 사항에 대한 알림에서 누락된 정밀도를 처리할 수 있습니다. 그러나 재귀 감시 기능은 Windows와 OSX에서만 지원됩니다. 즉, 다른 OS들은 재귀적 특성을 대체할 무언가가 필요합니다.
 
-`fs.watchFile` uses polling and thus involves CPU cycles. But this is the most reliable mechanism to get the update on the status of file/directory. Compiler typically uses `fs.watchFile` to watch source files, config files and missing files (missing file references) that means the CPU usage depends on number of files in the program.
+`fs.watchFile`은 폴링을 사용하므로 CPU 주기를 포함합니다. 하지만 이는 파일/디렉터리 상태에 대한 업데이트를 받을 수 있는 가장 신뢰할 수 있는 메커니즘입니다. 컴파일러는 일반적으로 `fs.watchFile`을 사용하여 소스 파일, 구성 파일 및 누락된 파일(누락된 파일 참조)을 감시하는데 이는 CPU 사용량이 프로그램의 파일 수에 따라 달라진다는 것을 의미합니다.
