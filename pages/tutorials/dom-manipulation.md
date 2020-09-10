@@ -194,7 +194,7 @@ const all = document.querySelectorAll("li"); // 모든 li 요소를 포함하는
 
 _lib.dom.d.ts_ 타입 정의에서 가장 좋은 부분은 Mozilla Developer Network (MDN) 문서 사이트에 표기된 타입들을 반영했다는 것입니다. 예를 들어, `HTMLElement` 인터페이스는 MDN에서 [HTMLElement 페이지](https://developer.mozilla.org/docs/Web/API/HTMLElement)에 문서화 되어 있습니다. 이 페이지에는 사용 가능한 모든 프로퍼티, 메서드, 때로는 예시까지 제공합니다. 해당 페이지가 훌륭한 다른 면은 표준 문서에 맞는 링크를 제공한다는 것입니다. 다음은 [HTMLElement의 W3C 권장사항](https://www.w3.org/TR/html52/dom.html#htmlelement)에 대한 링크입니다.
 
-Sources:
+소스코드 참조:
 
 * [ECMA-262 Standard](http://www.ecma-international.org/ecma-262/10.0/index.html)
 * [Introduction to the DOM](https://developer.mozilla.org/docs/Web/API/Document_Object_Model/Introduction)
