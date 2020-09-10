@@ -115,9 +115,9 @@ appendChild<T extends Node>(newChild: T): T;
 
 This method works similarly to the `createElement` method as the generic parameter `T` is inferred from the `newChild` argument. `T` is _constrained_ to another base interface `Node`.
 
-## Difference between `children` and `childNodes`
+## `children`과 `childNodes`의 차이점 (Difference between `children` and `childNodes`)
 
-Previously, this document details the `HTMLElement` interface extends from `Element` which extends from `Node`. In the DOM API there is a concept of _children_ elements. For example in the following HTML, the `p` tags are children of the `div` element
+이전에 이 문서는 `HTMLElement` 인터페이스가 `Node`로부터 확장된 `Element`에서 확장된 개념이라고 설명했습니다. DOM API에는 _자식(children)_ 요소 개념이 있습니다. 예를 들어 HTML에서 `p` 태그는 `div` 요소의 자식입니다.
 
 ```tsx
 <div>
@@ -134,9 +134,9 @@ div.childNodes;
 // NodeList(2) [p, p]
 ```
 
-After capturing the `div` element, the `children` prop will return a `HTMLCollection` list containing the `HTMLParagraphElements`. The `childNodes` property will return a similar `NodeList` list of nodes. Each `p` tag will still be of type `HTMLParagraphElements`, but the `NodeList` can contain additional _HTML nodes_ that the `HTMLCollection` list cannot.
+`div` 요소를 찾아낸 후 `children` 프로퍼티는 `HTMLParagraphElements`를 포함하는 `HTMLCollection` 리스트를 반환합니다. `childNodes` 프로퍼티는 위와 유사하게 노드 리스트인 `NodeList`를 반환합니다. 각 `p` 태그는 여전히 `HTMLParagraphElements` 타입이지만, `NodeList`는 추가적으로 `HTMLCollection` 리스트에는 없는 _HTML 노드_ 를 포함할 수 있습니다.
 
-Modify the html by removing one of the `p` tags, but keep the text.
+`p` 태그 중 하나를 제거하여 html을 수정하되 텍스트는 그대로 유지하십시오.
 
 ```tsx
 <div>
@@ -153,31 +153,31 @@ div.childNodes;
 // NodeList(2) [p, text]
 ```
 
-See how both lists change. `children` now only contains the `<p>Hello, World</p>` element, and the `childNodes` contains a `text` node rather than two `p` nodes. The `text` part of the `NodeList` is the literal `Node` containing the text `TypeScript!`. The `children` list does not contain this `Node` because it is not considered an `HTMLElement`.
+어떻게 두 개의 리스트가 변했는지 보겠습니다. `children`은 현재 `<p>Hello, World</p>` 요소만을 포함하고 있고, `childNodes`는 두 개의 `p` 노드가 아닌 `text` 노드를 포함하고 있습니다. `NodeList`에서 `text` 부분은 `TypeScript!` 텍스트를 포함하는 문자 그대로의 `Node`입니다. `children` 리스트는 이 `Node`를 포함하지 않습니다. 왜냐하면 `HTMLElement`로 간주하지 않기 때문입니다.
 
-## The `querySelector` and `querySelectorAll` methods
+## `querySelector`와 `querySelectorAll` 메서드 (The `querySelector` and `querySelectorAll` methods)
 
-Both of these methods are great tools for getting lists of dom elements that fit a more unique set of constraints. They are defined in _lib.dom.d.ts_ as:
+두 개의 메서드 모두 고유한 제약 조건 집합에 적합한 돔 요소 리스트를 가져오는 데 좋은 도구입니다. 메서드들은 _lib.dom.d.ts_ 에 다음과 같이 정의되어 있습니다:
 
 ```ts
 /**
- * Returns the first element that is a descendant of node that matches selectors.
+ * 선택자와 일치하는 노드의 자식 중 첫 번째 요소를 반환합니다.
  */
 querySelector<K extends keyof HTMLElementTagNameMap>(selectors: K): HTMLElementTagNameMap[K] | null;
 querySelector<K extends keyof SVGElementTagNameMap>(selectors: K): SVGElementTagNameMap[K] | null;
 querySelector<E extends Element = Element>(selectors: string): E | null;
 
 /**
- * Returns all element descendants of node that match selectors.
+ * 선택자와 일치하는 모든 노드 자식 요소를 반환합니다.
  */
 querySelectorAll<K extends keyof HTMLElementTagNameMap>(selectors: K): NodeListOf<HTMLElementTagNameMap[K]>;
 querySelectorAll<K extends keyof SVGElementTagNameMap>(selectors: K): NodeListOf<SVGElementTagNameMap[K]>;
 querySelectorAll<E extends Element = Element>(selectors: string): NodeListOf<E>;
 ```
 
-The `querySelectorAll` definition is similar to `getElementByTagName`, except it returns a new type: `NodeListOf`. This return type is essentially a custom implementation of the standard JavaScript list element. Arguably, replacing `NodeListOf<E>` with `E[]` would result in a very similar user experience. `NodeListOf` only implements the following properties and methods: `length` , `item(index)`, `forEach((value, key, parent) => void)` , and numeric indexing. Additionally, this method returns a list of _elements_ not _nodes_, which is what `NodeList` was returning from the `.childNodes` method. While this may appear as a discrepancy, take note that interface `Element` extends from `Node`.
+ `querySelectorAll` 정의는 `NodeListOf`라는 새로운 타입을 반환한다는 점을 제외하면 `getElementByTagName`과 유사합니다. 이 반환 타입은 기본적으로 표준 JavaScript 리스트 요소의 맞춤형으로 구현되었습니다. `NodeListOf<E>`를 `E[]`로 바꿔보면 틀림없이 매우 유사한 사용자 경험을 제공할 것입니다. `NodeListOf`는 `length` , `item(index)`, `forEach((value, key, parent) => void)` , 그리고 숫자 인덱스 생성과 같은 프로퍼티 및 메서드만을 구현합니다. 또한, 메서드는 _노드_ 가 아닌 _요소_ 리스트를 반환하며 이는 `.childNodes` 메서드에서 `NodeList`가 반환한 것입니다. 모순처럼 보일 수 있지만, `Element` 인터페이스는 `Node`에서 확장된 점에 유의해야 합니다.
 
-To see these methods in action modify the existing code to:
+두 개의 메서드가 동작하는 것을 보려면 기존 코드를 다음과 같이 수정하십시오:
 
 ```tsx
 <ul>
@@ -186,15 +186,15 @@ To see these methods in action modify the existing code to:
   <li>Third times a charm.</li>
 </ul>;
 
-const first = document.querySelector("li"); // returns the first li element
-const all = document.querySelectorAll("li"); // returns the list of all li elements
+const first = document.querySelector("li"); // 첫 번째 li 요소를 반환합니다.
+const all = document.querySelectorAll("li"); // 모든 li 요소를 포함하는 리스트를 반환합니다.
 ```
 
-## Interested in learning more?
+## 더 자세히 알고 싶으십니까? (Interested in learning more?)
 
-The best part about the _lib.dom.d.ts_ type definitions is that they are reflective of the types annotated in the Mozilla Developer Network (MDN) documentation site. For example, the `HTMLElement` interface is documented by this [HTMLElement page](https://developer.mozilla.org/docs/Web/API/HTMLElement) on MDN. These pages list all available properties, methods, and sometimes even examples. Another great aspect of the pages is that they provide links to the corresponding standard documents. Here is the link to the [W3C Recommendation for HTMLElement](https://www.w3.org/TR/html52/dom.html#htmlelement).
+_lib.dom.d.ts_ 타입 정의에서 가장 좋은 부분은 Mozilla Developer Network (MDN) 문서 사이트에 표기된 타입들을 반영했다는 것입니다. 예를 들어, `HTMLElement` 인터페이스는 MDN에서 [HTMLElement 페이지](https://developer.mozilla.org/docs/Web/API/HTMLElement)에 문서화 되어 있습니다. 이 페이지에는 사용 가능한 모든 프로퍼티, 메서드, 때로는 예시까지 제공합니다. 해당 페이지가 훌륭한 다른 면은 표준 문서에 맞는 링크를 제공한다는 것입니다. 다음은 [HTMLElement의 W3C 권장사항](https://www.w3.org/TR/html52/dom.html#htmlelement)에 대한 링크입니다.
 
-Sources:
+소스코드 참조:
 
 * [ECMA-262 Standard](http://www.ecma-international.org/ecma-262/10.0/index.html)
 * [Introduction to the DOM](https://developer.mozilla.org/docs/Web/API/Document_Object_Model/Introduction)
