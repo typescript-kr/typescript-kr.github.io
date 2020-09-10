@@ -134,7 +134,7 @@ div.childNodes;
 // NodeList(2) [p, p]
 ```
 
-`div` 요소를 찾아낸 후 `children` 프로퍼티는 `HTMLParagraphElements`를 포함하는 `HTMLCollection` 리스트를 반환합니다. `childNodes` 프로퍼티는 위와 유사하게 노드를 포함하는 `NodeList` 리스트를 반환합니다. 각 `p` 태그는 여전히 `HTMLParagraphElements` 타입이지만, `NodeList`는 추가적으로 `HTMLCollection` 리스트에는 없는 _HTML 노드_ 를 포함할 수 있습니다.
+`div` 요소를 찾아낸 후 `children` 프로퍼티는 `HTMLParagraphElements`를 포함하는 `HTMLCollection` 리스트를 반환합니다. `childNodes` 프로퍼티는 위와 유사하게 노드 리스트인  `NodeList`를 반환합니다. 각 `p` 태그는 여전히 `HTMLParagraphElements` 타입이지만, `NodeList`는 추가적으로 `HTMLCollection` 리스트에는 없는 _HTML 노드_ 를 포함할 수 있습니다.
 
 `p` 태그 중 하나를 제거하여 html을 수정하되 텍스트는 그대로 유지하십시오.
 
