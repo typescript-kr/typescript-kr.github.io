@@ -175,7 +175,7 @@ querySelectorAll<K extends keyof SVGElementTagNameMap>(selectors: K): NodeListOf
 querySelectorAll<E extends Element = Element>(selectors: string): NodeListOf<E>;
 ```
 
- `querySelectorAll` 정의는 `NodeListOf`라는 새로운 타입을 반환한다는 점을 제외하면 `getElementByTagName`과 유사합니다. 이 반환 타입은 기본적으로 표준 JavaScript 리스트 요소의 맞춤형으로 구현되었습니다. `NodeListOf<E>`를 `E[]`로 바꿔보면 틀림없이 매우 유사한 사용자 경험을 제공할 것입니다. `NodeListOf`는 `length` , `item(index)`, `forEach((value, key, parent) => void)` , 그리고 숫자 인덱스 생성과 같은 프로퍼티 및 메서드만을 구현합니다. 또한, 메서드는 _노드_ 가 아닌 _요소_ 리스트를 반환하며 이는 `.childNodes` 메서드에서 `NodeList`가 반환한 것입니다. 모순 같아 보일 수 있지만 `Element` 인터페이스는 `Node`에서 확장된 점에 유의해야 합니다.
+ `querySelectorAll` 정의는 `NodeListOf`라는 새로운 타입을 반환한다는 점을 제외하면 `getElementByTagName`과 유사합니다. 이 반환 타입은 기본적으로 표준 JavaScript 리스트 요소의 맞춤형으로 구현되었습니다. `NodeListOf<E>`를 `E[]`로 바꿔보면 틀림없이 매우 유사한 사용자 경험을 제공할 것입니다. `NodeListOf`는 `length` , `item(index)`, `forEach((value, key, parent) => void)` , 그리고 숫자 인덱스 생성과 같은 프로퍼티 및 메서드만을 구현합니다. 또한, 메서드는 _노드_ 가 아닌 _요소_ 리스트를 반환하며 이는 `.childNodes` 메서드에서 `NodeList`가 반환한 것입니다. 모순처럼 보일 수 있지만, `Element` 인터페이스는 `Node`에서 확장된 점에 유의해야 합니다.
 
 두 개의 메서드가 동작하는 것을 보려면 기존 코드를 다음과 같이 수정하십시오:
 
