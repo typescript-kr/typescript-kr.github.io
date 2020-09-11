@@ -78,10 +78,10 @@ TypeScript는 집합론에 의거해 타입을 이용하는 여러 방법을 제
 
 ### 삭제된 구조적 타입 (Erased Structural Types)
 
-TypeScript에서, 객체는 단일 정확 타입이 _아닙니다_.
+TypeScript에서, 객체는 정확히 단일 타입이 _아닙니다_.
 예를 들어 인터페이스를 충족하는 객체를 생성할 때, 둘 사이의 선언적인 관계가 없더라도 해당 인터페이스가 예상되는 곳에 해당 객체를 사용할 수 있습니다.
 
-```ts twoslash
+```
 interface Pointlike {
   x: number;
   y: number;
@@ -124,7 +124,7 @@ _집합의 타입_ 개념으로 돌아가서, `obj`를 `Pointlike` 값 집합이
 
 첫 번째로 _빈 타입_은 예상을 무시하는 것처럼 보입니다:
 
-```ts twoslash
+```
 class Empty {}
 
 function fn(arg: Empty) {
@@ -135,14 +135,14 @@ function fn(arg: Empty) {
 fn({ k: 10 });
 ```
 
-TypeScript determines if the call to `fn` here is valid by seeing if the provided argument is a valid `Empty`.
-It does so by examining the _structure_ of `{ k: 10 }` and `class Empty { }`.
-We can see that `{ k: 10 }` has _all_ of the properties that `Empty` does, because `Empty` has no properties.
-Therefore, this is a valid call!
+TypeScript는 주어진 인수가 유효한 `Empty`인지 확인하여 `fn`의 호출이 유효한지를 검사합니다
+`{ k: 10 }`과 `class Empty { }`의 _구조를 확인하여 유효성을 검사합니다.
+`Empty`에 프로퍼티가 없으므로 `Empty`가 수행하는 _모든_ 프로퍼티가 `{ k: 10 }`에 속해있습니다.
+그러므로, 유효한 호출입니다:
 
-This may seem surprising, but it's ultimately a very similar relationship to one enforced in nominal OOP languages.
-A subclass cannot _remove_ a property of its base class, because doing so would destroy the natural subtype relationship between the derived class and its base.
-Structural type systems simply identify this relationship implicitly by describing subtypes in terms of having properties of compatible types.
+놀라울 수 있겠지만, 최종적으로 객체지향프로그래밍 언어에서 사용되는 것과 매우 비슷한 관계입니다.
+파생 클래스와 파생 클래스의 기본 사이의 자연스러운 하위 타입 관계가 파괴되기 때문에, 하위 클래스는 _삭제_할 수 없습니다.
+구조적 타입 시스템은 호환 가능한 유형의 속성을 갖는 측면에서 하위 타입을 설명하므로 위의 관계를 암시적으로 구별합니다
 
 #### 동일한 타입 (Identical Types)
 
