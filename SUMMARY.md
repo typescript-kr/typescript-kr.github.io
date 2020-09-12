@@ -88,6 +88,6 @@
 * [프로젝트 레퍼런스](pages/project-references.md)
 * [MSBuild에서의 컴파일러 옵션](pages/compiler-options-in-msbuild.md)
 * [빌드 도구와 통합](pages/integrating-with-build-tools.md)
-* [configuring-watch (en)](pages/configuring-watch.md)
+* [configuring-watch](pages/configuring-watch.md)
 * [Nightly 빌드](pages/nightly-builds.md)
 
