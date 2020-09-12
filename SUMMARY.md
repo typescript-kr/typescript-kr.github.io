@@ -4,10 +4,10 @@
 
 ## 시작하기
 
-* [TS for the New Programmer(en)](pages/tutorials/ts-for-the-new-programmer.md)
-* [TS for JS Programmers(en)](pages/tutorials/ts-for-js-programmers.md)
+* [TS for the New Programmer](pages/tutorials/ts-for-the-new-programmer.md)
+* [TS for JS Programmers](pages/tutorials/ts-for-js-programmers.md)
 * [TS for OOP Programmers(en)](pages/tutorials/ts-for-oopers.md)
-* [TS for Functional Programmers(en)](pages/tutorials/ts-for-functional-programmers.md)
+* [TS for Functional Programmers](pages/tutorials/ts-for-functional-programmers.md)
 * [5분 안에 보는 TypeScript](pages/tutorials/typescript-in-5-minutes.md)
 
 ## 핸드북
@@ -16,8 +16,8 @@
 * [기본 타입](pages/basic-types.md)
 * [인터페이스](pages/interfaces.md)
 * [함수](pages/functions.md)
-* [리터럴 타입(en)](pages/literal-types.md)
-* [유니언과 교차 타입(en)](pages/unions-and-intersections.md)
+* [리터럴 타입](pages/literal-types.md)
+* [유니언과 교차 타입](pages/unions-and-intersections.md)
 * [클래스](pages/classes.md)
 * [열거형](pages/enums.md)
 * [제네릭](pages/generics.md)
@@ -47,7 +47,7 @@
 * [ASP.NET Core](pages/tutorials/asp.net-core.md)
 * [걸프](pages/tutorials/gulp.md)
 * [JavaScript에서 마이그레이션](pages/tutorials/migrating-from-javascript.md)
-* [TypeScript와 Babel 사용하기(en)](pages/tutorials/babel-with-typescript.md)
+* [TypeScript와 Babel 사용하기](pages/tutorials/babel-with-typescript.md)
 * [리액트 & 웹팩](pages/tutorials/react-&-webpack.md)
 
 ## 릴리즈 노트
@@ -76,10 +76,10 @@
 
 ## 자바스크립트
 
-* [JavaScript에 TypeScript 적용하기(en)](pages/intro-to-js-with-ts.md)
+* [JavaScript에 TypeScript 적용하기](pages/intro-to-js-with-ts.md)
 * [JavaScript 파일 타입 검사](pages/type-checking-javaScript-files.md)
 * [JSDoc 레퍼런스(en)](pages/jsdoc-reference.md)
-* [.js 파일에서 d.ts 파일 만들기(en)](pages/declaration-files/creating-dts-files-from-js.md)
+* [.js 파일에서 d.ts 파일 만들기](pages/declaration-files/creating-dts-files-from-js.md)
 
 ## 프로젝트 환경설정
 
@@ -88,6 +88,6 @@
 * [프로젝트 레퍼런스](pages/project-references.md)
 * [MSBuild에서의 컴파일러 옵션](pages/compiler-options-in-msbuild.md)
 * [빌드 도구와 통합](pages/integrating-with-build-tools.md)
-* [configuring-watch (en)](pages/configuring-watch.md)
+* [configuring-watch](pages/configuring-watch.md)
 * [Nightly 빌드](pages/nightly-builds.md)
 

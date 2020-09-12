@@ -303,4 +303,4 @@ function extend<First extends {}, Second extends {}>(
 
 const jim = extend(new Person("Jim"), ConsoleLogger.prototype);
 jim.log(jim.name);
-```-
+```
