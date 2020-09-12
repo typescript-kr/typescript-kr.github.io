@@ -107,7 +107,7 @@ interface HTMLElementTagNameMap {
 
 ### `Node.appendChild`
 
-코드 스니펫의 마지막 줄은 `app? .appendChild (p)`입니다.  이전 섹션(`document.getElementById`)에서는 `app`이 런타임에 null일 가능성이 있기 때문에 _선택적 체이닝(optional chaining)_ 연산자가 여기에 사용된다고 설명했습니다. `appendChild`의 메서드는 다음과 같습니다:
+코드 스니펫의 마지막 줄은 `app?.appendChild(p)`입니다. 이전 섹션(`document.getElementById`)에서는 `app`이 런타임에 null일 가능성이 있기 때문에 _선택적 체이닝(optional chaining)_ 연산자가 여기에 사용된다고 설명했습니다. `appendChild`의 메서드는 다음과 같습니다:
 
 ```ts
 appendChild<T extends Node>(newChild: T): T;
