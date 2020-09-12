@@ -101,19 +101,19 @@ interface HTMLElementTagNameMap {
 
 이제, `createElement` 정의의 나머지 부분인 `(tagName: K, options?: ElementCreationOptions): HTMLElementTagNameMap[K]`를 살펴보겠습니다. 첫 번째 인수 `tagName`은 제네릭 매개변수 `K`로 정의됩니다. TypeScript 인터프리터는 이 인수로부터 제네릭 매개변수를 _추론_ 할 수 있는 충분한 성능을 가지고 있습니다. 이는 개발자가 메서드를 사용할 때 실제로 제네릭 매개변수를 지정할 필요가 없음을 의미하며, 어떤 값이 `tagName`인수로 전달되든 간에 `K`로 추론되므로 정의의 나머지 부분에 사용할 수 있을 것입니다. 정확히 무슨 일이 일어나는지를 보면 반환값 `HTMLElementTagNameMap[K]`는 `tagName`인수를 가지고 해당 타입을 반환합니다. 이 정의는 스니펫 코드 `p` 변수에서 `HTMLParagraphElement`타입을 얻는 방법입니다. 그리고 코드가 `document.createElement('a')`였다면, `HTMLAnchorElement`타입의 요소가 됩니다.
 
-## The `Node` interface
+## `Node` 인터페이스 (The `Node` interface)
 
-The `document.getElementById` function returns an `HTMLElement`. `HTMLElement` interface extends the `Element` interface which extends the `Node` interface. This prototypal extension allows for all `HTMLElements` to utilize a subset of standard methods. In the code snippet, we use a property defined on the `Node` interface to append the new `p` element to the website.
+`document.getElementById` 함수는 `HTMLElement`를 반환합니다. `HTMLElement` 인터페이스는 `Node` 인터페이스를 확장한 `Element` 인터페이스를 확장합니다. 이러한 프로토타입 확장은 모든 `HTMLElements`가 표준 메서드의 하위 집합을 활용할 수 있도록 합니다. 코드 스니펫에서는 `Node` 인터페이스에 정의된 속성을 사용하여 웹 사이트에 새 `p` 요소를 추가합니다.
 
 ### `Node.appendChild`
 
-The last line of the code snippet is `app?.appendChild(p)`. The previous, `document.getElementById` , section detailed that the _optional chaining_ operator is used here because `app` can potentially be null at runtime. The `appendChild` method is defined by:
+코드 스니펫의 마지막 줄은 `app?.appendChild(p)`입니다. 이전 섹션(`document.getElementById`)에서는 `app`이 런타임에 null일 가능성이 있기 때문에 _선택적 체이닝(optional chaining)_ 연산자가 여기에 사용된다고 설명했습니다. `appendChild`의 메서드는 다음과 같습니다:
 
 ```ts
 appendChild<T extends Node>(newChild: T): T;
 ```
 
-This method works similarly to the `createElement` method as the generic parameter `T` is inferred from the `newChild` argument. `T` is _constrained_ to another base interface `Node`.
+제네릭 매개변수 `T`가 `newChild` 인수로부터 나온 것이기 때문에 이 메서드는 `createElement` 메서드와 유사하게 작동합니다. `T`는 또 다른 기본 인터페이스인 `노드`로 *제한*됩니다.
 
 ## `children`과 `childNodes`의 차이점 (Difference between `children` and `childNodes`)
 
