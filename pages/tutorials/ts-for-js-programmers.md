@@ -19,7 +19,7 @@ JavaScript는 이미 `string`, `number`, `object`, `undefined` 같은 원시 타
 TypeScript는 JavaScript 언어를 알고 있으며 대부분의 경우 타입을 생성해줄 것입니다.
 예를 들어 변수를 생성하면서 동시에 특정 값에 할당하는 경우, TypeScript는 그 값을 해당 변수의 타입으로 사용할 것입니다.
 
-```ts twoslash
+```ts
 let helloWorld = "Hello World";
 //  ^?
 ```
@@ -35,7 +35,7 @@ JavaScript는 다양한 디자인 패턴을 가능하게 하는 동적 언어입
 
 다음은 `name: string`과 `id: number`을 포함하는 추론 타입을 가진 객체를 생성하는 예제입니다.
 
-```ts twoslash
+```ts
 const user = {
   name: "Hayes",
   id: 0,
@@ -44,7 +44,7 @@ const user = {
 
 이 객체의 형태를 명시적으로 나타내기 위해서는 `interface` 로 선언합니다.
 
-```ts twoslash
+```ts
 interface User {
   name: string;
   id: number;
@@ -53,7 +53,7 @@ interface User {
 
 이제 변수 선언 뒤에  `: TypeName`의 구문을 사용해 JavaScript 객체가 새로운 `interface`의 형태를 따르고 있음을 선언할 수 있습니다.
 
-```ts twoslash
+```ts
 interface User {
   name: string;
   id: number;
@@ -67,7 +67,7 @@ const user: User = {
 
 해당 인터페이스에 맞지 않는 객체를 생성하면 TypeScript는 경고를 줍니다.
 
-```ts twoslash
+```ts
 // @errors: 2322
 interface User {
   name: string;
@@ -82,7 +82,7 @@ const user: User = {
 
 JavaScript는 클래스와 객체 지향 프로그래밍을 지원하기 때문에, TypeScript 또한 동일합니다. - 인터페이스는 클래스로도 선언할 수 있습니다.
 
-```ts twoslash
+```ts
 interface User {
   name: string;
   id: number;
@@ -103,7 +103,7 @@ const user: User = new UserAccount("Murphy", 1);
 
 인터페이스는 함수에서 매개변수와 리턴 값을 명시하는데 사용되기도 합니다.
 
-```ts twoslash
+```ts
 // @noErrors
 interface User {
   name: string;
