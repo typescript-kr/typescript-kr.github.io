@@ -113,7 +113,7 @@ interface HTMLElementTagNameMap {
 appendChild<T extends Node>(newChild: T): T;
 ```
 
-일반 매개변수 `T`가 `newChild` 인수로부터 나온 것이기 때문에 이 메서드는 `createElement` 메서드와 유사하게 작동합니다. `T`는 또 다른 기본 인터페이스인 `노드`로 _제한_됩니다.
+제네릭 매개변수 `T`가 `newChild` 인수로부터 나온 것이기 때문에 이 메서드는 `createElement` 메서드와 유사하게 작동합니다. `T`는 또 다른 기본 인터페이스인 `노드`로 *제한*됩니다.
 
 ## Difference between `children` and `childNodes`
 
