@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>TS for JS Programmers(en) · GitBook</title>
+        <title>TS for JS Programmers · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
 				<meta name="generator" content="GitBook 3.2.3">
@@ -122,7 +122,7 @@
                 <a href="ts-for-the-new-programmer.html">
             
                     
-                    TS for the New Programmer(en)
+                    TS for the New Programmer
             
                 </a>
             
@@ -135,7 +135,7 @@
                 <a href="ts-for-js-programmers.html">
             
                     
-                    TS for JS Programmers(en)
+                    TS for JS Programmers
             
                 </a>
             
@@ -161,7 +161,7 @@
                 <a href="ts-for-functional-programmers.html">
             
                     
-                    TS for Functional Programmers(en)
+                    TS for Functional Programmers
             
                 </a>
             
@@ -246,7 +246,7 @@
                 <a href="../literal-types.html">
             
                     
-                    리터럴 타입(en)
+                    리터럴 타입
             
                 </a>
             
@@ -259,7 +259,7 @@
                 <a href="../unions-and-intersections.html">
             
                     
-                    유니언과 교차 타입(en)
+                    유니언과 교차 타입
             
                 </a>
             
@@ -585,7 +585,7 @@
                 <a href="babel-with-typescript.html">
             
                     
-                    TypeScript와 Babel 사용하기(en)
+                    TypeScript와 Babel 사용하기
             
                 </a>
             
@@ -872,7 +872,7 @@
                 <a href="../intro-to-js-with-ts.html">
             
                     
-                    JavaScript에 TypeScript 적용하기(en)
+                    JavaScript에 TypeScript 적용하기
             
                 </a>
             
@@ -911,7 +911,7 @@
                 <a href="../declaration-files/creating-dts-files-from-js.html">
             
                     
-                    .js 파일에서 d.ts 파일 만들기(en)
+                    .js 파일에서 d.ts 파일 만들기
             
                 </a>
             
@@ -996,7 +996,7 @@
                 <a href="../configuring-watch.html">
             
                     
-                    configuring-watch (en)
+                    configuring-watch
             
                 </a>
             
@@ -1047,7 +1047,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >TS for JS Programmers(en)</a>
+        <a href="../.." >TS for JS Programmers</a>
     </h1>
 </div>
 
@@ -1070,151 +1070,152 @@ TypeScript&#xC740; JavaScript &#xC704;&#xC5D0; &#xB808;&#xC774;&#xC5B4;&#xB85C;&
 <h2 id="&#xD0C0;&#xC785;-&#xCD94;&#xB860;-types-by-inference">&#xD0C0;&#xC785; &#xCD94;&#xB860; (Types by Inference)</h2>
 <p>TypeScript&#xB294; JavaScript &#xC5B8;&#xC5B4;&#xB97C; &#xC54C;&#xACE0; &#xC788;&#xC73C;&#xBA70; &#xB300;&#xBD80;&#xBD84;&#xC758; &#xACBD;&#xC6B0; &#xD0C0;&#xC785;&#xC744; &#xC0DD;&#xC131;&#xD574;&#xC904; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
 &#xC608;&#xB97C; &#xB4E4;&#xC5B4; &#xBCC0;&#xC218;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xBA74;&#xC11C; &#xB3D9;&#xC2DC;&#xC5D0; &#xD2B9;&#xC815; &#xAC12;&#xC5D0; &#xD560;&#xB2F9;&#xD558;&#xB294; &#xACBD;&#xC6B0;, TypeScript&#xB294; &#xADF8; &#xAC12;&#xC744; &#xD574;&#xB2F9; &#xBCC0;&#xC218;&#xC758; &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<p>```ts twoslash
-let helloWorld = &quot;Hello World&quot;;
-//  ^?</p>
-<pre><code>
-JavaScript&#xAC00; &#xB3D9;&#xC791;&#xD558;&#xB294; &#xBC29;&#xC2DD;&#xC744; &#xC774;&#xD574;&#xD568;&#xC73C;&#xB85C;&#xC368; TypeScript&#xB294; JavaScript &#xCF54;&#xB4DC;&#xB97C; &#xBC1B;&#xC544;&#xB4E4;&#xC774;&#xBA74;&#xC11C; &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C0;&#xB294; &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;&#xC744; &#xAD6C;&#xCD95;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xD0C0;&#xC785;&#xC744; &#xBA85;&#xC2DC;&#xD558;&#xAE30; &#xC704;&#xD574; &#xCD94;&#xAC00;&#xB85C; &#xBB38;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xB294; &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;&#xC744; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xAC83;&#xC774; &#xC704;&#xC758; &#xC608;&#xC81C;&#xC5D0;&#xC11C; TypeScript&#xAC00; `helloWorld`&#xAC00; `string`&#xC784;&#xC744; &#xC54C;&#xAC8C; &#xB418;&#xB294; &#xBC29;&#xC2DD;&#xC785;&#xB2C8;&#xB2E4;.
-
-JavaScript&#xC640; &#xD568;&#xAED8; VS Code&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC791;&#xC5C5;&#xC744; &#xD560; &#xB54C; &#xD3B8;&#xC9D1;&#xAE30;&#xC758; &#xC790;&#xB3D9; &#xC644;&#xC131; &#xAE30;&#xB2A5;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC654;&#xC744; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
-&#xC774;&#xB294; TypeScript&#xC5D0; &#xD544;&#xC218;&#xBD88;&#xAC00;&#xACB0;&#xD55C; JavaScript&#xC5D0; &#xB300;&#xD55C; &#xC774;&#xD574;&#xAC00; JavaScript &#xC791;&#xC5C5;&#xC744; &#xAC1C;&#xC120;&#xD558;&#xAE30; &#xC704;&#xD574; &#xB0B4;&#xBD80;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xC5C8;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.
-
-## &#xD0C0;&#xC785; &#xC815;&#xC758;&#xD558;&#xAE30; (Defining Types)
-
-JavaScript&#xB294; &#xB2E4;&#xC591;&#xD55C; &#xB514;&#xC790;&#xC778; &#xD328;&#xD134;&#xC744; &#xAC00;&#xB2A5;&#xD558;&#xAC8C; &#xD558;&#xB294; &#xB3D9;&#xC801; &#xC5B8;&#xC5B4;&#xC785;&#xB2C8;&#xB2E4;. &#xBA87;&#xBA87; &#xB514;&#xC790;&#xC778; &#xD328;&#xD134;&#xC740; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xD0C0;&#xC785;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xAE30; &#xD798;&#xB4E4; &#xC218; &#xC788;&#xB294;&#xB370; (&#xB3D9;&#xC801; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC788;&#xC744; &#xAC83;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;) &#xC774;&#xB7EC;&#xD55C; &#xACBD;&#xC6B0;&#xC5D0; TypeScript&#xB294; TypeScript&#xC5D0;&#xAC8C; &#xD0C0;&#xC785;&#xC774; &#xBB34;&#xC5C7;&#xC774; &#xB418;&#xC5B4;&#xC57C; &#xD558;&#xB294;&#xC9C0; &#xBA85;&#xC2DC; &#xAC00;&#xB2A5;&#xD55C; JavaScript &#xC5B8;&#xC5B4;&#xC758; &#xD655;&#xC7A5;&#xC744; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.
-
-&#xB2E4;&#xC74C;&#xC740; `name: string`&#xACFC; `id: number`&#xC744; &#xD3EC;&#xD568;&#xD558;&#xB294; &#xCD94;&#xB860; &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C4; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xC608;&#xC81C;&#xC785;&#xB2C8;&#xB2E4;.
-
-```ts twoslash
-const user = {
-  name: &quot;Hayes&quot;,
-  id: 0,
+<pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">helloWorld</span> <span class="cm-operator">=</span> <span class="cm-string">&quot;Hello World&quot;</span>;
+<span class="cm-comment">//  ^?</span>
+</code></pre>
+<p>JavaScript&#xAC00; &#xB3D9;&#xC791;&#xD558;&#xB294; &#xBC29;&#xC2DD;&#xC744; &#xC774;&#xD574;&#xD568;&#xC73C;&#xB85C;&#xC368; TypeScript&#xB294; JavaScript &#xCF54;&#xB4DC;&#xB97C; &#xBC1B;&#xC544;&#xB4E4;&#xC774;&#xBA74;&#xC11C; &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C0;&#xB294; &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;&#xC744; &#xAD6C;&#xCD95;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xD0C0;&#xC785;&#xC744; &#xBA85;&#xC2DC;&#xD558;&#xAE30; &#xC704;&#xD574; &#xCD94;&#xAC00;&#xB85C; &#xBB38;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xB294; &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;&#xC744; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xAC83;&#xC774; &#xC704;&#xC758; &#xC608;&#xC81C;&#xC5D0;&#xC11C; TypeScript&#xAC00; <code>helloWorld</code>&#xAC00; <code>string</code>&#xC784;&#xC744; &#xC54C;&#xAC8C; &#xB418;&#xB294; &#xBC29;&#xC2DD;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>JavaScript&#xC640; &#xD568;&#xAED8; VS Code&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC791;&#xC5C5;&#xC744; &#xD560; &#xB54C; &#xD3B8;&#xC9D1;&#xAE30;&#xC758; &#xC790;&#xB3D9; &#xC644;&#xC131; &#xAE30;&#xB2A5;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC654;&#xC744; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB294; TypeScript&#xC5D0; &#xD544;&#xC218;&#xBD88;&#xAC00;&#xACB0;&#xD55C; JavaScript&#xC5D0; &#xB300;&#xD55C; &#xC774;&#xD574;&#xAC00; JavaScript &#xC791;&#xC5C5;&#xC744; &#xAC1C;&#xC120;&#xD558;&#xAE30; &#xC704;&#xD574; &#xB0B4;&#xBD80;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xC5C8;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xD0C0;&#xC785;-&#xC815;&#xC758;&#xD558;&#xAE30;-defining-types">&#xD0C0;&#xC785; &#xC815;&#xC758;&#xD558;&#xAE30; (Defining Types)</h2>
+<p>JavaScript&#xB294; &#xB2E4;&#xC591;&#xD55C; &#xB514;&#xC790;&#xC778; &#xD328;&#xD134;&#xC744; &#xAC00;&#xB2A5;&#xD558;&#xAC8C; &#xD558;&#xB294; &#xB3D9;&#xC801; &#xC5B8;&#xC5B4;&#xC785;&#xB2C8;&#xB2E4;. &#xBA87;&#xBA87; &#xB514;&#xC790;&#xC778; &#xD328;&#xD134;&#xC740; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xD0C0;&#xC785;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xAE30; &#xD798;&#xB4E4; &#xC218; &#xC788;&#xB294;&#xB370; (&#xB3D9;&#xC801; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC788;&#xC744; &#xAC83;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;) &#xC774;&#xB7EC;&#xD55C; &#xACBD;&#xC6B0;&#xC5D0; TypeScript&#xB294; TypeScript&#xC5D0;&#xAC8C; &#xD0C0;&#xC785;&#xC774; &#xBB34;&#xC5C7;&#xC774; &#xB418;&#xC5B4;&#xC57C; &#xD558;&#xB294;&#xC9C0; &#xBA85;&#xC2DC; &#xAC00;&#xB2A5;&#xD55C; JavaScript &#xC5B8;&#xC5B4;&#xC758; &#xD655;&#xC7A5;&#xC744; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C;&#xC740; <code>name: string</code>&#xACFC; <code>id: number</code>&#xC744; &#xD3EC;&#xD568;&#xD558;&#xB294; &#xCD94;&#xB860; &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C4; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xC608;&#xC81C;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">const</span> <span class="cm-variable">user</span> <span class="cm-operator">=</span> {
+  <span class="cm-property">name</span>: <span class="cm-string">&quot;Hayes&quot;</span>,
+  <span class="cm-property">id</span>: <span class="cm-number">0</span>,
 };
-</code></pre><p>&#xC774; &#xAC1D;&#xCCB4;&#xC758; &#xD615;&#xD0DC;&#xB97C; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xB098;&#xD0C0;&#xB0B4;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB294; <code>interface</code> &#xB85C; &#xC120;&#xC5B8;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>```ts twoslash
-interface User {
-  name: string;
-  id: number;
-}</p>
-<pre><code>
-&#xC774;&#xC81C; &#xBCC0;&#xC218; &#xC120;&#xC5B8; &#xB4A4;&#xC5D0;  `: TypeName`&#xC758; &#xAD6C;&#xBB38;&#xC744; &#xC0AC;&#xC6A9;&#xD574; JavaScript &#xAC1D;&#xCCB4;&#xAC00; &#xC0C8;&#xB85C;&#xC6B4; `interface`&#xC758; &#xD615;&#xD0DC;&#xB97C; &#xB530;&#xB974;&#xACE0; &#xC788;&#xC74C;&#xC744; &#xC120;&#xC5B8;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-
-```ts twoslash
-interface User {
-  name: string;
-  id: number;
+</code></pre>
+<p>&#xC774; &#xAC1D;&#xCCB4;&#xC758; &#xD615;&#xD0DC;&#xB97C; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xB098;&#xD0C0;&#xB0B4;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB294; <code>interface</code> &#xB85C; &#xC120;&#xC5B8;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">User</span> {
+  <span class="cm-variable">name</span>: <span class="cm-variable-3">string</span>;
+  <span class="cm-variable">id</span>: <span class="cm-variable-3">number</span>;
 }
-// ---cut---
-const user: User = {
-  name: &quot;Hayes&quot;,
-  id: 0,
+</code></pre>
+<p>&#xC774;&#xC81C; &#xBCC0;&#xC218; &#xC120;&#xC5B8; &#xB4A4;&#xC5D0;  <code>: TypeName</code>&#xC758; &#xAD6C;&#xBB38;&#xC744; &#xC0AC;&#xC6A9;&#xD574; JavaScript &#xAC1D;&#xCCB4;&#xAC00; &#xC0C8;&#xB85C;&#xC6B4; <code>interface</code>&#xC758; &#xD615;&#xD0DC;&#xB97C; &#xB530;&#xB974;&#xACE0; &#xC788;&#xC74C;&#xC744; &#xC120;&#xC5B8;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">User</span> {
+  <span class="cm-variable">name</span>: <span class="cm-variable-3">string</span>;
+  <span class="cm-variable">id</span>: <span class="cm-variable-3">number</span>;
+}
+<span class="cm-comment">// ---cut---</span>
+<span class="cm-keyword">const</span> <span class="cm-variable">user</span>: <span class="cm-variable-3">User</span> <span class="cm-operator">=</span> {
+  <span class="cm-property">name</span>: <span class="cm-string">&quot;Hayes&quot;</span>,
+  <span class="cm-property">id</span>: <span class="cm-number">0</span>,
 };
-</code></pre><p>&#xD574;&#xB2F9; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xB9DE;&#xC9C0; &#xC54A;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xBA74; TypeScript&#xB294; &#xACBD;&#xACE0;&#xB97C; &#xC90D;&#xB2C8;&#xB2E4;.</p>
-<p>```ts twoslash
-// @errors: 2322
-interface User {
-  name: string;
-  id: number;
-}</p>
-<p>const user: User = {
-  username: &quot;Hayes&quot;,
-  id: 0,
-};</p>
-<pre><code>
-JavaScript&#xB294; &#xD074;&#xB798;&#xC2A4;&#xC640; &#xAC1D;&#xCCB4; &#xC9C0;&#xD5A5; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC744; &#xC9C0;&#xC6D0;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, TypeScript &#xB610;&#xD55C; &#xB3D9;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;. - &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB294; &#xD074;&#xB798;&#xC2A4;&#xB85C;&#xB3C4; &#xC120;&#xC5B8;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-
-```ts twoslash
-interface User {
-  name: string;
-  id: number;
+</code></pre>
+<p>&#xD574;&#xB2F9; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xB9DE;&#xC9C0; &#xC54A;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xBA74; TypeScript&#xB294; &#xACBD;&#xACE0;&#xB97C; &#xC90D;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-comment">// @errors: 2322</span>
+<span class="cm-keyword">interface</span> <span class="cm-variable">User</span> {
+  <span class="cm-variable">name</span>: <span class="cm-variable-3">string</span>;
+  <span class="cm-variable">id</span>: <span class="cm-variable-3">number</span>;
 }
 
-class UserAccount {
-  name: string;
-  id: number;
+<span class="cm-keyword">const</span> <span class="cm-variable">user</span>: <span class="cm-variable-3">User</span> <span class="cm-operator">=</span> {
+  <span class="cm-property">username</span>: <span class="cm-string">&quot;Hayes&quot;</span>,
+  <span class="cm-property">id</span>: <span class="cm-number">0</span>,
+};
+</code></pre>
+<p>JavaScript&#xB294; &#xD074;&#xB798;&#xC2A4;&#xC640; &#xAC1D;&#xCCB4; &#xC9C0;&#xD5A5; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC744; &#xC9C0;&#xC6D0;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, TypeScript &#xB610;&#xD55C; &#xB3D9;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;. - &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB294; &#xD074;&#xB798;&#xC2A4;&#xB85C;&#xB3C4; &#xC120;&#xC5B8;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-keyword">interface</span> <span class="cm-variable">User</span> {
+  <span class="cm-variable">name</span>: <span class="cm-variable-3">string</span>;
+  <span class="cm-variable">id</span>: <span class="cm-variable-3">number</span>;
+}
 
-  constructor(name: string, id: number) {
-    this.name = name;
-    this.id = id;
+<span class="cm-keyword">class</span> <span class="cm-variable">UserAccount</span> {
+  <span class="cm-property">name</span>: <span class="cm-variable-3">string</span>;
+  <span class="cm-variable">id</span>: <span class="cm-variable-3">number</span>;
+
+  <span class="cm-keyword">constructor</span>(<span class="cm-variable">name</span>: <span class="cm-variable-3">string</span>, <span class="cm-variable">id</span>: <span class="cm-variable-3">number</span>) {
+    <span class="cm-keyword">this</span>.<span class="cm-variable">name</span> <span class="cm-operator">=</span> <span class="cm-variable">name</span>;
+    <span class="cm-keyword">this</span>.<span class="cm-variable">id</span> <span class="cm-operator">=</span> <span class="cm-variable">id</span>;
   }
 }
 
-const user: User = new UserAccount(&quot;Murphy&quot;, 1);
-</code></pre><p>&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB294; &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC640; &#xB9AC;&#xD134; &#xAC12;&#xC744; &#xBA85;&#xC2DC;&#xD558;&#xB294;&#xB370; &#xC0AC;&#xC6A9;&#xB418;&#xAE30;&#xB3C4; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>```ts twoslash
-// @noErrors
-interface User {
-  name: string;
-  id: number;
+<span class="cm-keyword">const</span> <span class="cm-variable">user</span>: <span class="cm-variable-3">User</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">UserAccount</span>(<span class="cm-string">&quot;Murphy&quot;</span>, <span class="cm-number">1</span>);
+</code></pre>
+<p>&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB294; &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC640; &#xB9AC;&#xD134; &#xAC12;&#xC744; &#xBA85;&#xC2DC;&#xD558;&#xB294;&#xB370; &#xC0AC;&#xC6A9;&#xB418;&#xAE30;&#xB3C4; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-comment">// @noErrors</span>
+<span class="cm-keyword">interface</span> <span class="cm-variable">User</span> {
+  <span class="cm-variable">name</span>: <span class="cm-variable-3">string</span>;
+  <span class="cm-variable">id</span>: <span class="cm-variable-3">number</span>;
 }
-// ---cut---
-function getAdminUser(): User {
-  //...
-}</p>
-<p>function deleteUser(user: User) {
-  // ...
-}</p>
-<pre><code>
-JavaScript&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; &#xC801;&#xC740; &#xC885;&#xB958;&#xC758; &#xC6D0;&#xC2DC; &#xD0C0;&#xC785;&#xC774; &#xC774;&#xBBF8; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.: `boolean`, `bigint`, `null`, `number`, `string`, `symbol`, `object`&#xC640; `undefined`&#xB294; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. TypeScript&#xB294; &#xBA87; &#xAC00;&#xC9C0;&#xB97C; &#xCD94;&#xAE30;&#xD574; &#xBAA9;&#xB85D;&#xC744; &#xD655;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xC5B4;, `any` (&#xBB34;&#xC5C7;&#xC774;&#xB4E0; &#xD5C8;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;), [`unknown`](/en/play#example/unknown-and-never) (&#xC774; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC0AC;&#xB78C;&#xC774; &#xD0C0;&#xC785;&#xC774; &#xBB34;&#xC5C7;&#xC778;&#xC9C0; &#xC120;&#xC5B8;&#xD588;&#xB294;&#xAC00;&#xB97C; &#xD655;&#xC778;&#xD558;&#xC2ED;&#xC2DC;&#xC624;), [`never`](/en/play#example/unknown-and-never) (&#xC774; &#xD0C0;&#xC785;&#xC740; &#xBC1C;&#xC0DD;&#xB420; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;) `void` (`undefined`&#xB97C; &#xB9AC;&#xD134;&#xD558;&#xAC70;&#xB098; &#xB9AC;&#xD134; &#xAC12;&#xC774; &#xC5C6;&#xB294; &#xD568;&#xC218;).
+<span class="cm-comment">// ---cut---</span>
+<span class="cm-keyword">function</span> <span class="cm-variable">getAdminUser</span>(): <span class="cm-variable">User</span> {
+  <span class="cm-comment">//...</span>
+}
 
-&#xD0C0;&#xC785;&#xC744; &#xAD6C;&#xCD95;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xB450; &#xAC00;&#xC9C0; &#xAD6C;&#xBB38;&#xC774; &#xC788;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xAF64; &#xBE60;&#xB974;&#xAC8C; &#xC54C; &#xC218; &#xC788;&#xC744; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.: [Interfaces and Types](/play/?e=83#example/types-vs-interfaces) - `interface`&#xB97C; &#xC6B0;&#xC120;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xD2B9;&#xC815; &#xAE30;&#xB2A5;&#xC774; &#xD544;&#xC694;&#xD560; &#xB54C; `type`&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.
-
-## &#xD0C0;&#xC785; &#xAD6C;&#xC131; (Composing Types)
-
-&#xAC1D;&#xCCB4;&#xB4E4;&#xC744; &#xC870;&#xD569;&#xD558;&#xC5EC; &#xB354; &#xD06C;&#xACE0; &#xBCF5;&#xC7A1;&#xD55C; &#xAC1D;&#xCCB4;&#xB97C; &#xB9CC;&#xB4DC;&#xB294; &#xBC29;&#xBC95;&#xACFC; &#xC720;&#xC0AC;&#xD558;&#xAC8C; TypeScript&#xC5D0; &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xC774;&#xB97C; &#xC218;&#xD589;&#xD558;&#xB294; &#xB3C4;&#xAD6C;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-&#xC5EC;&#xB7EC;&#xAC00;&#xC9C0; &#xD0C0;&#xC785;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xC0C8; &#xD0C0;&#xC785;&#xC744; &#xC791;&#xC131;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC77C;&#xC0C1;&#xC801;&#xC778; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xAC00;&#xC7A5; &#xB9CE;&#xC774; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xB450; &#xAC00;&#xC9C0; &#xCF54;&#xB4DC;&#xB85C;&#xB294; &#xC720;&#xB2C8;&#xC5B8;(Union)&#xACFC; &#xC81C;&#xB124;&#xB9AD;(Generic)&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-
-### &#xC720;&#xB2C8;&#xC5B8; (Unions)
-
-&#xC720;&#xB2C8;&#xC5B8;&#xC740; &#xD0C0;&#xC785;&#xC774; &#xC5EC;&#xB7EC; &#xD0C0;&#xC785; &#xC911; &#xD558;&#xB098;&#xC77C; &#xC218; &#xC788;&#xC74C;&#xC744; &#xC120;&#xC5B8;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC785;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xC5B4;, `boolean` &#xD0C0;&#xC785;&#xC744; `true` &#xB610;&#xB294; `false`&#xB85C; &#xC124;&#xBA85;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:
-</code></pre><p>type MyBool = true | false;</p>
-<pre><code>
-_&#xCC38;&#xACE0;:_ `MyBool`&#xC704;&#xC5D0; &#xB9C8;&#xC6B0;&#xC2A4;&#xB97C; &#xC62C;&#xB9B0;&#xB2E4;&#xBA74;, `boolean`&#xC73C;&#xB85C; &#xBD84;&#xB958;&#xB41C; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; - &#xAD6C;&#xC870;&#xC801; &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xBA70;, &#xB098;&#xC911;&#xC5D0; &#xC0B4;&#xD3B4;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.
-
-&#xC720;&#xB2C8;&#xC5B8; &#xD0C0;&#xC785;&#xC774; &#xAC00;&#xC7A5; &#xB9CE;&#xC774; &#xC0AC;&#xC6A9;&#xB41C; &#xC0AC;&#xB840; &#xC911; &#xD558;&#xB098;&#xB294; &#xAC12;&#xC774; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD5C8;&#xC6A9;&#xB418;&#xB294; `string` &#xB610;&#xB294; `number`&#xC758; [&#xB9AC;&#xD130;&#xB7F4;](/docs/handbook/literal-types.html)&#xC9D1;&#xD569;&#xC744; &#xC124;&#xBA85;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;:
-</code></pre><p>type WindowStates = &quot;open&quot; | &quot;closed&quot; | &quot;minimized&quot;;
+<span class="cm-keyword">function</span> <span class="cm-variable">deleteUser</span>(<span class="cm-def">user</span>: <span class="cm-variable-3">User</span>) {
+  <span class="cm-comment">// ...</span>
+}
+</code></pre>
+<p>JavaScript&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; &#xC801;&#xC740; &#xC885;&#xB958;&#xC758; &#xC6D0;&#xC2DC; &#xD0C0;&#xC785;&#xC774; &#xC774;&#xBBF8; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.: <code>boolean</code>, <code>bigint</code>, <code>null</code>, <code>number</code>, <code>string</code>, <code>symbol</code>, <code>object</code>&#xC640; <code>undefined</code>&#xB294; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. TypeScript&#xB294; &#xBA87; &#xAC00;&#xC9C0;&#xB97C; &#xCD94;&#xAE30;&#xD574; &#xBAA9;&#xB85D;&#xC744; &#xD655;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xC5B4;, <code>any</code> (&#xBB34;&#xC5C7;&#xC774;&#xB4E0; &#xD5C8;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;), <a href="../../en/play#example/unknown-and-never"><code>unknown</code></a> (&#xC774; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC0AC;&#xB78C;&#xC774; &#xD0C0;&#xC785;&#xC774; &#xBB34;&#xC5C7;&#xC778;&#xC9C0; &#xC120;&#xC5B8;&#xD588;&#xB294;&#xAC00;&#xB97C; &#xD655;&#xC778;&#xD558;&#xC2ED;&#xC2DC;&#xC624;), <a href="../../en/play#example/unknown-and-never"><code>never</code></a> (&#xC774; &#xD0C0;&#xC785;&#xC740; &#xBC1C;&#xC0DD;&#xB420; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;) <code>void</code> (<code>undefined</code>&#xB97C; &#xB9AC;&#xD134;&#xD558;&#xAC70;&#xB098; &#xB9AC;&#xD134; &#xAC12;&#xC774; &#xC5C6;&#xB294; &#xD568;&#xC218;).</p>
+<p>&#xD0C0;&#xC785;&#xC744; &#xAD6C;&#xCD95;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xB450; &#xAC00;&#xC9C0; &#xAD6C;&#xBB38;&#xC774; &#xC788;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xAF64; &#xBE60;&#xB974;&#xAC8C; &#xC54C; &#xC218; &#xC788;&#xC744; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.: <a href="../../play#example/types-vs-interfaces">Interfaces and Types</a> - <code>interface</code>&#xB97C; &#xC6B0;&#xC120;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xD2B9;&#xC815; &#xAE30;&#xB2A5;&#xC774; &#xD544;&#xC694;&#xD560; &#xB54C; <code>type</code>&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xD0C0;&#xC785;-&#xAD6C;&#xC131;-composing-types">&#xD0C0;&#xC785; &#xAD6C;&#xC131; (Composing Types)</h2>
+<p>&#xAC1D;&#xCCB4;&#xB4E4;&#xC744; &#xC870;&#xD569;&#xD558;&#xC5EC; &#xB354; &#xD06C;&#xACE0; &#xBCF5;&#xC7A1;&#xD55C; &#xAC1D;&#xCCB4;&#xB97C; &#xB9CC;&#xB4DC;&#xB294; &#xBC29;&#xBC95;&#xACFC; &#xC720;&#xC0AC;&#xD558;&#xAC8C; TypeScript&#xC5D0; &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xC774;&#xB97C; &#xC218;&#xD589;&#xD558;&#xB294; &#xB3C4;&#xAD6C;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC5EC;&#xB7EC;&#xAC00;&#xC9C0; &#xD0C0;&#xC785;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xC0C8; &#xD0C0;&#xC785;&#xC744; &#xC791;&#xC131;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC77C;&#xC0C1;&#xC801;&#xC778; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xAC00;&#xC7A5; &#xB9CE;&#xC774; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xB450; &#xAC00;&#xC9C0; &#xCF54;&#xB4DC;&#xB85C;&#xB294; &#xC720;&#xB2C8;&#xC5B8;(Union)&#xACFC; &#xC81C;&#xB124;&#xB9AD;(Generic)&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xC720;&#xB2C8;&#xC5B8;-unions">&#xC720;&#xB2C8;&#xC5B8; (Unions)</h3>
+<p>&#xC720;&#xB2C8;&#xC5B8;&#xC740; &#xD0C0;&#xC785;&#xC774; &#xC5EC;&#xB7EC; &#xD0C0;&#xC785; &#xC911; &#xD558;&#xB098;&#xC77C; &#xC218; &#xC788;&#xC74C;&#xC744; &#xC120;&#xC5B8;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC785;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xC5B4;, <code>boolean</code> &#xD0C0;&#xC785;&#xC744; <code>true</code> &#xB610;&#xB294; <code>false</code>&#xB85C; &#xC124;&#xBA85;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code>type MyBool = true | false;
+</code></pre><p><em>&#xCC38;&#xACE0;:</em> <code>MyBool</code>&#xC704;&#xC5D0; &#xB9C8;&#xC6B0;&#xC2A4;&#xB97C; &#xC62C;&#xB9B0;&#xB2E4;&#xBA74;, <code>boolean</code>&#xC73C;&#xB85C; &#xBD84;&#xB958;&#xB41C; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; - &#xAD6C;&#xC870;&#xC801; &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xBA70;, &#xB098;&#xC911;&#xC5D0; &#xC0B4;&#xD3B4;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC720;&#xB2C8;&#xC5B8; &#xD0C0;&#xC785;&#xC774; &#xAC00;&#xC7A5; &#xB9CE;&#xC774; &#xC0AC;&#xC6A9;&#xB41C; &#xC0AC;&#xB840; &#xC911; &#xD558;&#xB098;&#xB294; &#xAC12;&#xC774; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD5C8;&#xC6A9;&#xB418;&#xB294; <code>string</code> &#xB610;&#xB294; <code>number</code>&#xC758; <a href="../../docs/handbook/literal-types.html">&#xB9AC;&#xD130;&#xB7F4;</a>&#xC9D1;&#xD569;&#xC744; &#xC124;&#xBA85;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code>type WindowStates = &quot;open&quot; | &quot;closed&quot; | &quot;minimized&quot;;
 type LockStates = &quot;locked&quot; | &quot;unlocked&quot;;
-type OddNumbersUnderTen = 1 | 3 | 5 | 7 | 9;</p>
-<pre><code>
-&#xC720;&#xB2C8;&#xC5B8;&#xC740; &#xB2E4;&#xC591;&#xD55C; &#xD0C0;&#xC785;&#xC744; &#xCC98;&#xB9AC;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xB294;&#xB370;, &#xC608;&#xB97C; &#xB4E4;&#xC5B4; `array` &#xB610;&#xB294; `string`&#xC744; &#xBC1B;&#xB294; &#xD568;&#xC218;&#xAC00; &#xC788;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-</code></pre><p>function getLength(obj: string | string[]) {
+type OddNumbersUnderTen = 1 | 3 | 5 | 7 | 9;
+</code></pre><p>&#xC720;&#xB2C8;&#xC5B8;&#xC740; &#xB2E4;&#xC591;&#xD55C; &#xD0C0;&#xC785;&#xC744; &#xCC98;&#xB9AC;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xB294;&#xB370;, &#xC608;&#xB97C; &#xB4E4;&#xC5B4; <code>array</code> &#xB610;&#xB294; <code>string</code>&#xC744; &#xBC1B;&#xB294; &#xD568;&#xC218;&#xAC00; &#xC788;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code>function getLength(obj: string | string[]) {
   return obj.length;
-}</p>
-<pre><code>
-TypeScript&#xB294; &#xCF54;&#xB4DC;&#xAC00; &#xC2DC;&#xAC04;&#xC5D0; &#xB530;&#xB77C; &#xBCC0;&#xC218;&#xAC00; &#xBCC0;&#xACBD;&#xB418;&#xB294; &#xBC29;&#xC2DD;&#xC744; &#xC774;&#xD574;&#xD558;&#xBA70;, &#xC774;&#xB7EC;&#xD55C; &#xAC80;&#xC0AC;&#xB97C; &#xC0AC;&#xC6A9;&#xD574; &#xD0C0;&#xC785;&#xC744; &#xACE8;&#xB77C;&#xB0BC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-
-| Type      | Predicate                          |
-| --------- | ---------------------------------- |
-| string    | `typeof s === &quot;string&quot;`            |
-| number    | `typeof n === &quot;number&quot;`            |
-| boolean   | `typeof b === &quot;boolean&quot;`           |
-| undefined | `typeof undefined === &quot;undefined&quot;` |
-| function  | `typeof f === &quot;function&quot;`          |
-| array     | `Array.isArray(a)`                 |
-
-&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, `typeof obj === &quot;string&quot;`&#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; `string`&#xACFC; `array`&#xB97C; &#xAD6C;&#xBD84;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBA70; TypeScript&#xB294; &#xAC1D;&#xCCB4;&#xAC00; &#xB2E4;&#xB978; &#xCF54;&#xB4DC; &#xACBD;&#xB85C;&#xC5D0; &#xC788;&#xC74C;&#xC744; &#xC54C;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
-
-&lt;!-- prettier-ignore --&gt;
-</code></pre><p>function wrapInArray(obj: string | string[]) {
+}
+</code></pre><p>TypeScript&#xB294; &#xCF54;&#xB4DC;&#xAC00; &#xC2DC;&#xAC04;&#xC5D0; &#xB530;&#xB77C; &#xBCC0;&#xC218;&#xAC00; &#xBCC0;&#xACBD;&#xB418;&#xB294; &#xBC29;&#xC2DD;&#xC744; &#xC774;&#xD574;&#xD558;&#xBA70;, &#xC774;&#xB7EC;&#xD55C; &#xAC80;&#xC0AC;&#xB97C; &#xC0AC;&#xC6A9;&#xD574; &#xD0C0;&#xC785;&#xC744; &#xACE8;&#xB77C;&#xB0BC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Predicate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>string</td>
+<td><code>typeof s === &quot;string&quot;</code></td>
+</tr>
+<tr>
+<td>number</td>
+<td><code>typeof n === &quot;number&quot;</code></td>
+</tr>
+<tr>
+<td>boolean</td>
+<td><code>typeof b === &quot;boolean&quot;</code></td>
+</tr>
+<tr>
+<td>undefined</td>
+<td><code>typeof undefined === &quot;undefined&quot;</code></td>
+</tr>
+<tr>
+<td>function</td>
+<td><code>typeof f === &quot;function&quot;</code></td>
+</tr>
+<tr>
+<td>array</td>
+<td><code>Array.isArray(a)</code></td>
+</tr>
+</tbody>
+</table>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, <code>typeof obj === &quot;string&quot;</code>&#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; <code>string</code>&#xACFC; <code>array</code>&#xB97C; &#xAD6C;&#xBD84;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBA70; TypeScript&#xB294; &#xAC1D;&#xCCB4;&#xAC00; &#xB2E4;&#xB978; &#xCF54;&#xB4DC; &#xACBD;&#xB85C;&#xC5D0; &#xC788;&#xC74C;&#xC744; &#xC54C;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<!-- prettier-ignore -->
+<pre><code>function wrapInArray(obj: string | string[]) {
   if (typeof obj === &quot;string&quot;) {
     return [obj];
 //          ^?
   } else {
     return obj;
   }
-}</p>
-<pre><code>
-### &#xC81C;&#xB124;&#xB9AD; (Generics)
-
-TypeScript &#xC81C;&#xB124;&#xB9AD; &#xC2DC;&#xC2A4;&#xD15C;&#xC5D0; &#xB300;&#xD574; &#xC790;&#xC138;&#xD788; &#xC54C;&#xC544;&#xBCFC; &#xC218; &#xC788;&#xC9C0;&#xB9CC;, 1&#xBD84; &#xC815;&#xB3C4;&#xC758; &#xC218;&#xC900; &#xB192;&#xC740; &#xC124;&#xBA85;&#xC744; &#xD558;&#xAE30; &#xC704;&#xD574;, &#xC81C;&#xB124;&#xB9AD;&#xC740; &#xD0C0;&#xC785;&#xC5D0; &#xBCC0;&#xC218;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC785;&#xB2C8;&#xB2E4;.
-
-&#xBC30;&#xC5F4;&#xC774; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xC608;&#xC2DC;&#xC774;&#xBA70;, &#xC81C;&#xB124;&#xB9AD;&#xC774; &#xC5C6;&#xB294; &#xBC30;&#xC5F4;&#xC740; &#xC5B4;&#xB5A4; &#xAC83;&#xC774;&#xB4E0; &#xD3EC;&#xD568;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC81C;&#xB124;&#xB9AD;&#xC774; &#xC788;&#xB294; &#xBC30;&#xC5F4;&#xC740; &#xBC30;&#xC5F4; &#xC548;&#xC758; &#xAC12;&#xC744; &#xC124;&#xBA85;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-
-```ts
-type StringArray = Array&lt;string&gt;;
-type NumberArray = Array&lt;number&gt;;
-type ObjectWithNameArray = Array&lt;{ name: string }&gt;;
-</code></pre><p>&#xC81C;&#xB124;&#xB9AD;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACE0;&#xC720; &#xD0C0;&#xC785;&#xC744; &#xC120;&#xC5B8;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+}
+</code></pre><h3 id="&#xC81C;&#xB124;&#xB9AD;-generics">&#xC81C;&#xB124;&#xB9AD; (Generics)</h3>
+<p>TypeScript &#xC81C;&#xB124;&#xB9AD; &#xC2DC;&#xC2A4;&#xD15C;&#xC5D0; &#xB300;&#xD574; &#xC790;&#xC138;&#xD788; &#xC54C;&#xC544;&#xBCFC; &#xC218; &#xC788;&#xC9C0;&#xB9CC;, 1&#xBD84; &#xC815;&#xB3C4;&#xC758; &#xC218;&#xC900; &#xB192;&#xC740; &#xC124;&#xBA85;&#xC744; &#xD558;&#xAE30; &#xC704;&#xD574;, &#xC81C;&#xB124;&#xB9AD;&#xC740; &#xD0C0;&#xC785;&#xC5D0; &#xBCC0;&#xC218;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xBC30;&#xC5F4;&#xC774; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xC608;&#xC2DC;&#xC774;&#xBA70;, &#xC81C;&#xB124;&#xB9AD;&#xC774; &#xC5C6;&#xB294; &#xBC30;&#xC5F4;&#xC740; &#xC5B4;&#xB5A4; &#xAC83;&#xC774;&#xB4E0; &#xD3EC;&#xD568;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC81C;&#xB124;&#xB9AD;&#xC774; &#xC788;&#xB294; &#xBC30;&#xC5F4;&#xC740; &#xBC30;&#xC5F4; &#xC548;&#xC758; &#xAC12;&#xC744; &#xC124;&#xBA85;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-ts"><span class="cm-variable">type</span> <span class="cm-variable">StringArray</span> <span class="cm-operator">=</span> <span class="cm-variable">Array</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">string</span><span class="cm-operator">&gt;</span>;
+<span class="cm-variable">type</span> <span class="cm-variable">NumberArray</span> <span class="cm-operator">=</span> <span class="cm-variable">Array</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">number</span><span class="cm-operator">&gt;</span>;
+<span class="cm-variable">type</span> <span class="cm-variable">ObjectWithNameArray</span> <span class="cm-operator">=</span> <span class="cm-variable">Array</span><span class="cm-operator">&lt;</span>{ <span class="cm-property">name</span>: <span class="cm-variable-3">string</span> }<span class="cm-operator">&gt;</span>;
+</code></pre>
+<p>&#xC81C;&#xB124;&#xB9AD;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACE0;&#xC720; &#xD0C0;&#xC785;&#xC744; &#xC120;&#xC5B8;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code>// @errors: 2345
 interface Backpack&lt;Type&gt; {
   add: (obj: Type) =&gt; void;
@@ -1324,7 +1325,7 @@ printPoint(newVPoint); // prints &quot;13, 56&quot;
 
             
                 
-                <a href="ts-for-the-new-programmer.html" class="navigation navigation-prev " aria-label="Previous page: TS for the New Programmer(en)">
+                <a href="ts-for-the-new-programmer.html" class="navigation navigation-prev " aria-label="Previous page: TS for the New Programmer">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -1340,7 +1341,7 @@ printPoint(newVPoint); // prints &quot;13, 56&quot;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"TS for JS Programmers(en)","layout":"docs","permalink":"/docs/handbook/typescript-in-5-minutes.html","oneline":"Learn how TypeScript extends JavaScript","level":"2.2","depth":1,"next":{"title":"TS for OOP Programmers(en)","level":"2.3","depth":1,"path":"pages/tutorials/ts-for-oopers.md","ref":"pages/tutorials/ts-for-oopers.md","articles":[]},"previous":{"title":"TS for the New Programmer(en)","level":"2.1","depth":1,"path":"pages/tutorials/ts-for-the-new-programmer.md","ref":"pages/tutorials/ts-for-the-new-programmer.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/tutorials/ts-for-js-programmers.md","mtime":"2020-09-08T11:09:52.340Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-08T11:11:14.122Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"TS for JS Programmers","layout":"docs","permalink":"/docs/handbook/typescript-in-5-minutes.html","oneline":"Learn how TypeScript extends JavaScript","level":"2.2","depth":1,"next":{"title":"TS for OOP Programmers(en)","level":"2.3","depth":1,"path":"pages/tutorials/ts-for-oopers.md","ref":"pages/tutorials/ts-for-oopers.md","articles":[]},"previous":{"title":"TS for the New Programmer","level":"2.1","depth":1,"path":"pages/tutorials/ts-for-the-new-programmer.md","ref":"pages/tutorials/ts-for-the-new-programmer.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/tutorials/ts-for-js-programmers.md","mtime":"2020-09-15T11:09:51.853Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-15T11:10:50.075Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

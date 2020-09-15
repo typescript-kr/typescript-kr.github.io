@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>configuring-watch (en) · GitBook</title>
+        <title>configuring-watch · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
 				<meta name="generator" content="GitBook 3.2.3">
@@ -122,7 +122,7 @@
                 <a href="tutorials/ts-for-the-new-programmer.html">
             
                     
-                    TS for the New Programmer(en)
+                    TS for the New Programmer
             
                 </a>
             
@@ -135,7 +135,7 @@
                 <a href="tutorials/ts-for-js-programmers.html">
             
                     
-                    TS for JS Programmers(en)
+                    TS for JS Programmers
             
                 </a>
             
@@ -161,7 +161,7 @@
                 <a href="tutorials/ts-for-functional-programmers.html">
             
                     
-                    TS for Functional Programmers(en)
+                    TS for Functional Programmers
             
                 </a>
             
@@ -246,7 +246,7 @@
                 <a href="literal-types.html">
             
                     
-                    리터럴 타입(en)
+                    리터럴 타입
             
                 </a>
             
@@ -259,7 +259,7 @@
                 <a href="unions-and-intersections.html">
             
                     
-                    유니언과 교차 타입(en)
+                    유니언과 교차 타입
             
                 </a>
             
@@ -585,7 +585,7 @@
                 <a href="tutorials/babel-with-typescript.html">
             
                     
-                    TypeScript와 Babel 사용하기(en)
+                    TypeScript와 Babel 사용하기
             
                 </a>
             
@@ -872,7 +872,7 @@
                 <a href="intro-to-js-with-ts.html">
             
                     
-                    JavaScript에 TypeScript 적용하기(en)
+                    JavaScript에 TypeScript 적용하기
             
                 </a>
             
@@ -911,7 +911,7 @@
                 <a href="declaration-files/creating-dts-files-from-js.html">
             
                     
-                    .js 파일에서 d.ts 파일 만들기(en)
+                    .js 파일에서 d.ts 파일 만들기
             
                 </a>
             
@@ -996,7 +996,7 @@
                 <a href="configuring-watch.html">
             
                     
-                    configuring-watch (en)
+                    configuring-watch
             
                 </a>
             
@@ -1047,7 +1047,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >configuring-watch (en)</a>
+        <a href=".." >configuring-watch</a>
     </h1>
 </div>
 
@@ -1062,70 +1062,70 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>Compiler supports configuring how to watch files and directories using the environment variables.</p>
-<h2 id="configuring-file-watching-using-environment-variable-tscwatchfile">Configuring file watching using environment variable <code>TSC_WATCHFILE</code></h2>
+                                <p>&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; &#xD658;&#xACBD; &#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD30C;&#xC77C;&#xACFC; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xB97C; &#xAC10;&#xC2DC;&#xD558;&#xB294; &#xBC29;&#xBC95; &#xAD6C;&#xC131;&#xC744; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xD658;&#xACBD;-&#xBCC0;&#xC218;-tscwatchfile&#xC744;-&#xC0AC;&#xC6A9;&#xD558;&#xC5EC;-&#xD30C;&#xC77C;-&#xAC10;&#xC2DC;-&#xC124;&#xC815;-configuring-file-watching-using-environment-variable-tscwatchfile">&#xD658;&#xACBD; &#xBCC0;&#xC218; <code>TSC_WATCHFILE</code>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD30C;&#xC77C; &#xAC10;&#xC2DC; &#xC124;&#xC815; (Configuring file watching using environment variable <code>TSC_WATCHFILE</code>)</h2>
 <table>
 <thead>
 <tr>
-<th>Option</th>
-<th>Description</th>
+<th>&#xC635;&#xC158;</th>
+<th>&#xC124;&#xBA85;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>PriorityPollingInterval</code></td>
-<td>Use <code>fs.watchFile</code> but use different polling intervals for source files, config files and missing files</td>
+<td><code>fs.watchFile</code>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0;&#xB9CC; &#xC18C;&#xC2A4; &#xD30C;&#xC77C;, &#xC124;&#xC815; &#xD30C;&#xC77C; &#xBC0F; &#xB204;&#xB77D;&#xB41C; &#xD30C;&#xC77C;&#xC5D0; &#xB300;&#xD574; &#xB2E4;&#xB978; &#xD3F4;&#xB9C1; &#xC8FC;&#xAE30;(polling intervals)&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td><code>DynamicPriorityPolling</code></td>
-<td>Use a dynamic queue where in the frequently modified files will be polled at shorter interval and the files unchanged will be polled less frequently</td>
+<td>&#xC790;&#xC8FC; &#xC218;&#xC815;&#xB418;&#xB294; &#xD30C;&#xC77C;&#xC744; &#xC790;&#xC8FC; &#xD3F4;&#xB9C1;&#xD558;&#xACE0; &#xBCC0;&#xACBD;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xD30C;&#xC77C;&#xC744; &#xB35C; &#xC790;&#xC8FC; &#xD3F4;&#xB9C1; &#xD558;&#xB294; &#xB3D9;&#xC801; &#xD050;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td><code>UseFsEvents</code></td>
-<td>Use <code>fs.watch</code> which uses file system events (but might not be accurate on different OS) to get the notifications for the file changes/creation/deletion. Note that few OS eg. linux has limit on number of watches and failing to create watcher using <code>fs.watch</code> will result it in creating using <code>fs.watchFile</code></td>
+<td>&#xD30C;&#xC77C; &#xC2DC;&#xC2A4;&#xD15C; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; <code>fs.watch</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD30C;&#xC77C; &#xBCC0;&#xACBD;/&#xC0DD;&#xC131;/&#xC0AD;&#xC81C;&#xC5D0; &#xB300;&#xD55C; &#xC54C;&#xB9BC;&#xC744; &#xBC1B;&#xC2B5;&#xB2C8;&#xB2E4;. (<code>fs.watch</code>&#xB294; OS&#xB9C8;&#xB2E4; &#xB2E4;&#xB974;&#xAC8C; &#xC791;&#xB3D9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.) &#xC608;&#xB97C; &#xB4E4;&#xC5B4;. &#xB9AC;&#xB205;&#xC2A4;&#xB294; watcher &#xC218;&#xC5D0; &#xC81C;&#xD55C;&#xC774; &#xC788;&#xC73C;&#xBA70; <code>fs.watch</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; watcher&#xB97C; &#xB9CC;&#xB4E4;&#xC9C0; &#xBABB;&#xD558;&#xBA74;, <code>fs.watchFile</code>&#xB97C; &#xB300;&#xC2E0; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; watcher&#xB97C; &#xB9CC;&#xB4E4;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td><code>UseFsEventsWithFallbackDynamicPolling</code></td>
-<td>This option is similar to <code>UseFsEvents</code> except on failing to create watch using <code>fs.watch</code>, the fallback watching happens through dynamic polling queues (as explained in <code>DynamicPriorityPolling</code>)</td>
+<td>&#xC774; &#xC635;&#xC158;&#xC740; <code>fs.watch</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xAC10;&#xC2DC;&#xC790;&#xB97C; &#xB9CC;&#xB4E4;&#xC9C0; &#xBABB;&#xD55C; &#xACBD;&#xC6B0; &#xD3F4;&#xB9C1;&#xC774; &#xB3D9;&#xC801; &#xD050;&#xB97C; &#xD1B5;&#xD574; &#xC218;&#xD589;&#xB41C;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC81C;&#xC678;&#xD558;&#xACE0;&#xB294; <code>UseFsEvents</code> &#xC635;&#xC158;&#xACFC; &#xBE44;&#xC2B7;&#xD569;&#xB2C8;&#xB2E4;.(&#xB3D9;&#xC801; &#xD050;&#xC5D0; &#xB300;&#xD55C; &#xAC83;&#xC740; <code>DynamicPriorityPolling</code>&#xC635;&#xC158;&#xC5D0;&#xC11C; &#xC124;&#xBA85;&#xD558;&#xC600;&#xC2B5;&#xB2C8;&#xB2E4;.).</td>
 </tr>
 <tr>
 <td><code>UseFsEventsOnParentDirectory</code></td>
-<td>This option watches parent directory of the file with <code>fs.watch</code> (using file system events) thus being low on CPU but can compromise accuracy.</td>
+<td>&#xC774; &#xC635;&#xC158;&#xC740; <code>fs.watch</code>(&#xD30C;&#xC77C; &#xC2DC;&#xC2A4;&#xD15C; &#xC774;&#xBCA4;&#xD2B8; &#xC0AC;&#xC6A9;&#xD558;&#xB294;)&#xB85C; &#xD30C;&#xC77C;&#xC758; &#xC0C1;&#xC704; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xB97C; &#xAC10;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;. &#xB2E4;&#xB9CC;, CPU &#xC0AC;&#xC6A9;&#xB7C9;&#xC774; &#xB298;&#xC5B4;&#xB098;&#xACE0; &#xC815;&#xD655;&#xB3C4;&#xB294; &#xB5A8;&#xC5B4;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td>default (no value specified)</td>
-<td>If environment variable <code>TSC_NONPOLLING_WATCHER</code> is set to true, watches parent directory of files (just like <code>UseFsEventsOnParentDirectory</code>). Otherwise watch files using <code>fs.watchFile</code> with <code>250ms</code> as the timeout for any file</td>
+<td>&#xD658;&#xACBD; &#xBCC0;&#xC218;<code>TSC_NONPOLLING_WATCHER</code>&#xAC00; true&#xB85C; &#xC124;&#xC815;&#xB418;&#xBA74; &#xD30C;&#xC77C;&#xC758; &#xC0C1;&#xC704; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xB97C; &#xAC10;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;. (<code>UseFsEventsOnParentDirectory</code>&#xC640; &#xB3D9;&#xC77C;).false &#xC77C; &#xB54C;&#xB294; <code>fs.watchFile</code>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; <code>250ms</code> &#xC2DC;&#xAC04; &#xC81C;&#xD55C;&#xACFC; &#xD568;&#xAED8; &#xBAA8;&#xB4E0; &#xD30C;&#xC77C;&#xB4E4;&#xC744; &#xAC10;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="configuring-directory-watching-using-environment-variable-tscwatchdirectory">Configuring directory watching using environment variable <code>TSC_WATCHDIRECTORY</code></h2>
-<p>The watching of directory on platforms that don&apos;t support recursive directory watching natively in node, is supported through recursively creating directory watcher for the child directories using different options selected by <code>TSC_WATCHDIRECTORY</code>. Note that on platforms that support native recursive directory watching (e.g windows) the value of this environment variable is ignored.</p>
+<h2 id="&#xD658;&#xACBD;-&#xBCC0;&#xC218;tscwatchdirectory&#xB97C;-&#xC0AC;&#xC6A9;&#xD558;&#xC5EC;-&#xB514;&#xB809;&#xD130;&#xB9AC;-&#xAC10;&#xC2DC;-&#xC124;&#xC815;-configuring-directory-watching-using-environment-variable-tscwatchdirectory">&#xD658;&#xACBD; &#xBCC0;&#xC218;<code>TSC_WATCHDIRECTORY</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xB514;&#xB809;&#xD130;&#xB9AC; &#xAC10;&#xC2DC; &#xC124;&#xC815; (Configuring directory watching using environment variable <code>TSC_WATCHDIRECTORY</code>)</h2>
+<p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; node&#xC5D0;&#xC11C; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xC758; &#xC7AC;&#xADC0;&#xC801;&#xC778; &#xAC10;&#xC2DC;&#xB97C; &#xC9C0;&#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xD50C;&#xB7AB;&#xD3FC;&#xC5D0;&#xC11C;, &#xB514;&#xB809;&#xD130;&#xB9AC; &#xAC10;&#xC2DC; &#xAE30;&#xB2A5;&#xC740; <code>TSC_WATCHDIRECTORY</code>&#xC5D0;&#xC11C; &#xC120;&#xD0DD;&#xD55C; &#xB2E4;&#xC591;&#xD55C; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD558;&#xC704; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xC5D0; &#xB300;&#xD55C; &#xB514;&#xB809;&#xD130;&#xB9AC; watcher&#xB97C; &#xC7AC;&#xADC0;&#xC801;&#xC73C;&#xB85C; &#xC0DD;&#xC131;&#xD568;&#xC73C;&#xB85C;&#xC368; &#xC9C0;&#xC6D0;&#xB429;&#xB2C8;&#xB2E4;. &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC7AC;&#xADC0; &#xB514;&#xB809;&#xD130;&#xB9AC; &#xAC10;&#xC2DC;(&#xC608;: windows)&#xB97C; &#xC9C0;&#xC6D0;&#xD558;&#xB294; &#xD50C;&#xB7AB;&#xD3FC;&#xC5D0;&#xC11C;&#xB294; &#xC774; &#xD658;&#xACBD; &#xBCC0;&#xC218;&#xC758; &#xAC12;&#xC774; &#xBB34;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <table>
 <thead>
 <tr>
-<th>Option</th>
-<th>Description</th>
+<th>&#xC635;&#xC158;</th>
+<th>&#xC124;&#xBA85;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>RecursiveDirectoryUsingFsWatchFile</code></td>
-<td>Use <code>fs.watchFile</code> to watch the directories and child directories which is a polling watch (consuming CPU cycles)</td>
+<td><code>fs.watchFile</code>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD3F4;&#xB9C1; &#xAC10;&#xC2DC;(CPU cycles &#xC0AC;&#xC6A9;)&#xC778; &#xB514;&#xB809;&#xD130;&#xB9AC; &#xBC0F; &#xD558;&#xC704; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xB97C; &#xAC10;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td><code>RecursiveDirectoryUsingDynamicPriorityPolling</code></td>
-<td>Use dynamic polling queue to poll changes to the directory and child directories.</td>
+<td>&#xB3D9;&#xC801; &#xD3F4;&#xB9C1; &#xD050;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xB514;&#xB809;&#xD130;&#xB9AC; &#xBC0F; &#xD558;&#xC704; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xC5D0; &#xB300;&#xD55C; &#xBCC0;&#xACBD;&#xC0AC;&#xD56D;&#xC744; &#xD3F4;&#xB9C1; &#xD569;&#xB2C8;&#xB2E4;.</td>
 </tr>
 <tr>
 <td>default (no value specified)</td>
-<td>Use <code>fs.watch</code> to watch directories and child directories</td>
+<td><code>fs.watch</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xB514;&#xB809;&#xD130;&#xB9AC; &#xBC0F; &#xD558;&#xC704; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xB97C; &#xAC10;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="background">Background</h2>
-<p><code>--watch</code> implementation of the compiler relies on <code>fs.watch</code> and <code>fs.watchFile</code> provided by node, both of these methods have pros and cons.</p>
-<p><code>fs.watch</code> uses file system events to notify the changes in the file/directory. But this is OS dependent and the notification is not completely reliable and does not work as expected on many OS. Also there could be limit on number of watches that can be created, eg. linux and we could exhaust it pretty quickly with programs that include large number of files. But because this uses file system events, there is not much CPU cycle involved. Compiler typically uses <code>fs.watch</code> to watch directories (eg. source directories included by config file, directories in which module resolution failed etc) These can handle the missing precision in notifying about the changes. But recursive watching is supported on only Windows and OSX. That means we need something to replace the recursive nature on other OS.</p>
-<p><code>fs.watchFile</code> uses polling and thus involves CPU cycles. But this is the most reliable mechanism to get the update on the status of file/directory. Compiler typically uses <code>fs.watchFile</code> to watch source files, config files and missing files (missing file references) that means the CPU usage depends on number of files in the program.</p>
+<h2 id="&#xBC30;&#xACBD;-background">&#xBC30;&#xACBD; (Background)</h2>
+<p>&#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xC758; <code>--watch</code> &#xAD6C;&#xD604;&#xC740; node&#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xD558;&#xB294; <code>fs.watch</code>&#xC640; <code>fs.watchFile</code>&#xC5D0; &#xC758;&#xC874;&#xD558;&#xBA70;, &#xC774; &#xB450; &#xBC29;&#xBC95; &#xBAA8;&#xB450; &#xC7A5;&#xB2E8;&#xC810;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>fs.watch</code>&#xB294; &#xD30C;&#xC77C; &#xC2DC;&#xC2A4;&#xD15C; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD30C;&#xC77C;/&#xB514;&#xB809;&#xD130;&#xB9AC;&#xC758; &#xBCC0;&#xACBD; &#xC0AC;&#xD56D;&#xC744; &#xC54C;&#xB9BD;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; OS&#xC5D0; &#xB530;&#xB77C; &#xB2E4;&#xB974;&#xBA70;, &#xC54C;&#xB9BC;&#xC740; &#xC644;&#xC804;&#xD788; &#xBBFF;&#xC744; &#xC218;&#xAC00; &#xC5C6;&#xACE0;, &#xB9CE;&#xC740; OS&#xC5D0;&#xC11C; &#xC608;&#xC0C1;&#xB300;&#xB85C; &#xB3D9;&#xC791;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB610;&#xD55C;, &#xC0DD;&#xC131;&#xD560; &#xC218; &#xC788;&#xB294; watcher&#xC758; &#xC218;&#xC5D0; &#xC81C;&#xD55C;&#xC774; &#xC788;&#xC744; &#xC218; &#xC788;&#xC73C;&#xBA70;(&#xC608;: linux), &#xD30C;&#xC77C; &#xC218;&#xAC00; &#xB9CE;&#xC740; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xB9E4;&#xC6B0; &#xBE60;&#xB974;&#xAC8C; &#xC18C;&#xC9C4;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098; &#xC774; &#xC791;&#xC5C5;&#xC740; &#xD30C;&#xC77C; &#xC2DC;&#xC2A4;&#xD15C; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; CPU cycle&#xC5D0; &#xB9CE;&#xC774; &#xAD00;&#xC5EC;&#xD558;&#xC9C4; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; <code>fs.watch</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xB97C; &#xAC10;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;. (&#xC608;: &#xC124;&#xC815; &#xD30C;&#xC77C;&#xC5D0; &#xD3EC;&#xD568;&#xB41C; &#xC18C;&#xC2A4; &#xB514;&#xB809;&#xD130;&#xB9AC;, &#xBAA8;&#xB4C8; &#xD655;&#xC778;&#xC744; &#xC2E4;&#xD328;&#xD55C; &#xB514;&#xB809;&#xD130;&#xB9AC; ... &#xB4F1;) &#xBCC0;&#xACBD; &#xC0AC;&#xD56D;&#xC5D0; &#xB300;&#xD55C; &#xC54C;&#xB9BC;&#xC5D0;&#xC11C; &#xB204;&#xB77D;&#xB41C; &#xC815;&#xBC00;&#xB3C4;&#xB97C; &#xCC98;&#xB9AC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098; &#xC7AC;&#xADC0; &#xAC10;&#xC2DC; &#xAE30;&#xB2A5;&#xC740; Windows&#xC640; OSX&#xC5D0;&#xC11C;&#xB9CC; &#xC9C0;&#xC6D0;&#xB429;&#xB2C8;&#xB2E4;. &#xC989;, &#xB2E4;&#xB978; OS&#xB4E4;&#xC740; &#xC7AC;&#xADC0;&#xC801; &#xD2B9;&#xC131;&#xC744; &#xB300;&#xCCB4;&#xD560; &#xBB34;&#xC5B8;&#xAC00;&#xAC00; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><code>fs.watchFile</code>&#xC740; &#xD3F4;&#xB9C1;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBBC0;&#xB85C; CPU &#xC8FC;&#xAE30;&#xB97C; &#xD3EC;&#xD568;&#xD569;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC774;&#xB294; &#xD30C;&#xC77C;/&#xB514;&#xB809;&#xD130;&#xB9AC; &#xC0C1;&#xD0DC;&#xC5D0; &#xB300;&#xD55C; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xB97C; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xB294; &#xAC00;&#xC7A5; &#xC2E0;&#xB8B0;&#xD560; &#xC218; &#xC788;&#xB294; &#xBA54;&#xCEE4;&#xB2C8;&#xC998;&#xC785;&#xB2C8;&#xB2E4;. &#xCEF4;&#xD30C;&#xC77C;&#xB7EC;&#xB294; &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; <code>fs.watchFile</code>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC18C;&#xC2A4; &#xD30C;&#xC77C;, &#xAD6C;&#xC131; &#xD30C;&#xC77C; &#xBC0F; &#xB204;&#xB77D;&#xB41C; &#xD30C;&#xC77C;(&#xB204;&#xB77D;&#xB41C; &#xD30C;&#xC77C; &#xCC38;&#xC870;)&#xC744; &#xAC10;&#xC2DC;&#xD558;&#xB294;&#xB370; &#xC774;&#xB294; CPU &#xC0AC;&#xC6A9;&#xB7C9;&#xC774; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC758; &#xD30C;&#xC77C; &#xC218;&#xC5D0; &#xB530;&#xB77C; &#xB2EC;&#xB77C;&#xC9C4;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</p>
 
                                 
                                 </section>
@@ -1169,7 +1169,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"configuring-watch (en)","level":"9.6","depth":1,"next":{"title":"Nightly 빌드","level":"9.7","depth":1,"path":"pages/nightly-builds.md","ref":"pages/nightly-builds.md","articles":[]},"previous":{"title":"빌드 도구와 통합","level":"9.5","depth":1,"path":"pages/integrating-with-build-tools.md","ref":"pages/integrating-with-build-tools.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/configuring-watch.md","mtime":"2020-09-08T11:09:52.320Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-08T11:11:14.122Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"configuring-watch","level":"9.6","depth":1,"next":{"title":"Nightly 빌드","level":"9.7","depth":1,"path":"pages/nightly-builds.md","ref":"pages/nightly-builds.md","articles":[]},"previous":{"title":"빌드 도구와 통합","level":"9.5","depth":1,"path":"pages/integrating-with-build-tools.md","ref":"pages/integrating-with-build-tools.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/configuring-watch.md","mtime":"2020-09-15T11:09:51.837Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-15T11:10:50.075Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

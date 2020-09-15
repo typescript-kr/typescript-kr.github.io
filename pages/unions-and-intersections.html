@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>유니언과 교차 타입(en) · GitBook</title>
+        <title>유니언과 교차 타입 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
 				<meta name="generator" content="GitBook 3.2.3">
@@ -122,7 +122,7 @@
                 <a href="tutorials/ts-for-the-new-programmer.html">
             
                     
-                    TS for the New Programmer(en)
+                    TS for the New Programmer
             
                 </a>
             
@@ -135,7 +135,7 @@
                 <a href="tutorials/ts-for-js-programmers.html">
             
                     
-                    TS for JS Programmers(en)
+                    TS for JS Programmers
             
                 </a>
             
@@ -161,7 +161,7 @@
                 <a href="tutorials/ts-for-functional-programmers.html">
             
                     
-                    TS for Functional Programmers(en)
+                    TS for Functional Programmers
             
                 </a>
             
@@ -246,7 +246,7 @@
                 <a href="literal-types.html">
             
                     
-                    리터럴 타입(en)
+                    리터럴 타입
             
                 </a>
             
@@ -259,7 +259,7 @@
                 <a href="unions-and-intersections.html">
             
                     
-                    유니언과 교차 타입(en)
+                    유니언과 교차 타입
             
                 </a>
             
@@ -585,7 +585,7 @@
                 <a href="tutorials/babel-with-typescript.html">
             
                     
-                    TypeScript와 Babel 사용하기(en)
+                    TypeScript와 Babel 사용하기
             
                 </a>
             
@@ -872,7 +872,7 @@
                 <a href="intro-to-js-with-ts.html">
             
                     
-                    JavaScript에 TypeScript 적용하기(en)
+                    JavaScript에 TypeScript 적용하기
             
                 </a>
             
@@ -911,7 +911,7 @@
                 <a href="declaration-files/creating-dts-files-from-js.html">
             
                     
-                    .js 파일에서 d.ts 파일 만들기(en)
+                    .js 파일에서 d.ts 파일 만들기
             
                 </a>
             
@@ -996,7 +996,7 @@
                 <a href="configuring-watch.html">
             
                     
-                    configuring-watch (en)
+                    configuring-watch
             
                 </a>
             
@@ -1047,7 +1047,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >유니언과 교차 타입(en)</a>
+        <a href=".." >유니언과 교차 타입</a>
     </h1>
 </div>
 
@@ -1288,39 +1288,42 @@
 </code></pre>
 <h2 id="&#xAD50;&#xCC28;&#xB97C;-&#xD1B5;&#xD55C;-&#xBBF9;&#xC2A4;&#xC778;-mixins-via-intersections">&#xAD50;&#xCC28;&#xB97C; &#xD1B5;&#xD55C; &#xBBF9;&#xC2A4;&#xC778; (Mixins via Intersections)</h2>
 <p>&#xAD50;&#xCC28;&#xB294; <a href="../docs/handbook/mixins.html">&#xBBF9;&#xC2A4;&#xC778; &#xD328;&#xD134;</a>&#xC744; &#xC2E4;&#xD589;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<p>```ts
-class Person {
-  constructor(public name: string) {}
-}</p>
-<p>interface Loggable {
-  log(name: string): void;
-}</p>
-<p>class ConsoleLogger implements Loggable {
-  log(name: string) {
-    console.log(<code>Hello, I&apos;m ${name}.</code>);
+<pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">Person</span> {
+  <span class="cm-keyword">constructor</span>(<span class="cm-keyword">public</span> <span class="cm-variable">name</span>: <span class="cm-variable-3">string</span>) {}
+}
+
+<span class="cm-keyword">interface</span> <span class="cm-variable">Loggable</span> {
+  <span class="cm-variable">log</span>(<span class="cm-variable">name</span>: <span class="cm-variable-3">string</span>): <span class="cm-variable">void</span>;
+}
+
+<span class="cm-keyword">class</span> <span class="cm-variable">ConsoleLogger</span> <span class="cm-variable">implements</span> <span class="cm-variable">Loggable</span> {
+  <span class="cm-variable">log</span>(<span class="cm-variable">name</span>: <span class="cm-variable-3">string</span>) {
+    <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string-2">`Hello, I&apos;m ${</span><span class="cm-variable">name</span><span class="cm-string-2">}</span><span class="cm-string-2">.`</span>);
   }
-}</p>
-<p>// &#xB450; &#xAC1D;&#xCCB4;&#xB97C; &#xBC1B;&#xC544; &#xD558;&#xB098;&#xB85C; &#xD569;&#xCE69;&#xB2C8;&#xB2E4;.
-function extend<first extends="" {},="" second="" {}="">(
-  first: First,
-  second: Second
-): First &amp; Second {
-  const result: Partial<first &="" second=""> = {};
-  for (const prop in first) {
-    if (first.hasOwnProperty(prop)) {
-      (result as First)[prop] = first[prop];
+}
+
+<span class="cm-comment">// &#xB450; &#xAC1D;&#xCCB4;&#xB97C; &#xBC1B;&#xC544; &#xD558;&#xB098;&#xB85C; &#xD569;&#xCE69;&#xB2C8;&#xB2E4;.</span>
+<span class="cm-keyword">function</span> <span class="cm-variable">extend</span><span class="cm-operator">&lt;</span><span class="cm-variable">First</span> <span class="cm-keyword">extends</span> {}, <span class="cm-variable">Second</span> <span class="cm-keyword">extends</span> {}<span class="cm-operator">&gt;</span>(
+  <span class="cm-variable">first</span>: <span class="cm-variable">First</span>,
+  <span class="cm-variable">second</span>: <span class="cm-variable">Second</span>
+): <span class="cm-variable">First</span> <span class="cm-operator">&amp;</span> <span class="cm-variable">Second</span> {
+  <span class="cm-keyword">const</span> <span class="cm-variable">result</span>: <span class="cm-variable-3">Partial</span><span class="cm-operator">&lt;</span><span class="cm-variable">First</span> <span class="cm-operator">&amp;</span> <span class="cm-variable">Second</span><span class="cm-operator">&gt;</span> <span class="cm-operator">=</span> {};
+  <span class="cm-keyword">for</span> (<span class="cm-keyword">const</span> <span class="cm-variable">prop</span> <span class="cm-keyword">in</span> <span class="cm-variable">first</span>) {
+    <span class="cm-keyword">if</span> (<span class="cm-variable">first</span>.<span class="cm-property">hasOwnProperty</span>(<span class="cm-variable">prop</span>)) {
+      (<span class="cm-variable">result</span> <span class="cm-variable">as</span> <span class="cm-variable">First</span>)[<span class="cm-variable">prop</span>] <span class="cm-operator">=</span> <span class="cm-variable">first</span>[<span class="cm-variable">prop</span>];
     }
   }
-  for (const prop in second) {
-    if (second.hasOwnProperty(prop)) {
-      (result as Second)[prop] = second[prop];
+  <span class="cm-keyword">for</span> (<span class="cm-keyword">const</span> <span class="cm-variable">prop</span> <span class="cm-keyword">in</span> <span class="cm-variable">second</span>) {
+    <span class="cm-keyword">if</span> (<span class="cm-variable">second</span>.<span class="cm-property">hasOwnProperty</span>(<span class="cm-variable">prop</span>)) {
+      (<span class="cm-variable">result</span> <span class="cm-variable">as</span> <span class="cm-variable">Second</span>)[<span class="cm-variable">prop</span>] <span class="cm-operator">=</span> <span class="cm-variable">second</span>[<span class="cm-variable">prop</span>];
     }
   }
-  return result as First &amp; Second;
-}</first></first></p>
-<p>const jim = extend(new Person(&quot;Jim&quot;), ConsoleLogger.prototype);
-jim.log(jim.name);
-```-</p>
+  <span class="cm-keyword">return</span> <span class="cm-variable">result</span> <span class="cm-variable">as</span> <span class="cm-variable">First</span> <span class="cm-operator">&amp;</span> <span class="cm-variable">Second</span>;
+}
+
+<span class="cm-keyword">const</span> <span class="cm-variable">jim</span> <span class="cm-operator">=</span> <span class="cm-variable">extend</span>(<span class="cm-keyword">new</span> <span class="cm-variable">Person</span>(<span class="cm-string">&quot;Jim&quot;</span>), <span class="cm-variable">ConsoleLogger</span>.<span class="cm-property">prototype</span>);
+<span class="cm-variable">jim</span>.<span class="cm-property">log</span>(<span class="cm-variable">jim</span>.<span class="cm-property">name</span>);
+</code></pre>
 
                                 
                                 </section>
@@ -1348,7 +1351,7 @@ jim.log(jim.name);
 
             
                 
-                <a href="literal-types.html" class="navigation navigation-prev " aria-label="Previous page: 리터럴 타입(en)">
+                <a href="literal-types.html" class="navigation navigation-prev " aria-label="Previous page: 리터럴 타입">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -1364,7 +1367,7 @@ jim.log(jim.name);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"유니언과 교차 타입(en)","layout":"docs","permalink":"/docs/handbook/unions-and-intersections.html","oneline":"How to use unions and intersection types in TypeScript","level":"3.6","depth":1,"next":{"title":"클래스","level":"3.7","depth":1,"path":"pages/classes.md","ref":"pages/classes.md","articles":[]},"previous":{"title":"리터럴 타입(en)","level":"3.5","depth":1,"path":"pages/literal-types.md","ref":"pages/literal-types.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/unions-and-intersections.md","mtime":"2020-09-08T11:09:52.340Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-08T11:11:14.122Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"유니언과 교차 타입","layout":"docs","permalink":"/docs/handbook/unions-and-intersections.html","oneline":"How to use unions and intersection types in TypeScript","level":"3.6","depth":1,"next":{"title":"클래스","level":"3.7","depth":1,"path":"pages/classes.md","ref":"pages/classes.md","articles":[]},"previous":{"title":"리터럴 타입","level":"3.5","depth":1,"path":"pages/literal-types.md","ref":"pages/literal-types.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/unions-and-intersections.md","mtime":"2020-09-15T11:09:51.857Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-15T11:10:50.075Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
