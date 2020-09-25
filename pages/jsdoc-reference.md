@@ -459,7 +459,7 @@ function callbackForLater(e) {
 
 ## `@extends`
 
-Javascript 클래스를 제네릭 기반 클래스로 확장(extend)하면, 매개변수가 어떤 타입이 되어야 하는지 지정할 곳이 없습니다. `@extends` 태그는 이러한 타입 매개변수를 위한 위치를 제공합니다:
+Javascript 클래스를 제네릭 기반 클래스로부터 상속(extend)하면, 매개변수가 어떤 타입이 되어야 하는지 지정할 곳이 없습니다. `@extends` 태그는 이러한 타입 매개변수를 위한 위치를 제공합니다:
 
 ```js
 /**
