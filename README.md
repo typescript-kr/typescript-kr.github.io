@@ -66,7 +66,7 @@
     <td align="center"><a href="https://github.com/seohyun0120"><img src="https://avatars3.githubusercontent.com/u/35247295?v=4" width="80px;" alt=""/><br /><sub><b>SeohyunYoon</b></sub></a><br /><a href="#translation-seohyun0120" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/SeokHyeonChin"><img src="https://avatars1.githubusercontent.com/u/29259037?v=4" width="80px;" alt=""/><br /><sub><b>진석현</b></sub></a><br /><a href="#translation-SeokHyeonChin" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/ssMinji"><img src="https://avatars1.githubusercontent.com/u/44194800?v=4" width="80px;" alt=""/><br /><sub><b>ssMinji</b></sub></a><br /><a href="#translation-ssMinji" title="Translation">🌍</a></td>
-    <td align="center"><a href="http://blog.naver.com/j_wish_"><img src="https://avatars3.githubusercontent.com/u/31684481?v=4" width="80px;" alt=""/><br /><sub><b>Wish Jung</b></sub></a><br /><a href="#translation-ss-won" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/ss-won"><img src="https://avatars3.githubusercontent.com/u/31684481?v=4" width="80px;" alt=""/><br /><sub><b>Wish Jung</b></sub></a><br /><a href="#translation-ss-won" title="Translation">🌍</a></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/zigsong"><img src="https://avatars2.githubusercontent.com/u/44080404?v=4" width="80px;" alt=""/><br /><sub><b>jieun song</b></sub></a><br /><a href="#translation-zigsong" title="Translation">🌍</a></td>
