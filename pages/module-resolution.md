@@ -229,7 +229,7 @@ TypeScript 컴파일러는 `tsconfig.json` 파일 안에 `"paths"` 프로퍼티�
 
 `"paths"`가 `"baseUrl"`에 상대적으로 해석된다는 점에 주목하세요.
 `"baseUrl"`을 `"."`가 아닌 다른 값, 예 `tsconfig.json`의 디렉터리,으로 설정하면, 그에 따라 매핑도 바뀝니다.
-위 예제에서 `"baseUrl": "./src"`로 설정했기 때문에, jquery는 `"../node_modules/jquery/dist/jquery"`로 매핑됩니다.
+만약 위 예제에서 "baseUrl": "./src" 로 설정한다면, jquery는 "../node_modules/jquery/dist/jquery" 로 매핑되어야 합니다.
 
 `"paths"`를 사용하는 것은 여러 개의 이전 위치를 포함한 정교한 매핑이 가능합니다.
 일부 모듈만 한 위치에서 사용 가능하고, 나머지는 다른 곳에 있는 프로젝트 구성을 생각해보세요.
