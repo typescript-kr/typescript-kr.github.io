@@ -114,7 +114,7 @@ TypeScript의 타입 시스템은 명목이 아닌 _구조적_입니다: `obj`�
 TypeScript의 타입 시스템은 또한 _구체화되지 않았습니다_: 런타임에 `obj`가 `Pointlike`임을 알려주지 않습니다.
 사실, `Pointlike` 타입은 런타임에 _어떤 형태로도_ 존재하지 않습니다.
 
-_집합의 타입_ 개념으로 보면, `obj`를 `Pointlike` 값 집합이나 `Named` 값 집합의 멤버로 간주할 수 있습니다.
+_집합으로서의 타입_ 개념으로 보면, `obj`를 `Pointlike` 값 집합이나 `Named` 값 집합의 멤버로 간주할 수 있습니다.
 
 ### 구조적 타입화의 결과 (Consequences of Structural Typing)
 
@@ -171,7 +171,7 @@ let w: Car = new Golfer();
 
 ### 반영 (Reflection)
 
-객체지향 프로그래머는 일반적인 값을 포함하여 어떤 값의 유형이라도 다룰(query)수 있음에 익숙합니다.
+객체지향 프로그래머는 제네릭을 포함하여 어떤 값의 유형이라도 다룰(query)수 있음에 익숙합니다.
 
 ```csharp
 // C#
