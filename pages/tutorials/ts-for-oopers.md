@@ -76,12 +76,12 @@ TypeScript에서 모든 타입이 단순히 집합이라는 것을 깨닫는 순
 
 TypeScript는 집합론에 의거해 타입을 이용하는 여러 방법을 제공하며, 타입을 집합으로 생각하는 것이 더 직관적입니다.
 
-### Erased Structural Types
+### 삭제된 구조적 타입 (Erased Structural Types)
 
-In TypeScript, objects are _not_ of a single exact type.
-For example, if we construct an object that satisfies an interface, we can use that object where that interface is expected even though there was no declarative relationship between the two.
+TypeScript에서, 객체는 정확히 단일 타입이 _아닙니다_.
+예를 들어 인터페이스를 만족하는 객체를 생성할 때, 둘 사이의 선언적인 관계가 없더라도 해당 인터페이스가 예상되는 곳에 해당 객체를 사용할 수 있습니다.
 
-```ts twoslash
+```
 interface Pointlike {
   x: number;
   y: number;
@@ -108,45 +108,45 @@ printPoint(obj);
 printName(obj);
 ```
 
-TypeScript's type system is _structural_, not nominal: We can use `obj` as a `Pointlike` because it has `x` and `y` properties that are both numbers.
-The relationships between types are determined by the properties they contain, not whether they were declared with some particular relationship.
+TypeScript의 타입 시스템은 명목이 아닌 _구조적_입니다: `obj`는 숫자인 `x`와 `y` 프로퍼티를 가지고 있으므로, `Pointlike`로써 사용될 수 있습니다.
+타입 간의 관계는 특정 관계로 선언되었는지가 아닌, 포함된 프로퍼티에 의해 결정됩니다.
 
-TypeScript's type system is also _not reified_: There's nothing at runtime that will tell us that `obj` is `Pointlike`.
-In fact, the `Pointlike` type is not present _in any form_ at runtime.
+TypeScript의 타입 시스템은 또한 _구체화되지 않았습니다_: 런타임에 `obj`가 `Pointlike`임을 알려주지 않습니다.
+사실, `Pointlike` 타입은 런타임에 _어떤 형태로도_ 존재하지 않습니다.
 
-Going back to the idea of _types as sets_, we can think of `obj` as being a member of both the `Pointlike` set of values and the `Named` set of values.
+_집합으로서의 타입_ 개념으로 보면, `obj`를 `Pointlike` 값 집합이나 `Named` 값 집합의 멤버로 간주할 수 있습니다.
 
-### Consequences of Structural Typing
+### 구조적 타입화의 결과 (Consequences of Structural Typing)
 
-OOP programmers are often surprised by two particular aspects of structural typing.
+객체지향 프로그래머는 종종 구조적 타입화의 두 가지 측면에 놀라곤 합니다.
 
-#### Empty Types
+#### 빈 타입 (Empty Types)
 
-The first is that the _empty type_ seems to defy expectation:
+첫 번째로 _빈 타입_은 예상을 무시하는 것처럼 보입니다:
 
-```ts twoslash
+```
 class Empty {}
 
 function fn(arg: Empty) {
-  // do something?
+  // 무엇인가를 하나요?
 }
 
-// No error, but this isn't an 'Empty' ?
+// 오류는 없지만, '빈' 타입은 아니지 않나요?
 fn({ k: 10 });
 ```
 
-TypeScript determines if the call to `fn` here is valid by seeing if the provided argument is a valid `Empty`.
-It does so by examining the _structure_ of `{ k: 10 }` and `class Empty { }`.
-We can see that `{ k: 10 }` has _all_ of the properties that `Empty` does, because `Empty` has no properties.
-Therefore, this is a valid call!
+TypeScript는 주어진 인수가 유효한 `Empty`인지 확인하여 `fn`의 호출이 유효한지를 검사합니다
+`{ k: 10 }`과 `class Empty { }`의 _구조를 확인하여 유효성을 검사합니다.
+`Empty`에 프로퍼티가 없으므로 `Empty`가 수행하는 _모든_ 프로퍼티가 `{ k: 10 }`에 속해있습니다.
+그러므로, 유효한 호출입니다:
 
-This may seem surprising, but it's ultimately a very similar relationship to one enforced in nominal OOP languages.
-A subclass cannot _remove_ a property of its base class, because doing so would destroy the natural subtype relationship between the derived class and its base.
-Structural type systems simply identify this relationship implicitly by describing subtypes in terms of having properties of compatible types.
+놀랍지만, 최종적으로 명목적인 객체지향프로그래밍 언어와 매우 비슷하게 사용됩니다.
+파생 클래스와 파생 클래스의 기본 사이의 자연스러운 하위 타입 관계가 파괴되기 때문에, 하위 클래스는 _삭제_할 수 없습니다.
+구조적 타입 시스템은 호환 가능한 유형의 속성을 갖는 측면에서 하위 타입을 설명하므로 위의 관계를 암시적으로 구별합니다
 
-#### Identical Types
+#### 동일한 타입 (Identical Types)
 
-Another frequent source of surprise comes with identical types:
+또 다른 빈번한 놀라움의 원인은 동일한 타입에 기인합니다:
 
 ```ts
 class Car {
@@ -164,14 +164,14 @@ class Golfer {
 let w: Car = new Golfer();
 ```
 
-Again, this isn't an error because the _structures_ of these classes are the same.
-While this may seem like a potential source of confusion, in practice, identical classes that shouldn't be related are not common.
+다시 말하지만, 오류가 아닌 이유는 클래스의 _구조_가 동일하기 때문입니다.
+잠재적인 혼란의 이유가 될 수도 있겠지만, 사실 상관없는 클래스가 동일한 경우는 일반적이지 않습니다.
 
-We'll learn more about how classes relate to each other in the Classes chapter.
+차후에 클래스 챕터에서 클래스가 서로 어떻게 관련되는지에 대해 자세히 알아볼 것입니다.
 
-### Reflection
+### 반영 (Reflection)
 
-OOP programmers are accustomed to being able to query the type of any value, even a generic one:
+객체지향 프로그래머는 제네릭을 포함하여 어떤 값의 유형이라도 다룰(query)수 있음에 익숙합니다.
 
 ```csharp
 // C#
@@ -180,11 +180,11 @@ static void PrintType<T>() {
 }
 ```
 
-Because TypeScript's type system is fully erased, information about e.g. the instantiation of a generic type parameter is not available at runtime.
+TypeScript의 타입 시스템이 완벽히 지워졌으므로, 제네릭 타입 인자의 인스턴스화와 같은 정보는 런타임에 사용할 수 없습니다.
 
-JavaScript does have some limited primitives like `typeof` and `instanceof`, but remember that these operators are still working on the values as they exist in the type-erased output code.
-For example, `typeof (new Car())` will be `"object"`, not `Car` or `"Car"`.
+JavaScript에는 `typeof`와 `instanceof`와 같은 제한된 원시요소가 있지만, 이런 연산자는 타입이 지워진 코드의 출력에 존재하므로 여전히 작동함을 알아야 합니다.
+예를 들어, `typeof (new Car())`는 `Car`나 `"Car"`가 아닌 `"object"`입니다.
 
 ---
 
-This is an overview, from here you should read [through the handbook](/docs/handbook/intro.html) or explore the [Playground examples](/play#show-examples)
+지금까지 개요였고, 여기에서 [핸드북](/docs/handbook/intro.html)을 읽거나 또는 [Playground 예제](/play#show-examples)를 탐색하세요.
