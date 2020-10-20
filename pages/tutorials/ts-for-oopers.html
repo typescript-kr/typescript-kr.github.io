@@ -1107,65 +1107,59 @@ TypeScript&#xB294; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;, &#xC0C1;&#xC18D;, &
 &#x2018;string&#x2019; &#xC9D1;&#xD569; &#xB610;&#xB294; &#x2018;number&#x2019; &#xC9D1;&#xD569;&#xC5D0; &#xC18D;&#xD560; &#xC218; &#xC788;&#xB294; &#xAC12;&#xC744; &#xC5B4;&#xB5BB;&#xAC8C; &#xC124;&#xBA85;&#xD558;&#xC2DC;&#xACA0;&#xC2B5;&#xB2C8;&#xAE4C;?
 &#xC774; &#xAC12;&#xC740; &#xB2E8;&#xC21C;&#xD788; &#xADF8; &#xC9D1;&#xD569;&#xB4E4;&#xC758; <em>&#xC720;&#xB2C8;&#xC5B8;</em>: &#x2018;string | number&#x2019;&#xC5D0; &#xC18D;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>TypeScript&#xB294; &#xC9D1;&#xD569;&#xB860;&#xC5D0; &#xC758;&#xAC70;&#xD574; &#xD0C0;&#xC785;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xC5EC;&#xB7EC; &#xBC29;&#xBC95;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xBA70;, &#xD0C0;&#xC785;&#xC744; &#xC9D1;&#xD569;&#xC73C;&#xB85C; &#xC0DD;&#xAC01;&#xD558;&#xB294; &#xAC83;&#xC774; &#xB354; &#xC9C1;&#xAD00;&#xC801;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<h3 id="erased-structural-types">Erased Structural Types</h3>
-<p>In TypeScript, objects are <em>not</em> of a single exact type.
-For example, if we construct an object that satisfies an interface, we can use that object where that interface is expected even though there was no declarative relationship between the two.</p>
-<p>```ts twoslash
-interface Pointlike {
+<h3 id="&#xC0AD;&#xC81C;&#xB41C;-&#xAD6C;&#xC870;&#xC801;-&#xD0C0;&#xC785;-erased-structural-types">&#xC0AD;&#xC81C;&#xB41C; &#xAD6C;&#xC870;&#xC801; &#xD0C0;&#xC785; (Erased Structural Types)</h3>
+<p>TypeScript&#xC5D0;&#xC11C;, &#xAC1D;&#xCCB4;&#xB294; &#xC815;&#xD655;&#xD788; &#xB2E8;&#xC77C; &#xD0C0;&#xC785;&#xC774; <em>&#xC544;&#xB2D9;&#xB2C8;&#xB2E4;</em>.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xB9CC;&#xC871;&#xD558;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD560; &#xB54C;, &#xB458; &#xC0AC;&#xC774;&#xC758; &#xC120;&#xC5B8;&#xC801;&#xC778; &#xAD00;&#xACC4;&#xAC00; &#xC5C6;&#xB354;&#xB77C;&#xB3C4; &#xD574;&#xB2F9; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xAC00; &#xC608;&#xC0C1;&#xB418;&#xB294; &#xACF3;&#xC5D0; &#xD574;&#xB2F9; &#xAC1D;&#xCCB4;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code>interface Pointlike {
   x: number;
   y: number;
 }
 interface Named {
   name: string;
-}</p>
-<p>function printPoint(point: Pointlike) {
+}
+
+function printPoint(point: Pointlike) {
   console.log(&quot;x = &quot; + point.x + &quot;, y = &quot; + point.y);
-}</p>
-<p>function printName(x: Named) {
+}
+
+function printName(x: Named) {
   console.log(&quot;Hello, &quot; + x.name);
-}</p>
-<p>const obj = {
+}
+
+const obj = {
   x: 0,
   y: 0,
   name: &quot;Origin&quot;,
-};</p>
-<p>printPoint(obj);
-printName(obj);</p>
-<pre><code>
-TypeScript&apos;s type system is _structural_, not nominal: We can use `obj` as a `Pointlike` because it has `x` and `y` properties that are both numbers.
-The relationships between types are determined by the properties they contain, not whether they were declared with some particular relationship.
+};
 
-TypeScript&apos;s type system is also _not reified_: There&apos;s nothing at runtime that will tell us that `obj` is `Pointlike`.
-In fact, the `Pointlike` type is not present _in any form_ at runtime.
-
-Going back to the idea of _types as sets_, we can think of `obj` as being a member of both the `Pointlike` set of values and the `Named` set of values.
-
-### Consequences of Structural Typing
-
-OOP programmers are often surprised by two particular aspects of structural typing.
-
-#### Empty Types
-
-The first is that the _empty type_ seems to defy expectation:
-
-```ts twoslash
-class Empty {}
+printPoint(obj);
+printName(obj);
+</code></pre><p>TypeScript&#xC758; &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;&#xC740; &#xBA85;&#xBAA9;&#xC774; &#xC544;&#xB2CC; <em>&#xAD6C;&#xC870;&#xC801;</em>&#xC785;&#xB2C8;&#xB2E4;: <code>obj</code>&#xB294; &#xC22B;&#xC790;&#xC778; <code>x</code>&#xC640; <code>y</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC73C;&#xBBC0;&#xB85C;, <code>Pointlike</code>&#xB85C;&#xC368; &#xC0AC;&#xC6A9;&#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xD0C0;&#xC785; &#xAC04;&#xC758; &#xAD00;&#xACC4;&#xB294; &#xD2B9;&#xC815; &#xAD00;&#xACC4;&#xB85C; &#xC120;&#xC5B8;&#xB418;&#xC5C8;&#xB294;&#xC9C0;&#xAC00; &#xC544;&#xB2CC;, &#xD3EC;&#xD568;&#xB41C; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0; &#xC758;&#xD574; &#xACB0;&#xC815;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>TypeScript&#xC758; &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;&#xC740; &#xB610;&#xD55C; <em>&#xAD6C;&#xCCB4;&#xD654;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xC2B5;&#xB2C8;&#xB2E4;</em>: &#xB7F0;&#xD0C0;&#xC784;&#xC5D0; <code>obj</code>&#xAC00; <code>Pointlike</code>&#xC784;&#xC744; &#xC54C;&#xB824;&#xC8FC;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC0AC;&#xC2E4;, <code>Pointlike</code> &#xD0C0;&#xC785;&#xC740; &#xB7F0;&#xD0C0;&#xC784;&#xC5D0; <em>&#xC5B4;&#xB5A4; &#xD615;&#xD0DC;&#xB85C;&#xB3C4;</em> &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><em>&#xC9D1;&#xD569;&#xC73C;&#xB85C;&#xC11C;&#xC758; &#xD0C0;&#xC785;</em> &#xAC1C;&#xB150;&#xC73C;&#xB85C; &#xBCF4;&#xBA74;, <code>obj</code>&#xB97C; <code>Pointlike</code> &#xAC12; &#xC9D1;&#xD569;&#xC774;&#xB098; <code>Named</code> &#xAC12; &#xC9D1;&#xD569;&#xC758; &#xBA64;&#xBC84;&#xB85C; &#xAC04;&#xC8FC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xAD6C;&#xC870;&#xC801;-&#xD0C0;&#xC785;&#xD654;&#xC758;-&#xACB0;&#xACFC;-consequences-of-structural-typing">&#xAD6C;&#xC870;&#xC801; &#xD0C0;&#xC785;&#xD654;&#xC758; &#xACB0;&#xACFC; (Consequences of Structural Typing)</h3>
+<p>&#xAC1D;&#xCCB4;&#xC9C0;&#xD5A5; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBA38;&#xB294; &#xC885;&#xC885; &#xAD6C;&#xC870;&#xC801; &#xD0C0;&#xC785;&#xD654;&#xC758; &#xB450; &#xAC00;&#xC9C0; &#xCE21;&#xBA74;&#xC5D0; &#xB180;&#xB77C;&#xACE4; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="&#xBE48;-&#xD0C0;&#xC785;-empty-types">&#xBE48; &#xD0C0;&#xC785; (Empty Types)</h4>
+<p>&#xCCAB; &#xBC88;&#xC9F8;&#xB85C; <em>&#xBE48; &#xD0C0;&#xC785;</em>&#xC740; &#xC608;&#xC0C1;&#xC744; &#xBB34;&#xC2DC;&#xD558;&#xB294; &#xAC83;&#xCC98;&#xB7FC; &#xBCF4;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code>class Empty {}
 
 function fn(arg: Empty) {
-  // do something?
+  // &#xBB34;&#xC5C7;&#xC778;&#xAC00;&#xB97C; &#xD558;&#xB098;&#xC694;?
 }
 
-// No error, but this isn&apos;t an &apos;Empty&apos; ?
+// &#xC624;&#xB958;&#xB294; &#xC5C6;&#xC9C0;&#xB9CC;, &apos;&#xBE48;&apos; &#xD0C0;&#xC785;&#xC740; &#xC544;&#xB2C8;&#xC9C0; &#xC54A;&#xB098;&#xC694;?
 fn({ k: 10 });
-</code></pre><p>TypeScript determines if the call to <code>fn</code> here is valid by seeing if the provided argument is a valid <code>Empty</code>.
-It does so by examining the <em>structure</em> of <code>{ k: 10 }</code> and <code>class Empty { }</code>.
-We can see that <code>{ k: 10 }</code> has <em>all</em> of the properties that <code>Empty</code> does, because <code>Empty</code> has no properties.
-Therefore, this is a valid call!</p>
-<p>This may seem surprising, but it&apos;s ultimately a very similar relationship to one enforced in nominal OOP languages.
-A subclass cannot <em>remove</em> a property of its base class, because doing so would destroy the natural subtype relationship between the derived class and its base.
-Structural type systems simply identify this relationship implicitly by describing subtypes in terms of having properties of compatible types.</p>
-<h4 id="identical-types">Identical Types</h4>
-<p>Another frequent source of surprise comes with identical types:</p>
+</code></pre><p>TypeScript&#xB294; &#xC8FC;&#xC5B4;&#xC9C4; &#xC778;&#xC218;&#xAC00; &#xC720;&#xD6A8;&#xD55C; <code>Empty</code>&#xC778;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xC5EC; <code>fn</code>&#xC758; &#xD638;&#xCD9C;&#xC774; &#xC720;&#xD6A8;&#xD55C;&#xC9C0;&#xB97C; &#xAC80;&#xC0AC;&#xD569;&#xB2C8;&#xB2E4;
+<code>{ k: 10 }</code>&#xACFC; <code>class Empty { }</code>&#xC758; <em>&#xAD6C;&#xC870;&#xB97C; &#xD655;&#xC778;&#xD558;&#xC5EC; &#xC720;&#xD6A8;&#xC131;&#xC744; &#xAC80;&#xC0AC;&#xD569;&#xB2C8;&#xB2E4;.
+<code>Empty</code>&#xC5D0; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xAC00; &#xC5C6;&#xC73C;&#xBBC0;&#xB85C; <code>Empty</code>&#xAC00; &#xC218;&#xD589;&#xD558;&#xB294; </em>&#xBAA8;&#xB4E0;_ &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xAC00; <code>{ k: 10 }</code>&#xC5D0; &#xC18D;&#xD574;&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xADF8;&#xB7EC;&#xBBC0;&#xB85C;, &#xC720;&#xD6A8;&#xD55C; &#xD638;&#xCD9C;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<p>&#xB180;&#xB78D;&#xC9C0;&#xB9CC;, &#xCD5C;&#xC885;&#xC801;&#xC73C;&#xB85C; &#xBA85;&#xBAA9;&#xC801;&#xC778; &#xAC1D;&#xCCB4;&#xC9C0;&#xD5A5;&#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D; &#xC5B8;&#xC5B4;&#xC640; &#xB9E4;&#xC6B0; &#xBE44;&#xC2B7;&#xD558;&#xAC8C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.
+&#xD30C;&#xC0DD; &#xD074;&#xB798;&#xC2A4;&#xC640; &#xD30C;&#xC0DD; &#xD074;&#xB798;&#xC2A4;&#xC758; &#xAE30;&#xBCF8; &#xC0AC;&#xC774;&#xC758; &#xC790;&#xC5F0;&#xC2A4;&#xB7EC;&#xC6B4; &#xD558;&#xC704; &#xD0C0;&#xC785; &#xAD00;&#xACC4;&#xAC00; &#xD30C;&#xAD34;&#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, &#xD558;&#xC704; &#xD074;&#xB798;&#xC2A4;&#xB294; <em>&#xC0AD;&#xC81C;</em>&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xAD6C;&#xC870;&#xC801; &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;&#xC740; &#xD638;&#xD658; &#xAC00;&#xB2A5;&#xD55C; &#xC720;&#xD615;&#xC758; &#xC18D;&#xC131;&#xC744; &#xAC16;&#xB294; &#xCE21;&#xBA74;&#xC5D0;&#xC11C; &#xD558;&#xC704; &#xD0C0;&#xC785;&#xC744; &#xC124;&#xBA85;&#xD558;&#xBBC0;&#xB85C; &#xC704;&#xC758; &#xAD00;&#xACC4;&#xB97C; &#xC554;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xAD6C;&#xBCC4;&#xD569;&#xB2C8;&#xB2E4;</p>
+<h4 id="&#xB3D9;&#xC77C;&#xD55C;-&#xD0C0;&#xC785;-identical-types">&#xB3D9;&#xC77C;&#xD55C; &#xD0C0;&#xC785; (Identical Types)</h4>
+<p>&#xB610; &#xB2E4;&#xB978; &#xBE48;&#xBC88;&#xD55C; &#xB180;&#xB77C;&#xC6C0;&#xC758; &#xC6D0;&#xC778;&#xC740; &#xB3D9;&#xC77C;&#xD55C; &#xD0C0;&#xC785;&#xC5D0; &#xAE30;&#xC778;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-ts"><span class="cm-keyword">class</span> <span class="cm-variable">Car</span> {
   <span class="cm-property">drive</span>() {
     <span class="cm-comment">// hit the gas</span>
@@ -1180,21 +1174,21 @@ Structural type systems simply identify this relationship implicitly by describi
 <span class="cm-comment">// No error?</span>
 <span class="cm-keyword">let</span> <span class="cm-variable">w</span>: <span class="cm-variable-3">Car</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Golfer</span>();
 </code></pre>
-<p>Again, this isn&apos;t an error because the <em>structures</em> of these classes are the same.
-While this may seem like a potential source of confusion, in practice, identical classes that shouldn&apos;t be related are not common.</p>
-<p>We&apos;ll learn more about how classes relate to each other in the Classes chapter.</p>
-<h3 id="reflection">Reflection</h3>
-<p>OOP programmers are accustomed to being able to query the type of any value, even a generic one:</p>
+<p>&#xB2E4;&#xC2DC; &#xB9D0;&#xD558;&#xC9C0;&#xB9CC;, &#xC624;&#xB958;&#xAC00; &#xC544;&#xB2CC; &#xC774;&#xC720;&#xB294; &#xD074;&#xB798;&#xC2A4;&#xC758; <em>&#xAD6C;&#xC870;</em>&#xAC00; &#xB3D9;&#xC77C;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC7A0;&#xC7AC;&#xC801;&#xC778; &#xD63C;&#xB780;&#xC758; &#xC774;&#xC720;&#xAC00; &#xB420; &#xC218;&#xB3C4; &#xC788;&#xACA0;&#xC9C0;&#xB9CC;, &#xC0AC;&#xC2E4; &#xC0C1;&#xAD00;&#xC5C6;&#xB294; &#xD074;&#xB798;&#xC2A4;&#xAC00; &#xB3D9;&#xC77C;&#xD55C; &#xACBD;&#xC6B0;&#xB294; &#xC77C;&#xBC18;&#xC801;&#xC774;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xCC28;&#xD6C4;&#xC5D0; &#xD074;&#xB798;&#xC2A4; &#xCC55;&#xD130;&#xC5D0;&#xC11C; &#xD074;&#xB798;&#xC2A4;&#xAC00; &#xC11C;&#xB85C; &#xC5B4;&#xB5BB;&#xAC8C; &#xAD00;&#xB828;&#xB418;&#xB294;&#xC9C0;&#xC5D0; &#xB300;&#xD574; &#xC790;&#xC138;&#xD788; &#xC54C;&#xC544;&#xBCFC; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h3 id="&#xBC18;&#xC601;-reflection">&#xBC18;&#xC601; (Reflection)</h3>
+<p>&#xAC1D;&#xCCB4;&#xC9C0;&#xD5A5; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBA38;&#xB294; &#xC81C;&#xB124;&#xB9AD;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xC5EC; &#xC5B4;&#xB5A4; &#xAC12;&#xC758; &#xC720;&#xD615;&#xC774;&#xB77C;&#xB3C4; &#xB2E4;&#xB8F0;(query)&#xC218; &#xC788;&#xC74C;&#xC5D0; &#xC775;&#xC219;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-csharp">// C#
 static void PrintType&lt;T&gt;() {
     Console.WriteLine(typeof(T).Name);
 }
 </code></pre>
-<p>Because TypeScript&apos;s type system is fully erased, information about e.g. the instantiation of a generic type parameter is not available at runtime.</p>
-<p>JavaScript does have some limited primitives like <code>typeof</code> and <code>instanceof</code>, but remember that these operators are still working on the values as they exist in the type-erased output code.
-For example, <code>typeof (new Car())</code> will be <code>&quot;object&quot;</code>, not <code>Car</code> or <code>&quot;Car&quot;</code>.</p>
+<p>TypeScript&#xC758; &#xD0C0;&#xC785; &#xC2DC;&#xC2A4;&#xD15C;&#xC774; &#xC644;&#xBCBD;&#xD788; &#xC9C0;&#xC6CC;&#xC84C;&#xC73C;&#xBBC0;&#xB85C;, &#xC81C;&#xB124;&#xB9AD; &#xD0C0;&#xC785; &#xC778;&#xC790;&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xD654;&#xC640; &#xAC19;&#xC740; &#xC815;&#xBCF4;&#xB294; &#xB7F0;&#xD0C0;&#xC784;&#xC5D0; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>JavaScript&#xC5D0;&#xB294; <code>typeof</code>&#xC640; <code>instanceof</code>&#xC640; &#xAC19;&#xC740; &#xC81C;&#xD55C;&#xB41C; &#xC6D0;&#xC2DC;&#xC694;&#xC18C;&#xAC00; &#xC788;&#xC9C0;&#xB9CC;, &#xC774;&#xB7F0; &#xC5F0;&#xC0B0;&#xC790;&#xB294; &#xD0C0;&#xC785;&#xC774; &#xC9C0;&#xC6CC;&#xC9C4; &#xCF54;&#xB4DC;&#xC758; &#xCD9C;&#xB825;&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xBBC0;&#xB85C; &#xC5EC;&#xC804;&#xD788; &#xC791;&#xB3D9;&#xD568;&#xC744; &#xC54C;&#xC544;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xC5B4;, <code>typeof (new Car())</code>&#xB294; <code>Car</code>&#xB098; <code>&quot;Car&quot;</code>&#xAC00; &#xC544;&#xB2CC; <code>&quot;object&quot;</code>&#xC785;&#xB2C8;&#xB2E4;.</p>
 <hr>
-<p>This is an overview, from here you should read <a href="../../docs/handbook/intro.html">through the handbook</a> or explore the <a href="../../play#show-examples">Playground examples</a></p>
+<p>&#xC9C0;&#xAE08;&#xAE4C;&#xC9C0; &#xAC1C;&#xC694;&#xC600;&#xACE0;, &#xC5EC;&#xAE30;&#xC5D0;&#xC11C; <a href="../../docs/handbook/intro.html">&#xD578;&#xB4DC;&#xBD81;</a>&#xC744; &#xC77D;&#xAC70;&#xB098; &#xB610;&#xB294; <a href="../../play#show-examples">Playground &#xC608;&#xC81C;</a>&#xB97C; &#xD0D0;&#xC0C9;&#xD558;&#xC138;&#xC694;.</p>
 
                                 
                                 </section>
@@ -1238,7 +1232,7 @@ For example, <code>typeof (new Car())</code> will be <code>&quot;object&quot;</c
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"TS for OOP Programmers(en)","layout":"docs","permalink":"/docs/handbook/typescript-in-5-minutes-oop.html","oneline":"Learn TypeScript if you have a background in object-oriented languages","level":"2.3","depth":1,"next":{"title":"TS for Functional Programmers","level":"2.4","depth":1,"path":"pages/tutorials/ts-for-functional-programmers.md","ref":"pages/tutorials/ts-for-functional-programmers.md","articles":[]},"previous":{"title":"TS for JS Programmers","level":"2.2","depth":1,"path":"pages/tutorials/ts-for-js-programmers.md","ref":"pages/tutorials/ts-for-js-programmers.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/tutorials/ts-for-oopers.md","mtime":"2020-10-13T11:11:44.121Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-13T11:12:45.203Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"TS for OOP Programmers(en)","layout":"docs","permalink":"/docs/handbook/typescript-in-5-minutes-oop.html","oneline":"Learn TypeScript if you have a background in object-oriented languages","level":"2.3","depth":1,"next":{"title":"TS for Functional Programmers","level":"2.4","depth":1,"path":"pages/tutorials/ts-for-functional-programmers.md","ref":"pages/tutorials/ts-for-functional-programmers.md","articles":[]},"previous":{"title":"TS for JS Programmers","level":"2.2","depth":1,"path":"pages/tutorials/ts-for-js-programmers.md","ref":"pages/tutorials/ts-for-js-programmers.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/tutorials/ts-for-oopers.md","mtime":"2020-10-20T11:12:13.036Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-20T11:13:08.163Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
