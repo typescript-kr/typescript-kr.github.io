@@ -340,7 +340,7 @@ class Square {
 
 ## 단축 할당 연산자 (Short-Circuiting Assignment Operators)
 
-JavaScript와 많은 언어는 _복합 할당 (compound assignment)_ 연산자라는 연산자 집합을 지원합니다.
+JavaScript와 많은 언어는 _복합 할당 (compound assignment)_ 연산자라고 불리는 연산자 집합을 지원합니다.
 복합 할당 연산자는 두 개의 인수에 연산자를 적용한 다음 결과를 왼쪽에 할당합니다.
 이전에 아래와 같은 것을 본 적이 있을 것입니다:
 
@@ -371,7 +371,7 @@ a <<= b;
 ```
 
 JavaScript의 많은 연산자에 위와 같은 할당 연산자가 있습니다!
-그러나 최근까지도 논리적 _and_ (`&&`), 논리적 _or_ (`||`) 및 null과 같은 것을 병합하는 연산자 (nullish coalescing) (`??`)의 세 가지 주목할만한 예외가 있었습니다.
+그러나 최근까지도 논리 _and_ 연산자 (`&&`), 논리 _or_ 연산자 (`||`) 및 null과 같은 것을 병합하는 연산자 (nullish coalescing) (`??`)의 세 가지 주목할만한 예외가 있었습니다.
 
 이것이 TypeScript 4.0이 새로운 할당 연산자`&&=`,`||=`및`??=`를 추가하는 새로운 ECMAScript 기능을 지원하는 이유입니다.
 
