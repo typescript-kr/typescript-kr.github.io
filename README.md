@@ -1,3 +1,7 @@
+# 공지
+
+⚠️ 타입스크립트 공식 웹 사이트 프로젝트인 [microsoft/TypeScript-WebSite](https://github.com/microsoft/TypeScript-Website)에서 한글 문서 번역이 진행중 입니다. 핸드북 번역에 참여하실 분은 해당 레포에서 참여해 주세요. 자세한 내용은 [한국어 번역 이슈](https://github.com/microsoft/TypeScript-Website/issues/910)를 참고해주세요.
+
 # TypeScript-Handbook 한글 문서
 
 [![Build Status](https://api.travis-ci.com/typescript-kr/typescript-kr.github.io.svg?branch=master)](https://travis-ci.com/github/typescript-kr/typescript-kr.github.io) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
@@ -14,11 +18,11 @@
 
 ## 참여하기
 
-누구나 참여 가능하며 참여하는 방법은 [CONTRIBUTING.md](https://github.com/typescript-kr/typescript-kr.github.io/blob/master/CONTRIBUTING.md)를 참고해 주세요.
+~~누구나 참여 가능하며 참여하는 방법은 [CONTRIBUTING.md](https://github.com/typescript-kr/typescript-kr.github.io/blob/master/CONTRIBUTING.md)를 참고해 주세요.~~
 
-잘못된 번역, 오타, 번역 요청은 [이슈](https://github.com/typescript-kr/typescript-kr.github.io/issues)에 등록 해주시면 감사하겠습니다.
+~~잘못된 번역, 오타, 번역 요청은 [이슈](https://github.com/typescript-kr/typescript-kr.github.io/issues)에 등록 해주시면 감사하겠습니다.~~
 
-그 밖에도 다양한 의견 및 피드백은 언제나 환영합니다:)
+~~그 밖에도 다양한 의견 및 피드백은 언제나 환영합니다:)~~ [공지](#공지) 참고
 
 ## 컨트리뷰터 목록 ✨
 
