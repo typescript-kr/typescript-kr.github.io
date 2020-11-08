@@ -338,44 +338,44 @@ class Square {
 
 더 자세히 알고 싶다면, [코드를 실행하는 Pull Request를 보세요](https://github.com/microsoft/TypeScript/pull/379200).
 
-## Short-Circuiting Assignment Operators
+## 단축 할당 연산자 (Short-Circuiting Assignment Operators)
 
-JavaScript, and a lot of other languages, support a set of operators called _compound assignment_ operators.
-Compound assignment operators apply an operator to two arguments, and then assign the result to the left side.
-You may have seen these before:
+JavaScript와 많은 언어는 _복합 할당 (compound assignment)_ 연산자라고 불리는 연산자 집합을 지원합니다.
+복합 할당 연산자는 두 개의 인수에 연산자를 적용한 다음 결과를 왼쪽에 할당합니다.
+이전에 아래와 같은 것을 본 적이 있을 것입니다:
 
 ```ts
-// Addition
+// 덧셈
 // a = a + b
 a += b;
 
-// Subtraction
+// 뺄셈
 // a = a - b
 a -= b;
 
-// Multiplication
+// 곱셈
 // a = a * b
 a *= b;
 
-// Division
+// 나눗셈
 // a = a / b
 a /= b;
 
-// Exponentiation
+// 지수화
 // a = a ** b
 a **= b;
 
-// Left Bit Shift
+// 왼쪽 비트 시프트
 // a = a << b
 a <<= b;
 ```
 
-So many operators in JavaScript have a corresponding assignment operator!
-Up until recently, however, there were three notable exceptions: logical _and_ (`&&`), logical _or_ (`||`), and nullish coalescing (`??`).
+JavaScript의 많은 연산자에 위와 같은 할당 연산자가 있습니다!
+그러나 최근까지도 논리 _and_ 연산자 (`&&`), 논리 _or_ 연산자 (`||`) 및 null과 같은 것을 병합하는 연산자 (nullish coalescing) (`??`)의 세 가지 주목할만한 예외가 있었습니다.
 
-That's why TypeScript 4.0 supports a new ECMAScript feature to add three new assignment operators: `&&=`, `||=`, and `??=`.
+이것이 TypeScript 4.0이 새로운 할당 연산자`&&=`,`||=`및`??=`를 추가하는 새로운 ECMAScript 기능을 지원하는 이유입니다.
 
-These operators are great for substituting any example where a user might write code like the following:
+이러한 연산자는 사용자가 다음과 같은 코드를 작성할 수 있는 모든 예를 대체하는 데 유용합니다.
 
 ```ts
 a = a && b;
@@ -383,34 +383,34 @@ a = a || b;
 a = a ?? b;
 ```
 
-Or a similar `if` block like
+혹은 아래와 비슷한 `if` 블록
 
 ```ts
-// could be 'a ||= b'
+// 'a ||= b'로 대체 가능
 if (!a) {
   a = b;
 }
 ```
 
-There are even some patterns we've seen (or, uh, written ourselves) to lazily initialize values, only if they'll be needed.
+우리가 본(혹은 직접 작성한) 코드 패턴 중 필요한 경우에만 값을 지연 초기화시키기 위한 패턴도 있습니다.
 
 ```ts
 let values: string[];
 (values ?? (values = [])).push("hello");
 
-// After
+// 이후
 (values ??= []).push("hello");
 ```
 
-(look, we're not proud of _all_ the code we write...)
+(보세요, 우리가 작성한 _모든_ 코드가 자랑스러운 것은 아닙니다...)
 
-On the rare case that you use getters or setters with side-effects, it's worth noting that these operators only perform assignments if necessary.
-In that sense, not only is the right side of the operator "short-circuited" - the assignment itself is too.
+드물지만 부수 효과(side-effects)가 있는 getter 또는 setter를 사용하는 경우 이러한 연산자가 필요한 경우에만 할당을 수행한다는 점에 유의할 필요가 있습니다.
+그런 의미에서 연산자의 오른쪽이 "단축 (short-circuited)"될 뿐만 아니라 할당 자체도 마찬가지입니다.
 
 ```ts
 obj.prop ||= foo();
 
-// roughly equivalent to either of the following
+// 다음 중 하나와 대략 동일함
 
 obj.prop || (obj.prop = foo());
 
@@ -419,14 +419,14 @@ if (!obj.prop) {
 }
 ```
 
-[Try running the following example](https://www.typescriptlang.org/play?ts=Nightly#code/MYewdgzgLgBCBGArGBeGBvAsAKBnmA5gKawAOATiKQBQCUGO+TMokIANkQHTsgHUAiYlChFyMABYBDCDHIBXMANoBuHI2Z4A9FpgAlIqXZTgRGAFsiAQg2byJeeTAwAslKgSu5KWAAmIczoYAB4YAAYuAFY1XHwAXwAaWxgIEhgKKmoAfQA3KXYALhh4EA4iH3osWM1WCDKePkFUkTFJGTlFZRimOJw4mJwAM0VgKABLcBhB0qCqplr63n4BcjGCCVgIMd8zIjz2eXciXy7k+yhHZygFIhje7BwFzgblgBUJMdlwM3yAdykAJ6yBSQGAeMzNUTkU7YBCILgZUioOBIBGUJEAHwxUxmqnU2Ce3CWgnenzgYDMACo6pZxpYIJSOqDwSkSFCYXC0VQYFi0NMQHQVEA) to see how that differs from _always_ performing the assignment.
+[다음 예시를 실행해보세요](https://www.typescriptlang.org/play?ts=Nightly#code/MYewdgzgLgBCBGArGBeGBvAsAKBnmA5gKawAOATiKQBQCUGO+TMokIANkQHTsgHUAiYlChFyMABYBDCDHIBXMANoBuHI2Z4A9FpgAlIqXZTgRGAFsiAQg2byJeeTAwAslKgSu5KWAAmIczoYAB4YAAYuAFY1XHwAXwAaWxgIEhgKKmoAfQA3KXYALhh4EA4iH3osWM1WCDKePkFUkTFJGTlFZRimOJw4mJwAM0VgKABLcBhB0qCqplr63n4BcjGCCVgIMd8zIjz2eXciXy7k+yhHZygFIhje7BwFzgblgBUJMdlwM3yAdykAJ6yBSQGAeMzNUTkU7YBCILgZUioOBIBGUJEAHwxUxmqnU2Ce3CWgnenzgYDMACo6pZxpYIJSOqDwSkSFCYXC0VQYFi0NMQHQVEA) 예시를 통해 _항상_ 할당을 수행하는 것과 어떻게 다른지 확인해보세요.
 
 ```ts
 const obj = {
     get prop() {
         console.log("getter has run");
 
-        // Replace me!
+        // 이곳을 바꿔보세요!
         return Math.random() < 0.5;
     },
     set prop(_val: boolean) {
@@ -446,10 +446,10 @@ console.log("This one *sometimes* runs the setter");
 obj.prop ||= foo();
 ```
 
-We'd like to extend a big thanks to community member [Wenlu Wang](https://github.com/Kingwl) for this contribution!
+기여해주신 커뮤니티 멤버 [Wenlu Wang](https://github.com/Kingwl) 님에게 큰 감사를 표합니다.
 
-For more details, you can [take a look at the pull request here](https://github.com/microsoft/TypeScript/pull/37727).
-You can also [check out TC39's proposal repository for this feature](https://github.com/tc39/proposal-logical-assignment/).
+더 자세한 내용을 보고 싶으시다면 [이 풀 리퀘스트를 확인해보세요](https://github.com/microsoft/TypeScript/pull/37727).
+[TC39 제안 저장소에서도 이 기능을 확인할 수 있습니다.](https://github.com/tc39/proposal-logical-assignment/).
 
 ## `unknown` on `catch` Clause Bindings
 
