@@ -449,7 +449,7 @@ obj.prop ||= foo();
 기여해주신 커뮤니티 멤버 [Wenlu Wang](https://github.com/Kingwl) 님에게 큰 감사를 표합니다.
 
 더 자세한 내용을 보고 싶으시다면 [이 풀 리퀘스트를 확인해보세요](https://github.com/microsoft/TypeScript/pull/37727).
-[TC39님의 이 기능에 대해 제안하는 저장소도 확인 가능합니다](https://github.com/tc39/proposal-logical-assignment/).
+[TC39 제안 저장소에서도 이 기능을 확인할 수 있습니다.](https://github.com/tc39/proposal-logical-assignment/).
 
 ## `unknown` on `catch` Clause Bindings
 
