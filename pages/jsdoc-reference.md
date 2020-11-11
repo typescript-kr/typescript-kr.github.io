@@ -43,7 +43,7 @@ var win;
 /** @type {PromiseLike<string>} */
 var promisedString;
 
-// You can specify an HTML Element with DOM properties
+// DOM 프로퍼티를 사용하여 HTML 요소를 지정할 수 있습니다
 /** @type {HTMLElement} */
 var myElement = document.querySelector(selector);
 element.dataset.myData = "";
@@ -439,13 +439,13 @@ var result = C(1);
 
 > Note: 오류 메시지는 [a JSConfig](/docs/handbook/tsconfig-json.html) 및 [`checkJs`](/tsconfig#checkJs)가 활성화된 상태에서만 JS 코드 베이스에 나타납니다.
 
-With `@constructor`, `this` is checked inside the constructor function `C`, so you will get suggestions for the `initialize` method and an error if you pass it a number. Your editor may also show warnings if you call `C` instead of constructing it.
+`@constructor`를 사용하면 생성자 함수 `C`안에 `this`가 있는지 검사하므로, `initialize` 메서드에 대한 제안사항을 받으며 만약 인자로 숫자를 넘긴다면 오류가 발생합니다. 또한 `C`를 생성하지 않고 호출만 한다면 에디터에서 경고를 표시할 수 있습니다.
 
-Unfortunately, this means that constructor functions that are also callable cannot use `@constructor`.
+유감스럽게도, 이는 호출가능한 생성자 함수는 `@constructor`를 사용하지 못함을 의미합니다.
 
 ## `@this`
 
-The compiler can usually figure out the type of `this` when it has some context to work with. When it doesn't, you can explicitly specify the type of `this` with `@this`:
+컴파일러는 코드가 동작할 컨텍스트가 있다면 보통 `this`의 타입을 파악할 수 있습니다. 그렇지 않은 경우, `@this`를 사용하여 명확하게 `this`의 타입을 지정할 수 있습니다:
 
 ```js
 /**
@@ -453,13 +453,13 @@ The compiler can usually figure out the type of `this` when it has some context 
  * @param {*} e
  */
 function callbackForLater(e) {
-  this.clientHeight = parseInt(e); // should be fine!
+  this.clientHeight = parseInt(e); // 잘 작동해야 합니다!
 }
 ```
 
 ## `@extends`
 
-When Javascript classes extend a generic base class, there is nowhere to specify what the type parameter should be. The `@extends` tag provides a place for that type parameter:
+Javascript 클래스를 제네릭 기반 클래스로부터 상속(extend)하면, 매개변수가 어떤 타입이 되어야 하는지 지정할 곳이 없습니다. `@extends` 태그는 이러한 타입 매개변수를 위한 위치를 제공합니다:
 
 ```js
 /**
@@ -471,11 +471,11 @@ class SortableSet extends Set {
 }
 ```
 
-Note that `@extends` only works with classes. Currently, there is no way for a constructor function extend a class.
+`@extends`는 클래스에서만 작동합니다. 현재까지, 생성자 함수가 클래스를 상속할 수 있는 방법은 없습니다.
 
 ## `@enum`
 
-The `@enum` tag allows you to create an object literal whose members are all of a specified type. Unlike most object literals in Javascript, it does not allow other members.
+`@enum` 태그는 멤버가 모두 지정된 객체 리터럴을 만들 수 있게 도와줍니다. Javascript 대부분의 객체 리터럴과 달리, 이 태그는 다른 멤버를 허용하지 않습니다.
 
 ```js
 /** @enum {number} */
@@ -488,7 +488,7 @@ const JSDocState = {
 JSDocState.SawAsterisk;
 ```
 
-Note that `@enum` is quite different from, and much simpler than, TypeScript's `enum`. However, unlike TypeScript's enums, `@enum` can have any type:
+`@enum`은 TypeScript의 `enum`과 상당히 다르고, 더 간단합니다. 하지만 TypeScript의 열거형(enum)과 달리, `@enum`은 어떠한 타입도 가질 수 있습니다:
 
 ```js
 /** @enum {function(number): number} */
@@ -501,65 +501,65 @@ const MathFuncs = {
 MathFuncs.add1;
 ```
 
-## More examples
+## 추가 예제 (More examples)
 
 ```js
 class Foo {}
 // ---cut---
 var someObj = {
   /**
-   * @param {string} param1 - Docs on property assignments work
+   * @param {string} param1 - 프로퍼티 할당 문서를 참조하세요
    */
   x: function (param1) {},
 };
 
 /**
- * As do docs on variable assignments
+ * 변수 할당 문서를 참조하세요
  * @return {Window}
  */
 let someFunc = function () {};
 
 /**
- * And class methods
- * @param {string} greeting The greeting to use
+ * 클래스 메서드
+ * @param {string} greeting 사용할 인사말
  */
 Foo.prototype.sayHi = (greeting) => console.log("Hi!");
 
 /**
- * And arrow functions expressions
- * @param {number} x - A multiplier
+ * 화살표 함수 표현식
+ * @param {number} x - 곱하는 수
  */
 let myArrow = (x) => x * x;
 
 /**
- * Which means it works for stateless function components in JSX too
+ * JSX의 무상태 함수형 컴포넌트(SFC)에도 작동합니다
  * @param {{a: string, b: number}} test - Some param
  */
 var sfc = (test) => <div>{test.a.charAt(0)}</div>;
 
 /**
- * A parameter can be a class constructor, using Closure syntax.
+ * 매개변수는 클로저 구문을 사용하면 클래스 생성자로 사용할 수 있습니다.
  *
  * @param {{new(...args: any[]): object}} C - The class to register
  */
 function registerClass(C) {}
 
 /**
- * @param {...string} p1 - A 'rest' arg (array) of strings. (treated as 'any')
+ * @param {...string} p1 - '나머지' 문자열 인수들의 배열 ('any' 타입으로 취급됨)
  */
 function fn10(p1) {}
 
 /**
- * @param {...string} p1 - A 'rest' arg (array) of strings. (treated as 'any')
+ * @param {...string} p1 - '나머지' 문자열 인수들의 배열 ('any' 타입으로 취급됨)
  */
 function fn9(p1) {
   return p1.join();
 }
 ```
 
-## Patterns that are known NOT to be supported
+## 지원하지 않는다고 알려진 패턴 (Patterns that are known NOT to be supported)
 
-Referring to objects in the value space as types doesn't work unless the object also creates a type, like a constructor function.
+Value space 안의 객체를 타입으로 태그하는 것은 객체가 마치 생성자 함수처럼 타입을 생성하지 않는 이상 작동하지 않습니다.
 
 ```js
 function aNormalFunction() {}
@@ -568,13 +568,13 @@ function aNormalFunction() {}
  */
 var wrong;
 /**
- * Use 'typeof' instead:
+ * 'typeof'를 대신 사용하세요:
  * @type {typeof aNormalFunction}
  */
 var right;
 ```
 
-Postfix equals on a property type in an object literal type doesn't specify an optional property:
+접미사(Postfix)는 선택적(Optional) 프로퍼티를 구체화하지 않는 객체 리터럴 타입의 프로퍼티 타입과 같습니다:
 
 ```js
 /**
@@ -582,13 +582,13 @@ Postfix equals on a property type in an object literal type doesn't specify an o
  */
 var wrong;
 /**
- * Use postfix question on the property name instead:
+ * 프로퍼티 이름 대신 물음표 접미사를 사용하세요:
  * @type {{ a: string, b?: number }}
  */
 var right;
 ```
 
-Nullable types only have meaning if `strictNullChecks` is on:
+`strictNullCheck`가 활성화 중인 경우에만 널러블(Nullable) 타입이 의미가 있습니다.
 
 ```js
 /**
@@ -599,7 +599,7 @@ Nullable types only have meaning if `strictNullChecks` is on:
 var nullable;
 ```
 
-You can also use a union type:
+유니언 타입을 사용해도 됩니다:
 
 ```js
 /**
@@ -610,25 +610,25 @@ You can also use a union type:
 var unionNullable;
 ```
 
-Non-nullable types have no meaning and are treated just as their original type:
+널러블 타입이 아닌 경우에는 아무 의미가 없으며 원래 타입으로 취급합니다:
 
 ```js
 /**
  * @type {!number}
- * Just has type number
+ * 타입 number를 가집니다
  */
 var normal;
 ```
 
-Unlike JSDoc's type system, TypeScript only allows you to mark types as containing null or not.
-There is no explicit non-nullability -- if strictNullChecks is on, then `number` is not nullable.
-If it is off, then `number` is nullable.
+JSDoc의 타입 체계와 달리, TypeScript는 타입이 오직 null을 포함하거나 하지 않는다 표시할 수 있습니다.
+널러블은 명확하게 구분되지 않습니다 -- 만약 strictNullChecks가 활성화 중이라면, `number`는 널러블하지 않습니다.
+반대의 경우, `number`는 널러블합니다.
 
-### Unsupported tags
+### 지원하지 않는 태그 (Unsupported tags)
 
-TypeScript ignores any unsupported JSDoc tags.
+TypeScript는 지원하지 않는 JSDoc 태그를 무시합니다.
 
-The following tags have open issues to support them:
+태그 지원을 위한 오픈 이슈가 아래에 있습니다:
 
 * `@const` ([issue #19672](https://github.com/Microsoft/TypeScript/issues/19672))
 * `@inheritdoc` ([issue #23215](https://github.com/Microsoft/TypeScript/issues/23215))
