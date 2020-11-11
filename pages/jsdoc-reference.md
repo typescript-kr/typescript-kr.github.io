@@ -545,12 +545,12 @@ var sfc = (test) => <div>{test.a.charAt(0)}</div>;
 function registerClass(C) {}
 
 /**
- * @param {...string} p1 - A 'rest' arg (array) of strings. (treated as 'any')
+ * @param {...string} p1 - `나머지` 문자열 인수들의 배열 (`any` 타입으로 취급됨)
  */
 function fn10(p1) {}
 
 /**
- * @param {...string} p1 - A 'rest' arg (array) of strings. (treated as 'any')
+ * @param {...string} p1 - `나머지` 문자열 인수들의 배열 (`any` 타입으로 취급됨)
  */
 function fn9(p1) {
   return p1.join();
