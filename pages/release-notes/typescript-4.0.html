@@ -1308,61 +1308,61 @@
 }
 </code></pre>
 <p>&#xB354; &#xC790;&#xC138;&#xD788; &#xC54C;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74;, <a href="https://github.com/microsoft/TypeScript/pull/379200" target="_blank">&#xCF54;&#xB4DC;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xB294; Pull Request&#xB97C; &#xBCF4;&#xC138;&#xC694;</a>.</p>
-<h2 id="short-circuiting-assignment-operators">Short-Circuiting Assignment Operators</h2>
-<p>JavaScript, and a lot of other languages, support a set of operators called <em>compound assignment</em> operators.
-Compound assignment operators apply an operator to two arguments, and then assign the result to the left side.
-You may have seen these before:</p>
-<pre><code class="lang-ts"><span class="cm-comment">// Addition</span>
+<h2 id="&#xB2E8;&#xCD95;-&#xD560;&#xB2F9;-&#xC5F0;&#xC0B0;&#xC790;-short-circuiting-assignment-operators">&#xB2E8;&#xCD95; &#xD560;&#xB2F9; &#xC5F0;&#xC0B0;&#xC790; (Short-Circuiting Assignment Operators)</h2>
+<p>JavaScript&#xC640; &#xB9CE;&#xC740; &#xC5B8;&#xC5B4;&#xB294; <em>&#xBCF5;&#xD569; &#xD560;&#xB2F9; (compound assignment)</em> &#xC5F0;&#xC0B0;&#xC790;&#xB77C;&#xACE0; &#xBD88;&#xB9AC;&#xB294; &#xC5F0;&#xC0B0;&#xC790; &#xC9D1;&#xD569;&#xC744; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.
+&#xBCF5;&#xD569; &#xD560;&#xB2F9; &#xC5F0;&#xC0B0;&#xC790;&#xB294; &#xB450; &#xAC1C;&#xC758; &#xC778;&#xC218;&#xC5D0; &#xC5F0;&#xC0B0;&#xC790;&#xB97C; &#xC801;&#xC6A9;&#xD55C; &#xB2E4;&#xC74C; &#xACB0;&#xACFC;&#xB97C; &#xC67C;&#xCABD;&#xC5D0; &#xD560;&#xB2F9;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC774;&#xC804;&#xC5D0; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC740; &#xAC83;&#xC744; &#xBCF8; &#xC801;&#xC774; &#xC788;&#xC744; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="cm-comment">// &#xB367;&#xC148;</span>
 <span class="cm-comment">// a = a + b</span>
 <span class="cm-variable">a</span> <span class="cm-operator">+=</span> <span class="cm-variable">b</span>;
 
-<span class="cm-comment">// Subtraction</span>
+<span class="cm-comment">// &#xBE84;&#xC148;</span>
 <span class="cm-comment">// a = a - b</span>
 <span class="cm-variable">a</span> <span class="cm-operator">-=</span> <span class="cm-variable">b</span>;
 
-<span class="cm-comment">// Multiplication</span>
+<span class="cm-comment">// &#xACF1;&#xC148;</span>
 <span class="cm-comment">// a = a * b</span>
 <span class="cm-variable">a</span> <span class="cm-operator">*=</span> <span class="cm-variable">b</span>;
 
-<span class="cm-comment">// Division</span>
+<span class="cm-comment">// &#xB098;&#xB217;&#xC148;</span>
 <span class="cm-comment">// a = a / b</span>
 <span class="cm-variable">a</span> <span class="cm-operator">/=</span> <span class="cm-variable">b</span>;
 
-<span class="cm-comment">// Exponentiation</span>
+<span class="cm-comment">// &#xC9C0;&#xC218;&#xD654;</span>
 <span class="cm-comment">// a = a ** b</span>
 <span class="cm-variable">a</span> <span class="cm-operator">**=</span> <span class="cm-variable">b</span>;
 
-<span class="cm-comment">// Left Bit Shift</span>
+<span class="cm-comment">// &#xC67C;&#xCABD; &#xBE44;&#xD2B8; &#xC2DC;&#xD504;&#xD2B8;</span>
 <span class="cm-comment">// a = a &lt;&lt; b</span>
 <span class="cm-variable">a</span> <span class="cm-operator">&lt;&lt;=</span> <span class="cm-variable">b</span>;
 </code></pre>
-<p>So many operators in JavaScript have a corresponding assignment operator!
-Up until recently, however, there were three notable exceptions: logical <em>and</em> (<code>&amp;&amp;</code>), logical <em>or</em> (<code>||</code>), and nullish coalescing (<code>??</code>).</p>
-<p>That&apos;s why TypeScript 4.0 supports a new ECMAScript feature to add three new assignment operators: <code>&amp;&amp;=</code>, <code>||=</code>, and <code>??=</code>.</p>
-<p>These operators are great for substituting any example where a user might write code like the following:</p>
+<p>JavaScript&#xC758; &#xB9CE;&#xC740; &#xC5F0;&#xC0B0;&#xC790;&#xC5D0; &#xC704;&#xC640; &#xAC19;&#xC740; &#xD560;&#xB2F9; &#xC5F0;&#xC0B0;&#xC790;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;!
+&#xADF8;&#xB7EC;&#xB098; &#xCD5C;&#xADFC;&#xAE4C;&#xC9C0;&#xB3C4; &#xB17C;&#xB9AC; <em>and</em> &#xC5F0;&#xC0B0;&#xC790; (<code>&amp;&amp;</code>), &#xB17C;&#xB9AC; <em>or</em> &#xC5F0;&#xC0B0;&#xC790; (<code>||</code>) &#xBC0F; null&#xACFC; &#xAC19;&#xC740; &#xAC83;&#xC744; &#xBCD1;&#xD569;&#xD558;&#xB294; &#xC5F0;&#xC0B0;&#xC790; (nullish coalescing) (<code>??</code>)&#xC758; &#xC138; &#xAC00;&#xC9C0; &#xC8FC;&#xBAA9;&#xD560;&#xB9CC;&#xD55C; &#xC608;&#xC678;&#xAC00; &#xC788;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774;&#xAC83;&#xC774; TypeScript 4.0&#xC774; &#xC0C8;&#xB85C;&#xC6B4; &#xD560;&#xB2F9; &#xC5F0;&#xC0B0;&#xC790;<code>&amp;&amp;=</code>,<code>||=</code>&#xBC0F;<code>??=</code>&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xB294; &#xC0C8;&#xB85C;&#xC6B4; ECMAScript &#xAE30;&#xB2A5;&#xC744; &#xC9C0;&#xC6D0;&#xD558;&#xB294; &#xC774;&#xC720;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774;&#xB7EC;&#xD55C; &#xC5F0;&#xC0B0;&#xC790;&#xB294; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xB294; &#xBAA8;&#xB4E0; &#xC608;&#xB97C; &#xB300;&#xCCB4;&#xD558;&#xB294; &#xB370; &#xC720;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-variable">a</span> <span class="cm-operator">=</span> <span class="cm-variable">a</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable">b</span>;
 <span class="cm-variable">a</span> <span class="cm-operator">=</span> <span class="cm-variable">a</span> <span class="cm-operator">||</span> <span class="cm-variable">b</span>;
 <span class="cm-variable">a</span> <span class="cm-operator">=</span> <span class="cm-variable">a</span> <span class="cm-operator">??</span> <span class="cm-variable">b</span>;
 </code></pre>
-<p>Or a similar <code>if</code> block like</p>
-<pre><code class="lang-ts"><span class="cm-comment">// could be &apos;a ||= b&apos;</span>
+<p>&#xD639;&#xC740; &#xC544;&#xB798;&#xC640; &#xBE44;&#xC2B7;&#xD55C; <code>if</code> &#xBE14;&#xB85D;</p>
+<pre><code class="lang-ts"><span class="cm-comment">// &apos;a ||= b&apos;&#xB85C; &#xB300;&#xCCB4; &#xAC00;&#xB2A5;</span>
 <span class="cm-keyword">if</span> (<span class="cm-operator">!</span><span class="cm-variable">a</span>) {
   <span class="cm-variable">a</span> <span class="cm-operator">=</span> <span class="cm-variable">b</span>;
 }
 </code></pre>
-<p>There are even some patterns we&apos;ve seen (or, uh, written ourselves) to lazily initialize values, only if they&apos;ll be needed.</p>
+<p>&#xC6B0;&#xB9AC;&#xAC00; &#xBCF8;(&#xD639;&#xC740; &#xC9C1;&#xC811; &#xC791;&#xC131;&#xD55C;) &#xCF54;&#xB4DC; &#xD328;&#xD134; &#xC911; &#xD544;&#xC694;&#xD55C; &#xACBD;&#xC6B0;&#xC5D0;&#xB9CC; &#xAC12;&#xC744; &#xC9C0;&#xC5F0; &#xCD08;&#xAE30;&#xD654;&#xC2DC;&#xD0A4;&#xAE30; &#xC704;&#xD55C; &#xD328;&#xD134;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">let</span> <span class="cm-variable">values</span>: <span class="cm-variable-3">string</span>[];
 (<span class="cm-variable">values</span> <span class="cm-operator">??</span> (<span class="cm-variable">values</span> <span class="cm-operator">=</span> [])).<span class="cm-property">push</span>(<span class="cm-string">&quot;hello&quot;</span>);
 
-<span class="cm-comment">// After</span>
+<span class="cm-comment">// &#xC774;&#xD6C4;</span>
 (<span class="cm-variable">values</span> <span class="cm-operator">??=</span> []).<span class="cm-property">push</span>(<span class="cm-string">&quot;hello&quot;</span>);
 </code></pre>
-<p>(look, we&apos;re not proud of <em>all</em> the code we write...)</p>
-<p>On the rare case that you use getters or setters with side-effects, it&apos;s worth noting that these operators only perform assignments if necessary.
-In that sense, not only is the right side of the operator &quot;short-circuited&quot; - the assignment itself is too.</p>
+<p>(&#xBCF4;&#xC138;&#xC694;, &#xC6B0;&#xB9AC;&#xAC00; &#xC791;&#xC131;&#xD55C; <em>&#xBAA8;&#xB4E0;</em> &#xCF54;&#xB4DC;&#xAC00; &#xC790;&#xB791;&#xC2A4;&#xB7EC;&#xC6B4; &#xAC83;&#xC740; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;...)</p>
+<p>&#xB4DC;&#xBB3C;&#xC9C0;&#xB9CC; &#xBD80;&#xC218; &#xD6A8;&#xACFC;(side-effects)&#xAC00; &#xC788;&#xB294; getter &#xB610;&#xB294; setter&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0; &#xC774;&#xB7EC;&#xD55C; &#xC5F0;&#xC0B0;&#xC790;&#xAC00; &#xD544;&#xC694;&#xD55C; &#xACBD;&#xC6B0;&#xC5D0;&#xB9CC; &#xD560;&#xB2F9;&#xC744; &#xC218;&#xD589;&#xD55C;&#xB2E4;&#xB294; &#xC810;&#xC5D0; &#xC720;&#xC758;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xADF8;&#xB7F0; &#xC758;&#xBBF8;&#xC5D0;&#xC11C; &#xC5F0;&#xC0B0;&#xC790;&#xC758; &#xC624;&#xB978;&#xCABD;&#xC774; &quot;&#xB2E8;&#xCD95; (short-circuited)&quot;&#xB420; &#xBFD0;&#xB9CC; &#xC544;&#xB2C8;&#xB77C; &#xD560;&#xB2F9; &#xC790;&#xCCB4;&#xB3C4; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-ts"><span class="cm-variable">obj</span>.<span class="cm-property">prop</span> <span class="cm-operator">||=</span> <span class="cm-variable">foo</span>();
 
-<span class="cm-comment">// roughly equivalent to either of the following</span>
+<span class="cm-comment">// &#xB2E4;&#xC74C; &#xC911; &#xD558;&#xB098;&#xC640; &#xB300;&#xB7B5; &#xB3D9;&#xC77C;&#xD568;</span>
 
 <span class="cm-variable">obj</span>.<span class="cm-property">prop</span> <span class="cm-operator">||</span> (<span class="cm-variable">obj</span>.<span class="cm-property">prop</span> <span class="cm-operator">=</span> <span class="cm-variable">foo</span>());
 
@@ -1370,12 +1370,12 @@ In that sense, not only is the right side of the operator &quot;short-circuited&
     <span class="cm-variable">obj</span>.<span class="cm-property">prop</span> <span class="cm-operator">=</span> <span class="cm-variable">foo</span>();
 }
 </code></pre>
-<p><a href="https://www.typescriptlang.org/play?ts=Nightly#code/MYewdgzgLgBCBGArGBeGBvAsAKBnmA5gKawAOATiKQBQCUGO+TMokIANkQHTsgHUAiYlChFyMABYBDCDHIBXMANoBuHI2Z4A9FpgAlIqXZTgRGAFsiAQg2byJeeTAwAslKgSu5KWAAmIczoYAB4YAAYuAFY1XHwAXwAaWxgIEhgKKmoAfQA3KXYALhh4EA4iH3osWM1WCDKePkFUkTFJGTlFZRimOJw4mJwAM0VgKABLcBhB0qCqplr63n4BcjGCCVgIMd8zIjz2eXciXy7k+yhHZygFIhje7BwFzgblgBUJMdlwM3yAdykAJ6yBSQGAeMzNUTkU7YBCILgZUioOBIBGUJEAHwxUxmqnU2Ce3CWgnenzgYDMACo6pZxpYIJSOqDwSkSFCYXC0VQYFi0NMQHQVEA" target="_blank">Try running the following example</a> to see how that differs from <em>always</em> performing the assignment.</p>
+<p><a href="https://www.typescriptlang.org/play?ts=Nightly#code/MYewdgzgLgBCBGArGBeGBvAsAKBnmA5gKawAOATiKQBQCUGO+TMokIANkQHTsgHUAiYlChFyMABYBDCDHIBXMANoBuHI2Z4A9FpgAlIqXZTgRGAFsiAQg2byJeeTAwAslKgSu5KWAAmIczoYAB4YAAYuAFY1XHwAXwAaWxgIEhgKKmoAfQA3KXYALhh4EA4iH3osWM1WCDKePkFUkTFJGTlFZRimOJw4mJwAM0VgKABLcBhB0qCqplr63n4BcjGCCVgIMd8zIjz2eXciXy7k+yhHZygFIhje7BwFzgblgBUJMdlwM3yAdykAJ6yBSQGAeMzNUTkU7YBCILgZUioOBIBGUJEAHwxUxmqnU2Ce3CWgnenzgYDMACo6pZxpYIJSOqDwSkSFCYXC0VQYFi0NMQHQVEA" target="_blank">&#xB2E4;&#xC74C; &#xC608;&#xC2DC;&#xB97C; &#xC2E4;&#xD589;&#xD574;&#xBCF4;&#xC138;&#xC694;</a> &#xC608;&#xC2DC;&#xB97C; &#xD1B5;&#xD574; <em>&#xD56D;&#xC0C1;</em> &#xD560;&#xB2F9;&#xC744; &#xC218;&#xD589;&#xD558;&#xB294; &#xAC83;&#xACFC; &#xC5B4;&#xB5BB;&#xAC8C; &#xB2E4;&#xB978;&#xC9C0; &#xD655;&#xC778;&#xD574;&#xBCF4;&#xC138;&#xC694;.</p>
 <pre><code class="lang-ts"><span class="cm-keyword">const</span> <span class="cm-variable">obj</span> <span class="cm-operator">=</span> {
     <span class="cm-property">get</span> <span class="cm-property">prop</span>() {
         <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">&quot;getter has run&quot;</span>);
 
-        <span class="cm-comment">// Replace me!</span>
+        <span class="cm-comment">// &#xC774;&#xACF3;&#xC744; &#xBC14;&#xAFD4;&#xBCF4;&#xC138;&#xC694;!</span>
         <span class="cm-keyword">return</span> <span class="cm-variable">Math</span>.<span class="cm-property">random</span>() <span class="cm-operator">&lt;</span> <span class="cm-number">0.5</span>;
     },
     <span class="cm-property">set</span> <span class="cm-property">prop</span>(<span class="cm-def">_val</span>: <span class="cm-variable-3">boolean</span>) {
@@ -1394,9 +1394,9 @@ In that sense, not only is the right side of the operator &quot;short-circuited&
 <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">&quot;This one *sometimes* runs the setter&quot;</span>);
 <span class="cm-variable">obj</span>.<span class="cm-property">prop</span> <span class="cm-operator">||=</span> <span class="cm-variable">foo</span>();
 </code></pre>
-<p>We&apos;d like to extend a big thanks to community member <a href="https://github.com/Kingwl" target="_blank">Wenlu Wang</a> for this contribution!</p>
-<p>For more details, you can <a href="https://github.com/microsoft/TypeScript/pull/37727" target="_blank">take a look at the pull request here</a>.
-You can also <a href="https://github.com/tc39/proposal-logical-assignment/" target="_blank">check out TC39&apos;s proposal repository for this feature</a>.</p>
+<p>&#xAE30;&#xC5EC;&#xD574;&#xC8FC;&#xC2E0; &#xCEE4;&#xBBA4;&#xB2C8;&#xD2F0; &#xBA64;&#xBC84; <a href="https://github.com/Kingwl" target="_blank">Wenlu Wang</a> &#xB2D8;&#xC5D0;&#xAC8C; &#xD070; &#xAC10;&#xC0AC;&#xB97C; &#xD45C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB354; &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC744; &#xBCF4;&#xACE0; &#xC2F6;&#xC73C;&#xC2DC;&#xB2E4;&#xBA74; <a href="https://github.com/microsoft/TypeScript/pull/37727" target="_blank">&#xC774; &#xD480; &#xB9AC;&#xD018;&#xC2A4;&#xD2B8;&#xB97C; &#xD655;&#xC778;&#xD574;&#xBCF4;&#xC138;&#xC694;</a>.
+<a href="https://github.com/tc39/proposal-logical-assignment/" target="_blank">TC39 &#xC81C;&#xC548; &#xC800;&#xC7A5;&#xC18C;&#xC5D0;&#xC11C;&#xB3C4; &#xC774; &#xAE30;&#xB2A5;&#xC744; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</a>.</p>
 <h2 id="unknown-on-catch-clause-bindings"><code>unknown</code> on <code>catch</code> Clause Bindings</h2>
 <p>Since the beginning days of TypeScript, <code>catch</code> clause variables have always been typed as <code>any</code>.
 This meant that TypeScript allowed you to do anything you wanted with them.</p>
@@ -1648,7 +1648,7 @@ As a result, for TypeScript 4.0 we&apos;ve made the decision to deprecate these 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"TypeScript 4.0","layout":"docs","permalink":"/docs/handbook/release-notes/typescript-4-0.html","oneline":"TypeScript 4.0 Release Notes","level":"6.1","depth":1,"next":{"title":"TypeScript 3.9","level":"6.2","depth":1,"path":"pages/release-notes/typescript-3.9.md","ref":"pages/release-notes/typescript-3.9.md","articles":[]},"previous":{"title":"리액트 & 웹팩","level":"5.5","depth":1,"path":"pages/tutorials/react-&-webpack.md","ref":"pages/tutorials/react-&-webpack.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/release-notes/typescript-4.0.md","mtime":"2020-11-03T11:08:33.617Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-03T11:09:31.865Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"TypeScript 4.0","layout":"docs","permalink":"/docs/handbook/release-notes/typescript-4-0.html","oneline":"TypeScript 4.0 Release Notes","level":"6.1","depth":1,"next":{"title":"TypeScript 3.9","level":"6.2","depth":1,"path":"pages/release-notes/typescript-3.9.md","ref":"pages/release-notes/typescript-3.9.md","articles":[]},"previous":{"title":"리액트 & 웹팩","level":"5.5","depth":1,"path":"pages/tutorials/react-&-webpack.md","ref":"pages/tutorials/react-&-webpack.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-darkblue","addcssjs","highlight-1","custom-favicon","forkmegithub","sitemap-general","sitemap","ga"],"pluginsConfig":{"github":{"url":"https://github.com/typescript-kr/typescript-kr.github.io"},"search":{},"addcssjs":{"js":[],"css":["assets/css/atom-one-dark.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://typescript-kr.gitbooks.io/"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-darkblue":{},"highlight":{},"favicon":"assets/images/favicon.ico","sitemap":{"hostname":"https://typescript-kr.github.io/"},"highlight-1":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-163809183-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"darkblue","url":"https://github.com/typescript-kr/typescript-kr.github.io"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"assets/css/website.css"}},"file":{"path":"pages/release-notes/typescript-4.0.md","mtime":"2020-11-17T11:08:51.325Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-17T11:09:52.205Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
