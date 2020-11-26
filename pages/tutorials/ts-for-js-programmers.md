@@ -201,7 +201,8 @@ interface Backpack<Type> {
 }
 
 // 이 줄은 TypeScript에 `backpack`이라는 상수가 있음을 알리는 지름길이며
-// const backpakc: Backpack<string>이 어디서 왔는지 걱정할 필요가 없습니다.
+// const backpack: Backpack<string>이 어디서 왔는지 걱정할 필요가 없습니다.
+declare const backpack: Backpack<string>;
 
 // 위에서 Backpack의 변수 부분으로 선언해서, object는 string입니다.
 const object = backpack.get();
