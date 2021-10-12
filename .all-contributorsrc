@@ -387,6 +387,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "fureweb-com",
+      "name": "Jihwan Oh",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22983900?v=4",
+      "profile": "https://fureweb-com.github.io",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 8,
