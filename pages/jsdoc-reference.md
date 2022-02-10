@@ -29,7 +29,7 @@ oneline: What JSDoc does TypeScript-powered JavaScript support?
 ## `@type`
 
 "@type" 태그를 사용하여 타입의 이름을 참조할 수 있습니다 (다음 경우 중 하나인 원시 타입과 TypeScript에 정의되어있거나 JSDoc "@typedef" 태그로 정의되어있거나).
-당신은 대부분 JSDoc 타입들이나 TypeScript 타입을 사용할 것입니다,[기존에 많이 사용하는 `string`](/docs/handbook/basic-types.html)부터 [조건부 타입인 고급 타입](/docs/handbook/advanced-types.html)까지.
+당신은 대부분 JSDoc 타입들이나 TypeScript 타입을 사용할 것입니다,[기존에 많이 사용하는 `string`](/pages/basic-types.html)부터 [조건부 타입인 고급 타입](/pages/advanced-types.html)까지.
 
 ```js
 /**
@@ -437,7 +437,7 @@ c.size;
 var result = C(1);
 ```
 
-> Note: 오류 메시지는 [a JSConfig](/docs/handbook/tsconfig-json.html) 및 [`checkJs`](/tsconfig#checkJs)가 활성화된 상태에서만 JS 코드 베이스에 나타납니다.
+> Note: 오류 메시지는 [a JSConfig](/pages/tsconfig-json.html) 및 [`checkJs`](/tsconfig#checkJs)가 활성화된 상태에서만 JS 코드 베이스에 나타납니다.
 
 `@constructor`를 사용하면 생성자 함수 `C`안에 `this`가 있는지 검사하므로, `initialize` 메서드에 대한 제안사항을 받으며 만약 인자로 숫자를 넘긴다면 오류가 발생합니다. 또한 `C`를 생성하지 않고 호출만 한다면 에디터에서 경고를 표시할 수 있습니다.
 
