@@ -43,12 +43,13 @@ C++ 달리 TypeScript는 후위 타입을 사용합니다, 예를 들면: `strin
 
 ## 내장 타입 (Built-in types)
 
-JavaScript에서는 7개의 내장 타입을 정의합니다:
+JavaScript에서는 8개의 내장 타입을 정의합니다:
 
 | 타입         | 설명                                         |
 | ----------- | ------------------------------------------- |
 | `Number`    | 배정밀도 IEEE 754 부동소수점.                    |
 | `String`    | 수정 불가능한 UTF-16 문자열.                     |
+| `BigInt`    | 임의 정밀도 형식의 정수.                          |
 | `Boolean`   | `true` 와  `false`.                          |
 | `Symbol`    | 보통 키로 사용하는 고유한 값.                       |
 | `Null`      | 단위 타입과 동등.                               |
@@ -61,6 +62,7 @@ TypeScript에는 기본 내장된 타입에 해당하는 원시 타입이 있습
 
 * `number`
 * `string`
+* `bigint`
 * `boolean`
 * `symbol`
 * `null`
