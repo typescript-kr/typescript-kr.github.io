@@ -263,7 +263,6 @@ printPoint(color);
 마지막으로, 정확하게 마무리 짓기 위해, 구조적으로 클래스와 객체가 형태를 따르는 방법에는 차이가 없습니다:
 
 ```
-// @errors: 2345
 interface Point {
   x: number;
   y: number;
